@@ -1,1 +1,1 @@
-# Little Hafiz Study
+# Al-Hafiz Al-Saghir Library
