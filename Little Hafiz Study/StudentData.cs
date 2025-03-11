@@ -1,0 +1,37 @@
+﻿using System;
+using System.Data;
+
+namespace Little_Hafiz
+{
+    internal class StudentData
+    {
+        //public string FirstName, SecondName, ThirdName, FourthName, FifthName;
+        public string FullName;
+        public string NationalNumber;
+        public string BirthDate;
+        public string Job;
+
+        public string FatherQualification, MotherQualification;
+        public string FatherJob, MotherJob;
+        public string FatherPhone, MotherPhone;
+        public string GuardianName, GuardianLink;
+        public string GuardianBirth;
+
+        public string PhoneNumber, Address, Email, Facebook;
+        public string School, Class;
+
+        public int BrothersCount, ArrangementBetweenBrothers;
+
+        public int Level; public string MemorizationAmount;
+        public string StudentMashaykh, MashaykhPlaces;
+        public string JoiningDate, FirstConclusionDate;
+        public string Certificates, Vacations, Courses, Skills, Hobbies;
+
+        public string Image;
+
+        //public StudentState StudentState;
+
+        public override string ToString()
+            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MashaykhPlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Vacations}', '{Courses}', '{Skills}', '{Hobbies}', '{Image}'";
+    }
+}
