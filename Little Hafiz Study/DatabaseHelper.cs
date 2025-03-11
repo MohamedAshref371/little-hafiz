@@ -59,6 +59,7 @@ namespace Little_Hafiz
             return true;
         }
 
+        #region Select
         private static void ReadMetadata()
         {
             try
@@ -95,9 +96,6 @@ namespace Little_Hafiz
             }
         }
 
-        public static bool AddStudent(StudentData data)
-            => ExecuteNonQuery($"INSERT INTO students ({data}, 0, {DateTime.Now.Ticks})");
-
         public static StudentData SelectStudent(string nationalNumber, StudentState state)
         {
             if (!success) return null;
@@ -117,6 +115,11 @@ namespace Little_Hafiz
                 reader.Close();
                 conn.Close();
             }
+        }
+
+        public static StudentData SelectAllStudents(StudentState state)
+        {
+
         }
 
         private static StudentData GetDataFromReader()
@@ -158,55 +161,49 @@ namespace Little_Hafiz
                 Image= (string)reader["image"]
             };
         }
+        #endregion
 
-        public static bool UpdateStudent(StudentData data)
+        #region Insert & Update & Delete
+        public static int AddStudent(StudentData data)
+            => ExecuteNonQuery($"INSERT INTO students ({data}, 0, {DateTime.Now.Ticks})");
+
+        public static int UpdateStudent(StudentData data)
             => ExecuteNonQuery($"UPDATE students SET ({tableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
 
-        public static bool RestoreStudent(string nationalNumber)
-            => UpdateStudentState(nationalNumber, StudentState.Normal);
-
-        public static bool ArchiveStudent(string nationalNumber)
-            => UpdateStudentState(nationalNumber, StudentState.Archived);
-        
-        public static bool MoveToRecycleBin(string nationalNumber)
-            => UpdateStudentState(nationalNumber, StudentState.Deleted);
-        
-        private static bool UpdateStudentState(string nationalNumber, StudentState state)
-            => ExecuteNonQuery($"UPDATE students state = {(int)state}, state_date = {DateTime.Now.Ticks} WHERE national = '{nationalNumber}'");
-
-        public static bool DeleteStudent(string nationalNumber)
+        public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
-        
-        private static bool ExecuteNonQuery(string sql)
-        {
-            if (!success) return false;
-            try
-            {
-                conn.Open();
-                command.CommandText = sql;
-                command.ExecuteNonQuery();
-                return true;
-            }
-            catch { return false; }
-            finally
-            {
-                reader.Close();
-                conn.Close();
-            }
-        }
 
         public static int RemoveDeletedStudent30Days()
+            => ExecuteNonQuery($"DELETE FROM students WHERE state = 2 AND state_date >= {DateTime.Now.AddDays(-30).Ticks}");
+        #endregion
+
+        #region Update Student State
+        public static int RestoreStudent(string nationalNumber)
+            => UpdateStudentState(nationalNumber, StudentState.Normal);
+
+        public static int ArchiveStudent(string nationalNumber)
+            => UpdateStudentState(nationalNumber, StudentState.Archived);
+
+        public static int MoveToRecycleBin(string nationalNumber)
+            => UpdateStudentState(nationalNumber, StudentState.Deleted);
+
+        private static int UpdateStudentState(string nationalNumber, StudentState state)
+            => ExecuteNonQuery($"UPDATE students state = {(int)state}, state_date = {DateTime.Now.Ticks} WHERE national = '{nationalNumber}'");
+        #endregion
+
+        private static int ExecuteNonQuery(string sql)
         {
             if (!success) return -1;
             try
             {
                 conn.Open();
-                command.CommandText = $"DELETE FROM students WHERE state = 2 AND state_date >= {DateTime.Now.AddDays(-30).Ticks}";
+                command.CommandText = sql;
                 return command.ExecuteNonQuery();
             }
             catch { return -1; }
             finally
             {
+                reader.Close();
                 conn.Close();
             }
         }
