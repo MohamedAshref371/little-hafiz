@@ -7,6 +7,5 @@ namespace Little_Hafiz
         Normal = 0,
         Archived = 1,
         Deleted = 2,
-        All = 3,
     }
 }
