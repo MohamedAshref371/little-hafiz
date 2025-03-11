@@ -52,7 +52,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
                                       "CRETE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, level INTEGER, memo_amount TEXT, mashaykh TEXT, mashaykh_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, vacations TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      $"INSERT INTO metadata ({classVersion}, {DateTime.Now:yyyy-MM-dd}, 'مكتبة الحافظ الصغير بمسطرد');";
+                                      $"INSERT INTO metadata ({classVersion}, {DateTime.Now:yyyy/MM/dd}, 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
             catch { return false; }
@@ -71,7 +71,7 @@ namespace Little_Hafiz
                 if (!reader.Read()) return;
                 Version = reader.GetInt32(0);
                 if (Version != classVersion) return;
-                CreateDate = DateTime.ParseExact(reader.GetString(1), "yyyy-MM-dd", DateTimeFormatInfo.CurrentInfo);
+                CreateDate = DateTime.ParseExact(reader.GetString(1), "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
                 Comment = reader.GetString(2);
                 reader.Close();
 
@@ -102,7 +102,7 @@ namespace Little_Hafiz
         public static StudentData SelectStudent(string nationalNumber)
             => SelectUniqueStudent($"SELECT * FROM students WHERE national = '{nationalNumber}'");
 
-        public static StudentData SelectStudent(string nationalNumber, StudentState state)
+        public static StudentData SelectStudent(string nationalNumber, StudentState state) // depracated
             => SelectUniqueStudent($"SELECT * FROM students WHERE national = '{nationalNumber}' AND state = {(int)state}");
 
         public static StudentData SelectStudentWithPhoneNumber(string phoneNumber)

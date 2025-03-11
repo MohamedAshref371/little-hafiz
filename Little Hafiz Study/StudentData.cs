@@ -1,7 +1,4 @@
-﻿using System;
-using System.Data;
-
-namespace Little_Hafiz
+﻿namespace Little_Hafiz
 {
     internal class StudentData
     {
