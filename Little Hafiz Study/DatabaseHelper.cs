@@ -109,7 +109,7 @@ namespace Little_Hafiz
             => SelectUniqueStudent($"SELECT * FROM students WHERE phone_number = '{phoneNumber}'");
 
         public static StudentData SelectStudentWithEmail(string email)
-            => SelectUniqueStudent($"SELECT * FROM students WHERE phone_number = '{email}'");
+            => SelectUniqueStudent($"SELECT * FROM students WHERE email = '{email}'");
 
         private static StudentData SelectUniqueStudent(string sql)
         {
