@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,22 +42,22 @@ namespace Little_Hafiz
 
         private void National_TextChanged(object sender, EventArgs e)
         {
-            string newText = new string(national.Text.Where(char.IsDigit).ToArray());
+            string newText = new string(stdNational.Text.Where(char.IsDigit).ToArray());
             if (newText.Length > 14)
                 newText = newText.Substring(0, 14);
 
-            if (national.Text != newText)
+            if (stdNational.Text != newText)
             {
-                int cursorPosition = national.SelectionStart - (national.Text.Length - newText.Length);
-                national.Text = newText;
-                national.SelectionStart = Math.Max(0, cursorPosition);
+                int cursorPosition = stdNational.SelectionStart - (stdNational.Text.Length - newText.Length);
+                stdNational.Text = newText;
+                stdNational.SelectionStart = Math.Max(0, cursorPosition);
             }
 
-            if (national.Text.Length == 14)
+            if (stdNational.Text.Length == 14)
             {
-                DateTime? date = GetDateFromNationalNumber(national.Text);
+                DateTime? date = GetDateFromNationalNumber(stdNational.Text);
                 if (date.HasValue)
-                    guna2DateTimePicker1.Value = (DateTime)date;
+                    stdBirthDate.Value = (DateTime)date;
                 wrongValueLabel.Visible = !date.HasValue;
             }
         }
@@ -70,6 +71,12 @@ namespace Little_Hafiz
 
             try { return new DateTime(year, month, day); }
             catch { return null; }
+        }
+
+        private void PhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
