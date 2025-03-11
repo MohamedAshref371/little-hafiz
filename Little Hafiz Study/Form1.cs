@@ -64,7 +64,7 @@ namespace Little_Hafiz
 
         private DateTime? GetDateFromNationalNumber(string natNum)
         {
-            int year = 100 * (natNum[0] - '0' + 17) 
+            int year = 100 * (natNum[0] - '0' + 17)
                 + int.Parse(natNum.Substring(1, 2));
             int month = int.Parse(natNum.Substring(3, 2));
             int day = int.Parse(natNum.Substring(5, 2));

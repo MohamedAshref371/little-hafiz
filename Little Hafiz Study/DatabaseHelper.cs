@@ -33,7 +33,7 @@ namespace Little_Hafiz
         #endregion
 
         static DatabaseHelper() => SafetyExamination();
-        
+
         private static void SafetyExamination()
         {
             conn.ConnectionString = $"Data Source={databaseFile};Version=3;";
@@ -189,16 +189,16 @@ namespace Little_Hafiz
                 ArrangementBetweenBrothers = (int)reader["arrangement"],
                 Level = (int)reader["level"],
                 MemorizationAmount = (string)reader["memo_amount"],
-                StudentMashaykh= (string)reader["mashaykh"],
-                MashaykhPlaces= (string)reader["mashaykh_places"],
-                JoiningDate= (string)reader["joining_date"],
-                FirstConclusionDate= (string)reader["conclusion_date"],
-                Certificates= (string)reader["certificates"],
-                Vacations= (string)reader["vacations"],
-                Courses= (string)reader["courses"],
-                Skills= (string)reader["skills"],
-                Hobbies= (string)reader["hobbies"],
-                Image= (string)reader["image"]
+                StudentMashaykh = (string)reader["mashaykh"],
+                MashaykhPlaces = (string)reader["mashaykh_places"],
+                JoiningDate = (string)reader["joining_date"],
+                FirstConclusionDate = (string)reader["conclusion_date"],
+                Certificates = (string)reader["certificates"],
+                Vacations = (string)reader["vacations"],
+                Courses = (string)reader["courses"],
+                Skills = (string)reader["skills"],
+                Hobbies = (string)reader["hobbies"],
+                Image = (string)reader["image"]
             };
         }
         #endregion
