@@ -1416,7 +1416,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(792, 534);
+            this.label9.Location = new System.Drawing.Point(794, 534);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label9.Size = new System.Drawing.Size(119, 19);
