@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Office2010.Excel;
 using Guna.UI2.WinForms;
+using QuranKareem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
+        readonly int SizeX = 950, SizeY = 700;
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +35,15 @@ namespace Little_Hafiz
 
         private void MinimizeBtn_Click(object sender, EventArgs e)
             => WindowState = FormWindowState.Minimized;
+
+        private void MaximizeBtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+            FormSize fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
+            fs.SetControls(Controls);
+            maximizeBtn.Visible = false;
+            minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y); 
+        }
 
         #region StudentDataForm
         private void National_KeyPress(object sender, KeyPressEventArgs e)

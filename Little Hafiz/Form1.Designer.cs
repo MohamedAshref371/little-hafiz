@@ -107,6 +107,7 @@
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.label24 = new System.Windows.Forms.Label();
             this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -149,7 +150,7 @@
             this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(877, 7);
+            this.minimizeBtn.Location = new System.Drawing.Point(843, 7);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 24);
             this.minimizeBtn.TabIndex = 1;
@@ -1462,11 +1463,30 @@
             this.studentImage.TabIndex = 72;
             this.studentImage.TabStop = false;
             // 
+            // maximizeBtn
+            // 
+            this.maximizeBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
+            this.maximizeBtn.BorderRadius = 3;
+            this.maximizeBtn.BorderThickness = 3;
+            this.maximizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.maximizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.maximizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.maximizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.maximizeBtn.FillColor = System.Drawing.SystemColors.Control;
+            this.maximizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.maximizeBtn.ForeColor = System.Drawing.Color.White;
+            this.maximizeBtn.Location = new System.Drawing.Point(881, 7);
+            this.maximizeBtn.Name = "maximizeBtn";
+            this.maximizeBtn.Size = new System.Drawing.Size(30, 24);
+            this.maximizeBtn.TabIndex = 73;
+            this.maximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
+            this.Controls.Add(this.maximizeBtn);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
@@ -1566,6 +1586,7 @@
         private System.Windows.Forms.OpenFileDialog selectImageDialog;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage;
+        private Guna.UI2.WinForms.Guna2Button maximizeBtn;
     }
 }
 
