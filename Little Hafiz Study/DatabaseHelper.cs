@@ -18,8 +18,7 @@ namespace Little_Hafiz
     {
         private static bool success = false;
         private static readonly int classVersion = 1;
-        private static string dataFolder = "Data", imagesFolder = $"{dataFolder}\\images", databaseFile = $"{dataFolder}\\Students.db";
-
+        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
@@ -41,6 +40,9 @@ namespace Little_Hafiz
 
             if (!Directory.Exists(dataFolder))
                 Directory.CreateDirectory(dataFolder);
+
+            if (!Directory.Exists(imagesFolder))
+                Directory.CreateDirectory(imagesFolder);
 
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
@@ -182,6 +184,12 @@ namespace Little_Hafiz
 
         private static StudentData GetDataFromReader()
         {
+            string img = (string)reader["image"];
+            if (img != "")
+            {
+                img = imagesFolder + img;
+                if (!File.Exists(img)) img = "";
+            }
             return new StudentData
             {
                 FullName = (string)reader["full_name"],
@@ -216,17 +224,42 @@ namespace Little_Hafiz
                 Courses = (string)reader["courses"],
                 Skills = (string)reader["skills"],
                 Hobbies = (string)reader["hobbies"],
-                Image = (string)reader["image"]
+                Image = img
             };
         }
         #endregion
 
         #region Insert & Update & Delete
+        public static bool IsNotInsideImagesFolder(StudentData data)
+            => Path.GetFullPath(data.Image) != Path.GetFullPath(imagesFolder + data.ImageName);
+
+        public static void CopyImageToImagesFolder(StudentData data)
+        {
+            string imagePath = imagesFolder + "img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
+            File.Copy(data.Image, imagePath);
+            data.Image = imagePath;
+        }
+
         public static int AddStudent(StudentData data)
-            => ExecuteNonQuery($"INSERT INTO students ({data}, 0, {DateTime.Now.Ticks})");
+        {
+            if (File.Exists(data.Image))
+            {
+                if (IsNotInsideImagesFolder(data))
+                    CopyImageToImagesFolder(data);
+            }
+            else
+                data.Image = "";
+
+            return ExecuteNonQuery($"INSERT INTO students ({data}, 0, {DateTime.Now.Ticks})");
+        }
 
         public static int UpdateStudent(StudentData data)
-            => ExecuteNonQuery($"UPDATE students SET ({tableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
+        {
+            if (!IsNotInsideImagesFolder(data))
+                CopyImageToImagesFolder(data);
+
+            return ExecuteNonQuery($"UPDATE students SET ({tableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
+        }
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");

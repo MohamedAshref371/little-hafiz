@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,12 +94,59 @@ namespace Little_Hafiz
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-
+            studentDataForm.Visible = false;
         }
 
         private void AddStudentBtn_Click(object sender, EventArgs e)
         {
+            if (stdNational.Text.Length != 14 || wrongValueLabel.Visible)
+            {
+                MessageBox.Show("أدخل الرقم القومي الصحيح");
+                return;
+            }
 
+            DatabaseHelper.AddStudent(GetStudentData());
+            studentDataForm.Visible = false;
+        }
+
+        private StudentData GetStudentData()
+        {
+            return new StudentData
+            {
+                FullName = stdName.Text,
+                NationalNumber = stdNational.Text,
+                BirthDate = stdBirthDate.Value.ToString("yyyy/MM/dd"),
+                Job = stdJob.Text,
+                FatherQualification = fatherQuali.Text,
+                MotherQualification = motherQuali.Text,
+                FatherJob = fatherJob.Text,
+                MotherJob = motherJob.Text,
+                FatherPhone = fatherPhone.Text,
+                MotherPhone = motherPhone.Text,
+                GuardianName = guardianName.Text,
+                GuardianLink = guardianLink.Text,
+                GuardianBirth = guardianBirth.Value.ToString("yyy/MM/dd"),
+                PhoneNumber = stdPhone.Text,
+                Address = stdAddress.Text,
+                Email = stdEmail.Text,
+                Facebook = stdFacebook.Text,
+                School = stdSchool.Text,
+                Class = stdClass.Text,
+                BrothersCount = (int)stdBrothers.Value,
+                ArrangementBetweenBrothers = (int)stdArrangement.Value,
+                Level = (int)stdLevel.Value,
+                MemorizationAmount = stdMemo.Text,
+                StudentMashaykh = stdMashaykh.Text,
+                MashaykhPlaces = stdMashaykhPlaces.Text,
+                JoiningDate = stdJoiningDate.Value.ToString("yyy/MM/dd"),
+                FirstConclusionDate = stdFirstConclusion.Value.ToString("yyy/MM/dd"),
+                Certificates = stdCertificates.Text,
+                Ijazah = stdIjazah.Text,
+                Courses = stdCourses.Text,
+                Skills = stdSkills.Text,
+                Hobbies = stdHobbies.Text,
+                Image = stdImagePath.Text
+            };
         }
         #endregion
 

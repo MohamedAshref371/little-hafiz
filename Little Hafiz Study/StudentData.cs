@@ -1,4 +1,6 @@
-﻿namespace Little_Hafiz
+﻿using System.Linq;
+
+namespace Little_Hafiz
 {
     internal class StudentData
     {
@@ -25,10 +27,11 @@
         public string Certificates, Ijazah, Courses, Skills, Hobbies;
 
         public string Image;
+        public string ImageName => Image.Split('\\').Last();
 
         //public StudentState StudentState;
 
         public override string ToString()
-            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MashaykhPlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{Image}'";
+            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MashaykhPlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
     }
 }

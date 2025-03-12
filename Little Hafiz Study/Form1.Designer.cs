@@ -105,6 +105,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.stdImagePath = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.label24 = new System.Windows.Forms.Label();
             this.studentDataForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -116,6 +117,7 @@
             this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // closeBtn
@@ -229,9 +231,9 @@
             this.studentDataForm.Controls.Add(this.label4);
             this.studentDataForm.Controls.Add(this.label9);
             this.studentDataForm.Controls.Add(this.stdImagePath);
-            this.studentDataForm.Location = new System.Drawing.Point(12, 12);
+            this.studentDataForm.Location = new System.Drawing.Point(12, 37);
             this.studentDataForm.Name = "studentDataForm";
-            this.studentDataForm.Size = new System.Drawing.Size(934, 681);
+            this.studentDataForm.Size = new System.Drawing.Size(934, 656);
             this.studentDataForm.TabIndex = 2;
             this.studentDataForm.Scroll += new System.Windows.Forms.ScrollEventHandler(this.StudentDataForm_Scroll);
             // 
@@ -1426,16 +1428,30 @@
             // 
             // selectImageDialog
             // 
-            this.selectImageDialog.Filter = "Image files|*.jpg,*.jpeg,*.png";
+            this.selectImageDialog.Filter = "Image files|*.jpg;*.jpeg;*.png";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.label24.ForeColor = System.Drawing.Color.Navy;
+            this.label24.Location = new System.Drawing.Point(291, -4);
+            this.label24.Name = "label24";
+            this.label24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label24.Size = new System.Drawing.Size(337, 33);
+            this.label24.TabIndex = 72;
+            this.label24.Text = "مكتبة الحافظ الصغير بمسطرد";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
-            this.Controls.Add(this.studentDataForm);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.studentDataForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "مكتب الحافظ الصغير بمسطرد";
@@ -1446,6 +1462,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1527,6 +1544,7 @@
         private Guna.UI2.WinForms.Guna2Button stdImageSelectorBtn;
         private System.Windows.Forms.Label stdImagePath;
         private System.Windows.Forms.OpenFileDialog selectImageDialog;
+        private System.Windows.Forms.Label label24;
     }
 }
 
