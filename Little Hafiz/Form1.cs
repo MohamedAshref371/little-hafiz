@@ -110,8 +110,7 @@ namespace Little_Hafiz
         }
 
         private StudentData GetStudentData()
-        {
-            return new StudentData
+            => new StudentData
             {
                 FullName = stdName.Text,
                 NationalNumber = stdNational.Text,
@@ -147,7 +146,7 @@ namespace Little_Hafiz
                 Hobbies = stdHobbies.Text,
                 Image = stdImagePath.Text
             };
-        }
+        
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
