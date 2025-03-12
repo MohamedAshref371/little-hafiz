@@ -21,19 +21,19 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //studentDataForm.HorizontalScroll.Maximum = 0;
+            //studentDataForm.AutoScroll = false;
+            //studentDataForm.VerticalScroll.Visible = false;
+            //studentDataForm.AutoScroll = true;
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+            => Close();
+        
         private void MinimizeBtn_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
+            => WindowState = FormWindowState.Minimized;
+        
+        #region StudentDataForm
         private void National_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -78,5 +78,29 @@ namespace Little_Hafiz
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void StudentDataForm_Scroll(object sender, ScrollEventArgs e)
+            => studentDataForm.Invalidate();
+
+        private void StdBrothers_ValueChanged(object sender, EventArgs e)
+            => stdArrangement.Maximum = stdBrothers.Value + 1;
+
+        private void StdImageSelectorBtn_Click(object sender, EventArgs e)
+        {
+            if (selectImageDialog.ShowDialog() == DialogResult.OK)
+                stdImagePath.Text = selectImageDialog.FileName;
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddStudentBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }
