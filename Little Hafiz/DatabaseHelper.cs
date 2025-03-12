@@ -235,7 +235,7 @@ namespace Little_Hafiz
 
         public static void CopyImageToImagesFolder(StudentData data)
         {
-            string imagePath = imagesFolder + "img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
+            string imagePath = imagesFolder + data.FullName + " - img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
             File.Copy(data.Image, imagePath);
             data.Image = imagePath;
         }

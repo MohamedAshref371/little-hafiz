@@ -947,6 +947,7 @@
             this.guardianName.SelectedText = "";
             this.guardianName.Size = new System.Drawing.Size(257, 32);
             this.guardianName.TabIndex = 24;
+            this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // motherPhone
             // 
@@ -1235,6 +1236,7 @@
             this.stdName.SelectedText = "";
             this.stdName.Size = new System.Drawing.Size(257, 32);
             this.stdName.TabIndex = 0;
+            this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // label3
             // 

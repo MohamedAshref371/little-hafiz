@@ -105,7 +105,7 @@ namespace Little_Hafiz
                 return;
             }
 
-            if (DatabaseHelper.AddStudent(GetStudentData()) > 0)
+            if (DatabaseHelper.AddStudent(GetStudentData()) != -1)
                 studentDataForm.Visible = false;
         }
 
@@ -148,6 +148,13 @@ namespace Little_Hafiz
                 Image = stdImagePath.Text
             };
         }
+
+        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ("\\/:*?\"<>|".Contains(e.KeyChar))
+                e.Handled = true;
+        }
+
         #endregion
 
     }
