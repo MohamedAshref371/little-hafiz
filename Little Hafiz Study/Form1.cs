@@ -105,8 +105,8 @@ namespace Little_Hafiz
                 return;
             }
 
-            DatabaseHelper.AddStudent(GetStudentData());
-            studentDataForm.Visible = false;
+            if (DatabaseHelper.AddStudent(GetStudentData()) > 0)
+                studentDataForm.Visible = false;
         }
 
         private StudentData GetStudentData()

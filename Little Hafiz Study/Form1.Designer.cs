@@ -1206,12 +1206,12 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.titleLabel.Location = new System.Drawing.Point(306, 0);
+            this.titleLabel.Location = new System.Drawing.Point(343, 0);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.titleLabel.Size = new System.Drawing.Size(259, 27);
+            this.titleLabel.Size = new System.Drawing.Size(200, 27);
             this.titleLabel.TabIndex = 2;
-            this.titleLabel.Text = "إستمارة بيانات طالب 2025";
+            this.titleLabel.Text = "إستمارة بيانات طالب";
             // 
             // stdName
             // 
