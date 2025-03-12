@@ -30,10 +30,10 @@ namespace Little_Hafiz
 
         private void CloseBtn_Click(object sender, EventArgs e)
             => Close();
-        
+
         private void MinimizeBtn_Click(object sender, EventArgs e)
             => WindowState = FormWindowState.Minimized;
-        
+
         #region StudentDataForm
         private void National_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -81,7 +81,7 @@ namespace Little_Hafiz
         }
 
         private void StudentDataForm_Scroll(object sender, ScrollEventArgs e)
-            => studentDataForm.Invalidate();
+            => studentDataPanel.Invalidate();
 
         private void StdBrothers_ValueChanged(object sender, EventArgs e)
             => stdArrangement.Maximum = stdBrothers.Value + 1;
@@ -89,12 +89,16 @@ namespace Little_Hafiz
         private void StdImageSelectorBtn_Click(object sender, EventArgs e)
         {
             if (selectImageDialog.ShowDialog() == DialogResult.OK)
+            {
                 stdImagePath.Text = selectImageDialog.FileName;
+                Bitmap bitmap = new Bitmap(new Bitmap(stdImagePath.Text), studentImage.Size.Width, studentImage.Size.Height);
+                studentImage.Image = bitmap;
+            }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            studentDataForm.Visible = false;
+            studentDataPanel.Visible = false;
         }
 
         private void AddStudentBtn_Click(object sender, EventArgs e)
@@ -106,7 +110,7 @@ namespace Little_Hafiz
             }
 
             if (DatabaseHelper.AddStudent(GetStudentData()) != -1)
-                studentDataForm.Visible = false;
+                studentDataPanel.Visible = false;
         }
 
         private StudentData GetStudentData()
@@ -146,7 +150,6 @@ namespace Little_Hafiz
                 Hobbies = stdHobbies.Text,
                 Image = stdImagePath.Text
             };
-        
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
