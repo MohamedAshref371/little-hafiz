@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -102,15 +103,6 @@ namespace Little_Hafiz
         public static StudentData SelectStudent(string nationalNumber)
             => SelectUniqueStudent($"SELECT * FROM students WHERE national = '{nationalNumber}'");
 
-        public static StudentData SelectStudent(string nationalNumber, StudentState state) // depracated
-            => SelectUniqueStudent($"SELECT * FROM students WHERE national = '{nationalNumber}' AND state = {(int)state}");
-
-        public static StudentData SelectStudentWithPhoneNumber(string phoneNumber)
-            => SelectUniqueStudent($"SELECT * FROM students WHERE phone_number = '{phoneNumber}'");
-
-        public static StudentData SelectStudentWithEmail(string email)
-            => SelectUniqueStudent($"SELECT * FROM students WHERE email = '{email}'");
-
         private static StudentData SelectUniqueStudent(string sql)
         {
             if (!success) return null;
@@ -131,14 +123,40 @@ namespace Little_Hafiz
         }
 
 
-        public static StudentData[] SelectAllStudents(StudentState state)
-            => SelectMultiStudents($"SELECT * FROM students WHERE state = {(int)state}");
+        private static readonly StringBuilder sb = new StringBuilder();
+        private static readonly List<string> conds = new List<string>();
+        public static StudentData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
+        {
+            sb.Clear(); conds.Clear();
+            sb.Append("SELECT * FROM students");
 
-        public static StudentData[] SelectAllStudents(int level)
-            => SelectMultiStudents($"SELECT * FROM students WHERE level = {level}");
+            if (undoubtedName != null)
+                conds.Add($"full_name = '%{undoubtedName}%'");
 
-        public static StudentData[] SelectAllStudents(string undoubtedName)
-            => SelectMultiStudents($"SELECT * FROM students WHERE full_name = '%{undoubtedName}%'");
+            if (nationalNumber != null)
+                conds.Add($"national = '%{nationalNumber}%'");
+
+            if (state != null)
+                conds.Add($"state = {(int)state}");
+
+            if (phoneNumber != null)
+                conds.Add($"phone_number = '%{phoneNumber}%'");
+
+            if (email != null)
+                conds.Add($"email = '%{email}%'");
+
+            if (level != null)
+                conds.Add($"level = '{level}'");
+
+            if (conds.Count > 0)
+            {
+                sb.Append(" WHERE ").Append(conds[0]);
+                for (int i = 1; i < conds.Count; i++)
+                    sb.Append(" AND ").Append(conds[i]);
+            }
+
+            return SelectMultiStudents(sb.ToString());
+        }
 
         public static StudentData[] SelectMultiStudents(string sql)
         {
