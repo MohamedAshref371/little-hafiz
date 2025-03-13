@@ -129,7 +129,7 @@ namespace Little_Hafiz
                 e.Handled = true;
         }
 
-        internal enum StudentPanelState
+        private enum StudentPanelState
         {
             Add = 0,
             Update = 1,
