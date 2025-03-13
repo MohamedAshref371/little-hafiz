@@ -32,7 +32,8 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.studentDataPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.stdImageSelectorBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label23 = new System.Windows.Forms.Label();
             this.stdSkills = new Guna.UI2.WinForms.Guna2TextBox();
@@ -106,13 +107,24 @@
             this.stdImagePath = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.label24 = new System.Windows.Forms.Label();
-            this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -125,6 +137,7 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.BorderRadius = 10;
             this.closeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.closeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -142,6 +155,7 @@
             // 
             // minimizeBtn
             // 
+            this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
             this.minimizeBtn.BorderRadius = 10;
             this.minimizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.minimizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -235,14 +249,30 @@
             this.studentDataPanel.Controls.Add(this.label4);
             this.studentDataPanel.Controls.Add(this.label9);
             this.studentDataPanel.Controls.Add(this.stdImagePath);
+            this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.Location = new System.Drawing.Point(12, 37);
             this.studentDataPanel.Name = "studentDataPanel";
             this.studentDataPanel.Size = new System.Drawing.Size(934, 656);
             this.studentDataPanel.TabIndex = 2;
-            this.studentDataPanel.Scroll += new System.Windows.Forms.ScrollEventHandler(this.StudentDataForm_Scroll);
+            this.studentDataPanel.Visible = false;
+            // 
+            // studentImage
+            // 
+            this.studentImage.BackColor = System.Drawing.Color.Transparent;
+            this.studentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.studentImage.BorderRadius = 5;
+            this.studentImage.FillColor = System.Drawing.Color.Gainsboro;
+            this.studentImage.ImageRotate = 0F;
+            this.studentImage.Location = new System.Drawing.Point(43, 6);
+            this.studentImage.Name = "studentImage";
+            this.studentImage.Size = new System.Drawing.Size(140, 180);
+            this.studentImage.TabIndex = 72;
+            this.studentImage.TabStop = false;
             // 
             // stdImageSelectorBtn
             // 
+            this.stdImageSelectorBtn.BackColor = System.Drawing.Color.Transparent;
             this.stdImageSelectorBtn.BorderRadius = 15;
             this.stdImageSelectorBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.stdImageSelectorBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -251,7 +281,7 @@
             this.stdImageSelectorBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
             this.stdImageSelectorBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdImageSelectorBtn.ForeColor = System.Drawing.Color.White;
-            this.stdImageSelectorBtn.Location = new System.Drawing.Point(210, 80);
+            this.stdImageSelectorBtn.Location = new System.Drawing.Point(204, 103);
             this.stdImageSelectorBtn.Name = "stdImageSelectorBtn";
             this.stdImageSelectorBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdImageSelectorBtn.Size = new System.Drawing.Size(108, 32);
@@ -264,7 +294,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label23.Location = new System.Drawing.Point(192, 40);
+            this.label23.Location = new System.Drawing.Point(191, 58);
             this.label23.Name = "label23";
             this.label23.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label23.Size = new System.Drawing.Size(145, 19);
@@ -274,6 +304,7 @@
             // 
             // stdSkills
             // 
+            this.stdSkills.BackColor = System.Drawing.Color.Transparent;
             this.stdSkills.BorderRadius = 5;
             this.stdSkills.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdSkills.DefaultText = "";
@@ -297,6 +328,7 @@
             // 
             // stdHobbies
             // 
+            this.stdHobbies.BackColor = System.Drawing.Color.Transparent;
             this.stdHobbies.BorderRadius = 5;
             this.stdHobbies.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdHobbies.DefaultText = "";
@@ -332,6 +364,7 @@
             // 
             // stdIjazah
             // 
+            this.stdIjazah.BackColor = System.Drawing.Color.Transparent;
             this.stdIjazah.BorderRadius = 5;
             this.stdIjazah.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdIjazah.DefaultText = "";
@@ -355,6 +388,7 @@
             // 
             // stdCourses
             // 
+            this.stdCourses.BackColor = System.Drawing.Color.Transparent;
             this.stdCourses.BorderRadius = 5;
             this.stdCourses.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdCourses.DefaultText = "";
@@ -414,6 +448,7 @@
             // 
             // stdCertificates
             // 
+            this.stdCertificates.BackColor = System.Drawing.Color.Transparent;
             this.stdCertificates.BorderRadius = 5;
             this.stdCertificates.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdCertificates.DefaultText = "";
@@ -449,6 +484,7 @@
             // 
             // stdFirstConclusion
             // 
+            this.stdFirstConclusion.BackColor = System.Drawing.Color.Transparent;
             this.stdFirstConclusion.BorderRadius = 15;
             this.stdFirstConclusion.Checked = true;
             this.stdFirstConclusion.CustomFormat = "yyyy/MM/dd";
@@ -477,6 +513,7 @@
             // 
             // stdJoiningDate
             // 
+            this.stdJoiningDate.BackColor = System.Drawing.Color.Transparent;
             this.stdJoiningDate.BorderRadius = 15;
             this.stdJoiningDate.Checked = true;
             this.stdJoiningDate.CustomFormat = "yyyy/MM/dd";
@@ -505,6 +542,7 @@
             // 
             // stdMashaykhPlaces
             // 
+            this.stdMashaykhPlaces.BackColor = System.Drawing.Color.Transparent;
             this.stdMashaykhPlaces.BorderRadius = 5;
             this.stdMashaykhPlaces.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdMashaykhPlaces.DefaultText = "";
@@ -528,6 +566,7 @@
             // 
             // stdMashaykh
             // 
+            this.stdMashaykh.BackColor = System.Drawing.Color.Transparent;
             this.stdMashaykh.BorderRadius = 5;
             this.stdMashaykh.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdMashaykh.DefaultText = "";
@@ -575,6 +614,7 @@
             // 
             // stdMemo
             // 
+            this.stdMemo.BackColor = System.Drawing.Color.Transparent;
             this.stdMemo.BorderRadius = 5;
             this.stdMemo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdMemo.DefaultText = "";
@@ -611,6 +651,7 @@
             // stdLevel
             // 
             this.stdLevel.BackColor = System.Drawing.Color.Transparent;
+            this.stdLevel.BorderRadius = 3;
             this.stdLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdLevel.Location = new System.Drawing.Point(615, 654);
@@ -651,6 +692,7 @@
             // stdArrangement
             // 
             this.stdArrangement.BackColor = System.Drawing.Color.Transparent;
+            this.stdArrangement.BorderRadius = 3;
             this.stdArrangement.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdArrangement.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdArrangement.Location = new System.Drawing.Point(117, 607);
@@ -689,6 +731,7 @@
             // stdBrothers
             // 
             this.stdBrothers.BackColor = System.Drawing.Color.Transparent;
+            this.stdBrothers.BorderRadius = 3;
             this.stdBrothers.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdBrothers.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdBrothers.Location = new System.Drawing.Point(615, 607);
@@ -705,6 +748,7 @@
             // 
             // stdSchool
             // 
+            this.stdSchool.BackColor = System.Drawing.Color.Transparent;
             this.stdSchool.BorderRadius = 5;
             this.stdSchool.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdSchool.DefaultText = "";
@@ -728,6 +772,7 @@
             // 
             // stdClass
             // 
+            this.stdClass.BackColor = System.Drawing.Color.Transparent;
             this.stdClass.BorderRadius = 5;
             this.stdClass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdClass.DefaultText = "";
@@ -763,6 +808,7 @@
             // 
             // stdEmail
             // 
+            this.stdEmail.BackColor = System.Drawing.Color.Transparent;
             this.stdEmail.BorderRadius = 5;
             this.stdEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdEmail.DefaultText = "";
@@ -786,6 +832,7 @@
             // 
             // stdFacebook
             // 
+            this.stdFacebook.BackColor = System.Drawing.Color.Transparent;
             this.stdFacebook.BorderRadius = 5;
             this.stdFacebook.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdFacebook.DefaultText = "";
@@ -833,6 +880,7 @@
             // 
             // stdAddress
             // 
+            this.stdAddress.BackColor = System.Drawing.Color.Transparent;
             this.stdAddress.BorderRadius = 5;
             this.stdAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdAddress.DefaultText = "";
@@ -868,6 +916,7 @@
             // 
             // stdPhone
             // 
+            this.stdPhone.BackColor = System.Drawing.Color.Transparent;
             this.stdPhone.BorderRadius = 5;
             this.stdPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdPhone.DefaultText = "";
@@ -893,6 +942,7 @@
             // 
             // guardianLink
             // 
+            this.guardianLink.BackColor = System.Drawing.Color.Transparent;
             this.guardianLink.BorderRadius = 5;
             this.guardianLink.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guardianLink.DefaultText = "";
@@ -916,6 +966,7 @@
             // 
             // guardianBirth
             // 
+            this.guardianBirth.BackColor = System.Drawing.Color.Transparent;
             this.guardianBirth.BorderRadius = 15;
             this.guardianBirth.Checked = true;
             this.guardianBirth.CustomFormat = "yyyy/MM/dd";
@@ -932,6 +983,7 @@
             // 
             // guardianName
             // 
+            this.guardianName.BackColor = System.Drawing.Color.Transparent;
             this.guardianName.BorderRadius = 5;
             this.guardianName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guardianName.DefaultText = "";
@@ -956,6 +1008,7 @@
             // 
             // motherPhone
             // 
+            this.motherPhone.BackColor = System.Drawing.Color.Transparent;
             this.motherPhone.BorderRadius = 5;
             this.motherPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.motherPhone.DefaultText = "";
@@ -980,6 +1033,7 @@
             // 
             // fatherPhone
             // 
+            this.fatherPhone.BackColor = System.Drawing.Color.Transparent;
             this.fatherPhone.BorderRadius = 5;
             this.fatherPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fatherPhone.DefaultText = "";
@@ -1005,6 +1059,7 @@
             // 
             // motherJob
             // 
+            this.motherJob.BackColor = System.Drawing.Color.Transparent;
             this.motherJob.BorderRadius = 5;
             this.motherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.motherJob.DefaultText = "";
@@ -1028,6 +1083,7 @@
             // 
             // motherQuali
             // 
+            this.motherQuali.BackColor = System.Drawing.Color.Transparent;
             this.motherQuali.BorderRadius = 5;
             this.motherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.motherQuali.DefaultText = "";
@@ -1051,6 +1107,7 @@
             // 
             // fatherJob
             // 
+            this.fatherJob.BackColor = System.Drawing.Color.Transparent;
             this.fatherJob.BorderRadius = 5;
             this.fatherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fatherJob.DefaultText = "";
@@ -1074,6 +1131,7 @@
             // 
             // fatherQuali
             // 
+            this.fatherQuali.BackColor = System.Drawing.Color.Transparent;
             this.fatherQuali.BorderRadius = 5;
             this.fatherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fatherQuali.DefaultText = "";
@@ -1097,6 +1155,7 @@
             // 
             // cancelBtn
             // 
+            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
             this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cancelBtn.BorderRadius = 15;
             this.cancelBtn.BorderThickness = 2;
@@ -1116,6 +1175,7 @@
             // 
             // addStudentBtn
             // 
+            this.addStudentBtn.BackColor = System.Drawing.Color.Transparent;
             this.addStudentBtn.BorderRadius = 15;
             this.addStudentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -1132,6 +1192,7 @@
             // 
             // stdJob
             // 
+            this.stdJob.BackColor = System.Drawing.Color.Transparent;
             this.stdJob.BorderRadius = 5;
             this.stdJob.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdJob.DefaultText = "";
@@ -1168,6 +1229,7 @@
             // 
             // stdBirthDate
             // 
+            this.stdBirthDate.BackColor = System.Drawing.Color.Transparent;
             this.stdBirthDate.BorderRadius = 15;
             this.stdBirthDate.Checked = true;
             this.stdBirthDate.CustomFormat = "yyyy/MM/dd";
@@ -1184,6 +1246,7 @@
             // 
             // stdNational
             // 
+            this.stdNational.BackColor = System.Drawing.Color.Transparent;
             this.stdNational.BorderRadius = 5;
             this.stdNational.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdNational.DefaultText = "";
@@ -1221,6 +1284,7 @@
             // 
             // stdName
             // 
+            this.stdName.BackColor = System.Drawing.Color.Transparent;
             this.stdName.BorderRadius = 5;
             this.stdName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdName.DefaultText = "";
@@ -1427,11 +1491,13 @@
             // stdImagePath
             // 
             this.stdImagePath.AutoSize = true;
-            this.stdImagePath.Location = new System.Drawing.Point(219, 138);
+            this.stdImagePath.BackColor = System.Drawing.Color.Transparent;
+            this.stdImagePath.Location = new System.Drawing.Point(211, 154);
             this.stdImagePath.Name = "stdImagePath";
             this.stdImagePath.Size = new System.Drawing.Size(89, 13);
             this.stdImagePath.TabIndex = 70;
             this.stdImagePath.Text = "No files selected.";
+            this.stdImagePath.Visible = false;
             // 
             // selectImageDialog
             // 
@@ -1450,21 +1516,9 @@
             this.label24.TabIndex = 72;
             this.label24.Text = "مكتب الحافظ الصغير بمسطرد";
             // 
-            // studentImage
-            // 
-            this.studentImage.BackColor = System.Drawing.SystemColors.Control;
-            this.studentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.studentImage.BorderRadius = 5;
-            this.studentImage.FillColor = System.Drawing.Color.Gainsboro;
-            this.studentImage.ImageRotate = 0F;
-            this.studentImage.Location = new System.Drawing.Point(43, 6);
-            this.studentImage.Name = "studentImage";
-            this.studentImage.Size = new System.Drawing.Size(140, 180);
-            this.studentImage.TabIndex = 72;
-            this.studentImage.TabStop = false;
-            // 
             // maximizeBtn
             // 
+            this.maximizeBtn.BackColor = System.Drawing.Color.Transparent;
             this.maximizeBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
             this.maximizeBtn.BorderRadius = 3;
             this.maximizeBtn.BorderThickness = 3;
@@ -1481,11 +1535,252 @@
             this.maximizeBtn.TabIndex = 73;
             this.maximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox2);
+            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox2);
+            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
+            this.guna2GradientPanel1.Controls.Add(this.label25);
+            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox1);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(12, 37);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(926, 198);
+            this.guna2GradientPanel1.TabIndex = 74;
+            // 
+            // guna2CheckBox1
+            // 
+            this.guna2CheckBox1.AutoSize = true;
+            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.CheckedState.BorderRadius = 3;
+            this.guna2CheckBox1.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2CheckBox1.Location = new System.Drawing.Point(829, 53);
+            this.guna2CheckBox1.Name = "guna2CheckBox1";
+            this.guna2CheckBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2CheckBox1.Size = new System.Drawing.Size(80, 23);
+            this.guna2CheckBox1.TabIndex = 0;
+            this.guna2CheckBox1.Text = "الإسم :";
+            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.guna2CheckBox1.UncheckedState.BorderRadius = 3;
+            this.guna2CheckBox1.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.label25.ForeColor = System.Drawing.Color.Maroon;
+            this.label25.Location = new System.Drawing.Point(790, 6);
+            this.label25.Name = "label25";
+            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label25.Size = new System.Drawing.Size(133, 29);
+            this.label25.TabIndex = 73;
+            this.label25.Text = "قائمة البحث";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox1.BorderRadius = 5;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.Enabled = false;
+            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(521, 49);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(257, 32);
+            this.guna2TextBox1.TabIndex = 74;
+            this.guna2TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox2.BorderRadius = 5;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.Enabled = false;
+            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(23, 49);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox2.MaxLength = 14;
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(257, 32);
+            this.guna2TextBox2.TabIndex = 76;
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.National_TextChanged);
+            this.guna2TextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
+            // 
+            // guna2CheckBox2
+            // 
+            this.guna2CheckBox2.AutoSize = true;
+            this.guna2CheckBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox2.CheckedState.BorderRadius = 3;
+            this.guna2CheckBox2.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2CheckBox2.Location = new System.Drawing.Point(287, 53);
+            this.guna2CheckBox2.Name = "guna2CheckBox2";
+            this.guna2CheckBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2CheckBox2.Size = new System.Drawing.Size(126, 23);
+            this.guna2CheckBox2.TabIndex = 75;
+            this.guna2CheckBox2.Text = "الرقم القومي :";
+            this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.guna2CheckBox2.UncheckedState.BorderRadius = 3;
+            this.guna2CheckBox2.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox2.UseVisualStyleBackColor = false;
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox3.BorderRadius = 5;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.Enabled = false;
+            this.guna2TextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(521, 95);
+            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox3.MaxLength = 15;
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.Size = new System.Drawing.Size(257, 32);
+            this.guna2TextBox3.TabIndex = 78;
+            this.guna2TextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
+            // 
+            // guna2CheckBox3
+            // 
+            this.guna2CheckBox3.AutoSize = true;
+            this.guna2CheckBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox3.CheckedState.BorderRadius = 3;
+            this.guna2CheckBox3.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2CheckBox3.Location = new System.Drawing.Point(785, 99);
+            this.guna2CheckBox3.Name = "guna2CheckBox3";
+            this.guna2CheckBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2CheckBox3.Size = new System.Drawing.Size(124, 23);
+            this.guna2CheckBox3.TabIndex = 77;
+            this.guna2CheckBox3.Text = "هاتف الطالب :";
+            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.guna2CheckBox3.UncheckedState.BorderRadius = 3;
+            this.guna2CheckBox3.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox3.UseVisualStyleBackColor = false;
+            // 
+            // guna2CheckBox4
+            // 
+            this.guna2CheckBox4.AutoSize = true;
+            this.guna2CheckBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox4.CheckedState.BorderRadius = 3;
+            this.guna2CheckBox4.CheckedState.BorderThickness = 1;
+            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2CheckBox4.Location = new System.Drawing.Point(328, 99);
+            this.guna2CheckBox4.Name = "guna2CheckBox4";
+            this.guna2CheckBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2CheckBox4.Size = new System.Drawing.Size(85, 23);
+            this.guna2CheckBox4.TabIndex = 79;
+            this.guna2CheckBox4.Text = "الإيميل :";
+            this.guna2CheckBox4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.guna2CheckBox4.UncheckedState.BorderRadius = 3;
+            this.guna2CheckBox4.UncheckedState.BorderThickness = 1;
+            this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox4.UseVisualStyleBackColor = false;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox4.BorderRadius = 5;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.Enabled = false;
+            this.guna2TextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Location = new System.Drawing.Point(23, 90);
+            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.Size = new System.Drawing.Size(257, 32);
+            this.guna2TextBox4.TabIndex = 80;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(377, 141);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(158, 45);
+            this.guna2Button1.TabIndex = 81;
+            this.guna2Button1.Text = "بحث";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.maximizeBtn);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.minimizeBtn);
@@ -1497,10 +1792,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1511,7 +1808,7 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2Button closeBtn;
         private Guna.UI2.WinForms.Guna2Button minimizeBtn;
-        private Guna.UI2.WinForms.Guna2Panel studentDataPanel;
+        private Guna.UI2.WinForms.Guna2GradientPanel studentDataPanel;
         private Guna.UI2.WinForms.Guna2TextBox stdName;
         private System.Windows.Forms.Label stdNameMeta;
         private System.Windows.Forms.Label titleLabel;
@@ -1587,6 +1884,17 @@
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage;
         private Guna.UI2.WinForms.Guna2Button maximizeBtn;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private System.Windows.Forms.Label label25;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
     }
 }
 

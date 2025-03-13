@@ -16,7 +16,8 @@ namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
-        readonly int SizeX = 950, SizeY = 700;
+        private readonly int SizeX = 950, SizeY = 700;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,10 +25,15 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //studentDataForm.HorizontalScroll.Maximum = 0;
-            //studentDataForm.AutoScroll = false;
-            //studentDataForm.VerticalScroll.Visible = false;
-            //studentDataForm.AutoScroll = true;
+            Timer scrollTimer = new Timer { Interval = 100 };
+            scrollTimer.Tick += (sender1, e1) => {
+                scrollTimer.Stop();
+                if (studentDataPanel.Visible)
+                    studentDataPanel.Invalidate();
+
+            };
+            studentDataPanel.Scroll += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
+            studentDataPanel.MouseWheel += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -90,9 +96,6 @@ namespace Little_Hafiz
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-
-        private void StudentDataForm_Scroll(object sender, ScrollEventArgs e)
-            => studentDataPanel.Invalidate();
 
         private void StdBrothers_ValueChanged(object sender, EventArgs e)
             => stdArrangement.Maximum = stdBrothers.Value + 1;
