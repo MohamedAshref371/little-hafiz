@@ -128,5 +128,12 @@ namespace Little_Hafiz
             if ("\\/:*?\"<>|".Contains(e.KeyChar))
                 e.Handled = true;
         }
+
+        internal enum StudentPanelState
+        {
+            Add = 0,
+            Update = 1,
+            Read = 2,
+        }
     }
 }

@@ -128,7 +128,6 @@
     <Compile Include="StudentDataPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentPanelState.cs" />
     <Compile Include="StudentState.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
