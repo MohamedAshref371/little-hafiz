@@ -109,7 +109,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.SearchBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdEmailCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -1542,7 +1542,7 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.BorderRadius = 5;
             this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.SearchBtn);
+            this.guna2GradientPanel1.Controls.Add(this.searchBtn);
             this.guna2GradientPanel1.Controls.Add(this.stdEmailSearch);
             this.guna2GradientPanel1.Controls.Add(this.stdEmailCheckBox);
             this.guna2GradientPanel1.Controls.Add(this.stdPhoneSearch);
@@ -1560,22 +1560,23 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(926, 198);
             this.guna2GradientPanel1.TabIndex = 74;
             // 
-            // SearchBtn
+            // searchBtn
             // 
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.BorderRadius = 15;
-            this.SearchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SearchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SearchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SearchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SearchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.SearchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(377, 141);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(158, 45);
-            this.SearchBtn.TabIndex = 81;
-            this.SearchBtn.Text = "بحث";
+            this.searchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.searchBtn.BorderRadius = 15;
+            this.searchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.searchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.searchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.searchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.searchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.Location = new System.Drawing.Point(377, 141);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(158, 45);
+            this.searchBtn.TabIndex = 81;
+            this.searchBtn.Text = "بحث";
+            this.searchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // stdEmailSearch
             // 
@@ -1892,7 +1893,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox stdNationalCheckBox;
         private Guna.UI2.WinForms.Guna2TextBox stdPhoneSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdPhoneCheckBox;
-        private Guna.UI2.WinForms.Guna2Button SearchBtn;
+        private Guna.UI2.WinForms.Guna2Button searchBtn;
         private Guna.UI2.WinForms.Guna2TextBox stdEmailSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
     }

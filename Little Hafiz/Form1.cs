@@ -51,5 +51,16 @@ namespace Little_Hafiz
             minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y); 
         }
 
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            var students = DatabaseHelper.SelectStudents
+                (
+                    undoubtedName: stdNameCheckBox.Checked ? stdNameSearch.Text : null,
+                    nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
+                    phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
+                    email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
+                );
+            // note: display all students in UI
+        }
     }
 }
