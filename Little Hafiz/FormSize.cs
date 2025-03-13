@@ -27,7 +27,7 @@ namespace QuranKareem
             for (int i = 0; i < controls.Count; i++)
             {
                 SetControl(controls[i]);
-                if (controls[i] is Guna2Panel)
+                if (controls[i] is Panel)
                     SetControls(controls[i].Controls);
             }
         }
