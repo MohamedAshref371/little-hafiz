@@ -109,16 +109,16 @@
             this.label24 = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SearchBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdEmailCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdPhoneCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdNationalSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNationalCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -872,7 +872,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label7.Location = new System.Drawing.Point(834, 574);
+            this.label7.Location = new System.Drawing.Point(834, 535);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(71, 19);
@@ -1482,7 +1482,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(794, 534);
+            this.label9.Location = new System.Drawing.Point(799, 575);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label9.Size = new System.Drawing.Size(119, 19);
@@ -1542,11 +1542,11 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.BorderRadius = 5;
             this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox4);
-            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox4);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox3);
-            this.guna2GradientPanel1.Controls.Add(this.guna2CheckBox3);
+            this.guna2GradientPanel1.Controls.Add(this.SearchBtn);
+            this.guna2GradientPanel1.Controls.Add(this.stdEmailSearch);
+            this.guna2GradientPanel1.Controls.Add(this.stdEmailCheckBox);
+            this.guna2GradientPanel1.Controls.Add(this.stdPhoneSearch);
+            this.guna2GradientPanel1.Controls.Add(this.stdPhoneCheckBox);
             this.guna2GradientPanel1.Controls.Add(this.stdNationalSearch);
             this.guna2GradientPanel1.Controls.Add(this.stdNationalCheckBox);
             this.guna2GradientPanel1.Controls.Add(this.stdNameSearch);
@@ -1560,39 +1560,161 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(926, 198);
             this.guna2GradientPanel1.TabIndex = 74;
             // 
-            // stdNameCheckBox
+            // SearchBtn
             // 
-            this.stdNameCheckBox.AutoSize = true;
-            this.stdNameCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdNameCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameCheckBox.CheckedState.BorderRadius = 3;
-            this.stdNameCheckBox.CheckedState.BorderThickness = 1;
-            this.stdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameCheckBox.Location = new System.Drawing.Point(829, 53);
-            this.stdNameCheckBox.Name = "stdNameCheckBox";
-            this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameCheckBox.Size = new System.Drawing.Size(80, 23);
-            this.stdNameCheckBox.TabIndex = 0;
-            this.stdNameCheckBox.Text = "الإسم :";
-            this.stdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdNameCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdNameCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdNameCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdNameCheckBox.UseVisualStyleBackColor = false;
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BorderRadius = 15;
+            this.SearchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SearchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SearchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SearchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SearchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.SearchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.SearchBtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBtn.Location = new System.Drawing.Point(377, 141);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(158, 45);
+            this.SearchBtn.TabIndex = 81;
+            this.SearchBtn.Text = "بحث";
             // 
-            // label25
+            // stdEmailSearch
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label25.ForeColor = System.Drawing.Color.Maroon;
-            this.label25.Location = new System.Drawing.Point(790, 6);
-            this.label25.Name = "label25";
-            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label25.Size = new System.Drawing.Size(133, 29);
-            this.label25.TabIndex = 73;
-            this.label25.Text = "قائمة البحث";
+            this.stdEmailSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdEmailSearch.BorderRadius = 5;
+            this.stdEmailSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdEmailSearch.DefaultText = "";
+            this.stdEmailSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdEmailSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdEmailSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdEmailSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdEmailSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.stdEmailSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdEmailSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdEmailSearch.ForeColor = System.Drawing.Color.Black;
+            this.stdEmailSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdEmailSearch.Location = new System.Drawing.Point(23, 90);
+            this.stdEmailSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdEmailSearch.Name = "stdEmailSearch";
+            this.stdEmailSearch.PlaceholderText = "";
+            this.stdEmailSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdEmailSearch.SelectedText = "";
+            this.stdEmailSearch.Size = new System.Drawing.Size(257, 32);
+            this.stdEmailSearch.TabIndex = 80;
+            // 
+            // stdEmailCheckBox
+            // 
+            this.stdEmailCheckBox.AutoSize = true;
+            this.stdEmailCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdEmailCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdEmailCheckBox.CheckedState.BorderRadius = 3;
+            this.stdEmailCheckBox.CheckedState.BorderThickness = 1;
+            this.stdEmailCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdEmailCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdEmailCheckBox.Location = new System.Drawing.Point(328, 99);
+            this.stdEmailCheckBox.Name = "stdEmailCheckBox";
+            this.stdEmailCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 23);
+            this.stdEmailCheckBox.TabIndex = 79;
+            this.stdEmailCheckBox.Text = "الإيميل :";
+            this.stdEmailCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdEmailCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdEmailCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdEmailCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdEmailCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // stdPhoneSearch
+            // 
+            this.stdPhoneSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdPhoneSearch.BorderRadius = 5;
+            this.stdPhoneSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdPhoneSearch.DefaultText = "";
+            this.stdPhoneSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdPhoneSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdPhoneSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdPhoneSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdPhoneSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.stdPhoneSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdPhoneSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdPhoneSearch.ForeColor = System.Drawing.Color.Black;
+            this.stdPhoneSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdPhoneSearch.Location = new System.Drawing.Point(521, 95);
+            this.stdPhoneSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdPhoneSearch.MaxLength = 15;
+            this.stdPhoneSearch.Name = "stdPhoneSearch";
+            this.stdPhoneSearch.PlaceholderText = "";
+            this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdPhoneSearch.SelectedText = "";
+            this.stdPhoneSearch.Size = new System.Drawing.Size(257, 32);
+            this.stdPhoneSearch.TabIndex = 78;
+            this.stdPhoneSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
+            // 
+            // stdPhoneCheckBox
+            // 
+            this.stdPhoneCheckBox.AutoSize = true;
+            this.stdPhoneCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdPhoneCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdPhoneCheckBox.CheckedState.BorderRadius = 3;
+            this.stdPhoneCheckBox.CheckedState.BorderThickness = 1;
+            this.stdPhoneCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdPhoneCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdPhoneCheckBox.Location = new System.Drawing.Point(785, 99);
+            this.stdPhoneCheckBox.Name = "stdPhoneCheckBox";
+            this.stdPhoneCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdPhoneCheckBox.Size = new System.Drawing.Size(124, 23);
+            this.stdPhoneCheckBox.TabIndex = 77;
+            this.stdPhoneCheckBox.Text = "هاتف الطالب :";
+            this.stdPhoneCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdPhoneCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdPhoneCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdPhoneCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdPhoneCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // stdNationalSearch
+            // 
+            this.stdNationalSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdNationalSearch.BorderRadius = 5;
+            this.stdNationalSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdNationalSearch.DefaultText = "";
+            this.stdNationalSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdNationalSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdNationalSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdNationalSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdNationalSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.stdNationalSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNationalSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdNationalSearch.ForeColor = System.Drawing.Color.Black;
+            this.stdNationalSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNationalSearch.Location = new System.Drawing.Point(23, 49);
+            this.stdNationalSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdNationalSearch.MaxLength = 14;
+            this.stdNationalSearch.Name = "stdNationalSearch";
+            this.stdNationalSearch.PlaceholderText = "";
+            this.stdNationalSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalSearch.SelectedText = "";
+            this.stdNationalSearch.Size = new System.Drawing.Size(257, 32);
+            this.stdNationalSearch.TabIndex = 76;
+            this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
+            // 
+            // stdNationalCheckBox
+            // 
+            this.stdNationalCheckBox.AutoSize = true;
+            this.stdNationalCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdNationalCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNationalCheckBox.CheckedState.BorderRadius = 3;
+            this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
+            this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNationalCheckBox.Location = new System.Drawing.Point(287, 53);
+            this.stdNationalCheckBox.Name = "stdNationalCheckBox";
+            this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 23);
+            this.stdNationalCheckBox.TabIndex = 75;
+            this.stdNationalCheckBox.Text = "الرقم القومي :";
+            this.stdNationalCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdNationalCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdNationalCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdNationalCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdNationalCheckBox.UseVisualStyleBackColor = false;
             // 
             // stdNameSearch
             // 
@@ -1619,162 +1741,39 @@
             this.stdNameSearch.TabIndex = 74;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
-            // stdNationalSearch
+            // label25
             // 
-            this.stdNationalSearch.BackColor = System.Drawing.Color.Transparent;
-            this.stdNationalSearch.BorderRadius = 5;
-            this.stdNationalSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdNationalSearch.DefaultText = "";
-            this.stdNationalSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdNationalSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdNationalSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdNationalSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdNationalSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.stdNationalSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdNationalSearch.ForeColor = System.Drawing.Color.Black;
-            this.stdNationalSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalSearch.Location = new System.Drawing.Point(23, 49);
-            this.stdNationalSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdNationalSearch.MaxLength = 14;
-            this.stdNationalSearch.Name = "stdNationalSearch";
-            this.stdNationalSearch.PlaceholderText = "";
-            this.stdNationalSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalSearch.SelectedText = "";
-            this.stdNationalSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdNationalSearch.TabIndex = 76;
-            this.stdNationalSearch.TextChanged += new System.EventHandler(this.National_TextChanged);
-            this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.label25.ForeColor = System.Drawing.Color.Maroon;
+            this.label25.Location = new System.Drawing.Point(790, 6);
+            this.label25.Name = "label25";
+            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label25.Size = new System.Drawing.Size(133, 29);
+            this.label25.TabIndex = 73;
+            this.label25.Text = "قائمة البحث";
             // 
-            // stdNationalCheckBox
+            // stdNameCheckBox
             // 
-            this.stdNationalCheckBox.AutoSize = true;
-            this.stdNationalCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdNationalCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalCheckBox.CheckedState.BorderRadius = 3;
-            this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
-            this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalCheckBox.Location = new System.Drawing.Point(287, 53);
-            this.stdNationalCheckBox.Name = "stdNationalCheckBox";
-            this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 23);
-            this.stdNationalCheckBox.TabIndex = 75;
-            this.stdNationalCheckBox.Text = "الرقم القومي :";
-            this.stdNationalCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdNationalCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdNationalCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdNationalCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdNationalCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox3.BorderRadius = 5;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(521, 95);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox3.MaxLength = 15;
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(257, 32);
-            this.guna2TextBox3.TabIndex = 78;
-            this.guna2TextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
-            // 
-            // guna2CheckBox3
-            // 
-            this.guna2CheckBox3.AutoSize = true;
-            this.guna2CheckBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox3.CheckedState.BorderRadius = 3;
-            this.guna2CheckBox3.CheckedState.BorderThickness = 1;
-            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guna2CheckBox3.Location = new System.Drawing.Point(785, 99);
-            this.guna2CheckBox3.Name = "guna2CheckBox3";
-            this.guna2CheckBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2CheckBox3.Size = new System.Drawing.Size(124, 23);
-            this.guna2CheckBox3.TabIndex = 77;
-            this.guna2CheckBox3.Text = "هاتف الطالب :";
-            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.guna2CheckBox3.UncheckedState.BorderRadius = 3;
-            this.guna2CheckBox3.UncheckedState.BorderThickness = 1;
-            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox3.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox4
-            // 
-            this.guna2CheckBox4.AutoSize = true;
-            this.guna2CheckBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox4.CheckedState.BorderRadius = 3;
-            this.guna2CheckBox4.CheckedState.BorderThickness = 1;
-            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guna2CheckBox4.Location = new System.Drawing.Point(328, 99);
-            this.guna2CheckBox4.Name = "guna2CheckBox4";
-            this.guna2CheckBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2CheckBox4.Size = new System.Drawing.Size(85, 23);
-            this.guna2CheckBox4.TabIndex = 79;
-            this.guna2CheckBox4.Text = "الإيميل :";
-            this.guna2CheckBox4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.guna2CheckBox4.UncheckedState.BorderRadius = 3;
-            this.guna2CheckBox4.UncheckedState.BorderThickness = 1;
-            this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox4.UseVisualStyleBackColor = false;
-            // 
-            // guna2TextBox4
-            // 
-            this.guna2TextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox4.BorderRadius = 5;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(23, 90);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(257, 32);
-            this.guna2TextBox4.TabIndex = 80;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(377, 141);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(158, 45);
-            this.guna2Button1.TabIndex = 81;
-            this.guna2Button1.Text = "بحث";
+            this.stdNameCheckBox.AutoSize = true;
+            this.stdNameCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdNameCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNameCheckBox.CheckedState.BorderRadius = 3;
+            this.stdNameCheckBox.CheckedState.BorderThickness = 1;
+            this.stdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNameCheckBox.Location = new System.Drawing.Point(829, 53);
+            this.stdNameCheckBox.Name = "stdNameCheckBox";
+            this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNameCheckBox.Size = new System.Drawing.Size(80, 23);
+            this.stdNameCheckBox.TabIndex = 0;
+            this.stdNameCheckBox.Text = "الإسم :";
+            this.stdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdNameCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdNameCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdNameCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdNameCheckBox.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1891,11 +1890,11 @@
         private Guna.UI2.WinForms.Guna2TextBox stdNameSearch;
         private Guna.UI2.WinForms.Guna2TextBox stdNationalSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdNationalCheckBox;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
+        private Guna.UI2.WinForms.Guna2TextBox stdPhoneSearch;
+        private Guna.UI2.WinForms.Guna2CheckBox stdPhoneCheckBox;
+        private Guna.UI2.WinForms.Guna2Button SearchBtn;
+        private Guna.UI2.WinForms.Guna2TextBox stdEmailSearch;
+        private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
     }
 }
 
