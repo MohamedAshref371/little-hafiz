@@ -54,7 +54,8 @@ namespace Little_Hafiz
             {
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
-                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, level INTEGER, memo_amount TEXT, mashaykh TEXT, mashaykh_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, mashaykh_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), competition_level INTEGER, competition_date TEXT, degree NUMERIC, PRIMARY KEY(national, competition_level) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
@@ -114,7 +115,7 @@ namespace Little_Hafiz
                 command.CommandText = sql;
                 reader = command.ExecuteReader();
                 if (!reader.Read()) return null;
-                return GetDataFromReader();
+                return GetStudentData();
             }
             catch { return null; }
             finally
@@ -148,7 +149,7 @@ namespace Little_Hafiz
                 conds.Add($"email = '%{email}%'");
 
             if (level != null)
-                conds.Add($"level = '{level}'");
+                conds.Add($"student_level = '{level}'");
 
             if (conds.Count > 0)
             {
@@ -157,10 +158,13 @@ namespace Little_Hafiz
                     sb.Append(" AND ").Append(conds[i]);
             }
 
-            return SelectMultiStudents(sb.ToString());
+            return SelectMultiRows(sb.ToString(), GetStudentData);
         }
 
-        public static StudentData[] SelectMultiStudents(string sql)
+        public static CompetitionGrade[] SelectStudentGrades(string nationalNumber)
+            => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
+
+        public static T[] SelectMultiRows<T>(string sql, Func<T> method)
         {
             if (!success) return null;
             try
@@ -168,9 +172,9 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = sql;
                 reader = command.ExecuteReader();
-                List<StudentData> list = new List<StudentData>();
+                List<T> list = new List<T>();
                 while (reader.Read())
-                    list.Add(GetDataFromReader());
+                    list.Add(method());
                 return list.ToArray();
             }
             catch { return null; }
@@ -182,7 +186,7 @@ namespace Little_Hafiz
         }
 
 
-        private static StudentData GetDataFromReader()
+        private static StudentData GetStudentData()
         {
             string img = (string)reader["image"];
             if (img != "")
@@ -213,7 +217,7 @@ namespace Little_Hafiz
                 Class = (string)reader["class"],
                 BrothersCount = (int)reader["brothers_count"],
                 ArrangementBetweenBrothers = (int)reader["arrangement"],
-                Level = (int)reader["level"],
+                Level = (int)reader["student_level"],
                 MemorizationAmount = (string)reader["memo_amount"],
                 StudentMashaykh = (string)reader["mashaykh"],
                 MashaykhPlaces = (string)reader["mashaykh_places"],
@@ -225,6 +229,17 @@ namespace Little_Hafiz
                 Skills = (string)reader["skills"],
                 Hobbies = (string)reader["hobbies"],
                 Image = img
+            };
+        }
+
+        private static CompetitionGrade GetStudentGrade()
+        {
+            return new CompetitionGrade
+            {
+                NationalNumber = (string)reader["national"],
+                CompetitionLevel = (int)reader["competition_level"],
+                CompetitionDate = (string)reader["competition_date"],
+                CompetitionDegree = (float)reader["competition_degree"],
             };
         }
         #endregion
