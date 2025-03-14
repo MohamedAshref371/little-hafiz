@@ -38,39 +38,39 @@
             this.label23 = new System.Windows.Forms.Label();
             this.stdSkills = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdHobbies = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.stdHobbiesLabel = new System.Windows.Forms.Label();
             this.stdIjazah = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdCourses = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.stdCoursesLabel = new System.Windows.Forms.Label();
+            this.stdIjazahLabel = new System.Windows.Forms.Label();
+            this.stdSkillsLabel = new System.Windows.Forms.Label();
             this.stdCertificates = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.stdCertificatesLabel = new System.Windows.Forms.Label();
             this.stdFirstConclusion = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
+            this.stdFirstConclusionLabel = new System.Windows.Forms.Label();
             this.stdJoiningDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
+            this.stdJoiningDateLabel = new System.Windows.Forms.Label();
             this.stdMashaykhPlaces = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMashaykh = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.stdMashaykhPlacesLabel = new System.Windows.Forms.Label();
+            this.stdMashaykhLabel = new System.Windows.Forms.Label();
             this.stdMemo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.stdMemoLabel = new System.Windows.Forms.Label();
             this.stdLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.stdLevelLabel = new System.Windows.Forms.Label();
+            this.stdArrangementLabel = new System.Windows.Forms.Label();
             this.stdArrangement = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
+            this.stdBrothersLabel = new System.Windows.Forms.Label();
             this.stdBrothers = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdSchool = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdClass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.stdClassLabel = new System.Windows.Forms.Label();
             this.stdEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdFacebook = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.stdFacebookLabel = new System.Windows.Forms.Label();
+            this.stdEmailLabel = new System.Windows.Forms.Label();
             this.stdAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.stdAddressLabel = new System.Windows.Forms.Label();
             this.stdPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guardianLink = new Guna.UI2.WinForms.Guna2TextBox();
             this.guardianBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -89,26 +89,26 @@
             this.stdNational = new Guna.UI2.WinForms.Guna2TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.stdName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.motherPhoneMeta = new System.Windows.Forms.Label();
-            this.fatherPhoneMeta = new System.Windows.Forms.Label();
-            this.motherJobMeta = new System.Windows.Forms.Label();
-            this.motherQualiMeta = new System.Windows.Forms.Label();
-            this.fatherJobMeta = new System.Windows.Forms.Label();
-            this.fatherQualiMeta = new System.Windows.Forms.Label();
-            this.jobMeta = new System.Windows.Forms.Label();
-            this.birthMeta = new System.Windows.Forms.Label();
-            this.stdNationalMeta = new System.Windows.Forms.Label();
-            this.stdNameMeta = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.guardianLinkLabel = new System.Windows.Forms.Label();
+            this.guardianBirthLabel = new System.Windows.Forms.Label();
+            this.guardianNameLabel = new System.Windows.Forms.Label();
+            this.motherPhoneLabel = new System.Windows.Forms.Label();
+            this.fatherPhoneLabel = new System.Windows.Forms.Label();
+            this.motherJobLabel = new System.Windows.Forms.Label();
+            this.motherQualiLabel = new System.Windows.Forms.Label();
+            this.fatherJobLabel = new System.Windows.Forms.Label();
+            this.fatherQualiLabel = new System.Windows.Forms.Label();
+            this.jobLabel = new System.Windows.Forms.Label();
+            this.birthLabel = new System.Windows.Forms.Label();
+            this.stdNationalLabel = new System.Windows.Forms.Label();
+            this.stdNameLabel = new System.Windows.Forms.Label();
+            this.stdPhoneLabel = new System.Windows.Forms.Label();
+            this.stdSchoolLabel = new System.Windows.Forms.Label();
             this.stdImagePath = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.label24 = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdEmailCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -124,7 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
-            this.guna2GradientPanel1.SuspendLayout();
+            this.studentSearchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -183,39 +183,39 @@
             this.studentDataPanel.Controls.Add(this.label23);
             this.studentDataPanel.Controls.Add(this.stdSkills);
             this.studentDataPanel.Controls.Add(this.stdHobbies);
-            this.studentDataPanel.Controls.Add(this.label19);
+            this.studentDataPanel.Controls.Add(this.stdHobbiesLabel);
             this.studentDataPanel.Controls.Add(this.stdIjazah);
             this.studentDataPanel.Controls.Add(this.stdCourses);
-            this.studentDataPanel.Controls.Add(this.label20);
-            this.studentDataPanel.Controls.Add(this.label21);
-            this.studentDataPanel.Controls.Add(this.label22);
+            this.studentDataPanel.Controls.Add(this.stdCoursesLabel);
+            this.studentDataPanel.Controls.Add(this.stdIjazahLabel);
+            this.studentDataPanel.Controls.Add(this.stdSkillsLabel);
             this.studentDataPanel.Controls.Add(this.stdCertificates);
-            this.studentDataPanel.Controls.Add(this.label18);
+            this.studentDataPanel.Controls.Add(this.stdCertificatesLabel);
             this.studentDataPanel.Controls.Add(this.stdFirstConclusion);
-            this.studentDataPanel.Controls.Add(this.label17);
+            this.studentDataPanel.Controls.Add(this.stdFirstConclusionLabel);
             this.studentDataPanel.Controls.Add(this.stdJoiningDate);
-            this.studentDataPanel.Controls.Add(this.label16);
+            this.studentDataPanel.Controls.Add(this.stdJoiningDateLabel);
             this.studentDataPanel.Controls.Add(this.stdMashaykhPlaces);
             this.studentDataPanel.Controls.Add(this.stdMashaykh);
-            this.studentDataPanel.Controls.Add(this.label15);
-            this.studentDataPanel.Controls.Add(this.label14);
+            this.studentDataPanel.Controls.Add(this.stdMashaykhPlacesLabel);
+            this.studentDataPanel.Controls.Add(this.stdMashaykhLabel);
             this.studentDataPanel.Controls.Add(this.stdMemo);
-            this.studentDataPanel.Controls.Add(this.label13);
+            this.studentDataPanel.Controls.Add(this.stdMemoLabel);
             this.studentDataPanel.Controls.Add(this.stdLevel);
-            this.studentDataPanel.Controls.Add(this.label12);
-            this.studentDataPanel.Controls.Add(this.label11);
+            this.studentDataPanel.Controls.Add(this.stdLevelLabel);
+            this.studentDataPanel.Controls.Add(this.stdArrangementLabel);
             this.studentDataPanel.Controls.Add(this.stdArrangement);
-            this.studentDataPanel.Controls.Add(this.label10);
+            this.studentDataPanel.Controls.Add(this.stdBrothersLabel);
             this.studentDataPanel.Controls.Add(this.stdBrothers);
             this.studentDataPanel.Controls.Add(this.stdSchool);
             this.studentDataPanel.Controls.Add(this.stdClass);
-            this.studentDataPanel.Controls.Add(this.label8);
+            this.studentDataPanel.Controls.Add(this.stdClassLabel);
             this.studentDataPanel.Controls.Add(this.stdEmail);
             this.studentDataPanel.Controls.Add(this.stdFacebook);
-            this.studentDataPanel.Controls.Add(this.label6);
-            this.studentDataPanel.Controls.Add(this.label7);
+            this.studentDataPanel.Controls.Add(this.stdFacebookLabel);
+            this.studentDataPanel.Controls.Add(this.stdEmailLabel);
             this.studentDataPanel.Controls.Add(this.stdAddress);
-            this.studentDataPanel.Controls.Add(this.label5);
+            this.studentDataPanel.Controls.Add(this.stdAddressLabel);
             this.studentDataPanel.Controls.Add(this.stdPhone);
             this.studentDataPanel.Controls.Add(this.guardianLink);
             this.studentDataPanel.Controls.Add(this.guardianBirth);
@@ -234,21 +234,21 @@
             this.studentDataPanel.Controls.Add(this.stdNational);
             this.studentDataPanel.Controls.Add(this.titleLabel);
             this.studentDataPanel.Controls.Add(this.stdName);
-            this.studentDataPanel.Controls.Add(this.label3);
-            this.studentDataPanel.Controls.Add(this.label2);
-            this.studentDataPanel.Controls.Add(this.label1);
-            this.studentDataPanel.Controls.Add(this.motherPhoneMeta);
-            this.studentDataPanel.Controls.Add(this.fatherPhoneMeta);
-            this.studentDataPanel.Controls.Add(this.motherJobMeta);
-            this.studentDataPanel.Controls.Add(this.motherQualiMeta);
-            this.studentDataPanel.Controls.Add(this.fatherJobMeta);
-            this.studentDataPanel.Controls.Add(this.fatherQualiMeta);
-            this.studentDataPanel.Controls.Add(this.jobMeta);
-            this.studentDataPanel.Controls.Add(this.birthMeta);
-            this.studentDataPanel.Controls.Add(this.stdNationalMeta);
-            this.studentDataPanel.Controls.Add(this.stdNameMeta);
-            this.studentDataPanel.Controls.Add(this.label4);
-            this.studentDataPanel.Controls.Add(this.label9);
+            this.studentDataPanel.Controls.Add(this.guardianLinkLabel);
+            this.studentDataPanel.Controls.Add(this.guardianBirthLabel);
+            this.studentDataPanel.Controls.Add(this.guardianNameLabel);
+            this.studentDataPanel.Controls.Add(this.motherPhoneLabel);
+            this.studentDataPanel.Controls.Add(this.fatherPhoneLabel);
+            this.studentDataPanel.Controls.Add(this.motherJobLabel);
+            this.studentDataPanel.Controls.Add(this.motherQualiLabel);
+            this.studentDataPanel.Controls.Add(this.fatherJobLabel);
+            this.studentDataPanel.Controls.Add(this.fatherQualiLabel);
+            this.studentDataPanel.Controls.Add(this.jobLabel);
+            this.studentDataPanel.Controls.Add(this.birthLabel);
+            this.studentDataPanel.Controls.Add(this.stdNationalLabel);
+            this.studentDataPanel.Controls.Add(this.stdNameLabel);
+            this.studentDataPanel.Controls.Add(this.stdPhoneLabel);
+            this.studentDataPanel.Controls.Add(this.stdSchoolLabel);
             this.studentDataPanel.Controls.Add(this.stdImagePath);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
@@ -351,17 +351,17 @@
             this.stdHobbies.Size = new System.Drawing.Size(257, 32);
             this.stdHobbies.TabIndex = 66;
             // 
-            // label19
+            // stdHobbiesLabel
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label19.Location = new System.Drawing.Point(344, 903);
-            this.label19.Name = "label19";
-            this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label19.Size = new System.Drawing.Size(76, 19);
-            this.label19.TabIndex = 67;
-            this.label19.Text = "الهوايات : ";
+            this.stdHobbiesLabel.AutoSize = true;
+            this.stdHobbiesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdHobbiesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdHobbiesLabel.Location = new System.Drawing.Point(344, 903);
+            this.stdHobbiesLabel.Name = "stdHobbiesLabel";
+            this.stdHobbiesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdHobbiesLabel.Size = new System.Drawing.Size(76, 19);
+            this.stdHobbiesLabel.TabIndex = 67;
+            this.stdHobbiesLabel.Text = "الهوايات : ";
             // 
             // stdIjazah
             // 
@@ -411,41 +411,41 @@
             this.stdCourses.Size = new System.Drawing.Size(257, 32);
             this.stdCourses.TabIndex = 62;
             // 
-            // label20
+            // stdCoursesLabel
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label20.Location = new System.Drawing.Point(347, 863);
-            this.label20.Name = "label20";
-            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label20.Size = new System.Drawing.Size(73, 19);
-            this.label20.TabIndex = 63;
-            this.label20.Text = "الدورات : ";
+            this.stdCoursesLabel.AutoSize = true;
+            this.stdCoursesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdCoursesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdCoursesLabel.Location = new System.Drawing.Point(347, 863);
+            this.stdCoursesLabel.Name = "stdCoursesLabel";
+            this.stdCoursesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdCoursesLabel.Size = new System.Drawing.Size(73, 19);
+            this.stdCoursesLabel.TabIndex = 63;
+            this.stdCoursesLabel.Text = "الدورات : ";
             // 
-            // label21
+            // stdIjazahLabel
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label21.Location = new System.Drawing.Point(827, 863);
-            this.label21.Name = "label21";
-            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label21.Size = new System.Drawing.Size(78, 19);
-            this.label21.TabIndex = 61;
-            this.label21.Text = "الإجازات : ";
+            this.stdIjazahLabel.AutoSize = true;
+            this.stdIjazahLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdIjazahLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdIjazahLabel.Location = new System.Drawing.Point(827, 863);
+            this.stdIjazahLabel.Name = "stdIjazahLabel";
+            this.stdIjazahLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdIjazahLabel.Size = new System.Drawing.Size(78, 19);
+            this.stdIjazahLabel.TabIndex = 61;
+            this.stdIjazahLabel.Text = "الإجازات : ";
             // 
-            // label22
+            // stdSkillsLabel
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label22.Location = new System.Drawing.Point(829, 903);
-            this.label22.Name = "label22";
-            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label22.Size = new System.Drawing.Size(76, 19);
-            this.label22.TabIndex = 65;
-            this.label22.Text = "المهارات :";
+            this.stdSkillsLabel.AutoSize = true;
+            this.stdSkillsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdSkillsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdSkillsLabel.Location = new System.Drawing.Point(829, 903);
+            this.stdSkillsLabel.Name = "stdSkillsLabel";
+            this.stdSkillsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdSkillsLabel.Size = new System.Drawing.Size(76, 19);
+            this.stdSkillsLabel.TabIndex = 65;
+            this.stdSkillsLabel.Text = "المهارات :";
             // 
             // stdCertificates
             // 
@@ -471,17 +471,17 @@
             this.stdCertificates.Size = new System.Drawing.Size(692, 32);
             this.stdCertificates.TabIndex = 60;
             // 
-            // label18
+            // stdCertificatesLabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label18.Location = new System.Drawing.Point(730, 822);
-            this.label18.Name = "label18";
-            this.label18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label18.Size = new System.Drawing.Size(179, 19);
-            this.label18.TabIndex = 59;
-            this.label18.Text = "شهادات التقدير وأماكنها :";
+            this.stdCertificatesLabel.AutoSize = true;
+            this.stdCertificatesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdCertificatesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdCertificatesLabel.Location = new System.Drawing.Point(730, 822);
+            this.stdCertificatesLabel.Name = "stdCertificatesLabel";
+            this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdCertificatesLabel.Size = new System.Drawing.Size(179, 19);
+            this.stdCertificatesLabel.TabIndex = 59;
+            this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها :";
             // 
             // stdFirstConclusion
             // 
@@ -500,17 +500,17 @@
             this.stdFirstConclusion.TabIndex = 57;
             this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
             // 
-            // label17
+            // stdFirstConclusionLabel
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label17.Location = new System.Drawing.Point(236, 782);
-            this.label17.Name = "label17";
-            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label17.Size = new System.Drawing.Size(184, 19);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "تاريخ إتمام الختمة الأولى :";
+            this.stdFirstConclusionLabel.AutoSize = true;
+            this.stdFirstConclusionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdFirstConclusionLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdFirstConclusionLabel.Location = new System.Drawing.Point(236, 782);
+            this.stdFirstConclusionLabel.Name = "stdFirstConclusionLabel";
+            this.stdFirstConclusionLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdFirstConclusionLabel.Size = new System.Drawing.Size(184, 19);
+            this.stdFirstConclusionLabel.TabIndex = 58;
+            this.stdFirstConclusionLabel.Text = "تاريخ إتمام الختمة الأولى :";
             // 
             // stdJoiningDate
             // 
@@ -529,17 +529,17 @@
             this.stdJoiningDate.TabIndex = 55;
             this.stdJoiningDate.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             // 
-            // label16
+            // stdJoiningDateLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label16.Location = new System.Drawing.Point(737, 782);
-            this.label16.Name = "label16";
-            this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label16.Size = new System.Drawing.Size(169, 19);
-            this.label16.TabIndex = 56;
-            this.label16.Text = "تاريخ الإلتحاق بالمكتب :";
+            this.stdJoiningDateLabel.AutoSize = true;
+            this.stdJoiningDateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdJoiningDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdJoiningDateLabel.Location = new System.Drawing.Point(737, 782);
+            this.stdJoiningDateLabel.Name = "stdJoiningDateLabel";
+            this.stdJoiningDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdJoiningDateLabel.Size = new System.Drawing.Size(169, 19);
+            this.stdJoiningDateLabel.TabIndex = 56;
+            this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب :";
             // 
             // stdMashaykhPlaces
             // 
@@ -589,29 +589,29 @@
             this.stdMashaykh.Size = new System.Drawing.Size(692, 32);
             this.stdMashaykh.TabIndex = 53;
             // 
-            // label15
+            // stdMashaykhPlacesLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label15.Location = new System.Drawing.Point(730, 740);
-            this.label15.Name = "label15";
-            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label15.Size = new System.Drawing.Size(175, 19);
-            this.label15.TabIndex = 52;
-            this.label15.Text = "الأماكن التي حفظ فيها : ";
+            this.stdMashaykhPlacesLabel.AutoSize = true;
+            this.stdMashaykhPlacesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdMashaykhPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdMashaykhPlacesLabel.Location = new System.Drawing.Point(730, 740);
+            this.stdMashaykhPlacesLabel.Name = "stdMashaykhPlacesLabel";
+            this.stdMashaykhPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMashaykhPlacesLabel.Size = new System.Drawing.Size(175, 19);
+            this.stdMashaykhPlacesLabel.TabIndex = 52;
+            this.stdMashaykhPlacesLabel.Text = "الأماكن التي حفظ فيها : ";
             // 
-            // label14
+            // stdMashaykhLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label14.Location = new System.Drawing.Point(735, 701);
-            this.label14.Name = "label14";
-            this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label14.Size = new System.Drawing.Size(170, 19);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "المشايخ الذين حفظوه : ";
+            this.stdMashaykhLabel.AutoSize = true;
+            this.stdMashaykhLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdMashaykhLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdMashaykhLabel.Location = new System.Drawing.Point(735, 701);
+            this.stdMashaykhLabel.Name = "stdMashaykhLabel";
+            this.stdMashaykhLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMashaykhLabel.Size = new System.Drawing.Size(170, 19);
+            this.stdMashaykhLabel.TabIndex = 51;
+            this.stdMashaykhLabel.Text = "المشايخ الذين حفظوه : ";
             // 
             // stdMemo
             // 
@@ -637,17 +637,17 @@
             this.stdMemo.Size = new System.Drawing.Size(257, 32);
             this.stdMemo.TabIndex = 50;
             // 
-            // label13
+            // stdMemoLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label13.Location = new System.Drawing.Point(316, 659);
-            this.label13.Name = "label13";
-            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label13.Size = new System.Drawing.Size(104, 19);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "مقدار الحفظ : ";
+            this.stdMemoLabel.AutoSize = true;
+            this.stdMemoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdMemoLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdMemoLabel.Location = new System.Drawing.Point(316, 659);
+            this.stdMemoLabel.Name = "stdMemoLabel";
+            this.stdMemoLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMemoLabel.Size = new System.Drawing.Size(104, 19);
+            this.stdMemoLabel.TabIndex = 49;
+            this.stdMemoLabel.Text = "مقدار الحفظ : ";
             // 
             // stdLevel
             // 
@@ -666,29 +666,29 @@
             this.stdLevel.TabIndex = 48;
             this.stdLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
-            // label12
+            // stdLevelLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label12.Location = new System.Drawing.Point(779, 659);
-            this.label12.Name = "label12";
-            this.label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label12.Size = new System.Drawing.Size(127, 19);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "مستوى الطالب : ";
+            this.stdLevelLabel.AutoSize = true;
+            this.stdLevelLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdLevelLabel.Location = new System.Drawing.Point(779, 659);
+            this.stdLevelLabel.Name = "stdLevelLabel";
+            this.stdLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdLevelLabel.Size = new System.Drawing.Size(127, 19);
+            this.stdLevelLabel.TabIndex = 47;
+            this.stdLevelLabel.Text = "مستوى الطالب : ";
             // 
-            // label11
+            // stdArrangementLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label11.Location = new System.Drawing.Point(276, 614);
-            this.label11.Name = "label11";
-            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label11.Size = new System.Drawing.Size(144, 19);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "الترتيب بين الإخوة : ";
+            this.stdArrangementLabel.AutoSize = true;
+            this.stdArrangementLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdArrangementLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdArrangementLabel.Location = new System.Drawing.Point(276, 614);
+            this.stdArrangementLabel.Name = "stdArrangementLabel";
+            this.stdArrangementLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdArrangementLabel.Size = new System.Drawing.Size(144, 19);
+            this.stdArrangementLabel.TabIndex = 46;
+            this.stdArrangementLabel.Text = "الترتيب بين الإخوة : ";
             // 
             // stdArrangement
             // 
@@ -717,17 +717,17 @@
             0,
             0});
             // 
-            // label10
+            // stdBrothersLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label10.Location = new System.Drawing.Point(811, 614);
-            this.label10.Name = "label10";
-            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label10.Size = new System.Drawing.Size(95, 19);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "عدد الإخوة : ";
+            this.stdBrothersLabel.AutoSize = true;
+            this.stdBrothersLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdBrothersLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdBrothersLabel.Location = new System.Drawing.Point(811, 614);
+            this.stdBrothersLabel.Name = "stdBrothersLabel";
+            this.stdBrothersLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdBrothersLabel.Size = new System.Drawing.Size(95, 19);
+            this.stdBrothersLabel.TabIndex = 44;
+            this.stdBrothersLabel.Text = "عدد الإخوة : ";
             // 
             // stdBrothers
             // 
@@ -795,17 +795,17 @@
             this.stdClass.Size = new System.Drawing.Size(257, 32);
             this.stdClass.TabIndex = 40;
             // 
-            // label8
+            // stdClassLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label8.Location = new System.Drawing.Point(294, 575);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(126, 19);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "الصف الدراسي : ";
+            this.stdClassLabel.AutoSize = true;
+            this.stdClassLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdClassLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdClassLabel.Location = new System.Drawing.Point(294, 575);
+            this.stdClassLabel.Name = "stdClassLabel";
+            this.stdClassLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdClassLabel.Size = new System.Drawing.Size(126, 19);
+            this.stdClassLabel.TabIndex = 41;
+            this.stdClassLabel.Text = "الصف الدراسي : ";
             // 
             // stdEmail
             // 
@@ -855,29 +855,29 @@
             this.stdFacebook.Size = new System.Drawing.Size(257, 32);
             this.stdFacebook.TabIndex = 36;
             // 
-            // label6
+            // stdFacebookLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label6.Location = new System.Drawing.Point(306, 535);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(114, 19);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "صفحة الفيس : ";
+            this.stdFacebookLabel.AutoSize = true;
+            this.stdFacebookLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdFacebookLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdFacebookLabel.Location = new System.Drawing.Point(306, 535);
+            this.stdFacebookLabel.Name = "stdFacebookLabel";
+            this.stdFacebookLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdFacebookLabel.Size = new System.Drawing.Size(114, 19);
+            this.stdFacebookLabel.TabIndex = 37;
+            this.stdFacebookLabel.Text = "صفحة الفيس : ";
             // 
-            // label7
+            // stdEmailLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label7.Location = new System.Drawing.Point(834, 535);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(71, 19);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "الإيميل : ";
+            this.stdEmailLabel.AutoSize = true;
+            this.stdEmailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdEmailLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdEmailLabel.Location = new System.Drawing.Point(834, 535);
+            this.stdEmailLabel.Name = "stdEmailLabel";
+            this.stdEmailLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdEmailLabel.Size = new System.Drawing.Size(71, 19);
+            this.stdEmailLabel.TabIndex = 35;
+            this.stdEmailLabel.Text = "الإيميل : ";
             // 
             // stdAddress
             // 
@@ -903,17 +903,17 @@
             this.stdAddress.Size = new System.Drawing.Size(257, 32);
             this.stdAddress.TabIndex = 32;
             // 
-            // label5
+            // stdAddressLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label5.Location = new System.Drawing.Point(350, 495);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(70, 19);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "العنوان : ";
+            this.stdAddressLabel.AutoSize = true;
+            this.stdAddressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdAddressLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdAddressLabel.Location = new System.Drawing.Point(350, 495);
+            this.stdAddressLabel.Name = "stdAddressLabel";
+            this.stdAddressLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAddressLabel.Size = new System.Drawing.Size(70, 19);
+            this.stdAddressLabel.TabIndex = 33;
+            this.stdAddressLabel.Text = "العنوان : ";
             // 
             // stdPhone
             // 
@@ -1308,186 +1308,186 @@
             this.stdName.TabIndex = 0;
             this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
-            // label3
+            // guardianLinkLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label3.Location = new System.Drawing.Point(412, 440);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(113, 19);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "صلته بالطالب : ";
+            this.guardianLinkLabel.AutoSize = true;
+            this.guardianLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.guardianLinkLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guardianLinkLabel.Location = new System.Drawing.Point(412, 440);
+            this.guardianLinkLabel.Name = "guardianLinkLabel";
+            this.guardianLinkLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guardianLinkLabel.Size = new System.Drawing.Size(113, 19);
+            this.guardianLinkLabel.TabIndex = 29;
+            this.guardianLinkLabel.Text = "صلته بالطالب : ";
             // 
-            // label2
+            // guardianBirthLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(195, 440);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "تاريخ ميلاده : ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guardianBirthLabel.AutoSize = true;
+            this.guardianBirthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.guardianBirthLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guardianBirthLabel.Location = new System.Drawing.Point(195, 440);
+            this.guardianBirthLabel.Name = "guardianBirthLabel";
+            this.guardianBirthLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guardianBirthLabel.Size = new System.Drawing.Size(100, 19);
+            this.guardianBirthLabel.TabIndex = 27;
+            this.guardianBirthLabel.Text = "تاريخ ميلاده : ";
+            this.guardianBirthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // guardianNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(818, 440);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(87, 19);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "ولي الأمر : ";
+            this.guardianNameLabel.AutoSize = true;
+            this.guardianNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.guardianNameLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guardianNameLabel.Location = new System.Drawing.Point(818, 440);
+            this.guardianNameLabel.Name = "guardianNameLabel";
+            this.guardianNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guardianNameLabel.Size = new System.Drawing.Size(87, 19);
+            this.guardianNameLabel.TabIndex = 25;
+            this.guardianNameLabel.Text = "ولي الأمر : ";
             // 
-            // motherPhoneMeta
+            // motherPhoneLabel
             // 
-            this.motherPhoneMeta.AutoSize = true;
-            this.motherPhoneMeta.BackColor = System.Drawing.Color.Transparent;
-            this.motherPhoneMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherPhoneMeta.Location = new System.Drawing.Point(325, 397);
-            this.motherPhoneMeta.Name = "motherPhoneMeta";
-            this.motherPhoneMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherPhoneMeta.Size = new System.Drawing.Size(95, 19);
-            this.motherPhoneMeta.TabIndex = 23;
-            this.motherPhoneMeta.Text = "تليفون الأم : ";
+            this.motherPhoneLabel.AutoSize = true;
+            this.motherPhoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.motherPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.motherPhoneLabel.Location = new System.Drawing.Point(325, 397);
+            this.motherPhoneLabel.Name = "motherPhoneLabel";
+            this.motherPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.motherPhoneLabel.Size = new System.Drawing.Size(95, 19);
+            this.motherPhoneLabel.TabIndex = 23;
+            this.motherPhoneLabel.Text = "تليفون الأم : ";
             // 
-            // fatherPhoneMeta
+            // fatherPhoneLabel
             // 
-            this.fatherPhoneMeta.AutoSize = true;
-            this.fatherPhoneMeta.BackColor = System.Drawing.Color.Transparent;
-            this.fatherPhoneMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherPhoneMeta.Location = new System.Drawing.Point(806, 397);
-            this.fatherPhoneMeta.Name = "fatherPhoneMeta";
-            this.fatherPhoneMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherPhoneMeta.Size = new System.Drawing.Size(99, 19);
-            this.fatherPhoneMeta.TabIndex = 21;
-            this.fatherPhoneMeta.Text = "تليفون الأب : ";
+            this.fatherPhoneLabel.AutoSize = true;
+            this.fatherPhoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fatherPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.fatherPhoneLabel.Location = new System.Drawing.Point(806, 397);
+            this.fatherPhoneLabel.Name = "fatherPhoneLabel";
+            this.fatherPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fatherPhoneLabel.Size = new System.Drawing.Size(99, 19);
+            this.fatherPhoneLabel.TabIndex = 21;
+            this.fatherPhoneLabel.Text = "تليفون الأب : ";
             // 
-            // motherJobMeta
+            // motherJobLabel
             // 
-            this.motherJobMeta.AutoSize = true;
-            this.motherJobMeta.BackColor = System.Drawing.Color.Transparent;
-            this.motherJobMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherJobMeta.Location = new System.Drawing.Point(326, 357);
-            this.motherJobMeta.Name = "motherJobMeta";
-            this.motherJobMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherJobMeta.Size = new System.Drawing.Size(94, 19);
-            this.motherJobMeta.TabIndex = 19;
-            this.motherJobMeta.Text = "وظيفة الأم : ";
+            this.motherJobLabel.AutoSize = true;
+            this.motherJobLabel.BackColor = System.Drawing.Color.Transparent;
+            this.motherJobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.motherJobLabel.Location = new System.Drawing.Point(326, 357);
+            this.motherJobLabel.Name = "motherJobLabel";
+            this.motherJobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.motherJobLabel.Size = new System.Drawing.Size(94, 19);
+            this.motherJobLabel.TabIndex = 19;
+            this.motherJobLabel.Text = "وظيفة الأم : ";
             // 
-            // motherQualiMeta
+            // motherQualiLabel
             // 
-            this.motherQualiMeta.AutoSize = true;
-            this.motherQualiMeta.BackColor = System.Drawing.Color.Transparent;
-            this.motherQualiMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherQualiMeta.Location = new System.Drawing.Point(814, 357);
-            this.motherQualiMeta.Name = "motherQualiMeta";
-            this.motherQualiMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherQualiMeta.Size = new System.Drawing.Size(91, 19);
-            this.motherQualiMeta.TabIndex = 17;
-            this.motherQualiMeta.Text = "مؤهل الأم : ";
+            this.motherQualiLabel.AutoSize = true;
+            this.motherQualiLabel.BackColor = System.Drawing.Color.Transparent;
+            this.motherQualiLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.motherQualiLabel.Location = new System.Drawing.Point(814, 357);
+            this.motherQualiLabel.Name = "motherQualiLabel";
+            this.motherQualiLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.motherQualiLabel.Size = new System.Drawing.Size(91, 19);
+            this.motherQualiLabel.TabIndex = 17;
+            this.motherQualiLabel.Text = "مؤهل الأم : ";
             // 
-            // fatherJobMeta
+            // fatherJobLabel
             // 
-            this.fatherJobMeta.AutoSize = true;
-            this.fatherJobMeta.BackColor = System.Drawing.Color.Transparent;
-            this.fatherJobMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherJobMeta.Location = new System.Drawing.Point(322, 317);
-            this.fatherJobMeta.Name = "fatherJobMeta";
-            this.fatherJobMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherJobMeta.Size = new System.Drawing.Size(98, 19);
-            this.fatherJobMeta.TabIndex = 15;
-            this.fatherJobMeta.Text = "وظيفة الأب : ";
+            this.fatherJobLabel.AutoSize = true;
+            this.fatherJobLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fatherJobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.fatherJobLabel.Location = new System.Drawing.Point(322, 317);
+            this.fatherJobLabel.Name = "fatherJobLabel";
+            this.fatherJobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fatherJobLabel.Size = new System.Drawing.Size(98, 19);
+            this.fatherJobLabel.TabIndex = 15;
+            this.fatherJobLabel.Text = "وظيفة الأب : ";
             // 
-            // fatherQualiMeta
+            // fatherQualiLabel
             // 
-            this.fatherQualiMeta.AutoSize = true;
-            this.fatherQualiMeta.BackColor = System.Drawing.Color.Transparent;
-            this.fatherQualiMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherQualiMeta.Location = new System.Drawing.Point(810, 317);
-            this.fatherQualiMeta.Name = "fatherQualiMeta";
-            this.fatherQualiMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherQualiMeta.Size = new System.Drawing.Size(95, 19);
-            this.fatherQualiMeta.TabIndex = 13;
-            this.fatherQualiMeta.Text = "مؤهل الأب : ";
+            this.fatherQualiLabel.AutoSize = true;
+            this.fatherQualiLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fatherQualiLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.fatherQualiLabel.Location = new System.Drawing.Point(810, 317);
+            this.fatherQualiLabel.Name = "fatherQualiLabel";
+            this.fatherQualiLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fatherQualiLabel.Size = new System.Drawing.Size(95, 19);
+            this.fatherQualiLabel.TabIndex = 13;
+            this.fatherQualiLabel.Text = "مؤهل الأب : ";
             // 
-            // jobMeta
+            // jobLabel
             // 
-            this.jobMeta.AutoSize = true;
-            this.jobMeta.BackColor = System.Drawing.Color.Transparent;
-            this.jobMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.jobMeta.Location = new System.Drawing.Point(345, 265);
-            this.jobMeta.Name = "jobMeta";
-            this.jobMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.jobMeta.Size = new System.Drawing.Size(75, 19);
-            this.jobMeta.TabIndex = 9;
-            this.jobMeta.Text = "الوظيفة : ";
+            this.jobLabel.AutoSize = true;
+            this.jobLabel.BackColor = System.Drawing.Color.Transparent;
+            this.jobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.jobLabel.Location = new System.Drawing.Point(345, 265);
+            this.jobLabel.Name = "jobLabel";
+            this.jobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.jobLabel.Size = new System.Drawing.Size(75, 19);
+            this.jobLabel.TabIndex = 9;
+            this.jobLabel.Text = "الوظيفة : ";
             // 
-            // birthMeta
+            // birthLabel
             // 
-            this.birthMeta.AutoSize = true;
-            this.birthMeta.BackColor = System.Drawing.Color.Transparent;
-            this.birthMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.birthMeta.Location = new System.Drawing.Point(802, 255);
-            this.birthMeta.Name = "birthMeta";
-            this.birthMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.birthMeta.Size = new System.Drawing.Size(103, 19);
-            this.birthMeta.TabIndex = 6;
-            this.birthMeta.Text = "تاريخ الميلاد : ";
+            this.birthLabel.AutoSize = true;
+            this.birthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.birthLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.birthLabel.Location = new System.Drawing.Point(802, 255);
+            this.birthLabel.Name = "birthLabel";
+            this.birthLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.birthLabel.Size = new System.Drawing.Size(103, 19);
+            this.birthLabel.TabIndex = 6;
+            this.birthLabel.Text = "تاريخ الميلاد : ";
             // 
-            // stdNationalMeta
+            // stdNationalLabel
             // 
-            this.stdNationalMeta.AutoSize = true;
-            this.stdNationalMeta.BackColor = System.Drawing.Color.Transparent;
-            this.stdNationalMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalMeta.Location = new System.Drawing.Point(308, 201);
-            this.stdNationalMeta.Name = "stdNationalMeta";
-            this.stdNationalMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalMeta.Size = new System.Drawing.Size(112, 19);
-            this.stdNationalMeta.TabIndex = 4;
-            this.stdNationalMeta.Text = "الرقم القومي : ";
+            this.stdNationalLabel.AutoSize = true;
+            this.stdNationalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdNationalLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNationalLabel.Location = new System.Drawing.Point(308, 201);
+            this.stdNationalLabel.Name = "stdNationalLabel";
+            this.stdNationalLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalLabel.Size = new System.Drawing.Size(112, 19);
+            this.stdNationalLabel.TabIndex = 4;
+            this.stdNationalLabel.Text = "الرقم القومي : ";
             // 
-            // stdNameMeta
+            // stdNameLabel
             // 
-            this.stdNameMeta.AutoSize = true;
-            this.stdNameMeta.BackColor = System.Drawing.Color.Transparent;
-            this.stdNameMeta.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameMeta.Location = new System.Drawing.Point(839, 201);
-            this.stdNameMeta.Name = "stdNameMeta";
-            this.stdNameMeta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameMeta.Size = new System.Drawing.Size(66, 19);
-            this.stdNameMeta.TabIndex = 1;
-            this.stdNameMeta.Text = "الإسم : ";
+            this.stdNameLabel.AutoSize = true;
+            this.stdNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdNameLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNameLabel.Location = new System.Drawing.Point(839, 201);
+            this.stdNameLabel.Name = "stdNameLabel";
+            this.stdNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNameLabel.Size = new System.Drawing.Size(66, 19);
+            this.stdNameLabel.TabIndex = 1;
+            this.stdNameLabel.Text = "الإسم : ";
             // 
-            // label4
+            // stdPhoneLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label4.Location = new System.Drawing.Point(799, 498);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(112, 19);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "تليفون الطالب :";
+            this.stdPhoneLabel.AutoSize = true;
+            this.stdPhoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdPhoneLabel.Location = new System.Drawing.Point(799, 498);
+            this.stdPhoneLabel.Name = "stdPhoneLabel";
+            this.stdPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdPhoneLabel.Size = new System.Drawing.Size(112, 19);
+            this.stdPhoneLabel.TabIndex = 31;
+            this.stdPhoneLabel.Text = "تليفون الطالب :";
             // 
-            // label9
+            // stdSchoolLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(799, 575);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(119, 19);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "المدرسة/الكلية:";
+            this.stdSchoolLabel.AutoSize = true;
+            this.stdSchoolLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdSchoolLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdSchoolLabel.Location = new System.Drawing.Point(798, 575);
+            this.stdSchoolLabel.Name = "stdSchoolLabel";
+            this.stdSchoolLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdSchoolLabel.Size = new System.Drawing.Size(119, 19);
+            this.stdSchoolLabel.TabIndex = 39;
+            this.stdSchoolLabel.Text = "المدرسة/الكلية:";
             // 
             // stdImagePath
             // 
@@ -1536,29 +1536,29 @@
             this.maximizeBtn.TabIndex = 73;
             this.maximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
-            // guna2GradientPanel1
+            // studentSearchPanel
             // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2GradientPanel1.BorderRadius = 5;
-            this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.searchBtn);
-            this.guna2GradientPanel1.Controls.Add(this.stdEmailSearch);
-            this.guna2GradientPanel1.Controls.Add(this.stdEmailCheckBox);
-            this.guna2GradientPanel1.Controls.Add(this.stdPhoneSearch);
-            this.guna2GradientPanel1.Controls.Add(this.stdPhoneCheckBox);
-            this.guna2GradientPanel1.Controls.Add(this.stdNationalSearch);
-            this.guna2GradientPanel1.Controls.Add(this.stdNationalCheckBox);
-            this.guna2GradientPanel1.Controls.Add(this.stdNameSearch);
-            this.guna2GradientPanel1.Controls.Add(this.label25);
-            this.guna2GradientPanel1.Controls.Add(this.stdNameCheckBox);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(12, 37);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(926, 198);
-            this.guna2GradientPanel1.TabIndex = 74;
+            this.studentSearchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.studentSearchPanel.BorderColor = System.Drawing.Color.Silver;
+            this.studentSearchPanel.BorderRadius = 5;
+            this.studentSearchPanel.BorderThickness = 1;
+            this.studentSearchPanel.Controls.Add(this.searchBtn);
+            this.studentSearchPanel.Controls.Add(this.stdEmailSearch);
+            this.studentSearchPanel.Controls.Add(this.stdEmailCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdPhoneSearch);
+            this.studentSearchPanel.Controls.Add(this.stdPhoneCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdNationalSearch);
+            this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdNameSearch);
+            this.studentSearchPanel.Controls.Add(this.label25);
+            this.studentSearchPanel.Controls.Add(this.stdNameCheckBox);
+            this.studentSearchPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.studentSearchPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.studentSearchPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.studentSearchPanel.Location = new System.Drawing.Point(12, 37);
+            this.studentSearchPanel.Name = "studentSearchPanel";
+            this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
+            this.studentSearchPanel.TabIndex = 74;
             // 
             // searchBtn
             // 
@@ -1781,7 +1781,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
-            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.studentSearchPanel);
             this.Controls.Add(this.maximizeBtn);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.minimizeBtn);
@@ -1797,8 +1797,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            this.studentSearchPanel.ResumeLayout(false);
+            this.studentSearchPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1811,73 +1811,73 @@
         private Guna.UI2.WinForms.Guna2Button minimizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel studentDataPanel;
         private Guna.UI2.WinForms.Guna2TextBox stdName;
-        private System.Windows.Forms.Label stdNameMeta;
+        private System.Windows.Forms.Label stdNameLabel;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label stdNationalMeta;
+        private System.Windows.Forms.Label stdNationalLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdNational;
-        private System.Windows.Forms.Label birthMeta;
+        private System.Windows.Forms.Label birthLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdBirthDate;
         private System.Windows.Forms.Label wrongValueLabel;
-        private System.Windows.Forms.Label jobMeta;
+        private System.Windows.Forms.Label jobLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdJob;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
         private Guna.UI2.WinForms.Guna2Button addStudentBtn;
-        private System.Windows.Forms.Label motherPhoneMeta;
+        private System.Windows.Forms.Label motherPhoneLabel;
         private Guna.UI2.WinForms.Guna2TextBox motherPhone;
-        private System.Windows.Forms.Label fatherPhoneMeta;
+        private System.Windows.Forms.Label fatherPhoneLabel;
         private Guna.UI2.WinForms.Guna2TextBox fatherPhone;
-        private System.Windows.Forms.Label motherJobMeta;
+        private System.Windows.Forms.Label motherJobLabel;
         private Guna.UI2.WinForms.Guna2TextBox motherJob;
-        private System.Windows.Forms.Label motherQualiMeta;
+        private System.Windows.Forms.Label motherQualiLabel;
         private Guna.UI2.WinForms.Guna2TextBox motherQuali;
-        private System.Windows.Forms.Label fatherJobMeta;
+        private System.Windows.Forms.Label fatherJobLabel;
         private Guna.UI2.WinForms.Guna2TextBox fatherJob;
-        private System.Windows.Forms.Label fatherQualiMeta;
+        private System.Windows.Forms.Label fatherQualiLabel;
         private Guna.UI2.WinForms.Guna2TextBox fatherQuali;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label guardianNameLabel;
         private Guna.UI2.WinForms.Guna2TextBox guardianName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label guardianBirthLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker guardianBirth;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label guardianLinkLabel;
         private Guna.UI2.WinForms.Guna2TextBox guardianLink;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label stdPhoneLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdPhone;
         private Guna.UI2.WinForms.Guna2TextBox stdAddress;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label stdAddressLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdFacebook;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label stdFacebookLabel;
+        private System.Windows.Forms.Label stdEmailLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdEmail;
         private Guna.UI2.WinForms.Guna2TextBox stdSchool;
         private Guna.UI2.WinForms.Guna2TextBox stdClass;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label stdClassLabel;
+        private System.Windows.Forms.Label stdSchoolLabel;
+        private System.Windows.Forms.Label stdBrothersLabel;
         private Guna.UI2.WinForms.Guna2NumericUpDown stdBrothers;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label stdArrangementLabel;
         private Guna.UI2.WinForms.Guna2NumericUpDown stdArrangement;
         private Guna.UI2.WinForms.Guna2TextBox stdMemo;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label stdMemoLabel;
         private Guna.UI2.WinForms.Guna2NumericUpDown stdLevel;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label stdLevelLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdMashaykhPlaces;
         private Guna.UI2.WinForms.Guna2TextBox stdMashaykh;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label stdMashaykhPlacesLabel;
+        private System.Windows.Forms.Label stdMashaykhLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdFirstConclusion;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label stdFirstConclusionLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdJoiningDate;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label stdJoiningDateLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdCertificates;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label stdCertificatesLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdSkills;
         private Guna.UI2.WinForms.Guna2TextBox stdHobbies;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label stdHobbiesLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdIjazah;
         private Guna.UI2.WinForms.Guna2TextBox stdCourses;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label stdCoursesLabel;
+        private System.Windows.Forms.Label stdIjazahLabel;
+        private System.Windows.Forms.Label stdSkillsLabel;
         private System.Windows.Forms.Label label23;
         private Guna.UI2.WinForms.Guna2Button stdImageSelectorBtn;
         private System.Windows.Forms.Label stdImagePath;
@@ -1885,7 +1885,7 @@
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage;
         private Guna.UI2.WinForms.Guna2Button maximizeBtn;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel studentSearchPanel;
         private Guna.UI2.WinForms.Guna2CheckBox stdNameCheckBox;
         private System.Windows.Forms.Label label25;
         private Guna.UI2.WinForms.Guna2TextBox stdNameSearch;
