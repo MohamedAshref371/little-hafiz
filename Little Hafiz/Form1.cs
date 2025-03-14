@@ -53,13 +53,18 @@ namespace Little_Hafiz
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            var students = DatabaseHelper.SelectStudents
-                (
-                    undoubtedName: stdNameCheckBox.Checked ? stdNameSearch.Text : null,
-                    nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
-                    phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
-                    email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
-                );
+            StudentData[] students;
+            if (stdNationalCheckBox.Checked && stdNationalSearch.Text.Length == 14)
+                students = new StudentData[] { DatabaseHelper.SelectStudent(stdNationalSearch.Text) };
+            else
+                students = DatabaseHelper.SelectStudents
+                    (
+                        undoubtedName: stdNameCheckBox.Checked ? stdNameSearch.Text : null,
+                        nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
+                        phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
+                        email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
+                    );
+
             // note: display all students in UI
         }
 
