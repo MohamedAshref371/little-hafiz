@@ -35,7 +35,7 @@
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.stdImageSelectorBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.stdImageLabel = new System.Windows.Forms.Label();
             this.stdSkills = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdHobbies = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdHobbiesLabel = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             this.wrongValueLabel = new System.Windows.Forms.Label();
             this.stdBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdNational = new Guna.UI2.WinForms.Guna2TextBox();
-            this.titleLabel = new System.Windows.Forms.Label();
+            this.studentPanelTitle = new System.Windows.Forms.Label();
             this.stdName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guardianLinkLabel = new System.Windows.Forms.Label();
             this.guardianBirthLabel = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@
             this.stdSchoolLabel = new System.Windows.Forms.Label();
             this.stdImagePath = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
-            this.label24 = new System.Windows.Forms.Label();
+            this.FormTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -117,7 +117,7 @@
             this.stdNationalSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNationalCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.searchPanelTitle = new System.Windows.Forms.Label();
             this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
@@ -180,7 +180,7 @@
             this.studentDataPanel.BorderThickness = 1;
             this.studentDataPanel.Controls.Add(this.studentImage);
             this.studentDataPanel.Controls.Add(this.stdImageSelectorBtn);
-            this.studentDataPanel.Controls.Add(this.label23);
+            this.studentDataPanel.Controls.Add(this.stdImageLabel);
             this.studentDataPanel.Controls.Add(this.stdSkills);
             this.studentDataPanel.Controls.Add(this.stdHobbies);
             this.studentDataPanel.Controls.Add(this.stdHobbiesLabel);
@@ -232,7 +232,7 @@
             this.studentDataPanel.Controls.Add(this.wrongValueLabel);
             this.studentDataPanel.Controls.Add(this.stdBirthDate);
             this.studentDataPanel.Controls.Add(this.stdNational);
-            this.studentDataPanel.Controls.Add(this.titleLabel);
+            this.studentDataPanel.Controls.Add(this.studentPanelTitle);
             this.studentDataPanel.Controls.Add(this.stdName);
             this.studentDataPanel.Controls.Add(this.guardianLinkLabel);
             this.studentDataPanel.Controls.Add(this.guardianBirthLabel);
@@ -290,18 +290,18 @@
             this.stdImageSelectorBtn.Text = "إختيار ...";
             this.stdImageSelectorBtn.Click += new System.EventHandler(this.StdImageSelectorBtn_Click);
             // 
-            // label23
+            // stdImageLabel
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label23.Location = new System.Drawing.Point(191, 58);
-            this.label23.Name = "label23";
-            this.label23.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label23.Size = new System.Drawing.Size(145, 19);
-            this.label23.TabIndex = 69;
-            this.label23.Text = "صورة شخصية حديثة";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stdImageLabel.AutoSize = true;
+            this.stdImageLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdImageLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdImageLabel.Location = new System.Drawing.Point(191, 58);
+            this.stdImageLabel.Name = "stdImageLabel";
+            this.stdImageLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.stdImageLabel.Size = new System.Drawing.Size(145, 19);
+            this.stdImageLabel.TabIndex = 69;
+            this.stdImageLabel.Text = "صورة شخصية حديثة";
+            this.stdImageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // stdSkills
             // 
@@ -1271,17 +1271,17 @@
             this.stdNational.TextChanged += new System.EventHandler(this.National_TextChanged);
             this.stdNational.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
             // 
-            // titleLabel
+            // studentPanelTitle
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.titleLabel.Location = new System.Drawing.Point(615, 77);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.titleLabel.Size = new System.Drawing.Size(230, 29);
-            this.titleLabel.TabIndex = 2;
-            this.titleLabel.Text = "إستمارة بيانات الطالب";
+            this.studentPanelTitle.AutoSize = true;
+            this.studentPanelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.studentPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.studentPanelTitle.Location = new System.Drawing.Point(615, 77);
+            this.studentPanelTitle.Name = "studentPanelTitle";
+            this.studentPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
+            this.studentPanelTitle.TabIndex = 2;
+            this.studentPanelTitle.Text = "إستمارة بيانات الطالب";
             // 
             // stdName
             // 
@@ -1504,18 +1504,18 @@
             // 
             this.selectImageDialog.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
             // 
-            // label24
+            // FormTitle
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(291, -4);
-            this.label24.Name = "label24";
-            this.label24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label24.Size = new System.Drawing.Size(337, 33);
-            this.label24.TabIndex = 72;
-            this.label24.Text = "مكتب الحافظ الصغير بمسطرد";
+            this.FormTitle.AutoSize = true;
+            this.FormTitle.BackColor = System.Drawing.Color.Transparent;
+            this.FormTitle.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.FormTitle.ForeColor = System.Drawing.Color.Navy;
+            this.FormTitle.Location = new System.Drawing.Point(291, -4);
+            this.FormTitle.Name = "FormTitle";
+            this.FormTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.FormTitle.Size = new System.Drawing.Size(337, 33);
+            this.FormTitle.TabIndex = 72;
+            this.FormTitle.Text = "مكتب الحافظ الصغير بمسطرد";
             // 
             // maximizeBtn
             // 
@@ -1550,7 +1550,7 @@
             this.studentSearchPanel.Controls.Add(this.stdNationalSearch);
             this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNameSearch);
-            this.studentSearchPanel.Controls.Add(this.label25);
+            this.studentSearchPanel.Controls.Add(this.searchPanelTitle);
             this.studentSearchPanel.Controls.Add(this.stdNameCheckBox);
             this.studentSearchPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentSearchPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -1742,18 +1742,18 @@
             this.stdNameSearch.TabIndex = 74;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
-            // label25
+            // searchPanelTitle
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label25.ForeColor = System.Drawing.Color.Maroon;
-            this.label25.Location = new System.Drawing.Point(790, 6);
-            this.label25.Name = "label25";
-            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label25.Size = new System.Drawing.Size(133, 29);
-            this.label25.TabIndex = 73;
-            this.label25.Text = "قائمة البحث";
+            this.searchPanelTitle.AutoSize = true;
+            this.searchPanelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.searchPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.searchPanelTitle.ForeColor = System.Drawing.Color.Maroon;
+            this.searchPanelTitle.Location = new System.Drawing.Point(790, 6);
+            this.searchPanelTitle.Name = "searchPanelTitle";
+            this.searchPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.searchPanelTitle.Size = new System.Drawing.Size(133, 29);
+            this.searchPanelTitle.TabIndex = 73;
+            this.searchPanelTitle.Text = "قائمة البحث";
             // 
             // stdNameCheckBox
             // 
@@ -1783,7 +1783,7 @@
             this.ClientSize = new System.Drawing.Size(950, 700);
             this.Controls.Add(this.studentSearchPanel);
             this.Controls.Add(this.maximizeBtn);
-            this.Controls.Add(this.label24);
+            this.Controls.Add(this.FormTitle);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.studentDataPanel);
@@ -1812,7 +1812,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel studentDataPanel;
         private Guna.UI2.WinForms.Guna2TextBox stdName;
         private System.Windows.Forms.Label stdNameLabel;
-        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label studentPanelTitle;
         private System.Windows.Forms.Label stdNationalLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdNational;
         private System.Windows.Forms.Label birthLabel;
@@ -1878,16 +1878,16 @@
         private System.Windows.Forms.Label stdCoursesLabel;
         private System.Windows.Forms.Label stdIjazahLabel;
         private System.Windows.Forms.Label stdSkillsLabel;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label stdImageLabel;
         private Guna.UI2.WinForms.Guna2Button stdImageSelectorBtn;
         private System.Windows.Forms.Label stdImagePath;
         private System.Windows.Forms.OpenFileDialog selectImageDialog;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label FormTitle;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage;
         private Guna.UI2.WinForms.Guna2Button maximizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel studentSearchPanel;
         private Guna.UI2.WinForms.Guna2CheckBox stdNameCheckBox;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label searchPanelTitle;
         private Guna.UI2.WinForms.Guna2TextBox stdNameSearch;
         private Guna.UI2.WinForms.Guna2TextBox stdNationalSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdNationalCheckBox;
