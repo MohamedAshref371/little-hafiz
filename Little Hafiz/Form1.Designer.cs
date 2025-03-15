@@ -119,6 +119,7 @@
             this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.searchPanelTitle = new System.Windows.Forms.Label();
             this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1776,11 +1777,24 @@
             this.stdNameCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.stdNameCheckBox.UseVisualStyleBackColor = false;
             // 
+            // studentsListPanel
+            // 
+            this.studentsListPanel.BorderRadius = 5;
+            this.studentsListPanel.BorderThickness = 1;
+            this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.studentsListPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.studentsListPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.studentsListPanel.Location = new System.Drawing.Point(12, 241);
+            this.studentsListPanel.Name = "studentsListPanel";
+            this.studentsListPanel.Size = new System.Drawing.Size(926, 452);
+            this.studentsListPanel.TabIndex = 75;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
+            this.Controls.Add(this.studentsListPanel);
             this.Controls.Add(this.studentSearchPanel);
             this.Controls.Add(this.maximizeBtn);
             this.Controls.Add(this.FormTitle);
@@ -1896,6 +1910,7 @@
         private Guna.UI2.WinForms.Guna2Button searchBtn;
         private Guna.UI2.WinForms.Guna2TextBox stdEmailSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
+        private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
     }
 }
 
