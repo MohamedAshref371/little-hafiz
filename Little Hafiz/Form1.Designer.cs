@@ -828,7 +828,7 @@
             this.stdEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdEmail.Name = "stdEmail";
             this.stdEmail.PlaceholderText = "";
-            this.stdEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdEmail.SelectedText = "";
             this.stdEmail.Size = new System.Drawing.Size(257, 32);
             this.stdEmail.TabIndex = 38;
@@ -937,7 +937,7 @@
             this.stdPhone.MaxLength = 15;
             this.stdPhone.Name = "stdPhone";
             this.stdPhone.PlaceholderText = "";
-            this.stdPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdPhone.SelectedText = "";
             this.stdPhone.Size = new System.Drawing.Size(257, 32);
             this.stdPhone.TabIndex = 30;
@@ -1599,7 +1599,7 @@
             this.stdEmailSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdEmailSearch.Name = "stdEmailSearch";
             this.stdEmailSearch.PlaceholderText = "";
-            this.stdEmailSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdEmailSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdEmailSearch.SelectedText = "";
             this.stdEmailSearch.Size = new System.Drawing.Size(257, 32);
             this.stdEmailSearch.TabIndex = 80;
@@ -1645,7 +1645,7 @@
             this.stdPhoneSearch.MaxLength = 15;
             this.stdPhoneSearch.Name = "stdPhoneSearch";
             this.stdPhoneSearch.PlaceholderText = "";
-            this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdPhoneSearch.SelectedText = "";
             this.stdPhoneSearch.Size = new System.Drawing.Size(257, 32);
             this.stdPhoneSearch.TabIndex = 78;
@@ -1692,7 +1692,7 @@
             this.stdNationalSearch.MaxLength = 14;
             this.stdNationalSearch.Name = "stdNationalSearch";
             this.stdNationalSearch.PlaceholderText = "";
-            this.stdNationalSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdNationalSearch.SelectedText = "";
             this.stdNationalSearch.Size = new System.Drawing.Size(257, 32);
             this.stdNationalSearch.TabIndex = 76;

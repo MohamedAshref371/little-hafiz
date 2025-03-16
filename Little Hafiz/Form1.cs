@@ -25,8 +25,8 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists("excels"))
-                Directory.CreateDirectory("excels");
+            //if (!Directory.Exists("excels"))
+            //    Directory.CreateDirectory("excels");
 
             Timer scrollTimer = new Timer { Interval = 100 };
             scrollTimer.Tick += (sender1, e1) => {
@@ -57,26 +57,21 @@ namespace Little_Hafiz
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            StudentData[] students;
-            if (stdNationalCheckBox.Checked && stdNationalSearch.Text.Length == 14)
-                students = new StudentData[] { DatabaseHelper.SelectStudent(stdNationalSearch.Text) };
-            else
-                students = DatabaseHelper.SelectStudents
+            StudentSearchRowData[] students = DatabaseHelper.SelectStudents
                     (
                         undoubtedName: stdNameCheckBox.Checked ? stdNameSearch.Text : null,
                         nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
-                    ); // بلح
-
-            // بدلا من ذلك ابحث في ملفات ال excels 
+                    );
 
             studentsListPanel.Controls.Clear();
-            int yLoc = 9;
-            StudentRow stdRow;
-            foreach (var std in students)
+            StudentSearchRow stdRow;
+            for (int i = 0; i < students?.Length; i++)
             {
-
+                stdRow = new StudentSearchRow(students[i]);
+                stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
+                studentsListPanel.Controls.Add(stdRow);
             }
         }
 

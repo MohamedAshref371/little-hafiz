@@ -125,12 +125,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentData.cs" />
-    <Compile Include="StudentRow.cs">
+    <Compile Include="StudentSearchRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentRow.Designer.cs">
-      <DependentUpon>StudentRow.cs</DependentUpon>
+    <Compile Include="StudentSearchRow.Designer.cs">
+      <DependentUpon>StudentSearchRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSearchRowData.cs" />
     <Compile Include="StudentState.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -146,8 +147,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudentRow.resx">
-      <DependentUpon>StudentRow.cs</DependentUpon>
+    <EmbeddedResource Include="StudentSearchRow.resx">
+      <DependentUpon>StudentSearchRow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

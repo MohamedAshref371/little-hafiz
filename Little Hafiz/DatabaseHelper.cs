@@ -55,7 +55,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
                                       "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, mashaykh_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, place INTEGER, PRIMARY KEY(national, competition_level) );" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, std_place INTEGER, PRIMARY KEY(national, competition_level) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
@@ -128,29 +128,33 @@ namespace Little_Hafiz
 
         private static readonly StringBuilder sb = new StringBuilder();
         private static readonly List<string> conds = new List<string>();
-        public static StudentData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
+        public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT * FROM students");
+            sb.Append("SELECT students.national, full_name, competition_level, competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
-            if (undoubtedName != null)
-                conds.Add($"full_name = '%{undoubtedName}%'");
+            if (nationalNumber == null || nationalNumber.Length != 14)
+            {
+                if (undoubtedName != null)
+                    conds.Add($"full_name = '%{undoubtedName}%'");
 
-            if (nationalNumber != null)
-                conds.Add($"national = '%{nationalNumber}%'");
+                if (nationalNumber != null)
+                    conds.Add($"national = '%{nationalNumber}%'");
 
-            if (state != null)
-                conds.Add($"state = {(int)state}");
+                if (state != null)
+                    conds.Add($"state = {(int)state}");
 
-            if (phoneNumber != null)
-                conds.Add($"phone_number = '%{phoneNumber}%'");
+                if (phoneNumber != null)
+                    conds.Add($"phone_number = '%{phoneNumber}%'");
 
-            if (email != null)
-                conds.Add($"email = '%{email}%'");
+                if (email != null)
+                    conds.Add($"email = '%{email}%'");
 
-            if (level != null)
-                conds.Add($"student_level = {level}");
-
+                if (level != null)
+                    conds.Add($"student_level = {level}");
+            }
+            else { conds.Add($"national = '{nationalNumber}'"); }
+            
             if (conds.Count > 0)
             {
                 sb.Append(" WHERE ").Append(conds[0]);
@@ -158,7 +162,7 @@ namespace Little_Hafiz
                     sb.Append(" AND ").Append(conds[i]);
             }
 
-            return SelectMultiRows(sb.ToString(), GetStudentData);
+            return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
 
         public static CompetitionGrade[] SelectStudentGrades(string nationalNumber)
@@ -185,7 +189,24 @@ namespace Little_Hafiz
             }
         }
 
+        private static StudentSearchRowData GetStudentSearchRowData()
+        {
+            int? compLevel = null, stdRank = null;
+            if (!reader.IsDBNull(2))
+                compLevel = reader.GetInt32(2);
+            if (!reader.IsDBNull(4))
+                stdRank = reader.GetInt32(4);
 
+            return new StudentSearchRowData
+            {
+                NationalNumber = reader.GetString(0),
+                FullName = reader.GetString(1),
+                CompetitionLevel = compLevel,
+                CompetitionDate = reader.IsDBNull(3) ? null : reader.GetString(3),
+                Rank = stdRank
+            };
+        }
+        
         private static StudentData GetStudentData()
         {
             string img = (string)reader["image"];
@@ -242,7 +263,7 @@ namespace Little_Hafiz
                 CompetitionLevel = (int)reader["competition_level"],
                 CompetitionDate = (string)reader["competition_date"],
                 CompetitionDegree = (float)reader["competition_degree"],
-                Rank = (int)reader["place"],
+                Rank = (int)reader["std_place"],
             };
         }
         #endregion
