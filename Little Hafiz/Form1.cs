@@ -25,6 +25,9 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!Directory.Exists("excels"))
+                Directory.CreateDirectory("excels");
+
             Timer scrollTimer = new Timer { Interval = 100 };
             scrollTimer.Tick += (sender1, e1) => {
                 scrollTimer.Stop();
@@ -65,6 +68,8 @@ namespace Little_Hafiz
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
                     ); // بلح
+
+            // بدلا من ذلك ابحث في ملفات ال excels 
 
             studentsListPanel.Controls.Clear();
             int yLoc = 9;
