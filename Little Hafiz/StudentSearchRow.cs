@@ -12,20 +12,14 @@ namespace Little_Hafiz
 {
     public partial class StudentSearchRow : UserControl
     {
-        private string nationalNumber;
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
-            nationalNumber = data.NationalNumber;
+            showStudentBtn.Tag = data.NationalNumber;
             stdName.Text = data.FullName;
             compLevel.Text = data.CompetitionLevel.ToString();
             compDate.Text = data.CompetitionDate;
             stdRank.Text = data.Rank.ToString();
-        }
-
-        private void ShowStudentBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

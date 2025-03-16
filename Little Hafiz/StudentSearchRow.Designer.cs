@@ -100,7 +100,6 @@
             this.showStudentBtn.Size = new System.Drawing.Size(148, 39);
             this.showStudentBtn.TabIndex = 4;
             this.showStudentBtn.Text = "نظرة خاطفة";
-            this.showStudentBtn.Click += new System.EventHandler(this.ShowStudentBtn_Click);
             // 
             // StudentSearchRow
             // 
@@ -124,6 +123,6 @@
         private System.Windows.Forms.Label compLevel;
         private System.Windows.Forms.Label compDate;
         private System.Windows.Forms.Label stdRank;
-        private Guna.UI2.WinForms.Guna2Button showStudentBtn;
+        public Guna.UI2.WinForms.Guna2Button showStudentBtn;
     }
 }

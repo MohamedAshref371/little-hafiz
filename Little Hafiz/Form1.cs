@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Guna.UI2.WinForms;
 using QuranKareem;
 using System;
@@ -71,8 +72,19 @@ namespace Little_Hafiz
             {
                 stdRow = new StudentSearchRow(students[i]);
                 stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
+                stdRow.showStudentBtn.Click += ShowStudentBtn_Click;
                 studentsListPanel.Controls.Add(stdRow);
             }
+        }
+
+        private void ShowStudentBtn_Click(object sender, EventArgs e)
+        {
+            openAddStudentBtn.Visible = false;
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            var srudent = DatabaseHelper.SelectStudent((string)((Guna2Button)sender).Tag);
+            // studentDataPanel set data
+            studentDataPanel.Visible = true;
         }
 
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
