@@ -42,10 +42,11 @@ namespace Little_Hafiz
         private void MinimizeBtn_Click(object sender, EventArgs e)
             => WindowState = FormWindowState.Minimized;
 
+        FormSize fs = null;
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
-            FormSize fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
+            fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
             fs.SetControls(Controls);
             maximizeBtn.Visible = false;
             minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y); 
@@ -63,9 +64,23 @@ namespace Little_Hafiz
                         nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
-                    );
+                    ); // بلح
 
-            // note: display all students in UI
+            studentsListPanel.Controls.Clear();
+            int yLoc = 9;
+            StudentRow stdRow;
+            foreach (var std in students)
+            {
+
+            }
+        }
+
+        private void OpenAddStudentBtn_Click(object sender, EventArgs e)
+        {
+            openAddStudentBtn.Visible = false;
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            studentDataPanel.Visible = true;
         }
 
         #region Student Data Panel
@@ -130,6 +145,9 @@ namespace Little_Hafiz
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.Visible = false;
+            openAddStudentBtn.Visible = true;
+            studentSearchPanel.Visible = true;
+            studentsListPanel.Visible = true;
         }
 
         private void AddStudentBtn_Click(object sender, EventArgs e)
@@ -141,7 +159,7 @@ namespace Little_Hafiz
             }
 
             if (DatabaseHelper.AddStudent(GetStudentData()) != -1)
-                studentDataPanel.Visible = false;
+                CancelBtn_Click(null, null);
         }
 
         private StudentData GetStudentData()
