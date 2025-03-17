@@ -131,29 +131,29 @@ namespace Little_Hafiz
         public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT students.national, full_name, competition_level, competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
+            sb.Append("SELECT students.national, full_name, MAX(competition_level) competition_level, competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
             if (nationalNumber == null || nationalNumber.Length != 14)
             {
                 if (undoubtedName != null)
-                    conds.Add($"full_name = '%{undoubtedName}%'");
+                    conds.Add($"full_name LIKE '%{undoubtedName}%'");
 
                 if (nationalNumber != null)
-                    conds.Add($"national = '%{nationalNumber}%'");
+                    conds.Add($"students.national LIKE '%{nationalNumber}%'");
 
                 if (state != null)
                     conds.Add($"state = {(int)state}");
 
                 if (phoneNumber != null)
-                    conds.Add($"phone_number = '%{phoneNumber}%'");
+                    conds.Add($"phone_number LIKE '%{phoneNumber}%'");
 
                 if (email != null)
-                    conds.Add($"email = '%{email}%'");
+                    conds.Add($"email LIKE '%{email}%'");
 
                 if (level != null)
                     conds.Add($"student_level = {level}");
             }
-            else { conds.Add($"national = '{nationalNumber}'"); }
+            else { conds.Add($"students.national = '{nationalNumber}'"); }
             
             if (conds.Count > 0)
             {
@@ -161,6 +161,8 @@ namespace Little_Hafiz
                 for (int i = 1; i < conds.Count; i++)
                     sb.Append(" AND ").Append(conds[i]);
             }
+
+            sb.Append(" GROUP BY students.national");
 
             return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
