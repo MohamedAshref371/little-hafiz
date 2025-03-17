@@ -131,7 +131,7 @@ namespace Little_Hafiz
         public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT students.national, full_name, MAX(competition_level) competition_level, competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
+            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
             if (nationalNumber == null || nationalNumber.Length != 14)
             {
