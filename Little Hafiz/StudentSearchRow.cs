@@ -23,9 +23,28 @@ namespace Little_Hafiz
             InitializeComponent();
             showStudentBtn.Tag = data.NationalNumber;
             stdName.Text = data.FullName;
-            compLevel.Text = data.CompetitionLevel.ToString();
+            compLevel.Text = ConvertNumberToRank(data.CompetitionLevel);
             compDate.Text = data.CompetitionDate;
-            stdRank.Text = data.Rank.ToString();
+            stdRank.Text = ConvertNumberToRank(data.Rank);
+        }
+
+        private static string ConvertNumberToRank(int? i)
+        {
+            switch (i)
+            {
+                case 1: return "الأول";
+                case 2: return "الثاني";
+                case 3: return "الثالث";
+                case 4: return "الرابع";
+                case 5: return "الخامس";
+                case 6: return "السادس";
+                case 7: return "السابع";
+                case 8: return "الثامن";
+                case 9: return "التاسع";
+                case 10: return "العاشر";
+                case null: return "غير معروف";
+                default: return i.ToString();
+            }
         }
     }
 }

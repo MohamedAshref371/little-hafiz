@@ -95,7 +95,7 @@
             this.showStudentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(100)))));
             this.showStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.showStudentBtn.ForeColor = System.Drawing.Color.White;
-            this.showStudentBtn.Location = new System.Drawing.Point(3, 15);
+            this.showStudentBtn.Location = new System.Drawing.Point(3, 17);
             this.showStudentBtn.Name = "showStudentBtn";
             this.showStudentBtn.Size = new System.Drawing.Size(148, 39);
             this.showStudentBtn.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.showStudentBtn);
             this.Controls.Add(this.stdRank);
             this.Controls.Add(this.compDate);

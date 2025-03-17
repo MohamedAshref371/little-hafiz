@@ -7,8 +7,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,8 +84,15 @@ namespace Little_Hafiz
             openAddStudentBtn.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
-            var student = DatabaseHelper.SelectStudent((string)((Guna2Button)sender).Tag);
-            // note: studentDataPanel set data
+
+            string national = (string)((Guna2Button)sender).Tag;
+            StudentData stdData = DatabaseHelper.SelectStudent(national);
+            CompetitionGrade[] grades = DatabaseHelper.SelectStudentGrades(national);
+
+            SetStudentData(stdData, grades);
+
+            stdNational.ReadOnly = true;
+            studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
         }
 
@@ -92,6 +101,11 @@ namespace Little_Hafiz
             openAddStudentBtn.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
+
+            SetStudentData(null, null);
+
+            stdNational.ReadOnly = false;
+            studentPanelState = StudentPanelState.Add;
             studentDataPanel.Visible = true;
         }
 
@@ -175,7 +189,8 @@ namespace Little_Hafiz
         }
 
         private StudentData GetStudentData()
-            => new StudentData
+        {
+            return new StudentData
             {
                 FullName = stdName.Text,
                 NationalNumber = stdNational.Text,
@@ -211,6 +226,94 @@ namespace Little_Hafiz
                 Hobbies = stdHobbies.Text,
                 Image = stdImagePath.Text
             };
+        }
+
+        private void SetStudentData(StudentData stdData, CompetitionGrade[] grades)
+        {
+            if (stdData is null)
+                SetStudentDataAtStudentDataIsNull();
+            else
+                SetStudentDataAtStudentDataIsNotNull(stdData);
+
+            wrongValueLabel.Visible = false;
+
+        }
+
+        private void SetStudentDataAtStudentDataIsNull()
+        {
+            stdName.Text = "";
+            stdNational.Text = "";
+            stdBirthDate.Value = DateTime.Now.AddYears(-10);
+            stdJob.Text = "";
+            fatherQuali.Text = "";
+            motherQuali.Text = "";
+            fatherJob.Text = "";
+            motherJob.Text = "";
+            fatherPhone.Text = "";
+            motherPhone.Text = "";
+            guardianName.Text = "";
+            guardianLink.Text = "";
+            guardianBirth.Value = DateTime.Now.AddYears(-20);
+            stdPhone.Text = "";
+            stdAddress.Text = "";
+            stdEmail.Text = "";
+            stdFacebook.Text = "";
+            stdSchool.Text = "";
+            stdClass.Text = "";
+            stdBrothers.Value = 0;
+            //stdArrangement.Value = 1;
+            stdLevel.Value = 0;
+            stdMemo.Text = "";
+            stdMashaykh.Text = "";
+            stdMashaykhPlaces.Text = "";
+            stdJoiningDate.Value = DateTime.Now.AddYears(-5);
+            stdFirstConclusion.Value = DateTime.Now.AddYears(-2);
+            stdCertificates.Text = "";
+            stdIjazah.Text = "";
+            stdCourses.Text = "";
+            stdSkills.Text = "";
+            stdHobbies.Text = "";
+            stdImagePath.Text = "";
+        }
+
+        private void SetStudentDataAtStudentDataIsNotNull(StudentData stdData)
+        {
+            stdName.Text = stdData.FullName;
+            stdNational.Text = stdData.NationalNumber;
+            stdBirthDate.Value = ParseExact(stdData.BirthDate);
+            stdJob.Text = stdData.Job;
+            fatherQuali.Text = stdData.FatherQualification;
+            motherQuali.Text = stdData.MotherQualification;
+            fatherJob.Text = stdData.FatherJob;
+            motherJob.Text = stdData.MotherJob;
+            fatherPhone.Text = stdData.FatherPhone;
+            motherPhone.Text = stdData.MotherPhone;
+            guardianName.Text = stdData.GuardianName;
+            guardianLink.Text = stdData.GuardianLink;
+            guardianBirth.Value = ParseExact(stdData.GuardianBirth);
+            stdPhone.Text = stdData.PhoneNumber;
+            stdAddress.Text = stdData.Address;
+            stdEmail.Text = stdData.Email;
+            stdFacebook.Text = stdData.Facebook;
+            stdSchool.Text = stdData.School;
+            stdClass.Text = stdData.Class;
+            stdBrothers.Value = stdData.BrothersCount;
+            stdArrangement.Value = stdData.ArrangementBetweenBrothers;
+            stdLevel.Value = stdData.Level;
+            stdMemo.Text = stdData.MemorizationAmount;
+            stdMashaykh.Text = stdData.StudentMashaykh;
+            stdMashaykhPlaces.Text = stdData.MashaykhPlaces;
+            stdJoiningDate.Value = ParseExact(stdData.JoiningDate);
+            stdFirstConclusion.Value = ParseExact(stdData.FirstConclusionDate);
+            stdCertificates.Text = stdData.Certificates;
+            stdIjazah.Text = stdData.Ijazah;
+            stdCourses.Text = stdData.Courses;
+            stdSkills.Text = stdData.Skills;
+            stdHobbies.Text = stdData.Hobbies;
+            stdImagePath.Text = stdData.Image;
+        }
+
+        private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -218,6 +321,7 @@ namespace Little_Hafiz
                 e.Handled = true;
         }
 
+        StudentPanelState studentPanelState = StudentPanelState.Read;
         private enum StudentPanelState
         {
             Add = 0,

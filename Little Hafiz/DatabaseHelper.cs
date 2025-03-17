@@ -9,8 +9,10 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Little_Hafiz
 {
@@ -117,7 +119,11 @@ namespace Little_Hafiz
                 if (!reader.Read()) return null;
                 return GetStudentData();
             }
-            catch { return null; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
             finally
             {
                 reader.Close();
@@ -170,7 +176,7 @@ namespace Little_Hafiz
         public static CompetitionGrade[] SelectStudentGrades(string nationalNumber)
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
-        public static T[] SelectMultiRows<T>(string sql, Func<T> method)
+        private static T[] SelectMultiRows<T>(string sql, Func<T> method)
         {
             if (!success) return null;
             try
@@ -217,6 +223,7 @@ namespace Little_Hafiz
                 img = imagesFolder + img;
                 if (!File.Exists(img)) img = "";
             }
+
             return new StudentData
             {
                 FullName = (string)reader["full_name"],
@@ -238,9 +245,9 @@ namespace Little_Hafiz
                 Facebook = (string)reader["facebook"],
                 School = (string)reader["school"],
                 Class = (string)reader["class"],
-                BrothersCount = (int)reader["brothers_count"],
-                ArrangementBetweenBrothers = (int)reader["arrangement"],
-                Level = (int)reader["student_level"],
+                BrothersCount = reader.GetInt32(19),
+                ArrangementBetweenBrothers = reader.GetInt32(20),
+                Level = reader.GetInt32(21),
                 MemorizationAmount = (string)reader["memo_amount"],
                 StudentMashaykh = (string)reader["mashaykh"],
                 MashaykhPlaces = (string)reader["mashaykh_places"],
@@ -260,12 +267,12 @@ namespace Little_Hafiz
             return new CompetitionGrade
             {
                 NationalNumber = (string)reader["national"],
-                StudentCode = (int)reader["std_code"],
-                PreviousLevel = (int)reader["prev_level"],
-                CompetitionLevel = (int)reader["competition_level"],
+                StudentCode = reader.GetInt32(1),
+                PreviousLevel = reader.GetInt32(2),
+                CompetitionLevel = reader.GetInt32(3),
                 CompetitionDate = (string)reader["competition_date"],
-                CompetitionDegree = (float)reader["competition_degree"],
-                Rank = (int)reader["std_place"],
+                CompetitionDegree = reader.GetFloat(5),
+                Rank = reader.GetInt32(6),
             };
         }
         #endregion
