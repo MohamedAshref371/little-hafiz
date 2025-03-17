@@ -91,6 +91,7 @@ namespace Little_Hafiz
 
             SetStudentData(stdData, grades);
 
+            addStudentBtn.Text = "تعديل";
             stdNational.ReadOnly = true;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
@@ -104,6 +105,7 @@ namespace Little_Hafiz
 
             SetStudentData(null, null);
 
+            addStudentBtn.Text = "إضافة";
             stdNational.ReadOnly = false;
             studentPanelState = StudentPanelState.Add;
             studentDataPanel.Visible = true;
@@ -184,7 +186,8 @@ namespace Little_Hafiz
                 return;
             }
 
-            if (DatabaseHelper.AddStudent(GetStudentData()) != -1)
+            if (studentPanelState == StudentPanelState.Add && DatabaseHelper.AddStudent(GetStudentData()) != -1
+                || studentPanelState == StudentPanelState.Update && DatabaseHelper.UpdateStudent(GetStudentData()) != -1)
                 CancelBtn_Click(null, null);
         }
 
