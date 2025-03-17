@@ -72,7 +72,7 @@ namespace Little_Hafiz
             {
                 stdRow = new StudentSearchRow(students[i]);
                 stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
-                stdRow.showStudentBtn.Click += ShowStudentBtn_Click;
+                stdRow.ButtonClick += ShowStudentBtn_Click;
                 studentsListPanel.Controls.Add(stdRow);
             }
         }
@@ -82,8 +82,8 @@ namespace Little_Hafiz
             openAddStudentBtn.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
-            var srudent = DatabaseHelper.SelectStudent((string)((Guna2Button)sender).Tag);
-            // studentDataPanel set data
+            var student = DatabaseHelper.SelectStudent((string)((Guna2Button)sender).Tag);
+            // note: studentDataPanel set data
             studentDataPanel.Visible = true;
         }
 

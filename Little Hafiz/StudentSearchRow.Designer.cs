@@ -123,6 +123,6 @@
         private System.Windows.Forms.Label compLevel;
         private System.Windows.Forms.Label compDate;
         private System.Windows.Forms.Label stdRank;
-        public Guna.UI2.WinForms.Guna2Button showStudentBtn;
+        private Guna.UI2.WinForms.Guna2Button showStudentBtn;
     }
 }

@@ -12,6 +12,12 @@ namespace Little_Hafiz
 {
     public partial class StudentSearchRow : UserControl
     {
+        public event EventHandler ButtonClick
+        {
+            add => showStudentBtn.Click += value;
+            remove => showStudentBtn.Click -= value;
+        }
+
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
