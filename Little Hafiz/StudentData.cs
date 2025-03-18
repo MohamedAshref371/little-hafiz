@@ -22,7 +22,7 @@ namespace Little_Hafiz
         public int BrothersCount, ArrangementBetweenBrothers;
 
         public int Level; public string MemorizationAmount;
-        public string StudentMashaykh, MashaykhPlaces;
+        public string StudentMashaykh, MemorizePlaces;
         public string JoiningDate, FirstConclusionDate;
         public string Certificates, Ijazah, Courses, Skills, Hobbies;
 
@@ -32,6 +32,6 @@ namespace Little_Hafiz
         //public StudentState StudentState;
 
         public override string ToString()
-            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MashaykhPlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
+            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
     }
 }

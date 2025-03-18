@@ -50,9 +50,9 @@
             this.stdFirstConclusionLabel = new System.Windows.Forms.Label();
             this.stdJoiningDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdJoiningDateLabel = new System.Windows.Forms.Label();
-            this.stdMashaykhPlaces = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdMemoPlaces = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMashaykh = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdMashaykhPlacesLabel = new System.Windows.Forms.Label();
+            this.stdMemoPlacesLabel = new System.Windows.Forms.Label();
             this.stdMashaykhLabel = new System.Windows.Forms.Label();
             this.stdMemo = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMemoLabel = new System.Windows.Forms.Label();
@@ -125,6 +125,7 @@
             this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -202,9 +203,9 @@
             this.studentDataPanel.Controls.Add(this.stdFirstConclusionLabel);
             this.studentDataPanel.Controls.Add(this.stdJoiningDate);
             this.studentDataPanel.Controls.Add(this.stdJoiningDateLabel);
-            this.studentDataPanel.Controls.Add(this.stdMashaykhPlaces);
+            this.studentDataPanel.Controls.Add(this.stdMemoPlaces);
             this.studentDataPanel.Controls.Add(this.stdMashaykh);
-            this.studentDataPanel.Controls.Add(this.stdMashaykhPlacesLabel);
+            this.studentDataPanel.Controls.Add(this.stdMemoPlacesLabel);
             this.studentDataPanel.Controls.Add(this.stdMashaykhLabel);
             this.studentDataPanel.Controls.Add(this.stdMemo);
             this.studentDataPanel.Controls.Add(this.stdMemoLabel);
@@ -548,29 +549,29 @@
             this.stdJoiningDateLabel.TabIndex = 56;
             this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب :";
             // 
-            // stdMashaykhPlaces
+            // stdMemoPlaces
             // 
-            this.stdMashaykhPlaces.BackColor = System.Drawing.Color.Transparent;
-            this.stdMashaykhPlaces.BorderRadius = 5;
-            this.stdMashaykhPlaces.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdMashaykhPlaces.DefaultText = "";
-            this.stdMashaykhPlaces.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdMashaykhPlaces.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdMashaykhPlaces.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMashaykhPlaces.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMashaykhPlaces.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdMashaykhPlaces.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMashaykhPlaces.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdMashaykhPlaces.ForeColor = System.Drawing.Color.Black;
-            this.stdMashaykhPlaces.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMashaykhPlaces.Location = new System.Drawing.Point(43, 734);
-            this.stdMashaykhPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdMashaykhPlaces.Name = "stdMashaykhPlaces";
-            this.stdMashaykhPlaces.PlaceholderText = "";
-            this.stdMashaykhPlaces.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMashaykhPlaces.SelectedText = "";
-            this.stdMashaykhPlaces.Size = new System.Drawing.Size(692, 32);
-            this.stdMashaykhPlaces.TabIndex = 54;
+            this.stdMemoPlaces.BackColor = System.Drawing.Color.Transparent;
+            this.stdMemoPlaces.BorderRadius = 5;
+            this.stdMemoPlaces.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdMemoPlaces.DefaultText = "";
+            this.stdMemoPlaces.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdMemoPlaces.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdMemoPlaces.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMemoPlaces.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMemoPlaces.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdMemoPlaces.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMemoPlaces.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdMemoPlaces.ForeColor = System.Drawing.Color.Black;
+            this.stdMemoPlaces.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMemoPlaces.Location = new System.Drawing.Point(43, 734);
+            this.stdMemoPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdMemoPlaces.Name = "stdMemoPlaces";
+            this.stdMemoPlaces.PlaceholderText = "";
+            this.stdMemoPlaces.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMemoPlaces.SelectedText = "";
+            this.stdMemoPlaces.Size = new System.Drawing.Size(692, 32);
+            this.stdMemoPlaces.TabIndex = 54;
             // 
             // stdMashaykh
             // 
@@ -596,17 +597,17 @@
             this.stdMashaykh.Size = new System.Drawing.Size(692, 32);
             this.stdMashaykh.TabIndex = 53;
             // 
-            // stdMashaykhPlacesLabel
+            // stdMemoPlacesLabel
             // 
-            this.stdMashaykhPlacesLabel.AutoSize = true;
-            this.stdMashaykhPlacesLabel.BackColor = System.Drawing.Color.Transparent;
-            this.stdMashaykhPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMashaykhPlacesLabel.Location = new System.Drawing.Point(730, 740);
-            this.stdMashaykhPlacesLabel.Name = "stdMashaykhPlacesLabel";
-            this.stdMashaykhPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMashaykhPlacesLabel.Size = new System.Drawing.Size(175, 19);
-            this.stdMashaykhPlacesLabel.TabIndex = 52;
-            this.stdMashaykhPlacesLabel.Text = "الأماكن التي حفظ فيها : ";
+            this.stdMemoPlacesLabel.AutoSize = true;
+            this.stdMemoPlacesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdMemoPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(730, 740);
+            this.stdMemoPlacesLabel.Name = "stdMemoPlacesLabel";
+            this.stdMemoPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMemoPlacesLabel.Size = new System.Drawing.Size(175, 19);
+            this.stdMemoPlacesLabel.TabIndex = 52;
+            this.stdMemoPlacesLabel.Text = "الأماكن التي حفظ فيها : ";
             // 
             // stdMashaykhLabel
             // 
@@ -1896,6 +1897,10 @@
             this.excelRowsFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.excelRowsFilter.SelectedIndexChanged += new System.EventHandler(this.ExcelRowsFilter_SelectedIndexChanged);
             // 
+            // saveExcelFileDialog
+            // 
+            this.saveExcelFileDialog.Filter = "Excel files|*.xlsx";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1984,9 +1989,9 @@
         private System.Windows.Forms.Label stdMemoLabel;
         private Guna.UI2.WinForms.Guna2NumericUpDown stdLevel;
         private System.Windows.Forms.Label stdLevelLabel;
-        private Guna.UI2.WinForms.Guna2TextBox stdMashaykhPlaces;
+        private Guna.UI2.WinForms.Guna2TextBox stdMemoPlaces;
         private Guna.UI2.WinForms.Guna2TextBox stdMashaykh;
-        private System.Windows.Forms.Label stdMashaykhPlacesLabel;
+        private System.Windows.Forms.Label stdMemoPlacesLabel;
         private System.Windows.Forms.Label stdMashaykhLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdFirstConclusion;
         private System.Windows.Forms.Label stdFirstConclusionLabel;
@@ -2026,6 +2031,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox excelRowsFilter;
         private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
         private Guna.UI2.WinForms.Guna2DateTimePicker excelDateFilter;
+        private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
     }
 }
 

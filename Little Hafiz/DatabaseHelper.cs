@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml.Wordprocessing;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
@@ -10,9 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.AxHost;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static Little_Hafiz.StaticMembers;
 
 namespace Little_Hafiz
 {
@@ -56,7 +50,7 @@ namespace Little_Hafiz
             {
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
-                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, mashaykh_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
                                       "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, std_place INTEGER, PRIMARY KEY(national, competition_level) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
@@ -66,7 +60,7 @@ namespace Little_Hafiz
             return true;
         }
 
-        #region Select
+        #region Select SQLs
         private static void ReadMetadata()
         {
             try
@@ -176,27 +170,6 @@ namespace Little_Hafiz
         public static CompetitionGradeData[] SelectStudentGrades(string nationalNumber)
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
-        private static T[] SelectMultiRows<T>(string sql, Func<T> method)
-        {
-            if (!success) return null;
-            try
-            {
-                conn.Open();
-                command.CommandText = sql;
-                reader = command.ExecuteReader();
-                List<T> list = new List<T>();
-                while (reader.Read())
-                    list.Add(method());
-                return list.ToArray();
-            }
-            catch { return null; }
-            finally
-            {
-                reader.Close();
-                conn.Close();
-            }
-        }
-
         private static StudentSearchRowData GetStudentSearchRowData()
         {
             int? compLevel = null, stdRank = null;
@@ -250,7 +223,7 @@ namespace Little_Hafiz
                 Level = reader.GetInt32(21),
                 MemorizationAmount = (string)reader["memo_amount"],
                 StudentMashaykh = (string)reader["mashaykh"],
-                MashaykhPlaces = (string)reader["mashaykh_places"],
+                MemorizePlaces = (string)reader["memo_places"],
                 JoiningDate = (string)reader["joining_date"],
                 FirstConclusionDate = (string)reader["conclusion_date"],
                 Certificates = (string)reader["certificates"],
@@ -274,6 +247,49 @@ namespace Little_Hafiz
                 CompetitionDegree = reader.GetFloat(5),
                 Rank = reader.GetInt32(6),
             };
+        }
+
+        public static ExcelRowData[][] SelectExcelRowData(int year = 0, int month = 0)
+        {
+
+        }
+
+        private static ExcelRowData GetExcelRowData()
+        {
+            return new ExcelRowData
+            {
+                StudentCode = reader.GetInt32(0),
+                FullName = (string)reader["full_name"],
+                BirthDate = (string)reader["birth_date"],
+                PhoneNumber = (string)reader["phone_number"],
+                CompetitionLevel = ConvertNumberToRank(reader.GetInt32(4)),
+                PreviousLevel = ConvertNumberToRank(reader.GetInt32(5)),
+                Class = (string)reader["class"],
+                Address = (string)reader["address"],
+                MemoPlace = (string)reader["memo_places"],
+                CompetitionAddedDate = (string)reader["competition_date"]
+            };
+        }
+
+        private static T[] SelectMultiRows<T>(string sql, Func<T> method)
+        {
+            if (!success) return null;
+            try
+            {
+                conn.Open();
+                command.CommandText = sql;
+                reader = command.ExecuteReader();
+                List<T> list = new List<T>();
+                while (reader.Read())
+                    list.Add(method());
+                return list.ToArray();
+            }
+            catch { return null; }
+            finally
+            {
+                reader.Close();
+                conn.Close();
+            }
         }
         #endregion
 

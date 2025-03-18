@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Guna.UI2.WinForms;
 using QuranKareem;
@@ -12,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static Little_Hafiz.StaticMembers;
 
 namespace Little_Hafiz
 {
@@ -244,7 +246,7 @@ namespace Little_Hafiz
                 Level = (int)stdLevel.Value,
                 MemorizationAmount = stdMemo.Text,
                 StudentMashaykh = stdMashaykh.Text,
-                MashaykhPlaces = stdMashaykhPlaces.Text,
+                MemorizePlaces = stdMemoPlaces.Text,
                 JoiningDate = stdJoiningDate.Value.ToString("yyy/MM/dd"),
                 FirstConclusionDate = stdFirstConclusion.Value.ToString("yyy/MM/dd"),
                 Certificates = stdCertificates.Text,
@@ -293,7 +295,7 @@ namespace Little_Hafiz
             stdLevel.Value = 0;
             stdMemo.Text = "";
             stdMashaykh.Text = "";
-            stdMashaykhPlaces.Text = "";
+            stdMemoPlaces.Text = "";
             stdJoiningDate.Value = DateTime.Now.AddYears(-5);
             stdFirstConclusion.Value = DateTime.Now.AddYears(-2);
             stdCertificates.Text = "";
@@ -330,7 +332,7 @@ namespace Little_Hafiz
             stdLevel.Value = stdData.Level;
             stdMemo.Text = stdData.MemorizationAmount;
             stdMashaykh.Text = stdData.StudentMashaykh;
-            stdMashaykhPlaces.Text = stdData.MashaykhPlaces;
+            stdMemoPlaces.Text = stdData.MemorizePlaces;
             stdJoiningDate.Value = ParseExact(stdData.JoiningDate);
             stdFirstConclusion.Value = ParseExact(stdData.FirstConclusionDate);
             stdCertificates.Text = stdData.Certificates;
@@ -377,23 +379,84 @@ namespace Little_Hafiz
         private void ExcelRowsFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             excelDateFilter.Visible = false;
-            if (excelRowsFilter.SelectedIndex == 2)
+            int index = excelRowsFilter.SelectedIndex;
+            if (index == 2)
             {
                 excelDateFilter.CustomFormat = "yyyy";
                 excelDateFilter.Visible = true;
             }
-            else if (excelRowsFilter.SelectedIndex == 4)
+            else if (index == 4)
             {
                 excelDateFilter.CustomFormat = "yyyy MMM";
                 excelDateFilter.Visible = true;
             }
         }
 
+        
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
         {
+            int year = 0, month = 0;
+            int index = excelRowsFilter.SelectedIndex;
 
+            if (index == 2 || index == 4)
+                year = excelDateFilter.Value.Year;
+            else if (index == 1 || index == 3)
+                year = DateTime.Now.Year;
+
+            if (index == 4)
+                month = excelDateFilter.Value.Month;
+            else if (index == 3)
+                month = DateTime.Now.Month;
+
+            if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
+
+            ExcelRowData[][] sheets = DatabaseHelper.SelectExcelRowData(year, month);
+            ExcelRowData[] rows;
+            IXLWorksheet sheet;
+            using (var workbook = new XLWorkbook())
+            {
+                for (int i = 0; i < sheets.Length && i < 10; i++)
+                {
+                    sheet = workbook.Worksheets.Add("المستوى " + ConvertNumberToRank(i + 1));
+                    SetTitlesOnExcelFile(sheet);
+                    rows = sheets[i];
+                    
+                    for (int j = 0; j < rows.Length; i++)
+                        SetDataOnExcelFile(sheet, j + 3, rows[j]);
+                }
+                workbook.SaveAs(saveExcelFileDialog.FileName);
+            }
         }
 
+        private void SetTitlesOnExcelFile(IXLWorksheet sheet)
+        {
+            sheet.Cell(2, 1).Value = "م";
+            sheet.Cell(2, 2).Value = "الكود";
+            sheet.Cell(2, 3).Value = "الاسم";
+            sheet.Cell(2, 4).Value = "تاريخ الميلاد";
+            sheet.Cell(2, 5).Value = "رقم التليفون";
+            sheet.Cell(2, 6).Value = "الحالي";
+            sheet.Cell(2, 7).Value = "السابق";
+            sheet.Cell(2, 8).Value = "الصف";
+            sheet.Cell(2, 9).Value = "العنوان";
+            sheet.Cell(2, 10).Value = "مكان الحفظ";
+            sheet.Cell(2, 11).Value = "تاريخ إضافة المسابقة";
+        }
+
+        private void SetDataOnExcelFile(IXLWorksheet sheet, int row, ExcelRowData data)
+        {
+            sheet.Cell(row, 1).Value = (row - 2).ToString();
+            sheet.Cell(row, 2).Value = data.StudentCode;
+            sheet.Cell(row, 3).Value = data.FullName;
+            sheet.Cell(row, 4).Value = data.BirthDate;
+            sheet.Cell(row, 5).Value = data.PhoneNumber;
+            sheet.Cell(row, 6).Value = data.CompetitionLevel;
+            sheet.Cell(row, 7).Value = data.PreviousLevel;
+            sheet.Cell(row, 8).Value = data.Class;
+            sheet.Cell(row, 9).Value = data.Address;
+            sheet.Cell(row, 10).Value = data.MemoPlace;
+            sheet.Cell(row, 11).Value = data.CompetitionAddedDate;
+        }
         #endregion
 
     }
