@@ -12,16 +12,23 @@ namespace Little_Hafiz
 {
     public partial class StudentSearchRow : UserControl
     {
-        public event EventHandler ButtonClick
+        public event EventHandler StudentButtonClick
         {
-            add => showStudentBtn.Click += value;
-            remove => showStudentBtn.Click -= value;
+            add => studentBtn.Click += value;
+            remove => studentBtn.Click -= value;
+        }
+
+        public event EventHandler GradesButtonClick
+        {
+            add => gradesBtn.Click += value;
+            remove => gradesBtn.Click -= value;
         }
 
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
-            showStudentBtn.Tag = data.NationalNumber;
+            studentBtn.Tag = data.NationalNumber;
+            gradesBtn.Tag = data.NationalNumber;
             stdName.Text = data.FullName;
             compLevel.Text = ConvertNumberToRank(data.CompetitionLevel);
             compDate.Text = data.CompetitionDate;

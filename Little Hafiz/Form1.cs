@@ -74,7 +74,8 @@ namespace Little_Hafiz
             {
                 stdRow = new StudentSearchRow(students[i]);
                 stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
-                stdRow.ButtonClick += ShowStudentBtn_Click;
+                stdRow.StudentButtonClick += ShowStudentBtn_Click;
+                stdRow.GradesButtonClick += ShowGradesBtn_Click;
                 studentsListPanel.Controls.Add(stdRow);
             }
         }
@@ -87,14 +88,24 @@ namespace Little_Hafiz
 
             string national = (string)((Guna2Button)sender).Tag;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
-            CompetitionGrade[] grades = DatabaseHelper.SelectStudentGrades(national);
+            
 
-            SetStudentData(stdData, grades);
+            SetStudentData(stdData);
 
             addStudentBtn.Text = "تعديل";
             stdNational.ReadOnly = true;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
+        }
+
+        private void ShowGradesBtn_Click(object sender, EventArgs e)
+        {
+            // code
+
+            string national = (string)((Guna2Button)sender).Tag;
+            CompetitionGrade[] grades = DatabaseHelper.SelectStudentGrades(national);
+
+            // code
         }
 
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
@@ -103,7 +114,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
 
-            SetStudentData(null, null);
+            SetStudentData(null);
 
             addStudentBtn.Text = "إضافة";
             stdNational.ReadOnly = false;
@@ -186,9 +197,20 @@ namespace Little_Hafiz
                 return;
             }
 
-            if (studentPanelState == StudentPanelState.Add && DatabaseHelper.AddStudent(GetStudentData()) != -1
-                || studentPanelState == StudentPanelState.Update && DatabaseHelper.UpdateStudent(GetStudentData()) != -1)
+            if (studentPanelState == StudentPanelState.Add && DatabaseHelper.AddStudent(GetStudentData()) != -1)
+            {
+                stdNationalCheckBox.Checked = true;
+                stdNationalSearch.Text = stdNational.Text;
+                stdNameCheckBox.Checked = false;
+                stdPhoneCheckBox.Checked = false;
+                stdEmailCheckBox.Checked = false;
                 CancelBtn_Click(null, null);
+                SearchBtn_Click(null, null);
+            }
+            else if (studentPanelState == StudentPanelState.Update && DatabaseHelper.UpdateStudent(GetStudentData()) != -1)
+            {
+                CancelBtn_Click(null, null);
+            }
         }
 
         private StudentData GetStudentData()
@@ -231,7 +253,7 @@ namespace Little_Hafiz
             };
         }
 
-        private void SetStudentData(StudentData stdData, CompetitionGrade[] grades)
+        private void SetStudentData(StudentData stdData)
         {
             if (stdData is null)
                 SetStudentDataAtStudentDataIsNull();
