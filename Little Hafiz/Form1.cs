@@ -10,9 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -20,10 +18,7 @@ namespace Little_Hafiz
     public partial class Form1 : Form
     {
 
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        public Form1() => InitializeComponent();
 
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
@@ -34,7 +29,8 @@ namespace Little_Hafiz
             //    Directory.CreateDirectory("excels");
 
             Timer scrollTimer = new Timer { Interval = 100 };
-            scrollTimer.Tick += (sender1, e1) => {
+            scrollTimer.Tick += (sender1, e1) =>
+            {
                 scrollTimer.Stop();
                 if (studentDataPanel.Visible)
                     studentDataPanel.Invalidate();
@@ -100,7 +96,7 @@ namespace Little_Hafiz
 
             string national = (string)((Guna2Button)sender).Tag;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
-            
+
 
             SetStudentData(stdData);
 
@@ -115,7 +111,7 @@ namespace Little_Hafiz
             // code
 
             string national = (string)((Guna2Button)sender).Tag;
-            CompetitionGradeDate[] grades = DatabaseHelper.SelectStudentGrades(national);
+            CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(national);
 
             // code
         }

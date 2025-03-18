@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
 {
     public partial class StudentSearchRow : UserControl
     {
+
         public event EventHandler StudentButtonClick
         {
             add => studentBtn.Click += value;
@@ -27,6 +28,7 @@ namespace Little_Hafiz
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
+
             studentBtn.Tag = data.NationalNumber;
             gradesBtn.Tag = data.NationalNumber;
             stdName.Text = data.FullName;
@@ -39,6 +41,7 @@ namespace Little_Hafiz
         {
             switch (i)
             {
+                case 0: return "لا يوجد";
                 case 1: return "الأول";
                 case 2: return "الثاني";
                 case 3: return "الثالث";
@@ -53,5 +56,26 @@ namespace Little_Hafiz
                 default: return i.ToString();
             }
         }
+
+        #region Border Radius
+        private readonly int borderRadius = 20;
+
+        private GraphicsPath GetRoundedPath()
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+            path.AddArc(Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+            path.AddArc(Width - borderRadius, Height - borderRadius, borderRadius, borderRadius, 0, 90);
+            path.AddArc(0, Height - borderRadius, borderRadius, borderRadius, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            this.Region = new Region(GetRoundedPath());
+        }
+        #endregion
     }
 }

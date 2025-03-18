@@ -173,7 +173,7 @@ namespace Little_Hafiz
             return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
 
-        public static CompetitionGradeDate[] SelectStudentGrades(string nationalNumber)
+        public static CompetitionGradeData[] SelectStudentGrades(string nationalNumber)
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
         private static T[] SelectMultiRows<T>(string sql, Func<T> method)
@@ -262,9 +262,9 @@ namespace Little_Hafiz
             };
         }
 
-        private static CompetitionGradeDate GetStudentGrade()
+        private static CompetitionGradeData GetStudentGrade()
         {
-            return new CompetitionGradeDate
+            return new CompetitionGradeData
             {
                 NationalNumber = (string)reader["national"],
                 StudentCode = reader.GetInt32(1),

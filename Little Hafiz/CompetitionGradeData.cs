@@ -1,6 +1,6 @@
 ﻿namespace Little_Hafiz
 {
-    internal class CompetitionGradeDate
+    internal class CompetitionGradeData
     {
         public string NationalNumber;
         public int StudentCode;

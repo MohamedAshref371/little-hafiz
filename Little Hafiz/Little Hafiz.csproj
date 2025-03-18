@@ -113,8 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyResolve.cs" />
-    <Compile Include="CompetitionGradeDate.cs" />
+    <Compile Include="CompetitionGradeData.cs" />
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="ExcelRowData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
