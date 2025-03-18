@@ -55,7 +55,9 @@ namespace Little_Hafiz
             fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
             fs.SetControls(Controls);
             maximizeBtn.Visible = false;
-            minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y); 
+            minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y);
+            if (studentDataPanel.Visible) SetStudentImage();
+            if (studentsListPanel.Controls.Count > 0) SearchBtn_Click(null, null);
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
@@ -176,9 +178,16 @@ namespace Little_Hafiz
             if (selectImageDialog.ShowDialog() == DialogResult.OK)
             {
                 stdImagePath.Text = selectImageDialog.FileName;
-                Bitmap bitmap = new Bitmap(new Bitmap(stdImagePath.Text), studentImage.Size.Width, studentImage.Size.Height);
-                studentImage.Image = bitmap;
+                SetStudentImage();
             }
+        }
+
+        private void SetStudentImage()
+        {
+            if (stdImagePath.Text.Contains('\\'))
+                studentImage.Image = new Bitmap(new Bitmap(stdImagePath.Text), studentImage.Size.Width, studentImage.Size.Height);
+            else
+                studentImage.Image = null;
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -210,6 +219,7 @@ namespace Little_Hafiz
             else if (studentPanelState == StudentPanelState.Update && DatabaseHelper.UpdateStudent(GetStudentData()) != -1)
             {
                 CancelBtn_Click(null, null);
+                SearchBtn_Click(null, null);
             }
         }
 
@@ -261,7 +271,7 @@ namespace Little_Hafiz
                 SetStudentDataAtStudentDataIsNotNull(stdData);
 
             wrongValueLabel.Visible = false;
-
+            SetStudentImage();
         }
 
         private void SetStudentDataAtStudentDataIsNull()
