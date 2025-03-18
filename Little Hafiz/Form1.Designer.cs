@@ -1782,6 +1782,7 @@
             // 
             // studentsListPanel
             // 
+            this.studentsListPanel.AutoScroll = true;
             this.studentsListPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentsListPanel.BorderRadius = 5;
             this.studentsListPanel.BorderThickness = 1;
