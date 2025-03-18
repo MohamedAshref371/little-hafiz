@@ -121,12 +121,14 @@
             this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
+            this.footerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -1785,9 +1787,9 @@
             this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.studentsListPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentsListPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.studentsListPanel.Location = new System.Drawing.Point(12, 241);
+            this.studentsListPanel.Location = new System.Drawing.Point(12, 238);
             this.studentsListPanel.Name = "studentsListPanel";
-            this.studentsListPanel.Size = new System.Drawing.Size(926, 402);
+            this.studentsListPanel.Size = new System.Drawing.Size(926, 403);
             this.studentsListPanel.TabIndex = 75;
             // 
             // openAddStudentBtn
@@ -1801,19 +1803,32 @@
             this.openAddStudentBtn.FillColor = System.Drawing.Color.RoyalBlue;
             this.openAddStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.openAddStudentBtn.ForeColor = System.Drawing.Color.White;
-            this.openAddStudentBtn.Location = new System.Drawing.Point(22, 649);
+            this.openAddStudentBtn.Location = new System.Drawing.Point(754, 5);
             this.openAddStudentBtn.Name = "openAddStudentBtn";
             this.openAddStudentBtn.Size = new System.Drawing.Size(169, 39);
             this.openAddStudentBtn.TabIndex = 82;
             this.openAddStudentBtn.Text = "إضافة طالب";
             this.openAddStudentBtn.Click += new System.EventHandler(this.OpenAddStudentBtn_Click);
             // 
+            // footerPanel
+            // 
+            this.footerPanel.BorderRadius = 5;
+            this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.openAddStudentBtn);
+            this.footerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.footerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.footerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.footerPanel.Location = new System.Drawing.Point(12, 644);
+            this.footerPanel.Name = "footerPanel";
+            this.footerPanel.Size = new System.Drawing.Size(926, 49);
+            this.footerPanel.TabIndex = 83;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
-            this.Controls.Add(this.openAddStudentBtn);
+            this.Controls.Add(this.footerPanel);
             this.Controls.Add(this.studentsListPanel);
             this.Controls.Add(this.studentSearchPanel);
             this.Controls.Add(this.maximizeBtn);
@@ -1823,6 +1838,7 @@
             this.Controls.Add(this.FormTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مكتب الحافظ الصغير بمسطرد";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.studentDataPanel.ResumeLayout(false);
@@ -1833,6 +1849,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
             this.studentSearchPanel.ResumeLayout(false);
             this.studentSearchPanel.PerformLayout();
+            this.footerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1932,6 +1949,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
         private Guna.UI2.WinForms.Guna2Button openAddStudentBtn;
+        private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
     }
 }
 

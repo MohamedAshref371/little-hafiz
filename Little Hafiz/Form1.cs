@@ -37,9 +37,15 @@ namespace Little_Hafiz
                 if (studentDataPanel.Visible)
                     studentDataPanel.Invalidate();
 
+                if (studentsListPanel.Visible)
+                    studentsListPanel.Invalidate();
             };
+
             studentDataPanel.Scroll += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
             studentDataPanel.MouseWheel += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
+
+            studentsListPanel.Scroll += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
+            studentsListPanel.MouseWheel += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -84,7 +90,7 @@ namespace Little_Hafiz
 
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {
-            openAddStudentBtn.Visible = false;
+            footerPanel.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
 
@@ -105,14 +111,14 @@ namespace Little_Hafiz
             // code
 
             string national = (string)((Guna2Button)sender).Tag;
-            CompetitionGrade[] grades = DatabaseHelper.SelectStudentGrades(national);
+            CompetitionGradeDate[] grades = DatabaseHelper.SelectStudentGrades(national);
 
             // code
         }
 
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
         {
-            openAddStudentBtn.Visible = false;
+            footerPanel.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
 
@@ -193,7 +199,7 @@ namespace Little_Hafiz
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.Visible = false;
-            openAddStudentBtn.Visible = true;
+            footerPanel.Visible = true;
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
         }
