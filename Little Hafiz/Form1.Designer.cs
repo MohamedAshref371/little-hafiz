@@ -1840,7 +1840,7 @@
             this.excelDateFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.excelDateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.excelDateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.excelDateFilter.Location = new System.Drawing.Point(215, 6);
+            this.excelDateFilter.Location = new System.Drawing.Point(419, 7);
             this.excelDateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.excelDateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.excelDateFilter.Name = "excelDateFilter";
@@ -1848,6 +1848,7 @@
             this.excelDateFilter.TabIndex = 85;
             this.excelDateFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.excelDateFilter.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            this.excelDateFilter.Visible = false;
             // 
             // extractExcelBtn
             // 
@@ -1886,7 +1887,7 @@
             "تحديد السنة ...",
             "آخر شهر",
             "تحديد الشهر ..."});
-            this.excelRowsFilter.Location = new System.Drawing.Point(352, 6);
+            this.excelRowsFilter.Location = new System.Drawing.Point(215, 7);
             this.excelRowsFilter.Name = "excelRowsFilter";
             this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.excelRowsFilter.Size = new System.Drawing.Size(198, 36);
