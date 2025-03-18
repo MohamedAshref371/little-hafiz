@@ -1884,12 +1884,12 @@
             this.excelRowsFilter.Items.AddRange(new object[] {
             "آخر مسابقة لكل طالب",
             "آخر سنة",
-            "تحديد السنة ...",
+            "... تحديد السنة",
             "آخر شهر",
-            "تحديد الشهر ..."});
+            "... تحديد الشهر"});
             this.excelRowsFilter.Location = new System.Drawing.Point(215, 7);
             this.excelRowsFilter.Name = "excelRowsFilter";
-            this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.excelRowsFilter.Size = new System.Drawing.Size(198, 36);
             this.excelRowsFilter.StartIndex = 0;
             this.excelRowsFilter.TabIndex = 83;
