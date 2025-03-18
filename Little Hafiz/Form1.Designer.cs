@@ -1782,6 +1782,7 @@
             // 
             // studentsListPanel
             // 
+            this.studentsListPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentsListPanel.BorderRadius = 5;
             this.studentsListPanel.BorderThickness = 1;
             this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1812,6 +1813,7 @@
             // 
             // footerPanel
             // 
+            this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
             this.footerPanel.Controls.Add(this.openAddStudentBtn);
