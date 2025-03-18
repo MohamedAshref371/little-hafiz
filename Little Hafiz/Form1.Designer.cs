@@ -122,6 +122,9 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1817,6 +1820,9 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.excelDateFilter);
+            this.footerPanel.Controls.Add(this.extractExcelBtn);
+            this.footerPanel.Controls.Add(this.excelRowsFilter);
             this.footerPanel.Controls.Add(this.openAddStudentBtn);
             this.footerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.footerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
@@ -1825,6 +1831,69 @@
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
+            // 
+            // excelDateFilter
+            // 
+            this.excelDateFilter.BorderRadius = 5;
+            this.excelDateFilter.Checked = true;
+            this.excelDateFilter.CustomFormat = "yyyy";
+            this.excelDateFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.excelDateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.excelDateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.excelDateFilter.Location = new System.Drawing.Point(215, 6);
+            this.excelDateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.excelDateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.excelDateFilter.Name = "excelDateFilter";
+            this.excelDateFilter.Size = new System.Drawing.Size(131, 36);
+            this.excelDateFilter.TabIndex = 85;
+            this.excelDateFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.excelDateFilter.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // extractExcelBtn
+            // 
+            this.extractExcelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.extractExcelBtn.BorderRadius = 15;
+            this.extractExcelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.extractExcelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.extractExcelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.extractExcelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.extractExcelBtn.FillColor = System.Drawing.Color.DarkGreen;
+            this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.extractExcelBtn.ForeColor = System.Drawing.Color.White;
+            this.extractExcelBtn.Location = new System.Drawing.Point(6, 5);
+            this.extractExcelBtn.Name = "extractExcelBtn";
+            this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.extractExcelBtn.Size = new System.Drawing.Size(203, 39);
+            this.extractExcelBtn.TabIndex = 84;
+            this.extractExcelBtn.Text = "إستخراج ملف excel";
+            this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
+            // 
+            // excelRowsFilter
+            // 
+            this.excelRowsFilter.BackColor = System.Drawing.Color.Transparent;
+            this.excelRowsFilter.BorderRadius = 5;
+            this.excelRowsFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.excelRowsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.excelRowsFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.excelRowsFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.excelRowsFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.excelRowsFilter.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.excelRowsFilter.ForeColor = System.Drawing.Color.Black;
+            this.excelRowsFilter.ItemHeight = 30;
+            this.excelRowsFilter.Items.AddRange(new object[] {
+            "آخر مسابقة لكل طالب",
+            "آخر سنة",
+            "تحديد السنة ...",
+            "آخر شهر",
+            "تحديد الشهر ..."});
+            this.excelRowsFilter.Location = new System.Drawing.Point(352, 6);
+            this.excelRowsFilter.Name = "excelRowsFilter";
+            this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.excelRowsFilter.Size = new System.Drawing.Size(198, 36);
+            this.excelRowsFilter.StartIndex = 0;
+            this.excelRowsFilter.TabIndex = 83;
+            this.excelRowsFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.excelRowsFilter.SelectedIndexChanged += new System.EventHandler(this.ExcelRowsFilter_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -1953,6 +2022,9 @@
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
         private Guna.UI2.WinForms.Guna2Button openAddStudentBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
+        private Guna.UI2.WinForms.Guna2ComboBox excelRowsFilter;
+        private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
+        private Guna.UI2.WinForms.Guna2DateTimePicker excelDateFilter;
     }
 }
 

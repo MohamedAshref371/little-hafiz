@@ -19,12 +19,14 @@ namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
-        private readonly int SizeX = 950, SizeY = 700;
 
         public Form1()
         {
             InitializeComponent();
         }
+
+        #region Form1
+        private readonly int SizeX = 950, SizeY = 700;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -65,7 +67,9 @@ namespace Little_Hafiz
             if (studentDataPanel.Visible) SetStudentImage();
             if (studentsListPanel.Controls.Count > 0) SearchBtn_Click(null, null);
         }
+        #endregion
 
+        #region Two Serach Panels
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents
@@ -115,20 +119,7 @@ namespace Little_Hafiz
 
             // code
         }
-
-        private void OpenAddStudentBtn_Click(object sender, EventArgs e)
-        {
-            footerPanel.Visible = false;
-            studentSearchPanel.Visible = false;
-            studentsListPanel.Visible = false;
-
-            SetStudentData(null);
-
-            addStudentBtn.Text = "إضافة";
-            stdNational.ReadOnly = false;
-            studentPanelState = StudentPanelState.Add;
-            studentDataPanel.Visible = true;
-        }
+        #endregion
 
         #region Student Data Panel
         private void National_KeyPress(object sender, KeyPressEventArgs e)
@@ -363,6 +354,7 @@ namespace Little_Hafiz
         }
 
         StudentPanelState studentPanelState = StudentPanelState.Read;
+
         private enum StudentPanelState
         {
             Add = 0,
@@ -370,5 +362,43 @@ namespace Little_Hafiz
             Read = 2,
         }
         #endregion
+
+        #region Footer Panel
+        private void OpenAddStudentBtn_Click(object sender, EventArgs e)
+        {
+            footerPanel.Visible = false;
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+
+            SetStudentData(null);
+
+            addStudentBtn.Text = "إضافة";
+            stdNational.ReadOnly = false;
+            studentPanelState = StudentPanelState.Add;
+            studentDataPanel.Visible = true;
+        }
+
+        private void ExcelRowsFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            excelDateFilter.Visible = false;
+            if (excelRowsFilter.SelectedIndex == 2)
+            {
+                excelDateFilter.CustomFormat = "yyyy";
+                excelDateFilter.Visible = true;
+            }
+            else if (excelRowsFilter.SelectedIndex == 4)
+            {
+                excelDateFilter.CustomFormat = "yyyy MMM";
+                excelDateFilter.Visible = true;
+            }
+        }
+
+        private void ExtractExcelBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
     }
 }
