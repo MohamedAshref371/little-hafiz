@@ -82,6 +82,7 @@ namespace Little_Hafiz
             maximizeBtn.Visible = false;
             minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y);
             if (studentDataPanel.Visible) SetStudentImage();
+            if (studentGradesPanel.Visible) SetStudentImage2();
             if (studentsListPanel.Controls.Count > 0) SearchBtn_Click(null, null);
         }
         #endregion
@@ -133,9 +134,15 @@ namespace Little_Hafiz
             footerPanel.Visible = false;
 
             var data = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData;
+            stdName2.Text = data.FullName;
+            stdNational2.Text = data.NationalNumber;
+            // more code
+            stdImagePath2.Text = data.Image;
+            SetStudentImage2();
+
             CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
 
-            // code
+            // Disblay grades in UI
 
             studentGradesPanel.Visible = true;
         }
@@ -201,7 +208,7 @@ namespace Little_Hafiz
 
         private void SetStudentImage()
         {
-            if (stdImagePath.Text.Contains('\\'))
+            if (File.Exists(stdImagePath.Text))
                 studentImage.Image = new Bitmap(new Bitmap(stdImagePath.Text), studentImage.Size.Width, studentImage.Size.Height);
             else
                 studentImage.Image = null;
@@ -384,7 +391,13 @@ namespace Little_Hafiz
         #endregion
 
         #region Student Grades Panel
-
+        private void SetStudentImage2()
+        {
+            if (File.Exists(stdImagePath2.Text))
+                studentImage2.Image = new Bitmap(new Bitmap(stdImagePath2.Text), studentImage2.Size.Width, studentImage2.Size.Height);
+            else
+                studentImage2.Image = null;
+        }
         #endregion
 
         #region Footer Panel

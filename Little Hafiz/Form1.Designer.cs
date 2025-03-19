@@ -135,6 +135,7 @@
             this.formImage = new System.Windows.Forms.Label();
             this.stdName2 = new System.Windows.Forms.Label();
             this.stdNational2 = new System.Windows.Forms.Label();
+            this.stdImagePath2 = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1943,6 +1944,7 @@
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.stdImagePath2);
             this.studentGradesPanel.Controls.Add(this.stdNational2);
             this.studentGradesPanel.Controls.Add(this.stdName2);
             this.studentGradesPanel.Controls.Add(this.stdNationalLabel2);
@@ -2037,6 +2039,15 @@
             this.stdNational2.Size = new System.Drawing.Size(163, 19);
             this.stdNational2.TabIndex = 76;
             this.stdNational2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stdImagePath2
+            // 
+            this.stdImagePath2.AutoSize = true;
+            this.stdImagePath2.Location = new System.Drawing.Point(273, 68);
+            this.stdImagePath2.Name = "stdImagePath2";
+            this.stdImagePath2.Size = new System.Drawing.Size(0, 13);
+            this.stdImagePath2.TabIndex = 77;
+            this.stdImagePath2.Visible = false;
             // 
             // Form1
             // 
@@ -2176,6 +2187,7 @@
         private System.Windows.Forms.Label formImage;
         private System.Windows.Forms.Label stdNational2;
         private System.Windows.Forms.Label stdName2;
+        private System.Windows.Forms.Label stdImagePath2;
     }
 }
 
