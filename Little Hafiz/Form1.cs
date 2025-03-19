@@ -136,6 +136,8 @@ namespace Little_Hafiz
             CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
 
             // code
+
+            studentGradesPanel.Visible = true;
         }
         #endregion
 

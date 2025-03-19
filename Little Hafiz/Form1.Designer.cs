@@ -133,6 +133,8 @@
             this.stdNameLabel2 = new System.Windows.Forms.Label();
             this.stdNationalLabel2 = new System.Windows.Forms.Label();
             this.formImage = new System.Windows.Forms.Label();
+            this.stdName2 = new System.Windows.Forms.Label();
+            this.stdNational2 = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1526,7 +1528,7 @@
             this.formTitle.AutoSize = true;
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.formTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.formTitle.ForeColor = System.Drawing.Color.Black;
             this.formTitle.Location = new System.Drawing.Point(308, 3);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1932,7 +1934,7 @@
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.headerPanel.Location = new System.Drawing.Point(-1, -1);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(950, 701);
+            this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
             // 
             // studentGradesPanel
@@ -1941,6 +1943,8 @@
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.stdNational2);
+            this.studentGradesPanel.Controls.Add(this.stdName2);
             this.studentGradesPanel.Controls.Add(this.stdNationalLabel2);
             this.studentGradesPanel.Controls.Add(this.stdNameLabel2);
             this.studentGradesPanel.Controls.Add(this.studentImage2);
@@ -2006,10 +2010,33 @@
             // formImage
             // 
             this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
             this.formImage.Location = new System.Drawing.Point(17, 4);
             this.formImage.Name = "formImage";
             this.formImage.Size = new System.Drawing.Size(30, 30);
             this.formImage.TabIndex = 74;
+            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stdName2
+            // 
+            this.stdName2.BackColor = System.Drawing.Color.Transparent;
+            this.stdName2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdName2.Location = new System.Drawing.Point(464, 95);
+            this.stdName2.Name = "stdName2";
+            this.stdName2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdName2.Size = new System.Drawing.Size(314, 19);
+            this.stdName2.TabIndex = 75;
+            // 
+            // stdNational2
+            // 
+            this.stdNational2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNational2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNational2.Location = new System.Drawing.Point(615, 125);
+            this.stdNational2.Name = "stdNational2";
+            this.stdNational2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.stdNational2.Size = new System.Drawing.Size(163, 19);
+            this.stdNational2.TabIndex = 76;
+            this.stdNational2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -2147,6 +2174,8 @@
         private System.Windows.Forms.Label stdNationalLabel2;
         private System.Windows.Forms.Label stdNameLabel2;
         private System.Windows.Forms.Label formImage;
+        private System.Windows.Forms.Label stdNational2;
+        private System.Windows.Forms.Label stdName2;
     }
 }
 
