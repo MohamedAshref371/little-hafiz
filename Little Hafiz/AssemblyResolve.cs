@@ -1,16 +1,21 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 
-class AssemblyResolve
+class AssemblyResolver // GPT-4o
 {
-    public static void AssemblyResolveEventHandler() => AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-    public static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-    {
-        string assemblyPath = System.IO.Path.Combine("libraries", new AssemblyName(args.Name).Name + ".dll");
+    private static readonly string LibrariesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libraries");
 
-        if (System.IO.File.Exists(assemblyPath))
+    public static void Initialize() => AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
+
+    private static Assembly ResolveAssembly(object sender, ResolveEventArgs args)
+    {
+        string assemblyName = new AssemblyName(args.Name).Name + ".dll";
+        string assemblyPath = Path.Combine(LibrariesPath, assemblyName);
+
+        if (File.Exists(assemblyPath))
             return Assembly.LoadFrom(assemblyPath);
-        
+
         return null;
     }
 }

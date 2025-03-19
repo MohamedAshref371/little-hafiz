@@ -8,7 +8,7 @@ namespace Little_Hafiz
         [STAThread]
         static void Main()
         {
-            AssemblyResolve.AssemblyResolveEventHandler();
+            AssemblyResolver.Initialize();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
