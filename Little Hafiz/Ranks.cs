@@ -1,6 +1,6 @@
 ﻿namespace Little_Hafiz
 {
-    internal class StaticMembers
+    internal class Ranks
     {
         public static readonly string[] RanksText = { "لا يوجد", "الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر" };
 

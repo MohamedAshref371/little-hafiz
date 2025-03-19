@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using static Little_Hafiz.StaticMembers;
 
 namespace Little_Hafiz
 {
@@ -131,7 +130,7 @@ namespace Little_Hafiz
         public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_rank FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
+            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
             if (nationalNumber == null || nationalNumber.Length != 14)
             {
@@ -184,7 +183,8 @@ namespace Little_Hafiz
                 FullName = reader.GetString(1),
                 CompetitionLevel = compLevel,
                 CompetitionDate = reader.IsDBNull(3) ? null : reader.GetString(3),
-                Rank = stdRank
+                Rank = stdRank,
+                Image = reader.GetString(5),
             };
         }
         

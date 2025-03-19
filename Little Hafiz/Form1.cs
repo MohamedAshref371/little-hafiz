@@ -2,8 +2,6 @@
 using Guna.UI2.WinForms;
 using QuranKareem;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -12,7 +10,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using static Little_Hafiz.StaticMembers;
 
 namespace Little_Hafiz
 {
@@ -61,6 +58,7 @@ namespace Little_Hafiz
             };
             headerPanel.MouseDown += meh;
             formTitle.MouseDown += meh;
+            formImage.MouseDown += meh;
 
             studentDataPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentDataPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
@@ -113,28 +111,29 @@ namespace Little_Hafiz
 
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {
-            footerPanel.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
 
-            string national = (string)((Guna2Button)sender).Tag;
+            string national = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData.NationalNumber;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
-
 
             SetStudentData(stdData);
 
             addStudentBtn.Text = "تعديل";
-            stdNational.ReadOnly = true;
+            stdNational.Enabled = false;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
         }
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
         {
-            // code
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
 
-            string national = (string)((Guna2Button)sender).Tag;
-            CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(national);
+            var data = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData;
+            CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
 
             // code
         }
@@ -209,9 +208,9 @@ namespace Little_Hafiz
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.Visible = false;
-            footerPanel.Visible = true;
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
+            footerPanel.Visible = true;
         }
 
         private void AddStudentBtn_Click(object sender, EventArgs e)
@@ -382,17 +381,21 @@ namespace Little_Hafiz
         }
         #endregion
 
+        #region Student Grades Panel
+
+        #endregion
+
         #region Footer Panel
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
         {
-            footerPanel.Visible = false;
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
 
             SetStudentData(null);
 
             addStudentBtn.Text = "إضافة";
-            stdNational.ReadOnly = false;
+            stdNational.Enabled = true;
             studentPanelState = StudentPanelState.Add;
             studentDataPanel.Visible = true;
         }
@@ -441,16 +444,16 @@ namespace Little_Hafiz
                 IXLWorksheet[] sheets = new IXLWorksheet[11]
                 {
                     workbook.Worksheets.Add("جميع المستويات"),
-                    workbook.Worksheets.Add("المستوى " + RanksText[1]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[2]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[3]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[4]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[5]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[6]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[7]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[8]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[9]),
-                    workbook.Worksheets.Add("المستوى " + RanksText[10]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[1]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[2]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[3]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[4]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[5]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[6]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[7]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[8]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[9]),
+                    workbook.Worksheets.Add("المستوى " + Ranks.RanksText[10]),
                 };
                 
                 for (int i = 0; i < sheets.Length; i++)
@@ -492,8 +495,8 @@ namespace Little_Hafiz
             sheet.Cell(row, 3).Value = data.FullName;
             sheet.Cell(row, 4).Value = data.BirthDate;
             sheet.Cell(row, 5).Value = data.PhoneNumber;
-            sheet.Cell(row, 6).Value = ConvertNumberToRank(data.CompetitionLevel);
-            sheet.Cell(row, 7).Value = ConvertNumberToRank(data.PreviousLevel);
+            sheet.Cell(row, 6).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
+            sheet.Cell(row, 7).Value = Ranks.ConvertNumberToRank(data.PreviousLevel);
             sheet.Cell(row, 8).Value = data.Class;
             sheet.Cell(row, 9).Value = data.Address;
             sheet.Cell(row, 10).Value = data.MemoPlace;

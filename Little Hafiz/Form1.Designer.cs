@@ -127,6 +127,12 @@
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.gradesPanelTitle = new System.Windows.Forms.Label();
+            this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.stdNameLabel2 = new System.Windows.Forms.Label();
+            this.stdNationalLabel2 = new System.Windows.Forms.Label();
+            this.formImage = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -135,6 +141,8 @@
             this.studentSearchPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
+            this.studentGradesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -156,9 +164,9 @@
             this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(911, 3);
+            this.closeBtn.Location = new System.Drawing.Point(912, 4);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(32, 32);
+            this.closeBtn.Size = new System.Drawing.Size(32, 30);
             this.closeBtn.TabIndex = 0;
             this.closeBtn.Text = "X";
             this.closeBtn.Click += new System.EventHandler(this.CloseBtn_Click);
@@ -174,7 +182,7 @@
             this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(840, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(841, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 14);
             this.minimizeBtn.TabIndex = 1;
@@ -1519,7 +1527,7 @@
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
             this.formTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.formTitle.Location = new System.Drawing.Point(311, 3);
+            this.formTitle.Location = new System.Drawing.Point(308, 3);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(337, 33);
@@ -1539,7 +1547,7 @@
             this.maximizeBtn.FillColor = System.Drawing.SystemColors.Control;
             this.maximizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.maximizeBtn.ForeColor = System.Drawing.Color.White;
-            this.maximizeBtn.Location = new System.Drawing.Point(878, 7);
+            this.maximizeBtn.Location = new System.Drawing.Point(879, 7);
             this.maximizeBtn.Name = "maximizeBtn";
             this.maximizeBtn.Size = new System.Drawing.Size(30, 24);
             this.maximizeBtn.TabIndex = 73;
@@ -1788,6 +1796,7 @@
             // studentsListPanel
             // 
             this.studentsListPanel.AutoScroll = true;
+            this.studentsListPanel.BackColor = System.Drawing.Color.Transparent;
             this.studentsListPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentsListPanel.BorderRadius = 5;
             this.studentsListPanel.BorderThickness = 1;
@@ -1819,6 +1828,7 @@
             // 
             // footerPanel
             // 
+            this.footerPanel.BackColor = System.Drawing.Color.Transparent;
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
@@ -1907,6 +1917,12 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.studentGradesPanel);
+            this.headerPanel.Controls.Add(this.studentDataPanel);
+            this.headerPanel.Controls.Add(this.footerPanel);
+            this.headerPanel.Controls.Add(this.studentsListPanel);
+            this.headerPanel.Controls.Add(this.formImage);
+            this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.formTitle);
             this.headerPanel.Controls.Add(this.closeBtn);
             this.headerPanel.Controls.Add(this.minimizeBtn);
@@ -1914,21 +1930,94 @@
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Location = new System.Drawing.Point(-1, -1);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(949, 37);
+            this.headerPanel.Size = new System.Drawing.Size(950, 701);
             this.headerPanel.TabIndex = 84;
+            // 
+            // studentGradesPanel
+            // 
+            this.studentGradesPanel.BackColor = System.Drawing.Color.Transparent;
+            this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
+            this.studentGradesPanel.BorderRadius = 5;
+            this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.stdNationalLabel2);
+            this.studentGradesPanel.Controls.Add(this.stdNameLabel2);
+            this.studentGradesPanel.Controls.Add(this.studentImage2);
+            this.studentGradesPanel.Controls.Add(this.gradesPanelTitle);
+            this.studentGradesPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(150)))));
+            this.studentGradesPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(70)))));
+            this.studentGradesPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.studentGradesPanel.Location = new System.Drawing.Point(12, 37);
+            this.studentGradesPanel.Name = "studentGradesPanel";
+            this.studentGradesPanel.Size = new System.Drawing.Size(926, 656);
+            this.studentGradesPanel.TabIndex = 85;
+            this.studentGradesPanel.Visible = false;
+            // 
+            // gradesPanelTitle
+            // 
+            this.gradesPanelTitle.AutoSize = true;
+            this.gradesPanelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.gradesPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.gradesPanelTitle.Location = new System.Drawing.Point(673, 21);
+            this.gradesPanelTitle.Name = "gradesPanelTitle";
+            this.gradesPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gradesPanelTitle.Size = new System.Drawing.Size(239, 29);
+            this.gradesPanelTitle.TabIndex = 3;
+            this.gradesPanelTitle.Text = "بيانات مسابقات الطالب";
+            // 
+            // studentImage2
+            // 
+            this.studentImage2.BackColor = System.Drawing.Color.Transparent;
+            this.studentImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.studentImage2.BorderRadius = 5;
+            this.studentImage2.FillColor = System.Drawing.Color.Transparent;
+            this.studentImage2.ImageRotate = 0F;
+            this.studentImage2.Location = new System.Drawing.Point(23, 14);
+            this.studentImage2.Name = "studentImage2";
+            this.studentImage2.Size = new System.Drawing.Size(140, 180);
+            this.studentImage2.TabIndex = 73;
+            this.studentImage2.TabStop = false;
+            // 
+            // stdNameLabel2
+            // 
+            this.stdNameLabel2.AutoSize = true;
+            this.stdNameLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNameLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNameLabel2.Location = new System.Drawing.Point(790, 95);
+            this.stdNameLabel2.Name = "stdNameLabel2";
+            this.stdNameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNameLabel2.Size = new System.Drawing.Size(101, 19);
+            this.stdNameLabel2.TabIndex = 73;
+            this.stdNameLabel2.Text = "إسم الطالب :";
+            // 
+            // stdNationalLabel2
+            // 
+            this.stdNationalLabel2.AutoSize = true;
+            this.stdNationalLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNationalLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNationalLabel2.Location = new System.Drawing.Point(784, 125);
+            this.stdNationalLabel2.Name = "stdNationalLabel2";
+            this.stdNationalLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalLabel2.Size = new System.Drawing.Size(107, 19);
+            this.stdNationalLabel2.TabIndex = 74;
+            this.stdNationalLabel2.Text = "الرقم القومي :";
+            // 
+            // formImage
+            // 
+            this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Location = new System.Drawing.Point(17, 4);
+            this.formImage.Name = "formImage";
+            this.formImage.Size = new System.Drawing.Size(30, 30);
+            this.formImage.TabIndex = 74;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(950, 700);
             this.Controls.Add(this.headerPanel);
-            this.Controls.Add(this.footerPanel);
-            this.Controls.Add(this.studentsListPanel);
-            this.Controls.Add(this.studentSearchPanel);
-            this.Controls.Add(this.studentDataPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1945,6 +2034,9 @@
             this.footerPanel.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
+            this.studentGradesPanel.ResumeLayout(false);
+            this.studentGradesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2049,6 +2141,12 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker excelDateFilter;
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
         private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
+        private Guna.UI2.WinForms.Guna2GradientPanel studentGradesPanel;
+        private System.Windows.Forms.Label gradesPanelTitle;
+        private Guna.UI2.WinForms.Guna2PictureBox studentImage2;
+        private System.Windows.Forms.Label stdNationalLabel2;
+        private System.Windows.Forms.Label stdNameLabel2;
+        private System.Windows.Forms.Label formImage;
     }
 }
 

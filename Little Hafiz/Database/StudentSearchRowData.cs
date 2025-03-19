@@ -7,5 +7,6 @@
         public int? CompetitionLevel;
         public string CompetitionDate;
         public int? Rank;
+        public string Image;
     }
 }

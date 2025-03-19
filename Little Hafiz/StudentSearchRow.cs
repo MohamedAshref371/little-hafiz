@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using static Little_Hafiz.StaticMembers;
 
 namespace Little_Hafiz
 {
@@ -26,16 +20,17 @@ namespace Little_Hafiz
             remove => gradesBtn.Click -= value;
         }
 
+        public StudentSearchRowData StudentSearchRowData;
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
 
-            studentBtn.Tag = data.NationalNumber;
-            gradesBtn.Tag = data.NationalNumber;
+            StudentSearchRowData = data;
+
             stdName.Text = data.FullName;
-            compLevel.Text = ConvertNumberToRank(data.CompetitionLevel);
+            compLevel.Text = Ranks.ConvertNumberToRank(data.CompetitionLevel);
             compDate.Text = data.CompetitionDate;
-            stdRank.Text = ConvertNumberToRank(data.Rank);
+            stdRank.Text = Ranks.ConvertNumberToRank(data.Rank);
         }
 
         #region Border Radius
