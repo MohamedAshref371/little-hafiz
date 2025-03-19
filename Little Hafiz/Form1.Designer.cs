@@ -1919,15 +1919,15 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.minimizeBtn);
+            this.headerPanel.Controls.Add(this.closeBtn);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
-            this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
+            this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.formTitle);
-            this.headerPanel.Controls.Add(this.closeBtn);
-            this.headerPanel.Controls.Add(this.minimizeBtn);
             this.headerPanel.Controls.Add(this.maximizeBtn);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
