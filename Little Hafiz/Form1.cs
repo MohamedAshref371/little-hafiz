@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Guna.UI2.WinForms;
 using QuranKareem;
@@ -376,6 +377,7 @@ namespace Little_Hafiz
             studentDataPanel.Visible = true;
         }
 
+
         private void ExcelRowsFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             excelDateFilter.Visible = false;
@@ -392,7 +394,6 @@ namespace Little_Hafiz
             }
         }
 
-        
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
         {
             int year = 0, month = 0;
@@ -410,20 +411,33 @@ namespace Little_Hafiz
 
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
-            ExcelRowData[][] sheets = DatabaseHelper.SelectExcelRowData(year, month);
-            ExcelRowData[] rows;
-            IXLWorksheet sheet;
+            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(year, month);
             using (var workbook = new XLWorkbook())
             {
-                for (int i = 0; i < sheets.Length && i < 10; i++)
+                IXLWorksheet[] sheets = new IXLWorksheet[10]
                 {
-                    sheet = workbook.Worksheets.Add("المستوى " + ConvertNumberToRank(i + 1));
-                    SetTitlesOnExcelFile(sheet);
-                    rows = sheets[i];
-                    
-                    for (int j = 0; j < rows.Length; i++)
-                        SetDataOnExcelFile(sheet, j + 3, rows[j]);
+                    workbook.Worksheets.Add("المستوى " + RanksText[1]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[2]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[3]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[4]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[5]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[6]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[7]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[8]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[9]),
+                    workbook.Worksheets.Add("المستوى " + RanksText[10]),
+                };
+                
+                for (int i = 0; i < sheets.Length; i++)
+                    SetTitlesOnExcelFile(sheets[i]);
+
+                int[] sheetsRowIndexes = new int[10] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+                for (int i = 0; i < rows.Length; i++)
+                {
+                    int sheetIndex = rows[i].CompetitionLevel - 1;
+                    SetDataOnExcelFile(sheets[sheetIndex], ref sheetsRowIndexes[sheetIndex], rows[i]);
                 }
+
                 workbook.SaveAs(saveExcelFileDialog.FileName);
             }
         }
@@ -443,19 +457,20 @@ namespace Little_Hafiz
             sheet.Cell(2, 11).Value = "تاريخ إضافة المسابقة";
         }
 
-        private void SetDataOnExcelFile(IXLWorksheet sheet, int row, ExcelRowData data)
+        private void SetDataOnExcelFile(IXLWorksheet sheet, ref int row, ExcelRowData data)
         {
             sheet.Cell(row, 1).Value = (row - 2).ToString();
             sheet.Cell(row, 2).Value = data.StudentCode;
             sheet.Cell(row, 3).Value = data.FullName;
             sheet.Cell(row, 4).Value = data.BirthDate;
             sheet.Cell(row, 5).Value = data.PhoneNumber;
-            sheet.Cell(row, 6).Value = data.CompetitionLevel;
-            sheet.Cell(row, 7).Value = data.PreviousLevel;
+            sheet.Cell(row, 6).Value = ConvertNumberToRank(data.CompetitionLevel);
+            sheet.Cell(row, 7).Value = ConvertNumberToRank(data.PreviousLevel);
             sheet.Cell(row, 8).Value = data.Class;
             sheet.Cell(row, 9).Value = data.Address;
             sheet.Cell(row, 10).Value = data.MemoPlace;
             sheet.Cell(row, 11).Value = data.CompetitionAddedDate;
+            row++;
         }
         #endregion
 

@@ -249,9 +249,17 @@ namespace Little_Hafiz
             };
         }
 
-        public static ExcelRowData[][] SelectExcelRowData(int year = 0, int month = 0)
+        public static ExcelRowData[] SelectExcelRowData(int year = 0, int month = 0)
         {
+            string sql;
+            if (year == 0 && month == 0)
+                sql = "SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, MAX(competition_date) FROM students JOIN grades ON students.national = grades.national";
+            else if (month == 0)
+                sql = $"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, competition_date FROM students JOIN grades ON students.national = grades.national WHERE competition_date LIKE '{year}/%'";
+            else
+                sql = $"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, competition_date FROM students JOIN grades ON students.national = grades.national WHERE competition_date = '{year}/{month.ToString().PadLeft(2, '0')}'";
 
+            return SelectMultiRows(sql, GetExcelRowData);
         }
 
         private static ExcelRowData GetExcelRowData()
@@ -262,8 +270,8 @@ namespace Little_Hafiz
                 FullName = (string)reader["full_name"],
                 BirthDate = (string)reader["birth_date"],
                 PhoneNumber = (string)reader["phone_number"],
-                CompetitionLevel = ConvertNumberToRank(reader.GetInt32(4)),
-                PreviousLevel = ConvertNumberToRank(reader.GetInt32(5)),
+                CompetitionLevel = reader.GetInt32(4),
+                PreviousLevel = reader.GetInt32(5),
                 Class = (string)reader["class"],
                 Address = (string)reader["address"],
                 MemoPlace = (string)reader["memo_places"],

@@ -6,8 +6,8 @@
         public string FullName;
         public string BirthDate;
         public string PhoneNumber;
-        public string CompetitionLevel;
-        public string PreviousLevel;
+        public int CompetitionLevel;
+        public int PreviousLevel;
         public string Class;
         public string Address;
         public string MemoPlace;
