@@ -166,19 +166,18 @@
             // minimizeBtn
             // 
             this.minimizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeBtn.BorderRadius = 10;
+            this.minimizeBtn.BorderRadius = 5;
             this.minimizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.minimizeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.minimizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.minimizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
+            this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(840, 7);
+            this.minimizeBtn.Location = new System.Drawing.Point(840, 12);
             this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(35, 24);
+            this.minimizeBtn.Size = new System.Drawing.Size(35, 14);
             this.minimizeBtn.TabIndex = 1;
-            this.minimizeBtn.Text = "-";
             this.minimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
             // 
             // studentDataPanel
@@ -1519,7 +1518,7 @@
             this.formTitle.AutoSize = true;
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.formTitle.ForeColor = System.Drawing.Color.Navy;
+            this.formTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.formTitle.Location = new System.Drawing.Point(311, 3);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1530,7 +1529,7 @@
             // maximizeBtn
             // 
             this.maximizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.maximizeBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
+            this.maximizeBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(150)))), ((int)(((byte)(50)))));
             this.maximizeBtn.BorderRadius = 3;
             this.maximizeBtn.BorderThickness = 3;
             this.maximizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
