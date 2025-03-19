@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -128,14 +129,14 @@
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.gradesPanelTitle = new System.Windows.Forms.Label();
-            this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.stdNameLabel2 = new System.Windows.Forms.Label();
-            this.stdNationalLabel2 = new System.Windows.Forms.Label();
-            this.formImage = new System.Windows.Forms.Label();
-            this.stdName2 = new System.Windows.Forms.Label();
-            this.stdNational2 = new System.Windows.Forms.Label();
             this.stdImagePath2 = new System.Windows.Forms.Label();
+            this.stdNational2 = new System.Windows.Forms.Label();
+            this.stdName2 = new System.Windows.Forms.Label();
+            this.stdNationalLabel2 = new System.Windows.Forms.Label();
+            this.stdNameLabel2 = new System.Windows.Forms.Label();
+            this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.gradesPanelTitle = new System.Windows.Forms.Label();
+            this.formImage = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1960,17 +1961,59 @@
             this.studentGradesPanel.TabIndex = 85;
             this.studentGradesPanel.Visible = false;
             // 
-            // gradesPanelTitle
+            // stdImagePath2
             // 
-            this.gradesPanelTitle.AutoSize = true;
-            this.gradesPanelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.gradesPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.gradesPanelTitle.Location = new System.Drawing.Point(673, 21);
-            this.gradesPanelTitle.Name = "gradesPanelTitle";
-            this.gradesPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gradesPanelTitle.Size = new System.Drawing.Size(239, 29);
-            this.gradesPanelTitle.TabIndex = 3;
-            this.gradesPanelTitle.Text = "بيانات مسابقات الطالب";
+            this.stdImagePath2.AutoSize = true;
+            this.stdImagePath2.Location = new System.Drawing.Point(273, 68);
+            this.stdImagePath2.Name = "stdImagePath2";
+            this.stdImagePath2.Size = new System.Drawing.Size(0, 13);
+            this.stdImagePath2.TabIndex = 77;
+            this.stdImagePath2.Visible = false;
+            // 
+            // stdNational2
+            // 
+            this.stdNational2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNational2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNational2.Location = new System.Drawing.Point(615, 125);
+            this.stdNational2.Name = "stdNational2";
+            this.stdNational2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.stdNational2.Size = new System.Drawing.Size(163, 19);
+            this.stdNational2.TabIndex = 76;
+            this.stdNational2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stdName2
+            // 
+            this.stdName2.BackColor = System.Drawing.Color.Transparent;
+            this.stdName2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdName2.Location = new System.Drawing.Point(464, 95);
+            this.stdName2.Name = "stdName2";
+            this.stdName2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdName2.Size = new System.Drawing.Size(314, 19);
+            this.stdName2.TabIndex = 75;
+            // 
+            // stdNationalLabel2
+            // 
+            this.stdNationalLabel2.AutoSize = true;
+            this.stdNationalLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNationalLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNationalLabel2.Location = new System.Drawing.Point(784, 125);
+            this.stdNationalLabel2.Name = "stdNationalLabel2";
+            this.stdNationalLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNationalLabel2.Size = new System.Drawing.Size(107, 19);
+            this.stdNationalLabel2.TabIndex = 74;
+            this.stdNationalLabel2.Text = "الرقم القومي :";
+            // 
+            // stdNameLabel2
+            // 
+            this.stdNameLabel2.AutoSize = true;
+            this.stdNameLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.stdNameLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdNameLabel2.Location = new System.Drawing.Point(790, 95);
+            this.stdNameLabel2.Name = "stdNameLabel2";
+            this.stdNameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNameLabel2.Size = new System.Drawing.Size(101, 19);
+            this.stdNameLabel2.TabIndex = 73;
+            this.stdNameLabel2.Text = "إسم الطالب :";
             // 
             // studentImage2
             // 
@@ -1985,29 +2028,17 @@
             this.studentImage2.TabIndex = 73;
             this.studentImage2.TabStop = false;
             // 
-            // stdNameLabel2
+            // gradesPanelTitle
             // 
-            this.stdNameLabel2.AutoSize = true;
-            this.stdNameLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.stdNameLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameLabel2.Location = new System.Drawing.Point(790, 95);
-            this.stdNameLabel2.Name = "stdNameLabel2";
-            this.stdNameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameLabel2.Size = new System.Drawing.Size(101, 19);
-            this.stdNameLabel2.TabIndex = 73;
-            this.stdNameLabel2.Text = "إسم الطالب :";
-            // 
-            // stdNationalLabel2
-            // 
-            this.stdNationalLabel2.AutoSize = true;
-            this.stdNationalLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.stdNationalLabel2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalLabel2.Location = new System.Drawing.Point(784, 125);
-            this.stdNationalLabel2.Name = "stdNationalLabel2";
-            this.stdNationalLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalLabel2.Size = new System.Drawing.Size(107, 19);
-            this.stdNationalLabel2.TabIndex = 74;
-            this.stdNationalLabel2.Text = "الرقم القومي :";
+            this.gradesPanelTitle.AutoSize = true;
+            this.gradesPanelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.gradesPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.gradesPanelTitle.Location = new System.Drawing.Point(673, 21);
+            this.gradesPanelTitle.Name = "gradesPanelTitle";
+            this.gradesPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gradesPanelTitle.Size = new System.Drawing.Size(239, 29);
+            this.gradesPanelTitle.TabIndex = 3;
+            this.gradesPanelTitle.Text = "بيانات مسابقات الطالب";
             // 
             // formImage
             // 
@@ -2019,36 +2050,6 @@
             this.formImage.TabIndex = 74;
             this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // stdName2
-            // 
-            this.stdName2.BackColor = System.Drawing.Color.Transparent;
-            this.stdName2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdName2.Location = new System.Drawing.Point(464, 95);
-            this.stdName2.Name = "stdName2";
-            this.stdName2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdName2.Size = new System.Drawing.Size(314, 19);
-            this.stdName2.TabIndex = 75;
-            // 
-            // stdNational2
-            // 
-            this.stdNational2.BackColor = System.Drawing.Color.Transparent;
-            this.stdNational2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNational2.Location = new System.Drawing.Point(615, 125);
-            this.stdNational2.Name = "stdNational2";
-            this.stdNational2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdNational2.Size = new System.Drawing.Size(163, 19);
-            this.stdNational2.TabIndex = 76;
-            this.stdNational2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // stdImagePath2
-            // 
-            this.stdImagePath2.AutoSize = true;
-            this.stdImagePath2.Location = new System.Drawing.Point(273, 68);
-            this.stdImagePath2.Name = "stdImagePath2";
-            this.stdImagePath2.Size = new System.Drawing.Size(0, 13);
-            this.stdImagePath2.TabIndex = 77;
-            this.stdImagePath2.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2057,6 +2058,7 @@
             this.ClientSize = new System.Drawing.Size(950, 700);
             this.Controls.Add(this.headerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مكتب الحافظ الصغير بمسطرد";

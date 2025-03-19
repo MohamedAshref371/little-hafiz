@@ -38,6 +38,9 @@
   <PropertyGroup>
     <StartupObject>Little_Hafiz.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>quran256.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
@@ -168,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\moshaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="quran256.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
