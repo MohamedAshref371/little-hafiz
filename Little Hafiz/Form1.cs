@@ -50,7 +50,7 @@ namespace Little_Hafiz
 
             formTitle.MouseDown += (s, e1) =>
             {
-                if (e1.Button == MouseButtons.Left)
+                if (WindowState != FormWindowState.Maximized && e1.Button == MouseButtons.Left)
                 {
                     this.Opacity = 0.9;
                     ReleaseCapture();
