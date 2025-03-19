@@ -11,6 +11,7 @@
         public string Class;
         public string Address;
         public string MemoPlace;
+        public int Rank;
         public string CompetitionAddedDate;
     }
 }

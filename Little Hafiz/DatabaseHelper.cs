@@ -51,7 +51,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
                                       "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, std_place INTEGER, PRIMARY KEY(national, competition_level) );" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, std_rank INTEGER, PRIMARY KEY(national, competition_level) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
@@ -131,7 +131,7 @@ namespace Little_Hafiz
         public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_place FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
+            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_rank FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
             if (nationalNumber == null || nationalNumber.Length != 14)
             {
@@ -251,13 +251,11 @@ namespace Little_Hafiz
 
         public static ExcelRowData[] SelectExcelRowData(int year = 0, int month = 0)
         {
-            string sql;
-            if (year == 0 && month == 0)
-                sql = "SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, MAX(competition_date) FROM students JOIN grades ON students.national = grades.national";
-            else if (month == 0)
-                sql = $"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, competition_date FROM students JOIN grades ON students.national = grades.national WHERE competition_date LIKE '{year}/%'";
-            else
-                sql = $"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, competition_date FROM students JOIN grades ON students.national = grades.national WHERE competition_date = '{year}/{month.ToString().PadLeft(2, '0')}'";
+            string condition = year == 0 ? "" : month == 0 ? $"WHERE competition_date LIKE '{year}/%'" : $"WHERE competition_date = '{year}/{month:D2}'",
+
+                maxColumn = year == 0 && month == 0 ? "MAX(competition_date) " : "",
+
+                sql = $@"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, std_rank, {maxColumn}competition_date FROM students JOIN grades ON students.national = grades.national {condition}";
 
             return SelectMultiRows(sql, GetExcelRowData);
         }
@@ -275,6 +273,7 @@ namespace Little_Hafiz
                 Class = (string)reader["class"],
                 Address = (string)reader["address"],
                 MemoPlace = (string)reader["memo_places"],
+                Rank = reader.GetInt32(9),
                 CompetitionAddedDate = (string)reader["competition_date"]
             };
         }

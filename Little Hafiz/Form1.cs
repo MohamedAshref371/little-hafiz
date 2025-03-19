@@ -398,24 +398,29 @@ namespace Little_Hafiz
         {
             int year = 0, month = 0;
             int index = excelRowsFilter.SelectedIndex;
+            DateTime dt;
 
             if (index == 2 || index == 4)
-                year = excelDateFilter.Value.Year;
+            {
+                dt = excelDateFilter.Value;
+                year = dt.Year;
+                if (index == 4) month = dt.Month;
+            }
             else if (index == 1 || index == 3)
-                year = DateTime.Now.Year;
-
-            if (index == 4)
-                month = excelDateFilter.Value.Month;
-            else if (index == 3)
-                month = DateTime.Now.Month;
+            {
+                dt = DateTime.Now;
+                year = dt.Year;
+                if (index == 3) month = dt.Month;
+            }
 
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
             ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(year, month);
             using (var workbook = new XLWorkbook())
             {
-                IXLWorksheet[] sheets = new IXLWorksheet[10]
+                IXLWorksheet[] sheets = new IXLWorksheet[11]
                 {
+                    workbook.Worksheets.Add("جميع المستويات"),
                     workbook.Worksheets.Add("المستوى " + RanksText[1]),
                     workbook.Worksheets.Add("المستوى " + RanksText[2]),
                     workbook.Worksheets.Add("المستوى " + RanksText[3]),
@@ -431,10 +436,10 @@ namespace Little_Hafiz
                 for (int i = 0; i < sheets.Length; i++)
                     SetTitlesOnExcelFile(sheets[i]);
 
-                int[] sheetsRowIndexes = new int[10] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+                int[] sheetsRowIndexes = new int[11] {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
                 for (int i = 0; i < rows.Length; i++)
                 {
-                    int sheetIndex = rows[i].CompetitionLevel - 1;
+                    int sheetIndex = rows[i].CompetitionLevel;
                     SetDataOnExcelFile(sheets[sheetIndex], ref sheetsRowIndexes[sheetIndex], rows[i]);
                 }
 
@@ -444,6 +449,8 @@ namespace Little_Hafiz
 
         private void SetTitlesOnExcelFile(IXLWorksheet sheet)
         {
+            sheet.Range("A1:L1").Merge().Value = "الحافظ الصغير- المسابقة القرآنية الرمضانية";
+
             sheet.Cell(2, 1).Value = "م";
             sheet.Cell(2, 2).Value = "الكود";
             sheet.Cell(2, 3).Value = "الاسم";
@@ -454,7 +461,8 @@ namespace Little_Hafiz
             sheet.Cell(2, 8).Value = "الصف";
             sheet.Cell(2, 9).Value = "العنوان";
             sheet.Cell(2, 10).Value = "مكان الحفظ";
-            sheet.Cell(2, 11).Value = "تاريخ إضافة المسابقة";
+            sheet.Cell(2, 11).Value = "المركز";
+            sheet.Cell(2, 12).Value = "تاريخ إضافة المسابقة";
         }
 
         private void SetDataOnExcelFile(IXLWorksheet sheet, ref int row, ExcelRowData data)
@@ -469,7 +477,8 @@ namespace Little_Hafiz
             sheet.Cell(row, 8).Value = data.Class;
             sheet.Cell(row, 9).Value = data.Address;
             sheet.Cell(row, 10).Value = data.MemoPlace;
-            sheet.Cell(row, 11).Value = data.CompetitionAddedDate;
+            sheet.Cell(row, 11).Value = data.Rank;
+            sheet.Cell(row, 12).Value = data.CompetitionAddedDate;
             row++;
         }
         #endregion
