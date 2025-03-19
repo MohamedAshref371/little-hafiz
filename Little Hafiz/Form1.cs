@@ -454,6 +454,8 @@ namespace Little_Hafiz
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
             ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(year, month);
+            if (rows is null) return;
+
             using (var workbook = new XLWorkbook())
             {
                 IXLWorksheet[] sheets = new IXLWorksheet[11]
