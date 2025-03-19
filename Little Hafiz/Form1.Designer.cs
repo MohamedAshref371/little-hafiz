@@ -126,6 +126,7 @@
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -133,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
+            this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -154,7 +156,7 @@
             this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(914, 3);
+            this.closeBtn.Location = new System.Drawing.Point(911, 3);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(32, 32);
             this.closeBtn.TabIndex = 0;
@@ -172,7 +174,7 @@
             this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(843, 7);
+            this.minimizeBtn.Location = new System.Drawing.Point(840, 7);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 24);
             this.minimizeBtn.TabIndex = 1;
@@ -1518,7 +1520,7 @@
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
             this.formTitle.ForeColor = System.Drawing.Color.Navy;
-            this.formTitle.Location = new System.Drawing.Point(291, -4);
+            this.formTitle.Location = new System.Drawing.Point(311, 3);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(337, 33);
@@ -1538,7 +1540,7 @@
             this.maximizeBtn.FillColor = System.Drawing.SystemColors.Control;
             this.maximizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.maximizeBtn.ForeColor = System.Drawing.Color.White;
-            this.maximizeBtn.Location = new System.Drawing.Point(881, 7);
+            this.maximizeBtn.Location = new System.Drawing.Point(878, 7);
             this.maximizeBtn.Name = "maximizeBtn";
             this.maximizeBtn.Size = new System.Drawing.Size(30, 24);
             this.maximizeBtn.TabIndex = 73;
@@ -1901,19 +1903,33 @@
             // 
             this.saveExcelFileDialog.Filter = "Excel files|*.xlsx";
             // 
+            // headerPanel
+            // 
+            this.headerPanel.BorderColor = System.Drawing.Color.Silver;
+            this.headerPanel.BorderRadius = 5;
+            this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.formTitle);
+            this.headerPanel.Controls.Add(this.closeBtn);
+            this.headerPanel.Controls.Add(this.minimizeBtn);
+            this.headerPanel.Controls.Add(this.maximizeBtn);
+            this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(949, 37);
+            this.headerPanel.TabIndex = 84;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 700);
+            this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.footerPanel);
             this.Controls.Add(this.studentsListPanel);
             this.Controls.Add(this.studentSearchPanel);
-            this.Controls.Add(this.maximizeBtn);
-            this.Controls.Add(this.minimizeBtn);
-            this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.studentDataPanel);
-            this.Controls.Add(this.formTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1928,8 +1944,9 @@
             this.studentSearchPanel.ResumeLayout(false);
             this.studentSearchPanel.PerformLayout();
             this.footerPanel.ResumeLayout(false);
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2032,6 +2049,7 @@
         private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
         private Guna.UI2.WinForms.Guna2DateTimePicker excelDateFilter;
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
+        private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
     }
 }
 

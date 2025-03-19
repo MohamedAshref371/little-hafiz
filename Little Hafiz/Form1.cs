@@ -48,7 +48,7 @@ namespace Little_Hafiz
                     this.Opacity = 1.0;
             };
 
-            formTitle.MouseDown += (s, e1) =>
+            MouseEventHandler meh = (s, e1) =>
             {
                 if (WindowState != FormWindowState.Maximized && e1.Button == MouseButtons.Left)
                 {
@@ -59,6 +59,8 @@ namespace Little_Hafiz
                     timer.Start();
                 }
             };
+            headerPanel.MouseDown += meh;
+            formTitle.MouseDown += meh;
 
             studentDataPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentDataPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
