@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using static Little_Hafiz.StaticMembers;
@@ -17,33 +18,53 @@ namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
-
         public Form1() => InitializeComponent();
 
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
 
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        [DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            //if (!Directory.Exists("excels"))
-            //    Directory.CreateDirectory("excels");
-
-            Timer scrollTimer = new Timer { Interval = 100 };
-            scrollTimer.Tick += (sender1, e1) =>
+            Timer timer = new Timer { Interval = 10 };
+            timer.Tick += (s, e1) =>
             {
-                scrollTimer.Stop();
+                timer.Stop();
                 if (studentDataPanel.Visible)
                     studentDataPanel.Invalidate();
 
                 if (studentsListPanel.Visible)
                     studentsListPanel.Invalidate();
+
+                if (Control.MouseButtons == MouseButtons.None)
+                    this.Opacity = 1.0;
             };
 
-            studentDataPanel.Scroll += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
-            studentDataPanel.MouseWheel += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
+            formTitle.MouseDown += (s, e1) =>
+            {
+                if (e1.Button == MouseButtons.Left)
+                {
+                    this.Opacity = 0.9;
+                    ReleaseCapture();
+                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
 
-            studentsListPanel.Scroll += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
-            studentsListPanel.MouseWheel += (sender1, e1) => { scrollTimer.Stop(); scrollTimer.Start(); };
+                    timer.Start();
+                }
+            };
+
+            studentDataPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
+            studentDataPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
+
+            studentsListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
+            studentsListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

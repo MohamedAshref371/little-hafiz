@@ -106,7 +106,7 @@
             this.stdSchoolLabel = new System.Windows.Forms.Label();
             this.stdImagePath = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
-            this.FormTitle = new System.Windows.Forms.Label();
+            this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -1512,18 +1512,18 @@
             // 
             this.selectImageDialog.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
             // 
-            // FormTitle
+            // formTitle
             // 
-            this.FormTitle.AutoSize = true;
-            this.FormTitle.BackColor = System.Drawing.Color.Transparent;
-            this.FormTitle.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.FormTitle.ForeColor = System.Drawing.Color.Navy;
-            this.FormTitle.Location = new System.Drawing.Point(291, -4);
-            this.FormTitle.Name = "FormTitle";
-            this.FormTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.FormTitle.Size = new System.Drawing.Size(337, 33);
-            this.FormTitle.TabIndex = 72;
-            this.FormTitle.Text = "مكتب الحافظ الصغير بمسطرد";
+            this.formTitle.AutoSize = true;
+            this.formTitle.BackColor = System.Drawing.Color.Transparent;
+            this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.formTitle.ForeColor = System.Drawing.Color.Navy;
+            this.formTitle.Location = new System.Drawing.Point(291, -4);
+            this.formTitle.Name = "formTitle";
+            this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.formTitle.Size = new System.Drawing.Size(337, 33);
+            this.formTitle.TabIndex = 72;
+            this.formTitle.Text = "مكتب الحافظ الصغير بمسطرد";
             // 
             // maximizeBtn
             // 
@@ -1913,7 +1913,7 @@
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.studentDataPanel);
-            this.Controls.Add(this.FormTitle);
+            this.Controls.Add(this.formTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2011,7 +2011,7 @@
         private Guna.UI2.WinForms.Guna2Button stdImageSelectorBtn;
         private System.Windows.Forms.Label stdImagePath;
         private System.Windows.Forms.OpenFileDialog selectImageDialog;
-        private System.Windows.Forms.Label FormTitle;
+        private System.Windows.Forms.Label formTitle;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage;
         private Guna.UI2.WinForms.Guna2Button maximizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel studentSearchPanel;
