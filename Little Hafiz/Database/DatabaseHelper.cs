@@ -306,8 +306,8 @@ namespace Little_Hafiz
         #endregion
 
         #region Insert & Update & Delete
-        public static bool IsNotInsideImagesFolder(StudentData data)
-            => Path.GetFullPath(data.Image) != Path.GetFullPath(imagesFolder + data.ImageName);
+        public static bool IsInsideImagesFolder(StudentData data)
+            => Path.GetFullPath(data.Image) == Path.GetFullPath(imagesFolder + data.ImageName);
 
         public static void CopyImageToImagesFolder(StudentData data)
         {
@@ -320,7 +320,7 @@ namespace Little_Hafiz
         {
             if (File.Exists(data.Image))
             {
-                if (IsNotInsideImagesFolder(data))
+                if (!IsInsideImagesFolder(data))
                     CopyImageToImagesFolder(data);
             }
             else
@@ -335,7 +335,7 @@ namespace Little_Hafiz
 
         public static int UpdateStudent(StudentData data)
         {
-            if (!IsNotInsideImagesFolder(data))
+            if (!IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
             return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
