@@ -15,21 +15,21 @@ namespace QuranKareem
             yDiv = newSizeY / (double)oldSizeY;
         }
 
-        public void SetControl(Control control, bool font=true)
+        public void SetControl(Control control, bool setFont = true)
         {
             control.Location = new Point(Round(control.Location.X * xDiv), Round(control.Location.Y * yDiv));
             control.Size = new Size(Round(control.Size.Width * xDiv), Round(control.Size.Height * yDiv));
-#warning Part <control.Name != "studentsListPanel"> Make the Class unreusable.
-            if (font && control.Name != "studentsListPanel") control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
+            if (setFont) control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
         }
 
-        public void SetControls(Control.ControlCollection controls)
+        public void SetControls(Control.ControlCollection controls, bool setPanelFont = true)
         {
             for (int i = 0; i < controls.Count; i++)
             {
-                SetControl(controls[i]);
+                bool setFont = setPanelFont || !(controls[i] is Panel);
+                SetControl(controls[i], setFont);
                 if (controls[i] is Panel)
-                    SetControls(controls[i].Controls);
+                    SetControls(controls[i].Controls, false);
             }
         }
 
