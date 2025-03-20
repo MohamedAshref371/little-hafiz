@@ -123,6 +123,7 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -156,7 +157,6 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
-            this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1070,7 +1070,7 @@
             this.motherPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherPhone.Location = new System.Drawing.Point(43, 387);
             this.motherPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.motherPhone.MaxLength = 15;
+            this.motherPhone.MaxLength = 11;
             this.motherPhone.Name = "motherPhone";
             this.motherPhone.PlaceholderText = "";
             this.motherPhone.SelectedText = "";
@@ -1686,7 +1686,7 @@
             this.stdPhoneSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhoneSearch.Location = new System.Drawing.Point(521, 95);
             this.stdPhoneSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdPhoneSearch.MaxLength = 15;
+            this.stdPhoneSearch.MaxLength = 11;
             this.stdPhoneSearch.Name = "stdPhoneSearch";
             this.stdPhoneSearch.PlaceholderText = "";
             this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1873,6 +1873,27 @@
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
+            // 
+            // releasesLatestBtn
+            // 
+            this.releasesLatestBtn.BorderRadius = 15;
+            this.releasesLatestBtn.BorderThickness = 1;
+            this.releasesLatestBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.releasesLatestBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.releasesLatestBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.releasesLatestBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.releasesLatestBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.releasesLatestBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(94)))), ((int)(((byte)(0)))));
+            this.releasesLatestBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(140)))));
+            this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.releasesLatestBtn.Location = new System.Drawing.Point(609, 5);
+            this.releasesLatestBtn.Name = "releasesLatestBtn";
+            this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
+            this.releasesLatestBtn.TabIndex = 86;
+            this.releasesLatestBtn.Text = "البرنامج";
+            this.releasesLatestBtn.Click += new System.EventHandler(this.ReleasesLatestBtn_Click);
             // 
             // excelDateFilter
             // 
@@ -2364,6 +2385,7 @@
             // currentLevelExplain
             // 
             this.currentLevelExplain.AutoSize = true;
+            this.currentLevelExplain.Font = new System.Drawing.Font("Tahoma", 8F);
             this.currentLevelExplain.Location = new System.Drawing.Point(590, 625);
             this.currentLevelExplain.Name = "currentLevelExplain";
             this.currentLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2374,33 +2396,13 @@
             // prevLevelExplain
             // 
             this.prevLevelExplain.AutoSize = true;
+            this.prevLevelExplain.Font = new System.Drawing.Font("Tahoma", 8F);
             this.prevLevelExplain.Location = new System.Drawing.Point(590, 580);
             this.prevLevelExplain.Name = "prevLevelExplain";
             this.prevLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.prevLevelExplain.Size = new System.Drawing.Size(38, 13);
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
-            // 
-            // releasesLatestBtn
-            // 
-            this.releasesLatestBtn.BorderRadius = 15;
-            this.releasesLatestBtn.BorderThickness = 1;
-            this.releasesLatestBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.releasesLatestBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.releasesLatestBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.releasesLatestBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.releasesLatestBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.releasesLatestBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(94)))), ((int)(((byte)(0)))));
-            this.releasesLatestBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(140)))));
-            this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(609, 5);
-            this.releasesLatestBtn.Name = "releasesLatestBtn";
-            this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
-            this.releasesLatestBtn.TabIndex = 86;
-            this.releasesLatestBtn.Text = "البرنامج";
-            this.releasesLatestBtn.Click += new System.EventHandler(this.ReleasesLatestBtn_Click);
             // 
             // Form1
             // 
