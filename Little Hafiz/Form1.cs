@@ -458,6 +458,7 @@ namespace Little_Hafiz
 
             using (var workbook = new XLWorkbook())
             {
+                workbook.RightToLeft = true;
                 IXLWorksheet[] sheets = new IXLWorksheet[11]
                 {
                     workbook.Worksheets.Add("جميع المستويات"),
