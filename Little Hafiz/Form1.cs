@@ -1,6 +1,5 @@
 ﻿using ClosedXML.Excel;
 using Guna.UI2.WinForms;
-using QuranKareem;
 using System;
 using System.Data;
 using System.Drawing;
@@ -8,19 +7,14 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-            AddTitleInStudentsListPanel();
-        }
-
+        public Form1() => InitializeComponent();
+        
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
 
@@ -35,6 +29,8 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            AddTitleInStudentsListPanel();
+
             Timer timer = new Timer { Interval = 10 };
             timer.Tick += (s, e1) =>
             {
@@ -44,6 +40,9 @@ namespace Little_Hafiz
 
                 if (studentsListPanel.Visible)
                     studentsListPanel.Invalidate();
+
+                if (studentGradesListPanel.Visible)
+                    studentGradesListPanel.Invalidate();
 
                 if (Control.MouseButtons == MouseButtons.None)
                     this.Opacity = 1.0;
@@ -69,6 +68,9 @@ namespace Little_Hafiz
 
             studentsListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentsListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
+
+            studentGradesListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
+            studentGradesListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

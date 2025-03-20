@@ -129,8 +129,6 @@
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.currentLevelExplain = new System.Windows.Forms.Label();
-            this.prevLevelExplain = new System.Windows.Forms.Label();
             this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.compDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -155,6 +153,8 @@
             this.stdNameLabel2 = new System.Windows.Forms.Label();
             this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gradesPanelTitle = new System.Windows.Forms.Label();
+            this.currentLevelExplain = new System.Windows.Forms.Label();
+            this.prevLevelExplain = new System.Windows.Forms.Label();
             this.formImage = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
@@ -1947,14 +1947,14 @@
             this.headerPanel.BorderThickness = 1;
             this.headerPanel.Controls.Add(this.minimizeBtn);
             this.headerPanel.Controls.Add(this.closeBtn);
-            this.headerPanel.Controls.Add(this.studentGradesPanel);
-            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.formTitle);
             this.headerPanel.Controls.Add(this.maximizeBtn);
+            this.headerPanel.Controls.Add(this.studentDataPanel);
+            this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -2003,26 +2003,6 @@
             this.studentGradesPanel.Size = new System.Drawing.Size(926, 656);
             this.studentGradesPanel.TabIndex = 85;
             this.studentGradesPanel.Visible = false;
-            // 
-            // currentLevelExplain
-            // 
-            this.currentLevelExplain.AutoSize = true;
-            this.currentLevelExplain.Location = new System.Drawing.Point(590, 625);
-            this.currentLevelExplain.Name = "currentLevelExplain";
-            this.currentLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.currentLevelExplain.Size = new System.Drawing.Size(29, 13);
-            this.currentLevelExplain.TabIndex = 96;
-            this.currentLevelExplain.Text = "الأول";
-            // 
-            // prevLevelExplain
-            // 
-            this.prevLevelExplain.AutoSize = true;
-            this.prevLevelExplain.Location = new System.Drawing.Point(590, 580);
-            this.prevLevelExplain.Name = "prevLevelExplain";
-            this.prevLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.prevLevelExplain.Size = new System.Drawing.Size(38, 13);
-            this.prevLevelExplain.TabIndex = 95;
-            this.prevLevelExplain.Text = "لا يوجد";
             // 
             // addGradeBtn
             // 
@@ -2285,9 +2265,9 @@
             this.studentGradesListPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesListPanel.BorderRadius = 5;
             this.studentGradesListPanel.BorderThickness = 1;
-            this.studentGradesListPanel.Location = new System.Drawing.Point(8, 190);
+            this.studentGradesListPanel.Location = new System.Drawing.Point(18, 190);
             this.studentGradesListPanel.Name = "studentGradesListPanel";
-            this.studentGradesListPanel.Size = new System.Drawing.Size(910, 289);
+            this.studentGradesListPanel.Size = new System.Drawing.Size(890, 289);
             this.studentGradesListPanel.TabIndex = 78;
             // 
             // stdImagePath2
@@ -2368,6 +2348,26 @@
             this.gradesPanelTitle.Size = new System.Drawing.Size(239, 29);
             this.gradesPanelTitle.TabIndex = 3;
             this.gradesPanelTitle.Text = "بيانات مسابقات الطالب";
+            // 
+            // currentLevelExplain
+            // 
+            this.currentLevelExplain.AutoSize = true;
+            this.currentLevelExplain.Location = new System.Drawing.Point(590, 625);
+            this.currentLevelExplain.Name = "currentLevelExplain";
+            this.currentLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.currentLevelExplain.Size = new System.Drawing.Size(29, 13);
+            this.currentLevelExplain.TabIndex = 96;
+            this.currentLevelExplain.Text = "الأول";
+            // 
+            // prevLevelExplain
+            // 
+            this.prevLevelExplain.AutoSize = true;
+            this.prevLevelExplain.Location = new System.Drawing.Point(590, 580);
+            this.prevLevelExplain.Name = "prevLevelExplain";
+            this.prevLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.prevLevelExplain.Size = new System.Drawing.Size(38, 13);
+            this.prevLevelExplain.TabIndex = 95;
+            this.prevLevelExplain.Text = "لا يوجد";
             // 
             // formImage
             // 
