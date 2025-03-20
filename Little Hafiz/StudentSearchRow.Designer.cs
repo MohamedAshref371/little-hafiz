@@ -66,7 +66,7 @@
             this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
             this.compDate.Location = new System.Drawing.Point(282, 0);
             this.compDate.Name = "compDate";
-            this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.compDate.Size = new System.Drawing.Size(119, 72);
             this.compDate.TabIndex = 2;
             this.compDate.Text = "تاريخ المسابقة";
@@ -78,7 +78,7 @@
             this.stdRank.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdRank.Location = new System.Drawing.Point(157, 0);
             this.stdRank.Name = "stdRank";
-            this.stdRank.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdRank.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdRank.Size = new System.Drawing.Size(119, 72);
             this.stdRank.TabIndex = 3;
             this.stdRank.Text = "مركزه";

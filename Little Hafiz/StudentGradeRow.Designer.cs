@@ -70,7 +70,7 @@
             this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
             this.compDate.Location = new System.Drawing.Point(315, 0);
             this.compDate.Name = "compDate";
-            this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.compDate.Size = new System.Drawing.Size(190, 72);
             this.compDate.TabIndex = 4;
             this.compDate.Text = "تاريخ المسابقة";
@@ -82,7 +82,7 @@
             this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.scoreLabel.Location = new System.Drawing.Point(159, 0);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.scoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.scoreLabel.Size = new System.Drawing.Size(150, 72);
             this.scoreLabel.TabIndex = 5;
             this.scoreLabel.Text = "الدرجة";
@@ -95,7 +95,7 @@
             this.rankLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.rankLabel.Location = new System.Drawing.Point(3, 0);
             this.rankLabel.Name = "rankLabel";
-            this.rankLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rankLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rankLabel.Size = new System.Drawing.Size(150, 72);
             this.rankLabel.TabIndex = 6;
             this.rankLabel.Text = "المركز";
@@ -148,7 +148,7 @@
             this.stdCode.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdCode.Location = new System.Drawing.Point(723, 0);
             this.stdCode.Name = "stdCode";
-            this.stdCode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdCode.Size = new System.Drawing.Size(94, 72);
             this.stdCode.TabIndex = 51;
             this.stdCode.Text = "الكود";
