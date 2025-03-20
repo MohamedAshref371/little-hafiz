@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Little_Hafiz;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -18,7 +19,8 @@ namespace QuranKareem
         {
             control.Location = new Point(Round(control.Location.X * xDiv), Round(control.Location.Y * yDiv));
             control.Size = new Size(Round(control.Size.Width * xDiv), Round(control.Size.Height * yDiv));
-            if (font) control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
+#warning Part <control.Name != "studentsListPanel"> Make the Class unreusable.
+            if (font && control.Name != "studentsListPanel") control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
         }
 
         public void SetControls(Control.ControlCollection controls)

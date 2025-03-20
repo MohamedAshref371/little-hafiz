@@ -15,8 +15,12 @@ namespace Little_Hafiz
 {
     public partial class Form1 : Form
     {
-        public Form1() => InitializeComponent();
-
+        public Form1()
+        {
+            InitializeComponent();
+            AddTitleInStudentsListPanel();
+        }
+        
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
 
@@ -83,11 +87,19 @@ namespace Little_Hafiz
             minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y);
             if (studentDataPanel.Visible) SetStudentImage();
             if (studentGradesPanel.Visible) SetStudentImage2();
-            if (studentsListPanel.Controls.Count > 0) SearchBtn_Click(null, null);
+
+            if (studentsListPanel.Controls.Count > 1) SearchBtn_Click(null, null);
+            else AddTitleInStudentsListPanel();
         }
         #endregion
 
         #region Two Serach Panels
+        private void AddTitleInStudentsListPanel()
+        {
+            studentsListPanel.Controls.Clear();
+            studentsListPanel.Controls.Add(new StudentSearchRow { Location = new Point(9, 9) });
+        }
+
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents
@@ -98,12 +110,13 @@ namespace Little_Hafiz
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
                     );
 
-            studentsListPanel.Controls.Clear();
+            AddTitleInStudentsListPanel();
+
             StudentSearchRow stdRow;
             for (int i = 0; i < students?.Length; i++)
             {
                 stdRow = new StudentSearchRow(students[i]);
-                stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
+                stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * (i + 1) + 9);
                 stdRow.StudentButtonClick += ShowStudentBtn_Click;
                 stdRow.GradesButtonClick += ShowGradesBtn_Click;
                 studentsListPanel.Controls.Add(stdRow);
