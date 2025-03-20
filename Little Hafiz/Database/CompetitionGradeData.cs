@@ -2,6 +2,7 @@
 {
     public class CompetitionGradeData
     {
+        public int RowId;
         public string NationalNumber;
         public int StudentCode;
         public int PreviousLevel;
@@ -9,7 +10,6 @@
         public string CompetitionDate;
         public float Score;
         public int Rank;
-        public int RowId;
 
         public override string ToString()
             => $"'{NationalNumber}', {StudentCode}, {PreviousLevel}, {CompetitionLevel}, '{CompetitionDate}', {Score}, {Rank}";
