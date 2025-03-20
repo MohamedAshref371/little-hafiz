@@ -346,10 +346,10 @@ namespace Little_Hafiz
         }
 
         public static int UpdateScoreInStudentGrade(int rowId, float score)
-            => ExecuteNonQuery($"UPDATE students SET score = {score} WHERE id = {rowId}");
+            => ExecuteNonQuery($"UPDATE grades SET score = {score} WHERE id = {rowId}");
 
         public static int UpdateRankInStudentGrade(int rowId, int rank)
-            => ExecuteNonQuery($"UPDATE students SET std_rank = {rank} WHERE id = {rowId}");
+            => ExecuteNonQuery($"UPDATE grades SET std_rank = {rank} WHERE id = {rowId}");
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
