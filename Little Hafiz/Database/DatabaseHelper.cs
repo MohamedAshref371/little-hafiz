@@ -113,11 +113,7 @@ namespace Little_Hafiz
                 if (!reader.Read()) return null;
                 return GetStudentData();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
+            catch { return null; }
             finally
             {
                 reader.Close();
