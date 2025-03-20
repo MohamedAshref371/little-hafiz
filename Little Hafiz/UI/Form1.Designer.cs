@@ -128,6 +128,7 @@
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.formImage = new System.Windows.Forms.Label();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.compDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -155,7 +156,7 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
-            this.formImage = new System.Windows.Forms.Label();
+            this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -1860,6 +1861,7 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.releasesLatestBtn);
             this.footerPanel.Controls.Add(this.excelDateFilter);
             this.footerPanel.Controls.Add(this.extractExcelBtn);
             this.footerPanel.Controls.Add(this.excelRowsFilter);
@@ -1962,6 +1964,16 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
+            // 
+            // formImage
+            // 
+            this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
+            this.formImage.Location = new System.Drawing.Point(17, 4);
+            this.formImage.Name = "formImage";
+            this.formImage.Size = new System.Drawing.Size(30, 30);
+            this.formImage.TabIndex = 74;
+            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentGradesPanel
             // 
@@ -2369,15 +2381,26 @@
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
             // 
-            // formImage
+            // releasesLatestBtn
             // 
-            this.formImage.BackColor = System.Drawing.Color.Transparent;
-            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(17, 4);
-            this.formImage.Name = "formImage";
-            this.formImage.Size = new System.Drawing.Size(30, 30);
-            this.formImage.TabIndex = 74;
-            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.releasesLatestBtn.BorderRadius = 15;
+            this.releasesLatestBtn.BorderThickness = 1;
+            this.releasesLatestBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.releasesLatestBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.releasesLatestBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.releasesLatestBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.releasesLatestBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.releasesLatestBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(94)))), ((int)(((byte)(0)))));
+            this.releasesLatestBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(140)))));
+            this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.releasesLatestBtn.Location = new System.Drawing.Point(609, 5);
+            this.releasesLatestBtn.Name = "releasesLatestBtn";
+            this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
+            this.releasesLatestBtn.TabIndex = 86;
+            this.releasesLatestBtn.Text = "البرنامج";
+            this.releasesLatestBtn.Click += new System.EventHandler(this.ReleasesLatestBtn_Click);
             // 
             // Form1
             // 
@@ -2543,6 +2566,7 @@
         private Guna.UI2.WinForms.Guna2Button addGradeBtn;
         private System.Windows.Forms.Label currentLevelExplain;
         private System.Windows.Forms.Label prevLevelExplain;
+        private Guna.UI2.WinForms.Guna2GradientButton releasesLatestBtn;
     }
 }
 

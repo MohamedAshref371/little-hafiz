@@ -2,6 +2,7 @@
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -617,5 +618,7 @@ namespace Little_Hafiz
         }
         #endregion
 
+        private void ReleasesLatestBtn_Click(object sender, EventArgs e)
+            => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
     }
 }
