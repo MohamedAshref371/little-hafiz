@@ -22,16 +22,19 @@ namespace QuranKareem
             if (setFont) control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
         }
 
-        public void SetControls(Control.ControlCollection controls, bool setPanelFont = true)
+        public void SetControls(Control.ControlCollection controls)
         {
             for (int i = 0; i < controls.Count; i++)
             {
-                bool setFont = setPanelFont || !(controls[i] is Panel);
-                SetControl(controls[i], setFont);
-                if (controls[i] is Panel)
-                    SetControls(controls[i].Controls, false);
+                SetControl(controls[i]);
+                if (controls[i] is Panel || controls[i] is UserControl)
+                    SetControls(controls[i].Controls);
             }
         }
+
+        public Point GetNewLocation(Point p) => new Point(Round(p.X * xDiv), Round(p.Y * yDiv));
+
+        public Size GetNewSize(Size sz) => new Size(Round(sz.Width * xDiv), Round(sz.Height * yDiv));
 
         public int GetNewX(int x) => Round(x * xDiv);
 

@@ -20,7 +20,7 @@ namespace Little_Hafiz
             InitializeComponent();
             AddTitleInStudentsListPanel();
         }
-        
+
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
 
@@ -81,15 +81,15 @@ namespace Little_Hafiz
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+
             fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
             fs.SetControls(Controls);
+
             maximizeBtn.Visible = false;
             minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y);
+            
             if (studentDataPanel.Visible) SetStudentImage();
             if (studentGradesPanel.Visible) SetStudentImage2();
-
-            if (studentsListPanel.Controls.Count > 1) SearchBtn_Click(null, null);
-            else AddTitleInStudentsListPanel();
         }
         #endregion
 
@@ -121,6 +121,7 @@ namespace Little_Hafiz
                 stdRow.GradesButtonClick += ShowGradesBtn_Click;
                 studentsListPanel.Controls.Add(stdRow);
             }
+            fs?.SetControls(studentsListPanel.Controls);
         }
 
         private void ShowStudentBtn_Click(object sender, EventArgs e)
