@@ -409,7 +409,6 @@ namespace Little_Hafiz
             prevLevel.Minimum = 0; prevLevel.Maximum = 10;
             prevLevel.Value = data.CompetitionLevel ?? 0;
             SetPrevLevelMinMax();
-            SetCurrentLevelMaximum();
 
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
@@ -464,6 +463,7 @@ namespace Little_Hafiz
                 fs?.SetControl(stdRow);
                 fs?.SetControls(stdRow.Controls);
                 studentGradesListPanel.Controls.Add(stdRow);
+                prevLevel.Value = currentLevel.Value;
                 SetPrevLevelMinMax();
             }
         }
