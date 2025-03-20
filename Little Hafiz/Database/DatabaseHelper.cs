@@ -178,6 +178,13 @@ namespace Little_Hafiz
             if (!reader.IsDBNull(4))
                 stdRank = reader.GetInt32(4);
 
+            string img = (string)reader["image"];
+            if (img != "")
+            {
+                img = imagesFolder + img;
+                if (!File.Exists(img)) img = "";
+            }
+
             return new StudentSearchRowData
             {
                 NationalNumber = reader.GetString(0),
@@ -185,7 +192,7 @@ namespace Little_Hafiz
                 CompetitionLevel = compLevel,
                 CompetitionDate = reader.IsDBNull(3) ? null : reader.GetString(3),
                 Rank = stdRank,
-                Image = reader.GetString(5),
+                Image = img,
             };
         }
         
