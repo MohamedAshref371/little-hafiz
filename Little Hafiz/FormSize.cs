@@ -27,7 +27,8 @@ namespace QuranKareem
             for (int i = 0; i < controls.Count; i++)
             {
                 SetControl(controls[i]);
-                if (controls[i] is Panel || controls[i] is UserControl)
+#warning Part " || controls[i] is StudentSearchRow" Make the Class unreusable.
+                if (controls[i] is Panel || controls[i] is StudentSearchRow)
                     SetControls(controls[i].Controls);
             }
         }
