@@ -12,6 +12,6 @@
         public int RowId;
 
         public override string ToString()
-            => $"{NationalNumber}, {StudentCode}, {PreviousLevel}, {CompetitionLevel}, {CompetitionDate}, {Score}, {Rank}";
+            => $"'{NationalNumber}', {StudentCode}, {PreviousLevel}, {CompetitionLevel}, '{CompetitionDate}', {Score}, {Rank}";
     }
 }
