@@ -247,14 +247,14 @@ namespace Little_Hafiz
         {
             return new CompetitionGradeData
             {
+                RowId = reader.GetInt32(0),
                 NationalNumber = (string)reader["national"],
-                StudentCode = reader.GetInt32(1),
-                PreviousLevel = reader.GetInt32(2),
-                CompetitionLevel = reader.GetInt32(3),
+                StudentCode = reader.GetInt32(2),
+                PreviousLevel = reader.GetInt32(3),
+                CompetitionLevel = reader.GetInt32(4),
                 CompetitionDate = (string)reader["competition_date"],
-                Score = reader.GetFloat(5),
-                Rank = reader.GetInt32(6),
-                RowId = reader.GetInt32(7),
+                Score = reader.GetFloat(6),
+                Rank = reader.GetInt32(7),
             };
         }
 
