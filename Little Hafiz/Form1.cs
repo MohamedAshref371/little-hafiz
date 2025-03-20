@@ -143,22 +143,9 @@ namespace Little_Hafiz
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
         {
-            studentSearchPanel.Visible = false;
-            studentsListPanel.Visible = false;
-            footerPanel.Visible = false;
-
             var data = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData;
-            stdName2.Text = data.FullName;
-            stdNational2.Text = data.NationalNumber;
-            // more code
-            stdImagePath2.Text = data.Image;
-            SetStudentImage2();
 
-            CompetitionGradeData[] grades = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
-
-            // Disblay grades in UI
-
-            studentGradesPanel.Visible = true;
+            OpenStudentGradesPanel(data, DatabaseHelper.SelectStudentGrades(data.NationalNumber));
         }
         #endregion
 
@@ -405,6 +392,96 @@ namespace Little_Hafiz
         #endregion
 
         #region Student Grades Panel
+        private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
+        {
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
+
+            stdName2.Text = data.FullName;
+            stdNational2.Text = data.NationalNumber;
+            stdImagePath2.Text = data.Image;
+            SetStudentImage2();
+
+            prevLevel.Minimum = 0; prevLevel.Maximum = 10;
+            prevLevel.Value = data.CompetitionLevel ?? 0;
+            SetPrevLevelMinMax();
+            SetCurrentLevelMaximum();
+
+            studentGradesListPanel.Controls.Clear();
+            studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
+
+            StudentGradeRow stdRow;
+            for (int i = 0; i < grades.Length; i++)
+            {
+                stdRow = new StudentGradeRow(grades[i]);
+                stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
+                studentGradesListPanel.Controls.Add(stdRow);
+            }
+            fs?.SetControls(studentGradesListPanel.Controls);
+            studentGradesPanel.Visible = true;
+        }
+
+        private void SetPrevLevelMinMax()
+        {
+            if (prevLevel.Value != 0)
+            {
+                prevLevel.Minimum = 1;
+                prevLevel.Maximum = prevLevel.Value;
+            }
+        }
+
+        private void SetCurrentLevelMaximum()
+        {
+            if (prevLevel.Value == 0)
+                currentLevel.Maximum = 10;
+            else if (prevLevel.Value == 1)
+                currentLevel.Maximum = 1;
+            else
+                currentLevel.Maximum = prevLevel.Value - 1;
+        }
+
+        private void AddGradeBtn_Click(object sender, EventArgs e)
+        {
+            CompetitionGradeData data = new CompetitionGradeData
+            {
+                NationalNumber = stdNational.Text,
+                StudentCode = (int)stdCode.Value,
+                PreviousLevel = (int)prevLevel.Value,
+                CompetitionLevel = (int)currentLevel.Value,
+                CompetitionDate = compDate.Value.ToString("yyyy/MM"),
+                Score = (float)stdScore.Value,
+                Rank = (int)stdRank.Value,
+            };
+
+            if (DatabaseHelper.AddGrade(data) != -1)
+            {
+                StudentGradeRow stdRow = new StudentGradeRow(data);
+                stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * studentGradesListPanel.Controls.Count + 9);
+                fs?.SetControl(stdRow);
+                fs?.SetControls(stdRow.Controls);
+                studentGradesListPanel.Controls.Add(stdRow);
+                SetPrevLevelMinMax();
+            }
+        }
+
+        private void CancelBtn2_Click(object sender, EventArgs e)
+        {
+            studentGradesPanel.Visible = false;
+            studentSearchPanel.Visible = true;
+            studentsListPanel.Visible = true;
+            footerPanel.Visible = true;
+        }
+
+        private void PrevLevel_ValueChanged(object sender, EventArgs e)
+        {
+            SetCurrentLevelMaximum();
+            prevLevelExplain.Text = Ranks.RanksText[(int)prevLevel.Value];
+        }
+        
+        private void CurrentLevel_ValueChanged(object sender, EventArgs e)
+            => currentLevelExplain.Text = Ranks.RanksText[(int)currentLevel.Value];
+        
         private void SetStudentImage2()
         {
             if (File.Exists(stdImagePath2.Text))

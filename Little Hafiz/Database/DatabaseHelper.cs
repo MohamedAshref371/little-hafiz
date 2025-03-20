@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
@@ -24,7 +25,7 @@ namespace Little_Hafiz
         public static DateTime CreateDate { get; private set; }
         public static string Comment { get; private set; }
 
-        private static string tableColumnsNames;
+        private static string studentsTableColumnsNames;
         #endregion
 
         static DatabaseHelper() => SafetyExamination();
@@ -50,7 +51,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
                                       "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, degree NUMERIC, std_rank INTEGER, PRIMARY KEY(national, competition_level) );" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, id INTEGER PRIMARY KEY ASC AUTOINCREMENT;" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
@@ -77,7 +78,7 @@ namespace Little_Hafiz
                 command.CommandText = "SELECT GROUP_CONCAT(name) FROM PRAGMA_table_info('students')";
                 reader = command.ExecuteReader();
                 if (reader.Read())
-                    tableColumnsNames = reader.GetString(0);
+                    studentsTableColumnsNames = reader.GetString(0);
                 else
                     return;
                 reader.Close();
@@ -244,8 +245,9 @@ namespace Little_Hafiz
                 PreviousLevel = reader.GetInt32(2),
                 CompetitionLevel = reader.GetInt32(3),
                 CompetitionDate = (string)reader["competition_date"],
-                CompetitionDegree = reader.GetFloat(5),
+                Score = reader.GetFloat(5),
                 Rank = reader.GetInt32(6),
+                RowId = reader.GetInt32(7),
             };
         }
 
@@ -324,13 +326,23 @@ namespace Little_Hafiz
             return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})");
         }
 
+        public static int AddGrade(CompetitionGradeData data)
+            => ExecuteNonQuery($"INSERT INTO grades VALUES ({data})");
+        
+
         public static int UpdateStudent(StudentData data)
         {
             if (!IsNotInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"UPDATE students SET ({tableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
+            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
         }
+
+        public static int UpdateScoreInStudentGrade(int rowId, float score)
+            => ExecuteNonQuery($"UPDATE students SET score = {score} WHERE id = {rowId}");
+
+        public static int UpdateRankInStudentGrade(int rowId, int rank)
+            => ExecuteNonQuery($"UPDATE students SET std_rank = {rank} WHERE id = {rowId}");
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");

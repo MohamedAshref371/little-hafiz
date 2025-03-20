@@ -27,13 +27,13 @@ namespace QuranKareem
             for (int i = 0; i < controls.Count; i++)
             {
                 SetControl(controls[i]);
-#warning Part " || controls[i] is StudentSearchRow" Make the Class unreusable.
-                if (controls[i] is Panel || controls[i] is StudentSearchRow)
+#warning Part " || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow" Make the Class unreusable.
+                if (controls[i] is Panel || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow)
                     SetControls(controls[i].Controls);
             }
         }
 
-        public Point GetNewLocation(Point p) => new Point(Round(p.X * xDiv), Round(p.Y * yDiv));
+        public Point GetNewPoint(Point p) => new Point(Round(p.X * xDiv), Round(p.Y * yDiv));
 
         public Size GetNewSize(Size sz) => new Size(Round(sz.Width * xDiv), Round(sz.Height * yDiv));
 

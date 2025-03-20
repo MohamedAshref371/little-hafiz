@@ -1,16 +1,17 @@
 ﻿namespace Little_Hafiz
 {
-    internal class CompetitionGradeData
+    public class CompetitionGradeData
     {
         public string NationalNumber;
         public int StudentCode;
         public int PreviousLevel;
         public int CompetitionLevel;
         public string CompetitionDate;
-        public float CompetitionDegree;
+        public float Score;
         public int Rank;
+        public int RowId;
 
         public override string ToString()
-            => $"{NationalNumber}, {CompetitionLevel}, {CompetitionDate}, {CompetitionDegree}";
+            => $"{NationalNumber}, {StudentCode}, {PreviousLevel}, {CompetitionLevel}, {CompetitionDate}, {Score}, {Rank}";
     }
 }
