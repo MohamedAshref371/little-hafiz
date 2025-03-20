@@ -20,6 +20,14 @@ namespace Little_Hafiz
             remove => gradesBtn.Click -= value;
         }
 
+        public StudentSearchRow()
+        {
+            InitializeComponent();
+
+            studentBtn.Visible = false;
+            gradesBtn.Visible = false;
+        }
+
         public StudentSearchRowData StudentSearchRowData;
         public StudentSearchRow(StudentSearchRowData data)
         {
