@@ -445,7 +445,7 @@ namespace Little_Hafiz
         {
             CompetitionGradeData data = new CompetitionGradeData
             {
-                NationalNumber = stdNational.Text,
+                NationalNumber = stdNational2.Text,
                 StudentCode = (int)stdCode.Value,
                 PreviousLevel = (int)prevLevel.Value,
                 CompetitionLevel = (int)currentLevel.Value,
