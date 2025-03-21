@@ -39,7 +39,7 @@ namespace Little_Hafiz
             }
         }
 
-        private static void LogError(string msg, string stack)
+        public static void LogError(string msg, string stack)
         {
             if (!System.IO.File.Exists("Errors.txt"))
                 System.IO.File.WriteAllText("Errors.txt", "");
