@@ -309,7 +309,7 @@ namespace Little_Hafiz
         public static bool IsInsideImagesFolder(StudentData data)
             => Path.GetFullPath(data.Image) == Path.GetFullPath(imagesFolder + data.ImageName);
 
-        public static bool CopyImageToImagesFolder(StudentData data)
+        public static void CopyImageToImagesFolder(StudentData data)
         {
             try
             {
@@ -318,12 +318,10 @@ namespace Little_Hafiz
                     string imagePath = imagesFolder + data.FullName.Trim() + "_img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
                     File.Copy(data.Image, imagePath);
                     data.Image = imagePath;
-                    return true;
                 }
             } catch { }
 
             data.Image = "";
-            return false;
         }
 
         public static int AddStudent(StudentData data)
