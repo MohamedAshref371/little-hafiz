@@ -200,7 +200,7 @@ namespace Little_Hafiz
 
         private void PhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
 
@@ -386,7 +386,7 @@ namespace Little_Hafiz
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ("\\/:*?\"<>|".Contains(e.KeyChar))
+            if ("\\/:*?\"<>|'".Contains(e.KeyChar))
                 e.Handled = true;
         }
 
