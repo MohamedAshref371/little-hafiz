@@ -15,7 +15,7 @@ namespace Little_Hafiz
     public partial class Form1 : Form
     {
         public Form1() => InitializeComponent();
-        
+
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
 
@@ -93,6 +93,12 @@ namespace Little_Hafiz
             
             if (studentDataPanel.Visible) SetStudentImage();
             if (studentGradesPanel.Visible) SetStudentImage2();
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\'')
+                e.Handled = true;
         }
         #endregion
 

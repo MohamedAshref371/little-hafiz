@@ -372,6 +372,7 @@
             this.stdSkills.SelectedText = "";
             this.stdSkills.Size = new System.Drawing.Size(257, 32);
             this.stdSkills.TabIndex = 68;
+            this.stdSkills.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdHobbies
             // 
@@ -396,6 +397,7 @@
             this.stdHobbies.SelectedText = "";
             this.stdHobbies.Size = new System.Drawing.Size(257, 32);
             this.stdHobbies.TabIndex = 66;
+            this.stdHobbies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdHobbiesLabel
             // 
@@ -432,6 +434,7 @@
             this.stdIjazah.SelectedText = "";
             this.stdIjazah.Size = new System.Drawing.Size(257, 32);
             this.stdIjazah.TabIndex = 64;
+            this.stdIjazah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdCourses
             // 
@@ -456,6 +459,7 @@
             this.stdCourses.SelectedText = "";
             this.stdCourses.Size = new System.Drawing.Size(257, 32);
             this.stdCourses.TabIndex = 62;
+            this.stdCourses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdCoursesLabel
             // 
@@ -516,6 +520,7 @@
             this.stdCertificates.SelectedText = "";
             this.stdCertificates.Size = new System.Drawing.Size(692, 32);
             this.stdCertificates.TabIndex = 60;
+            this.stdCertificates.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdCertificatesLabel
             // 
@@ -610,6 +615,7 @@
             this.stdMemoPlaces.SelectedText = "";
             this.stdMemoPlaces.Size = new System.Drawing.Size(692, 32);
             this.stdMemoPlaces.TabIndex = 54;
+            this.stdMemoPlaces.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdMashaykh
             // 
@@ -634,6 +640,7 @@
             this.stdMashaykh.SelectedText = "";
             this.stdMashaykh.Size = new System.Drawing.Size(692, 32);
             this.stdMashaykh.TabIndex = 53;
+            this.stdMashaykh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdMemoPlacesLabel
             // 
@@ -682,6 +689,7 @@
             this.stdMemo.SelectedText = "";
             this.stdMemo.Size = new System.Drawing.Size(257, 32);
             this.stdMemo.TabIndex = 50;
+            this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdMemoLabel
             // 
@@ -816,6 +824,7 @@
             this.stdSchool.SelectedText = "";
             this.stdSchool.Size = new System.Drawing.Size(257, 32);
             this.stdSchool.TabIndex = 42;
+            this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdClass
             // 
@@ -840,6 +849,7 @@
             this.stdClass.SelectedText = "";
             this.stdClass.Size = new System.Drawing.Size(257, 32);
             this.stdClass.TabIndex = 40;
+            this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdClassLabel
             // 
@@ -876,6 +886,7 @@
             this.stdEmail.SelectedText = "";
             this.stdEmail.Size = new System.Drawing.Size(257, 32);
             this.stdEmail.TabIndex = 38;
+            this.stdEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdFacebook
             // 
@@ -900,6 +911,7 @@
             this.stdFacebook.SelectedText = "";
             this.stdFacebook.Size = new System.Drawing.Size(257, 32);
             this.stdFacebook.TabIndex = 36;
+            this.stdFacebook.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdFacebookLabel
             // 
@@ -948,6 +960,7 @@
             this.stdAddress.SelectedText = "";
             this.stdAddress.Size = new System.Drawing.Size(257, 32);
             this.stdAddress.TabIndex = 32;
+            this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdAddressLabel
             // 
@@ -978,7 +991,7 @@
             this.stdPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhone.Location = new System.Drawing.Point(542, 488);
             this.stdPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdPhone.MaxLength = 15;
+            this.stdPhone.MaxLength = 11;
             this.stdPhone.Name = "stdPhone";
             this.stdPhone.PlaceholderText = "";
             this.stdPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1010,6 +1023,7 @@
             this.guardianLink.SelectedText = "";
             this.guardianLink.Size = new System.Drawing.Size(86, 32);
             this.guardianLink.TabIndex = 28;
+            this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // guardianBirth
             // 
@@ -1095,7 +1109,7 @@
             this.fatherPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherPhone.Location = new System.Drawing.Point(542, 387);
             this.fatherPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.fatherPhone.MaxLength = 15;
+            this.fatherPhone.MaxLength = 11;
             this.fatherPhone.Name = "fatherPhone";
             this.fatherPhone.PlaceholderText = "";
             this.fatherPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1127,6 +1141,7 @@
             this.motherJob.SelectedText = "";
             this.motherJob.Size = new System.Drawing.Size(257, 32);
             this.motherJob.TabIndex = 18;
+            this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // motherQuali
             // 
@@ -1151,6 +1166,7 @@
             this.motherQuali.SelectedText = "";
             this.motherQuali.Size = new System.Drawing.Size(257, 32);
             this.motherQuali.TabIndex = 16;
+            this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // fatherJob
             // 
@@ -1175,6 +1191,7 @@
             this.fatherJob.SelectedText = "";
             this.fatherJob.Size = new System.Drawing.Size(257, 32);
             this.fatherJob.TabIndex = 14;
+            this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // fatherQuali
             // 
@@ -1199,6 +1216,7 @@
             this.fatherQuali.SelectedText = "";
             this.fatherQuali.Size = new System.Drawing.Size(257, 32);
             this.fatherQuali.TabIndex = 12;
+            this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // cancelBtn
             // 
@@ -1647,6 +1665,7 @@
             this.stdEmailSearch.SelectedText = "";
             this.stdEmailSearch.Size = new System.Drawing.Size(257, 32);
             this.stdEmailSearch.TabIndex = 80;
+            this.stdEmailSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdEmailCheckBox
             // 
@@ -1970,12 +1989,12 @@
             this.headerPanel.BorderThickness = 1;
             this.headerPanel.Controls.Add(this.minimizeBtn);
             this.headerPanel.Controls.Add(this.closeBtn);
-            this.headerPanel.Controls.Add(this.footerPanel);
-            this.headerPanel.Controls.Add(this.studentsListPanel);
-            this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.formTitle);
             this.headerPanel.Controls.Add(this.maximizeBtn);
+            this.headerPanel.Controls.Add(this.footerPanel);
+            this.headerPanel.Controls.Add(this.studentsListPanel);
+            this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
