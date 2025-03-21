@@ -8,7 +8,7 @@
         {
             if (i is null)
                 return "غير معروف";
-            else if (i >= 0 && i <= 10)
+            else if (i >= 0 && i < RanksText.Length)
                 return RanksText[(int)i];
             else
                 return i.ToString();

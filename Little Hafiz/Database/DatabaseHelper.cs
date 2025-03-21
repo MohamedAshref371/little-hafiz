@@ -55,7 +55,11 @@ namespace Little_Hafiz
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
-            catch { return false; }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                return false;
+            }
             finally { conn.Close(); }
             return true;
         }
@@ -90,7 +94,11 @@ namespace Little_Hafiz
 
                 success = true;
             }
-            catch { success = false; }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                success = false;
+            }
             finally
             {
                 reader?.Close();
@@ -113,7 +121,11 @@ namespace Little_Hafiz
                 if (!reader.Read()) return null;
                 return GetStudentData();
             }
-            catch { return null; }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                return null; 
+            }
             finally
             {
                 reader.Close();
@@ -296,7 +308,11 @@ namespace Little_Hafiz
                     list.Add(method());
                 return list.ToArray();
             }
-            catch { return null; }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                return null;
+            }
             finally
             {
                 reader.Close();
@@ -320,7 +336,11 @@ namespace Little_Hafiz
                     data.Image = imagePath;
                     return;
                 }
-            } catch { }
+            }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+            }
 
             data.Image = "";
         }
@@ -384,7 +404,11 @@ namespace Little_Hafiz
                 command.CommandText = sql;
                 return command.ExecuteNonQuery();
             }
-            catch { return -1; }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                return -1;
+            }
             finally
             {
                 reader.Close();
