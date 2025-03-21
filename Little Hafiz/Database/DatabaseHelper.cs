@@ -309,22 +309,28 @@ namespace Little_Hafiz
         public static bool IsInsideImagesFolder(StudentData data)
             => Path.GetFullPath(data.Image) == Path.GetFullPath(imagesFolder + data.ImageName);
 
-        public static void CopyImageToImagesFolder(StudentData data)
+        public static bool CopyImageToImagesFolder(StudentData data)
         {
-            string imagePath = imagesFolder + data.FullName.Trim() + "_img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
-            File.Copy(data.Image, imagePath);
-            data.Image = imagePath;
+            try
+            {
+                if (File.Exists(data.Image))
+                {
+                    string imagePath = imagesFolder + data.FullName.Trim() + "_img" + DateTime.Now.Ticks.ToString() + "." + data.ImageName.Split('.').Last();
+                    File.Copy(data.Image, imagePath);
+                    data.Image = imagePath;
+                    return true;
+                }
+            } catch { }
+
+            data.Image = "";
+            return false;
         }
 
         public static int AddStudent(StudentData data)
         {
-            if (File.Exists(data.Image))
-            {
-                if (!IsInsideImagesFolder(data))
-                    CopyImageToImagesFolder(data);
-            }
-            else
-                data.Image = "";
+
+            if (!IsInsideImagesFolder(data))
+                CopyImageToImagesFolder(data);
 
             return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})");
         }
