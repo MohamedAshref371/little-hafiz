@@ -4,7 +4,6 @@ namespace Little_Hafiz
 {
     internal class StudentData
     {
-        //public string FirstName, SecondName, ThirdName, FourthName, FifthName;
         public string FullName;
         public string NationalNumber;
         public string BirthDate;
@@ -28,8 +27,6 @@ namespace Little_Hafiz
 
         public string Image;
         public string ImageName => Image.Split('\\').Last();
-
-        //public StudentState StudentState;
 
         public override string ToString()
             => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {Level}, '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
