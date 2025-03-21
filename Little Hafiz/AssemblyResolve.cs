@@ -4,7 +4,7 @@ using System.Reflection;
 
 class AssemblyResolver // GPT-4o
 {
-    private static readonly string LibrariesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libraries");
+    private static readonly string LibrariesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lib");
 
     public static void Initialize() => AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
 
