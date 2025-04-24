@@ -48,7 +48,7 @@
             this.stdCertificates = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdCertificatesLabel = new System.Windows.Forms.Label();
             this.stdFirstConclusion = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.stdFirstConclusionLabel = new System.Windows.Forms.Label();
+            this.stdFirstConclusionCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdJoiningDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdJoiningDateLabel = new System.Windows.Forms.Label();
             this.stdMemoPlaces = new Guna.UI2.WinForms.Guna2TextBox();
@@ -129,7 +129,10 @@
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.formImage = new System.Windows.Forms.Label();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdAge = new System.Windows.Forms.Label();
+            this.stdAgeLabel = new System.Windows.Forms.Label();
             this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.compDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -156,9 +159,6 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
-            this.formImage = new System.Windows.Forms.Label();
-            this.stdAgeLabel = new System.Windows.Forms.Label();
-            this.stdAge = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -240,7 +240,7 @@
             this.studentDataPanel.Controls.Add(this.stdCertificates);
             this.studentDataPanel.Controls.Add(this.stdCertificatesLabel);
             this.studentDataPanel.Controls.Add(this.stdFirstConclusion);
-            this.studentDataPanel.Controls.Add(this.stdFirstConclusionLabel);
+            this.studentDataPanel.Controls.Add(this.stdFirstConclusionCheckBox);
             this.studentDataPanel.Controls.Add(this.stdJoiningDate);
             this.studentDataPanel.Controls.Add(this.stdJoiningDateLabel);
             this.studentDataPanel.Controls.Add(this.stdMemoPlaces);
@@ -542,6 +542,7 @@
             this.stdFirstConclusion.BorderRadius = 15;
             this.stdFirstConclusion.Checked = true;
             this.stdFirstConclusion.CustomFormat = "yyyy/MM/dd";
+            this.stdFirstConclusion.Enabled = false;
             this.stdFirstConclusion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdFirstConclusion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdFirstConclusion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -553,17 +554,27 @@
             this.stdFirstConclusion.TabIndex = 57;
             this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
             // 
-            // stdFirstConclusionLabel
+            // stdFirstConclusionCheckBox
             // 
-            this.stdFirstConclusionLabel.AutoSize = true;
-            this.stdFirstConclusionLabel.BackColor = System.Drawing.Color.Transparent;
-            this.stdFirstConclusionLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdFirstConclusionLabel.Location = new System.Drawing.Point(236, 782);
-            this.stdFirstConclusionLabel.Name = "stdFirstConclusionLabel";
-            this.stdFirstConclusionLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdFirstConclusionLabel.Size = new System.Drawing.Size(184, 19);
-            this.stdFirstConclusionLabel.TabIndex = 58;
-            this.stdFirstConclusionLabel.Text = "تاريخ إتمام الختمة الأولى :";
+            this.stdFirstConclusionCheckBox.AutoSize = true;
+            this.stdFirstConclusionCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdFirstConclusionCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdFirstConclusionCheckBox.CheckedState.BorderRadius = 3;
+            this.stdFirstConclusionCheckBox.CheckedState.BorderThickness = 1;
+            this.stdFirstConclusionCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdFirstConclusionCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(236, 782);
+            this.stdFirstConclusionCheckBox.Name = "stdFirstConclusionCheckBox";
+            this.stdFirstConclusionCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(203, 23);
+            this.stdFirstConclusionCheckBox.TabIndex = 58;
+            this.stdFirstConclusionCheckBox.Text = "تاريخ إتمام الختمة الأولى :";
+            this.stdFirstConclusionCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdFirstConclusionCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdFirstConclusionCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdFirstConclusionCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdFirstConclusionCheckBox.UseVisualStyleBackColor = false;
+            this.stdFirstConclusionCheckBox.CheckedChanged += new System.EventHandler(this.StdFirstConclusionCheckBox_CheckedChanged);
             // 
             // stdJoiningDate
             // 
@@ -2007,6 +2018,16 @@
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
             // 
+            // formImage
+            // 
+            this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
+            this.formImage.Location = new System.Drawing.Point(17, 4);
+            this.formImage.Name = "formImage";
+            this.formImage.Size = new System.Drawing.Size(30, 30);
+            this.formImage.TabIndex = 74;
+            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // studentGradesPanel
             // 
             this.studentGradesPanel.BackColor = System.Drawing.Color.Transparent;
@@ -2049,6 +2070,28 @@
             this.studentGradesPanel.Size = new System.Drawing.Size(926, 656);
             this.studentGradesPanel.TabIndex = 85;
             this.studentGradesPanel.Visible = false;
+            // 
+            // stdAge
+            // 
+            this.stdAge.BackColor = System.Drawing.Color.Transparent;
+            this.stdAge.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdAge.Location = new System.Drawing.Point(169, 149);
+            this.stdAge.Name = "stdAge";
+            this.stdAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAge.Size = new System.Drawing.Size(610, 19);
+            this.stdAge.TabIndex = 98;
+            // 
+            // stdAgeLabel
+            // 
+            this.stdAgeLabel.AutoSize = true;
+            this.stdAgeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdAgeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdAgeLabel.Location = new System.Drawing.Point(785, 148);
+            this.stdAgeLabel.Name = "stdAgeLabel";
+            this.stdAgeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAgeLabel.Size = new System.Drawing.Size(96, 19);
+            this.stdAgeLabel.TabIndex = 97;
+            this.stdAgeLabel.Text = "عمر الطالب :";
             // 
             // addGradeBtn
             // 
@@ -2417,38 +2460,6 @@
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
             // 
-            // formImage
-            // 
-            this.formImage.BackColor = System.Drawing.Color.Transparent;
-            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(17, 4);
-            this.formImage.Name = "formImage";
-            this.formImage.Size = new System.Drawing.Size(30, 30);
-            this.formImage.TabIndex = 74;
-            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // stdAgeLabel
-            // 
-            this.stdAgeLabel.AutoSize = true;
-            this.stdAgeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.stdAgeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdAgeLabel.Location = new System.Drawing.Point(785, 148);
-            this.stdAgeLabel.Name = "stdAgeLabel";
-            this.stdAgeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdAgeLabel.Size = new System.Drawing.Size(96, 19);
-            this.stdAgeLabel.TabIndex = 97;
-            this.stdAgeLabel.Text = "عمر الطالب :";
-            // 
-            // stdAge
-            // 
-            this.stdAge.BackColor = System.Drawing.Color.Transparent;
-            this.stdAge.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdAge.Location = new System.Drawing.Point(169, 149);
-            this.stdAge.Name = "stdAge";
-            this.stdAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdAge.Size = new System.Drawing.Size(610, 19);
-            this.stdAge.TabIndex = 98;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2546,7 +2557,7 @@
         private System.Windows.Forms.Label stdMemoPlacesLabel;
         private System.Windows.Forms.Label stdMashaykhLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdFirstConclusion;
-        private System.Windows.Forms.Label stdFirstConclusionLabel;
+        private Guna.UI2.WinForms.Guna2CheckBox stdFirstConclusionCheckBox;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdJoiningDate;
         private System.Windows.Forms.Label stdJoiningDateLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdCertificates;

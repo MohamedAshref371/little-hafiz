@@ -259,6 +259,9 @@ namespace Little_Hafiz
 
         private StudentData GetStudentData()
         {
+            string frstConcDate = stdFirstConclusionCheckBox.Checked ? 
+                stdFirstConclusion.Value.ToString("yyyy/MM/dd") : "1900/01/01";
+
             return new StudentData
             {
                 FullName = stdName.Text,
@@ -273,7 +276,7 @@ namespace Little_Hafiz
                 MotherPhone = motherPhone.Text,
                 GuardianName = guardianName.Text,
                 GuardianLink = guardianLink.Text,
-                GuardianBirth = guardianBirth.Value.ToString("yyy/MM/dd"),
+                GuardianBirth = guardianBirth.Value.ToString("yyyy/MM/dd"),
                 PhoneNumber = stdPhone.Text,
                 Address = stdAddress.Text,
                 Email = stdEmail.Text,
@@ -286,8 +289,8 @@ namespace Little_Hafiz
                 MemorizationAmount = stdMemo.Text,
                 StudentMashaykh = stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlaces.Text,
-                JoiningDate = stdJoiningDate.Value.ToString("yyy/MM/dd"),
-                FirstConclusionDate = stdFirstConclusion.Value.ToString("yyy/MM/dd"),
+                JoiningDate = stdJoiningDate.Value.ToString("yyyy/MM/dd"),
+                FirstConclusionDate = frstConcDate,
                 Certificates = stdCertificates.Text,
                 Ijazah = stdIjazah.Text,
                 Courses = stdCourses.Text,
@@ -380,6 +383,9 @@ namespace Little_Hafiz
             stdSkills.Text = stdData.Skills;
             stdHobbies.Text = stdData.Hobbies;
             stdImagePath.Text = stdData.Image;
+
+            if (stdFirstConclusion.Value < stdBirthDate.Value)
+                stdFirstConclusionCheckBox.Checked = false;
         }
 
         private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
@@ -390,6 +396,9 @@ namespace Little_Hafiz
                 e.Handled = true;
         }
 
+        private void StdFirstConclusionCheckBox_CheckedChanged(object sender, EventArgs e)
+            => stdFirstConclusion.Enabled = stdFirstConclusionCheckBox.Checked;
+        
         StudentPanelState studentPanelState = StudentPanelState.Read;
 
         private enum StudentPanelState
