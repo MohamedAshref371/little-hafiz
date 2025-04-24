@@ -430,6 +430,7 @@ namespace Little_Hafiz
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
 
+            compDate.Value = DateTime.Now;
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
 
@@ -495,7 +496,7 @@ namespace Little_Hafiz
             }
             if ((int)stdAge.Tag > 35)
             {
-                MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة");
+                MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة لأن عمره أكبر من 35 عاما");
                 return;
             }
             if ((int)stdRank.Tag >= 2)
