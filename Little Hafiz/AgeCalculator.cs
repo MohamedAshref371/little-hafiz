@@ -30,8 +30,7 @@ namespace Little_Hafiz
                 months += 12;
             }
 
-            string result = "العمر هو: " +
-                            $"{FormatPart(years, GetYearWord)} و" +
+            string result = $"{FormatPart(years, GetYearWord)} و" +
                             $"{FormatPart(months, GetMonthWord)} و" +
                             $"{FormatPart(days, GetDayWord)}.";
 

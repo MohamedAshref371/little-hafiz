@@ -349,7 +349,7 @@ namespace Little_Hafiz
         public static int AddStudent(StudentData data)
         {
 
-            if (!IsInsideImagesFolder(data))
+            if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
             return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})");
@@ -361,7 +361,7 @@ namespace Little_Hafiz
 
         public static int UpdateStudent(StudentData data)
         {
-            if (!IsInsideImagesFolder(data))
+            if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
             return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");

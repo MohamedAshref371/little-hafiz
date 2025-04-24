@@ -436,7 +436,7 @@ namespace Little_Hafiz
                 stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
                 studentGradesListPanel.Controls.Add(stdRow);
             }
-            currentLevel.Tag = topRank;
+            stdRank.Tag = topRank;
 
             fs?.SetControls(studentGradesListPanel.Controls);
             studentGradesPanel.Visible = true;
@@ -468,9 +468,9 @@ namespace Little_Hafiz
                 MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة");
                 return;
             }
-            if ((int)currentLevel.Tag >= 2)
+            if ((int)stdRank.Tag >= 2)
             {
-                MessageBox.Show("حصل هذا الطالب في المستوى الأولى على إحدى المراكز الأولى الثلاثة أكثر من مرة");
+                MessageBox.Show("حصل هذا الطالب في المستوى الأولى على أحد المراكز الثلاثة الأولى أكثر من مرة");
                 return;
             }
             if ((int)stdAge.Tag > 25 && currentLevel.Value != 1)
