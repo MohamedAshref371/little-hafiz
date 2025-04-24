@@ -353,6 +353,7 @@ namespace Little_Hafiz
             stdMashaykh.Text = "";
             stdMemoPlaces.Text = "";
             stdJoiningDate.Value = DateTime.Now.AddYears(-5);
+            stdFirstConclusion.Checked = false;
             stdFirstConclusion.Value = DateTime.Now.AddYears(-2);
             stdCertificates.Text = "";
             stdIjazah.Text = "";
