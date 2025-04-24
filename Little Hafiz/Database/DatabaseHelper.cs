@@ -269,11 +269,9 @@ namespace Little_Hafiz
 
         public static ExcelRowData[] SelectExcelRowData(int year = 0, int month = 0)
         {
-            string condition = year == 0 ? "" : month == 0 ? $"WHERE competition_date LIKE '{year}/%'" : $"WHERE competition_date = '{year}/{month:D2}'",
+            string dateFilter = year == 0 ? "1=1" : month == 0 ? $"competition_date LIKE '{year}/%'" : $"competition_date = '{year}/{month:D2}'";
 
-                maxColumn = year == 0 && month == 0 ? "MAX(competition_date) " : "",
-
-                sql = $@"SELECT std_code, full_name, birth_date, phone_number, competition_level, prev_level, class, address, memo_places, std_rank, {maxColumn}competition_date FROM students JOIN grades ON students.national = grades.national {condition}";
+            string sql = $@"SELECT g.std_code, s.full_name, s.birth_date, s.phone_number, g.competition_level, g.prev_level, s.class, s.address, s.memo_places, g.std_rank, g.competition_date FROM students s JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date";
 
             return SelectMultiRows(sql, GetExcelRowData);
         }
