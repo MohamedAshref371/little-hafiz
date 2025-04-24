@@ -448,6 +448,8 @@ namespace Little_Hafiz
             stdRank.Tag = topRank;
 
             fs?.SetControls(studentGradesListPanel.Controls);
+
+            addGradeBtn.Enabled = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
             studentGradesPanel.Visible = true;
         }
 
@@ -508,6 +510,7 @@ namespace Little_Hafiz
                 studentGradesListPanel.Controls.Add(stdRow);
                 prevLevel.Value = currentLevel.Value;
                 SetPrevLevelMinMax();
+                addGradeBtn.Enabled = false;
             }
         }
 
