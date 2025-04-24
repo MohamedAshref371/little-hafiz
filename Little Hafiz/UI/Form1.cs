@@ -409,6 +409,14 @@ namespace Little_Hafiz
 
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
+
+            int years = 0;
+            if (DateTime.TryParseExact(data.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
+                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out years);
+            else
+                stdAge.Text = "تاريخ الميلاد غير صالح";
+            stdAge.Tag = years;
+
             stdImagePath2.Text = data.Image;
             SetStudentImage2();
 
@@ -419,13 +427,17 @@ namespace Little_Hafiz
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
 
+            int topRank = 0;
             StudentGradeRow stdRow;
             for (int i = 0; i < grades.Length; i++)
             {
+                if (grades[i].Rank > 0 && grades[i].Rank <= 3 && grades[i].CompetitionLevel == 1) topRank += 1;
                 stdRow = new StudentGradeRow(grades[i]);
                 stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
                 studentGradesListPanel.Controls.Add(stdRow);
             }
+            currentLevel.Tag = topRank;
+
             fs?.SetControls(studentGradesListPanel.Controls);
             studentGradesPanel.Visible = true;
         }
@@ -451,6 +463,22 @@ namespace Little_Hafiz
 
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
+            if ((int)stdAge.Tag > 35)
+            {
+                MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة");
+                return;
+            }
+            if ((int)currentLevel.Tag >= 2)
+            {
+                MessageBox.Show("حصل هذا الطالب في المستوى الأولى على إحدى المراكز الأولى الثلاثة أكثر من مرة");
+                return;
+            }
+            if ((int)stdAge.Tag > 25 && currentLevel.Value != 1)
+            {
+                MessageBox.Show("يمكن للطالب الذي عمره أكبر من 25 عاما أن يدخل المستوى الأول فقط");
+                return;
+            }
+
             CompetitionGradeData data = new CompetitionGradeData
             {
                 NationalNumber = stdNational2.Text,

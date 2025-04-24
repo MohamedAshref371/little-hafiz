@@ -115,6 +115,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
     <Compile Include="Database\CompetitionGradeData.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />

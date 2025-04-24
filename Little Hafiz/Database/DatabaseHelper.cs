@@ -139,7 +139,7 @@ namespace Little_Hafiz
         public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
         {
             sb.Clear(); conds.Clear();
-            sb.Append("SELECT students.national, full_name, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
+            sb.Append("SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
 
             if (nationalNumber == null || nationalNumber.Length != 14)
             {
@@ -181,10 +181,10 @@ namespace Little_Hafiz
         private static StudentSearchRowData GetStudentSearchRowData()
         {
             int? compLevel = null, stdRank = null;
-            if (!reader.IsDBNull(2))
-                compLevel = reader.GetInt32(2);
-            if (!reader.IsDBNull(4))
-                stdRank = reader.GetInt32(4);
+            if (!reader.IsDBNull(3))
+                compLevel = reader.GetInt32(3);
+            if (!reader.IsDBNull(5))
+                stdRank = reader.GetInt32(5);
 
             string img = (string)reader["image"];
             if (img != "")
@@ -197,8 +197,9 @@ namespace Little_Hafiz
             {
                 NationalNumber = reader.GetString(0),
                 FullName = reader.GetString(1),
+                BirthDate = reader.GetString(2),
                 CompetitionLevel = compLevel,
-                CompetitionDate = reader.IsDBNull(3) ? null : reader.GetString(3),
+                CompetitionDate = reader.IsDBNull(4) ? null : reader.GetString(4),
                 Rank = stdRank,
                 Image = img,
             };

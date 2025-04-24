@@ -129,7 +129,6 @@
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.formImage = new System.Windows.Forms.Label();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.compDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -157,6 +156,9 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
+            this.formImage = new System.Windows.Forms.Label();
+            this.stdAgeLabel = new System.Windows.Forms.Label();
+            this.stdAge = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -2005,22 +2007,14 @@
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
             // 
-            // formImage
-            // 
-            this.formImage.BackColor = System.Drawing.Color.Transparent;
-            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(17, 4);
-            this.formImage.Name = "formImage";
-            this.formImage.Size = new System.Drawing.Size(30, 30);
-            this.formImage.TabIndex = 74;
-            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // studentGradesPanel
             // 
             this.studentGradesPanel.BackColor = System.Drawing.Color.Transparent;
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.stdAge);
+            this.studentGradesPanel.Controls.Add(this.stdAgeLabel);
             this.studentGradesPanel.Controls.Add(this.addGradeBtn);
             this.studentGradesPanel.Controls.Add(this.compDate);
             this.studentGradesPanel.Controls.Add(this.stdRank);
@@ -2423,6 +2417,38 @@
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
             // 
+            // formImage
+            // 
+            this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
+            this.formImage.Location = new System.Drawing.Point(17, 4);
+            this.formImage.Name = "formImage";
+            this.formImage.Size = new System.Drawing.Size(30, 30);
+            this.formImage.TabIndex = 74;
+            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stdAgeLabel
+            // 
+            this.stdAgeLabel.AutoSize = true;
+            this.stdAgeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdAgeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdAgeLabel.Location = new System.Drawing.Point(785, 148);
+            this.stdAgeLabel.Name = "stdAgeLabel";
+            this.stdAgeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAgeLabel.Size = new System.Drawing.Size(96, 19);
+            this.stdAgeLabel.TabIndex = 97;
+            this.stdAgeLabel.Text = "عمر الطالب :";
+            // 
+            // stdAge
+            // 
+            this.stdAge.BackColor = System.Drawing.Color.Transparent;
+            this.stdAge.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdAge.Location = new System.Drawing.Point(169, 149);
+            this.stdAge.Name = "stdAge";
+            this.stdAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAge.Size = new System.Drawing.Size(610, 19);
+            this.stdAge.TabIndex = 98;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2588,6 +2614,8 @@
         private System.Windows.Forms.Label currentLevelExplain;
         private System.Windows.Forms.Label prevLevelExplain;
         private Guna.UI2.WinForms.Guna2GradientButton releasesLatestBtn;
+        private System.Windows.Forms.Label stdAgeLabel;
+        private System.Windows.Forms.Label stdAge;
     }
 }
 
