@@ -391,15 +391,13 @@ namespace Little_Hafiz
             stdMemoPlaces.Text = stdData.MemorizePlaces;
             stdJoiningDate.Value = ParseExact(stdData.JoiningDate);
             stdFirstConclusion.Value = ParseExact(stdData.FirstConclusionDate);
+            stdFirstConclusionCheckBox.Checked = stdFirstConclusion.Value > stdBirthDate.Value;
             stdCertificates.Text = stdData.Certificates;
             stdIjazah.Text = stdData.Ijazah;
             stdCourses.Text = stdData.Courses;
             stdSkills.Text = stdData.Skills;
             stdHobbies.Text = stdData.Hobbies;
             stdImagePath.Text = stdData.Image;
-
-            if (stdFirstConclusion.Value < stdBirthDate.Value)
-                stdFirstConclusionCheckBox.Checked = false;
         }
 
         private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
