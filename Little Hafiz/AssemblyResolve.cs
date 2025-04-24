@@ -5,7 +5,11 @@ using System.Reflection;
 
 class AssemblyResolver
 {
-    public static void Initialize() => AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
+    public static void Initialize()
+    {
+        if (Directory.Exists("lib"))
+            AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
+    }
 
     private static Assembly ResolveAssembly(object sender, ResolveEventArgs args)
     {
