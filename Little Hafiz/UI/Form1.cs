@@ -501,7 +501,7 @@ namespace Little_Hafiz
             }
             if ((int)stdRank.Tag >= 2)
             {
-                MessageBox.Show("حصل هذا الطالب في المستوى الأولى على أحد المراكز الثلاثة الأولى أكثر من مرة");
+                MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة");
                 return;
             }
             if ((int)stdAge.Tag > 25 && currentLevel.Value != 1)
