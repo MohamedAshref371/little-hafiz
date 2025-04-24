@@ -133,13 +133,26 @@ namespace Little_Hafiz
             fs?.SetControls(studentsListPanel.Controls);
         }
 
+        private void UpdateStudentRow()
+        {
+            if (currentStudent != null)
+            {
+                StudentSearchRowData[] student = DatabaseHelper.SelectStudents(nationalNumber: currentStudent.StudentSearchRowData.NationalNumber);
+
+                if (student.Length > 0)
+                    currentStudent.SetData(student[0]);
+            }
+        }
+
+        StudentSearchRow currentStudent;
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
 
-            string national = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData.NationalNumber;
+            currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
+            string national = currentStudent.StudentSearchRowData.NationalNumber;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
 
             SetStudentData(stdData);
@@ -152,7 +165,8 @@ namespace Little_Hafiz
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
         {
-            var data = ((StudentSearchRow)((Guna2Button)sender).Parent).StudentSearchRowData;
+            currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
+            var data = currentStudent.StudentSearchRowData;
 
             OpenStudentGradesPanel(data, DatabaseHelper.SelectStudentGrades(data.NationalNumber));
         }
@@ -253,7 +267,7 @@ namespace Little_Hafiz
             else if (studentPanelState == StudentPanelState.Update && DatabaseHelper.UpdateStudent(GetStudentData()) != -1)
             {
                 CancelBtn_Click(null, null);
-                SearchBtn_Click(null, null);
+                UpdateStudentRow();
             }
         }
 
@@ -449,7 +463,7 @@ namespace Little_Hafiz
 
             fs?.SetControls(studentGradesListPanel.Controls);
 
-            addGradeBtn.Enabled = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
+            addGradeBtn.Tag = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
             studentGradesPanel.Visible = true;
         }
 
@@ -474,6 +488,11 @@ namespace Little_Hafiz
 
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
+            if (!(bool)addGradeBtn.Tag)
+            {
+                MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
+                return;
+            }
             if ((int)stdAge.Tag > 35)
             {
                 MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة");
@@ -510,13 +529,14 @@ namespace Little_Hafiz
                 studentGradesListPanel.Controls.Add(stdRow);
                 prevLevel.Value = currentLevel.Value;
                 SetPrevLevelMinMax();
-                addGradeBtn.Enabled = false;
+                addGradeBtn.Tag = false;
             }
         }
 
         private void CancelBtn2_Click(object sender, EventArgs e)
         {
             studentGradesPanel.Visible = false;
+            UpdateStudentRow();
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;

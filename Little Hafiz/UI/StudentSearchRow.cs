@@ -33,6 +33,11 @@ namespace Little_Hafiz
         {
             InitializeComponent();
 
+            SetData(data);
+        }
+
+        public void SetData(StudentSearchRowData data)
+        {
             StudentSearchRowData = data;
 
             stdName.Text = data.FullName;
