@@ -124,16 +124,19 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.formImage = new System.Windows.Forms.Label();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.compCount = new System.Windows.Forms.Label();
             this.stdAge = new System.Windows.Forms.Label();
             this.stdAgeLabel = new System.Windows.Forms.Label();
             this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -163,6 +166,17 @@
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.studentCountLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.studentCount = new System.Windows.Forms.Label();
+            this.compLevelLabel = new System.Windows.Forms.Label();
+            this.compLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.dateFromLabel = new System.Windows.Forms.Label();
+            this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dateToLabel = new System.Windows.Forms.Label();
+            this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -171,6 +185,7 @@
             this.studentSearchPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
+            this.ranksCalculatorPanel.SuspendLayout();
             this.studentGradesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdScore)).BeginInit();
@@ -178,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -1898,9 +1914,9 @@
             this.openAddStudentBtn.FillColor = System.Drawing.Color.RoyalBlue;
             this.openAddStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.openAddStudentBtn.ForeColor = System.Drawing.Color.White;
-            this.openAddStudentBtn.Location = new System.Drawing.Point(754, 5);
+            this.openAddStudentBtn.Location = new System.Drawing.Point(766, 5);
             this.openAddStudentBtn.Name = "openAddStudentBtn";
-            this.openAddStudentBtn.Size = new System.Drawing.Size(169, 39);
+            this.openAddStudentBtn.Size = new System.Drawing.Size(157, 39);
             this.openAddStudentBtn.TabIndex = 82;
             this.openAddStudentBtn.Text = "إضافة طالب";
             this.openAddStudentBtn.Click += new System.EventHandler(this.OpenAddStudentBtn_Click);
@@ -1911,6 +1927,7 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.rankCalcBtn);
             this.footerPanel.Controls.Add(this.releasesLatestBtn);
             this.footerPanel.Controls.Add(this.excelDateFilter);
             this.footerPanel.Controls.Add(this.extractExcelBtn);
@@ -1923,6 +1940,27 @@
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
+            // 
+            // rankCalcBtn
+            // 
+            this.rankCalcBtn.BorderRadius = 15;
+            this.rankCalcBtn.BorderThickness = 1;
+            this.rankCalcBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.rankCalcBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.rankCalcBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.rankCalcBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.rankCalcBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.rankCalcBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.rankCalcBtn.FillColor2 = System.Drawing.Color.Gray;
+            this.rankCalcBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.rankCalcBtn.ForeColor = System.Drawing.Color.Black;
+            this.rankCalcBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.rankCalcBtn.Location = new System.Drawing.Point(637, 5);
+            this.rankCalcBtn.Name = "rankCalcBtn";
+            this.rankCalcBtn.Size = new System.Drawing.Size(123, 39);
+            this.rankCalcBtn.TabIndex = 87;
+            this.rankCalcBtn.Text = "حساب المركز";
+            this.rankCalcBtn.Click += new System.EventHandler(this.RankCalcBtn_Click);
             // 
             // releasesLatestBtn
             // 
@@ -1938,7 +1976,7 @@
             this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(609, 5);
+            this.releasesLatestBtn.Location = new System.Drawing.Point(525, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
             this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
             this.releasesLatestBtn.TabIndex = 86;
@@ -1953,7 +1991,7 @@
             this.excelDateFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.excelDateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.excelDateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.excelDateFilter.Location = new System.Drawing.Point(419, 7);
+            this.excelDateFilter.Location = new System.Drawing.Point(388, 7);
             this.excelDateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.excelDateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.excelDateFilter.Name = "excelDateFilter";
@@ -1977,7 +2015,7 @@
             this.extractExcelBtn.Location = new System.Drawing.Point(6, 5);
             this.extractExcelBtn.Name = "extractExcelBtn";
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.extractExcelBtn.Size = new System.Drawing.Size(203, 39);
+            this.extractExcelBtn.Size = new System.Drawing.Size(196, 39);
             this.extractExcelBtn.TabIndex = 84;
             this.extractExcelBtn.Text = "إستخراج ملف excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
@@ -1995,15 +2033,15 @@
             this.excelRowsFilter.ForeColor = System.Drawing.Color.Black;
             this.excelRowsFilter.ItemHeight = 30;
             this.excelRowsFilter.Items.AddRange(new object[] {
-            "آخر مسابقة لكل طالب",
-            "آخر سنة",
+            "آخر مسابقة للطالب",
+            "هذه السنة",
             "... تحديد السنة",
-            "آخر شهر",
+            "هذا الشهر",
             "... تحديد الشهر"});
-            this.excelRowsFilter.Location = new System.Drawing.Point(215, 7);
+            this.excelRowsFilter.Location = new System.Drawing.Point(206, 7);
             this.excelRowsFilter.Name = "excelRowsFilter";
             this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.excelRowsFilter.Size = new System.Drawing.Size(198, 36);
+            this.excelRowsFilter.Size = new System.Drawing.Size(179, 36);
             this.excelRowsFilter.StartIndex = 0;
             this.excelRowsFilter.TabIndex = 83;
             this.excelRowsFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2018,6 +2056,7 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.readRecordsBtn);
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
             this.headerPanel.Controls.Add(this.minimizeBtn);
@@ -2037,6 +2076,32 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
+            // 
+            // ranksCalculatorPanel
+            // 
+            this.ranksCalculatorPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ranksCalculatorPanel.BorderColor = System.Drawing.Color.Silver;
+            this.ranksCalculatorPanel.BorderRadius = 5;
+            this.ranksCalculatorPanel.BorderThickness = 1;
+            this.ranksCalculatorPanel.Controls.Add(this.guna2Button2);
+            this.ranksCalculatorPanel.Controls.Add(this.guna2Button1);
+            this.ranksCalculatorPanel.Controls.Add(this.compDateTo);
+            this.ranksCalculatorPanel.Controls.Add(this.dateToLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.compDateFrom);
+            this.ranksCalculatorPanel.Controls.Add(this.dateFromLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.compLevel);
+            this.ranksCalculatorPanel.Controls.Add(this.compLevelLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.studentCount);
+            this.ranksCalculatorPanel.Controls.Add(this.label1);
+            this.ranksCalculatorPanel.Controls.Add(this.studentCountLabel);
+            this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.ranksCalculatorPanel.Location = new System.Drawing.Point(12, 37);
+            this.ranksCalculatorPanel.Name = "ranksCalculatorPanel";
+            this.ranksCalculatorPanel.Size = new System.Drawing.Size(926, 656);
+            this.ranksCalculatorPanel.TabIndex = 85;
+            this.ranksCalculatorPanel.Visible = false;
             // 
             // readRecordsBtn
             // 
@@ -2096,6 +2161,7 @@
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.compCount);
             this.studentGradesPanel.Controls.Add(this.stdAge);
             this.studentGradesPanel.Controls.Add(this.stdAgeLabel);
             this.studentGradesPanel.Controls.Add(this.addGradeBtn);
@@ -2133,14 +2199,26 @@
             this.studentGradesPanel.TabIndex = 85;
             this.studentGradesPanel.Visible = false;
             // 
+            // compCount
+            // 
+            this.compCount.AutoSize = true;
+            this.compCount.BackColor = System.Drawing.Color.Transparent;
+            this.compCount.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.compCount.Location = new System.Drawing.Point(189, 174);
+            this.compCount.Name = "compCount";
+            this.compCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.compCount.Size = new System.Drawing.Size(18, 19);
+            this.compCount.TabIndex = 99;
+            this.compCount.Text = "0";
+            // 
             // stdAge
             // 
             this.stdAge.BackColor = System.Drawing.Color.Transparent;
             this.stdAge.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdAge.Location = new System.Drawing.Point(169, 149);
+            this.stdAge.Location = new System.Drawing.Point(242, 149);
             this.stdAge.Name = "stdAge";
             this.stdAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdAge.Size = new System.Drawing.Size(610, 19);
+            this.stdAge.Size = new System.Drawing.Size(537, 19);
             this.stdAge.TabIndex = 98;
             // 
             // stdAgeLabel
@@ -2526,6 +2604,169 @@
             // 
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // studentCountLabel
+            // 
+            this.studentCountLabel.AutoSize = true;
+            this.studentCountLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.studentCountLabel.Location = new System.Drawing.Point(773, 49);
+            this.studentCountLabel.Name = "studentCountLabel";
+            this.studentCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.studentCountLabel.Size = new System.Drawing.Size(141, 19);
+            this.studentCountLabel.TabIndex = 0;
+            this.studentCountLabel.Text = "عدد الطلبة الكلي : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label1.Location = new System.Drawing.Point(199, 4);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(537, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "لا تستعمل هذه الشاشة إلا إذا كنت متأكدا أنك تمتلك نسخة البيانات الكاملة\r\nلن يتم ت" +
+    "سجيل أي حركة بيانات بافتراض أن هذه الشاشة لن يستعملها إلا المدير";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // studentCount
+            // 
+            this.studentCount.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.studentCount.Location = new System.Drawing.Point(671, 49);
+            this.studentCount.Name = "studentCount";
+            this.studentCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.studentCount.Size = new System.Drawing.Size(96, 19);
+            this.studentCount.TabIndex = 2;
+            this.studentCount.Text = "0";
+            this.studentCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // compLevelLabel
+            // 
+            this.compLevelLabel.AutoSize = true;
+            this.compLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.compLevelLabel.Location = new System.Drawing.Point(771, 90);
+            this.compLevelLabel.Name = "compLevelLabel";
+            this.compLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compLevelLabel.Size = new System.Drawing.Size(144, 19);
+            this.compLevelLabel.TabIndex = 3;
+            this.compLevelLabel.Text = "مستوى المسابقة : ";
+            // 
+            // compLevel
+            // 
+            this.compLevel.BackColor = System.Drawing.Color.Transparent;
+            this.compLevel.BorderRadius = 3;
+            this.compLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.compLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.compLevel.Location = new System.Drawing.Point(688, 83);
+            this.compLevel.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.compLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.compLevel.Name = "compLevel";
+            this.compLevel.Size = new System.Drawing.Size(77, 32);
+            this.compLevel.TabIndex = 91;
+            this.compLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
+            this.compLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dateFromLabel
+            // 
+            this.dateFromLabel.AutoSize = true;
+            this.dateFromLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateFromLabel.Location = new System.Drawing.Point(576, 90);
+            this.dateFromLabel.Name = "dateFromLabel";
+            this.dateFromLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateFromLabel.Size = new System.Drawing.Size(96, 19);
+            this.dateFromLabel.TabIndex = 92;
+            this.dateFromLabel.Text = "التاريخ :   من";
+            // 
+            // compDateFrom
+            // 
+            this.compDateFrom.BorderRadius = 5;
+            this.compDateFrom.Checked = true;
+            this.compDateFrom.CustomFormat = "yyyy MMM";
+            this.compDateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateFrom.Location = new System.Drawing.Point(439, 83);
+            this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateFrom.Name = "compDateFrom";
+            this.compDateFrom.Size = new System.Drawing.Size(131, 36);
+            this.compDateFrom.TabIndex = 94;
+            this.compDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateFrom.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // dateToLabel
+            // 
+            this.dateToLabel.AutoSize = true;
+            this.dateToLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateToLabel.Location = new System.Drawing.Point(396, 90);
+            this.dateToLabel.Name = "dateToLabel";
+            this.dateToLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateToLabel.Size = new System.Drawing.Size(34, 19);
+            this.dateToLabel.TabIndex = 95;
+            this.dateToLabel.Text = "إلى";
+            // 
+            // compDateTo
+            // 
+            this.compDateTo.BorderRadius = 5;
+            this.compDateTo.Checked = true;
+            this.compDateTo.CustomFormat = "yyyy MMM";
+            this.compDateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateTo.Location = new System.Drawing.Point(259, 83);
+            this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateTo.Name = "compDateTo";
+            this.compDateTo.Size = new System.Drawing.Size(131, 36);
+            this.compDateTo.TabIndex = 96;
+            this.compDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateTo.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(133, 83);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(117, 39);
+            this.guna2Button1.TabIndex = 97;
+            this.guna2Button1.Text = "جلب البيانات";
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(120)))), ((int)(((byte)(220)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(10, 83);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(117, 39);
+            this.guna2Button2.TabIndex = 98;
+            this.guna2Button2.Text = "كتابة المركز";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2550,6 +2791,8 @@
             this.footerPanel.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
+            this.ranksCalculatorPanel.ResumeLayout(false);
+            this.ranksCalculatorPanel.PerformLayout();
             this.studentGradesPanel.ResumeLayout(false);
             this.studentGradesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();
@@ -2558,6 +2801,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2664,6 +2908,7 @@
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
         private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel studentGradesPanel;
+        private Guna.UI2.WinForms.Guna2GradientPanel ranksCalculatorPanel;
         private System.Windows.Forms.Label gradesPanelTitle;
         private Guna.UI2.WinForms.Guna2PictureBox studentImage2;
         private System.Windows.Forms.Label stdNationalLabel2;
@@ -2697,6 +2942,19 @@
         private Guna.UI2.WinForms.Guna2CheckBox dataRecorderCheckBox;
         private Guna.UI2.WinForms.Guna2Button readRecordsBtn;
         private System.Windows.Forms.FolderBrowserDialog selectDataFolderDialog;
+        private System.Windows.Forms.Label compCount;
+        private Guna.UI2.WinForms.Guna2GradientButton rankCalcBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label studentCountLabel;
+        private System.Windows.Forms.Label studentCount;
+        private System.Windows.Forms.Label compLevelLabel;
+        private Guna.UI2.WinForms.Guna2NumericUpDown compLevel;
+        private System.Windows.Forms.Label dateFromLabel;
+        private Guna.UI2.WinForms.Guna2DateTimePicker compDateFrom;
+        private Guna.UI2.WinForms.Guna2DateTimePicker compDateTo;
+        private System.Windows.Forms.Label dateToLabel;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 

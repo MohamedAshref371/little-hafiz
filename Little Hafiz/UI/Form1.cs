@@ -451,7 +451,9 @@ namespace Little_Hafiz
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
 
+            compCount.Text = grades.Length.ToString();
             compDate.Value = DateTime.Now;
+
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
 
@@ -704,6 +706,11 @@ namespace Little_Hafiz
             sheet.Cell(row, 11).Value = data.Rank;
             sheet.Cell(row, 12).Value = data.CompetitionAddedDate;
             row++;
+        }
+
+        private void RankCalcBtn_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
