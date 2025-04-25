@@ -99,6 +99,8 @@ namespace Little_Hafiz
         {
             if (!dataRecorderCheckBox.Checked && MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RtlReading) == DialogResult.No)
                 dataRecorderCheckBox.Checked = true;
+
+            DatabaseHelper.Record = dataRecorderCheckBox.Checked;
         }
 
         private void ReadRecordsBtn_Click(object sender, EventArgs e)
@@ -109,13 +111,12 @@ namespace Little_Hafiz
             else
                 return;
 
-            string[] lines;
             for (int i = 0; i < dataFiles.Length; i++)
-            {
-                lines = File.ReadAllLines(dataFiles[i]);
+                DatabaseHelper.ExecuteNonQuery(File.ReadAllText(dataFiles[i]));
 
-
-            }
+            DatabaseHelper.RemoveOldImages();
+            DatabaseHelper.RemoveAllRecords();
+            CloseBtn_Click(null, null);
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)

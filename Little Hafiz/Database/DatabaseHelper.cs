@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+using DocumentFormat.OpenXml.Office.CustomXsn;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
@@ -11,11 +13,13 @@ namespace Little_Hafiz
     internal static class DatabaseHelper
     {
         private static bool success = false;
-        private static readonly int classVersion = 1;
-        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", databaseFile = $"{dataFolder}\\Students.db";
+        private static readonly int classVersion = 2;
+        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}.rec", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
+
+        public static bool Record { private get; set; } = true;
 
         #region Metadata
         public static int Version { get; private set; }
@@ -38,6 +42,10 @@ namespace Little_Hafiz
             if (!Directory.Exists(imagesFolder))
                 Directory.CreateDirectory(imagesFolder);
 
+            RemoveEmptyRecords();
+            if (!File.Exists(recordFile))
+                File.WriteAllText(recordFile, "");
+
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
         }
@@ -49,7 +57,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
                                       "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      "CREATE TABLE grades (id INTEGER PRIMARY KEY ASC AUTOINCREMENT, national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER);" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, PRIMARY KEY (national, competition_date) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
             }
@@ -254,14 +262,13 @@ namespace Little_Hafiz
         {
             return new CompetitionGradeData
             {
-                RowId = reader.GetInt32(0),
                 NationalNumber = (string)reader["national"],
-                StudentCode = reader.GetInt32(2),
-                PreviousLevel = reader.GetInt32(3),
-                CompetitionLevel = reader.GetInt32(4),
+                StudentCode = reader.GetInt32(1),
+                PreviousLevel = reader.GetInt32(2),
+                CompetitionLevel = reader.GetInt32(3),
                 CompetitionDate = (string)reader["competition_date"],
-                Score = reader.GetFloat(6),
-                Rank = reader.GetInt32(7),
+                Score = reader.GetFloat(5),
+                Rank = reader.GetInt32(6),
             };
         }
 
@@ -348,26 +355,42 @@ namespace Little_Hafiz
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})");
+            string sql = $"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ";
+
+            if (Record) File.AppendAllText(recordFile, sql);
+
+            return ExecuteNonQuery(sql);
         }
 
         public static int AddGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data})");
-        
+        {
+            string sql = $"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ";
 
+            if (Record) File.AppendAllText(recordFile, sql);
+
+            return ExecuteNonQuery(sql);
+        }
+        
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'");
+            string sql = $"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ";
+
+            if (Record) File.AppendAllText(recordFile, sql);
+
+            return ExecuteNonQuery(sql);
         }
 
-        public static int UpdateScoreInStudentGrade(int rowId, float score)
-            => ExecuteNonQuery($"UPDATE grades SET score = {score} WHERE id = {rowId}");
+        public static int UpdateStudentGrade(CompetitionGradeData data)
+        {
+            string sql = $"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = {data.NationalNumber} AND competition_date = {data.CompetitionDate}; ";
 
-        public static int UpdateRankInStudentGrade(int rowId, int rank)
-            => ExecuteNonQuery($"UPDATE grades SET std_rank = {rank} WHERE id = {rowId}");
+            if (Record) File.AppendAllText(recordFile, sql);
+
+            return ExecuteNonQuery(sql);
+        }
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
@@ -392,7 +415,7 @@ namespace Little_Hafiz
             => ExecuteNonQuery($"UPDATE students state = {(int)state}, state_date = {DateTime.Now.Ticks} WHERE national = '{nationalNumber}'");
         #endregion
 
-        private static int ExecuteNonQuery(string sql)
+        public static int ExecuteNonQuery(string sql)
         {
             if (!success) return -1;
             try
@@ -414,5 +437,56 @@ namespace Little_Hafiz
         }
         #endregion
 
+        #region Records Helper
+        public static void RemoveOldImages()
+        {
+            string sql = "SELECT image FROM students WHERE image IS NOT NULL AND TRIM(image) <> '' ORDER BY image";
+
+            string[] databaseImages = SelectMultiRows(sql, () => Path.Combine(imagesFolder, reader.GetString(0).Trim()));
+
+            string[] realImages = Directory.GetFiles(imagesFolder).OrderBy(f => f, StringComparer.OrdinalIgnoreCase).ToArray();
+
+
+            int dbIndex = 0, fileIndex = 0; int comparison; string dbImage;
+
+            while (fileIndex < realImages.Length)
+            {
+                dbImage = dbIndex < databaseImages.Length ? databaseImages[dbIndex] : null;
+
+                comparison = dbImage == null ? -1 : string.Compare(realImages[fileIndex], dbImage, StringComparison.OrdinalIgnoreCase);
+
+                if (comparison == 0)
+                {
+                    dbIndex++;
+                    fileIndex++;
+                }
+                else if (comparison < 0 || dbImage == null) // الصورة غير موجودة في الداتا بيز
+                {
+                    try { File.Delete(realImages[fileIndex]); } catch { }
+                    fileIndex++;
+                }
+                else
+                    dbIndex++;
+            }
+        }
+
+        public static void RemoveEmptyRecords()
+        {
+            string[] recs = Directory.GetFiles(dataFolder, "*.rec", SearchOption.TopDirectoryOnly);
+
+            foreach (string file in recs)
+                if (File.ReadAllBytes(file).Length == 0)
+                    File.Delete(file);
+        }
+
+        public static void RemoveAllRecords()
+        {
+            string[] recs = Directory.GetFiles(dataFolder, "*.rec", SearchOption.TopDirectoryOnly);
+
+            foreach (string file in recs)
+                File.Delete(file);
+        }
+
+        #endregion
     }
 }

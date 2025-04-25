@@ -2,7 +2,6 @@
 {
     public class CompetitionGradeData
     {
-        public int RowId;
         public string NationalNumber;
         public int StudentCode;
         public int PreviousLevel;

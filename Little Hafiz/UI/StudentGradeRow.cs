@@ -22,7 +22,7 @@ namespace Little_Hafiz
             rankLabel.Visible = true;
         }
 
-        CompetitionGradeData data;
+        readonly CompetitionGradeData data;
         public StudentGradeRow(CompetitionGradeData data)
         {
             InitializeComponent();
@@ -41,12 +41,14 @@ namespace Little_Hafiz
 
         private void StdScore_ValueChanged(object sender, EventArgs e)
         {
-            DatabaseHelper.UpdateScoreInStudentGrade(data.RowId, (float)stdScore.Value);
+            data.Score = (float)stdScore.Value;
+            DatabaseHelper.UpdateStudentGrade(data);
         }
 
         private void StdRank_ValueChanged(object sender, EventArgs e)
         {
-            DatabaseHelper.UpdateRankInStudentGrade(data.RowId, (int)stdRank.Value);
+            data.Rank = (int)stdRank.Value;
+            DatabaseHelper.UpdateStudentGrade(data);
         }
 
         #region Border Radius

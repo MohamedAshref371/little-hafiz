@@ -2054,7 +2054,6 @@
             this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
             this.readRecordsBtn.TabIndex = 86;
             this.readRecordsBtn.Text = "قراءة التسجيلات";
-            this.readRecordsBtn.Visible = false;
             this.readRecordsBtn.Click += new System.EventHandler(this.ReadRecordsBtn_Click);
             // 
             // dataRecorderCheckBox
@@ -2079,7 +2078,6 @@
             this.dataRecorderCheckBox.UncheckedState.BorderThickness = 1;
             this.dataRecorderCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.dataRecorderCheckBox.UseVisualStyleBackColor = false;
-            this.dataRecorderCheckBox.Visible = false;
             this.dataRecorderCheckBox.CheckedChanged += new System.EventHandler(this.DataRecorderCheckBox_CheckedChanged);
             // 
             // formImage
