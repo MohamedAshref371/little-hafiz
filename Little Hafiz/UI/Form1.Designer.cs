@@ -132,15 +132,15 @@
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.levelCompCount = new System.Windows.Forms.Label();
             this.compsLabel = new System.Windows.Forms.Label();
             this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
             this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.setRanksBtn = new Guna.UI2.WinForms.Guna2Button();
             this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dateToLabel = new System.Windows.Forms.Label();
-            this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dateFromLabel = new System.Windows.Forms.Label();
             this.compLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.compLevelLabel = new System.Windows.Forms.Label();
@@ -750,7 +750,7 @@
             this.stdLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdLevel.Location = new System.Drawing.Point(615, 654);
             this.stdLevel.Maximum = new decimal(new int[] {
-            20,
+            240,
             0,
             0,
             0});
@@ -2113,6 +2113,40 @@
             this.ranksCalculatorPanel.TabIndex = 85;
             this.ranksCalculatorPanel.Visible = false;
             // 
+            // compDateTo
+            // 
+            this.compDateTo.BorderRadius = 5;
+            this.compDateTo.Checked = true;
+            this.compDateTo.CustomFormat = "yyyy MMM";
+            this.compDateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateTo.Location = new System.Drawing.Point(259, 83);
+            this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateTo.Name = "compDateTo";
+            this.compDateTo.Size = new System.Drawing.Size(131, 36);
+            this.compDateTo.TabIndex = 96;
+            this.compDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateTo.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // compDateFrom
+            // 
+            this.compDateFrom.BorderRadius = 5;
+            this.compDateFrom.Checked = true;
+            this.compDateFrom.CustomFormat = "yyyy MMM";
+            this.compDateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateFrom.Location = new System.Drawing.Point(439, 83);
+            this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateFrom.Name = "compDateFrom";
+            this.compDateFrom.Size = new System.Drawing.Size(131, 36);
+            this.compDateFrom.TabIndex = 94;
+            this.compDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateFrom.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
             // levelCompCount
             // 
             this.levelCompCount.AutoSize = true;
@@ -2201,23 +2235,6 @@
             this.getGradesDataBtn.Text = "جلب البيانات";
             this.getGradesDataBtn.Click += new System.EventHandler(this.GetGradesDataBtn_Click);
             // 
-            // compDateTo
-            // 
-            this.compDateTo.BorderRadius = 5;
-            this.compDateTo.Checked = true;
-            this.compDateTo.CustomFormat = "yyyy MMM";
-            this.compDateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateTo.Location = new System.Drawing.Point(259, 83);
-            this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.compDateTo.Name = "compDateTo";
-            this.compDateTo.Size = new System.Drawing.Size(131, 36);
-            this.compDateTo.TabIndex = 96;
-            this.compDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.compDateTo.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
-            // 
             // dateToLabel
             // 
             this.dateToLabel.AutoSize = true;
@@ -2228,23 +2245,6 @@
             this.dateToLabel.Size = new System.Drawing.Size(34, 19);
             this.dateToLabel.TabIndex = 95;
             this.dateToLabel.Text = "إلى";
-            // 
-            // compDateFrom
-            // 
-            this.compDateFrom.BorderRadius = 5;
-            this.compDateFrom.Checked = true;
-            this.compDateFrom.CustomFormat = "yyyy MMM";
-            this.compDateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateFrom.Location = new System.Drawing.Point(439, 83);
-            this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.compDateFrom.Name = "compDateFrom";
-            this.compDateFrom.Size = new System.Drawing.Size(131, 36);
-            this.compDateFrom.TabIndex = 94;
-            this.compDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.compDateFrom.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
             // 
             // dateFromLabel
             // 
