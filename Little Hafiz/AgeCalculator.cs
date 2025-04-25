@@ -37,7 +37,7 @@ namespace Little_Hafiz
             if (result != "" && days > 0) result += "و";
             if (days > 0) result += $"{FormatPart(days, GetDayWord)}.";
 
-            year = years + (months / 12f) + (days / 30f);
+            year = years + (months / 12f) + (days / 365f);
             return result;
         }
 
