@@ -116,6 +116,8 @@ namespace Little_Hafiz
 
             DatabaseHelper.RemoveOldImages();
             DatabaseHelper.RemoveAllRecords();
+
+            MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CloseBtn_Click(null, null);
         }
 
@@ -460,12 +462,12 @@ namespace Little_Hafiz
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
 
-            int years = 0;
+            float year = 0;
             if (DateTime.TryParseExact(data.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
-                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out years);
+                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out year);
             else
                 stdAge.Text = "تاريخ الميلاد غير صالح";
-            stdAge.Tag = years;
+            stdAge.Tag = year;
 
             stdImagePath2.Text = data.Image;
             SetStudentImage2();
@@ -520,7 +522,7 @@ namespace Little_Hafiz
                 MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
                 return;
             }
-            if ((int)stdAge.Tag > 35)
+            if ((float)stdAge.Tag > 35)
             {
                 MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة لأن عمره أكبر من 35 عاما");
                 return;
@@ -530,7 +532,7 @@ namespace Little_Hafiz
                 MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة");
                 return;
             }
-            if ((int)stdAge.Tag > 25 && currentLevel.Value != 1)
+            if ((float)stdAge.Tag > 25 && currentLevel.Value != 1)
             {
                 MessageBox.Show("يمكن للطالب الذي عمره أكبر من 25 عاما أن يدخل المستوى الأول فقط");
                 return;

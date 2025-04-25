@@ -4,15 +4,15 @@ namespace Little_Hafiz
 {
     public static class AgeCalculator
     {
-        public static string GetAgeDescription(DateTime birthDate, out int years)
+        public static string GetAgeDescription(DateTime birthDate, out float year)
         {
-            years = 0;
+            year = 0;
 
             DateTime currentDate = DateTime.Now;
             if (birthDate > currentDate)
                 return "تاريخ الميلاد أكبر من تاريخ اليوم الحالي.";
             
-            years = currentDate.Year - birthDate.Year;
+            int years = currentDate.Year - birthDate.Year;
             int months = currentDate.Month - birthDate.Month;
             int days = currentDate.Day - birthDate.Day;
 
@@ -30,10 +30,14 @@ namespace Little_Hafiz
                 months += 12;
             }
 
-            string result = $"{FormatPart(years, GetYearWord)} و" +
-                            $"{FormatPart(months, GetMonthWord)} و" +
-                            $"{FormatPart(days, GetDayWord)}.";
+            string result = ""; 
+            if (years > 0) result += $"{FormatPart(years, GetYearWord)} ";
+            if (result != "" && months > 0) result += "و";
+            if (months > 0) result += $"{FormatPart(months, GetMonthWord)} ";
+            if (result != "" && days > 0) result += "و";
+            if (days > 0) result += $"{FormatPart(days, GetDayWord)}.";
 
+            year = years + (months / 12f) + (days / 30f);
             return result;
         }
 
