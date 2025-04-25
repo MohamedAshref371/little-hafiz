@@ -89,10 +89,33 @@ namespace Little_Hafiz
             fs.SetControls(Controls);
 
             maximizeBtn.Visible = false;
-            minimizeBtn.Location = new Point(maximizeBtn.Location.X + maximizeBtn.Size.Width - minimizeBtn.Size.Width, minimizeBtn.Location.Y);
-            
+            minimizeBtn.Location = new Point(maximizeBtn.Location.X - maximizeBtn.Size.Width + minimizeBtn.Size.Width, minimizeBtn.Location.Y);
+
             if (studentDataPanel.Visible) SetStudentImage();
             if (studentGradesPanel.Visible) SetStudentImage2();
+        }
+
+        private void DataRecorderCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!dataRecorderCheckBox.Checked && MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RtlReading) == DialogResult.No)
+                dataRecorderCheckBox.Checked = true;
+        }
+
+        private void ReadRecordsBtn_Click(object sender, EventArgs e)
+        {
+            string[] dataFiles;
+            if (selectDataFolderDialog.ShowDialog() == DialogResult.OK)
+                dataFiles = Directory.GetFiles(selectDataFolderDialog.SelectedPath, "*.rec", SearchOption.TopDirectoryOnly);
+            else
+                return;
+
+            string[] lines;
+            for (int i = 0; i < dataFiles.Length; i++)
+            {
+                lines = File.ReadAllLines(dataFiles[i]);
+
+
+            }
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -198,6 +221,7 @@ namespace Little_Hafiz
                 if (date.HasValue)
                     stdBirthDate.Value = (DateTime)date;
                 wrongValueLabel.Visible = !date.HasValue;
+                alreadyExistsLabel.Visible = !wrongValueLabel.Visible && DatabaseHelper.SelectStudent(stdNational.Text) != null;
             }
         }
 
@@ -248,9 +272,9 @@ namespace Little_Hafiz
 
         private void AddStudentBtn_Click(object sender, EventArgs e)
         {
-            if (stdNational.Text.Length != 14 || wrongValueLabel.Visible)
+            if (stdNational.Text.Length != 14 || wrongValueLabel.Visible || alreadyExistsLabel.Visible)
             {
-                MessageBox.Show("أدخل الرقم القومي الصحيح");
+                MessageBox.Show("أدخل رقم قومي صحيح");
                 return;
             }
 
@@ -273,7 +297,7 @@ namespace Little_Hafiz
 
         private StudentData GetStudentData()
         {
-            string frstConcDate = stdFirstConclusionCheckBox.Checked ? 
+            string frstConcDate = stdFirstConclusionCheckBox.Checked ?
                 stdFirstConclusion.Value.ToString("yyyy/MM/dd") : "1900/01/01";
 
             return new StudentData
@@ -322,6 +346,8 @@ namespace Little_Hafiz
                 SetStudentDataAtStudentDataIsNotNull(stdData);
 
             wrongValueLabel.Visible = false;
+            alreadyExistsLabel.Visible = false;
+
             SetStudentImage();
         }
 
@@ -411,7 +437,7 @@ namespace Little_Hafiz
 
         private void StdFirstConclusionCheckBox_CheckedChanged(object sender, EventArgs e)
             => stdFirstConclusion.Enabled = stdFirstConclusionCheckBox.Checked;
-        
+
         StudentPanelState studentPanelState = StudentPanelState.Read;
 
         private enum StudentPanelState
@@ -547,10 +573,10 @@ namespace Little_Hafiz
             SetCurrentLevelMaximum();
             prevLevelExplain.Text = Ranks.RanksText[(int)prevLevel.Value];
         }
-        
+
         private void CurrentLevel_ValueChanged(object sender, EventArgs e)
             => currentLevelExplain.Text = Ranks.RanksText[(int)currentLevel.Value];
-        
+
         private void SetStudentImage2()
         {
             if (File.Exists(stdImagePath2.Text))
@@ -633,15 +659,16 @@ namespace Little_Hafiz
                     workbook.Worksheets.Add("المستوى " + Ranks.RanksText[9]),
                     workbook.Worksheets.Add("المستوى " + Ranks.RanksText[10]),
                 };
-                
+
                 for (int i = 0; i < sheets.Length; i++)
                     SetTitlesOnExcelFile(sheets[i]);
 
-                int[] sheetsRowIndexes = new int[11] {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+                int[] sheetsRowIndexes = new int[11] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
                 for (int i = 0; i < rows.Length; i++)
                 {
                     int sheetIndex = rows[i].CompetitionLevel;
                     SetDataOnExcelFile(sheets[sheetIndex], ref sheetsRowIndexes[sheetIndex], rows[i]);
+                    SetDataOnExcelFile(sheets[0], ref sheetsRowIndexes[0], rows[i]);
                 }
 
                 workbook.SaveAs(saveExcelFileDialog.FileName);
@@ -682,9 +709,10 @@ namespace Little_Hafiz
             sheet.Cell(row, 12).Value = data.CompetitionAddedDate;
             row++;
         }
-        #endregion
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
             => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
+        #endregion
+
     }
 }

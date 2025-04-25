@@ -86,6 +86,7 @@
             this.addStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.wrongValueLabel = new System.Windows.Forms.Label();
+            this.alreadyExistsLabel = new System.Windows.Forms.Label();
             this.stdBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdNational = new Guna.UI2.WinForms.Guna2TextBox();
             this.studentPanelTitle = new System.Windows.Forms.Label();
@@ -129,6 +130,8 @@
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.formImage = new System.Windows.Forms.Label();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.stdAge = new System.Windows.Forms.Label();
@@ -159,6 +162,7 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
+            this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -195,7 +199,7 @@
             this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(912, 4);
+            this.closeBtn.Location = new System.Drawing.Point(15, 4);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(32, 30);
             this.closeBtn.TabIndex = 0;
@@ -213,7 +217,7 @@
             this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
-            this.minimizeBtn.Location = new System.Drawing.Point(841, 12);
+            this.minimizeBtn.Location = new System.Drawing.Point(86, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 14);
             this.minimizeBtn.TabIndex = 1;
@@ -278,6 +282,7 @@
             this.studentDataPanel.Controls.Add(this.addStudentBtn);
             this.studentDataPanel.Controls.Add(this.stdJob);
             this.studentDataPanel.Controls.Add(this.wrongValueLabel);
+            this.studentDataPanel.Controls.Add(this.alreadyExistsLabel);
             this.studentDataPanel.Controls.Add(this.stdBirthDate);
             this.studentDataPanel.Controls.Add(this.stdNational);
             this.studentDataPanel.Controls.Add(this.studentPanelTitle);
@@ -1305,6 +1310,19 @@
             this.wrongValueLabel.Text = "الرقم القومي غير صالح";
             this.wrongValueLabel.Visible = false;
             // 
+            // alreadyExistsLabel
+            // 
+            this.alreadyExistsLabel.AutoSize = true;
+            this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.alreadyExistsLabel.Location = new System.Drawing.Point(108, 230);
+            this.alreadyExistsLabel.Name = "alreadyExistsLabel";
+            this.alreadyExistsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(131, 13);
+            this.alreadyExistsLabel.TabIndex = 7;
+            this.alreadyExistsLabel.Text = "الرقم القومي موجود بالفعل";
+            this.alreadyExistsLabel.Visible = false;
+            // 
             // stdBirthDate
             // 
             this.stdBirthDate.BackColor = System.Drawing.Color.Transparent;
@@ -1587,7 +1605,7 @@
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
             this.formTitle.ForeColor = System.Drawing.Color.Black;
-            this.formTitle.Location = new System.Drawing.Point(308, 3);
+            this.formTitle.Location = new System.Drawing.Point(561, 1);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(337, 33);
@@ -1607,7 +1625,7 @@
             this.maximizeBtn.FillColor = System.Drawing.SystemColors.Control;
             this.maximizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.maximizeBtn.ForeColor = System.Drawing.Color.White;
-            this.maximizeBtn.Location = new System.Drawing.Point(879, 7);
+            this.maximizeBtn.Location = new System.Drawing.Point(51, 7);
             this.maximizeBtn.Name = "maximizeBtn";
             this.maximizeBtn.Size = new System.Drawing.Size(30, 24);
             this.maximizeBtn.TabIndex = 73;
@@ -2000,6 +2018,8 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.readRecordsBtn);
+            this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
             this.headerPanel.Controls.Add(this.minimizeBtn);
             this.headerPanel.Controls.Add(this.closeBtn);
             this.headerPanel.Controls.Add(this.formImage);
@@ -2018,11 +2038,55 @@
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
             // 
+            // readRecordsBtn
+            // 
+            this.readRecordsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.readRecordsBtn.BorderRadius = 5;
+            this.readRecordsBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.readRecordsBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.readRecordsBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.readRecordsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.readRecordsBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.readRecordsBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.readRecordsBtn.ForeColor = System.Drawing.Color.Black;
+            this.readRecordsBtn.Location = new System.Drawing.Point(179, 4);
+            this.readRecordsBtn.Name = "readRecordsBtn";
+            this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
+            this.readRecordsBtn.TabIndex = 86;
+            this.readRecordsBtn.Text = "قراءة التسجيلات";
+            this.readRecordsBtn.Visible = false;
+            this.readRecordsBtn.Click += new System.EventHandler(this.ReadRecordsBtn_Click);
+            // 
+            // dataRecorderCheckBox
+            // 
+            this.dataRecorderCheckBox.AutoSize = true;
+            this.dataRecorderCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.dataRecorderCheckBox.Checked = true;
+            this.dataRecorderCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dataRecorderCheckBox.CheckedState.BorderRadius = 3;
+            this.dataRecorderCheckBox.CheckedState.BorderThickness = 1;
+            this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dataRecorderCheckBox.Location = new System.Drawing.Point(340, 8);
+            this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
+            this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 23);
+            this.dataRecorderCheckBox.TabIndex = 82;
+            this.dataRecorderCheckBox.Text = "تسجيل حركة البيانات";
+            this.dataRecorderCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.dataRecorderCheckBox.UncheckedState.BorderRadius = 3;
+            this.dataRecorderCheckBox.UncheckedState.BorderThickness = 1;
+            this.dataRecorderCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.dataRecorderCheckBox.UseVisualStyleBackColor = false;
+            this.dataRecorderCheckBox.Visible = false;
+            this.dataRecorderCheckBox.CheckedChanged += new System.EventHandler(this.DataRecorderCheckBox_CheckedChanged);
+            // 
             // formImage
             // 
             this.formImage.BackColor = System.Drawing.Color.Transparent;
             this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(17, 4);
+            this.formImage.Location = new System.Drawing.Point(903, 4);
             this.formImage.Name = "formImage";
             this.formImage.Size = new System.Drawing.Size(30, 30);
             this.formImage.TabIndex = 74;
@@ -2460,6 +2524,10 @@
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
             // 
+            // selectDataFolderDialog
+            // 
+            this.selectDataFolderDialog.ShowNewFolderButton = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2510,6 +2578,7 @@
         private System.Windows.Forms.Label birthLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdBirthDate;
         private System.Windows.Forms.Label wrongValueLabel;
+        private System.Windows.Forms.Label alreadyExistsLabel;
         private System.Windows.Forms.Label jobLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdJob;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
@@ -2627,6 +2696,9 @@
         private Guna.UI2.WinForms.Guna2GradientButton releasesLatestBtn;
         private System.Windows.Forms.Label stdAgeLabel;
         private System.Windows.Forms.Label stdAge;
+        private Guna.UI2.WinForms.Guna2CheckBox dataRecorderCheckBox;
+        private Guna.UI2.WinForms.Guna2Button readRecordsBtn;
+        private System.Windows.Forms.FolderBrowserDialog selectDataFolderDialog;
     }
 }
 
