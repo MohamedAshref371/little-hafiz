@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Little_Hafiz
 {
@@ -14,7 +15,7 @@ namespace Little_Hafiz
     {
         private static bool success = false;
         private static readonly int classVersion = 2;
-        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}.rec", databaseFile = $"{dataFolder}\\Students.db";
+        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
@@ -473,7 +474,7 @@ namespace Little_Hafiz
 
         public static void RemoveEmptyRecords()
         {
-            string[] recs = Directory.GetFiles(dataFolder, "*.rec", SearchOption.TopDirectoryOnly);
+            string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
             foreach (string file in recs)
                 if (File.ReadAllBytes(file).Length == 0)
@@ -482,10 +483,21 @@ namespace Little_Hafiz
 
         public static void RemoveAllRecords()
         {
-            string[] recs = Directory.GetFiles(dataFolder, "*.rec", SearchOption.TopDirectoryOnly);
+            string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
             foreach (string file in recs)
                 File.Delete(file);
+        }
+
+        public static void ReadRecords(string folder)
+        {
+            string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
+
+            for (int i = 0; i < dataFiles.Length; i++)
+                ExecuteNonQuery(File.ReadAllText(dataFiles[i]));
+
+            RemoveOldImages();
+            RemoveAllRecords();
         }
 
         #endregion

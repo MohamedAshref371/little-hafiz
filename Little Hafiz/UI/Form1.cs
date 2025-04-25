@@ -105,17 +105,10 @@ namespace Little_Hafiz
 
         private void ReadRecordsBtn_Click(object sender, EventArgs e)
         {
-            string[] dataFiles;
             if (selectDataFolderDialog.ShowDialog() == DialogResult.OK)
-                dataFiles = Directory.GetFiles(selectDataFolderDialog.SelectedPath, "*.rec", SearchOption.TopDirectoryOnly);
+                DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
             else
                 return;
-
-            for (int i = 0; i < dataFiles.Length; i++)
-                DatabaseHelper.ExecuteNonQuery(File.ReadAllText(dataFiles[i]));
-
-            DatabaseHelper.RemoveOldImages();
-            DatabaseHelper.RemoveAllRecords();
 
             MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CloseBtn_Click(null, null);
