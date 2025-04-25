@@ -132,6 +132,8 @@
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.levelCompCount = new System.Windows.Forms.Label();
+            this.compsLabel = new System.Windows.Forms.Label();
             this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
             this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.setRanksBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -180,8 +182,6 @@
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.compsLabel = new System.Windows.Forms.Label();
-            this.levelCompCount = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
@@ -2088,15 +2088,15 @@
             this.ranksCalculatorPanel.BorderColor = System.Drawing.Color.Silver;
             this.ranksCalculatorPanel.BorderRadius = 5;
             this.ranksCalculatorPanel.BorderThickness = 1;
+            this.ranksCalculatorPanel.Controls.Add(this.compDateTo);
+            this.ranksCalculatorPanel.Controls.Add(this.compDateFrom);
             this.ranksCalculatorPanel.Controls.Add(this.levelCompCount);
             this.ranksCalculatorPanel.Controls.Add(this.compsLabel);
             this.ranksCalculatorPanel.Controls.Add(this.closeBtn2);
             this.ranksCalculatorPanel.Controls.Add(this.ranksListPanel);
             this.ranksCalculatorPanel.Controls.Add(this.setRanksBtn);
             this.ranksCalculatorPanel.Controls.Add(this.getGradesDataBtn);
-            this.ranksCalculatorPanel.Controls.Add(this.compDateTo);
             this.ranksCalculatorPanel.Controls.Add(this.dateToLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.compDateFrom);
             this.ranksCalculatorPanel.Controls.Add(this.dateFromLabel);
             this.ranksCalculatorPanel.Controls.Add(this.compLevel);
             this.ranksCalculatorPanel.Controls.Add(this.compLevelLabel);
@@ -2112,6 +2112,28 @@
             this.ranksCalculatorPanel.Size = new System.Drawing.Size(926, 656);
             this.ranksCalculatorPanel.TabIndex = 85;
             this.ranksCalculatorPanel.Visible = false;
+            // 
+            // levelCompCount
+            // 
+            this.levelCompCount.AutoSize = true;
+            this.levelCompCount.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.levelCompCount.Location = new System.Drawing.Point(392, 118);
+            this.levelCompCount.Name = "levelCompCount";
+            this.levelCompCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.levelCompCount.Size = new System.Drawing.Size(16, 17);
+            this.levelCompCount.TabIndex = 103;
+            this.levelCompCount.Text = "0";
+            // 
+            // compsLabel
+            // 
+            this.compsLabel.AutoSize = true;
+            this.compsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.compsLabel.Location = new System.Drawing.Point(834, 118);
+            this.compsLabel.Name = "compsLabel";
+            this.compsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compsLabel.Size = new System.Drawing.Size(69, 17);
+            this.compsLabel.TabIndex = 102;
+            this.compsLabel.Text = "المسابقات";
             // 
             // closeBtn2
             // 
@@ -2820,28 +2842,6 @@
             // selectDataFolderDialog
             // 
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // compsLabel
-            // 
-            this.compsLabel.AutoSize = true;
-            this.compsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.compsLabel.Location = new System.Drawing.Point(834, 118);
-            this.compsLabel.Name = "compsLabel";
-            this.compsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.compsLabel.Size = new System.Drawing.Size(69, 17);
-            this.compsLabel.TabIndex = 102;
-            this.compsLabel.Text = "المسابقات";
-            // 
-            // levelCompCount
-            // 
-            this.levelCompCount.AutoSize = true;
-            this.levelCompCount.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.levelCompCount.Location = new System.Drawing.Point(392, 118);
-            this.levelCompCount.Name = "levelCompCount";
-            this.levelCompCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.levelCompCount.Size = new System.Drawing.Size(16, 17);
-            this.levelCompCount.TabIndex = 103;
-            this.levelCompCount.Text = "0";
             // 
             // Form1
             // 
