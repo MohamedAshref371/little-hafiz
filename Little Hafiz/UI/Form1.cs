@@ -584,6 +584,27 @@ namespace Little_Hafiz
         }
         #endregion
 
+        #region Ranks Calculator Panel
+        private void CloseBtn2_Click(object sender, EventArgs e)
+        {
+            ranksCalculatorPanel.Visible = false;
+
+            studentSearchPanel.Visible = true;
+            studentsListPanel.Visible = true;
+            footerPanel.Visible = true;
+        }
+
+        private void GetGradesDataBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetRanksBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
         #region Footer Panel
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
         {
@@ -710,7 +731,11 @@ namespace Little_Hafiz
 
         private void RankCalcBtn_Click(object sender, EventArgs e)
         {
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
 
+            ranksCalculatorPanel.Visible = true;
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
