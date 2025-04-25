@@ -117,9 +117,16 @@
   <ItemGroup>
     <Compile Include="AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
+    <Compile Include="Database\CompetitionRankData.cs" />
     <Compile Include="Database\CompetitionGradeData.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\ExcelRowData.cs" />
+    <Compile Include="UI\StudentRankRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\StudentRankRow.Designer.cs">
+      <DependentUpon>StudentRankRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +152,9 @@
     </Compile>
     <Compile Include="Database\StudentSearchRowData.cs" />
     <Compile Include="Database\StudentState.cs" />
+    <EmbeddedResource Include="UI\StudentRankRow.resx">
+      <DependentUpon>StudentRankRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>

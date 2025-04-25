@@ -2486,7 +2486,7 @@
             this.stdRank.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdRank.Location = new System.Drawing.Point(308, 612);
             this.stdRank.Maximum = new decimal(new int[] {
-            1000,
+            3000,
             0,
             0,
             0});
