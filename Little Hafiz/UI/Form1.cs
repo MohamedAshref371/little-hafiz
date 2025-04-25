@@ -791,6 +791,7 @@ namespace Little_Hafiz
 
             ranksListPanel.Controls.Clear();
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
+            fs?.SetControls(ranksListPanel.Controls);
 
             studentCount.Text = DatabaseHelper.GetStudentCount().ToString();
             compDateFrom.Value = DateTime.Now;
