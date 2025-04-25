@@ -30,10 +30,10 @@
         {
             this.stdCode = new System.Windows.Forms.Label();
             this.stdName = new System.Windows.Forms.Label();
-            this.stdRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.StudentRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdScore = new System.Windows.Forms.Label();
             this.stdRankLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.stdRank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentRank)).BeginInit();
             this.SuspendLayout();
             // 
             // stdCode
@@ -60,28 +60,28 @@
             this.stdName.Text = "إسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // stdRank
+            // StudentRank
             // 
-            this.stdRank.BackColor = System.Drawing.Color.Transparent;
-            this.stdRank.BorderRadius = 3;
-            this.stdRank.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdRank.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdRank.Location = new System.Drawing.Point(3, 3);
-            this.stdRank.Maximum = new decimal(new int[] {
+            this.StudentRank.BackColor = System.Drawing.Color.Transparent;
+            this.StudentRank.BorderRadius = 3;
+            this.StudentRank.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StudentRank.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.StudentRank.Location = new System.Drawing.Point(3, 3);
+            this.StudentRank.Maximum = new decimal(new int[] {
             3000,
             0,
             0,
             0});
-            this.stdRank.Minimum = new decimal(new int[] {
+            this.StudentRank.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.stdRank.Name = "stdRank";
-            this.stdRank.Size = new System.Drawing.Size(113, 34);
-            this.stdRank.TabIndex = 55;
-            this.stdRank.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.stdRank.Value = new decimal(new int[] {
+            this.StudentRank.Name = "StudentRank";
+            this.StudentRank.Size = new System.Drawing.Size(113, 34);
+            this.StudentRank.TabIndex = 55;
+            this.StudentRank.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.StudentRank.Value = new decimal(new int[] {
             100,
             0,
             0,
@@ -117,13 +117,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.stdScore);
-            this.Controls.Add(this.stdRank);
+            this.Controls.Add(this.StudentRank);
             this.Controls.Add(this.stdName);
             this.Controls.Add(this.stdCode);
             this.Controls.Add(this.stdRankLabel);
             this.Name = "StudentRankRow";
             this.Size = new System.Drawing.Size(820, 40);
-            ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentRank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,8 +132,8 @@
 
         private System.Windows.Forms.Label stdCode;
         private System.Windows.Forms.Label stdName;
-        private Guna.UI2.WinForms.Guna2NumericUpDown stdRank;
         private System.Windows.Forms.Label stdScore;
         private System.Windows.Forms.Label stdRankLabel;
+        public Guna.UI2.WinForms.Guna2NumericUpDown StudentRank;
     }
 }

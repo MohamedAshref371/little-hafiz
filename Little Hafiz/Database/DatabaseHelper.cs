@@ -1,13 +1,10 @@
-﻿using DocumentFormat.OpenXml.Drawing.Spreadsheet;
-using DocumentFormat.OpenXml.Office.CustomXsn;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace Little_Hafiz
 {
@@ -24,7 +21,6 @@ namespace Little_Hafiz
 
         #region Metadata
         public static int Version { get; private set; }
-        public static int StudentCount { get; private set; }
         public static DateTime CreateDate { get; private set; }
         public static string Comment { get; private set; }
 
@@ -92,12 +88,6 @@ namespace Little_Hafiz
                     studentsTableColumnsNames = reader.GetString(0);
                 else
                     return;
-                reader.Close();
-
-                command.CommandText = "SELECT COUNT(*) FROM students";
-                reader = command.ExecuteReader();
-                if (reader.Read())
-                    StudentCount = reader.GetInt32(0);
 
                 success = true;
             }
@@ -113,6 +103,28 @@ namespace Little_Hafiz
             }
         }
 
+        public static int GetStudentCount()
+        {
+            if (!success) return -1;
+            try
+            {
+                conn.Open();
+                command.CommandText = "SELECT COUNT(*) FROM students";
+                reader = command.ExecuteReader();
+                if (!reader.Read()) return -1;
+                return reader.GetInt32(0);
+            }
+            catch (Exception ex)
+            {
+                Program.LogError(ex.Message, ex.StackTrace, true);
+                return -1;
+            }
+            finally
+            {
+                reader.Close();
+                conn.Close();
+            }
+        }
 
         public static StudentData SelectStudent(string nationalNumber)
             => SelectUniqueStudent($"SELECT * FROM students WHERE national = '{nationalNumber}'");
@@ -185,6 +197,9 @@ namespace Little_Hafiz
         public static CompetitionGradeData[] SelectStudentGrades(string nationalNumber)
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
+        public static CompetitionRankData[] SelectCompetitionRanks(int level, string dateFrom, string dateTo)
+            => SelectMultiRows($"SELECT students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE competition_level = {level} AND competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' ORDER BY score DESC", GetCompetitionRanks);
+
         private static StudentSearchRowData GetStudentSearchRowData()
         {
             int? compLevel = null, stdRank = null;
@@ -256,6 +271,19 @@ namespace Little_Hafiz
                 Skills = (string)reader["skills"],
                 Hobbies = (string)reader["hobbies"],
                 Image = img
+            };
+        }
+
+        private static CompetitionRankData GetCompetitionRanks()
+        {
+            return new CompetitionRankData
+            {
+                NationalNumber = (string)reader["national"],
+                CompetitionDate = (string)reader["competition_date"],
+                StudentCode = reader.GetInt32(2),
+                StudentName = (string)reader["full_name"],
+                Score = reader.GetFloat(4),
+                Rank = reader.GetInt32(5),
             };
         }
 

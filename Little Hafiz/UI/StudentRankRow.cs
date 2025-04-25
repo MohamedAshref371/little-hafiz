@@ -11,28 +11,28 @@ namespace Little_Hafiz
         {
             InitializeComponent();
 
-            stdRank.Visible = false;
+            StudentRank.Visible = false;
             stdRankLabel.Visible = true;
         }
 
-        readonly CompetitionRankData data;
+        public readonly CompetitionRankData CompetitionRankData;
         public StudentRankRow(CompetitionRankData data)
         {
             InitializeComponent();
-            this.data = data;
+            this.CompetitionRankData = data;
 
             stdCode.Text = data.StudentCode.ToString();
             stdName.Text = data.StudentName;
             stdScore.Text = data.Score.ToString();
-            stdRank.Text = data.Rank.ToString();
+            StudentRank.Text = data.Rank.ToString();
 
-            stdRank.ValueChanged += StdRank_ValueChanged;
+            StudentRank.ValueChanged += StdRank_ValueChanged;
         }
 
         private void StdRank_ValueChanged(object sender, EventArgs e)
         {
-            data.Rank = (int)stdRank.Value;
-            DatabaseHelper.UpdateStudentRank(data);
+            CompetitionRankData.Rank = (int)StudentRank.Value;
+            DatabaseHelper.UpdateStudentRank(CompetitionRankData);
         }
 
         #region Border Radius

@@ -26,8 +26,8 @@ class FormSize
         for (int i = 0; i < controls.Count; i++)
         {
             SetControl(controls[i]);
-#warning Part " || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow" Make the Class unreusable.
-            if (controls[i] is Panel || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow)
+#warning Part " || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow || controls[i] is StudentRankRow" Make the Class unreusable.
+            if (controls[i] is Panel || controls[i] is StudentSearchRow || controls[i] is StudentGradeRow || controls[i] is StudentRankRow)
                 SetControls(controls[i].Controls);
         }
     }

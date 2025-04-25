@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -45,6 +46,9 @@ namespace Little_Hafiz
                 if (studentGradesListPanel.Visible)
                     studentGradesListPanel.Invalidate();
 
+                if (ranksListPanel.Visible)
+                    ranksListPanel.Invalidate();
+
                 if (Control.MouseButtons == MouseButtons.None)
                     this.Opacity = 1.0;
             };
@@ -72,6 +76,9 @@ namespace Little_Hafiz
 
             studentGradesListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentGradesListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
+
+            ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
+            ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -554,6 +561,7 @@ namespace Little_Hafiz
                 prevLevel.Value = currentLevel.Value;
                 SetPrevLevelMinMax();
                 addGradeBtn.Tag = false;
+                compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
             }
         }
 
@@ -596,12 +604,58 @@ namespace Little_Hafiz
 
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
+            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToString("yyyy/MM"), compDateTo.Value.ToString("yyyy/MM"));
+            if (ranks is null)
+            {
+                MessageBox.Show("حدث خطأ ما", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            levelCompCount.Text = ranks.Length.ToString();
+
+            wrongThingLabel.Visible = false;
+            for (int i = 0; i < ranks.Length - 1; i++)
+                for (int j = i + 1; j < ranks.Length; j++)
+                    if (ranks[i].NationalNumber == ranks[j].NationalNumber)
+                    {
+                        wrongThingLabel.Visible = true;
+                        break;
+                    }
+
+            ranksListPanel.Controls.Clear();
+            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
+
+            StudentRankRow stdRow;
+            for (int i = 0; i < ranks.Length; i++)
+            {
+                stdRow = new StudentRankRow(ranks[i]);
+                stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
+                ranksListPanel.Controls.Add(stdRow);
+            }
+            fs?.SetControls(ranksListPanel.Controls);
         }
 
         private void SetRanksBtn_Click(object sender, EventArgs e)
         {
+            if (wrongThingLabel.Visible)
+            {
+                MessageBox.Show("لا يمكن استعمال هذا الزر مع وجود تكرار طلبة في القائمة", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            float scr = 99999; int rnk = 0; StudentRankRow row;
+            for (int i = 1; i < ranksListPanel.Controls.Count; i++)
+            {
+                row = (StudentRankRow)ranksListPanel.Controls[i];
+
+                if (row.CompetitionRankData.Score < scr)
+                {
+                    ++rnk;
+                    scr = row.CompetitionRankData.Score;
+                }
+                if (row.CompetitionRankData.Score == scr)
+                    row.StudentRank.Value = rnk;
+            }
         }
         #endregion
 
@@ -734,6 +788,15 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
+
+            ranksListPanel.Controls.Clear();
+            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
+
+            studentCount.Text = DatabaseHelper.GetStudentCount().ToString();
+            compDateFrom.Value = DateTime.Now;
+            compDateTo.Value = DateTime.Now;
+            wrongThingLabel.Visible = false;
+            levelCompCount.Text = "0";
 
             ranksCalculatorPanel.Visible = true;
         }
