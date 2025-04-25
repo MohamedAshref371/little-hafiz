@@ -385,7 +385,7 @@ namespace Little_Hafiz
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
         {
-            string sql = $"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = {data.NationalNumber} AND competition_date = {data.CompetitionDate}; ";
+            string sql = $"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ";
 
             if (Record) File.AppendAllText(recordFile, sql);
 
