@@ -417,7 +417,7 @@ namespace Little_Hafiz
 
         public static int ExecuteNonQuery(string sql)
         {
-            if (!success) return -1;
+            if (!success || sql is null || sql.Trim() == "") return -1;
             try
             {
                 conn.Open();
@@ -440,6 +440,7 @@ namespace Little_Hafiz
         #region Records Helper
         public static void RemoveOldImages()
         {
+            if (!success) return;
             string sql = "SELECT image FROM students WHERE image IS NOT NULL AND TRIM(image) <> '' ORDER BY image";
 
             string[] databaseImages = SelectMultiRows(sql, () => Path.Combine(imagesFolder, reader.GetString(0).Trim()));
