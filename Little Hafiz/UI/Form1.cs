@@ -520,13 +520,6 @@ namespace Little_Hafiz
 
             fs?.SetControls(studentGradesListPanel.Controls);
 
-            if (data.CompetitionDate is null)
-                addGradeBtn.Tag = true;
-            else if (data.CompetitionDate.CompareTo(compDate.Value.ToString("yyyy/MM")) > 0)
-                addGradeBtn.Tag = (bool?)null;
-            else
-                addGradeBtn.Tag = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
-
             studentGradesPanel.Visible = true;
         }
 
@@ -551,9 +544,17 @@ namespace Little_Hafiz
 
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
+            string date = currentStudent.StudentSearchRowData.CompetitionDate;
+            if (date is null)
+                addGradeBtn.Tag = true;
+            else if (date.CompareTo(compDate.Value.ToString("yyyy/MM")) > 0)
+                addGradeBtn.Tag = (bool?)null;
+            else
+                addGradeBtn.Tag = date != compDate.Value.ToString("yyyy/MM");
+
             if ((bool?)addGradeBtn.Tag == null)
             {
-                MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من تاريخ الجهاز الحالي", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من هذا التاريخ", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!(bool)addGradeBtn.Tag)
