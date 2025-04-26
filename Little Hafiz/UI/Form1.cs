@@ -9,6 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -129,6 +130,8 @@ namespace Little_Hafiz
             if (e.KeyChar == '\'')
                 e.Handled = true;
         }
+
+        private void ErrorMessage() => MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         #endregion
 
         #region Two Serach Panels
@@ -147,6 +150,12 @@ namespace Little_Hafiz
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
                     );
+
+            if (students is null)
+            {
+                ErrorMessage();
+                return;
+            }
 
             AddTitleInStudentsListPanel();
 
@@ -183,6 +192,11 @@ namespace Little_Hafiz
             currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
             string national = currentStudent.StudentSearchRowData.NationalNumber;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
+            if (stdData is null)
+            {
+                ErrorMessage();
+                return;
+            }
 
             SetStudentData(stdData);
 
@@ -195,9 +209,16 @@ namespace Little_Hafiz
         private void ShowGradesBtn_Click(object sender, EventArgs e)
         {
             currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
-            var data = currentStudent.StudentSearchRowData;
+            StudentSearchRowData data = currentStudent.StudentSearchRowData;
 
-            OpenStudentGradesPanel(data, DatabaseHelper.SelectStudentGrades(data.NationalNumber));
+            CompetitionGradeData[] gradesData = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
+            if (gradesData is null)
+            {
+                ErrorMessage();
+                return;
+            }
+
+            OpenStudentGradesPanel(data, gradesData);
         }
         #endregion
 
@@ -299,6 +320,8 @@ namespace Little_Hafiz
                 CancelBtn_Click(null, null);
                 UpdateStudentRow();
             }
+            else
+                ErrorMessage();
         }
 
         private StudentData GetStudentData()
@@ -497,7 +520,13 @@ namespace Little_Hafiz
 
             fs?.SetControls(studentGradesListPanel.Controls);
 
-            addGradeBtn.Tag = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
+            if (data.CompetitionDate is null)
+                addGradeBtn.Tag = true;
+            else if (data.CompetitionDate.CompareTo(compDate.Value.ToString("yyyy/MM")) > 0)
+                addGradeBtn.Tag = (bool?)null;
+            else
+                addGradeBtn.Tag = data.CompetitionDate != compDate.Value.ToString("yyyy/MM");
+
             studentGradesPanel.Visible = true;
         }
 
@@ -522,6 +551,11 @@ namespace Little_Hafiz
 
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
+            if ((bool?)addGradeBtn.Tag == null)
+            {
+                MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من تاريخ الجهاز الحالي", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!(bool)addGradeBtn.Tag)
             {
                 MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
@@ -554,18 +588,21 @@ namespace Little_Hafiz
                 Rank = (int)stdRank.Value,
             };
 
-            if (DatabaseHelper.AddGrade(data) != -1)
+            if (DatabaseHelper.AddGrade(data) == -1)
             {
-                StudentGradeRow stdRow = new StudentGradeRow(data);
-                stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * studentGradesListPanel.Controls.Count + 9);
-                fs?.SetControl(stdRow);
-                fs?.SetControls(stdRow.Controls);
-                studentGradesListPanel.Controls.Add(stdRow);
-                prevLevel.Value = currentLevel.Value;
-                SetPrevLevelMinMax();
-                addGradeBtn.Tag = false;
-                compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
+                ErrorMessage();
+                return;
             }
+
+            StudentGradeRow stdRow = new StudentGradeRow(data);
+            stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * studentGradesListPanel.Controls.Count + 9);
+            fs?.SetControl(stdRow);
+            fs?.SetControls(stdRow.Controls);
+            studentGradesListPanel.Controls.Add(stdRow);
+            prevLevel.Value = currentLevel.Value;
+            SetPrevLevelMinMax();
+            addGradeBtn.Tag = false;
+            compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
         }
 
         private void CancelBtn2_Click(object sender, EventArgs e)
@@ -610,7 +647,7 @@ namespace Little_Hafiz
             CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToString("yyyy/MM"), compDateTo.Value.ToString("yyyy/MM"));
             if (ranks is null)
             {
-                MessageBox.Show("حدث خطأ ما", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage();
                 return;
             }
 
@@ -716,7 +753,11 @@ namespace Little_Hafiz
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
             ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(year, month);
-            if (rows is null) return;
+            if (rows is null)
+            {
+                ErrorMessage();
+                return;
+            }
 
             using (var workbook = new XLWorkbook())
             {
@@ -788,6 +829,14 @@ namespace Little_Hafiz
 
         private void RankCalcBtn_Click(object sender, EventArgs e)
         {
+            int count = DatabaseHelper.GetStudentCount();
+            if (count == -1)
+            {
+                ErrorMessage();
+                return;
+            }
+            studentCount.Text = count.ToString();
+            
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
@@ -796,7 +845,6 @@ namespace Little_Hafiz
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
             fs?.SetControls(ranksListPanel.Controls);
 
-            studentCount.Text = DatabaseHelper.GetStudentCount().ToString();
             compDateFrom.Value = DateTime.Now;
             compDateTo.Value = DateTime.Now;
             wrongThingLabel.Visible = false;
