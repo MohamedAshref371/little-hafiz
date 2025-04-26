@@ -497,6 +497,8 @@ namespace Little_Hafiz
             prevLevel.Value = data.CompetitionLevel ?? 0;
             SetPrevLevelMinMax();
 
+            if (prevLevel.Value == 0) currentLevel.Value = 10;
+
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
 
