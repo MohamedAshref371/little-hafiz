@@ -6,11 +6,14 @@ namespace Little_Hafiz
     {
         public static string GetAgeDescription(DateTime birthDate, out float year)
         {
+            DateTime currentDate = DateTime.Now;
             year = 0;
 
-            DateTime currentDate = DateTime.Now;
-            if (birthDate > currentDate)
+            if (currentDate < birthDate)
+            {
+                year = -1f;
                 return "تاريخ الميلاد أكبر من تاريخ اليوم الحالي.";
+            }
             
             int years = currentDate.Year - birthDate.Year;
             int months = currentDate.Month - birthDate.Month;

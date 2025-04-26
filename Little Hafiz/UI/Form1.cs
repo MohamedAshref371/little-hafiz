@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -489,13 +490,6 @@ namespace Little_Hafiz
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
 
-            float year = 0;
-            if (DateTime.TryParseExact(data.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
-                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out year);
-            else
-                stdAge.Text = "تاريخ الميلاد غير صالح";
-            stdAge.Tag = year;
-
             stdImagePath2.Text = data.Image;
             SetStudentImage2();
 
@@ -506,16 +500,13 @@ namespace Little_Hafiz
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
 
-            int topRank = 0;
             StudentGradeRow stdRow;
             for (int i = 0; i < grades.Length; i++)
             {
-                if (grades[i].Rank > 0 && grades[i].Rank <= 3 && grades[i].CompetitionLevel == 1) topRank += 1;
                 stdRow = new StudentGradeRow(grades[i]);
                 stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
                 studentGradesListPanel.Controls.Add(stdRow);
             }
-            stdRank.Tag = topRank;
 
             fs?.SetControls(studentGradesListPanel.Controls);
 
@@ -541,25 +532,58 @@ namespace Little_Hafiz
                 currentLevel.Maximum = prevLevel.Value - 1;
         }
 
+        private void CompDateLabel_DoubleClick(object sender, EventArgs e)
+        {
+            compDate.Value = DateTime.Now;
+        }
+
+        private void CompDate_ValueChanged(object sender, EventArgs e)
+        {
+            float year = 0;
+            if (DateTime.TryParseExact(currentStudent.StudentSearchRowData.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
+                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out year);
+            else
+                stdAge.Text = "تاريخ الميلاد غير صالح";
+            stdAge.Tag = year;
+        }
+
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
             string newDate = compDate.Value.ToString("yyyy/MM");
+            bool? allowedDate;
             if (date is null)
-                addGradeBtn.Tag = true;
+                allowedDate = true;
             else if (date.CompareTo(newDate) > 0)
-                addGradeBtn.Tag = (bool?)null;
+                allowedDate = (bool?)null;
             else
-                addGradeBtn.Tag = date != newDate;
+                allowedDate = date != newDate;
 
-            if ((bool?)addGradeBtn.Tag == null)
+            CompetitionGradeData gData; int topRank = 0;
+            for (int i = 1; i < studentGradesListPanel.Controls.Count; i++)
+            {
+                gData = ((StudentGradeRow)studentGradesListPanel.Controls[i]).CompetitionGradeData;
+                if (gData.Rank >= 1 && gData.Rank <= 3 && gData.CompetitionLevel == 1) topRank += 1;
+            }
+
+            if (allowedDate is null)
             {
                 MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من هذا التاريخ", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!(bool)addGradeBtn.Tag)
+            if (!(bool)allowedDate)
             {
                 MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
+                return;
+            }
+            if ((float)stdAge.Tag < 0)
+            {
+                MessageBox.Show("هذا الطالب لم يُولَد بعد");
+                return;
+            }
+            if ((float)stdAge.Tag == 0)
+            {
+                MessageBox.Show("هذا الطالب وُلِد للتو");
                 return;
             }
             if ((float)stdAge.Tag > 35)
@@ -567,7 +591,7 @@ namespace Little_Hafiz
                 MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة لأن عمره أكبر من 35 عاما");
                 return;
             }
-            if ((int)stdRank.Tag >= 2)
+            if (topRank >= 2)
             {
                 MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة");
                 return;
