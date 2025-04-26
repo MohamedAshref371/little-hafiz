@@ -380,47 +380,26 @@ namespace Little_Hafiz
 
         public static int AddStudent(StudentData data)
         {
-
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            string sql = $"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ";
-
-            if (Record) File.AppendAllText(recordFile, sql);
-
-            return ExecuteNonQuery(sql);
+            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ", Record);
         }
 
         public static int AddGrade(CompetitionGradeData data)
-        {
-            string sql = $"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ";
-
-            if (Record) File.AppendAllText(recordFile, sql);
-
-            return ExecuteNonQuery(sql);
-        }
+            => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ", Record);
         
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            string sql = $"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ";
-
-            if (Record) File.AppendAllText(recordFile, sql);
-
-            return ExecuteNonQuery(sql);
+            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ", Record);
         }
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
-        {
-            string sql = $"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ";
-
-            if (Record) File.AppendAllText(recordFile, sql);
-
-            return ExecuteNonQuery(sql);
-        }
-
+            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Record);
+        
         public static int UpdateStudentRank(CompetitionRankData data)
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
         
@@ -447,14 +426,16 @@ namespace Little_Hafiz
             => ExecuteNonQuery($"UPDATE students state = {(int)state}, state_date = {DateTime.Now.Ticks} WHERE national = '{nationalNumber}'");
         #endregion
 
-        private static int ExecuteNonQuery(string sql)
+        private static int ExecuteNonQuery(string sql, bool recording = false)
         {
             if (!success || sql is null || sql.Trim() == "") return -1;
             try
             {
                 conn.Open();
                 command.CommandText = sql;
-                return command.ExecuteNonQuery();
+                int rtrn = command.ExecuteNonQuery();
+                if (recording) File.AppendAllText(recordFile, sql);
+                return rtrn;
             }
             catch (Exception ex)
             {
