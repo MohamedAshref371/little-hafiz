@@ -541,7 +541,7 @@ namespace Little_Hafiz
         {
             float year = 0;
             if (DateTime.TryParseExact(currentStudent.StudentSearchRowData.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
-                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, out year);
+                stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, compDate.Value, out year);
             else
                 stdAge.Text = "تاريخ الميلاد غير صالح";
             stdAge.Tag = year;

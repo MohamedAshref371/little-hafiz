@@ -4,9 +4,8 @@ namespace Little_Hafiz
 {
     public static class AgeCalculator
     {
-        public static string GetAgeDescription(DateTime birthDate, out float year)
+        public static string GetAgeDescription(DateTime birthDate, DateTime currentDate, out float year)
         {
-            DateTime currentDate = DateTime.Now;
             year = 0;
 
             if (currentDate < birthDate)
