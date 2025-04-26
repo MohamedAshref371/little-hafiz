@@ -33,6 +33,7 @@
             this.StudentRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdScore = new System.Windows.Forms.Label();
             this.stdRankLabel = new System.Windows.Forms.Label();
+            this.compDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRank)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +53,10 @@
             // 
             this.stdName.BackColor = System.Drawing.Color.Transparent;
             this.stdName.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdName.Location = new System.Drawing.Point(241, 0);
+            this.stdName.Location = new System.Drawing.Point(319, 0);
             this.stdName.Name = "stdName";
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdName.Size = new System.Drawing.Size(476, 40);
+            this.stdName.Size = new System.Drawing.Size(398, 40);
             this.stdName.TabIndex = 53;
             this.stdName.Text = "إسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,7 +95,7 @@
             this.stdScore.Location = new System.Drawing.Point(122, 3);
             this.stdScore.Name = "stdScore";
             this.stdScore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdScore.Size = new System.Drawing.Size(113, 34);
+            this.stdScore.Size = new System.Drawing.Size(85, 34);
             this.stdScore.TabIndex = 56;
             this.stdScore.Text = "الدرجة";
             this.stdScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,10 +113,23 @@
             this.stdRankLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.stdRankLabel.Visible = false;
             // 
+            // compDate
+            // 
+            this.compDate.BackColor = System.Drawing.Color.Transparent;
+            this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.compDate.Location = new System.Drawing.Point(213, 3);
+            this.compDate.Name = "compDate";
+            this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.compDate.Size = new System.Drawing.Size(100, 34);
+            this.compDate.TabIndex = 58;
+            this.compDate.Text = "التاريخ";
+            this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // StudentRankRow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.compDate);
             this.Controls.Add(this.stdScore);
             this.Controls.Add(this.StudentRank);
             this.Controls.Add(this.stdName);
@@ -135,5 +149,6 @@
         private System.Windows.Forms.Label stdScore;
         private System.Windows.Forms.Label stdRankLabel;
         public Guna.UI2.WinForms.Guna2NumericUpDown StudentRank;
+        private System.Windows.Forms.Label compDate;
     }
 }

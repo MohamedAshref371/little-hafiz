@@ -23,6 +23,7 @@ namespace Little_Hafiz
 
             stdCode.Text = data.StudentCode.ToString();
             stdName.Text = data.StudentName;
+            compDate.Text = data.CompetitionDate;
             stdScore.Text = data.Score.ToString();
             StudentRank.Text = data.Rank.ToString();
 

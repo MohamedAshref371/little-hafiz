@@ -2061,7 +2061,6 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
-            this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.readRecordsBtn);
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
             this.headerPanel.Controls.Add(this.minimizeBtn);
@@ -2074,6 +2073,7 @@
             this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
+            this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -2101,9 +2101,9 @@
             this.ranksCalculatorPanel.Controls.Add(this.compLevel);
             this.ranksCalculatorPanel.Controls.Add(this.compLevelLabel);
             this.ranksCalculatorPanel.Controls.Add(this.studentCount);
-            this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
             this.ranksCalculatorPanel.Controls.Add(this.studentCountLabel);
             this.ranksCalculatorPanel.Controls.Add(this.wrongThingLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
             this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -2298,7 +2298,7 @@
             // studentCount
             // 
             this.studentCount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.studentCount.Location = new System.Drawing.Point(671, 52);
+            this.studentCount.Location = new System.Drawing.Point(677, 53);
             this.studentCount.Name = "studentCount";
             this.studentCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.studentCount.Size = new System.Drawing.Size(96, 19);
@@ -2310,13 +2310,12 @@
             // 
             this.ranksPanelTitle.AutoSize = true;
             this.ranksPanelTitle.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ranksPanelTitle.Location = new System.Drawing.Point(186, 7);
+            this.ranksPanelTitle.Location = new System.Drawing.Point(186, 5);
             this.ranksPanelTitle.Name = "ranksPanelTitle";
             this.ranksPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ranksPanelTitle.Size = new System.Drawing.Size(537, 38);
+            this.ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
             this.ranksPanelTitle.TabIndex = 1;
-            this.ranksPanelTitle.Text = "لا تستعمل هذه الشاشة إلا إذا كنت متأكدا أنك تمتلك نسخة البيانات الكاملة\r\nلن يتم ت" +
-    "سجيل أي حركة بيانات بافتراض أن هذه الشاشة لن يستعملها إلا المدير";
+            this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
             this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentCountLabel
@@ -2762,10 +2761,10 @@
             // 
             this.stdName2.BackColor = System.Drawing.Color.Transparent;
             this.stdName2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdName2.Location = new System.Drawing.Point(454, 88);
+            this.stdName2.Location = new System.Drawing.Point(345, 88);
             this.stdName2.Name = "stdName2";
             this.stdName2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdName2.Size = new System.Drawing.Size(314, 19);
+            this.stdName2.Size = new System.Drawing.Size(423, 19);
             this.stdName2.TabIndex = 75;
             // 
             // stdNationalLabel2
