@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Little_Hafiz
+﻿namespace Little_Hafiz
 {
     internal enum StudentState : int
     {
