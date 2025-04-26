@@ -498,6 +498,7 @@ namespace Little_Hafiz
             SetPrevLevelMinMax();
 
             if (prevLevel.Value == 0) currentLevel.Value = 10;
+            else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
 
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
