@@ -447,7 +447,7 @@ namespace Little_Hafiz
             => ExecuteNonQuery($"UPDATE students state = {(int)state}, state_date = {DateTime.Now.Ticks} WHERE national = '{nationalNumber}'");
         #endregion
 
-        public static int ExecuteNonQuery(string sql)
+        private static int ExecuteNonQuery(string sql)
         {
             if (!success || sql is null || sql.Trim() == "") return -1;
             try
@@ -503,7 +503,7 @@ namespace Little_Hafiz
             }
         }
 
-        public static void RemoveEmptyRecords()
+        private static void RemoveEmptyRecords()
         {
             string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
@@ -512,7 +512,7 @@ namespace Little_Hafiz
                     File.Delete(file);
         }
 
-        public static void RemoveAllRecords()
+        private static void RemoveAllRecords()
         {
             string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
@@ -520,8 +520,9 @@ namespace Little_Hafiz
                 File.Delete(file);
         }
 
-        public static void ReadRecords(string folder)
+        public static bool ReadRecords(string folder)
         {
+            if (!success) return false;
             string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
             for (int i = 0; i < dataFiles.Length; i++)
@@ -529,6 +530,7 @@ namespace Little_Hafiz
 
             RemoveOldImages();
             RemoveAllRecords();
+            return true;
         }
 
         #endregion

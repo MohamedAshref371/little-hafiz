@@ -113,12 +113,15 @@ namespace Little_Hafiz
         private void ReadRecordsBtn_Click(object sender, EventArgs e)
         {
             if (selectDataFolderDialog.ShowDialog() == DialogResult.OK)
-                DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
-            else
-                return;
-
-            MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CloseBtn_Click(null, null);
+            {
+                if (DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath))
+                {
+                    MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CloseBtn_Click(null, null);
+                }
+                else
+                    MessageBox.Show("لا يمكن تنفيذ هذا الأمر، أغلق البرنامج وأعد المحاولة مجددا", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
