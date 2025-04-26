@@ -545,12 +545,13 @@ namespace Little_Hafiz
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
+            string newDate = compDate.Value.ToString("yyyy/MM");
             if (date is null)
                 addGradeBtn.Tag = true;
-            else if (date.CompareTo(compDate.Value.ToString("yyyy/MM")) > 0)
+            else if (date.CompareTo(newDate) > 0)
                 addGradeBtn.Tag = (bool?)null;
             else
-                addGradeBtn.Tag = date != compDate.Value.ToString("yyyy/MM");
+                addGradeBtn.Tag = date != newDate;
 
             if ((bool?)addGradeBtn.Tag == null)
             {
@@ -602,7 +603,7 @@ namespace Little_Hafiz
             studentGradesListPanel.Controls.Add(stdRow);
             prevLevel.Value = currentLevel.Value;
             SetPrevLevelMinMax();
-            addGradeBtn.Tag = false;
+            currentStudent.StudentSearchRowData.CompetitionDate = newDate;
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
         }
 
