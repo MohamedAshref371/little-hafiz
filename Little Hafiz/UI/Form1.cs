@@ -619,8 +619,9 @@ namespace Little_Hafiz
                 return;
             }
 
+            Control lastControl = studentGradesListPanel.Controls[studentGradesListPanel.Controls.Count - 1];
             StudentGradeRow stdRow = new StudentGradeRow(data);
-            stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * studentGradesListPanel.Controls.Count + 9);
+            stdRow.Location = new Point(30, lastControl.Bottom + 3);
             fs?.SetControl(stdRow);
             fs?.SetControls(stdRow.Controls);
             studentGradesListPanel.Controls.Add(stdRow);
