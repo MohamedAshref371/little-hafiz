@@ -13,7 +13,7 @@ namespace Little_Hafiz
                 year = -1f;
                 return "تاريخ الميلاد أكبر من تاريخ اليوم الحالي.";
             }
-            
+
             int years = currentDate.Year - birthDate.Year;
             int months = currentDate.Month - birthDate.Month;
             int days = currentDate.Day - birthDate.Day;
@@ -32,12 +32,13 @@ namespace Little_Hafiz
                 months += 12;
             }
 
-            string result = ""; 
-            if (years > 0) result += $"{FormatPart(years, GetYearWord)} ";
-            if (result != "" && months > 0) result += "و";
-            if (months > 0) result += $"{FormatPart(months, GetMonthWord)} ";
-            if (result != "" && days > 0) result += "و";
-            if (days > 0) result += $"{FormatPart(days, GetDayWord)}.";
+            string result = "";
+            if (years > 0) result += $"{FormatPart(years, GetYearWord)}";
+            if (result != "" && months > 0) result += " و";
+            if (months > 0) result += $"{FormatPart(months, GetMonthWord)}";
+            if (result != "" && days > 0) result += " و";
+            if (days > 0) result += $"{FormatPart(days, GetDayWord)}";
+            if (result != "") result += ".";
 
             year = years + (months / 12f) + (days / 365f);
             return result;
