@@ -85,6 +85,7 @@ namespace Little_Hafiz
             {
                 timer2.Stop();
                 DownloadUpdate();
+                timer2.Dispose();
             };
             timer2.Start();
         }
@@ -667,8 +668,7 @@ namespace Little_Hafiz
             }
 
             Control lastControl = studentGradesListPanel.Controls[studentGradesListPanel.Controls.Count - 1];
-            StudentGradeRow stdRow = new StudentGradeRow(data);
-            stdRow.Location = new Point(30, lastControl.Bottom + 3);
+            StudentGradeRow stdRow = new StudentGradeRow(data) { Location = new Point(30, lastControl.Bottom + 3)};
             fs?.SetControl(stdRow);
             fs?.SetControls(stdRow.Controls);
             studentGradesListPanel.Controls.Add(stdRow);
