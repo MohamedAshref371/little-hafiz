@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web.WebSockets;
 
 namespace Little_Hafiz
 {
@@ -489,7 +490,7 @@ namespace Little_Hafiz
             string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
             foreach (string file in recs)
-                if (File.ReadAllBytes(file).Length == 0)
+                if (new FileInfo(file).Length == 0)
                     File.Delete(file);
         }
 
