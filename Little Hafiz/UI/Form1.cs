@@ -202,6 +202,7 @@ namespace Little_Hafiz
 
             addStudentBtn.Text = "تعديل";
             stdNational.Enabled = false;
+            stdBirthDate.Enabled = currentStudent.StudentSearchRowData.CompetitionDate is null;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
         }
@@ -385,6 +386,7 @@ namespace Little_Hafiz
             stdName.Text = "";
             stdNational.Text = "";
             stdBirthDate.Value = DateTime.Now.AddYears(-10);
+            stdBirthDate.Enabled = true;
             stdJob.Text = "";
             fatherQuali.Text = "";
             motherQuali.Text = "";
