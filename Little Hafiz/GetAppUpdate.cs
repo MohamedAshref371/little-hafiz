@@ -37,17 +37,19 @@ namespace Little_Hafiz
                 var asset = release.Assets.FirstOrDefault(ast => ast.Name == "update.zip");
                 if (asset is null) return false;
 
-                if (File.Exists(asset.Name))
-                    File.Delete(asset.Name);
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, asset.Name);
+
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
 
                 using (var webClient = new WebClient())
-                    webClient.DownloadFile(asset.BrowserDownloadUrl, asset.Name);
+                    webClient.DownloadFile(asset.BrowserDownloadUrl, filePath);
                 return true;
             }
             catch { }
             return false;
         }
-        
+
         private string RemoveTrailingZerosFromVersion(string version)
         {
             string[] parts = version.Split('.');
