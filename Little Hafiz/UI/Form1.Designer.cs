@@ -377,6 +377,7 @@
             this.stdImageLabel.TabIndex = 69;
             this.stdImageLabel.Text = "صورة شخصية حديثة";
             this.stdImageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.stdImageLabel.DoubleClick += new System.EventHandler(this.StdImageLabel_DoubleClick);
             // 
             // stdSkills
             // 
@@ -2855,6 +2856,7 @@
             // 
             // selectDataFolderDialog
             // 
+            this.selectDataFolderDialog.Description = "إختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور الطلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
             // Form1

@@ -290,6 +290,12 @@ namespace Little_Hafiz
                 studentImage.Image = null;
         }
 
+        private void StdImageLabel_DoubleClick(object sender, EventArgs e)
+        {
+            DatabaseHelper.RemoveOldImages();
+            MessageBox.Show("تم تنظيف الصور القديمة");
+        }
+
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.Visible = false;
