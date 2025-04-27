@@ -46,6 +46,8 @@ namespace Little_Hafiz
 
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
+
+            DatabaseBackup();
         }
 
         private static bool CreateDatabase()
@@ -451,7 +453,7 @@ namespace Little_Hafiz
         }
         #endregion
 
-        #region Records Helper
+        #region Database Sweetening
         public static void RemoveOldImages()
         {
             if (!success) return;
@@ -517,6 +519,19 @@ namespace Little_Hafiz
             return err;
         }
 
+        private static void DatabaseBackup()
+        {
+            if (!success) return;
+
+            if (File.Exists($"{dataFolder}\\Students--.db"))
+                File.Delete($"{dataFolder}\\Students--.db");
+
+            if (File.Exists($"{dataFolder}\\Students-.db"))
+                File.Move($"{dataFolder}\\Students-.db", $"{dataFolder}\\Students--.db");
+
+            if (File.Exists(databaseFile))
+                File.Copy(databaseFile, $"{dataFolder}\\Students-.db");
+        }
         #endregion
     }
 }
