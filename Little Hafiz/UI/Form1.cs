@@ -586,7 +586,7 @@ namespace Little_Hafiz
                 MessageBox.Show("هذا الطالب لم يُولَد بعد");
                 return;
             }
-            if ((float)stdAge.Tag == 0)
+            if ((float)stdAge.Tag < 1f)
             {
                 MessageBox.Show("هذا الطالب وُلِد للتو");
                 return;
