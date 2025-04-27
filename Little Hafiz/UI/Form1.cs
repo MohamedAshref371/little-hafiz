@@ -105,7 +105,7 @@ namespace Little_Hafiz
 
         private void DataRecorderCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!dataRecorderCheckBox.Checked && MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RtlReading) == DialogResult.No)
+            if (!dataRecorderCheckBox.Checked && MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
                 dataRecorderCheckBox.Checked = true;
 
             DatabaseHelper.Record = dataRecorderCheckBox.Checked;
@@ -499,6 +499,7 @@ namespace Little_Hafiz
 
             if (prevLevel.Value == 0) currentLevel.Value = 10;
             else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
+            stdCode.Value = 0;
 
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
@@ -550,6 +551,7 @@ namespace Little_Hafiz
             stdAge.Tag = year;
         }
 
+        bool showMessageAtStdCodeIsZero = true;
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
@@ -603,6 +605,16 @@ namespace Little_Hafiz
             {
                 MessageBox.Show("يمكن للطالب الذي عمره أكبر من 25 عاما أن يدخل المستوى الأول فقط");
                 return;
+            }
+            if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
+            {
+                if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                {
+                    if (MessageBox.Show("هل تريد تذكر هذا الاختيار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                        showMessageAtStdCodeIsZero = false;
+                }
+                else
+                    return;
             }
 
             CompetitionGradeData data = new CompetitionGradeData
@@ -683,14 +695,25 @@ namespace Little_Hafiz
             levelCompCount.Text = ranks.Length.ToString();
 
             wrongThingLabel.Visible = false;
+            wrongThing2Label.Visible = false;
+
             for (int i = 0; i < ranks.Length - 1; i++)
+            {
                 for (int j = i + 1; j < ranks.Length; j++)
+                {
                     if (ranks[i].NationalNumber == ranks[j].NationalNumber)
                     {
                         wrongThingLabel.Visible = true;
                         break;
                     }
-
+                    if (ranks[i].StudentCode != 0 && ranks[i].StudentCode == ranks[j].StudentCode)
+                    {
+                        wrongThing2Label.Visible = true;
+                        break;
+                    }
+                }
+            }
+            
             ranksListPanel.Controls.Clear();
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
 
@@ -706,9 +729,9 @@ namespace Little_Hafiz
 
         private void SetRanksBtn_Click(object sender, EventArgs e)
         {
-            if (wrongThingLabel.Visible)
+            if (wrongThingLabel.Visible || wrongThing2Label.Visible)
             {
-                MessageBox.Show("لا يمكن استعمال هذا الزر مع وجود تكرار طلبة في القائمة", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("لا يمكن استعمال هذا الزر مع وجود تكرار طلبة أو أكواد في القائمة", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -877,6 +900,7 @@ namespace Little_Hafiz
             compDateFrom.Value = DateTime.Now;
             compDateTo.Value = DateTime.Now;
             wrongThingLabel.Visible = false;
+            wrongThing2Label.Visible = false;
             levelCompCount.Text = "0";
 
             ranksCalculatorPanel.Visible = true;

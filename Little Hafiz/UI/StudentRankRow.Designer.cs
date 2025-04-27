@@ -69,7 +69,7 @@
             this.StudentRank.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.StudentRank.Location = new System.Drawing.Point(3, 3);
             this.StudentRank.Maximum = new decimal(new int[] {
-            3000,
+            10000,
             0,
             0,
             0});
