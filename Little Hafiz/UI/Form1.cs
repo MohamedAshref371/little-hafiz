@@ -122,7 +122,7 @@ namespace Little_Hafiz
                 CloseBtn_Click(null, null);
             }
             else if (num > 0)
-                MessageBox.Show($"حدثت أخطاء عددها {num} أثناء التنفيذ", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"عدد الملفات التي حدث فيها أخطاء {num} أثناء التنفيذ", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("لا يمكن تنفيذ هذا الأمر، أغلق البرنامج وأعد المحاولة مجددا", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
