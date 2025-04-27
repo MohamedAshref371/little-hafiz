@@ -163,6 +163,21 @@ namespace Little_Hafiz
             studentsListPanel.Controls.Add(new StudentSearchRow { Location = new Point(9, 9) });
         }
 
+        private void SearchPanelTitle_DoubleClick(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.BackupEnabled)
+            {
+                Properties.Settings.Default.BackupEnabled = false;
+                MessageBox.Show("تم تعطيل النسخ الاحتياطي");
+            }
+            else
+            {
+                Properties.Settings.Default.BackupEnabled = true;
+                MessageBox.Show("تم تفعيل النسخ الاحتياطي");
+            }
+            Properties.Settings.Default.Save();
+        }
+
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents

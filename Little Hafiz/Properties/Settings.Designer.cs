@@ -22,5 +22,17 @@ namespace Little_Hafiz.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BackupEnabled {
+            get {
+                return ((bool)(this["BackupEnabled"]));
+            }
+            set {
+                this["BackupEnabled"] = value;
+            }
+        }
     }
 }

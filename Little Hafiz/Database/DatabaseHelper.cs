@@ -47,7 +47,8 @@ namespace Little_Hafiz
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
 
-            DatabaseBackup();
+            if (Properties.Settings.Default.BackupEnabled)
+                DatabaseBackup();
         }
 
         private static bool CreateDatabase()
@@ -146,7 +147,7 @@ namespace Little_Hafiz
             catch (Exception ex)
             {
                 Program.LogError(ex.Message, ex.StackTrace, true);
-                return null; 
+                return null;
             }
             finally
             {
@@ -184,7 +185,7 @@ namespace Little_Hafiz
                     conds.Add($"student_level = {level}");
             }
             else { conds.Add($"students.national = '{nationalNumber}'"); }
-            
+
             if (conds.Count > 0)
             {
                 sb.Append(" WHERE ").Append(conds[0]);
@@ -229,7 +230,7 @@ namespace Little_Hafiz
                 Image = img,
             };
         }
-        
+
         private static StudentData GetStudentData()
         {
             string img = (string)reader["image"];
@@ -391,7 +392,7 @@ namespace Little_Hafiz
 
         public static int AddGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ", Record);
-        
+
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
@@ -402,10 +403,10 @@ namespace Little_Hafiz
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Record);
-        
+
         public static int UpdateStudentRank(CompetitionRankData data)
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
-        
+
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
 
@@ -514,7 +515,7 @@ namespace Little_Hafiz
             for (int i = 0; i < dataFiles.Length; i++)
                 if (ExecuteNonQuery(File.ReadAllText(dataFiles[i])) == -1)
                     err += 1;
-            
+
             RemoveOldImages();
             RemoveAllRecords();
             return err;

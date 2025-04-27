@@ -1873,6 +1873,7 @@
             this.searchPanelTitle.Size = new System.Drawing.Size(133, 29);
             this.searchPanelTitle.TabIndex = 73;
             this.searchPanelTitle.Text = "قائمة البحث";
+            this.searchPanelTitle.DoubleClick += new System.EventHandler(this.SearchPanelTitle_DoubleClick);
             // 
             // stdNameCheckBox
             // 
@@ -2856,7 +2857,8 @@
             // 
             // selectDataFolderDialog
             // 
-            this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور الطلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
+            this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
+    "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
             // Form1
