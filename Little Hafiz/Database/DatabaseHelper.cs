@@ -504,7 +504,7 @@ namespace Little_Hafiz
         public static int ReadRecords(string folder)
         {
             if (!success) return -1;
-            string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
+            string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly).OrderBy(f => f).ToArray();
 
             int err = 0;
             for (int i = 0; i < dataFiles.Length; i++)
