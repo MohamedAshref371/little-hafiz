@@ -501,17 +501,19 @@ namespace Little_Hafiz
                 File.Delete(file);
         }
 
-        public static bool ReadRecords(string folder)
+        public static int ReadRecords(string folder)
         {
-            if (!success) return false;
+            if (!success) return -1;
             string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
+            int err = 0;
             for (int i = 0; i < dataFiles.Length; i++)
-                ExecuteNonQuery(File.ReadAllText(dataFiles[i]));
-
+                if (ExecuteNonQuery(File.ReadAllText(dataFiles[i])) == -1)
+                    err += 1;
+            
             RemoveOldImages();
             RemoveAllRecords();
-            return true;
+            return err;
         }
 
         #endregion
