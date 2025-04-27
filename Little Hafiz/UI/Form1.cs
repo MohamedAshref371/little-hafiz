@@ -1,6 +1,5 @@
 ﻿using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -80,6 +79,26 @@ namespace Little_Hafiz
 
             ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
+
+            Timer timer2 = new Timer { Interval = 1000 };
+            timer2.Tick += (s, e1) =>
+            {
+                timer2.Stop();
+                DownloadUpdate();
+            };
+            timer2.Start();
+        }
+
+        static void DownloadUpdate()
+        {
+            GetAppUpdate update = new GetAppUpdate();
+            bool hasUpdate = update.CheckForUpdates();
+            if (hasUpdate && MessageBox.Show("هناك تحديث متوفر، هل تريد تحميله ؟", "🥳", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool updateDownloaded = update.GetTheUpdate();
+                if (updateDownloaded) MessageBox.Show("تم تحميل التحديث بنجاح");
+                else MessageBox.Show("لم يتم تحميل التحديث");
+            }
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -726,7 +745,7 @@ namespace Little_Hafiz
                     }
                 }
             }
-            
+
             ranksListPanel.Controls.Clear();
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
 
@@ -901,7 +920,7 @@ namespace Little_Hafiz
                 return;
             }
             studentCount.Text = count.ToString();
-            
+
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
