@@ -454,9 +454,9 @@ namespace Little_Hafiz
         #endregion
 
         #region Database Sweetening
-        public static void RemoveOldImages()
+        public static bool RemoveOldImages()
         {
-            if (!success) return;
+            if (!success) return false;
             string sql = "SELECT image FROM students WHERE image IS NOT NULL AND TRIM(image) <> '' ORDER BY image";
 
             string[] databaseImages = SelectMultiRows(sql, () => Path.Combine(imagesFolder, reader.GetString(0).Trim()));
@@ -485,6 +485,7 @@ namespace Little_Hafiz
                 else
                     dbIndex++;
             }
+            return true;
         }
 
         private static void RemoveEmptyRecords()
