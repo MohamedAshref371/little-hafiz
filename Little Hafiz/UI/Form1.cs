@@ -116,13 +116,13 @@ namespace Little_Hafiz
             if (selectDataFolderDialog.ShowDialog() == DialogResult.OK)
             {
                 int num = DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
-                if (num >= 1)
-                    MessageBox.Show($"حدثت أخطاء عددها {num} أثناء التنفيذ", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (num == 0)
+                if (num == 0)
                 {
                     MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CloseBtn_Click(null, null);
                 }
+                else if (num > 0)
+                    MessageBox.Show($"حدثت أخطاء عددها {num} أثناء التنفيذ", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("لا يمكن تنفيذ هذا الأمر، أغلق البرنامج وأعد المحاولة مجددا", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
