@@ -44,6 +44,7 @@ namespace Little_Hafiz
 
                 using (var webClient = new WebClient())
                     webClient.DownloadFile(asset.BrowserDownloadUrl, filePath);
+
                 return true;
             }
             catch { }

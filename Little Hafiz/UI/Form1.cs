@@ -80,7 +80,7 @@ namespace Little_Hafiz
             ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
 
-            Timer timer2 = new Timer { Interval = 1000 };
+            Timer timer2 = new Timer { Interval = 1 };
             timer2.Tick += (s, e1) =>
             {
                 timer2.Stop();
