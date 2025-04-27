@@ -47,7 +47,7 @@
             this.prevLevel.Location = new System.Drawing.Point(617, 0);
             this.prevLevel.Name = "prevLevel";
             this.prevLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.prevLevel.Size = new System.Drawing.Size(100, 72);
+            this.prevLevel.Size = new System.Drawing.Size(100, 60);
             this.prevLevel.TabIndex = 2;
             this.prevLevel.Text = "المستوى السابق";
             this.prevLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             this.currentLevel.Location = new System.Drawing.Point(511, 0);
             this.currentLevel.Name = "currentLevel";
             this.currentLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.currentLevel.Size = new System.Drawing.Size(100, 72);
+            this.currentLevel.Size = new System.Drawing.Size(100, 60);
             this.currentLevel.TabIndex = 3;
             this.currentLevel.Text = "المستوى الحالي";
             this.currentLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +71,7 @@
             this.compDate.Location = new System.Drawing.Point(315, 0);
             this.compDate.Name = "compDate";
             this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.compDate.Size = new System.Drawing.Size(190, 72);
+            this.compDate.Size = new System.Drawing.Size(190, 60);
             this.compDate.TabIndex = 4;
             this.compDate.Text = "تاريخ المسابقة";
             this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,7 +83,7 @@
             this.scoreLabel.Location = new System.Drawing.Point(159, 0);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.scoreLabel.Size = new System.Drawing.Size(150, 72);
+            this.scoreLabel.Size = new System.Drawing.Size(150, 60);
             this.scoreLabel.TabIndex = 5;
             this.scoreLabel.Text = "الدرجة";
             this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,7 +96,7 @@
             this.rankLabel.Location = new System.Drawing.Point(3, 0);
             this.rankLabel.Name = "rankLabel";
             this.rankLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rankLabel.Size = new System.Drawing.Size(150, 72);
+            this.rankLabel.Size = new System.Drawing.Size(150, 60);
             this.rankLabel.TabIndex = 6;
             this.rankLabel.Text = "المركز";
             this.rankLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +109,7 @@
             this.stdScore.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdScore.DecimalPlaces = 2;
             this.stdScore.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdScore.Location = new System.Drawing.Point(171, 14);
+            this.stdScore.Location = new System.Drawing.Point(171, 9);
             this.stdScore.Name = "stdScore";
             this.stdScore.Size = new System.Drawing.Size(128, 43);
             this.stdScore.TabIndex = 49;
@@ -121,7 +121,7 @@
             this.stdRank.BorderRadius = 3;
             this.stdRank.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdRank.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdRank.Location = new System.Drawing.Point(12, 14);
+            this.stdRank.Location = new System.Drawing.Point(12, 9);
             this.stdRank.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -149,7 +149,7 @@
             this.stdCode.Location = new System.Drawing.Point(723, 0);
             this.stdCode.Name = "stdCode";
             this.stdCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdCode.Size = new System.Drawing.Size(94, 72);
+            this.stdCode.Size = new System.Drawing.Size(94, 60);
             this.stdCode.TabIndex = 51;
             this.stdCode.Text = "الكود";
             this.stdCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,7 +167,7 @@
             this.Controls.Add(this.currentLevel);
             this.Controls.Add(this.prevLevel);
             this.Name = "StudentGradeRow";
-            this.Size = new System.Drawing.Size(820, 72);
+            this.Size = new System.Drawing.Size(820, 60);
             ((System.ComponentModel.ISupportInitialize)(this.stdScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();
             this.ResumeLayout(false);
