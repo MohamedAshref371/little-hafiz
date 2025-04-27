@@ -2856,7 +2856,7 @@
             // 
             // selectDataFolderDialog
             // 
-            this.selectDataFolderDialog.Description = "إختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور الطلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
+            this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور الطلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
             // Form1
