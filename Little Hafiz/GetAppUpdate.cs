@@ -34,7 +34,7 @@ namespace Little_Hafiz
             {
                 if (release.Assets.Count == 0) return false;
 
-                var asset = release.Assets.FirstOrDefault(ast => ast.Name == "update.zip");
+                var asset = release.Assets.FirstOrDefault(ast => ast.Name.IndexOf("update", StringComparison.OrdinalIgnoreCase) >= 0);
                 if (asset is null) return false;
 
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, asset.Name);
