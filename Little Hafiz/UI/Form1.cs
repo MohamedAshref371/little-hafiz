@@ -758,7 +758,7 @@ namespace Little_Hafiz
         {
             if (stdCodeState == 0)
             {
-                DialogResult res = MessageBox.Show("إذا أردت أن يزيد الكود تسلسليا اضغط نعم\nإذا أردت فقط منع تصفير رقم الكود اضغط لا", "الخيار خيارك", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3);
+                DialogResult res = MessageBox.Show("إذا أردت أن يزيد الكود تسلسليا بعد كل اضافة اضغط نعم\nإذا أردت فقط منع تصفير رقم الكود كل مرة اضغط لا", "الخيار خيارك", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3);
                 if (res == DialogResult.No)
                     stdCodeState = 1;
                 else if (res == DialogResult.Yes)
