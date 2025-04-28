@@ -555,7 +555,9 @@ namespace Little_Hafiz
 
             if (prevLevel.Value == 0) currentLevel.Value = 10;
             else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
-            stdCode.Value = 0;
+
+            if (stdCodeState == 0)
+                stdCode.Value = 0;
         }
 
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
@@ -722,6 +724,8 @@ namespace Little_Hafiz
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
             UpdateStudentRow();
             PrevCurrLevel();
+            if (stdCodeState == 2)
+                stdCode.Value += 1;
         }
 
         private void CancelBtn2_Click(object sender, EventArgs e)
@@ -747,6 +751,24 @@ namespace Little_Hafiz
                 studentImage2.Image = new Bitmap(new Bitmap(stdImagePath2.Text), studentImage2.Size.Width, studentImage2.Size.Height);
             else
                 studentImage2.Image = null;
+        }
+
+        int stdCodeState = 0;
+        private void StdCodeLabel_DoubleClick(object sender, EventArgs e)
+        {
+            if (stdCodeState == 0)
+            {
+                DialogResult res = MessageBox.Show("إذا أردت أن يزيد الكود تسلسليا اضغط نعم\nإذا أردت فقط منع تصفير رقم الكود اضغط لا", "الخيار خيارك", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3);
+                if (res == DialogResult.No)
+                    stdCodeState = 1;
+                else if (res == DialogResult.Yes)
+                    stdCodeState = 2;
+            }
+            else
+            {
+                stdCodeState = 0;
+                MessageBox.Show("تم استعادة الخيار الافتراضي");
+            }
         }
         #endregion
 

@@ -2389,6 +2389,7 @@
             this.stdCodeLabel.Size = new System.Drawing.Size(52, 19);
             this.stdCodeLabel.TabIndex = 85;
             this.stdCodeLabel.Text = "الكود :";
+            this.stdCodeLabel.DoubleClick += new System.EventHandler(this.StdCodeLabel_DoubleClick);
             // 
             // compDateLabel
             // 
