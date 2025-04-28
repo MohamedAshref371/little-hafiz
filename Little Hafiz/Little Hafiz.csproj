@@ -198,6 +198,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="quran256.ico" />
+    <None Include="Resources\no-entry.png" />
+    <None Include="Resources\check-mark-button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -13,6 +13,7 @@ namespace Little_Hafiz
 
             stdScore.Visible = false;
             stdRank.Visible = false;
+            deleteBtn.Visible = false;
             scoreLabel.Visible = true;
             rankLabel.Visible = true;
         }
@@ -35,17 +36,22 @@ namespace Little_Hafiz
         }
 
         private void StdScore_ValueChanged(object sender, EventArgs e)
-        {
-            CompetitionGradeData.Score = (float)stdScore.Value;
-            DatabaseHelper.UpdateStudentGrade(CompetitionGradeData);
-        }
-
+            => saveBtn.Visible = true;
+        
         private void StdRank_ValueChanged(object sender, EventArgs e)
+            => saveBtn.Visible = true;
+        
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
-            CompetitionGradeData.Rank = (int)stdRank.Value;
-            DatabaseHelper.UpdateStudentGrade(CompetitionGradeData);
+            if (DatabaseHelper.UpdateStudentGrade(CompetitionGradeData) == -1)
+                MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                saveBtn.Visible = false;
         }
 
+        private void DeleteBtn_Click(object sender, EventArgs e)
+            => Program.Form.DeleteStudentGradeRow(this);
+        
         #region Border Radius
         private readonly int borderRadius = 20;
 

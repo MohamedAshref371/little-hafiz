@@ -520,6 +520,42 @@ namespace Little_Hafiz
         #endregion
 
         #region Student Grades Panel
+
+        public void DeleteStudentGradeRow(StudentGradeRow row)
+        {
+            if (MessageBox.Show("هل انت متأكد أنك تريد حذف هذه المسابقة لهذا الطالب ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+            {
+                if (DatabaseHelper.DeleteStudentGrade(row.CompetitionGradeData) != -1)
+                {
+                    var panel = studentGradesListPanel.Controls;
+                    int idx = panel.IndexOf(row);
+
+                    for (int i = idx + 1; i < panel.Count; i++)
+                        if (panel[i].Top > panel[idx].Top)
+                            panel[i].Top -= panel[idx].Height + 3;
+
+                    panel.RemoveAt(idx);
+
+                    compCount.Text = (int.Parse(compCount.Text) - 1).ToString();
+                    UpdateStudentRow();
+                    PrevCurrLevel();
+                }
+                else
+                    MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PrevCurrLevel()
+        {
+            prevLevel.Minimum = 0; prevLevel.Maximum = 10;
+            prevLevel.Value = currentStudent.StudentSearchRowData.CompetitionLevel ?? 0;
+            SetPrevLevelMinMax();
+
+            if (prevLevel.Value == 0) currentLevel.Value = 10;
+            else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
+            stdCode.Value = 0;
+        }
+
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
         {
             studentSearchPanel.Visible = false;
@@ -535,13 +571,7 @@ namespace Little_Hafiz
             stdImagePath2.Text = data.Image;
             SetStudentImage2();
 
-            prevLevel.Minimum = 0; prevLevel.Maximum = 10;
-            prevLevel.Value = data.CompetitionLevel ?? 0;
-            SetPrevLevelMinMax();
-
-            if (prevLevel.Value == 0) currentLevel.Value = 10;
-            else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
-            stdCode.Value = 0;
+            PrevCurrLevel();
 
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
