@@ -609,10 +609,8 @@ namespace Little_Hafiz
         }
 
         private void CompDateLabel_DoubleClick(object sender, EventArgs e)
-        {
-            compDate.Value = DateTime.Now;
-        }
-
+            => compDate.Value = DateTime.Now;
+        
         private void CompDate_ValueChanged(object sender, EventArgs e)
         {
             float year = 0;
@@ -714,10 +712,9 @@ namespace Little_Hafiz
             fs?.SetControl(stdRow);
             fs?.SetControls(stdRow.Controls);
             studentGradesListPanel.Controls.Add(stdRow);
-            prevLevel.Value = currentLevel.Value;
-            SetPrevLevelMinMax();
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
             UpdateStudentRow();
+            PrevCurrLevel();
         }
 
         private void CancelBtn2_Click(object sender, EventArgs e)

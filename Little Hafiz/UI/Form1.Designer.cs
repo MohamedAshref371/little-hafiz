@@ -832,7 +832,7 @@
             this.stdBrothers.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdBrothers.Location = new System.Drawing.Point(615, 607);
             this.stdBrothers.Maximum = new decimal(new int[] {
-            20,
+            25,
             0,
             0,
             0});
