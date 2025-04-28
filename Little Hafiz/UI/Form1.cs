@@ -523,26 +523,25 @@ namespace Little_Hafiz
 
         public void DeleteStudentGradeRow(StudentGradeRow row)
         {
-            if (MessageBox.Show("هل انت متأكد أنك تريد حذف هذه المسابقة لهذا الطالب ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+            if (MessageBox.Show("هل انت متأكد أنك تريد حذف هذه المسابقة لهذا الطالب ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) != DialogResult.Yes) return;
+
+            if (DatabaseHelper.DeleteStudentGrade(row.CompetitionGradeData) != -1)
             {
-                if (DatabaseHelper.DeleteStudentGrade(row.CompetitionGradeData) != -1)
-                {
-                    var panel = studentGradesListPanel.Controls;
-                    int idx = panel.IndexOf(row);
+                var panel = studentGradesListPanel.Controls;
+                int idx = panel.IndexOf(row);
 
-                    for (int i = idx + 1; i < panel.Count; i++)
-                        if (panel[i].Top > panel[idx].Top)
-                            panel[i].Top -= panel[idx].Height + 3;
+                for (int i = idx + 1; i < panel.Count; i++)
+                    if (panel[i].Top > panel[idx].Top)
+                        panel[i].Top -= panel[idx].Height + 3;
 
-                    panel.RemoveAt(idx);
+                panel.RemoveAt(idx);
 
-                    compCount.Text = (int.Parse(compCount.Text) - 1).ToString();
-                    UpdateStudentRow();
-                    PrevCurrLevel();
-                }
-                else
-                    MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                compCount.Text = (int.Parse(compCount.Text) - 1).ToString();
+                UpdateStudentRow();
+                PrevCurrLevel();
             }
+            else
+                MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void PrevCurrLevel()
