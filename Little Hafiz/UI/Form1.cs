@@ -135,16 +135,13 @@ namespace Little_Hafiz
         {
             if (selectDataFolderDialog.ShowDialog() != DialogResult.OK) return;
 
-            int num = DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
-            if (num == 0)
-            {
-                MessageBox.Show("سنغلق البرنامج لإتاحة الفرصة لأرشفة البرنامج أو نسخه", "تنبيه !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CloseBtn_Click(null, null);
-            }
-            else if (num > 0)
-                MessageBox.Show($"عدد الملفات التي حدث فيها أخطاء {num} أثناء التنفيذ", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                MessageBox.Show("لا يمكن تنفيذ هذا الأمر، أغلق البرنامج وأعد المحاولة مجددا", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            string[] err = DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
+            if (err is null)
+                MessageBox.Show("لا يمكن تنفيذ هذا الأمر، أغلق البرنامج وأعد المحاولة مجددا", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (err.Length == 0)
+                MessageBox.Show("انتهى البرنامج بلا أخطاء والحمد لله", "🥳", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (err.Length > 0)
+                MessageBox.Show($"الملفات التي حدث فيها أخطاء أثناء التنفيذ\n{string.Join("\n", err)}", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)

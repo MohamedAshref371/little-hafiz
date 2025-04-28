@@ -40,10 +40,6 @@ namespace Little_Hafiz
             if (!Directory.Exists(imagesFolder))
                 Directory.CreateDirectory(imagesFolder);
 
-            RemoveEmptyRecords();
-            if (!File.Exists(recordFile))
-                File.WriteAllText(recordFile, "");
-
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
 
@@ -506,19 +502,19 @@ namespace Little_Hafiz
                 File.Delete(file);
         }
 
-        public static int ReadRecords(string folder)
+        public static string[] ReadRecords(string folder)
         {
-            if (!success) return -1;
+            if (!success) return null;
             string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly).OrderBy(f => f).ToArray();
 
-            int err = 0;
+            List<string> err = new List<string>();
             for (int i = 0; i < dataFiles.Length; i++)
                 if (ExecuteNonQuery(File.ReadAllText(dataFiles[i])) == -1)
-                    err += 1;
+                    err.Add(Path.GetFileName(dataFiles[i]));
 
             RemoveOldImages();
             RemoveAllRecords();
-            return err;
+            return err.ToArray();
         }
 
         private static void DatabaseBackup()
