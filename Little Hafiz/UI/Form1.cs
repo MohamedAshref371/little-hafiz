@@ -537,8 +537,11 @@ namespace Little_Hafiz
                 panel.RemoveAt(idx);
 
                 compCount.Text = (int.Parse(compCount.Text) - 1).ToString();
-                UpdateStudentRow();
-                PrevCurrLevel();
+                if (idx == panel.Count)
+                {
+                    UpdateStudentRow();
+                    PrevCurrLevel();
+                }
             }
             else
                 MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
