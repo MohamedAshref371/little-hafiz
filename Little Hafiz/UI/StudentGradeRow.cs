@@ -43,6 +43,9 @@ namespace Little_Hafiz
         
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            CompetitionGradeData.Score = (float)stdScore.Value;
+            CompetitionGradeData.Rank = (int)stdRank.Value;
+
             if (DatabaseHelper.UpdateStudentGrade(CompetitionGradeData) == -1)
                 MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
