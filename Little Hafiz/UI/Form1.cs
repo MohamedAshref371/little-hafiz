@@ -716,14 +716,13 @@ namespace Little_Hafiz
             studentGradesListPanel.Controls.Add(stdRow);
             prevLevel.Value = currentLevel.Value;
             SetPrevLevelMinMax();
-            currentStudent.StudentSearchRowData.CompetitionDate = newDate;
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
+            UpdateStudentRow();
         }
 
         private void CancelBtn2_Click(object sender, EventArgs e)
         {
             studentGradesPanel.Visible = false;
-            UpdateStudentRow();
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
