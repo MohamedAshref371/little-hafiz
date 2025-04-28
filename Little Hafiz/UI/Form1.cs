@@ -623,7 +623,7 @@ namespace Little_Hafiz
             stdAge.Tag = year;
         }
 
-        bool showMessageAtStdCodeIsZero = true;
+        bool showMessageAtStdCodeIsZero = true, showSureMessage = true;
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
@@ -682,11 +682,16 @@ namespace Little_Hafiz
             {
                 if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
                 {
-                    DialogResult res = MessageBox.Show("هل تريد تذكر هذا الاختيار ؟", "تنبيه !!!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                    if (res == DialogResult.Yes)
-                        showMessageAtStdCodeIsZero = false;
-                    else if (res == DialogResult.Cancel)
-                        return;
+                    if (showSureMessage)
+                    {
+                        DialogResult res = MessageBox.Show("هل تريد تذكر هذا الاختيار ؟", "تنبيه !!!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                        if (res == DialogResult.Yes)
+                            showMessageAtStdCodeIsZero = false;
+                        else if (res == DialogResult.No)
+                            showSureMessage = false;
+                        else if (res == DialogResult.Cancel)
+                            return;
+                    }
                 }
                 else
                     return;
