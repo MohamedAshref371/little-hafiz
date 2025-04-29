@@ -219,10 +219,6 @@ namespace Little_Hafiz
         StudentSearchRow currentStudent;
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {
-            studentSearchPanel.Visible = false;
-            studentsListPanel.Visible = false;
-            footerPanel.Visible = false;
-
             currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
             string national = currentStudent.StudentSearchRowData.NationalNumber;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
@@ -233,6 +229,10 @@ namespace Little_Hafiz
             }
 
             SetStudentData(stdData);
+
+            studentSearchPanel.Visible = false;
+            studentsListPanel.Visible = false;
+            footerPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
             stdNational.Enabled = false;
