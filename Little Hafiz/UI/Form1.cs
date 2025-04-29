@@ -853,11 +853,11 @@ namespace Little_Hafiz
         #region Footer Panel
         private void OpenAddStudentBtn_Click(object sender, EventArgs e)
         {
+            SetStudentData(null);
+
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
-
-            SetStudentData(null);
 
             addStudentBtn.Text = "إضافة";
             stdNational.Enabled = true;
