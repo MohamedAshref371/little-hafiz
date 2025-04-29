@@ -40,16 +40,19 @@ namespace Little_Hafiz
         
         private void StdRank_ValueChanged(object sender, EventArgs e)
             => saveBtn.Visible = true;
-        
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             CompetitionGradeData.Score = (float)stdScore.Value;
             CompetitionGradeData.Rank = (int)stdRank.Value;
 
-            if (DatabaseHelper.UpdateStudentGrade(CompetitionGradeData) == -1)
-                MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
+            if (DatabaseHelper.UpdateStudentGrade(CompetitionGradeData) != -1)
+            {
                 saveBtn.Visible = false;
+                Program.Form.UpdateRankOfStudentRow(this, CompetitionGradeData.Rank);
+            }
+            else
+                MessageBox.Show("حدث خطأ غير معروف", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)

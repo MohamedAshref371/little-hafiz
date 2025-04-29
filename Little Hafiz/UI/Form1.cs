@@ -216,6 +216,13 @@ namespace Little_Hafiz
             }
         }
 
+        public void UpdateRankOfStudentRow(StudentGradeRow row, int rank)
+        {
+            var panel = studentGradesListPanel.Controls;
+            if (panel.IndexOf(row) == panel.Count - 1)
+                currentStudent.SetRank(rank);
+        }
+
         StudentSearchRow currentStudent;
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {

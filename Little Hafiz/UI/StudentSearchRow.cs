@@ -46,6 +46,12 @@ namespace Little_Hafiz
             stdRank.Text = Ranks.ConvertNumberToRank(data.Rank);
         }
 
+        public void SetRank(int rank)
+        {
+            StudentSearchRowData.Rank = rank;
+            stdRank.Text = Ranks.ConvertNumberToRank(rank);
+        }
+
         #region Border Radius
         private readonly int borderRadius = 20;
 
