@@ -267,7 +267,6 @@
             this.studentDataPanel.Controls.Add(this.stdCertificates);
             this.studentDataPanel.Controls.Add(this.stdCertificatesLabel);
             this.studentDataPanel.Controls.Add(this.stdFirstConclusion);
-            this.studentDataPanel.Controls.Add(this.stdFirstConclusionCheckBox);
             this.studentDataPanel.Controls.Add(this.stdJoiningDate);
             this.studentDataPanel.Controls.Add(this.stdJoiningDateLabel);
             this.studentDataPanel.Controls.Add(this.stdMemoPlaces);
@@ -326,6 +325,7 @@
             this.studentDataPanel.Controls.Add(this.stdPhoneLabel);
             this.studentDataPanel.Controls.Add(this.stdSchoolLabel);
             this.studentDataPanel.Controls.Add(this.stdImagePath);
+            this.studentDataPanel.Controls.Add(this.stdFirstConclusionCheckBox);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.Location = new System.Drawing.Point(12, 37);
@@ -585,17 +585,16 @@
             // 
             // stdFirstConclusionCheckBox
             // 
-            this.stdFirstConclusionCheckBox.AutoSize = true;
             this.stdFirstConclusionCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.stdFirstConclusionCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdFirstConclusionCheckBox.CheckedState.BorderRadius = 3;
             this.stdFirstConclusionCheckBox.CheckedState.BorderThickness = 1;
             this.stdFirstConclusionCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdFirstConclusionCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(236, 782);
+            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(236, 779);
             this.stdFirstConclusionCheckBox.Name = "stdFirstConclusionCheckBox";
             this.stdFirstConclusionCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(203, 23);
+            this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(203, 29);
             this.stdFirstConclusionCheckBox.TabIndex = 58;
             this.stdFirstConclusionCheckBox.Text = "تاريخ إتمام الختمة الأولى :";
             this.stdFirstConclusionCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -1663,13 +1662,13 @@
             this.studentSearchPanel.BorderThickness = 1;
             this.studentSearchPanel.Controls.Add(this.searchBtn);
             this.studentSearchPanel.Controls.Add(this.stdEmailSearch);
-            this.studentSearchPanel.Controls.Add(this.stdEmailCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdPhoneSearch);
-            this.studentSearchPanel.Controls.Add(this.stdPhoneCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNationalSearch);
-            this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNameSearch);
             this.studentSearchPanel.Controls.Add(this.searchPanelTitle);
+            this.studentSearchPanel.Controls.Add(this.stdEmailCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdPhoneCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNameCheckBox);
             this.studentSearchPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentSearchPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -1712,7 +1711,7 @@
             this.stdEmailSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdEmailSearch.ForeColor = System.Drawing.Color.Black;
             this.stdEmailSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdEmailSearch.Location = new System.Drawing.Point(23, 90);
+            this.stdEmailSearch.Location = new System.Drawing.Point(23, 95);
             this.stdEmailSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdEmailSearch.Name = "stdEmailSearch";
             this.stdEmailSearch.PlaceholderText = "";
@@ -1724,17 +1723,16 @@
             // 
             // stdEmailCheckBox
             // 
-            this.stdEmailCheckBox.AutoSize = true;
             this.stdEmailCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.stdEmailCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdEmailCheckBox.CheckedState.BorderRadius = 3;
             this.stdEmailCheckBox.CheckedState.BorderThickness = 1;
             this.stdEmailCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdEmailCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdEmailCheckBox.Location = new System.Drawing.Point(328, 99);
+            this.stdEmailCheckBox.Location = new System.Drawing.Point(328, 95);
             this.stdEmailCheckBox.Name = "stdEmailCheckBox";
             this.stdEmailCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 23);
+            this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 34);
             this.stdEmailCheckBox.TabIndex = 79;
             this.stdEmailCheckBox.Text = "الإيميل :";
             this.stdEmailCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -1771,17 +1769,16 @@
             // 
             // stdPhoneCheckBox
             // 
-            this.stdPhoneCheckBox.AutoSize = true;
             this.stdPhoneCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.stdPhoneCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhoneCheckBox.CheckedState.BorderRadius = 3;
             this.stdPhoneCheckBox.CheckedState.BorderThickness = 1;
             this.stdPhoneCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhoneCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdPhoneCheckBox.Location = new System.Drawing.Point(785, 99);
+            this.stdPhoneCheckBox.Location = new System.Drawing.Point(785, 95);
             this.stdPhoneCheckBox.Name = "stdPhoneCheckBox";
             this.stdPhoneCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdPhoneCheckBox.Size = new System.Drawing.Size(124, 23);
+            this.stdPhoneCheckBox.Size = new System.Drawing.Size(124, 34);
             this.stdPhoneCheckBox.TabIndex = 77;
             this.stdPhoneCheckBox.Text = "هاتف الطالب :";
             this.stdPhoneCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -1818,17 +1815,16 @@
             // 
             // stdNationalCheckBox
             // 
-            this.stdNationalCheckBox.AutoSize = true;
             this.stdNationalCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.stdNationalCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNationalCheckBox.CheckedState.BorderRadius = 3;
             this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
             this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalCheckBox.Location = new System.Drawing.Point(287, 53);
+            this.stdNationalCheckBox.Location = new System.Drawing.Point(287, 49);
             this.stdNationalCheckBox.Name = "stdNationalCheckBox";
             this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 23);
+            this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 34);
             this.stdNationalCheckBox.TabIndex = 75;
             this.stdNationalCheckBox.Text = "الرقم القومي :";
             this.stdNationalCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -1878,17 +1874,16 @@
             // 
             // stdNameCheckBox
             // 
-            this.stdNameCheckBox.AutoSize = true;
             this.stdNameCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.stdNameCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNameCheckBox.CheckedState.BorderRadius = 3;
             this.stdNameCheckBox.CheckedState.BorderThickness = 1;
             this.stdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameCheckBox.Location = new System.Drawing.Point(829, 53);
+            this.stdNameCheckBox.Location = new System.Drawing.Point(823, 49);
             this.stdNameCheckBox.Name = "stdNameCheckBox";
             this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameCheckBox.Size = new System.Drawing.Size(80, 23);
+            this.stdNameCheckBox.Size = new System.Drawing.Size(85, 34);
             this.stdNameCheckBox.TabIndex = 0;
             this.stdNameCheckBox.Text = "الإسم :";
             this.stdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -2107,7 +2102,6 @@
             // 
             // dataRecorderCheckBox
             // 
-            this.dataRecorderCheckBox.AutoSize = true;
             this.dataRecorderCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.dataRecorderCheckBox.Checked = true;
             this.dataRecorderCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));

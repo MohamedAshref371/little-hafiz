@@ -140,6 +140,7 @@ namespace Little_Hafiz
                     Properties.Settings.Default.Save();
                 }
                 disableAtAll.Visible = true;
+                disableAtAllCounter = 0;
             }
         }
 
@@ -566,7 +567,7 @@ namespace Little_Hafiz
 
                 for (int i = idx + 1; i < panel.Count; i++)
                     if (panel[i].Top > panel[idx].Top)
-                        panel[i].Top -= panel[idx].Height + 3;
+                        panel[i].Top -= panel[idx].Height + (fs?.GetNewY(3) ?? 3);
 
                 panel.RemoveAt(idx);
 
@@ -751,8 +752,8 @@ namespace Little_Hafiz
             }
 
             Control lastControl = studentGradesListPanel.Controls[studentGradesListPanel.Controls.Count - 1];
-            StudentGradeRow stdRow = new StudentGradeRow(data) { Location = new Point(30, lastControl.Bottom + 3)};
-            fs?.SetControl(stdRow);
+            StudentGradeRow stdRow = new StudentGradeRow(data) { Location = new Point((fs?.GetNewX(30) ?? 30), lastControl.Bottom + (fs?.GetNewY(3) ?? 3)) };
+            fs?.SetControl(stdRow, loc: false);
             fs?.SetControls(stdRow.Controls);
             studentGradesListPanel.Controls.Add(stdRow);
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();

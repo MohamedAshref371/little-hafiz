@@ -14,9 +14,9 @@ class FormSize
         yDiv = newSizeY / (double)oldSizeY;
     }
 
-    public void SetControl(Control control, bool setFont = true)
+    public void SetControl(Control control, bool setFont = true, bool loc = true)
     {
-        control.Location = new Point(Round(control.Location.X * xDiv), Round(control.Location.Y * yDiv));
+        if (loc) control.Location = new Point(Round(control.Location.X * xDiv), Round(control.Location.Y * yDiv));
         control.Size = new Size(Round(control.Size.Width * xDiv), Round(control.Size.Height * yDiv));
         if (setFont) control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
     }
