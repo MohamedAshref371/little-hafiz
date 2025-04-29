@@ -182,6 +182,7 @@
             this.wrongThingLabel = new System.Windows.Forms.Label();
             this.wrongThing2Label = new System.Windows.Forms.Label();
             this.ranksPanelTitle = new System.Windows.Forms.Label();
+            this.disableAtAll = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
@@ -2077,6 +2078,7 @@
             this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
+            this.headerPanel.Controls.Add(this.disableAtAll);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -2125,7 +2127,6 @@
             this.dataRecorderCheckBox.UncheckedState.BorderThickness = 1;
             this.dataRecorderCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.dataRecorderCheckBox.UseVisualStyleBackColor = false;
-            this.dataRecorderCheckBox.CheckedChanged += new System.EventHandler(this.DataRecorderCheckBox_CheckedChanged);
             // 
             // formImage
             // 
@@ -2856,6 +2857,15 @@
             this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
             this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // disableAtAll
+            // 
+            this.disableAtAll.BackColor = System.Drawing.Color.Transparent;
+            this.disableAtAll.Location = new System.Drawing.Point(506, 11);
+            this.disableAtAll.Name = "disableAtAll";
+            this.disableAtAll.Size = new System.Drawing.Size(8, 15);
+            this.disableAtAll.TabIndex = 87;
+            this.disableAtAll.Click += new System.EventHandler(this.DisableAtAll_Click);
+            // 
             // selectDataFolderDialog
             // 
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
@@ -3056,6 +3066,7 @@
         private System.Windows.Forms.Label wrongThing2Label;
         private System.Windows.Forms.Label compsLabel;
         private System.Windows.Forms.Label levelCompCount;
+        private System.Windows.Forms.Label disableAtAll;
     }
 }
 

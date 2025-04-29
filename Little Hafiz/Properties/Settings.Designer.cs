@@ -34,5 +34,17 @@ namespace Little_Hafiz.Properties {
                 this["BackupEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RecordEnabled {
+            get {
+                return ((bool)(this["RecordEnabled"]));
+            }
+            set {
+                this["RecordEnabled"] = value;
+            }
+        }
     }
 }

@@ -6,6 +6,8 @@ namespace Little_Hafiz
     internal static class Program
     {
         public static Form1 Form;
+        public static bool Record = true;
+
         [STAThread]
         static void Main()
         {
@@ -28,6 +30,7 @@ namespace Little_Hafiz
                 System.Threading.Mutex mutex = new System.Threading.Mutex(true, Application.ProductName + Application.CompanyName, out bool createdNew);
                 if (createdNew)
                 {
+                    Record = Properties.Settings.Default.RecordEnabled;
                     Form = new Form1();
                     Application.Run(Form);
                     mutex.ReleaseMutex();

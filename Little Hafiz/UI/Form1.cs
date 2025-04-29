@@ -80,6 +80,10 @@ namespace Little_Hafiz
             ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
 
+            dataRecorderCheckBox.Checked = Program.Record;
+            disableAtAll.Visible = Program.Record;
+            dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
+
             Timer timer2 = new Timer { Interval = 1 };
             timer2.Tick += (s, e1) =>
             {
@@ -127,8 +131,31 @@ namespace Little_Hafiz
         {
             if (!dataRecorderCheckBox.Checked && MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
                 dataRecorderCheckBox.Checked = true;
+            else
+            {
+                Program.Record = dataRecorderCheckBox.Checked;
+                if (!disableAtAll.Visible)
+                {
+                    Properties.Settings.Default.RecordEnabled = true;
+                    Properties.Settings.Default.Save();
+                }
+                disableAtAll.Visible = true;
+            }
+        }
 
-            DatabaseHelper.Record = dataRecorderCheckBox.Checked;
+        int disableAtAllCounter = 0;
+        private void DisableAtAll_Click(object sender, EventArgs e)
+        {
+            if (Program.Record) return;
+            disableAtAllCounter++;
+            if (disableAtAllCounter < 5) return;
+            disableAtAllCounter = 0;
+            if (MessageBox.Show("هل تريد ابقاء هذا التعطيل مع كل مرة تفتح فيها البرنامج؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+            {
+                Properties.Settings.Default.RecordEnabled = false;
+                Properties.Settings.Default.Save();
+                disableAtAll.Visible = false;
+            }
         }
 
         private void ReadRecordsBtn_Click(object sender, EventArgs e)

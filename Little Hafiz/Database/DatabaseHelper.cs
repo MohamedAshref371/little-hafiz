@@ -18,8 +18,6 @@ namespace Little_Hafiz
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
 
-        public static bool Record { private get; set; } = true;
-
         #region Metadata
         public static int Version { get; private set; }
         public static DateTime CreateDate { get; private set; }
@@ -383,28 +381,28 @@ namespace Little_Hafiz
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ", Record);
+            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ", Program.Record);
         }
 
         public static int AddGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ", Record);
+            => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ", Program.Record);
 
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ", Record);
+            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ", Program.Record);
         }
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Record);
+            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Program.Record);
 
         public static int UpdateStudentRank(CompetitionRankData data)
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
 
         public static int DeleteStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Record);
+            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Program.Record);
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
