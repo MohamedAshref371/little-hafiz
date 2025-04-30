@@ -58,7 +58,7 @@
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdName.Size = new System.Drawing.Size(398, 40);
             this.stdName.TabIndex = 53;
-            this.stdName.Text = "إسم الطالب";
+            this.stdName.Text = "اسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StudentRank

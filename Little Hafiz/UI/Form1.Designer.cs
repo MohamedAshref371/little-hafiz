@@ -363,7 +363,7 @@
             this.stdImageSelectorBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdImageSelectorBtn.Size = new System.Drawing.Size(108, 32);
             this.stdImageSelectorBtn.TabIndex = 71;
-            this.stdImageSelectorBtn.Text = "إختيار ...";
+            this.stdImageSelectorBtn.Text = "اختيار ...";
             this.stdImageSelectorBtn.Click += new System.EventHandler(this.StdImageSelectorBtn_Click);
             // 
             // stdImageLabel
@@ -1378,7 +1378,7 @@
             this.studentPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
             this.studentPanelTitle.TabIndex = 2;
-            this.studentPanelTitle.Text = "إستمارة بيانات الطالب";
+            this.studentPanelTitle.Text = "استمارة بيانات الطالب";
             // 
             // stdName
             // 
@@ -1560,7 +1560,7 @@
             this.stdNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameLabel.Size = new System.Drawing.Size(66, 19);
             this.stdNameLabel.TabIndex = 1;
-            this.stdNameLabel.Text = "الإسم : ";
+            this.stdNameLabel.Text = "الاسم : ";
             // 
             // stdPhoneLabel
             // 
@@ -1885,7 +1885,7 @@
             this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameCheckBox.Size = new System.Drawing.Size(85, 32);
             this.stdNameCheckBox.TabIndex = 0;
-            this.stdNameCheckBox.Text = "الإسم :";
+            this.stdNameCheckBox.Text = "الاسم :";
             this.stdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdNameCheckBox.UncheckedState.BorderRadius = 3;
             this.stdNameCheckBox.UncheckedState.BorderThickness = 1;
@@ -2021,7 +2021,7 @@
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.extractExcelBtn.Size = new System.Drawing.Size(196, 39);
             this.extractExcelBtn.TabIndex = 84;
-            this.extractExcelBtn.Text = "إستخراج ملف excel";
+            this.extractExcelBtn.Text = "استخراج ملف excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
             // 
             // excelRowsFilter
@@ -2530,7 +2530,7 @@
             this.stdNameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameLabel2.Size = new System.Drawing.Size(101, 19);
             this.stdNameLabel2.TabIndex = 73;
-            this.stdNameLabel2.Text = "إسم الطالب :";
+            this.stdNameLabel2.Text = "اسم الطالب :";
             // 
             // studentImage2
             // 

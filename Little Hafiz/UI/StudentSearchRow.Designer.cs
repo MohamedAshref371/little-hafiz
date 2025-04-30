@@ -45,7 +45,7 @@
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdName.Size = new System.Drawing.Size(365, 72);
             this.stdName.TabIndex = 0;
-            this.stdName.Text = "إسم الطالب";
+            this.stdName.Text = "اسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // compLevel
@@ -100,7 +100,7 @@
             this.studentBtn.Name = "studentBtn";
             this.studentBtn.Size = new System.Drawing.Size(148, 34);
             this.studentBtn.TabIndex = 4;
-            this.studentBtn.Text = "نظرة خاطفة";
+            this.studentBtn.Text = "بيانات الطالب";
             // 
             // gradesBtn
             // 
@@ -118,7 +118,7 @@
             this.gradesBtn.Name = "gradesBtn";
             this.gradesBtn.Size = new System.Drawing.Size(148, 34);
             this.gradesBtn.TabIndex = 5;
-            this.gradesBtn.Text = "الدرجات";
+            this.gradesBtn.Text = "المسابقات";
             // 
             // StudentSearchRow
             // 
