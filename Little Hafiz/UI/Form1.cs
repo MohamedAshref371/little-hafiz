@@ -700,21 +700,13 @@ namespace Little_Hafiz
                 MessageBox.Show("هذا الطالب وُلِد للتو");
                 return;
             }
-            if ((float)stdAge.Tag > 35)
-            {
-                MessageBox.Show("لا يمكن لهذا الطالب دخول المسابقة لأن عمره أكبر من 35 عاما");
-                return;
-            }
-            if (topRank >= 2)
-            {
-                MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة");
-                return;
-            }
-            if ((float)stdAge.Tag > 25 && currentLevel.Value != 1)
-            {
-                MessageBox.Show("يمكن للطالب الذي عمره أكبر من 25 عاما أن يدخل المستوى الأول فقط");
-                return;
-            }
+
+            if (topRank >= 2 && MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+            if ((float)stdAge.Tag > 35 && MessageBox.Show("هذا الطالب عمره أكبر من 35 عاما", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+            
+            if ((float)stdAge.Tag > 25 && currentLevel.Value != 1 && MessageBox.Show("هذا الطالب عمره أكبر من 25 عاما ومستوى المسابقة أقل من الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+            
             if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
             {
                 if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
