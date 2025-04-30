@@ -737,7 +737,7 @@
             this.stdMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMaritalStatus.ForeColor = System.Drawing.Color.Black;
             this.stdMaritalStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMaritalStatus.Location = new System.Drawing.Point(542, 654);
+            this.stdMaritalStatus.Location = new System.Drawing.Point(536, 654);
             this.stdMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdMaritalStatus.Name = "stdMaritalStatus";
             this.stdMaritalStatus.PlaceholderText = "";
@@ -752,12 +752,12 @@
             this.stdMaritalStatusLabel.AutoSize = true;
             this.stdMaritalStatusLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMaritalStatusLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMaritalStatusLabel.Location = new System.Drawing.Point(778, 659);
+            this.stdMaritalStatusLabel.Location = new System.Drawing.Point(783, 659);
             this.stdMaritalStatusLabel.Name = "stdMaritalStatusLabel";
             this.stdMaritalStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMaritalStatusLabel.Size = new System.Drawing.Size(127, 19);
+            this.stdMaritalStatusLabel.Size = new System.Drawing.Size(134, 19);
             this.stdMaritalStatusLabel.TabIndex = 47;
-            this.stdMaritalStatusLabel.Text = "الحالة الاجتماعية : ";
+            this.stdMaritalStatusLabel.Text = "الحالة الاجتماعية: ";
             // 
             // stdArrangementLabel
             // 
@@ -843,7 +843,7 @@
             this.stdSchool.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdSchool.ForeColor = System.Drawing.Color.Black;
             this.stdSchool.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdSchool.Location = new System.Drawing.Point(542, 568);
+            this.stdSchool.Location = new System.Drawing.Point(536, 568);
             this.stdSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdSchool.Name = "stdSchool";
             this.stdSchool.PlaceholderText = "";
@@ -905,7 +905,7 @@
             this.stdEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdEmail.ForeColor = System.Drawing.Color.Black;
             this.stdEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdEmail.Location = new System.Drawing.Point(542, 528);
+            this.stdEmail.Location = new System.Drawing.Point(536, 528);
             this.stdEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdEmail.Name = "stdEmail";
             this.stdEmail.PlaceholderText = "";
@@ -1016,7 +1016,7 @@
             this.stdPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdPhone.ForeColor = System.Drawing.Color.Black;
             this.stdPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdPhone.Location = new System.Drawing.Point(542, 488);
+            this.stdPhone.Location = new System.Drawing.Point(536, 488);
             this.stdPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdPhone.MaxLength = 14;
             this.stdPhone.Name = "stdPhone";
@@ -1037,7 +1037,6 @@
             this.guardianLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guardianLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guardianLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianLink.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.guardianLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guardianLink.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guardianLink.ForeColor = System.Drawing.Color.Black;
@@ -1058,7 +1057,7 @@
             this.guardianBirth.BorderRadius = 15;
             this.guardianBirth.Checked = true;
             this.guardianBirth.CustomFormat = "yyyy/MM/dd";
-            this.guardianBirth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.guardianBirth.FillColor = System.Drawing.Color.White;
             this.guardianBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guardianBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guardianBirth.Location = new System.Drawing.Point(43, 431);
@@ -1079,12 +1078,11 @@
             this.guardianName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guardianName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guardianName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.guardianName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guardianName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guardianName.ForeColor = System.Drawing.Color.Black;
             this.guardianName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guardianName.Location = new System.Drawing.Point(542, 431);
+            this.guardianName.Location = new System.Drawing.Point(536, 431);
             this.guardianName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guardianName.Name = "guardianName";
             this.guardianName.PlaceholderText = "";
@@ -1104,7 +1102,6 @@
             this.motherPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.motherPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherPhone.ForeColor = System.Drawing.Color.Black;
@@ -1129,12 +1126,11 @@
             this.fatherPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.fatherPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherPhone.ForeColor = System.Drawing.Color.Black;
             this.fatherPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherPhone.Location = new System.Drawing.Point(542, 387);
+            this.fatherPhone.Location = new System.Drawing.Point(536, 387);
             this.fatherPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fatherPhone.MaxLength = 14;
             this.fatherPhone.Name = "fatherPhone";
@@ -1155,7 +1151,6 @@
             this.motherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.motherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherJob.ForeColor = System.Drawing.Color.Black;
@@ -1180,12 +1175,11 @@
             this.motherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.motherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherQuali.ForeColor = System.Drawing.Color.Black;
             this.motherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.motherQuali.Location = new System.Drawing.Point(542, 347);
+            this.motherQuali.Location = new System.Drawing.Point(536, 347);
             this.motherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.motherQuali.Name = "motherQuali";
             this.motherQuali.PlaceholderText = "";
@@ -1205,7 +1199,6 @@
             this.fatherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.fatherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherJob.ForeColor = System.Drawing.Color.Black;
@@ -1230,12 +1223,11 @@
             this.fatherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.fatherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherQuali.ForeColor = System.Drawing.Color.Black;
             this.fatherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherQuali.Location = new System.Drawing.Point(542, 307);
+            this.fatherQuali.Location = new System.Drawing.Point(536, 307);
             this.fatherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fatherQuali.Name = "fatherQuali";
             this.fatherQuali.PlaceholderText = "";
@@ -1341,7 +1333,7 @@
             this.stdBirthDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDate.Location = new System.Drawing.Point(542, 248);
+            this.stdBirthDate.Location = new System.Drawing.Point(536, 248);
             this.stdBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDate.Name = "stdBirthDate";
@@ -1402,7 +1394,7 @@
             this.stdName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdName.ForeColor = System.Drawing.Color.Black;
             this.stdName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdName.Location = new System.Drawing.Point(542, 194);
+            this.stdName.Location = new System.Drawing.Point(536, 194);
             this.stdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdName.Name = "stdName";
             this.stdName.PlaceholderText = "";
