@@ -589,7 +589,7 @@ namespace Little_Hafiz
             SetPrevLevelMinMax();
 
             if (prevLevel.Value == 0) currentLevel.Value = 10;
-            else if (prevLevel.Value > 1) currentLevel.Value = prevLevel.Value - 1;
+            else if (prevLevel.Value > 2) currentLevel.Value = prevLevel.Value - 1;
 
             if (stdCodeState == 0)
                 stdCode.Value = 0;
