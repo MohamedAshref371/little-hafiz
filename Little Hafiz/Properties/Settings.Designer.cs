@@ -46,5 +46,17 @@ namespace Little_Hafiz.Properties {
                 this["RecordEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckUpdate {
+            get {
+                return ((bool)(this["CheckUpdate"]));
+            }
+            set {
+                this["CheckUpdate"] = value;
+            }
+        }
     }
 }

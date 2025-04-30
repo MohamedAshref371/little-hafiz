@@ -84,14 +84,25 @@ namespace Little_Hafiz
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
-            Timer timer2 = new Timer { Interval = 1 };
-            timer2.Tick += (s, e1) =>
+            if (Properties.Settings.Default.CheckUpdate)
             {
-                timer2.Stop();
-                DownloadUpdate();
-                timer2.Dispose();
-            };
-            timer2.Start();
+                Timer timer2 = new Timer { Interval = 1 };
+                timer2.Tick += (s, e1) =>
+                {
+                    timer2.Stop();
+                    DownloadUpdate();
+                    timer2.Dispose();
+                };
+                timer2.Start();
+            }
+        }
+
+        private void StudentPanelTitle_DoubleClick(object sender, EventArgs e)
+        {
+            bool check = Properties.Settings.Default.CheckUpdate;
+            Properties.Settings.Default.CheckUpdate = !check;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("تم " + (check ? "تعطيل" : "تفعيل") + " فحص التحديثات عند فتح البرنامج");
         }
 
         static void DownloadUpdate()

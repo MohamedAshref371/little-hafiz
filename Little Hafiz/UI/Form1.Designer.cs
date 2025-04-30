@@ -1383,6 +1383,7 @@
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
             this.studentPanelTitle.TabIndex = 2;
             this.studentPanelTitle.Text = "استمارة بيانات الطالب";
+            this.studentPanelTitle.DoubleClick += new System.EventHandler(this.StudentPanelTitle_DoubleClick);
             // 
             // stdName
             // 
