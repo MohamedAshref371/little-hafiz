@@ -1979,6 +1979,7 @@
             this.stdBirthDateFromCheckBox.UncheckedState.BorderThickness = 1;
             this.stdBirthDateFromCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.stdBirthDateFromCheckBox.UseVisualStyleBackColor = false;
+            this.stdBirthDateFromCheckBox.CheckedChanged += new System.EventHandler(this.StdBirthDateFromCheckBox_CheckedChanged);
             // 
             // stdBirthDateCheckBox
             // 

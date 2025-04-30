@@ -216,9 +216,16 @@ namespace Little_Hafiz
             }
         }
 
+        private void StdBirthDateFromCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stdBirthDateCheckBox.Checked)
+                stdBirthDateSearch.Enabled = stdBirthDateFromCheckBox.Checked || !stdBirthDateToCheckBox.Checked;
+        }
+
         private void StdBirthDateToCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             stdBirthDateToSearch.Enabled = stdBirthDateToCheckBox.Checked;
+            StdBirthDateFromCheckBox_CheckedChanged(null, null);
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
