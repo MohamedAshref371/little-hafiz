@@ -56,8 +56,8 @@
             this.stdMashaykhLabel = new System.Windows.Forms.Label();
             this.stdMemo = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMemoLabel = new System.Windows.Forms.Label();
-            this.stdLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.stdLevelLabel = new System.Windows.Forms.Label();
+            this.stdMaritalStatus = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdMaritalStatusLabel = new System.Windows.Forms.Label();
             this.stdArrangementLabel = new System.Windows.Forms.Label();
             this.stdArrangement = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdBrothersLabel = new System.Windows.Forms.Label();
@@ -186,7 +186,6 @@
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
@@ -275,8 +274,8 @@
             this.studentDataPanel.Controls.Add(this.stdMashaykhLabel);
             this.studentDataPanel.Controls.Add(this.stdMemo);
             this.studentDataPanel.Controls.Add(this.stdMemoLabel);
-            this.studentDataPanel.Controls.Add(this.stdLevel);
-            this.studentDataPanel.Controls.Add(this.stdLevelLabel);
+            this.studentDataPanel.Controls.Add(this.stdMaritalStatus);
+            this.studentDataPanel.Controls.Add(this.stdMaritalStatusLabel);
             this.studentDataPanel.Controls.Add(this.stdArrangementLabel);
             this.studentDataPanel.Controls.Add(this.stdArrangement);
             this.studentDataPanel.Controls.Add(this.stdBrothersLabel);
@@ -723,34 +722,42 @@
             this.stdMemoLabel.TabIndex = 49;
             this.stdMemoLabel.Text = "مقدار الحفظ : ";
             // 
-            // stdLevel
+            // stdMaritalStatus
             // 
-            this.stdLevel.BackColor = System.Drawing.Color.Transparent;
-            this.stdLevel.BorderRadius = 3;
-            this.stdLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdLevel.Location = new System.Drawing.Point(615, 654);
-            this.stdLevel.Maximum = new decimal(new int[] {
-            240,
-            0,
-            0,
-            0});
-            this.stdLevel.Name = "stdLevel";
-            this.stdLevel.Size = new System.Drawing.Size(100, 32);
-            this.stdLevel.TabIndex = 48;
-            this.stdLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.BackColor = System.Drawing.Color.Transparent;
+            this.stdMaritalStatus.BorderRadius = 5;
+            this.stdMaritalStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdMaritalStatus.DefaultText = "";
+            this.stdMaritalStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdMaritalStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdMaritalStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMaritalStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMaritalStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdMaritalStatus.ForeColor = System.Drawing.Color.Black;
+            this.stdMaritalStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.Location = new System.Drawing.Point(542, 654);
+            this.stdMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdMaritalStatus.Name = "stdMaritalStatus";
+            this.stdMaritalStatus.PlaceholderText = "";
+            this.stdMaritalStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMaritalStatus.SelectedText = "";
+            this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
+            this.stdMaritalStatus.TabIndex = 48;
+            this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
-            // stdLevelLabel
+            // stdMaritalStatusLabel
             // 
-            this.stdLevelLabel.AutoSize = true;
-            this.stdLevelLabel.BackColor = System.Drawing.Color.Transparent;
-            this.stdLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdLevelLabel.Location = new System.Drawing.Point(779, 659);
-            this.stdLevelLabel.Name = "stdLevelLabel";
-            this.stdLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdLevelLabel.Size = new System.Drawing.Size(127, 19);
-            this.stdLevelLabel.TabIndex = 47;
-            this.stdLevelLabel.Text = "مستوى الطالب : ";
+            this.stdMaritalStatusLabel.AutoSize = true;
+            this.stdMaritalStatusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdMaritalStatusLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdMaritalStatusLabel.Location = new System.Drawing.Point(778, 659);
+            this.stdMaritalStatusLabel.Name = "stdMaritalStatusLabel";
+            this.stdMaritalStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMaritalStatusLabel.Size = new System.Drawing.Size(127, 19);
+            this.stdMaritalStatusLabel.TabIndex = 47;
+            this.stdMaritalStatusLabel.Text = "الحالة الاجتماعية : ";
             // 
             // stdArrangementLabel
             // 
@@ -1011,7 +1018,7 @@
             this.stdPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhone.Location = new System.Drawing.Point(542, 488);
             this.stdPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdPhone.MaxLength = 11;
+            this.stdPhone.MaxLength = 14;
             this.stdPhone.Name = "stdPhone";
             this.stdPhone.PlaceholderText = "";
             this.stdPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1104,7 +1111,7 @@
             this.motherPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherPhone.Location = new System.Drawing.Point(43, 387);
             this.motherPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.motherPhone.MaxLength = 11;
+            this.motherPhone.MaxLength = 14;
             this.motherPhone.Name = "motherPhone";
             this.motherPhone.PlaceholderText = "";
             this.motherPhone.SelectedText = "";
@@ -1129,7 +1136,7 @@
             this.fatherPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherPhone.Location = new System.Drawing.Point(542, 387);
             this.fatherPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.fatherPhone.MaxLength = 11;
+            this.fatherPhone.MaxLength = 14;
             this.fatherPhone.Name = "fatherPhone";
             this.fatherPhone.PlaceholderText = "";
             this.fatherPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1738,7 +1745,7 @@
             this.stdPhoneSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhoneSearch.Location = new System.Drawing.Point(521, 95);
             this.stdPhoneSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdPhoneSearch.MaxLength = 11;
+            this.stdPhoneSearch.MaxLength = 14;
             this.stdPhoneSearch.Name = "stdPhoneSearch";
             this.stdPhoneSearch.PlaceholderText = "";
             this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1995,11 +2002,11 @@
             this.excelDateFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.excelDateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.excelDateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.excelDateFilter.Location = new System.Drawing.Point(388, 7);
+            this.excelDateFilter.Location = new System.Drawing.Point(204, 7);
             this.excelDateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.excelDateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.excelDateFilter.Name = "excelDateFilter";
-            this.excelDateFilter.Size = new System.Drawing.Size(131, 36);
+            this.excelDateFilter.Size = new System.Drawing.Size(111, 36);
             this.excelDateFilter.TabIndex = 85;
             this.excelDateFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.excelDateFilter.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
@@ -2014,14 +2021,14 @@
             this.extractExcelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.extractExcelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.extractExcelBtn.FillColor = System.Drawing.Color.DarkGreen;
-            this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.extractExcelBtn.ForeColor = System.Drawing.Color.White;
             this.extractExcelBtn.Location = new System.Drawing.Point(6, 5);
             this.extractExcelBtn.Name = "extractExcelBtn";
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.extractExcelBtn.Size = new System.Drawing.Size(196, 39);
+            this.extractExcelBtn.Size = new System.Drawing.Size(79, 39);
             this.extractExcelBtn.TabIndex = 84;
-            this.extractExcelBtn.Text = "استخراج ملف excel";
+            this.extractExcelBtn.Text = "excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
             // 
             // excelRowsFilter
@@ -2033,7 +2040,7 @@
             this.excelRowsFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.excelRowsFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.excelRowsFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.excelRowsFilter.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.excelRowsFilter.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.excelRowsFilter.ForeColor = System.Drawing.Color.Black;
             this.excelRowsFilter.ItemHeight = 30;
             this.excelRowsFilter.Items.AddRange(new object[] {
@@ -2042,11 +2049,11 @@
             "... تحديد السنة",
             "هذا الشهر",
             "... تحديد الشهر"});
-            this.excelRowsFilter.Location = new System.Drawing.Point(206, 7);
+            this.excelRowsFilter.Location = new System.Drawing.Point(86, 7);
             this.excelRowsFilter.Name = "excelRowsFilter";
             this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.excelRowsFilter.Size = new System.Drawing.Size(179, 36);
-            this.excelRowsFilter.StartIndex = 0;
+            this.excelRowsFilter.Size = new System.Drawing.Size(116, 36);
+            this.excelRowsFilter.StartIndex = 1;
             this.excelRowsFilter.TabIndex = 83;
             this.excelRowsFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.excelRowsFilter.SelectedIndexChanged += new System.EventHandler(this.ExcelRowsFilter_SelectedIndexChanged);
@@ -2882,7 +2889,6 @@
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stdLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
             this.studentSearchPanel.ResumeLayout(false);
@@ -2960,8 +2966,8 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown stdArrangement;
         private Guna.UI2.WinForms.Guna2TextBox stdMemo;
         private System.Windows.Forms.Label stdMemoLabel;
-        private Guna.UI2.WinForms.Guna2NumericUpDown stdLevel;
-        private System.Windows.Forms.Label stdLevelLabel;
+        private Guna.UI2.WinForms.Guna2TextBox stdMaritalStatus;
+        private System.Windows.Forms.Label stdMaritalStatusLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdMemoPlaces;
         private Guna.UI2.WinForms.Guna2TextBox stdMashaykh;
         private System.Windows.Forms.Label stdMemoPlacesLabel;

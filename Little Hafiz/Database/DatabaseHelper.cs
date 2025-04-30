@@ -51,7 +51,7 @@ namespace Little_Hafiz
             {
                 conn.Open();
                 command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
-                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, student_level INTEGER, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
                                       "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, PRIMARY KEY (national, competition_date) );" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
                 command.ExecuteNonQuery();
@@ -153,7 +153,7 @@ namespace Little_Hafiz
 
         private static readonly StringBuilder sb = new StringBuilder();
         private static readonly List<string> conds = new List<string>();
-        public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, StudentState? state = null, string phoneNumber = null, string email = null, int? level = null)
+        public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, string birthDate = null, StudentState? state = null, string phoneNumber = null, string email = null)
         {
             sb.Clear(); conds.Clear();
             sb.Append("SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
@@ -166,6 +166,9 @@ namespace Little_Hafiz
                 if (nationalNumber != null)
                     conds.Add($"students.national LIKE '%{nationalNumber}%'");
 
+                if (birthDate != null)
+                    conds.Add($"birth_date = '{birthDate}%'");
+
                 if (state != null)
                     conds.Add($"state = {(int)state}");
 
@@ -174,9 +177,6 @@ namespace Little_Hafiz
 
                 if (email != null)
                     conds.Add($"email LIKE '%{email}%'");
-
-                if (level != null)
-                    conds.Add($"student_level = {level}");
             }
             else { conds.Add($"students.national = '{nationalNumber}'"); }
 
@@ -257,7 +257,7 @@ namespace Little_Hafiz
                 Class = (string)reader["class"],
                 BrothersCount = reader.GetInt32(19),
                 ArrangementBetweenBrothers = reader.GetInt32(20),
-                Level = reader.GetInt32(21),
+                MaritalStatus = (string)reader["marital_status"],
                 MemorizationAmount = (string)reader["memo_amount"],
                 StudentMashaykh = (string)reader["mashaykh"],
                 MemorizePlaces = (string)reader["memo_places"],

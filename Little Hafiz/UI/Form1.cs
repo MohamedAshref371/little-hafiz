@@ -428,7 +428,7 @@ namespace Little_Hafiz
                 Class = stdClass.Text,
                 BrothersCount = (int)stdBrothers.Value,
                 ArrangementBetweenBrothers = (int)stdArrangement.Value,
-                Level = (int)stdLevel.Value,
+                MaritalStatus = stdMaritalStatus.Text,
                 MemorizationAmount = stdMemo.Text,
                 StudentMashaykh = stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlaces.Text,
@@ -480,7 +480,7 @@ namespace Little_Hafiz
             stdClass.Text = "";
             stdBrothers.Value = 0;
             //stdArrangement.Value = 1;
-            stdLevel.Value = 0;
+            stdMaritalStatus.Text = "";
             stdMemo.Text = "";
             stdMashaykh.Text = "";
             stdMemoPlaces.Text = "";
@@ -518,7 +518,7 @@ namespace Little_Hafiz
             stdClass.Text = stdData.Class;
             stdBrothers.Value = stdData.BrothersCount;
             stdArrangement.Value = stdData.ArrangementBetweenBrothers;
-            stdLevel.Value = stdData.Level;
+            stdMaritalStatus.Text = stdData.MaritalStatus;
             stdMemo.Text = stdData.MemorizationAmount;
             stdMashaykh.Text = stdData.StudentMashaykh;
             stdMemoPlaces.Text = stdData.MemorizePlaces;
