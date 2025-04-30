@@ -12,7 +12,7 @@ namespace Little_Hafiz
     internal static class DatabaseHelper
     {
         private static bool success = false;
-        private static readonly int classVersion = 2;
+        private static readonly int classVersion = 3;
         private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
