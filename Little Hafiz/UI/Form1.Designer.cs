@@ -781,6 +781,7 @@
             this.stdArrangement.BackColor = System.Drawing.Color.Transparent;
             this.stdArrangement.BorderRadius = 3;
             this.stdArrangement.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdArrangement.FillColor = System.Drawing.Color.Azure;
             this.stdArrangement.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdArrangement.Location = new System.Drawing.Point(117, 607);
             this.stdArrangement.Maximum = new decimal(new int[] {
@@ -820,6 +821,7 @@
             this.stdBrothers.BackColor = System.Drawing.Color.Transparent;
             this.stdBrothers.BorderRadius = 3;
             this.stdBrothers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdBrothers.FillColor = System.Drawing.Color.Azure;
             this.stdBrothers.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdBrothers.Location = new System.Drawing.Point(615, 607);
             this.stdBrothers.Maximum = new decimal(new int[] {
@@ -1042,6 +1044,7 @@
             this.guardianLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guardianLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guardianLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianLink.FillColor = System.Drawing.Color.Azure;
             this.guardianLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guardianLink.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guardianLink.ForeColor = System.Drawing.Color.Black;
@@ -1062,7 +1065,7 @@
             this.guardianBirth.BorderRadius = 15;
             this.guardianBirth.Checked = true;
             this.guardianBirth.CustomFormat = "yyyy/MM/dd";
-            this.guardianBirth.FillColor = System.Drawing.Color.White;
+            this.guardianBirth.FillColor = System.Drawing.Color.Azure;
             this.guardianBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guardianBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guardianBirth.Location = new System.Drawing.Point(43, 431);
@@ -1083,6 +1086,7 @@
             this.guardianName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guardianName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guardianName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianName.FillColor = System.Drawing.Color.Azure;
             this.guardianName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guardianName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guardianName.ForeColor = System.Drawing.Color.Black;
@@ -1107,6 +1111,7 @@
             this.motherPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherPhone.FillColor = System.Drawing.Color.Azure;
             this.motherPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherPhone.ForeColor = System.Drawing.Color.Black;
@@ -1131,6 +1136,7 @@
             this.fatherPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherPhone.FillColor = System.Drawing.Color.Azure;
             this.fatherPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherPhone.ForeColor = System.Drawing.Color.Black;
@@ -1156,6 +1162,7 @@
             this.motherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherJob.FillColor = System.Drawing.Color.Azure;
             this.motherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherJob.ForeColor = System.Drawing.Color.Black;
@@ -1180,6 +1187,7 @@
             this.motherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.motherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.motherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherQuali.FillColor = System.Drawing.Color.Azure;
             this.motherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.motherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.motherQuali.ForeColor = System.Drawing.Color.Black;
@@ -1204,6 +1212,7 @@
             this.fatherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherJob.FillColor = System.Drawing.Color.Azure;
             this.fatherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherJob.ForeColor = System.Drawing.Color.Black;
@@ -1228,6 +1237,7 @@
             this.fatherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.fatherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.fatherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherQuali.FillColor = System.Drawing.Color.Azure;
             this.fatherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fatherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.fatherQuali.ForeColor = System.Drawing.Color.Black;

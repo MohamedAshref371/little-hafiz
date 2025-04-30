@@ -29,6 +29,6 @@ namespace Little_Hafiz
         public string ImageName => Image.Split('\\').Last();
 
         public override string ToString()
-            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, {MaritalStatus}, '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
+            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
     }
 }

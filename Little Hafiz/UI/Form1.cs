@@ -19,6 +19,7 @@ namespace Little_Hafiz
 
         #region Form1
         private readonly int SizeX = 950, SizeY = 700;
+        private int NewSizeX = 950, NewSizeY = 700;
 
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
@@ -126,16 +127,29 @@ namespace Little_Hafiz
         FormSize fs = null;
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+                fs = new FormSize(NewSizeX, NewSizeY, SizeX, SizeY);
+                fs.SetControls(Controls);
+                fs = null;
+            }
+            else if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+                NewSizeX = Size.Width; NewSizeY = Size.Height;
 
-            fs = new FormSize(SizeX, SizeY, Size.Width, Size.Height);
-            fs.SetControls(Controls);
+                fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
+                fs.SetControls(Controls);
 
-            maximizeBtn.Visible = false;
-            minimizeBtn.Location = new Point(maximizeBtn.Location.X - maximizeBtn.Size.Width + minimizeBtn.Size.Width, minimizeBtn.Location.Y);
-
-            if (studentDataPanel.Visible) SetStudentImage();
-            if (studentGradesPanel.Visible) SetStudentImage2();
+                //maximizeBtn.Visible = false;
+                //minimizeBtn.Location = new Point(maximizeBtn.Location.X - maximizeBtn.Size.Width + minimizeBtn.Size.Width, minimizeBtn.Location.Y);
+            }
+            if (WindowState != FormWindowState.Minimized)
+            {
+                if (studentDataPanel.Visible) SetStudentImage();
+                if (studentGradesPanel.Visible) SetStudentImage2();
+            }
         }
 
         private void DataRecorderCheckBox_CheckedChanged(object sender, EventArgs e)
