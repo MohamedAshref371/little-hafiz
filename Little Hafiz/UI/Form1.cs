@@ -203,12 +203,47 @@ namespace Little_Hafiz
             Properties.Settings.Default.Save();
         }
 
+        private void StdYearBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!stdYearBirthDateCheckBox.Checked)
+            {
+                stdMonthBirthDateCheckBox.Checked = false;
+                stdDayBirthDateCheckBox.Checked = false;
+            }
+        }
+
+        private void StdMonthBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stdMonthBirthDateCheckBox.Checked)
+                stdYearBirthDateCheckBox.Checked = true;
+            else
+                stdDayBirthDateCheckBox.Checked = false;
+        }
+
+        private void StdDayBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stdDayBirthDateCheckBox.Checked)
+            {
+                stdYearBirthDateCheckBox.Checked = true;
+                stdMonthBirthDateCheckBox.Checked = true;
+            }
+        }
+
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            string birth = null;
+            if (stdYearBirthDateCheckBox.Checked)
+            {
+                birth = "yyyy";
+                if (stdMonthBirthDateCheckBox.Checked) birth += "/MM";
+                if (stdDayBirthDateCheckBox.Checked) birth += "/dd";
+                birth = stdBirthDateSearch.Value.ToString(birth);
+            }
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents
                     (
                         undoubtedName: stdNameCheckBox.Checked ? stdNameSearch.Text : null,
                         nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
+                        birthDate: birth,
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
                         email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
                     );
