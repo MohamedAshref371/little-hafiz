@@ -111,6 +111,8 @@
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdBirthDateToSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -121,6 +123,9 @@
             this.stdPhoneCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdNationalCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.stdBirthDateToCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.stdBirthDateFromCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.stdBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -184,11 +189,6 @@
             this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.stdYearBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.stdBirthDateLabel = new System.Windows.Forms.Label();
-            this.stdMonthBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.stdDayBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1664,7 +1664,7 @@
             this.studentSearchPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentSearchPanel.BorderRadius = 5;
             this.studentSearchPanel.BorderThickness = 1;
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateLabel);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateToSearch);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateSearch);
             this.studentSearchPanel.Controls.Add(this.searchBtn);
             this.studentSearchPanel.Controls.Add(this.stdEmailSearch);
@@ -1676,9 +1676,9 @@
             this.studentSearchPanel.Controls.Add(this.stdPhoneCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNameCheckBox);
-            this.studentSearchPanel.Controls.Add(this.stdDayBirthDateCheckBox);
-            this.studentSearchPanel.Controls.Add(this.stdMonthBirthDateCheckBox);
-            this.studentSearchPanel.Controls.Add(this.stdYearBirthDateCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateFromCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateCheckBox);
             this.studentSearchPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentSearchPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentSearchPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -1686,6 +1686,42 @@
             this.studentSearchPanel.Name = "studentSearchPanel";
             this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
             this.studentSearchPanel.TabIndex = 74;
+            // 
+            // stdBirthDateToSearch
+            // 
+            this.stdBirthDateToSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateToSearch.BorderRadius = 15;
+            this.stdBirthDateToSearch.Checked = true;
+            this.stdBirthDateToSearch.CustomFormat = "yyyy/MM/dd";
+            this.stdBirthDateToSearch.Enabled = false;
+            this.stdBirthDateToSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdBirthDateToSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stdBirthDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stdBirthDateToSearch.Location = new System.Drawing.Point(10, 51);
+            this.stdBirthDateToSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.stdBirthDateToSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.stdBirthDateToSearch.Name = "stdBirthDateToSearch";
+            this.stdBirthDateToSearch.Size = new System.Drawing.Size(120, 36);
+            this.stdBirthDateToSearch.TabIndex = 87;
+            this.stdBirthDateToSearch.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            // 
+            // stdBirthDateSearch
+            // 
+            this.stdBirthDateSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateSearch.BorderRadius = 15;
+            this.stdBirthDateSearch.Checked = true;
+            this.stdBirthDateSearch.CustomFormat = "yyyy/MM/dd";
+            this.stdBirthDateSearch.Enabled = false;
+            this.stdBirthDateSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdBirthDateSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stdBirthDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stdBirthDateSearch.Location = new System.Drawing.Point(186, 51);
+            this.stdBirthDateSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.stdBirthDateSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.stdBirthDateSearch.Name = "stdBirthDateSearch";
+            this.stdBirthDateSearch.Size = new System.Drawing.Size(120, 36);
+            this.stdBirthDateSearch.TabIndex = 84;
+            this.stdBirthDateSearch.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // searchBtn
             // 
@@ -1829,7 +1865,7 @@
             this.stdEmailCheckBox.CheckedState.BorderThickness = 1;
             this.stdEmailCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdEmailCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdEmailCheckBox.Location = new System.Drawing.Point(390, 99);
+            this.stdEmailCheckBox.Location = new System.Drawing.Point(381, 99);
             this.stdEmailCheckBox.Name = "stdEmailCheckBox";
             this.stdEmailCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 32);
@@ -1869,7 +1905,7 @@
             this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
             this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalCheckBox.Location = new System.Drawing.Point(349, 10);
+            this.stdNationalCheckBox.Location = new System.Drawing.Point(340, 9);
             this.stdNationalCheckBox.Name = "stdNationalCheckBox";
             this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 32);
@@ -1900,6 +1936,70 @@
             this.stdNameCheckBox.UncheckedState.BorderThickness = 1;
             this.stdNameCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.stdNameCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // stdBirthDateToCheckBox
+            // 
+            this.stdBirthDateToCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateToCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateToCheckBox.CheckedState.BorderRadius = 3;
+            this.stdBirthDateToCheckBox.CheckedState.BorderThickness = 1;
+            this.stdBirthDateToCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateToCheckBox.Enabled = false;
+            this.stdBirthDateToCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdBirthDateToCheckBox.Location = new System.Drawing.Point(127, 53);
+            this.stdBirthDateToCheckBox.Name = "stdBirthDateToCheckBox";
+            this.stdBirthDateToCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdBirthDateToCheckBox.Size = new System.Drawing.Size(55, 32);
+            this.stdBirthDateToCheckBox.TabIndex = 86;
+            this.stdBirthDateToCheckBox.Text = "إلى";
+            this.stdBirthDateToCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdBirthDateToCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdBirthDateToCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdBirthDateToCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdBirthDateToCheckBox.UseVisualStyleBackColor = false;
+            this.stdBirthDateToCheckBox.CheckedChanged += new System.EventHandler(this.StdBirthDateToCheckBox_CheckedChanged);
+            // 
+            // stdBirthDateFromCheckBox
+            // 
+            this.stdBirthDateFromCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateFromCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateFromCheckBox.CheckedState.BorderRadius = 3;
+            this.stdBirthDateFromCheckBox.CheckedState.BorderThickness = 1;
+            this.stdBirthDateFromCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateFromCheckBox.Enabled = false;
+            this.stdBirthDateFromCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdBirthDateFromCheckBox.Location = new System.Drawing.Point(302, 53);
+            this.stdBirthDateFromCheckBox.Name = "stdBirthDateFromCheckBox";
+            this.stdBirthDateFromCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdBirthDateFromCheckBox.Size = new System.Drawing.Size(50, 32);
+            this.stdBirthDateFromCheckBox.TabIndex = 88;
+            this.stdBirthDateFromCheckBox.Text = "من";
+            this.stdBirthDateFromCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdBirthDateFromCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdBirthDateFromCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdBirthDateFromCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdBirthDateFromCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // stdBirthDateCheckBox
+            // 
+            this.stdBirthDateCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateCheckBox.CheckedState.BorderRadius = 3;
+            this.stdBirthDateCheckBox.CheckedState.BorderThickness = 1;
+            this.stdBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdBirthDateCheckBox.Location = new System.Drawing.Point(349, 53);
+            this.stdBirthDateCheckBox.Name = "stdBirthDateCheckBox";
+            this.stdBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
+            this.stdBirthDateCheckBox.TabIndex = 82;
+            this.stdBirthDateCheckBox.Text = "تاريخ الميلاد :";
+            this.stdBirthDateCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdBirthDateCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdBirthDateCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdBirthDateCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdBirthDateCheckBox.UseVisualStyleBackColor = false;
+            this.stdBirthDateCheckBox.CheckedChanged += new System.EventHandler(this.StdBirthDateCheckBox_CheckedChanged);
             // 
             // studentsListPanel
             // 
@@ -2875,97 +2975,6 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
-            // stdYearBirthDateCheckBox
-            // 
-            this.stdYearBirthDateCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdYearBirthDateCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdYearBirthDateCheckBox.CheckedState.BorderRadius = 3;
-            this.stdYearBirthDateCheckBox.CheckedState.BorderThickness = 1;
-            this.stdYearBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdYearBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdYearBirthDateCheckBox.Location = new System.Drawing.Point(285, 53);
-            this.stdYearBirthDateCheckBox.Name = "stdYearBirthDateCheckBox";
-            this.stdYearBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdYearBirthDateCheckBox.Size = new System.Drawing.Size(71, 32);
-            this.stdYearBirthDateCheckBox.TabIndex = 82;
-            this.stdYearBirthDateCheckBox.Text = "السنة";
-            this.stdYearBirthDateCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdYearBirthDateCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdYearBirthDateCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdYearBirthDateCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdYearBirthDateCheckBox.UseVisualStyleBackColor = false;
-            this.stdYearBirthDateCheckBox.CheckedChanged += new System.EventHandler(this.StdYearBirthDateCheckBox_CheckedChanged);
-            // 
-            // stdBirthDateSearch
-            // 
-            this.stdBirthDateSearch.BackColor = System.Drawing.Color.Transparent;
-            this.stdBirthDateSearch.BorderRadius = 15;
-            this.stdBirthDateSearch.Checked = true;
-            this.stdBirthDateSearch.CustomFormat = "yyyy/MM/dd";
-            this.stdBirthDateSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdBirthDateSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stdBirthDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDateSearch.Location = new System.Drawing.Point(23, 52);
-            this.stdBirthDateSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.stdBirthDateSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.stdBirthDateSearch.Name = "stdBirthDateSearch";
-            this.stdBirthDateSearch.Size = new System.Drawing.Size(128, 36);
-            this.stdBirthDateSearch.TabIndex = 84;
-            this.stdBirthDateSearch.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            // 
-            // stdBirthDateLabel
-            // 
-            this.stdBirthDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateLabel.Location = new System.Drawing.Point(359, 53);
-            this.stdBirthDateLabel.Name = "stdBirthDateLabel";
-            this.stdBirthDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdBirthDateLabel.Size = new System.Drawing.Size(100, 32);
-            this.stdBirthDateLabel.TabIndex = 85;
-            this.stdBirthDateLabel.Text = "تاريخ الميلاد :";
-            this.stdBirthDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // stdMonthBirthDateCheckBox
-            // 
-            this.stdMonthBirthDateCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdMonthBirthDateCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMonthBirthDateCheckBox.CheckedState.BorderRadius = 3;
-            this.stdMonthBirthDateCheckBox.CheckedState.BorderThickness = 1;
-            this.stdMonthBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMonthBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMonthBirthDateCheckBox.Location = new System.Drawing.Point(214, 53);
-            this.stdMonthBirthDateCheckBox.Name = "stdMonthBirthDateCheckBox";
-            this.stdMonthBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMonthBirthDateCheckBox.Size = new System.Drawing.Size(71, 32);
-            this.stdMonthBirthDateCheckBox.TabIndex = 86;
-            this.stdMonthBirthDateCheckBox.Text = "الشهر";
-            this.stdMonthBirthDateCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdMonthBirthDateCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdMonthBirthDateCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdMonthBirthDateCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdMonthBirthDateCheckBox.UseVisualStyleBackColor = false;
-            this.stdMonthBirthDateCheckBox.CheckedChanged += new System.EventHandler(this.StdMonthBirthDateCheckBox_CheckedChanged);
-            // 
-            // stdDayBirthDateCheckBox
-            // 
-            this.stdDayBirthDateCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdDayBirthDateCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdDayBirthDateCheckBox.CheckedState.BorderRadius = 3;
-            this.stdDayBirthDateCheckBox.CheckedState.BorderThickness = 1;
-            this.stdDayBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdDayBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdDayBirthDateCheckBox.Location = new System.Drawing.Point(140, 53);
-            this.stdDayBirthDateCheckBox.Name = "stdDayBirthDateCheckBox";
-            this.stdDayBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdDayBirthDateCheckBox.Size = new System.Drawing.Size(71, 32);
-            this.stdDayBirthDateCheckBox.TabIndex = 87;
-            this.stdDayBirthDateCheckBox.Text = "اليوم";
-            this.stdDayBirthDateCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdDayBirthDateCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdDayBirthDateCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdDayBirthDateCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdDayBirthDateCheckBox.UseVisualStyleBackColor = false;
-            this.stdDayBirthDateCheckBox.CheckedChanged += new System.EventHandler(this.StdDayBirthDateCheckBox_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3160,11 +3169,11 @@
         private System.Windows.Forms.Label compsLabel;
         private System.Windows.Forms.Label levelCompCount;
         private System.Windows.Forms.Label disableAtAll;
-        private Guna.UI2.WinForms.Guna2CheckBox stdYearBirthDateCheckBox;
+        private Guna.UI2.WinForms.Guna2CheckBox stdBirthDateCheckBox;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdBirthDateSearch;
-        private Guna.UI2.WinForms.Guna2CheckBox stdMonthBirthDateCheckBox;
-        private System.Windows.Forms.Label stdBirthDateLabel;
-        private Guna.UI2.WinForms.Guna2CheckBox stdDayBirthDateCheckBox;
+        private Guna.UI2.WinForms.Guna2CheckBox stdBirthDateToCheckBox;
+        private Guna.UI2.WinForms.Guna2DateTimePicker stdBirthDateToSearch;
+        private Guna.UI2.WinForms.Guna2CheckBox stdBirthDateFromCheckBox;
     }
 }
 

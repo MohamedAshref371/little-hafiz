@@ -203,41 +203,32 @@ namespace Little_Hafiz
             Properties.Settings.Default.Save();
         }
 
-        private void StdYearBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void StdBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!stdYearBirthDateCheckBox.Checked)
+            stdBirthDateFromCheckBox.Enabled = stdBirthDateCheckBox.Checked;
+            stdBirthDateToCheckBox.Enabled = stdBirthDateCheckBox.Checked;
+            stdBirthDateSearch.Enabled = stdBirthDateCheckBox.Checked;
+
+            if (!stdBirthDateCheckBox.Checked)
             {
-                stdMonthBirthDateCheckBox.Checked = false;
-                stdDayBirthDateCheckBox.Checked = false;
+                stdBirthDateFromCheckBox.Checked = false;
+                stdBirthDateToCheckBox.Checked = false;
             }
         }
 
-        private void StdMonthBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void StdBirthDateToCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (stdMonthBirthDateCheckBox.Checked)
-                stdYearBirthDateCheckBox.Checked = true;
-            else
-                stdDayBirthDateCheckBox.Checked = false;
-        }
-
-        private void StdDayBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (stdDayBirthDateCheckBox.Checked)
-            {
-                stdYearBirthDateCheckBox.Checked = true;
-                stdMonthBirthDateCheckBox.Checked = true;
-            }
+            stdBirthDateToSearch.Enabled = stdBirthDateToCheckBox.Checked;
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             string birth = null;
-            if (stdYearBirthDateCheckBox.Checked)
+            if (stdBirthDateCheckBox.Checked)
             {
-                birth = "yyyy";
-                if (stdMonthBirthDateCheckBox.Checked) birth += "/MM";
-                if (stdDayBirthDateCheckBox.Checked) birth += "/dd";
-                birth = stdBirthDateSearch.Value.ToString(birth);
+                if (stdBirthDateFromCheckBox.Checked || !stdBirthDateToCheckBox.Checked) birth = stdBirthDateSearch.Value.ToString("yyyy/MM/dd");
+                if (stdBirthDateFromCheckBox.Checked || stdBirthDateToCheckBox.Checked) birth += "|";
+                if (stdBirthDateToCheckBox.Checked) birth += stdBirthDateToSearch.Value.ToString("yyyy/MM/dd");
             }
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents
                     (

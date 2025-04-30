@@ -167,7 +167,18 @@ namespace Little_Hafiz
                     conds.Add($"students.national LIKE '%{nationalNumber}%'");
 
                 if (birthDate != null)
-                    conds.Add($"birth_date = '{birthDate}%'");
+                {
+                    string[] arr = birthDate.Split('|');
+                    if (arr.Length == 2)
+                    {
+                        if (arr[0] != "")
+                            conds.Add($"birth_date >= '{arr[0]}'");
+                        if (arr[1] != "")
+                            conds.Add($"birth_date <= '{arr[1]}'");
+                    }
+                    else
+                        conds.Add($"birth_date = '{birthDate}'");
+                }
 
                 if (state != null)
                     conds.Add($"state = {(int)state}");
