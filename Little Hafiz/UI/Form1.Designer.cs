@@ -135,7 +135,6 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
             this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -143,6 +142,7 @@
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.officeTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.formImage = new System.Windows.Forms.Label();
@@ -199,6 +199,7 @@
             this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -2213,25 +2214,6 @@
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
             // 
-            // officeEnterBtn
-            // 
-            this.officeEnterBtn.BackColor = System.Drawing.Color.Transparent;
-            this.officeEnterBtn.BorderRadius = 15;
-            this.officeEnterBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.officeEnterBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.officeEnterBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.officeEnterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.officeEnterBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.officeEnterBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.officeEnterBtn.ForeColor = System.Drawing.Color.Black;
-            this.officeEnterBtn.Location = new System.Drawing.Point(6, 5);
-            this.officeEnterBtn.Name = "officeEnterBtn";
-            this.officeEnterBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.officeEnterBtn.Size = new System.Drawing.Size(79, 39);
-            this.officeEnterBtn.TabIndex = 90;
-            this.officeEnterBtn.Text = "إدخال";
-            this.officeEnterBtn.Click += new System.EventHandler(this.OfficeEnterBtn_Click);
-            // 
             // officeHelperBtn
             // 
             this.officeHelperBtn.BorderRadius = 15;
@@ -2378,6 +2360,25 @@
             this.officeTextBox.Size = new System.Drawing.Size(400, 36);
             this.officeTextBox.TabIndex = 89;
             // 
+            // officeEnterBtn
+            // 
+            this.officeEnterBtn.BackColor = System.Drawing.Color.Transparent;
+            this.officeEnterBtn.BorderRadius = 15;
+            this.officeEnterBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.officeEnterBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.officeEnterBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.officeEnterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.officeEnterBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.officeEnterBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.officeEnterBtn.ForeColor = System.Drawing.Color.Black;
+            this.officeEnterBtn.Location = new System.Drawing.Point(6, 5);
+            this.officeEnterBtn.Name = "officeEnterBtn";
+            this.officeEnterBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.officeEnterBtn.Size = new System.Drawing.Size(79, 39);
+            this.officeEnterBtn.TabIndex = 90;
+            this.officeEnterBtn.Text = "إدخال";
+            this.officeEnterBtn.Click += new System.EventHandler(this.OfficeEnterBtn_Click);
+            // 
             // saveExcelFileDialog
             // 
             this.saveExcelFileDialog.Filter = "Excel files|*.xlsx";
@@ -2401,6 +2402,7 @@
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.disableAtAll);
+            this.headerPanel.Controls.Add(this.officeComboBox);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -3220,6 +3222,23 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // officeComboBox
+            // 
+            this.officeComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.officeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.officeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.officeComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.officeComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.officeComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.officeComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.officeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.officeComboBox.ItemHeight = 30;
+            this.officeComboBox.Location = new System.Drawing.Point(540, 1);
+            this.officeComboBox.Name = "officeComboBox";
+            this.officeComboBox.Size = new System.Drawing.Size(356, 36);
+            this.officeComboBox.TabIndex = 88;
+            this.officeComboBox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3429,6 +3448,7 @@
         private Guna.UI2.WinForms.Guna2TextBox compNotes;
         private Guna.UI2.WinForms.Guna2Button officeEnterBtn;
         private Guna.UI2.WinForms.Guna2TextBox officeTextBox;
+        private Guna.UI2.WinForms.Guna2ComboBox officeComboBox;
     }
 }
 

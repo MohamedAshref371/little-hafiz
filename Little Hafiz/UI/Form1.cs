@@ -115,6 +115,7 @@ namespace Little_Hafiz
             }
             stdOfficeSearch.Items.AddRange(offices);
             stdOffice.Items.AddRange(offices);
+            officeComboBox.Items.AddRange(offices);
 
             int ofc = DatabaseHelper.CurrentOffice;
 
@@ -130,18 +131,28 @@ namespace Little_Hafiz
                 stdOfficeCheckBox.Checked = true;
                 stdOfficeSearch.Enabled = false;
                 stdOfficeSearch.SelectedIndex = ofc;
+                officeComboBox.SelectedIndex = ofc;
             }
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
         {
+            if (officeComboBox.Visible)
+            {
+                DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
+                GetOffice();
+                officeComboBox.Visible = false;
+                formTitle.Visible = true;
+            }
+
             if (DatabaseHelper.CurrentOffice != 0)
                 MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
             
             if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secret.HashPassword))
                 return;
 
-
+            formTitle.Visible = false;
+            officeComboBox.Visible = true;
         }
 
         private void StudentPanelTitle_DoubleClick(object sender, EventArgs e)
