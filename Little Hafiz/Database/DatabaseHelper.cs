@@ -414,6 +414,9 @@ namespace Little_Hafiz
         public static int AddGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"INSERT INTO grades VALUES ({data});", Program.Record);
 
+        public static int AddOffice(string name, string notes)
+            => ExecuteNonQuery($"INSERT INTO offices (name, notes) VALUES ('{name}', '{notes}')");
+
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
@@ -421,9 +424,6 @@ namespace Little_Hafiz
 
             return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}';", Program.Record);
         }
-
-        public static int AddOffice(string name, string notes)
-            => ExecuteNonQuery($"INSERT INTO offices (name, notes) VALUES ({name}, {notes})");
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);

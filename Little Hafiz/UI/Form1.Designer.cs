@@ -396,6 +396,7 @@
             this.stdNotes.SelectedText = "";
             this.stdNotes.Size = new System.Drawing.Size(822, 96);
             this.stdNotes.TabIndex = 74;
+            this.stdNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdNotesLabel
             // 
@@ -2362,6 +2363,7 @@
             this.officeTextBox.Size = new System.Drawing.Size(400, 36);
             this.officeTextBox.TabIndex = 89;
             this.officeTextBox.Visible = false;
+            this.officeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // officeEnterBtn
             // 
@@ -2535,6 +2537,7 @@
             this.compNotes.SelectedText = "";
             this.compNotes.Size = new System.Drawing.Size(405, 32);
             this.compNotes.TabIndex = 100;
+            this.compNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // compCount
             // 
