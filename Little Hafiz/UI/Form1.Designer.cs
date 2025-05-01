@@ -3233,6 +3233,7 @@
             this.officeComboBox.Name = "officeComboBox";
             this.officeComboBox.Size = new System.Drawing.Size(356, 36);
             this.officeComboBox.TabIndex = 88;
+            this.officeComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.officeComboBox.Visible = false;
             // 
             // selectDataFolderDialog
