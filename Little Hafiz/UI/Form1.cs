@@ -3,6 +3,8 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
+using System.Text;
+using System.Security.Cryptography;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -741,7 +743,7 @@ namespace Little_Hafiz
 
         private void CompDateLabel_DoubleClick(object sender, EventArgs e)
             => compDate.Value = DateTime.Now;
-        
+
         private void CompDate_ValueChanged(object sender, EventArgs e)
         {
             float year = 0;
@@ -802,9 +804,9 @@ namespace Little_Hafiz
             if (topRank >= 2 && MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
 
             if ((float)stdAge.Tag > 35 && MessageBox.Show("هذا الطالب عمره أكبر من 35 عاما", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
-            
+
             if ((float)stdAge.Tag > 25 && currentLevel.Value != 1 && MessageBox.Show("هذا الطالب عمره أكبر من 25 عاما ومستوى المسابقة أقل من الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
-            
+
             if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
             {
                 if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
@@ -1136,8 +1138,19 @@ namespace Little_Hafiz
             ranksCalculatorPanel.Visible = true;
         }
 
+        int logIntoOfficeHelper = 0;
         private void OfficeHelperBtn_Click(object sender, EventArgs e)
         {
+            if (DatabaseHelper.CurrentOffice != 0 && logIntoOfficeHelper < 5)
+            {
+                MessageBox.Show("لا يمكن الدخول على هذه الشاشة إلا من النسخة الرئيسية");
+                logIntoOfficeHelper += 1;
+                return;
+            }
+            logIntoOfficeHelper = 0;
+            if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secret.HashPassword))
+                return;
+
 
         }
 
@@ -1145,5 +1158,19 @@ namespace Little_Hafiz
             => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
         #endregion
 
+
+        static string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                    builder.Append(b.ToString("x2"));
+
+                return builder.ToString();
+            }
+        }
     }
 }

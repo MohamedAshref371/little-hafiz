@@ -432,7 +432,10 @@ namespace Little_Hafiz
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
 
         public static int UpdateMetadataOffice(int office)
-            => ExecuteNonQuery($"UPDATE metadata SET office = {office}");
+        {
+            CurrentOffice = office;
+            return ExecuteNonQuery($"UPDATE metadata SET office = {office}");
+        }
 
         public static int DeleteStudentGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
