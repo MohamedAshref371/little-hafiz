@@ -143,6 +143,7 @@ namespace Little_Hafiz
                 GetOffice();
                 officeComboBox.Visible = false;
                 formTitle.Visible = true;
+                return;
             }
             if (DatabaseHelper.CurrentOffice != 0)
                 MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
