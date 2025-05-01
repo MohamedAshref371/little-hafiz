@@ -155,6 +155,16 @@ namespace Little_Hafiz
         FormSize fs = null;
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
+            studentDataPanel.VerticalScroll.Value = 0;
+            studentsListPanel.VerticalScroll.Value = 0;
+            studentGradesListPanel.VerticalScroll.Value = 0;
+            ranksListPanel.VerticalScroll.Value = 0;
+
+            studentDataPanel.PerformLayout();
+            studentsListPanel.PerformLayout();
+            studentGradesListPanel.PerformLayout();
+            ranksListPanel.PerformLayout();
+
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
