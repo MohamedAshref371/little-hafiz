@@ -2351,7 +2351,8 @@
             this.officeTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.officeTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.officeTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.officeTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.officeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.officeTextBox.ForeColor = System.Drawing.Color.Black;
             this.officeTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.officeTextBox.Location = new System.Drawing.Point(91, 7);
             this.officeTextBox.Name = "officeTextBox";
