@@ -1195,7 +1195,7 @@ namespace Little_Hafiz
             releasesLatestBtn.Visible = true;
             excelDateFilter.Visible = excelRowsFilter.SelectedIndex == 2 || excelRowsFilter.SelectedIndex == 4;
             excelRowsFilter.Visible = true;
-            officeEnterBtn.Visible = true;
+            extractExcelBtn.Visible = true;
         }
 
         private void OfficeHelperBtn_Click(object sender, EventArgs e)
@@ -1217,8 +1217,8 @@ namespace Little_Hafiz
 
             releasesLatestBtn.Visible = false;
             excelDateFilter.Visible = false;
-            excelRowsFilter.Visible = false; 
-            officeEnterBtn.Visible = false;
+            excelRowsFilter.Visible = false;
+            extractExcelBtn.Visible = false;
             officeTextBox.Visible = true;
             officeEnterBtn.Visible = true;
         }
