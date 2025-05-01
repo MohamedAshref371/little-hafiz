@@ -133,7 +133,7 @@
             this.stdBirthDateFromCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -1743,7 +1743,7 @@
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
             this.formTitle.ForeColor = System.Drawing.Color.Black;
-            this.formTitle.Location = new System.Drawing.Point(559, 1);
+            this.formTitle.Location = new System.Drawing.Point(560, 1);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(342, 33);
@@ -2175,9 +2175,11 @@
             this.openAddStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.openAddStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.openAddStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.openAddStudentBtn.FillColor = System.Drawing.Color.RoyalBlue;
+            this.openAddStudentBtn.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.openAddStudentBtn.FillColor2 = System.Drawing.SystemColors.HotTrack;
             this.openAddStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.openAddStudentBtn.ForeColor = System.Drawing.Color.White;
+            this.openAddStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.openAddStudentBtn.Location = new System.Drawing.Point(766, 5);
             this.openAddStudentBtn.Name = "openAddStudentBtn";
             this.openAddStudentBtn.Size = new System.Drawing.Size(157, 39);
@@ -2385,7 +2387,7 @@
             this.readRecordsBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.readRecordsBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.readRecordsBtn.ForeColor = System.Drawing.Color.Black;
-            this.readRecordsBtn.Location = new System.Drawing.Point(179, 4);
+            this.readRecordsBtn.Location = new System.Drawing.Point(163, 4);
             this.readRecordsBtn.Name = "readRecordsBtn";
             this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
             this.readRecordsBtn.TabIndex = 86;
@@ -2402,7 +2404,7 @@
             this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dataRecorderCheckBox.Location = new System.Drawing.Point(340, 5);
+            this.dataRecorderCheckBox.Location = new System.Drawing.Point(314, 5);
             this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
             this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
@@ -3280,7 +3282,7 @@
         private Guna.UI2.WinForms.Guna2TextBox stdEmailSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
-        private Guna.UI2.WinForms.Guna2Button openAddStudentBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton openAddStudentBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
         private Guna.UI2.WinForms.Guna2ComboBox excelRowsFilter;
         private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
