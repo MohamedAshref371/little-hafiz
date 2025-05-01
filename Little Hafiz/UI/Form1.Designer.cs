@@ -2359,6 +2359,7 @@
             this.officeTextBox.SelectedText = "";
             this.officeTextBox.Size = new System.Drawing.Size(400, 36);
             this.officeTextBox.TabIndex = 89;
+            this.officeTextBox.Visible = false;
             // 
             // officeEnterBtn
             // 
@@ -2377,6 +2378,7 @@
             this.officeEnterBtn.Size = new System.Drawing.Size(79, 39);
             this.officeEnterBtn.TabIndex = 90;
             this.officeEnterBtn.Text = "إدخال";
+            this.officeEnterBtn.Visible = false;
             this.officeEnterBtn.Click += new System.EventHandler(this.OfficeEnterBtn_Click);
             // 
             // saveExcelFileDialog
