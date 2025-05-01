@@ -114,15 +114,20 @@ namespace Little_Hafiz
             stdOfficeSearch.Items.AddRange(offices);
             stdOffice.Items.AddRange(offices);
 
-            int office = DatabaseHelper.CurrentOffice;
-            if (office != 0)
+            int ofc = DatabaseHelper.CurrentOffice;
+
+            int wdth = formTitle.Size.Width;
+            formTitle.Text = offices[ofc];
+            formTitle.Location = new Point(formTitle.Location.X + wdth - formTitle.Size.Width, formTitle.Location.Y);
+
+            if (ofc != 0)
             {
                 stdOffice.Enabled = false;
-                stdOffice.SelectedIndex = office;
+                stdOffice.SelectedIndex = ofc;
                 stdOfficeCheckBox.Enabled = false;
                 stdOfficeCheckBox.Checked = true;
                 stdOfficeSearch.Enabled = false;
-                stdOfficeSearch.SelectedIndex = office;
+                stdOfficeSearch.SelectedIndex = ofc;
             }
         }
 
