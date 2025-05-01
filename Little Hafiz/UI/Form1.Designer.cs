@@ -198,8 +198,8 @@
             this.wrongThing2Label = new System.Windows.Forms.Label();
             this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
-            this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1455,7 +1455,7 @@
             this.studentPanelTitle.AutoSize = true;
             this.studentPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.studentPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.studentPanelTitle.Location = new System.Drawing.Point(350, 19);
+            this.studentPanelTitle.Location = new System.Drawing.Point(615, 50);
             this.studentPanelTitle.Name = "studentPanelTitle";
             this.studentPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
@@ -3216,12 +3216,6 @@
             this.disableAtAll.TabIndex = 87;
             this.disableAtAll.Click += new System.EventHandler(this.DisableAtAll_Click);
             // 
-            // selectDataFolderDialog
-            // 
-            this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
-    "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
-            this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
             // officeComboBox
             // 
             this.officeComboBox.BackColor = System.Drawing.Color.Transparent;
@@ -3238,6 +3232,12 @@
             this.officeComboBox.Size = new System.Drawing.Size(356, 36);
             this.officeComboBox.TabIndex = 88;
             this.officeComboBox.Visible = false;
+            // 
+            // selectDataFolderDialog
+            // 
+            this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
+    "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
+            this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
             // Form1
             // 
