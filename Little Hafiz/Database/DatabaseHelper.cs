@@ -51,7 +51,7 @@ namespace Little_Hafiz
             try
             {
                 conn.Open();
-                command.CommandText = "CREATE TABLE offices (id PRIMARY KEY AUTOINCREMENT, name TEXT, notes TEXT);" +
+                command.CommandText = "CREATE TABLE offices (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, notes TEXT);" +
                                       "CREATE TABLE metadata (version INTEGER PRIMARY KEY, create_date TEXT, office INTEGER REFERENCES offices (id), comment TEXT);" +
                                       "CREATE TABLE students (office INTEGER REFERENCES offices (id), full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, notes TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
                                       "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, notes TEXT, PRIMARY KEY (national, competition_date) );" +
@@ -74,7 +74,7 @@ namespace Little_Hafiz
             try
             {
                 conn.Open();
-                command.CommandText = "SELECT version,create_date,comment FROM metadata";
+                command.CommandText = "SELECT version, create_date, office, comment FROM metadata";
                 reader = command.ExecuteReader();
                 if (!reader.Read()) return;
                 Version = reader.GetInt32(0);
@@ -421,6 +421,9 @@ namespace Little_Hafiz
 
             return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}';", Program.Record);
         }
+
+        public static int AddOffice(string name, string notes)
+            => ExecuteNonQuery($"INSERT INTO offices (name, notes) VALUES ({name}, {notes})");
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);

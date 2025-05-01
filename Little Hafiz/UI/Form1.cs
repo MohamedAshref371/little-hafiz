@@ -103,6 +103,12 @@ namespace Little_Hafiz
         private void SetOffice()
         {
             string[] offices = DatabaseHelper.GetOffices();
+            if (offices is null)
+            {
+                MessageBox.Show("خطأ، سيتم إغلاق البرنامج", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
             stdOfficeSearch.Items.AddRange(offices);
             stdOffice.Items.AddRange(offices);
 
@@ -1099,6 +1105,12 @@ namespace Little_Hafiz
 
         private void RankCalcBtn_Click(object sender, EventArgs e)
         {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن الدخول على هذه الشاشة إلا من النسخة الرئيسية");
+                return;
+            }
+
             int count = DatabaseHelper.GetStudentCount();
             if (count == -1)
             {
@@ -1122,6 +1134,11 @@ namespace Little_Hafiz
             levelCompCount.Text = "0";
 
             ranksCalculatorPanel.Visible = true;
+        }
+
+        private void OfficeHelperBtn_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)

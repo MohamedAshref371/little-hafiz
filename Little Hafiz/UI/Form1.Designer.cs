@@ -115,6 +115,8 @@
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdOfficeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.stdOfficeSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.stdBirthDateToSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -133,6 +135,7 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -193,9 +196,6 @@
             this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.stdOfficeSearch = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.stdOfficeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.addOfficeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1800,6 +1800,43 @@
             this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
             this.studentSearchPanel.TabIndex = 74;
             // 
+            // stdOfficeCheckBox
+            // 
+            this.stdOfficeCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.stdOfficeCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdOfficeCheckBox.CheckedState.BorderRadius = 3;
+            this.stdOfficeCheckBox.CheckedState.BorderThickness = 1;
+            this.stdOfficeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdOfficeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 148);
+            this.stdOfficeCheckBox.Name = "stdOfficeCheckBox";
+            this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
+            this.stdOfficeCheckBox.TabIndex = 90;
+            this.stdOfficeCheckBox.Text = "المكتبة :";
+            this.stdOfficeCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stdOfficeCheckBox.UncheckedState.BorderRadius = 3;
+            this.stdOfficeCheckBox.UncheckedState.BorderThickness = 1;
+            this.stdOfficeCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stdOfficeCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // stdOfficeSearch
+            // 
+            this.stdOfficeSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdOfficeSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.stdOfficeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.stdOfficeSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.stdOfficeSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdOfficeSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdOfficeSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.stdOfficeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.stdOfficeSearch.ItemHeight = 30;
+            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 146);
+            this.stdOfficeSearch.Name = "stdOfficeSearch";
+            this.stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
+            this.stdOfficeSearch.TabIndex = 89;
+            this.stdOfficeSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // stdBirthDateToSearch
             // 
             this.stdBirthDateToSearch.BackColor = System.Drawing.Color.Transparent;
@@ -2154,7 +2191,7 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
-            this.footerPanel.Controls.Add(this.addOfficeBtn);
+            this.footerPanel.Controls.Add(this.officeHelperBtn);
             this.footerPanel.Controls.Add(this.rankCalcBtn);
             this.footerPanel.Controls.Add(this.releasesLatestBtn);
             this.footerPanel.Controls.Add(this.excelDateFilter);
@@ -2168,6 +2205,27 @@
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
+            // 
+            // officeHelperBtn
+            // 
+            this.officeHelperBtn.BorderRadius = 15;
+            this.officeHelperBtn.BorderThickness = 1;
+            this.officeHelperBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.officeHelperBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.officeHelperBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.officeHelperBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.officeHelperBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.officeHelperBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.officeHelperBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.officeHelperBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.officeHelperBtn.ForeColor = System.Drawing.Color.Black;
+            this.officeHelperBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.officeHelperBtn.Location = new System.Drawing.Point(497, 5);
+            this.officeHelperBtn.Name = "officeHelperBtn";
+            this.officeHelperBtn.Size = new System.Drawing.Size(134, 39);
+            this.officeHelperBtn.TabIndex = 88;
+            this.officeHelperBtn.Text = "مساعد المكاتب";
+            this.officeHelperBtn.Click += new System.EventHandler(this.OfficeHelperBtn_Click);
             // 
             // rankCalcBtn
             // 
@@ -3090,63 +3148,6 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
-            // stdOfficeSearch
-            // 
-            this.stdOfficeSearch.BackColor = System.Drawing.Color.Transparent;
-            this.stdOfficeSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.stdOfficeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stdOfficeSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.stdOfficeSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdOfficeSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdOfficeSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.stdOfficeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.stdOfficeSearch.ItemHeight = 30;
-            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 146);
-            this.stdOfficeSearch.Name = "stdOfficeSearch";
-            this.stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
-            this.stdOfficeSearch.TabIndex = 89;
-            this.stdOfficeSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // stdOfficeCheckBox
-            // 
-            this.stdOfficeCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.stdOfficeCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdOfficeCheckBox.CheckedState.BorderRadius = 3;
-            this.stdOfficeCheckBox.CheckedState.BorderThickness = 1;
-            this.stdOfficeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdOfficeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 148);
-            this.stdOfficeCheckBox.Name = "stdOfficeCheckBox";
-            this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
-            this.stdOfficeCheckBox.TabIndex = 90;
-            this.stdOfficeCheckBox.Text = "المكتبة :";
-            this.stdOfficeCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.stdOfficeCheckBox.UncheckedState.BorderRadius = 3;
-            this.stdOfficeCheckBox.UncheckedState.BorderThickness = 1;
-            this.stdOfficeCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.stdOfficeCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // addOfficeBtn
-            // 
-            this.addOfficeBtn.BorderRadius = 15;
-            this.addOfficeBtn.BorderThickness = 1;
-            this.addOfficeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.addOfficeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.addOfficeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addOfficeBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addOfficeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addOfficeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.addOfficeBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.addOfficeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.addOfficeBtn.ForeColor = System.Drawing.Color.Black;
-            this.addOfficeBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.addOfficeBtn.Location = new System.Drawing.Point(506, 5);
-            this.addOfficeBtn.Name = "addOfficeBtn";
-            this.addOfficeBtn.Size = new System.Drawing.Size(123, 39);
-            this.addOfficeBtn.TabIndex = 88;
-            this.addOfficeBtn.Text = "إضافة مكتب";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3352,7 +3353,7 @@
         private System.Windows.Forms.Label stdOfficeLabel;
         private Guna.UI2.WinForms.Guna2ComboBox stdOfficeSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdOfficeCheckBox;
-        private Guna.UI2.WinForms.Guna2GradientButton addOfficeBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton officeHelperBtn;
     }
 }
 
