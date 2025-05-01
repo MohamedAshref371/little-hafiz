@@ -850,6 +850,7 @@ namespace Little_Hafiz
                 CompetitionDate = compDate.Value.ToString("yyyy/MM"),
                 Score = (float)stdScore.Value,
                 Rank = (int)stdRank.Value,
+                Notes = compNotes.Text
             };
 
             if (DatabaseHelper.AddGrade(data) == -1)

@@ -38,6 +38,9 @@ namespace Little_Hafiz
             stdRank.ValueChanged += StdRank_ValueChanged;
         }
 
+        private void CompDate_DoubleClick(object sender, EventArgs e)
+            => MessageBox.Show(CompetitionGradeData.Notes);
+        
         private void StdScore_ValueChanged(object sender, EventArgs e)
         {
             if (DatabaseHelper.CurrentOffice == 0)

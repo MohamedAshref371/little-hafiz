@@ -144,8 +144,6 @@
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.formImage = new System.Windows.Forms.Label();
-            this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.compCount = new System.Windows.Forms.Label();
             this.stdAge = new System.Windows.Forms.Label();
@@ -176,6 +174,8 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
+            this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -196,6 +196,7 @@
             this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.compNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -2376,52 +2377,13 @@
             this.formImage.TabIndex = 74;
             this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // readRecordsBtn
-            // 
-            this.readRecordsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.readRecordsBtn.BorderRadius = 5;
-            this.readRecordsBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.readRecordsBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.readRecordsBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.readRecordsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.readRecordsBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.readRecordsBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.readRecordsBtn.ForeColor = System.Drawing.Color.Black;
-            this.readRecordsBtn.Location = new System.Drawing.Point(163, 4);
-            this.readRecordsBtn.Name = "readRecordsBtn";
-            this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
-            this.readRecordsBtn.TabIndex = 86;
-            this.readRecordsBtn.Text = "قراءة التسجيلات";
-            this.readRecordsBtn.Click += new System.EventHandler(this.ReadRecordsBtn_Click);
-            // 
-            // dataRecorderCheckBox
-            // 
-            this.dataRecorderCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.dataRecorderCheckBox.Checked = true;
-            this.dataRecorderCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dataRecorderCheckBox.CheckedState.BorderRadius = 3;
-            this.dataRecorderCheckBox.CheckedState.BorderThickness = 1;
-            this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dataRecorderCheckBox.Location = new System.Drawing.Point(314, 5);
-            this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
-            this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
-            this.dataRecorderCheckBox.TabIndex = 82;
-            this.dataRecorderCheckBox.Text = "تسجيل حركة البيانات";
-            this.dataRecorderCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.dataRecorderCheckBox.UncheckedState.BorderRadius = 3;
-            this.dataRecorderCheckBox.UncheckedState.BorderThickness = 1;
-            this.dataRecorderCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.dataRecorderCheckBox.UseVisualStyleBackColor = false;
-            // 
             // studentGradesPanel
             // 
             this.studentGradesPanel.BackColor = System.Drawing.Color.Transparent;
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.compNotes);
             this.studentGradesPanel.Controls.Add(this.compCount);
             this.studentGradesPanel.Controls.Add(this.stdAge);
             this.studentGradesPanel.Controls.Add(this.stdAgeLabel);
@@ -2520,7 +2482,7 @@
             this.compDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.compDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.compDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDate.Location = new System.Drawing.Point(277, 518);
+            this.compDate.Location = new System.Drawing.Point(277, 527);
             this.compDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.compDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.compDate.Name = "compDate";
@@ -2564,7 +2526,7 @@
             this.stdScore.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdScore.DecimalPlaces = 2;
             this.stdScore.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdScore.Location = new System.Drawing.Point(308, 568);
+            this.stdScore.Location = new System.Drawing.Point(308, 571);
             this.stdScore.Name = "stdScore";
             this.stdScore.Size = new System.Drawing.Size(100, 32);
             this.stdScore.TabIndex = 91;
@@ -2604,7 +2566,7 @@
             this.prevLevel.BorderRadius = 3;
             this.prevLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.prevLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.prevLevel.Location = new System.Drawing.Point(635, 569);
+            this.prevLevel.Location = new System.Drawing.Point(635, 572);
             this.prevLevel.Maximum = new decimal(new int[] {
             10,
             0,
@@ -2622,7 +2584,7 @@
             this.stdCode.BorderRadius = 3;
             this.stdCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stdCode.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdCode.Location = new System.Drawing.Point(635, 522);
+            this.stdCode.Location = new System.Drawing.Point(635, 531);
             this.stdCode.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -2650,7 +2612,7 @@
             this.stdScoreLabel.AutoSize = true;
             this.stdScoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdScoreLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdScoreLabel.Location = new System.Drawing.Point(473, 575);
+            this.stdScoreLabel.Location = new System.Drawing.Point(473, 578);
             this.stdScoreLabel.Name = "stdScoreLabel";
             this.stdScoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdScoreLabel.Size = new System.Drawing.Size(64, 19);
@@ -2662,7 +2624,7 @@
             this.stdCodeLabel.AutoSize = true;
             this.stdCodeLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCodeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCodeLabel.Location = new System.Drawing.Point(829, 528);
+            this.stdCodeLabel.Location = new System.Drawing.Point(829, 537);
             this.stdCodeLabel.Name = "stdCodeLabel";
             this.stdCodeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCodeLabel.Size = new System.Drawing.Size(52, 19);
@@ -2675,7 +2637,7 @@
             this.compDateLabel.AutoSize = true;
             this.compDateLabel.BackColor = System.Drawing.Color.Transparent;
             this.compDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compDateLabel.Location = new System.Drawing.Point(420, 528);
+            this.compDateLabel.Location = new System.Drawing.Point(420, 537);
             this.compDateLabel.Name = "compDateLabel";
             this.compDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.compDateLabel.Size = new System.Drawing.Size(117, 19);
@@ -2700,7 +2662,7 @@
             this.prevLevelLabel.AutoSize = true;
             this.prevLevelLabel.BackColor = System.Drawing.Color.Transparent;
             this.prevLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.prevLevelLabel.Location = new System.Drawing.Point(744, 575);
+            this.prevLevelLabel.Location = new System.Drawing.Point(744, 578);
             this.prevLevelLabel.Name = "prevLevelLabel";
             this.prevLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.prevLevelLabel.Size = new System.Drawing.Size(137, 19);
@@ -2856,12 +2818,52 @@
             // 
             this.prevLevelExplain.AutoSize = true;
             this.prevLevelExplain.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.prevLevelExplain.Location = new System.Drawing.Point(590, 580);
+            this.prevLevelExplain.Location = new System.Drawing.Point(590, 583);
             this.prevLevelExplain.Name = "prevLevelExplain";
             this.prevLevelExplain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.prevLevelExplain.Size = new System.Drawing.Size(38, 13);
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
+            // 
+            // readRecordsBtn
+            // 
+            this.readRecordsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.readRecordsBtn.BorderRadius = 5;
+            this.readRecordsBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.readRecordsBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.readRecordsBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.readRecordsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.readRecordsBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.readRecordsBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.readRecordsBtn.ForeColor = System.Drawing.Color.Black;
+            this.readRecordsBtn.Location = new System.Drawing.Point(163, 4);
+            this.readRecordsBtn.Name = "readRecordsBtn";
+            this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
+            this.readRecordsBtn.TabIndex = 86;
+            this.readRecordsBtn.Text = "قراءة التسجيلات";
+            this.readRecordsBtn.Click += new System.EventHandler(this.ReadRecordsBtn_Click);
+            // 
+            // dataRecorderCheckBox
+            // 
+            this.dataRecorderCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.dataRecorderCheckBox.Checked = true;
+            this.dataRecorderCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dataRecorderCheckBox.CheckedState.BorderRadius = 3;
+            this.dataRecorderCheckBox.CheckedState.BorderThickness = 1;
+            this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dataRecorderCheckBox.Location = new System.Drawing.Point(314, 5);
+            this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
+            this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
+            this.dataRecorderCheckBox.TabIndex = 82;
+            this.dataRecorderCheckBox.Text = "تسجيل حركة البيانات";
+            this.dataRecorderCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.dataRecorderCheckBox.UncheckedState.BorderRadius = 3;
+            this.dataRecorderCheckBox.UncheckedState.BorderThickness = 1;
+            this.dataRecorderCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.dataRecorderCheckBox.UseVisualStyleBackColor = false;
             // 
             // ranksCalculatorPanel
             // 
@@ -3150,6 +3152,31 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // compNotes
+            // 
+            this.compNotes.BackColor = System.Drawing.Color.Transparent;
+            this.compNotes.BorderRadius = 5;
+            this.compNotes.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.compNotes.DefaultText = "";
+            this.compNotes.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.compNotes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.compNotes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.compNotes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.compNotes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.compNotes.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.compNotes.ForeColor = System.Drawing.Color.Black;
+            this.compNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.compNotes.Location = new System.Drawing.Point(277, 488);
+            this.compNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compNotes.Name = "compNotes";
+            this.compNotes.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.compNotes.PlaceholderText = "الملاحظات";
+            this.compNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compNotes.SelectedText = "";
+            this.compNotes.Size = new System.Drawing.Size(405, 32);
+            this.compNotes.TabIndex = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3356,6 +3383,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox stdOfficeSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdOfficeCheckBox;
         private Guna.UI2.WinForms.Guna2GradientButton officeHelperBtn;
+        private Guna.UI2.WinForms.Guna2TextBox compNotes;
     }
 }
 

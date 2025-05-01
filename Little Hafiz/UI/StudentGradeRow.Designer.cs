@@ -77,6 +77,7 @@
             this.compDate.TabIndex = 4;
             this.compDate.Text = "تاريخ المسابقة";
             this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.compDate.DoubleClick += new System.EventHandler(this.CompDate_DoubleClick);
             // 
             // scoreLabel
             // 
