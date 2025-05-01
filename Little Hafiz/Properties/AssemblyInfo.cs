@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Little Hafiz Learning Center")]
+[assembly: AssemblyTitle("برنامج مسابقات القرآن الكريم - محمد الشاعر")]
 [assembly: AssemblyDescription("github.com/MohamedAshref371")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("مكتب الحافظ الصغير")]
-[assembly: AssemblyProduct("Little Hafiz Office")]
+[assembly: AssemblyCompany("github.com/MohamedAshref371")]
+[assembly: AssemblyProduct("برنامج مسابقات القرآن الكريم")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.13.0.0")]
-[assembly: AssemblyFileVersion("1.13.0.0")]
+[assembly: AssemblyVersion("1.15.0.0")]
+[assembly: AssemblyFileVersion("1.15.0.0")]

@@ -9,8 +9,9 @@
         public string CompetitionDate;
         public float Score;
         public int Rank;
+        public string Notes;
 
         public override string ToString()
-            => $"'{NationalNumber}', {StudentCode}, {PreviousLevel}, {CompetitionLevel}, '{CompetitionDate}', {Score}, {Rank}";
+            => $"'{NationalNumber}', {StudentCode}, {PreviousLevel}, {CompetitionLevel}, '{CompetitionDate}', {Score}, {Rank}, '{Notes}'";
     }
 }

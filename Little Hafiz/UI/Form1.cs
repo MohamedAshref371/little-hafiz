@@ -85,6 +85,8 @@ namespace Little_Hafiz
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
+            SetOffice();
+
             if (Properties.Settings.Default.CheckUpdate)
             {
                 Timer timer2 = new Timer { Interval = 1 };
@@ -95,6 +97,24 @@ namespace Little_Hafiz
                     timer2.Dispose();
                 };
                 timer2.Start();
+            }
+        }
+
+        private void SetOffice()
+        {
+            string[] offices = DatabaseHelper.GetOffices();
+            stdOfficeSearch.Items.AddRange(offices);
+            stdOffice.Items.AddRange(offices);
+
+            int office = DatabaseHelper.CurrentOffice;
+            if (office != 0)
+            {
+                stdOffice.Enabled = false;
+                stdOffice.SelectedIndex = office;
+                stdOfficeCheckBox.Enabled = false;
+                stdOfficeCheckBox.Checked = true;
+                stdOfficeSearch.Enabled = false;
+                stdOfficeSearch.SelectedIndex = office;
             }
         }
 
@@ -465,6 +485,7 @@ namespace Little_Hafiz
 
             return new StudentData
             {
+                OfficeId = stdOffice.SelectedIndex,
                 FullName = stdName.Text,
                 NationalNumber = stdNational.Text,
                 BirthDate = stdBirthDate.Value.ToString("yyyy/MM/dd"),
@@ -497,6 +518,7 @@ namespace Little_Hafiz
                 Courses = stdCourses.Text,
                 Skills = stdSkills.Text,
                 Hobbies = stdHobbies.Text,
+                Notes = stdNotes.Text,
                 Image = stdImagePath.Text
             };
         }
@@ -516,6 +538,9 @@ namespace Little_Hafiz
 
         private void SetStudentDataAtStudentDataIsNull()
         {
+            if (DatabaseHelper.CurrentOffice != 0)
+                stdOffice.SelectedIndex = DatabaseHelper.CurrentOffice;
+
             stdName.Text = "";
             stdNational.Text = "";
             stdBirthDate.Value = DateTime.Now.AddYears(-10);
@@ -550,11 +575,13 @@ namespace Little_Hafiz
             stdCourses.Text = "";
             stdSkills.Text = "";
             stdHobbies.Text = "";
+            stdNotes.Text = "";
             stdImagePath.Text = "";
         }
 
         private void SetStudentDataAtStudentDataIsNotNull(StudentData stdData)
         {
+            stdOffice.SelectedIndex = stdData.OfficeId;
             stdName.Text = stdData.FullName;
             stdNational.Text = stdData.NationalNumber;
             stdBirthDate.Value = ParseExact(stdData.BirthDate);
@@ -588,6 +615,7 @@ namespace Little_Hafiz
             stdCourses.Text = stdData.Courses;
             stdSkills.Text = stdData.Skills;
             stdHobbies.Text = stdData.Hobbies;
+            stdNotes.Text = stdData.Notes;
             stdImagePath.Text = stdData.Image;
         }
 
@@ -721,6 +749,12 @@ namespace Little_Hafiz
         bool showMessageAtStdCodeIsZero = true, showSureMessage = true;
         private void AddGradeBtn_Click(object sender, EventArgs e)
         {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن إضافة مسابقات إلا من النسخة الرئيسية");
+                return;
+            }
+
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
             string newDate = compDate.Value.ToString("yyyy/MM");
             bool? allowedDate;

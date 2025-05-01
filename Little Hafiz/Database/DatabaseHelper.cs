@@ -12,7 +12,7 @@ namespace Little_Hafiz
     internal static class DatabaseHelper
     {
         private static bool success = false;
-        private static readonly int classVersion = 3;
+        private static readonly int classVersion = 4;
         private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
@@ -21,6 +21,7 @@ namespace Little_Hafiz
         #region Metadata
         public static int Version { get; private set; }
         public static DateTime CreateDate { get; private set; }
+        public static int CurrentOffice { get; private set; }
         public static string Comment { get; private set; }
 
         private static string studentsTableColumnsNames;
@@ -50,10 +51,12 @@ namespace Little_Hafiz
             try
             {
                 conn.Open();
-                command.CommandText = "CREATE TABLE metadata (version INTEGER, create_date TEXT, comment TEXT);" +
-                                      "CREATE TABLE students (full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
-                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, PRIMARY KEY (national, competition_date) );" +
-                                      $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 'مكتبة الحافظ الصغير بمسطرد');";
+                command.CommandText = "CREATE TABLE offices (id PRIMARY KEY AUTOINCREMENT, name TEXT, notes TEXT);" +
+                                      "CREATE TABLE metadata (version INTEGER PRIMARY KEY, create_date TEXT, office INTEGER REFERENCES offices (id), comment TEXT);" +
+                                      "CREATE TABLE students (office INTEGER REFERENCES offices (id), full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, notes TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, notes TEXT, PRIMARY KEY (national, competition_date) );" +
+                                      $"INSERT INTO offices VALUES (0, '{System.Windows.Forms.Application.ProductName}', '');" +
+                                      $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now:yyyy/MM/dd}', 0, 'https://github.com/MohamedAshref371');";
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -77,7 +80,8 @@ namespace Little_Hafiz
                 Version = reader.GetInt32(0);
                 if (Version != classVersion) return;
                 CreateDate = DateTime.ParseExact(reader.GetString(1), "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
-                Comment = reader.GetString(2);
+                CurrentOffice = reader.GetInt32(2);
+                Comment = reader.GetString(3);
                 reader.Close();
 
                 command.CommandText = "SELECT GROUP_CONCAT(name) FROM PRAGMA_table_info('students')";
@@ -153,7 +157,7 @@ namespace Little_Hafiz
 
         private static readonly StringBuilder sb = new StringBuilder();
         private static readonly List<string> conds = new List<string>();
-        public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, string birthDate = null, StudentState? state = null, string phoneNumber = null, string email = null)
+        public static StudentSearchRowData[] SelectStudents(string undoubtedName = null, string nationalNumber = null, string birthDate = null, StudentState? state = null, string phoneNumber = null, string email = null, int? office = null)
         {
             sb.Clear(); conds.Clear();
             sb.Append("SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national");
@@ -188,8 +192,14 @@ namespace Little_Hafiz
 
                 if (email != null)
                     conds.Add($"email LIKE '%{email}%'");
+
+                if (office != null)
+                    conds.Add($"office = {office}");
             }
-            else { conds.Add($"students.national = '{nationalNumber}'"); }
+            else if (office != null)
+                conds.Add($"students.national = '{nationalNumber}' AND office = {office}");
+            else
+                conds.Add($"students.national = '{nationalNumber}'");
 
             if (conds.Count > 0)
             {
@@ -208,6 +218,9 @@ namespace Little_Hafiz
 
         public static CompetitionRankData[] SelectCompetitionRanks(int level, string dateFrom, string dateTo)
             => SelectMultiRows($"SELECT students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE competition_level = {level} AND competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' ORDER BY score DESC", GetCompetitionRanks);
+
+        public static string[] GetOffices()
+            => SelectMultiRows("SELECT name FROM offices", () => reader.GetString(0));
 
         private static StudentSearchRowData GetStudentSearchRowData()
         {
@@ -247,6 +260,7 @@ namespace Little_Hafiz
 
             return new StudentData
             {
+                OfficeId = reader.GetInt32(0),
                 FullName = (string)reader["full_name"],
                 NationalNumber = (string)reader["national"],
                 BirthDate = (string)reader["birth_date"],
@@ -266,8 +280,8 @@ namespace Little_Hafiz
                 Facebook = (string)reader["facebook"],
                 School = (string)reader["school"],
                 Class = (string)reader["class"],
-                BrothersCount = reader.GetInt32(19),
-                ArrangementBetweenBrothers = reader.GetInt32(20),
+                BrothersCount = reader.GetInt32(20),
+                ArrangementBetweenBrothers = reader.GetInt32(21),
                 MaritalStatus = (string)reader["marital_status"],
                 MemorizationAmount = (string)reader["memo_amount"],
                 StudentMashaykh = (string)reader["mashaykh"],
@@ -279,6 +293,7 @@ namespace Little_Hafiz
                 Courses = (string)reader["courses"],
                 Skills = (string)reader["skills"],
                 Hobbies = (string)reader["hobbies"],
+                Notes = (string)reader["notes"],
                 Image = img
             };
         }
@@ -307,6 +322,7 @@ namespace Little_Hafiz
                 CompetitionDate = (string)reader["competition_date"],
                 Score = reader.GetFloat(5),
                 Rank = reader.GetInt32(6),
+                Notes = (string)reader["notes"],
             };
         }
 
@@ -392,28 +408,31 @@ namespace Little_Hafiz
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks}); ", Program.Record);
+            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks});", Program.Record);
         }
 
         public static int AddGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"INSERT INTO grades (national, std_code, prev_level, competition_level, competition_date, score, std_rank) VALUES ({data}); ", Program.Record);
+            => ExecuteNonQuery($"INSERT INTO grades VALUES ({data});", Program.Record);
 
         public static int UpdateStudent(StudentData data)
         {
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'; ", Program.Record);
+            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}';", Program.Record);
         }
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Program.Record);
+            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
 
         public static int UpdateStudentRank(CompetitionRankData data)
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
 
+        public static int UpdateMetadataOffice(int office)
+            => ExecuteNonQuery($"UPDATE metadata SET office = {office}");
+
         public static int DeleteStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'; ", Program.Record);
+            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
 
         public static int DeleteStudentPermanently(string nationalNumber)
             => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");

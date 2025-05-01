@@ -4,6 +4,7 @@ namespace Little_Hafiz
 {
     internal class StudentData
     {
+        public int OfficeId;
         public string FullName;
         public string NationalNumber;
         public string BirthDate;
@@ -23,12 +24,12 @@ namespace Little_Hafiz
         public string MaritalStatus; public string MemorizationAmount;
         public string StudentMashaykh, MemorizePlaces;
         public string JoiningDate, FirstConclusionDate;
-        public string Certificates, Ijazah, Courses, Skills, Hobbies;
+        public string Certificates, Ijazah, Courses, Skills, Hobbies, Notes;
 
         public string Image;
         public string ImageName => Image.Split('\\').Last();
 
         public override string ToString()
-            => $"'{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{ImageName}'";
+            => $"{OfficeId}, '{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{Notes}', '{ImageName}'";
     }
 }
