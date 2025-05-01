@@ -2356,6 +2356,7 @@
             this.officeTextBox.Location = new System.Drawing.Point(91, 7);
             this.officeTextBox.Name = "officeTextBox";
             this.officeTextBox.PlaceholderText = "";
+            this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeTextBox.SelectedText = "";
             this.officeTextBox.Size = new System.Drawing.Size(400, 36);
             this.officeTextBox.TabIndex = 89;
