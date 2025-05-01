@@ -134,6 +134,7 @@ namespace Little_Hafiz
 
             if (ofc != 0)
             {
+                HideOfficeTools();
                 stdOffice.Enabled = false;
                 stdOfficeCheckBox.Enabled = false;
                 stdOfficeCheckBox.Checked = true;
