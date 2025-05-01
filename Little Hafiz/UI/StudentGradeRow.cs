@@ -31,15 +31,24 @@ namespace Little_Hafiz
             stdScore.Value = (decimal)data.Score;
             stdRank.Value = data.Rank;
 
+            if (DatabaseHelper.CurrentOffice != 0)
+                deleteBtn.Visible = false;
+
             stdScore.ValueChanged += StdScore_ValueChanged;
             stdRank.ValueChanged += StdRank_ValueChanged;
         }
 
         private void StdScore_ValueChanged(object sender, EventArgs e)
-            => saveBtn.Visible = true;
+        {
+            if (DatabaseHelper.CurrentOffice == 0)
+                saveBtn.Visible = true;
+        }
         
         private void StdRank_ValueChanged(object sender, EventArgs e)
-            => saveBtn.Visible = true;
+        {
+            if (DatabaseHelper.CurrentOffice == 0)
+                saveBtn.Visible = true;
+        }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
