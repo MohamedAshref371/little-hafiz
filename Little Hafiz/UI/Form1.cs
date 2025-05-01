@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Little_Hafiz
 {
@@ -69,7 +70,7 @@ namespace Little_Hafiz
             };
             headerPanel.MouseDown += meh;
             formTitle.MouseDown += meh;
-            formImage.MouseDown += meh;
+            //formImage.MouseDown += meh;
 
             studentDataPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentDataPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
@@ -87,7 +88,7 @@ namespace Little_Hafiz
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
-            SetOffice();
+            GetOffice();
 
             if (Properties.Settings.Default.CheckUpdate)
             {
@@ -102,9 +103,10 @@ namespace Little_Hafiz
             }
         }
 
-        private void SetOffice()
+        string[] offices;
+        private void GetOffice()
         {
-            string[] offices = DatabaseHelper.GetOffices();
+            offices = DatabaseHelper.GetOffices();
             if (offices is null)
             {
                 MessageBox.Show("خطأ، سيتم إغلاق البرنامج", "خطأ !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,6 +131,17 @@ namespace Little_Hafiz
                 stdOfficeSearch.Enabled = false;
                 stdOfficeSearch.SelectedIndex = ofc;
             }
+        }
+
+        private void FormImage_DoubleClick(object sender, EventArgs e)
+        {
+            if (DatabaseHelper.CurrentOffice != 0)
+                MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
+            
+            if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secret.HashPassword))
+                return;
+
+
         }
 
         private void StudentPanelTitle_DoubleClick(object sender, EventArgs e)
@@ -1154,20 +1167,56 @@ namespace Little_Hafiz
             ranksCalculatorPanel.Visible = true;
         }
 
-        int logIntoOfficeHelper = 0;
+        private void HideOfficeTools()
+        {
+            officeTextBox.Visible = false;
+            officeEnterBtn.Visible = false;
+            releasesLatestBtn.Visible = true;
+            excelDateFilter.Visible = excelRowsFilter.SelectedIndex == 2 || excelRowsFilter.SelectedIndex == 4;
+            excelRowsFilter.Visible = true;
+            officeEnterBtn.Visible = true;
+        }
+
         private void OfficeHelperBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseHelper.CurrentOffice != 0 && logIntoOfficeHelper < 5)
+            if (officeEnterBtn.Visible)
             {
-                MessageBox.Show("لا يمكن الدخول على هذه الشاشة إلا من النسخة الرئيسية");
-                logIntoOfficeHelper += 1;
+                HideOfficeTools();
                 return;
             }
-            logIntoOfficeHelper = 0;
-            if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secret.HashPassword))
+
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
+                return;
+            }
+
+            if (MessageBox.Show("هل انت متأكد أنك على النسخة الرئيسية ؟", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
                 return;
 
+            releasesLatestBtn.Visible = false;
+            excelDateFilter.Visible = false;
+            excelRowsFilter.Visible = false; 
+            officeEnterBtn.Visible = false;
+            officeTextBox.Visible = true;
+            officeEnterBtn.Visible = true;
+        }
 
+        private void OfficeEnterBtn_Click(object sender, EventArgs e)
+        {
+            if (officeTextBox.Text == "")
+                return;
+
+            if (offices.Contains(officeTextBox.Text))
+            {
+                MessageBox.Show("تم إدخال هذه المكتبة من قبل");
+                return;
+            }
+
+            DatabaseHelper.AddOffice(officeTextBox.Text, "");
+
+            GetOffice();
+            officeTextBox.Text = "";
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
