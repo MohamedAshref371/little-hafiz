@@ -113,25 +113,31 @@ namespace Little_Hafiz
                 Close();
                 return;
             }
-            stdOfficeSearch.Items.AddRange(offices);
-            stdOffice.Items.AddRange(offices);
-            officeComboBox.Items.AddRange(offices);
 
             int ofc = DatabaseHelper.CurrentOffice;
 
             int wdth = formTitle.Size.Width;
             formTitle.Text = offices[ofc];
             formTitle.Location = new Point(formTitle.Location.X + wdth - formTitle.Size.Width, formTitle.Location.Y);
+            
+            stdOffice.Items.Clear();
+            stdOffice.Items.AddRange(offices);
+            stdOffice.SelectedIndex = ofc;
+
+            stdOfficeSearch.Items.Clear();
+            stdOfficeSearch.Items.AddRange(offices);
+            stdOfficeSearch.SelectedIndex = ofc;
+
+            officeComboBox.Items.Clear();
+            officeComboBox.Items.AddRange(offices);
+            officeComboBox.SelectedIndex = ofc;
 
             if (ofc != 0)
             {
                 stdOffice.Enabled = false;
-                stdOffice.SelectedIndex = ofc;
                 stdOfficeCheckBox.Enabled = false;
                 stdOfficeCheckBox.Checked = true;
                 stdOfficeSearch.Enabled = false;
-                stdOfficeSearch.SelectedIndex = ofc;
-                officeComboBox.SelectedIndex = ofc;
             }
         }
 
@@ -139,7 +145,8 @@ namespace Little_Hafiz
         {
             if (officeComboBox.Visible)
             {
-                DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
+                if (officeComboBox.SelectedIndex >= 0)
+                    DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
                 GetOffice();
                 officeComboBox.Visible = false;
                 formTitle.Visible = true;
