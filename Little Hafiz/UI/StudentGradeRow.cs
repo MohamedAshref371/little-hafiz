@@ -39,7 +39,10 @@ namespace Little_Hafiz
         }
 
         private void CompDate_DoubleClick(object sender, EventArgs e)
-            => MessageBox.Show(CompetitionGradeData.Notes);
+        {
+            if (CompetitionGradeData.Notes != "")
+                MessageBox.Show(CompetitionGradeData.Notes);
+        }
         
         private void StdScore_ValueChanged(object sender, EventArgs e)
         {

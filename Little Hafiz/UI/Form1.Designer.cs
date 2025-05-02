@@ -1736,7 +1736,7 @@
             this.stdOfficeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdOfficeLabel.Size = new System.Drawing.Size(74, 19);
             this.stdOfficeLabel.TabIndex = 76;
-            this.stdOfficeLabel.Text = "المكتبة : ";
+            this.stdOfficeLabel.Text = "المكتب : ";
             // 
             // selectImageDialog
             // 
@@ -1818,7 +1818,7 @@
             this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
             this.stdOfficeCheckBox.TabIndex = 90;
-            this.stdOfficeCheckBox.Text = "المكتبة :";
+            this.stdOfficeCheckBox.Text = "المكتب :";
             this.stdOfficeCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdOfficeCheckBox.UncheckedState.BorderRadius = 3;
             this.stdOfficeCheckBox.UncheckedState.BorderThickness = 1;
@@ -2356,6 +2356,7 @@
             this.officeTextBox.ForeColor = System.Drawing.Color.Black;
             this.officeTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.officeTextBox.Location = new System.Drawing.Point(91, 7);
+            this.officeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.officeTextBox.Name = "officeTextBox";
             this.officeTextBox.PlaceholderText = "";
             this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3217,7 +3218,7 @@
             // disableAtAll
             // 
             this.disableAtAll.BackColor = System.Drawing.Color.Transparent;
-            this.disableAtAll.Location = new System.Drawing.Point(506, 11);
+            this.disableAtAll.Location = new System.Drawing.Point(478, 11);
             this.disableAtAll.Name = "disableAtAll";
             this.disableAtAll.Size = new System.Drawing.Size(8, 15);
             this.disableAtAll.TabIndex = 87;

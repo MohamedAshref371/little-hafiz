@@ -346,7 +346,8 @@ namespace Little_Hafiz
                         nationalNumber: stdNationalCheckBox.Checked ? stdNationalSearch.Text : null,
                         birthDate: birth,
                         phoneNumber: stdPhoneCheckBox.Checked ? stdPhoneSearch.Text : null,
-                        email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null
+                        email: stdEmailCheckBox.Checked ? stdEmailSearch.Text : null,
+                        office: stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : (int?)null
                     );
 
             if (students is null)
