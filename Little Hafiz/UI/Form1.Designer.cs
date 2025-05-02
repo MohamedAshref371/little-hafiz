@@ -200,6 +200,8 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.scrollHelperLabel = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -268,6 +270,8 @@
             this.studentDataPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
+            this.studentDataPanel.Controls.Add(this.scrollHelperLabel);
+            this.studentDataPanel.Controls.Add(this.printStudentBtn);
             this.studentDataPanel.Controls.Add(this.stdOffice);
             this.studentDataPanel.Controls.Add(this.stdNotes);
             this.studentDataPanel.Controls.Add(this.stdNotesLabel);
@@ -1334,7 +1338,7 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(508, 1394);
+            this.cancelBtn.Location = new System.Drawing.Point(565, 1401);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(92, 45);
             this.cancelBtn.TabIndex = 11;
@@ -1351,7 +1355,7 @@
             this.addStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.addStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addStudentBtn.ForeColor = System.Drawing.Color.White;
-            this.addStudentBtn.Location = new System.Drawing.Point(302, 1394);
+            this.addStudentBtn.Location = new System.Drawing.Point(401, 1401);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.addStudentBtn.TabIndex = 10;
@@ -3250,6 +3254,36 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // printStudentBtn
+            // 
+            this.printStudentBtn.BorderColor = System.Drawing.Color.Silver;
+            this.printStudentBtn.BorderRadius = 15;
+            this.printStudentBtn.BorderThickness = 1;
+            this.printStudentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.printStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.printStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.printStudentBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.printStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.printStudentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.printStudentBtn.FillColor2 = System.Drawing.Color.Silver;
+            this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
+            this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.printStudentBtn.Location = new System.Drawing.Point(255, 1401);
+            this.printStudentBtn.Name = "printStudentBtn";
+            this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
+            this.printStudentBtn.TabIndex = 77;
+            this.printStudentBtn.Text = "طباعة";
+            this.printStudentBtn.Click += new System.EventHandler(this.PrintStudentBtn_Click);
+            // 
+            // scrollHelperLabel
+            // 
+            this.scrollHelperLabel.AutoSize = true;
+            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1440);
+            this.scrollHelperLabel.Name = "scrollHelperLabel";
+            this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
+            this.scrollHelperLabel.TabIndex = 78;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3459,6 +3493,8 @@
         private Guna.UI2.WinForms.Guna2Button officeEnterBtn;
         private Guna.UI2.WinForms.Guna2TextBox officeTextBox;
         private Guna.UI2.WinForms.Guna2ComboBox officeComboBox;
+        private System.Windows.Forms.Label scrollHelperLabel;
+        private Guna.UI2.WinForms.Guna2GradientButton printStudentBtn;
     }
 }
 

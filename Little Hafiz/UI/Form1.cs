@@ -114,11 +114,10 @@ namespace Little_Hafiz
                 return;
             }
 
+            HideOfficeTools();
             int ofc = DatabaseHelper.CurrentOffice;
-
-            int wdth = formTitle.Size.Width;
             formTitle.Text = offices[ofc];
-            
+
             stdOffice.Items.Clear();
             stdOffice.Items.AddRange(offices);
             stdOffice.SelectedIndex = ofc;
@@ -131,14 +130,12 @@ namespace Little_Hafiz
             officeComboBox.Items.AddRange(offices);
             officeComboBox.SelectedIndex = ofc;
 
-            if (ofc != 0)
-            {
-                HideOfficeTools();
-                stdOffice.Enabled = false;
-                stdOfficeCheckBox.Enabled = false;
-                stdOfficeCheckBox.Checked = true;
-                stdOfficeSearch.Enabled = false;
-            }
+            bool equalZero = ofc == 0;
+            stdOffice.Enabled = equalZero;
+            stdOfficeCheckBox.Checked = !equalZero;
+            stdOfficeCheckBox.Enabled = equalZero;
+            stdOfficeSearch.Enabled = equalZero;
+
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
@@ -534,6 +531,11 @@ namespace Little_Hafiz
             }
             else
                 ErrorMessage();
+        }
+
+        private void PrintStudentBtn_Click(object sender, EventArgs e)
+        {
+
         }
 
         private StudentData GetStudentData()
