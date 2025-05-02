@@ -578,7 +578,7 @@ namespace Little_Hafiz
                 Hobbies = stdHobbiesLabel.Text + stdHobbies.Text,
                 Notes = stdNotesLabel.Text + stdNotes.Text,
 
-                StudentImage = studentImage.Image
+                StudentImage = studentImage.Image ?? new Bitmap(studentImage.Size.Width, studentImage.Size.Height)
             };
 
             StudentFormPrinter printer = new StudentFormPrinter(data);

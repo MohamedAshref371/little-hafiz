@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -6,15 +7,12 @@ namespace Little_Hafiz
 {
     public class StudentFormPrinter
     {
-        private readonly Image backgroundImage;
         private readonly StudentFormData data;
         private readonly PrintDocument printDocument;
 
         public StudentFormPrinter(StudentFormData data)
         {
             this.data = data;
-            backgroundImage = new Bitmap(2480, 3508);
-
             printDocument = new PrintDocument();
             printDocument.PrintPage += PrintDocument_PrintPage;
         }
@@ -37,18 +35,64 @@ namespace Little_Hafiz
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            float scaleX = (float)e.PageBounds.Width / backgroundImage.Width;
-            float scaleY = (float)e.PageBounds.Height / backgroundImage.Height;
 
-            g.DrawImage(backgroundImage, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
-
-            Font font = new Font("Arial", 12, FontStyle.Bold);
+            Font font = new Font("Arial", 16, FontStyle.Regular);
             Brush brush = Brushes.Black;
 
-            g.DrawString(data.PaperTitle, font, brush, scaleX * 1000, scaleY * 60);
-            g.DrawString(data.FullName, font, brush, scaleX * 2000, scaleY * 145);
-            g.DrawString(data.NationalNumber, font, brush, scaleX * 130, scaleY * 145);
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Near,
+                LineAlignment = StringAlignment.Near,
+                FormatFlags = StringFormatFlags.DirectionRightToLeft
+            };
 
+            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(10, 1140, 180, 30), format);
+            g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
+
+
+            Rectangle imgRect = new Rectangle(10, 10, data.StudentImage.Width, data.StudentImage.Height);
+            int radius = 10;
+
+            using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                Region oldClip = g.Clip;
+                g.SetClip(path);
+                g.DrawImage(data.StudentImage, imgRect);
+                g.Clip = oldClip;
+
+                using (Pen pen = new Pen(Color.Black, 1))
+                    g.DrawPath(pen, path);
+            }
+
+            g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
+            g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
+            g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
+
+            g.DrawString(data.Job, font, brush, new RectangleF(400, 200, 400, 30), format);
+            g.DrawString(data.MaritalStatus, font, brush, new RectangleF(10, 200, 380, 30), format);
+
+            g.DrawString(data.FatherQualification, font, brush, new RectangleF(400, 250, 400, 30), format);
+            g.DrawString(data.FatherJob, font, brush, new RectangleF(10, 250, 380, 30), format);
+            g.DrawString(data.MotherQualification, font, brush, new RectangleF(400, 290, 400, 30), format);
+            g.DrawString(data.MotherJob, font, brush, new RectangleF(10, 290, 380, 30), format);
+            g.DrawString(data.FatherPhone, font, brush, new RectangleF(400, 330, 400, 30), format);
+            g.DrawString(data.MotherPhone, font, brush, new RectangleF(10, 330, 380, 30), format);
+
+        }
+
+        public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
+
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
+            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
+            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
+
+            path.CloseFigure();
+            return path;
         }
     }
 }
