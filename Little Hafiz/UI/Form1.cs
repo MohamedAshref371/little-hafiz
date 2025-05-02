@@ -12,7 +12,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Reflection;
 
 namespace Little_Hafiz
 {
@@ -207,6 +206,9 @@ namespace Little_Hafiz
                 fs = new FormSize(NewSizeX, NewSizeY, SizeX, SizeY);
                 fs.SetControls(Controls);
                 fs = null;
+
+                maximizeBtn.Visible = false;
+                minimizeBtn.Location = new Point(maximizeBtn.Location.X - maximizeBtn.Size.Width + minimizeBtn.Size.Width, minimizeBtn.Location.Y);
             }
             else if (WindowState == FormWindowState.Normal)
             {
@@ -215,9 +217,6 @@ namespace Little_Hafiz
 
                 fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
                 fs.SetControls(Controls);
-
-                //maximizeBtn.Visible = false;
-                //minimizeBtn.Location = new Point(maximizeBtn.Location.X - maximizeBtn.Size.Width + minimizeBtn.Size.Width, minimizeBtn.Location.Y);
             }
             if (WindowState != FormWindowState.Minimized)
             {
@@ -535,7 +534,53 @@ namespace Little_Hafiz
 
         private void PrintStudentBtn_Click(object sender, EventArgs e)
         {
+            StudentFormData data = new StudentFormData
+            {
+                FullName = stdName.Text,
+                NationalNumber = stdNational.Text,
+                BirthDate = stdBirthDate.Value.ToString("yyyy/MM/dd"),
+                Job = stdJob.Text,
 
+                FatherQualification = fatherQuali.Text,
+                MotherQualification = motherQuali.Text,
+                FatherJob = fatherJob.Text,
+                MotherJob = motherJob.Text,
+                FatherPhone = fatherPhone.Text,
+                MotherPhone = motherPhone.Text,
+                GuardianName = guardianName.Text,
+                GuardianLink = guardianLink.Text,
+                GuardianBirth = guardianBirth.Value.ToString("yyyy/MM/dd"),
+
+                PhoneNumber = stdPhone.Text,
+                Address = stdAddress.Text,
+                Email = stdEmail.Text,
+                Facebook = stdFacebook.Text,
+                School = stdSchool.Text,
+                Class = stdClass.Text,
+
+                BrothersCount = Ranks.ConvertNumberToCount((int)stdBrothers.Value),
+                ArrangementBetweenBrothers = Ranks.ConvertNumberToRank((int)stdArrangement.Value),
+                MaritalStatus = stdMaritalStatus.Text,
+
+                MemorizationAmount = stdMemo.Text,
+                OfficeName = stdOffice.Text,
+                JoiningDate = stdJoiningDate.Value.ToString("yyyy/MM/dd"),
+                FirstConclusionDate = stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value.ToString("yyyy/MM/dd") : "لا توجد",
+
+                StudentMashaykh = stdMashaykh.Text,
+                MemorizePlaces = stdMemoPlaces.Text,
+                Certificates = stdCertificates.Text,
+                Ijazah = stdIjazah.Text,
+                Courses = stdCourses.Text,
+                Skills = stdSkills.Text,
+                Hobbies = stdHobbies.Text,
+                Notes = stdNotes.Text,
+
+                StudentImage = studentImage.Image
+            };
+
+            StudentFormPrinter printer = new StudentFormPrinter(data);
+            printer.ShowPreview();
         }
 
         private StudentData GetStudentData()

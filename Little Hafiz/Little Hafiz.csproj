@@ -126,6 +126,8 @@
     <Compile Include="Database\ExcelRowData.cs" />
     <Compile Include="GetAppUpdate.cs" />
     <Compile Include="Secret.cs" />
+    <Compile Include="StudentFormData.cs" />
+    <Compile Include="StudentFormPrinter.cs" />
     <Compile Include="UI\StudentRankRow.cs">
       <SubType>UserControl</SubType>
     </Compile>

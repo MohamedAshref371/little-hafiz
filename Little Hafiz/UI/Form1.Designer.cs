@@ -34,6 +34,8 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.scrollHelperLabel = new System.Windows.Forms.Label();
+            this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdOffice = new Guna.UI2.WinForms.Guna2ComboBox();
             this.stdNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNotesLabel = new System.Windows.Forms.Label();
@@ -200,8 +202,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.scrollHelperLabel = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -357,6 +357,36 @@
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
             // 
+            // scrollHelperLabel
+            // 
+            this.scrollHelperLabel.AutoSize = true;
+            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1440);
+            this.scrollHelperLabel.Name = "scrollHelperLabel";
+            this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
+            this.scrollHelperLabel.TabIndex = 78;
+            // 
+            // printStudentBtn
+            // 
+            this.printStudentBtn.BorderColor = System.Drawing.Color.Silver;
+            this.printStudentBtn.BorderRadius = 15;
+            this.printStudentBtn.BorderThickness = 1;
+            this.printStudentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.printStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.printStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.printStudentBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.printStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.printStudentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.printStudentBtn.FillColor2 = System.Drawing.Color.Silver;
+            this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
+            this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.printStudentBtn.Location = new System.Drawing.Point(255, 1401);
+            this.printStudentBtn.Name = "printStudentBtn";
+            this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
+            this.printStudentBtn.TabIndex = 77;
+            this.printStudentBtn.Text = "طباعة";
+            this.printStudentBtn.Click += new System.EventHandler(this.PrintStudentBtn_Click);
+            // 
             // stdOffice
             // 
             this.stdOffice.BackColor = System.Drawing.Color.Transparent;
@@ -386,7 +416,7 @@
             this.stdNotes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.stdNotes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.stdNotes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdNotes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(220)))));
+            this.stdNotes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdNotes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNotes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNotes.ForeColor = System.Drawing.Color.Black;
@@ -540,7 +570,7 @@
             this.stdIjazah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.stdIjazah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.stdIjazah.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdIjazah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(220)))));
+            this.stdIjazah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdIjazah.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdIjazah.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdIjazah.ForeColor = System.Drawing.Color.Black;
@@ -568,7 +598,7 @@
             this.stdCourses.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.stdCourses.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.stdCourses.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdCourses.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(220)))));
+            this.stdCourses.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdCourses.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdCourses.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdCourses.ForeColor = System.Drawing.Color.Black;
@@ -695,7 +725,7 @@
             this.stdMemoPlaces.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.stdMemoPlaces.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.stdMemoPlaces.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMemoPlaces.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(220)))));
+            this.stdMemoPlaces.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdMemoPlaces.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdMemoPlaces.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMemoPlaces.ForeColor = System.Drawing.Color.Black;
@@ -2401,6 +2431,7 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.readRecordsBtn);
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
@@ -2410,7 +2441,6 @@
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
-            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.disableAtAll);
@@ -3253,36 +3283,6 @@
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // printStudentBtn
-            // 
-            this.printStudentBtn.BorderColor = System.Drawing.Color.Silver;
-            this.printStudentBtn.BorderRadius = 15;
-            this.printStudentBtn.BorderThickness = 1;
-            this.printStudentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.printStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.printStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.printStudentBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.printStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.printStudentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.printStudentBtn.FillColor2 = System.Drawing.Color.Silver;
-            this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
-            this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.printStudentBtn.Location = new System.Drawing.Point(255, 1401);
-            this.printStudentBtn.Name = "printStudentBtn";
-            this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
-            this.printStudentBtn.TabIndex = 77;
-            this.printStudentBtn.Text = "طباعة";
-            this.printStudentBtn.Click += new System.EventHandler(this.PrintStudentBtn_Click);
-            // 
-            // scrollHelperLabel
-            // 
-            this.scrollHelperLabel.AutoSize = true;
-            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1440);
-            this.scrollHelperLabel.Name = "scrollHelperLabel";
-            this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
-            this.scrollHelperLabel.TabIndex = 78;
             // 
             // Form1
             // 
