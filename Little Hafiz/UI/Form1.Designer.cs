@@ -119,7 +119,7 @@
             this.stdOfficeSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.stdBirthDateToSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.searchBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNationalSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -1885,9 +1885,11 @@
             this.searchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.searchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.searchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.searchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.searchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.searchBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(140)))), ((int)(((byte)(100)))));
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.ForeColor = System.Drawing.Color.Black;
+            this.searchBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.searchBtn.Location = new System.Drawing.Point(570, 143);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(158, 45);
@@ -2270,7 +2272,7 @@
             this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(322, 5);
+            this.releasesLatestBtn.Location = new System.Drawing.Point(381, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
             this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
             this.releasesLatestBtn.TabIndex = 86;
@@ -3375,7 +3377,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox stdNationalCheckBox;
         private Guna.UI2.WinForms.Guna2TextBox stdPhoneSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdPhoneCheckBox;
-        private Guna.UI2.WinForms.Guna2Button searchBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton searchBtn;
         private Guna.UI2.WinForms.Guna2TextBox stdEmailSearch;
         private Guna.UI2.WinForms.Guna2CheckBox stdEmailCheckBox;
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
