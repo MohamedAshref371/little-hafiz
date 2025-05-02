@@ -2,6 +2,8 @@
 {
     public class StudentFormData
     {
+        public string PaperTitle;
+
         public string FullName;
         public string NationalNumber;
         public string BirthDate;

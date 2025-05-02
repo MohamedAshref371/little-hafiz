@@ -44,10 +44,11 @@ namespace Little_Hafiz
 
             g.DrawImage(backgroundImage, new Rectangle(0, 0, e.PageBounds.Width, e.PageBounds.Height));
 
-            Font font = new Font("Arial", 11, FontStyle.Bold);
+            Font font = new Font("Arial", 12, FontStyle.Bold);
             Brush brush = Brushes.Black;
 
-            g.DrawString(data.FullName, font, brush, scaleX * 580, scaleY * 70);
+            g.DrawString(data.PaperTitle, font, brush, scaleX * 300, scaleY * 60);
+            g.DrawString(data.FullName, font, brush, scaleX * 580, scaleY * 145);
             g.DrawString(data.NationalNumber, font, brush, scaleX * 130, scaleY * 145);
 
         }

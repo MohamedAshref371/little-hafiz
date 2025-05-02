@@ -536,6 +536,8 @@ namespace Little_Hafiz
         {
             StudentFormData data = new StudentFormData
             {
+                PaperTitle = studentPanelTitle.Text,
+
                 FullName = stdNameLabel.Text + stdName.Text,
                 NationalNumber = stdNationalLabel.Text + stdNational.Text,
                 BirthDate = birthLabel.Text + stdBirthDate.Value.ToString("yyyy/MM/dd"),
