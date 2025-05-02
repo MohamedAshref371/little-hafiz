@@ -1752,7 +1752,7 @@
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(461, 33);
             this.formTitle.TabIndex = 72;
-            this.formTitle.Text = "برنامج مسابقات القرآن الكريم بمسطرد";
+            this.formTitle.Text = "برنامج مسابقات القرآن الكريم";
             // 
             // maximizeBtn
             // 
