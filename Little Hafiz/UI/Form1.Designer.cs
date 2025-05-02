@@ -1744,16 +1744,15 @@
             // 
             // formTitle
             // 
-            this.formTitle.AutoSize = true;
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
             this.formTitle.ForeColor = System.Drawing.Color.Black;
-            this.formTitle.Location = new System.Drawing.Point(560, 1);
+            this.formTitle.Location = new System.Drawing.Point(457, 1);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.formTitle.Size = new System.Drawing.Size(342, 33);
+            this.formTitle.Size = new System.Drawing.Size(461, 33);
             this.formTitle.TabIndex = 72;
-            this.formTitle.Text = "برنامج مسابقات القرآن الكريم";
+            this.formTitle.Text = "برنامج مسابقات القرآن الكريم بمسطرد";
             // 
             // maximizeBtn
             // 
@@ -2357,6 +2356,7 @@
             this.officeTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.officeTextBox.Location = new System.Drawing.Point(91, 7);
             this.officeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.officeTextBox.MaxLength = 40;
             this.officeTextBox.Name = "officeTextBox";
             this.officeTextBox.PlaceholderText = "";
             this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2400,7 +2400,6 @@
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
             this.headerPanel.Controls.Add(this.minimizeBtn);
             this.headerPanel.Controls.Add(this.closeBtn);
-            this.headerPanel.Controls.Add(this.formTitle);
             this.headerPanel.Controls.Add(this.maximizeBtn);
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
@@ -2409,6 +2408,7 @@
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.disableAtAll);
+            this.headerPanel.Controls.Add(this.formTitle);
             this.headerPanel.Controls.Add(this.officeComboBox);
             this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -2422,7 +2422,7 @@
             // 
             this.formImage.BackColor = System.Drawing.Color.Transparent;
             this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(903, 4);
+            this.formImage.Location = new System.Drawing.Point(910, 4);
             this.formImage.Name = "formImage";
             this.formImage.Size = new System.Drawing.Size(30, 30);
             this.formImage.TabIndex = 74;
@@ -2440,7 +2440,7 @@
             this.readRecordsBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.readRecordsBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.readRecordsBtn.ForeColor = System.Drawing.Color.Black;
-            this.readRecordsBtn.Location = new System.Drawing.Point(163, 4);
+            this.readRecordsBtn.Location = new System.Drawing.Point(138, 4);
             this.readRecordsBtn.Name = "readRecordsBtn";
             this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
             this.readRecordsBtn.TabIndex = 86;
@@ -2457,7 +2457,7 @@
             this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dataRecorderCheckBox.Location = new System.Drawing.Point(314, 5);
+            this.dataRecorderCheckBox.Location = new System.Drawing.Point(289, 5);
             this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
             this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
@@ -3218,7 +3218,7 @@
             // disableAtAll
             // 
             this.disableAtAll.BackColor = System.Drawing.Color.Transparent;
-            this.disableAtAll.Location = new System.Drawing.Point(478, 11);
+            this.disableAtAll.Location = new System.Drawing.Point(455, 11);
             this.disableAtAll.Name = "disableAtAll";
             this.disableAtAll.Size = new System.Drawing.Size(8, 15);
             this.disableAtAll.TabIndex = 87;
@@ -3270,7 +3270,6 @@
             this.studentSearchPanel.PerformLayout();
             this.footerPanel.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
-            this.headerPanel.PerformLayout();
             this.studentGradesPanel.ResumeLayout(false);
             this.studentGradesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();

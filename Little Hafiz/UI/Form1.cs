@@ -118,7 +118,6 @@ namespace Little_Hafiz
 
             int wdth = formTitle.Size.Width;
             formTitle.Text = offices[ofc];
-            formTitle.Location = new Point(formTitle.Location.X + wdth - formTitle.Size.Width, formTitle.Location.Y);
             
             stdOffice.Items.Clear();
             stdOffice.Items.AddRange(offices);
