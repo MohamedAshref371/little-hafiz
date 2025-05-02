@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
-using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -47,8 +45,8 @@ namespace Little_Hafiz
             Font font = new Font("Arial", 12, FontStyle.Bold);
             Brush brush = Brushes.Black;
 
-            g.DrawString(data.PaperTitle, font, brush, scaleX * 300, scaleY * 60);
-            g.DrawString(data.FullName, font, brush, scaleX * 580, scaleY * 145);
+            g.DrawString(data.PaperTitle, font, brush, scaleX * 1000, scaleY * 60);
+            g.DrawString(data.FullName, font, brush, scaleX * 2000, scaleY * 145);
             g.DrawString(data.NationalNumber, font, brush, scaleX * 130, scaleY * 145);
 
         }
