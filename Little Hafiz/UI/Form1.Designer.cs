@@ -85,7 +85,7 @@
             this.fatherJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.fatherQuali = new Guna.UI2.WinForms.Guna2TextBox();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.addStudentBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.addStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdJob = new Guna.UI2.WinForms.Guna2TextBox();
             this.wrongValueLabel = new System.Windows.Forms.Label();
             this.alreadyExistsLabel = new System.Windows.Forms.Label();
@@ -1383,8 +1383,11 @@
             this.addStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.addStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addStudentBtn.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.addStudentBtn.FillColor2 = System.Drawing.SystemColors.HotTrack;
             this.addStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addStudentBtn.ForeColor = System.Drawing.Color.White;
+            this.addStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.addStudentBtn.Location = new System.Drawing.Point(401, 1401);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
@@ -3339,7 +3342,7 @@
         private System.Windows.Forms.Label jobLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdJob;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
-        private Guna.UI2.WinForms.Guna2Button addStudentBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton addStudentBtn;
         private System.Windows.Forms.Label motherPhoneLabel;
         private Guna.UI2.WinForms.Guna2TextBox motherPhone;
         private System.Windows.Forms.Label fatherPhoneLabel;

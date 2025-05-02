@@ -78,7 +78,27 @@ namespace Little_Hafiz
             g.DrawString(data.MotherJob, font, brush, new RectangleF(10, 290, 380, 30), format);
             g.DrawString(data.FatherPhone, font, brush, new RectangleF(400, 330, 400, 30), format);
             g.DrawString(data.MotherPhone, font, brush, new RectangleF(10, 330, 380, 30), format);
+            g.DrawString(data.GuardianName, font, brush, new RectangleF(400, 370, 400, 30), format);
+            g.DrawString(data.GuardianLink, font, brush, new RectangleF(10, 370, 380, 30), format);
 
+            g.DrawString(data.PhoneNumber, font, brush, new RectangleF(400, 420, 400, 30), format);
+            g.DrawString(data.Address, font, brush, new RectangleF(10, 420, 380, 30), format);
+            g.DrawString(data.Email, font, brush, new RectangleF(400, 460, 400, 30), format);
+            g.DrawString(data.Facebook, font, brush, new RectangleF(10, 460, 380, 30), format);
+            g.DrawString(data.School, font, brush, new RectangleF(400, 500, 400, 30), format);
+            g.DrawString(data.Class, font, brush, new RectangleF(10, 500, 380, 30), format);
+
+            g.DrawString(data.BrothersCount, font, brush, new RectangleF(400, 540, 400, 30), format);
+            g.DrawString(data.ArrangementBetweenBrothers, font, brush, new RectangleF(10, 540, 380, 30), format);
+
+            g.DrawString(data.OfficeName, font, brush, new RectangleF(400, 580, 400, 30), format);
+            g.DrawString(data.MemorizationAmount, font, brush, new RectangleF(10, 580, 380, 30), format);
+            g.DrawString(data.JoiningDate, font, brush, new RectangleF(400, 620, 400, 30), format);
+            g.DrawString(data.FirstConclusionDate, font, brush, new RectangleF(10, 620, 380, 30), format);
+
+            g.DrawString(data.StudentMashaykh, font, brush, new RectangleF(10, 680, 790, 120), format);
+            g.DrawString(data.MemorizePlaces, font, brush, new RectangleF(10, 820, 790, 120), format);
+            g.DrawString(data.Certificates, font, brush, new RectangleF(10, 960, 790, 120), format);
         }
 
         public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
