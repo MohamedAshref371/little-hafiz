@@ -113,7 +113,6 @@ namespace Little_Hafiz
                 return;
             }
 
-            HideOfficeTools();
             int ofc = DatabaseHelper.CurrentOffice;
             formTitle.Text = offices[ofc];
 
@@ -134,7 +133,14 @@ namespace Little_Hafiz
             stdOfficeCheckBox.Checked = !equalZero;
             stdOfficeCheckBox.Enabled = equalZero;
             stdOfficeSearch.Enabled = equalZero;
+            if (!equalZero)
+            {
+                if (officeEnterBtn.Visible)
+                    HideOfficeTools();
 
+                if (ranksCalculatorPanel.Visible)
+                    CloseBtn2_Click(null, null);
+            }
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
@@ -1003,7 +1009,6 @@ namespace Little_Hafiz
         private void CloseBtn2_Click(object sender, EventArgs e)
         {
             ranksCalculatorPanel.Visible = false;
-
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;

@@ -58,6 +58,12 @@ namespace Little_Hafiz
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن للنسخ الفرعية تعديل المسابقات");
+                return;
+            }
+            
             CompetitionGradeData.Score = (float)stdScore.Value;
             CompetitionGradeData.Rank = (int)stdRank.Value;
 
@@ -71,7 +77,15 @@ namespace Little_Hafiz
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
-            => Program.Form.DeleteStudentGradeRow(this);
+        {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن للنسخ الفرعية حذف المسابقات");
+                return;
+            }
+
+            Program.Form.DeleteStudentGradeRow(this);
+        }
         
         #region Border Radius
         private readonly int borderRadius = 20;
