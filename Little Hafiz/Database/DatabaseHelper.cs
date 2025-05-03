@@ -13,7 +13,7 @@ namespace Little_Hafiz
     {
         private static bool success = false;
         private static readonly int classVersion = 4;
-        private static readonly string dataFolder = "data", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{dataFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
+        private static readonly string dataFolder = "data", recordsFolder = $"{dataFolder}\\records", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{recordsFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
@@ -38,6 +38,9 @@ namespace Little_Hafiz
 
             if (!Directory.Exists(imagesFolder))
                 Directory.CreateDirectory(imagesFolder);
+
+            if (!Directory.Exists(recordsFolder))
+                Directory.CreateDirectory(recordsFolder);
 
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
@@ -522,18 +525,9 @@ namespace Little_Hafiz
             return true;
         }
 
-        private static void RemoveEmptyRecords()
-        {
-            string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
-
-            foreach (string file in recs)
-                if (new FileInfo(file).Length == 0)
-                    File.Delete(file);
-        }
-
         private static void RemoveAllRecords()
         {
-            string[] recs = Directory.GetFiles(dataFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
+            string[] recs = Directory.GetFiles(recordsFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
             foreach (string file in recs)
                 File.Delete(file);
@@ -558,14 +552,11 @@ namespace Little_Hafiz
         {
             if (!success) return;
 
-            if (File.Exists($"{dataFolder}\\Students--.db"))
-                File.Delete($"{dataFolder}\\Students--.db");
-
-            if (File.Exists($"{dataFolder}\\Students-.db"))
-                File.Move($"{dataFolder}\\Students-.db", $"{dataFolder}\\Students--.db");
+            if (!Directory.Exists($"{dataFolder}\\backup"))
+                Directory.CreateDirectory($"{dataFolder}\\backup");
 
             if (File.Exists(databaseFile))
-                File.Copy(databaseFile, $"{dataFolder}\\Students-.db");
+                File.Copy(databaseFile, $"{dataFolder}\\backup\\{DateTime.Now.Ticks}.db");
         }
         #endregion
     }
