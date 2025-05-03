@@ -135,11 +135,11 @@ namespace Little_Hafiz
             stdOfficeSearch.Enabled = equalZero;
             if (!equalZero)
             {
-                if (officeEnterBtn.Visible)
-                    HideOfficeTools();
-
                 if (ranksCalculatorPanel.Visible)
                     CloseBtn2_Click(null, null);
+
+                if (officeEnterBtn.Visible)
+                    HideOfficeTools();
             }
         }
 
@@ -1283,6 +1283,12 @@ namespace Little_Hafiz
             if (officeTextBox.Text == "")
                 return;
 
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن للنسخ الفرعية إضافة مكاتب");
+                return;
+            }
+            
             if (offices.Contains(officeTextBox.Text))
             {
                 MessageBox.Show("تم إدخال هذه المكتبة من قبل");
