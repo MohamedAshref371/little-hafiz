@@ -34,6 +34,7 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.deleteStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.scrollHelperLabel = new System.Windows.Forms.Label();
             this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdOffice = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -270,6 +271,7 @@
             this.studentDataPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
+            this.studentDataPanel.Controls.Add(this.deleteStudentBtn);
             this.studentDataPanel.Controls.Add(this.scrollHelperLabel);
             this.studentDataPanel.Controls.Add(this.printStudentBtn);
             this.studentDataPanel.Controls.Add(this.stdOffice);
@@ -356,6 +358,26 @@
             this.studentDataPanel.Size = new System.Drawing.Size(934, 656);
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
+            // 
+            // deleteStudentBtn
+            // 
+            this.deleteStudentBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteStudentBtn.BorderRadius = 15;
+            this.deleteStudentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteStudentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteStudentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteStudentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteStudentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.deleteStudentBtn.FillColor2 = System.Drawing.Color.Maroon;
+            this.deleteStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.deleteStudentBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.deleteStudentBtn.Location = new System.Drawing.Point(18, 1401);
+            this.deleteStudentBtn.Name = "deleteStudentBtn";
+            this.deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
+            this.deleteStudentBtn.TabIndex = 79;
+            this.deleteStudentBtn.Text = "حذف الطالب";
+            this.deleteStudentBtn.Click += new System.EventHandler(this.DeleteStudentBtn_Click);
             // 
             // scrollHelperLabel
             // 
@@ -2434,6 +2456,7 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
+            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.readRecordsBtn);
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
@@ -2443,7 +2466,6 @@
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
-            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.disableAtAll);
@@ -3498,6 +3520,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox officeComboBox;
         private System.Windows.Forms.Label scrollHelperLabel;
         private Guna.UI2.WinForms.Guna2GradientButton printStudentBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton deleteStudentBtn;
     }
 }
 

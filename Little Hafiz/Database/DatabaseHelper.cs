@@ -444,7 +444,7 @@ namespace Little_Hafiz
             => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
 
         public static int DeleteStudentPermanently(string nationalNumber)
-            => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'");
+            => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}';", Program.Record);
 
         public static int RemoveDeletedStudent30Days()
             => ExecuteNonQuery($"DELETE FROM students WHERE state = 2 AND state_date >= {DateTime.Now.AddDays(-30).Ticks}");

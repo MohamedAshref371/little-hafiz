@@ -505,6 +505,7 @@ namespace Little_Hafiz
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
+            studentDataPanel.VerticalScroll.Value = 0;
             studentDataPanel.Visible = false;
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
@@ -533,6 +534,33 @@ namespace Little_Hafiz
             {
                 CancelBtn_Click(null, null);
                 UpdateStudentRow();
+            }
+            else
+                ErrorMessage();
+        }
+
+        private void DeleteStudentBtn_Click(object sender, EventArgs e)
+        {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("حذف الطلاب مسموح فقط للنسخة الرئيسية");
+                return;
+            }
+            if (stdNational.Enabled)
+                return;
+            if (!stdBirthDate.Enabled)
+            {
+                MessageBox.Show("هذا الطالب له مسابقات مسجلة في البرنامج");
+                return;
+            }
+            if (MessageBox.Show("هل انت متأكد أنك تريد حذف هذا الطالب ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) != DialogResult.Yes)
+                return;
+
+            if (DatabaseHelper.DeleteStudentPermanently(stdNational.Text) != -1)
+            {
+                MessageBox.Show("تم حذف الطالب بنجاح");
+                CancelBtn_Click(null, null);
+                currentStudent.Enabled = false;
             }
             else
                 ErrorMessage();
@@ -690,6 +718,7 @@ namespace Little_Hafiz
             stdHobbies.Text = "";
             stdNotes.Text = "";
             stdImagePath.Text = "";
+            deleteStudentBtn.Visible = false;
         }
 
         private void SetStudentDataAtStudentDataIsNotNull(StudentData stdData)
@@ -730,6 +759,7 @@ namespace Little_Hafiz
             stdHobbies.Text = stdData.Hobbies;
             stdNotes.Text = stdData.Notes;
             stdImagePath.Text = stdData.Image;
+            deleteStudentBtn.Visible = DatabaseHelper.CurrentOffice == 0;
         }
 
         private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
