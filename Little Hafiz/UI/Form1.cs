@@ -167,6 +167,20 @@ namespace Little_Hafiz
             officeComboBox.Visible = true;
         }
 
+        static string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                    builder.Append(b.ToString("x2"));
+
+                return builder.ToString();
+            }
+        }
+
         private void StudentPanelTitle_DoubleClick(object sender, EventArgs e)
         {
             bool check = Properties.Settings.Default.CheckUpdate;
@@ -1335,19 +1349,5 @@ namespace Little_Hafiz
             => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
         #endregion
 
-
-        static string ComputeSha256Hash(string rawData)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                    builder.Append(b.ToString("x2"));
-
-                return builder.ToString();
-            }
-        }
     }
 }
