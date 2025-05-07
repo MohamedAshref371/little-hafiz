@@ -17,6 +17,7 @@ namespace Little_Hafiz
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
+        private static bool copyData;
 
         #region Metadata
         public static int Version { get; private set; }
@@ -45,8 +46,7 @@ namespace Little_Hafiz
             if (File.Exists(databaseFile) || CreateDatabase())
                 ReadMetadata();
 
-            if (Properties.Settings.Default.BackupEnabled)
-                DatabaseBackup();
+            copyData = Properties.Settings.Default.BackupEnabled;
         }
 
         private static bool CreateDatabase()
@@ -469,6 +469,12 @@ namespace Little_Hafiz
         private static int ExecuteNonQuery(string sql, bool recording = false)
         {
             if (!success || sql is null || sql.Trim() == "") return -1;
+            if (copyData)
+            {
+                copyData = false;
+                DatabaseBackup();
+            }
+
             try
             {
                 conn.Open();
