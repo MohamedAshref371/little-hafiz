@@ -128,11 +128,16 @@ namespace Little_Hafiz
             officeComboBox.Items.AddRange(offices);
             officeComboBox.SelectedIndex = ofc;
 
+            officeRank.Items.Clear();
+            officeRank.Items.AddRange(offices);
+            officeRank.SelectedIndex = ofc;
+
             bool equalZero = ofc == 0;
             stdOffice.Enabled = equalZero;
             stdOfficeCheckBox.Checked = !equalZero;
             stdOfficeCheckBox.Enabled = equalZero;
             stdOfficeSearch.Enabled = equalZero;
+            officeRank.Enabled = equalZero;
             if (!equalZero)
             {
                 if (ranksCalculatorPanel.Visible)
@@ -1060,7 +1065,9 @@ namespace Little_Hafiz
 
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
-            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToString("yyyy/MM"), compDateTo.Value.ToString("yyyy/MM"));
+            setRanksBtn.Enabled = officeRank.SelectedIndex == 0;
+
+            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToString("yyyy/MM"), compDateTo.Value.ToString("yyyy/MM"), officeRank.SelectedIndex);
             if (ranks is null)
             {
                 ErrorMessage();
@@ -1262,12 +1269,6 @@ namespace Little_Hafiz
 
         private void RankCalcBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseHelper.CurrentOffice != 0)
-            {
-                MessageBox.Show("لا يمكن الدخول على هذه الشاشة إلا من النسخة الرئيسية");
-                return;
-            }
-
             int count = DatabaseHelper.GetStudentCount();
             if (count == -1)
             {
