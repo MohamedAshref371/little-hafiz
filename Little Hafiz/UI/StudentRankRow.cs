@@ -7,6 +7,7 @@ namespace Little_Hafiz
 {
     public partial class StudentRankRow : UserControl
     {
+        public static bool ReadOnly;
         public StudentRankRow()
         {
             InitializeComponent();
@@ -25,9 +26,17 @@ namespace Little_Hafiz
             stdName.Text = data.StudentName;
             compDate.Text = data.CompetitionDate;
             stdScore.Text = data.Score.ToString();
-            StudentRank.Text = data.Rank.ToString();
-
-            StudentRank.ValueChanged += StdRank_ValueChanged;
+            if (ReadOnly)
+            {
+                stdRankLabel.Text = data.Rank.ToString();
+                StudentRank.Visible = false;
+                stdRankLabel.Visible = true;
+            }
+            else
+            {
+                StudentRank.Value = data.Rank;
+                StudentRank.ValueChanged += StdRank_ValueChanged;
+            }
         }
 
         private void StdRank_ValueChanged(object sender, EventArgs e)

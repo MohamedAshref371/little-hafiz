@@ -1096,6 +1096,7 @@ namespace Little_Hafiz
                 }
             }
 
+            StudentRankRow.ReadOnly = DatabaseHelper.CurrentOffice != 0;
             ranksListPanel.Controls.Clear();
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
 
