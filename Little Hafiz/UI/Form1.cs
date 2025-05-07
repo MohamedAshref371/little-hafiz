@@ -1131,6 +1131,15 @@ namespace Little_Hafiz
                     row.StudentRank.Value = rnk;
             }
         }
+
+        private void OfficeRank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!ranksCalculatorPanel.Visible) return;
+            int idx = officeRank.SelectedIndex;
+            int count = DatabaseHelper.GetStudentCount(idx);
+            studentCountLabel.Text = idx == 0 ? "عدد الطلبة الكلي : " : "عدد طلاب المكتب : ";
+            studentCount.Text = count.ToString();
+        }
         #endregion
 
         #region Footer Panel
@@ -1269,14 +1278,6 @@ namespace Little_Hafiz
 
         private void RankCalcBtn_Click(object sender, EventArgs e)
         {
-            int count = DatabaseHelper.GetStudentCount();
-            if (count == -1)
-            {
-                ErrorMessage();
-                return;
-            }
-            studentCount.Text = count.ToString();
-
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
@@ -1292,6 +1293,7 @@ namespace Little_Hafiz
             levelCompCount.Text = "0";
 
             ranksCalculatorPanel.Visible = true;
+            OfficeRank_SelectedIndexChanged(null, null);
         }
 
         private void HideOfficeTools()

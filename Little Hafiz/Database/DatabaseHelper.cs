@@ -108,13 +108,13 @@ namespace Little_Hafiz
             }
         }
 
-        public static int GetStudentCount()
+        public static int GetStudentCount(int office)
         {
             if (!success) return -1;
             try
             {
                 conn.Open();
-                command.CommandText = "SELECT COUNT(*) FROM students";
+                command.CommandText = $"SELECT COUNT(*) FROM students {(office == 0 ? "" : $"WHERE office = {office}")}";
                 reader = command.ExecuteReader();
                 if (!reader.Read()) return -1;
                 return reader.GetInt32(0);
