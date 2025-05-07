@@ -410,6 +410,7 @@ namespace Little_Hafiz
             addStudentBtn.Text = "تعديل";
             stdNational.Enabled = false;
             stdBirthDate.Enabled = currentStudent.StudentSearchRowData.CompetitionDate is null;
+            deleteStudentBtn.Visible = stdBirthDate.Enabled && DatabaseHelper.CurrentOffice == 0;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
         }
@@ -759,7 +760,6 @@ namespace Little_Hafiz
             stdHobbies.Text = stdData.Hobbies;
             stdNotes.Text = stdData.Notes;
             stdImagePath.Text = stdData.Image;
-            deleteStudentBtn.Visible = DatabaseHelper.CurrentOffice == 0;
         }
 
         private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
