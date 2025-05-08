@@ -107,6 +107,8 @@ namespace Little_Hafiz
             {
                 offices = new string[] { "اختر من القائمة" };
                 AfterGetOffice();
+                Properties.Settings.Default.CheckUpdate = true;
+                Properties.Settings.Default.Save();
             }
         }
 
