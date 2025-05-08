@@ -40,7 +40,7 @@ namespace Little_Hafiz
 
         private void CompDate_DoubleClick(object sender, EventArgs e)
         {
-            if (CompetitionGradeData != null && CompetitionGradeData.Notes != "")
+            if (CompetitionGradeData != null && CompetitionGradeData.Notes.Trim() != "")
                 MessageBox.Show(CompetitionGradeData.Notes);
         }
         
