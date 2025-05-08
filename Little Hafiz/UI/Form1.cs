@@ -1331,8 +1331,14 @@ namespace Little_Hafiz
         static void DownloadUpdate()
         {
             GetAppUpdate update = new GetAppUpdate();
-            bool hasUpdate = update.CheckForUpdates();
-            if (!hasUpdate)
+            bool? hasUpdate = update.CheckForUpdates();
+
+            if (hasUpdate is null)
+            {
+                MessageBox.Show("تحقق من الاتصال بالانترنت");
+                return;
+            }
+            if (!(bool)hasUpdate)
             {
                 MessageBox.Show("البرنامج محدث");
                 return;
@@ -1341,8 +1347,8 @@ namespace Little_Hafiz
             if (MessageBox.Show("هناك تحديث متوفر، هل تريد تحميله ؟", "🥳", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 bool updateDownloaded = update.GetTheUpdate();
-                if (updateDownloaded) MessageBox.Show("تم تحميل التحديث بنجاح");
-                else MessageBox.Show("لم يتم تحميل التحديث");
+                if (updateDownloaded) MessageBox.Show("تم تحميل ملف التحديث بنجاح");
+                else MessageBox.Show("فشل تحميل ملف التحديث");
             }
         }
 

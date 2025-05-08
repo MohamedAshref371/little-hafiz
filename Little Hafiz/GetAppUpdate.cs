@@ -11,7 +11,7 @@ namespace Little_Hafiz
         private string localVersion, onlineVersion;
         private Release release;
 
-        public bool CheckForUpdates()
+        public bool? CheckForUpdates()
         {
             try
             {
@@ -23,8 +23,7 @@ namespace Little_Hafiz
 
                 return RemoveTrailingZerosFromVersion(localVersion) != RemoveTrailingZerosFromVersion(onlineVersion);
             }
-            catch { }
-            return false;
+            catch { return null; }
         }
 
         public bool GetTheUpdate()
