@@ -120,7 +120,6 @@ namespace Little_Hafiz
                 Close();
                 return;
             }
-            offices[0] = "اختر من القائمة";
 
             AfterGetOffice();
         }
@@ -130,6 +129,7 @@ namespace Little_Hafiz
             int ofc = DatabaseHelper.CurrentOffice;
             formTitle.Text = offices[ofc];
 
+            offices[0] = "اختر من القائمة";
             stdOffice.Items.Clear();
             stdOffice.Items.AddRange(offices);
             stdOffice.SelectedIndex = ofc;
