@@ -1185,19 +1185,44 @@ namespace Little_Hafiz
         private void SetTitlesOnExcelFile(IXLWorksheet sheet)
         {
             sheet.Range("A1:M1").Merge().Value = "الحافظ الصغير- المسابقة القرآنية الرمضانية";
-
+            
+            sheet.Column(1).Width = 7;
             sheet.Cell(2, 1).Value = "م";
+
+            sheet.Column(2).Width = 7;
             sheet.Cell(2, 2).Value = "الكود";
+
+            sheet.Column(3).Width = 20;
             sheet.Cell(2, 3).Value = "الاسم";
+
+            sheet.Column(4).Width = 15;
             sheet.Cell(2, 4).Value = "الرقم القومي";
+
+            sheet.Column(5).Width = 15;
             sheet.Cell(2, 5).Value = "تاريخ الميلاد";
+
+            sheet.Column(6).Width = 15;
             sheet.Cell(2, 6).Value = "رقم التليفون";
+
+            sheet.Column(7).Width = 7;
             sheet.Cell(2, 7).Value = "الحالي";
+
+            sheet.Column(8).Width = 7;
             sheet.Cell(2, 8).Value = "السابق";
+
+            sheet.Column(9).Width = 15;
             sheet.Cell(2, 9).Value = "الصف";
+
+            sheet.Column(10).Width = 15;
             sheet.Cell(2, 10).Value = "العنوان";
+
+            sheet.Column(11).Width = 15;
             sheet.Cell(2, 11).Value = "المكتب";
+
+            sheet.Column(12).Width = 7;
             sheet.Cell(2, 12).Value = "المركز";
+
+            sheet.Column(13).Width = 14;
             sheet.Cell(2, 13).Value = "تاريخ إضافة المسابقة";
         }
 
