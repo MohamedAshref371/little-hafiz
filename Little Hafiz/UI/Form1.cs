@@ -1185,7 +1185,12 @@ namespace Little_Hafiz
         private void SetTitlesOnExcelFile(IXLWorksheet sheet)
         {
             sheet.Range("A1:M1").Merge().Value = "الحافظ الصغير- المسابقة القرآنية الرمضانية";
-            
+            sheet.Row(1).Height = 30;
+            sheet.Cell("A1").Style.Font.Bold = true;
+            sheet.Cell("A1").Style.Font.FontSize = 16;
+            sheet.Cell("A1").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            sheet.Cell("A1").Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
             sheet.Column(1).Width = 7;
             sheet.Cell(2, 1).Value = "م";
 
