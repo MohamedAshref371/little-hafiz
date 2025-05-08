@@ -1140,12 +1140,6 @@ namespace Little_Hafiz
 
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseHelper.CurrentOffice != 0)
-            {
-                MessageBox.Show("لا يمكن للنسخ الفرعية إستخراج ملفات إيكسل");
-                return;
-            }
-
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
             ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(DateTime.Now.Year, 0, stdOfficeSearch.SelectedIndex);
