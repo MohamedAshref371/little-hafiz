@@ -2396,7 +2396,7 @@
             this.officeTextBox.PlaceholderText = "";
             this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeTextBox.SelectedText = "";
-            this.officeTextBox.Size = new System.Drawing.Size(397, 36);
+            this.officeTextBox.Size = new System.Drawing.Size(351, 36);
             this.officeTextBox.TabIndex = 89;
             this.officeTextBox.Visible = false;
             this.officeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
