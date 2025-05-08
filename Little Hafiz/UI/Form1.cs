@@ -88,21 +88,7 @@ namespace Little_Hafiz
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
             if (Directory.Exists("data"))
-            {
                 GetOffice();
-
-                if (Properties.Settings.Default.CheckUpdate)
-                {
-                    Timer timer2 = new Timer { Interval = 1 };
-                    timer2.Tick += (s, e1) =>
-                    {
-                        timer2.Stop();
-                        DownloadUpdate();
-                        timer2.Dispose();
-                    };
-                    timer2.Start();
-                }
-            }
             else
             {
                 offices = new string[] { Application.ProductName };
@@ -195,26 +181,6 @@ namespace Little_Hafiz
                     builder.Append(b.ToString("x2"));
 
                 return builder.ToString();
-            }
-        }
-
-        private void StudentPanelTitle_DoubleClick(object sender, EventArgs e)
-        {
-            bool check = Properties.Settings.Default.CheckUpdate;
-            Properties.Settings.Default.CheckUpdate = !check;
-            Properties.Settings.Default.Save();
-            MessageBox.Show("تم " + (check ? "تعطيل" : "تفعيل") + " فحص التحديثات عند فتح البرنامج");
-        }
-
-        static void DownloadUpdate()
-        {
-            GetAppUpdate update = new GetAppUpdate();
-            bool hasUpdate = update.CheckForUpdates();
-            if (hasUpdate && MessageBox.Show("هناك تحديث متوفر، هل تريد تحميله ؟", "🥳", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                bool updateDownloaded = update.GetTheUpdate();
-                if (updateDownloaded) MessageBox.Show("تم تحميل التحديث بنجاح");
-                else MessageBox.Show("لم يتم تحميل التحديث");
             }
         }
 
@@ -1172,23 +1138,6 @@ namespace Little_Hafiz
             studentDataPanel.Visible = true;
         }
 
-
-        private void ExcelRowsFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            excelDateFilter.Visible = false;
-            int index = excelRowsFilter.SelectedIndex;
-            if (index == 2)
-            {
-                excelDateFilter.CustomFormat = "yyyy";
-                excelDateFilter.Visible = true;
-            }
-            else if (index == 4)
-            {
-                excelDateFilter.CustomFormat = "yyyy MMM";
-                excelDateFilter.Visible = true;
-            }
-        }
-
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
         {
             if (DatabaseHelper.CurrentOffice != 0)
@@ -1197,26 +1146,9 @@ namespace Little_Hafiz
                 return;
             }
 
-            int year = 0, month = 0;
-            int index = excelRowsFilter.SelectedIndex;
-            DateTime dt;
-
-            if (index == 2 || index == 4)
-            {
-                dt = excelDateFilter.Value;
-                year = dt.Year;
-                if (index == 4) month = dt.Month;
-            }
-            else if (index == 1 || index == 3)
-            {
-                dt = DateTime.Now;
-                year = dt.Year;
-                if (index == 3) month = dt.Month;
-            }
-
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
-            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(year, month);
+            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(DateTime.Now.Year, 0, stdOfficeSearch.SelectedIndex);
             if (rows is null)
             {
                 ErrorMessage();
@@ -1263,15 +1195,16 @@ namespace Little_Hafiz
             sheet.Cell(2, 1).Value = "م";
             sheet.Cell(2, 2).Value = "الكود";
             sheet.Cell(2, 3).Value = "الاسم";
-            sheet.Cell(2, 4).Value = "تاريخ الميلاد";
-            sheet.Cell(2, 5).Value = "رقم التليفون";
-            sheet.Cell(2, 6).Value = "الحالي";
-            sheet.Cell(2, 7).Value = "السابق";
-            sheet.Cell(2, 8).Value = "الصف";
-            sheet.Cell(2, 9).Value = "العنوان";
-            sheet.Cell(2, 10).Value = "مكان الحفظ";
-            sheet.Cell(2, 11).Value = "المركز";
-            sheet.Cell(2, 12).Value = "تاريخ إضافة المسابقة";
+            sheet.Cell(2, 4).Value = "الرقم القومي";
+            sheet.Cell(2, 5).Value = "تاريخ الميلاد";
+            sheet.Cell(2, 6).Value = "رقم التليفون";
+            sheet.Cell(2, 7).Value = "الحالي";
+            sheet.Cell(2, 8).Value = "السابق";
+            sheet.Cell(2, 9).Value = "الصف";
+            sheet.Cell(2, 10).Value = "العنوان";
+            sheet.Cell(2, 11).Value = "المكتب";
+            sheet.Cell(2, 12).Value = "المركز";
+            sheet.Cell(2, 13).Value = "تاريخ إضافة المسابقة";
         }
 
         private void SetDataOnExcelFile(IXLWorksheet sheet, ref int row, ExcelRowData data)
@@ -1279,15 +1212,16 @@ namespace Little_Hafiz
             sheet.Cell(row, 1).Value = (row - 2).ToString();
             sheet.Cell(row, 2).Value = data.StudentCode;
             sheet.Cell(row, 3).Value = data.FullName;
-            sheet.Cell(row, 4).Value = data.BirthDate;
-            sheet.Cell(row, 5).Value = data.PhoneNumber;
-            sheet.Cell(row, 6).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
-            sheet.Cell(row, 7).Value = Ranks.ConvertNumberToRank(data.PreviousLevel);
-            sheet.Cell(row, 8).Value = data.Class;
-            sheet.Cell(row, 9).Value = data.Address;
-            sheet.Cell(row, 10).Value = data.MemoPlace;
-            sheet.Cell(row, 11).Value = data.Rank;
-            sheet.Cell(row, 12).Value = data.CompetitionAddedDate;
+            sheet.Cell(row, 4).Value = data.NationalNumber;
+            sheet.Cell(row, 5).Value = data.BirthDate;
+            sheet.Cell(row, 6).Value = data.PhoneNumber;
+            sheet.Cell(row, 7).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
+            sheet.Cell(row, 8).Value = Ranks.ConvertNumberToRank(data.PreviousLevel);
+            sheet.Cell(row, 9).Value = data.Class;
+            sheet.Cell(row, 10).Value = data.Address;
+            sheet.Cell(row, 11).Value = data.Office == 0 ? "غير معروف" : offices[data.Office];
+            sheet.Cell(row, 12).Value = data.Rank;
+            sheet.Cell(row, 13).Value = data.CompetitionAddedDate;
             row++;
         }
 
@@ -1315,9 +1249,8 @@ namespace Little_Hafiz
         {
             officeTextBox.Visible = false;
             officeEnterBtn.Visible = false;
+            checkUpdateBtn.Visible = true;
             releasesLatestBtn.Visible = true;
-            excelDateFilter.Visible = excelRowsFilter.SelectedIndex == 2 || excelRowsFilter.SelectedIndex == 4;
-            excelRowsFilter.Visible = true;
             extractExcelBtn.Visible = true;
         }
 
@@ -1338,9 +1271,8 @@ namespace Little_Hafiz
             if (MessageBox.Show("هل انت متأكد أنك على النسخة الرئيسية ؟", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
                 return;
 
+            checkUpdateBtn.Visible = false;
             releasesLatestBtn.Visible = false;
-            excelDateFilter.Visible = false;
-            excelRowsFilter.Visible = false;
             extractExcelBtn.Visible = false;
             officeTextBox.Visible = true;
             officeEnterBtn.Visible = true;
@@ -1367,6 +1299,27 @@ namespace Little_Hafiz
 
             GetOffice();
             officeTextBox.Text = "";
+        }
+
+        private void CheckUpdateBtn_Click(object sender, EventArgs e)
+            => DownloadUpdate();
+        
+        static void DownloadUpdate()
+        {
+            GetAppUpdate update = new GetAppUpdate();
+            bool hasUpdate = update.CheckForUpdates();
+            if (!hasUpdate)
+            {
+                MessageBox.Show("البرنامج محدث");
+                return;
+            }
+
+            if (MessageBox.Show("هناك تحديث متوفر، هل تريد تحميله ؟", "🥳", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool updateDownloaded = update.GetTheUpdate();
+                if (updateDownloaded) MessageBox.Show("تم تحميل التحديث بنجاح");
+                else MessageBox.Show("لم يتم تحميل التحديث");
+            }
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)

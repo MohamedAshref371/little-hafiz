@@ -329,11 +329,12 @@ namespace Little_Hafiz
             };
         }
 
-        public static ExcelRowData[] SelectExcelRowData(int year = 0, int month = 0)
+        public static ExcelRowData[] SelectExcelRowData(int year = 0, int month = 0, int office = 0)
         {
             string dateFilter = year == 0 ? "1=1" : month == 0 ? $"competition_date LIKE '{year}/%'" : $"competition_date = '{year}/{month:D2}'";
+            string officeFilter = office == 0 ? "" : $"WHERE s.office = {office}";
 
-            string sql = $@"SELECT g.std_code, s.full_name, s.birth_date, s.phone_number, g.competition_level, g.prev_level, s.class, s.address, s.memo_places, g.std_rank, g.competition_date FROM students s JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date";
+            string sql = $@"SELECT g.std_code, s.full_name, s.national, s.birth_date, s.phone_number, g.competition_level, g.prev_level, s.class, s.address, s.office, g.std_rank, g.competition_date FROM students s JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date {officeFilter}";
 
             return SelectMultiRows(sql, GetExcelRowData);
         }
@@ -344,14 +345,15 @@ namespace Little_Hafiz
             {
                 StudentCode = reader.GetInt32(0),
                 FullName = (string)reader["full_name"],
+                NationalNumber = (string)reader["national"],
                 BirthDate = (string)reader["birth_date"],
                 PhoneNumber = (string)reader["phone_number"],
-                CompetitionLevel = reader.GetInt32(4),
-                PreviousLevel = reader.GetInt32(5),
+                CompetitionLevel = reader.GetInt32(5),
+                PreviousLevel = reader.GetInt32(6),
                 Class = (string)reader["class"],
                 Address = (string)reader["address"],
-                MemoPlace = (string)reader["memo_places"],
-                Rank = reader.GetInt32(9),
+                Office = reader.GetInt32(9),
+                Rank = reader.GetInt32(10),
                 CompetitionAddedDate = (string)reader["competition_date"]
             };
         }

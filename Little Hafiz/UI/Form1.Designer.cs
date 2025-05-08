@@ -138,12 +138,11 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.checkUpdateBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.excelDateFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.excelRowsFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.officeTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -1522,7 +1521,6 @@
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
             this.studentPanelTitle.TabIndex = 2;
             this.studentPanelTitle.Text = "استمارة بيانات الطالب";
-            this.studentPanelTitle.DoubleClick += new System.EventHandler(this.StudentPanelTitle_DoubleClick);
             // 
             // stdName
             // 
@@ -2246,9 +2244,9 @@
             this.openAddStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.openAddStudentBtn.ForeColor = System.Drawing.Color.White;
             this.openAddStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.openAddStudentBtn.Location = new System.Drawing.Point(766, 5);
+            this.openAddStudentBtn.Location = new System.Drawing.Point(751, 5);
             this.openAddStudentBtn.Name = "openAddStudentBtn";
-            this.openAddStudentBtn.Size = new System.Drawing.Size(157, 39);
+            this.openAddStudentBtn.Size = new System.Drawing.Size(165, 39);
             this.openAddStudentBtn.TabIndex = 82;
             this.openAddStudentBtn.Text = "إضافة طالب";
             this.openAddStudentBtn.Click += new System.EventHandler(this.OpenAddStudentBtn_Click);
@@ -2259,12 +2257,11 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.checkUpdateBtn);
             this.footerPanel.Controls.Add(this.officeHelperBtn);
             this.footerPanel.Controls.Add(this.rankCalcBtn);
             this.footerPanel.Controls.Add(this.releasesLatestBtn);
-            this.footerPanel.Controls.Add(this.excelDateFilter);
             this.footerPanel.Controls.Add(this.extractExcelBtn);
-            this.footerPanel.Controls.Add(this.excelRowsFilter);
             this.footerPanel.Controls.Add(this.openAddStudentBtn);
             this.footerPanel.Controls.Add(this.officeTextBox);
             this.footerPanel.Controls.Add(this.officeEnterBtn);
@@ -2275,6 +2272,27 @@
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
+            // 
+            // checkUpdateBtn
+            // 
+            this.checkUpdateBtn.BorderRadius = 15;
+            this.checkUpdateBtn.BorderThickness = 1;
+            this.checkUpdateBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.checkUpdateBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.checkUpdateBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.checkUpdateBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.checkUpdateBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.checkUpdateBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.checkUpdateBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.checkUpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.checkUpdateBtn.ForeColor = System.Drawing.Color.Black;
+            this.checkUpdateBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.checkUpdateBtn.Location = new System.Drawing.Point(267, 5);
+            this.checkUpdateBtn.Name = "checkUpdateBtn";
+            this.checkUpdateBtn.Size = new System.Drawing.Size(79, 39);
+            this.checkUpdateBtn.TabIndex = 91;
+            this.checkUpdateBtn.Text = "فحص";
+            this.checkUpdateBtn.Click += new System.EventHandler(this.CheckUpdateBtn_Click);
             // 
             // officeHelperBtn
             // 
@@ -2290,9 +2308,9 @@
             this.officeHelperBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.officeHelperBtn.ForeColor = System.Drawing.Color.Black;
             this.officeHelperBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.officeHelperBtn.Location = new System.Drawing.Point(497, 5);
+            this.officeHelperBtn.Location = new System.Drawing.Point(449, 5);
             this.officeHelperBtn.Name = "officeHelperBtn";
-            this.officeHelperBtn.Size = new System.Drawing.Size(134, 39);
+            this.officeHelperBtn.Size = new System.Drawing.Size(145, 39);
             this.officeHelperBtn.TabIndex = 88;
             this.officeHelperBtn.Text = "مساعد المكاتب";
             this.officeHelperBtn.Click += new System.EventHandler(this.OfficeHelperBtn_Click);
@@ -2311,9 +2329,9 @@
             this.rankCalcBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.rankCalcBtn.ForeColor = System.Drawing.Color.Black;
             this.rankCalcBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.rankCalcBtn.Location = new System.Drawing.Point(637, 5);
+            this.rankCalcBtn.Location = new System.Drawing.Point(600, 5);
             this.rankCalcBtn.Name = "rankCalcBtn";
-            this.rankCalcBtn.Size = new System.Drawing.Size(123, 39);
+            this.rankCalcBtn.Size = new System.Drawing.Size(145, 39);
             this.rankCalcBtn.TabIndex = 87;
             this.rankCalcBtn.Text = "حساب المركز";
             this.rankCalcBtn.Click += new System.EventHandler(this.RankCalcBtn_Click);
@@ -2332,30 +2350,12 @@
             this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(381, 5);
+            this.releasesLatestBtn.Location = new System.Drawing.Point(184, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
-            this.releasesLatestBtn.Size = new System.Drawing.Size(106, 39);
+            this.releasesLatestBtn.Size = new System.Drawing.Size(79, 39);
             this.releasesLatestBtn.TabIndex = 86;
             this.releasesLatestBtn.Text = "البرنامج";
             this.releasesLatestBtn.Click += new System.EventHandler(this.ReleasesLatestBtn_Click);
-            // 
-            // excelDateFilter
-            // 
-            this.excelDateFilter.BorderRadius = 5;
-            this.excelDateFilter.Checked = true;
-            this.excelDateFilter.CustomFormat = "yyyy";
-            this.excelDateFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.excelDateFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.excelDateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.excelDateFilter.Location = new System.Drawing.Point(204, 7);
-            this.excelDateFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.excelDateFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.excelDateFilter.Name = "excelDateFilter";
-            this.excelDateFilter.Size = new System.Drawing.Size(111, 36);
-            this.excelDateFilter.TabIndex = 85;
-            this.excelDateFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.excelDateFilter.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
-            this.excelDateFilter.Visible = false;
             // 
             // extractExcelBtn
             // 
@@ -2375,33 +2375,6 @@
             this.extractExcelBtn.TabIndex = 84;
             this.extractExcelBtn.Text = "excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
-            // 
-            // excelRowsFilter
-            // 
-            this.excelRowsFilter.BackColor = System.Drawing.Color.Transparent;
-            this.excelRowsFilter.BorderRadius = 5;
-            this.excelRowsFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.excelRowsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.excelRowsFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.excelRowsFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.excelRowsFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.excelRowsFilter.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.excelRowsFilter.ForeColor = System.Drawing.Color.Black;
-            this.excelRowsFilter.ItemHeight = 30;
-            this.excelRowsFilter.Items.AddRange(new object[] {
-            "آخر مسابقة للطالب",
-            "هذه السنة",
-            "... تحديد السنة",
-            "هذا الشهر",
-            "... تحديد الشهر"});
-            this.excelRowsFilter.Location = new System.Drawing.Point(86, 7);
-            this.excelRowsFilter.Name = "excelRowsFilter";
-            this.excelRowsFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.excelRowsFilter.Size = new System.Drawing.Size(116, 36);
-            this.excelRowsFilter.StartIndex = 1;
-            this.excelRowsFilter.TabIndex = 83;
-            this.excelRowsFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.excelRowsFilter.SelectedIndexChanged += new System.EventHandler(this.ExcelRowsFilter_SelectedIndexChanged);
             // 
             // officeTextBox
             // 
@@ -2423,7 +2396,7 @@
             this.officeTextBox.PlaceholderText = "";
             this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeTextBox.SelectedText = "";
-            this.officeTextBox.Size = new System.Drawing.Size(400, 36);
+            this.officeTextBox.Size = new System.Drawing.Size(397, 36);
             this.officeTextBox.TabIndex = 89;
             this.officeTextBox.Visible = false;
             this.officeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
@@ -3462,9 +3435,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
         private Guna.UI2.WinForms.Guna2GradientButton openAddStudentBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
-        private Guna.UI2.WinForms.Guna2ComboBox excelRowsFilter;
         private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
-        private Guna.UI2.WinForms.Guna2DateTimePicker excelDateFilter;
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
         private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel studentGradesPanel;
@@ -3542,6 +3513,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton printStudentBtn;
         private Guna.UI2.WinForms.Guna2GradientButton deleteStudentBtn;
         private Guna.UI2.WinForms.Guna2ComboBox officeRank;
+        private Guna.UI2.WinForms.Guna2GradientButton checkUpdateBtn;
     }
 }
 
