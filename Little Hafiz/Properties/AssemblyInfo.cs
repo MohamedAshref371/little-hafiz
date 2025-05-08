@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("برنامج مسابقات القرآن الكريم - محمد الشاعر")]
+[assembly: AssemblyTitle("برنامج مسابقات القرآن الكريم")]
 [assembly: AssemblyDescription("github.com/MohamedAshref371")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("github.com/MohamedAshref371")]

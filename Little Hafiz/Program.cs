@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -27,7 +28,7 @@ namespace Little_Hafiz
 
             try
             {
-                System.Threading.Mutex mutex = new System.Threading.Mutex(true, Application.ProductName + Application.CompanyName, out bool createdNew);
+                System.Threading.Mutex mutex = new System.Threading.Mutex(true, Path.GetFullPath("data").Replace(":", "").Replace("\\", ""), out bool createdNew);
                 if (createdNew)
                 {
                     Record = Properties.Settings.Default.RecordEnabled;
@@ -35,7 +36,7 @@ namespace Little_Hafiz
                     Application.Run(Form);
                     mutex.ReleaseMutex();
                 }
-                else MessageBox.Show("هناك نسخة من البرنامج مفتوحة");
+                else MessageBox.Show("لقد فتحت البرنامج بالفعل");
             }
             catch (Exception ex)
             {
