@@ -105,8 +105,8 @@ namespace Little_Hafiz
             }
             else
             {
-                offices = new string[] { "اختر من القائمة" };
-                AfterGetOffice();
+                offices = new string[] { Application.ProductName };
+                AfterGetOffice(0);
             }
         }
 
@@ -121,12 +121,11 @@ namespace Little_Hafiz
                 return;
             }
 
-            AfterGetOffice();
+            AfterGetOffice(DatabaseHelper.CurrentOffice);
         }
 
-        private void AfterGetOffice()
+        private void AfterGetOffice(int ofc)
         {
-            int ofc = DatabaseHelper.CurrentOffice;
             formTitle.Text = offices[ofc];
 
             offices[0] = "اختر من القائمة";
