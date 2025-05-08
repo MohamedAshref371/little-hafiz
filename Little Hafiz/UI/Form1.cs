@@ -87,18 +87,26 @@ namespace Little_Hafiz
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
-            GetOffice();
-
-            if (Properties.Settings.Default.CheckUpdate)
+            if (Directory.Exists("data"))
             {
-                Timer timer2 = new Timer { Interval = 1 };
-                timer2.Tick += (s, e1) =>
+                GetOffice();
+
+                if (Properties.Settings.Default.CheckUpdate)
                 {
-                    timer2.Stop();
-                    DownloadUpdate();
-                    timer2.Dispose();
-                };
-                timer2.Start();
+                    Timer timer2 = new Timer { Interval = 1 };
+                    timer2.Tick += (s, e1) =>
+                    {
+                        timer2.Stop();
+                        DownloadUpdate();
+                        timer2.Dispose();
+                    };
+                    timer2.Start();
+                }
+            }
+            else
+            {
+                offices = new string[] { "اختر من القائمة" };
+                AfterGetOffice();
             }
         }
 
@@ -112,7 +120,13 @@ namespace Little_Hafiz
                 Close();
                 return;
             }
+            offices[0] = "اختر من القائمة";
 
+            AfterGetOffice();
+        }
+
+        private void AfterGetOffice()
+        {
             int ofc = DatabaseHelper.CurrentOffice;
             formTitle.Text = offices[ofc];
 
@@ -152,8 +166,7 @@ namespace Little_Hafiz
         {
             if (officeComboBox.Visible)
             {
-                if (officeComboBox.SelectedIndex >= 0)
-                    DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
+                DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
                 GetOffice();
                 officeComboBox.Visible = false;
                 formTitle.Visible = true;
@@ -161,7 +174,7 @@ namespace Little_Hafiz
             }
             if (DatabaseHelper.CurrentOffice != 0)
                 MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
-            
+
             if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secret.HashPassword))
                 return;
 
@@ -539,7 +552,9 @@ namespace Little_Hafiz
                 MessageBox.Show("أدخل رقم قومي صحيح");
                 return;
             }
-
+            if (stdOffice.SelectedIndex == 0 && MessageBox.Show("إذا لم تقم باختيار مكتب للطالب، سيتم وضعه في مكتب مزيف\nهل تريد الاستمرار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
+                return;
+            
             if (studentPanelState == StudentPanelState.Add && DatabaseHelper.AddStudent(GetStudentData()) != -1)
             {
                 stdNationalCheckBox.Checked = true;
@@ -1345,7 +1360,7 @@ namespace Little_Hafiz
             
             if (offices.Contains(officeTextBox.Text))
             {
-                MessageBox.Show("تم إدخال هذه المكتبة من قبل");
+                MessageBox.Show("تم إدخال هذا المكتب من قبل");
                 return;
             }
 

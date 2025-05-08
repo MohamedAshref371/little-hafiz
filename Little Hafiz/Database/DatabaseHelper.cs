@@ -436,6 +436,7 @@ namespace Little_Hafiz
 
         public static int UpdateMetadataOffice(int office)
         {
+            if (office < 0) return -1;
             CurrentOffice = office;
             return ExecuteNonQuery($"UPDATE metadata SET office = {office}");
         }
