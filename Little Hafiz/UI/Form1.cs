@@ -1140,6 +1140,11 @@ namespace Little_Hafiz
 
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
         {
+            if (!File.Exists("ClosedXML.dll"))
+            {
+                MessageBox.Show("مكاتب الايكسل غير موجودة");
+                return;
+            }
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
             ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(DateTime.Now.Year, 0, stdOfficeSearch.SelectedIndex);
@@ -1149,6 +1154,11 @@ namespace Little_Hafiz
                 return;
             }
 
+            ExtractExcel(rows);
+        }
+
+        private void ExtractExcel(ExcelRowData[] rows)
+        {
             using (var workbook = new XLWorkbook())
             {
                 workbook.RightToLeft = true;
