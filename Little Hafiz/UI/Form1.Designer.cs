@@ -1838,8 +1838,8 @@
             this.studentSearchPanel.BorderRadius = 5;
             this.studentSearchPanel.BorderThickness = 1;
             this.studentSearchPanel.Controls.Add(this.stdBirthDateToSearch);
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateSearch);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateFromCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdOfficeCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdOfficeSearch);
