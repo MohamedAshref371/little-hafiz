@@ -31,7 +31,6 @@ namespace Little_Hafiz
                 System.Threading.Mutex mutex = new System.Threading.Mutex(true, Path.GetFullPath("data").Replace(":", "").Replace("\\", ""), out bool createdNew);
                 if (createdNew)
                 {
-                    Record = Properties.Settings.Default.RecordEnabled;
                     Form = new Form1();
                     Application.Run(Form);
                     mutex.ReleaseMutex();
@@ -46,11 +45,7 @@ namespace Little_Hafiz
         }
 
         public static void LogError(string msg, string stack, bool inTryCatch = false)
-        {
-            if (!System.IO.File.Exists("Errors.txt"))
-                System.IO.File.WriteAllText("Errors.txt", "");
-
-            System.IO.File.AppendAllText("Errors.txt", $"{DateTime.Now}{(inTryCatch ? "  -  Inside Custom Try-Catch Block" : "")}\n{msg}\n{stack}\n------------------\n\n");
-        }
+            => File.AppendAllText("Errors.txt", $"{DateTime.Now}{(inTryCatch ? "  -  Inside Custom Try-Catch Block" : "")}\n{msg}\n{stack}\n------------------\n\n");
+        
     }
 }

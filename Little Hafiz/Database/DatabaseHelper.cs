@@ -43,10 +43,12 @@ namespace Little_Hafiz
             if (!Directory.Exists(recordsFolder))
                 Directory.CreateDirectory(recordsFolder);
 
-            if (File.Exists(databaseFile) || CreateDatabase())
-                ReadMetadata();
+            if (File.Exists(databaseFile))
+                copyData = Properties.Settings.Default.BackupEnabled;
+            else
+                CreateDatabase();
 
-            copyData = Properties.Settings.Default.BackupEnabled;
+            ReadMetadata();
         }
 
         private static bool CreateDatabase()

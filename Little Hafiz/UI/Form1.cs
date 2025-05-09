@@ -83,11 +83,15 @@ namespace Little_Hafiz
             ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
 
+            bool isExists = Directory.Exists("data");
+            if (isExists)
+                Program.Record = Properties.Settings.Default.RecordEnabled;
+
             dataRecorderCheckBox.Checked = Program.Record;
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
-            if (Directory.Exists("data"))
+            if (isExists)
                 GetOffice();
             else
             {
