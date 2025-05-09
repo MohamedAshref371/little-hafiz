@@ -1837,10 +1837,12 @@
             this.studentSearchPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentSearchPanel.BorderRadius = 5;
             this.studentSearchPanel.BorderThickness = 1;
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateToSearch);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateSearch);
+            this.studentSearchPanel.Controls.Add(this.stdBirthDateFromCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdOfficeCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdOfficeSearch);
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateToSearch);
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateSearch);
             this.studentSearchPanel.Controls.Add(this.searchBtn);
             this.studentSearchPanel.Controls.Add(this.stdEmailSearch);
             this.studentSearchPanel.Controls.Add(this.stdPhoneSearch);
@@ -1851,8 +1853,6 @@
             this.studentSearchPanel.Controls.Add(this.stdPhoneCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNationalCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdNameCheckBox);
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
-            this.studentSearchPanel.Controls.Add(this.stdBirthDateFromCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateCheckBox);
             this.studentSearchPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentSearchPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));

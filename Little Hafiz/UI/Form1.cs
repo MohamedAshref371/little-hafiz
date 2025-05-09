@@ -527,6 +527,7 @@ namespace Little_Hafiz
                 stdNameCheckBox.Checked = false;
                 stdPhoneCheckBox.Checked = false;
                 stdEmailCheckBox.Checked = false;
+                stdBirthDateCheckBox.Checked = false;
                 CancelBtn_Click(null, null);
                 SearchBtn_Click(null, null);
             }
