@@ -1343,9 +1343,6 @@ namespace Little_Hafiz
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
-            => DownloadUpdate();
-        
-        static void DownloadUpdate()
         {
             GetAppUpdate update = new GetAppUpdate();
             bool? hasUpdate = update.CheckForUpdates();

@@ -36,13 +36,8 @@ namespace Little_Hafiz
                 var asset = release.Assets.FirstOrDefault(ast => ast.Name.IndexOf("update", StringComparison.OrdinalIgnoreCase) >= 0);
                 if (asset is null) return false;
 
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, asset.Name);
-
-                if (File.Exists(filePath))
-                    File.Delete(filePath);
-
                 using (var webClient = new WebClient())
-                    webClient.DownloadFile(asset.BrowserDownloadUrl, filePath);
+                    webClient.DownloadFile(asset.BrowserDownloadUrl, release.TagName + " " + asset.Name);
 
                 return true;
             }
