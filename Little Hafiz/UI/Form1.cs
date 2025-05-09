@@ -528,6 +528,8 @@ namespace Little_Hafiz
                 stdPhoneCheckBox.Checked = false;
                 stdEmailCheckBox.Checked = false;
                 stdBirthDateCheckBox.Checked = false;
+                if (DatabaseHelper.CurrentOffice == 0)
+                    stdOfficeCheckBox.Checked = false;
                 CancelBtn_Click(null, null);
                 SearchBtn_Click(null, null);
             }
