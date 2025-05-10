@@ -18,7 +18,7 @@ class FormSize
     {
         if (loc) control.Location = new Point(Round(control.Location.X * xDiv), Round(control.Location.Y * yDiv));
         control.Size = new Size(Round(control.Size.Width * xDiv), Round(control.Size.Height * yDiv));
-        if (setFont) control.Font = new Font(control.Font.FontFamily, Round(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
+        if (setFont) control.Font = new Font(control.Font.FontFamily, Roundf(control.Font.Size * (xDiv < yDiv ? xDiv : yDiv)));
     }
 
     public void SetControls(Control.ControlCollection controls)
@@ -41,4 +41,5 @@ class FormSize
 
     public static int Round(double num) => (int)Math.Round(num);
 
+    public static float Roundf(double num) => (float)Math.Round(num);
 }
