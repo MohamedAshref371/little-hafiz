@@ -1149,7 +1149,7 @@ namespace Little_Hafiz
         {
             if (!File.Exists("ClosedXML.dll"))
             {
-                MessageBox.Show("مكاتب الايكسل غير موجودة");
+                MessageBox.Show("مكتبات الايكسل غير موجودة");
                 return;
             }
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
