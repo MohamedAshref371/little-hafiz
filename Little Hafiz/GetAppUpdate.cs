@@ -26,23 +26,27 @@ namespace Little_Hafiz
             catch { return null; }
         }
 
-        public bool GetTheUpdate()
+        public bool? GetTheUpdate()
         {
-            if (onlineVersion is null) return false;
+            if (onlineVersion is null) return null;
             try
             {
-                if (release.Assets.Count == 0) return false;
+                if (release.Assets.Count == 0) return null;
 
                 var asset = release.Assets.FirstOrDefault(ast => ast.Name.IndexOf("update", StringComparison.OrdinalIgnoreCase) >= 0);
-                if (asset is null) return false;
+                if (asset is null) return null;
+
+                string fileName = release.TagName + " " + asset.Name;
+
+                if (File.Exists(fileName)) return false;
 
                 using (var webClient = new WebClient())
-                    webClient.DownloadFile(asset.BrowserDownloadUrl, release.TagName + " " + asset.Name);
+                    webClient.DownloadFile(asset.BrowserDownloadUrl, fileName);
 
                 return true;
             }
             catch { }
-            return false;
+            return null;
         }
 
         private string RemoveTrailingZerosFromVersion(string version)

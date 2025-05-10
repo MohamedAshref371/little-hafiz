@@ -1357,9 +1357,10 @@ namespace Little_Hafiz
 
             if (MessageBox.Show("هناك تحديث متوفر، هل تريد تحميله ؟", "🥳", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                bool updateDownloaded = update.GetTheUpdate();
-                if (updateDownloaded) MessageBox.Show("تم تحميل ملف التحديث بنجاح");
-                else MessageBox.Show("فشل تحميل ملف التحديث");
+                bool? updateDownloaded = update.GetTheUpdate();
+                if (updateDownloaded is null) MessageBox.Show("فشل تحميل ملف التحديث");
+                else if (!(bool)updateDownloaded) MessageBox.Show("هناك ملف موجود بنفس الإسم، لا يمكن التحميل");
+                else MessageBox.Show("تم تحميل ملف التحديث بنجاح");
             }
         }
 
