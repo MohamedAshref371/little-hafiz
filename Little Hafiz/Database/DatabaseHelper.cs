@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -485,7 +484,12 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = sql;
                 int rtrn = command.ExecuteNonQuery();
-                if (recording) File.AppendAllText(recordFile, sql);
+                if (recording)
+                {
+                    if (!File.Exists(recordFile))
+                        File.AppendAllText(recordFile, CreateDate.Ticks.ToString().PadLeft(19, '0'));
+                    File.AppendAllText(recordFile, sql);
+                }
                 return rtrn;
             }
             catch (Exception ex)
@@ -550,9 +554,19 @@ namespace Little_Hafiz
             string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly).OrderBy(f => f).ToArray();
 
             List<string> err = new List<string>();
+            string sql; bool isTrue;
             for (int i = 0; i < dataFiles.Length; i++)
-                if (ExecuteNonQuery(File.ReadAllText(dataFiles[i])) == -1)
+            {
+                sql = File.ReadAllText(dataFiles[i]);
+                isTrue = long.TryParse(sql.Substring(0, 19), out long num);
+                if (!isTrue || num != CreateDate.Ticks)
+                {
                     err.Add(Path.GetFileName(dataFiles[i]));
+                    continue; 
+                }
+                if (ExecuteNonQuery(sql.Substring(19)) == -1)
+                    err.Add(Path.GetFileName(dataFiles[i]));
+            }
 
             RemoveOldImages();
             RemoveAllRecords();
