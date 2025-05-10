@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("github.com/MohamedAshref371")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("github.com/MohamedAshref371")]
-[assembly: AssemblyProduct("برنامج مسابقات القرآن الكريم")]
+[assembly: AssemblyProduct("Qur'an Recitation Competition Program")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -790,7 +790,6 @@ namespace Little_Hafiz
         #endregion
 
         #region Student Grades Panel
-
         public void DeleteStudentGradeRow(StudentGradeRow row)
         {
             if (MessageBox.Show("هل انت متأكد أنك تريد حذف هذه المسابقة لهذا الطالب ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) != DialogResult.Yes) return;
