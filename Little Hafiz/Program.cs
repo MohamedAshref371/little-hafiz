@@ -12,7 +12,13 @@ namespace Little_Hafiz
         [STAThread]
         static void Main()
         {
-            AssemblyResolver.Initialize();
+            //AssemblyResolver.Initialize();
+
+            if (!File.Exists("Guna.UI2.dll"))
+            {
+                MessageBox.Show("Guna.UI2.dll file is missing.");
+                return;
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
