@@ -41,5 +41,5 @@ class FormSize
 
     public static int Round(double num) => (int)Math.Round(num);
 
-    public static float Roundf(double num) => (float)Math.Round(num);
+    public static float Roundf(double num) => (float)Math.Round(num, 3);
 }
