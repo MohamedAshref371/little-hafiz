@@ -1209,7 +1209,7 @@ namespace Little_Hafiz
 
         private void SetTitlesOnExcelFile(IXLWorksheet sheet)
         {
-            sheet.Range("A1:M1").Merge().Value = "الحافظ الصغير- المسابقة القرآنية الرمضانية";
+            sheet.Range("A1:M1").Merge().Value = "المسابقة القرآنية الرمضانية";
             sheet.Row(1).Height = 30;
             sheet.Cell("A1").Style.Font.Bold = true;
             sheet.Cell("A1").Style.Font.FontSize = 16;
