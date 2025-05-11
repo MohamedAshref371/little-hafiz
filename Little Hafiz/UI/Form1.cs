@@ -225,10 +225,11 @@ namespace Little_Hafiz
                 NewSizeX = Size.Width; NewSizeY = Size.Height;
                 fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
                 fs.SetControls(Controls);
-                officeComboBox.ItemHeight = fs.GetNewY(30);
-                stdOffice.ItemHeight = fs.GetNewY(30);
-                stdOfficeSearch.ItemHeight = fs.GetNewY(30);
-                officeRank.ItemHeight = fs.GetNewY(30);
+                int height = fs.GetNewY(30);
+                officeComboBox.ItemHeight = height;
+                stdOffice.ItemHeight = height;
+                stdOfficeSearch.ItemHeight = height;
+                officeRank.ItemHeight = height;
             }
             if (WindowState != FormWindowState.Minimized)
             {
