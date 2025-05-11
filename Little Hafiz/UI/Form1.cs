@@ -271,6 +271,8 @@ namespace Little_Hafiz
 
         private void ReadRecordsBtn_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
+                return;
             if (selectDataFolderDialog.ShowDialog() != DialogResult.OK) return;
 
             string[] err = DatabaseHelper.ReadRecords(selectDataFolderDialog.SelectedPath);
