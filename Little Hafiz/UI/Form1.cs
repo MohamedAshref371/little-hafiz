@@ -891,7 +891,7 @@ namespace Little_Hafiz
         {
             float year = -371;
             DateTime birthDate = currentStudent.StudentSearchRowData.BirthDate.ToStandardDateTime();
-            if (birthDate != new DateTime(0))
+            if (birthDate != DateTime.MinValue)
                 stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, compDate.Value, out year);
             else
                 stdAge.Text = "تاريخ الميلاد غير صالح";
