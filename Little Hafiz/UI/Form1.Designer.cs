@@ -414,6 +414,7 @@
             // stdOffice
             // 
             this.stdOffice.BackColor = System.Drawing.Color.Transparent;
+            this.stdOffice.BorderRadius = 5;
             this.stdOffice.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.stdOffice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stdOffice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -1967,6 +1968,7 @@
             // stdOfficeSearch
             // 
             this.stdOfficeSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdOfficeSearch.BorderRadius = 5;
             this.stdOfficeSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.stdOfficeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stdOfficeSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -2380,6 +2382,8 @@
             // 
             // officeTextBox
             // 
+            this.officeTextBox.BorderColor = System.Drawing.Color.Black;
+            this.officeTextBox.BorderRadius = 5;
             this.officeTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.officeTextBox.DefaultText = "";
             this.officeTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -2407,12 +2411,13 @@
             // 
             this.officeEnterBtn.BackColor = System.Drawing.Color.Transparent;
             this.officeEnterBtn.BorderRadius = 15;
+            this.officeEnterBtn.BorderThickness = 1;
             this.officeEnterBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.officeEnterBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.officeEnterBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.officeEnterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.officeEnterBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.officeEnterBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.officeEnterBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.officeEnterBtn.ForeColor = System.Drawing.Color.Black;
             this.officeEnterBtn.Location = new System.Drawing.Point(6, 5);
             this.officeEnterBtn.Name = "officeEnterBtn";
@@ -3016,6 +3021,7 @@
             // officeRank
             // 
             this.officeRank.BackColor = System.Drawing.Color.Transparent;
+            this.officeRank.BorderRadius = 5;
             this.officeRank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.officeRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.officeRank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
@@ -3283,6 +3289,7 @@
             // officeComboBox
             // 
             this.officeComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.officeComboBox.BorderRadius = 5;
             this.officeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.officeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.officeComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));

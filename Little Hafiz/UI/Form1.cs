@@ -213,15 +213,22 @@ namespace Little_Hafiz
                 fs = new FormSize(NewSizeX, NewSizeY, SizeX, SizeY);
                 fs.SetControls(Controls);
                 fs = null;
+                officeComboBox.ItemHeight = 30;
+                stdOffice.ItemHeight = 30;
+                stdOfficeSearch.ItemHeight = 30;
+                officeRank.ItemHeight = 30;
                 ResetComponent();
             }
             else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
                 NewSizeX = Size.Width; NewSizeY = Size.Height;
-
                 fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
                 fs.SetControls(Controls);
+                officeComboBox.ItemHeight = fs.GetNewY(30);
+                stdOffice.ItemHeight = fs.GetNewY(30);
+                stdOfficeSearch.ItemHeight = fs.GetNewY(30);
+                officeRank.ItemHeight = fs.GetNewY(30);
             }
             if (WindowState != FormWindowState.Minimized)
             {
