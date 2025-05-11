@@ -125,6 +125,7 @@
     <Compile Include="Database\CompetitionGradeData.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\ExcelRowData.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="GetAppUpdate.cs" />
     <Compile Include="Secret.cs" />
     <Compile Include="Printer\StudentFormData.cs" />

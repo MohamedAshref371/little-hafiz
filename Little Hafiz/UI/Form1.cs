@@ -343,9 +343,9 @@ namespace Little_Hafiz
             string birth = null;
             if (stdBirthDateCheckBox.Checked)
             {
-                if (stdBirthDateFromCheckBox.Checked || !stdBirthDateToCheckBox.Checked) birth = stdBirthDateSearch.Value.ToString("yyyy/MM/dd");
+                if (stdBirthDateFromCheckBox.Checked || !stdBirthDateToCheckBox.Checked) birth = stdBirthDateSearch.Value.ToStandardString();
                 if (stdBirthDateFromCheckBox.Checked || stdBirthDateToCheckBox.Checked) birth += "|";
-                if (stdBirthDateToCheckBox.Checked) birth += stdBirthDateToSearch.Value.ToString("yyyy/MM/dd");
+                if (stdBirthDateToCheckBox.Checked) birth += stdBirthDateToSearch.Value.ToStandardString();
             }
             StudentSearchRowData[] students = DatabaseHelper.SelectStudents
                     (
@@ -586,7 +586,7 @@ namespace Little_Hafiz
 
                 FullName = stdNameLabel.Text + stdName.Text,
                 NationalNumber = stdNationalLabel.Text + stdNational.Text,
-                BirthDate = birthLabel.Text + stdBirthDate.Value.ToString("yyyy/MM/dd"),
+                BirthDate = birthLabel.Text + stdBirthDate.Value.ToStandardString(),
                 Job = jobLabel.Text + stdJob.Text,
 
                 FatherQualification = fatherQualiLabel.Text + fatherQuali.Text,
@@ -597,7 +597,7 @@ namespace Little_Hafiz
                 MotherPhone = motherPhoneLabel.Text + motherPhone.Text,
                 GuardianName = guardianNameLabel.Text + guardianName.Text,
                 GuardianLink = guardianLinkLabel.Text + guardianLink.Text,
-                GuardianBirth = guardianBirthLabel.Text + guardianBirth.Value.ToString("yyyy/MM/dd"),
+                GuardianBirth = guardianBirthLabel.Text + guardianBirth.Value.ToStandardString(),
 
                 PhoneNumber = stdPhoneLabel.Text + stdPhone.Text,
                 Address = stdAddressLabel.Text + stdAddress.Text,
@@ -612,8 +612,8 @@ namespace Little_Hafiz
 
                 MemorizationAmount = stdMemoLabel.Text + stdMemo.Text,
                 OfficeName = stdOfficeLabel.Text + stdOffice.Text,
-                JoiningDate = stdJoiningDateLabel.Text + stdJoiningDate.Value.ToString("yyyy/MM/dd"),
-                FirstConclusionDate = stdFirstConclusionCheckBox.Text + (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value.ToString("yyyy/MM/dd") : "لا توجد"),
+                JoiningDate = stdJoiningDateLabel.Text + stdJoiningDate.Value.ToStandardString(),
+                FirstConclusionDate = stdFirstConclusionCheckBox.Text + (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value.ToStandardString() : "لا توجد"),
 
                 StudentMashaykh = stdMashaykhLabel.Text + stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlacesLabel.Text + stdMemoPlaces.Text,
@@ -634,14 +634,14 @@ namespace Little_Hafiz
         private StudentData GetStudentData()
         {
             string frstConcDate = stdFirstConclusionCheckBox.Checked ?
-                stdFirstConclusion.Value.ToString("yyyy/MM/dd") : "1900/01/01";
+                stdFirstConclusion.Value.ToStandardString() : "1900/01/01";
 
             return new StudentData
             {
                 OfficeId = stdOffice.SelectedIndex,
                 FullName = stdName.Text,
                 NationalNumber = stdNational.Text,
-                BirthDate = stdBirthDate.Value.ToString("yyyy/MM/dd"),
+                BirthDate = stdBirthDate.Value.ToStandardString(),
                 Job = stdJob.Text,
                 FatherQualification = fatherQuali.Text,
                 MotherQualification = motherQuali.Text,
@@ -651,7 +651,7 @@ namespace Little_Hafiz
                 MotherPhone = motherPhone.Text,
                 GuardianName = guardianName.Text,
                 GuardianLink = guardianLink.Text,
-                GuardianBirth = guardianBirth.Value.ToString("yyyy/MM/dd"),
+                GuardianBirth = guardianBirth.Value.ToStandardString(),
                 PhoneNumber = stdPhone.Text,
                 Address = stdAddress.Text,
                 Email = stdEmail.Text,
@@ -664,7 +664,7 @@ namespace Little_Hafiz
                 MemorizationAmount = stdMemo.Text,
                 StudentMashaykh = stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlaces.Text,
-                JoiningDate = stdJoiningDate.Value.ToString("yyyy/MM/dd"),
+                JoiningDate = stdJoiningDate.Value.ToStandardString(),
                 FirstConclusionDate = frstConcDate,
                 Certificates = stdCertificates.Text,
                 Ijazah = stdIjazah.Text,
@@ -738,7 +738,7 @@ namespace Little_Hafiz
             stdOffice.SelectedIndex = stdData.OfficeId;
             stdName.Text = stdData.FullName;
             stdNational.Text = stdData.NationalNumber;
-            stdBirthDate.Value = ParseExact(stdData.BirthDate);
+            stdBirthDate.Value = stdData.BirthDate.ToStandardDateTime();
             stdJob.Text = stdData.Job;
             fatherQuali.Text = stdData.FatherQualification;
             motherQuali.Text = stdData.MotherQualification;
@@ -748,7 +748,7 @@ namespace Little_Hafiz
             motherPhone.Text = stdData.MotherPhone;
             guardianName.Text = stdData.GuardianName;
             guardianLink.Text = stdData.GuardianLink;
-            guardianBirth.Value = ParseExact(stdData.GuardianBirth);
+            guardianBirth.Value = stdData.GuardianBirth.ToStandardDateTime();
             stdPhone.Text = stdData.PhoneNumber;
             stdAddress.Text = stdData.Address;
             stdEmail.Text = stdData.Email;
@@ -761,8 +761,8 @@ namespace Little_Hafiz
             stdMemo.Text = stdData.MemorizationAmount;
             stdMashaykh.Text = stdData.StudentMashaykh;
             stdMemoPlaces.Text = stdData.MemorizePlaces;
-            stdJoiningDate.Value = ParseExact(stdData.JoiningDate);
-            stdFirstConclusion.Value = ParseExact(stdData.FirstConclusionDate);
+            stdJoiningDate.Value = stdData.JoiningDate.ToStandardDateTime();
+            stdFirstConclusion.Value = stdData.FirstConclusionDate.ToStandardDateTime();
             stdFirstConclusionCheckBox.Checked = stdFirstConclusion.Value > stdBirthDate.Value;
             stdCertificates.Text = stdData.Certificates;
             stdIjazah.Text = stdData.Ijazah;
@@ -772,8 +772,6 @@ namespace Little_Hafiz
             stdNotes.Text = stdData.Notes;
             stdImagePath.Text = stdData.Image;
         }
-
-        private DateTime ParseExact(string date) => DateTime.ParseExact(date, "yyyy/MM/dd", DateTimeFormatInfo.CurrentInfo);
 
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -891,8 +889,9 @@ namespace Little_Hafiz
 
         private void CompDate_ValueChanged(object sender, EventArgs e)
         {
-            float year = 0;
-            if (DateTime.TryParseExact(currentStudent.StudentSearchRowData.BirthDate, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
+            float year = -371;
+            DateTime birthDate = currentStudent.StudentSearchRowData.BirthDate.ToStandardDateTime();
+            if (birthDate != new DateTime(1900, 1, 1))
                 stdAge.Text = AgeCalculator.GetAgeDescription(birthDate, compDate.Value, out year);
             else
                 stdAge.Text = "تاريخ الميلاد غير صالح";
@@ -909,7 +908,7 @@ namespace Little_Hafiz
             }
 
             string date = currentStudent.StudentSearchRowData.CompetitionDate;
-            string newDate = compDate.Value.ToString("yyyy/MM");
+            string newDate = compDate.Value.ToStandardStringWithoutDay();
             bool? allowedDate;
             if (date is null)
                 allowedDate = true;
@@ -933,6 +932,11 @@ namespace Little_Hafiz
             if (!(bool)allowedDate)
             {
                 MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
+                return;
+            }
+            if ((float)stdAge.Tag == -371)
+            {
+                MessageBox.Show("تاريخ الميلاد غير صالح");
                 return;
             }
             if ((float)stdAge.Tag < 0)
@@ -977,7 +981,7 @@ namespace Little_Hafiz
                 StudentCode = (int)stdCode.Value,
                 PreviousLevel = (int)prevLevel.Value,
                 CompetitionLevel = (int)currentLevel.Value,
-                CompetitionDate = compDate.Value.ToString("yyyy/MM"),
+                CompetitionDate = compDate.Value.ToStandardStringWithoutDay(),
                 Score = (float)stdScore.Value,
                 Rank = (int)stdRank.Value,
                 Notes = compNotes.Text
@@ -1058,7 +1062,7 @@ namespace Little_Hafiz
         {
             setRanksBtn.Enabled = officeRank.SelectedIndex == 0;
 
-            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToString("yyyy/MM"), compDateTo.Value.ToString("yyyy/MM"), officeRank.SelectedIndex);
+            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToStandardStringWithoutDay(), compDateTo.Value.ToStandardStringWithoutDay(), officeRank.SelectedIndex);
             if (ranks is null)
             {
                 ErrorMessage();
