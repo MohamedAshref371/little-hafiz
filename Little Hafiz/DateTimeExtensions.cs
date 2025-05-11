@@ -20,7 +20,7 @@ namespace Little_Hafiz
             if (DateTime.TryParseExact(dateStr, "yyyy/MM/dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime result))
                 return result;
             
-            return new DateTime(1900, 1, 1);
+            return new DateTime(0);
         }
     }
 }
