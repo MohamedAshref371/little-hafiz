@@ -207,16 +207,13 @@ namespace Little_Hafiz
             studentGradesListPanel.PerformLayout();
             ranksListPanel.PerformLayout();
 
+            int height = 30;
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
                 fs = new FormSize(NewSizeX, NewSizeY, SizeX, SizeY);
                 fs.SetControls(Controls);
                 fs = null;
-                officeComboBox.ItemHeight = 30;
-                stdOffice.ItemHeight = 30;
-                stdOfficeSearch.ItemHeight = 30;
-                officeRank.ItemHeight = 30;
                 ResetComponent();
             }
             else if (WindowState == FormWindowState.Normal)
@@ -225,14 +222,14 @@ namespace Little_Hafiz
                 NewSizeX = Size.Width; NewSizeY = Size.Height;
                 fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
                 fs.SetControls(Controls);
-                int height = fs.GetNewY(30);
+                height = fs.GetNewY(30);
+            }
+            if (WindowState != FormWindowState.Minimized)
+            {
                 officeComboBox.ItemHeight = height;
                 stdOffice.ItemHeight = height;
                 stdOfficeSearch.ItemHeight = height;
                 officeRank.ItemHeight = height;
-            }
-            if (WindowState != FormWindowState.Minimized)
-            {
                 if (studentDataPanel.Visible) SetStudentImage();
                 if (studentGradesPanel.Visible) SetStudentImage2();
             }
