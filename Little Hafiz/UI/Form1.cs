@@ -216,8 +216,8 @@ namespace Little_Hafiz
                 fs = new FormSize(NewSizeX, NewSizeY, SizeX, SizeY);
                 fs.SetControls(Controls);
                 fs = null;
-                originalHeight = 32;
-                expandedHeight = 96;
+                originalHeight = 40;
+                expandedHeight = 104;
                 animationStep = 64;
                 ResetComponent();
             }
@@ -227,8 +227,8 @@ namespace Little_Hafiz
                 NewSizeX = Size.Width; NewSizeY = Size.Height;
                 fs = new FormSize(SizeX, SizeY, NewSizeX, NewSizeY);
                 fs.SetControls(Controls);
-                originalHeight = fs.GetNewY(32);
-                expandedHeight = fs.GetNewY(96);
+                originalHeight = fs.GetNewY(40);
+                expandedHeight = fs.GetNewY(104);
                 animationStep = fs.GetNewY(64);
                 height = fs.GetNewY(30);
             }
@@ -803,7 +803,7 @@ namespace Little_Hafiz
             Read = 2,
         }
 
-        int originalHeight = 32, expandedHeight = 96, animationStep = 64;
+        int originalHeight = 40, expandedHeight = 104, animationStep = 64;
         private void BigTextBox_Enter(object sender, EventArgs e)
         {
             AnimateTextBox((Guna2TextBox)sender, true);
