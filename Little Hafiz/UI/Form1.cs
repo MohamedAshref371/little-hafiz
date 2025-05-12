@@ -1359,6 +1359,7 @@ namespace Little_Hafiz
             checkUpdateBtn.Visible = true;
             releasesLatestBtn.Visible = true;
             extractExcelBtn.Visible = true;
+            colorBtn.Visible = true;
         }
 
         private void OfficeHelperBtn_Click(object sender, EventArgs e)
@@ -1381,6 +1382,7 @@ namespace Little_Hafiz
             checkUpdateBtn.Visible = false;
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
+            colorBtn.Visible = false; 
             (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
             officeHelperBtn.Text = "إلغاء";
             officeTextBox.Visible = true;
@@ -1408,6 +1410,12 @@ namespace Little_Hafiz
 
             GetOffice();
             officeTextBox.Text = "";
+        }
+
+        private void ColorBtn_Click(object sender, EventArgs e)
+        {
+            (studentDataPanel.FillColor, studentGradesPanel.FillColor) = (studentGradesPanel.FillColor, studentDataPanel.FillColor);
+            (studentDataPanel.FillColor2, studentGradesPanel.FillColor2) = (studentGradesPanel.FillColor2, studentDataPanel.FillColor2);
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)

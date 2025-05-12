@@ -140,6 +140,7 @@
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.colorBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.checkUpdateBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -2321,6 +2322,7 @@
             this.footerPanel.BorderColor = System.Drawing.Color.Silver;
             this.footerPanel.BorderRadius = 5;
             this.footerPanel.BorderThickness = 1;
+            this.footerPanel.Controls.Add(this.colorBtn);
             this.footerPanel.Controls.Add(this.checkUpdateBtn);
             this.footerPanel.Controls.Add(this.officeHelperBtn);
             this.footerPanel.Controls.Add(this.rankCalcBtn);
@@ -2337,6 +2339,27 @@
             this.footerPanel.Size = new System.Drawing.Size(926, 49);
             this.footerPanel.TabIndex = 83;
             // 
+            // colorBtn
+            // 
+            this.colorBtn.BorderRadius = 15;
+            this.colorBtn.BorderThickness = 1;
+            this.colorBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.colorBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.colorBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.colorBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.colorBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.colorBtn.FillColor = System.Drawing.Color.Red;
+            this.colorBtn.FillColor2 = System.Drawing.Color.Blue;
+            this.colorBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.colorBtn.ForeColor = System.Drawing.Color.White;
+            this.colorBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.colorBtn.Location = new System.Drawing.Point(298, 5);
+            this.colorBtn.Name = "colorBtn";
+            this.colorBtn.Size = new System.Drawing.Size(89, 39);
+            this.colorBtn.TabIndex = 92;
+            this.colorBtn.Text = "تجريبي";
+            this.colorBtn.Click += new System.EventHandler(this.ColorBtn_Click);
+            // 
             // checkUpdateBtn
             // 
             this.checkUpdateBtn.BorderRadius = 15;
@@ -2348,10 +2371,10 @@
             this.checkUpdateBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.checkUpdateBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.checkUpdateBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.checkUpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.checkUpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.checkUpdateBtn.ForeColor = System.Drawing.Color.Black;
             this.checkUpdateBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.checkUpdateBtn.Location = new System.Drawing.Point(267, 5);
+            this.checkUpdateBtn.Location = new System.Drawing.Point(213, 5);
             this.checkUpdateBtn.Name = "checkUpdateBtn";
             this.checkUpdateBtn.Size = new System.Drawing.Size(79, 39);
             this.checkUpdateBtn.TabIndex = 91;
@@ -2411,10 +2434,10 @@
             this.releasesLatestBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.releasesLatestBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(94)))), ((int)(((byte)(0)))));
             this.releasesLatestBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(140)))));
-            this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(184, 5);
+            this.releasesLatestBtn.Location = new System.Drawing.Point(130, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
             this.releasesLatestBtn.Size = new System.Drawing.Size(79, 39);
             this.releasesLatestBtn.TabIndex = 86;
@@ -2430,14 +2453,14 @@
             this.extractExcelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.extractExcelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.extractExcelBtn.FillColor = System.Drawing.Color.DarkGreen;
-            this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.extractExcelBtn.ForeColor = System.Drawing.Color.White;
             this.extractExcelBtn.Location = new System.Drawing.Point(6, 5);
             this.extractExcelBtn.Name = "extractExcelBtn";
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.extractExcelBtn.Size = new System.Drawing.Size(79, 39);
             this.extractExcelBtn.TabIndex = 84;
-            this.extractExcelBtn.Text = "excel";
+            this.extractExcelBtn.Text = "إيكسل";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
             // 
             // officeTextBox
@@ -2902,7 +2925,7 @@
             this.cancelBtn2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.cancelBtn2.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.cancelBtn2.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn2.ForeColor = System.Drawing.Color.Black;
             this.cancelBtn2.Location = new System.Drawing.Point(72, 599);
             this.cancelBtn2.Name = "cancelBtn2";
             this.cancelBtn2.Size = new System.Drawing.Size(92, 45);
@@ -3589,6 +3612,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton checkUpdateBtn;
         private Guna.UI2.WinForms.Guna2TextBox stdComps;
         private System.Windows.Forms.Label stdCompsLabel;
+        private Guna.UI2.WinForms.Guna2GradientButton colorBtn;
     }
 }
 
