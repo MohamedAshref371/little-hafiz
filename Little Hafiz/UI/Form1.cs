@@ -642,7 +642,7 @@ namespace Little_Hafiz
 
         private StudentData GetStudentData()
         {
-            string frstConcDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : new DateTime(1900, 1, 1)).ToStandardString();
+            string frstConcDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : stdBirthDate.Value.AddYears(-20)).ToStandardString();
 
             return new StudentData
             {
