@@ -34,6 +34,8 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdComps = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.deleteStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.scrollHelperLabel = new System.Windows.Forms.Label();
             this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -273,6 +275,8 @@
             this.studentDataPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
+            this.studentDataPanel.Controls.Add(this.stdComps);
+            this.studentDataPanel.Controls.Add(this.label1);
             this.studentDataPanel.Controls.Add(this.deleteStudentBtn);
             this.studentDataPanel.Controls.Add(this.scrollHelperLabel);
             this.studentDataPanel.Controls.Add(this.printStudentBtn);
@@ -361,6 +365,47 @@
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
             // 
+            // stdComps
+            // 
+            this.stdComps.AcceptsReturn = true;
+            this.stdComps.AcceptsTab = true;
+            this.stdComps.BackColor = System.Drawing.Color.Transparent;
+            this.stdComps.BorderRadius = 5;
+            this.stdComps.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdComps.DefaultText = "";
+            this.stdComps.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdComps.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdComps.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdComps.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdComps.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdComps.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdComps.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdComps.ForeColor = System.Drawing.Color.Black;
+            this.stdComps.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdComps.Location = new System.Drawing.Point(11, 1011);
+            this.stdComps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdComps.Multiline = true;
+            this.stdComps.Name = "stdComps";
+            this.stdComps.PlaceholderText = "";
+            this.stdComps.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdComps.SelectedText = "";
+            this.stdComps.Size = new System.Drawing.Size(822, 40);
+            this.stdComps.TabIndex = 81;
+            this.stdComps.Enter += new System.EventHandler(this.BigTextBox_Enter);
+            this.stdComps.Leave += new System.EventHandler(this.BigTextBox_Leave);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label1.Location = new System.Drawing.Point(830, 1015);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "مسابقات:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // deleteStudentBtn
             // 
             this.deleteStudentBtn.BackColor = System.Drawing.Color.Transparent;
@@ -374,7 +419,7 @@
             this.deleteStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.deleteStudentBtn.ForeColor = System.Drawing.Color.White;
             this.deleteStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.deleteStudentBtn.Location = new System.Drawing.Point(18, 1401);
+            this.deleteStudentBtn.Location = new System.Drawing.Point(18, 1119);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.deleteStudentBtn.TabIndex = 79;
@@ -383,7 +428,7 @@
             // 
             // scrollHelperLabel
             // 
-            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1440);
+            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1165);
             this.scrollHelperLabel.Name = "scrollHelperLabel";
             this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
             this.scrollHelperLabel.TabIndex = 78;
@@ -403,7 +448,7 @@
             this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
             this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.printStudentBtn.Location = new System.Drawing.Point(255, 1401);
+            this.printStudentBtn.Location = new System.Drawing.Point(255, 1119);
             this.printStudentBtn.Name = "printStudentBtn";
             this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
             this.printStudentBtn.TabIndex = 77;
@@ -445,22 +490,24 @@
             this.stdNotes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNotes.ForeColor = System.Drawing.Color.Black;
             this.stdNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNotes.Location = new System.Drawing.Point(13, 1291);
+            this.stdNotes.Location = new System.Drawing.Point(11, 1059);
             this.stdNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNotes.Multiline = true;
             this.stdNotes.Name = "stdNotes";
             this.stdNotes.PlaceholderText = "";
             this.stdNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNotes.SelectedText = "";
-            this.stdNotes.Size = new System.Drawing.Size(822, 96);
+            this.stdNotes.Size = new System.Drawing.Size(822, 40);
             this.stdNotes.TabIndex = 74;
+            this.stdNotes.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdNotes.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdNotesLabel
             // 
             this.stdNotesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNotesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNotesLabel.Location = new System.Drawing.Point(832, 1297);
+            this.stdNotesLabel.Location = new System.Drawing.Point(830, 1063);
             this.stdNotesLabel.Name = "stdNotesLabel";
             this.stdNotesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNotesLabel.Size = new System.Drawing.Size(85, 25);
@@ -531,16 +578,18 @@
             this.stdSkills.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdSkills.ForeColor = System.Drawing.Color.Black;
             this.stdSkills.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdSkills.Location = new System.Drawing.Point(481, 1187);
+            this.stdSkills.Location = new System.Drawing.Point(479, 963);
             this.stdSkills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdSkills.Multiline = true;
             this.stdSkills.Name = "stdSkills";
             this.stdSkills.PlaceholderText = "";
             this.stdSkills.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdSkills.SelectedText = "";
-            this.stdSkills.Size = new System.Drawing.Size(354, 96);
+            this.stdSkills.Size = new System.Drawing.Size(354, 40);
             this.stdSkills.TabIndex = 68;
+            this.stdSkills.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdSkills.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdSkills.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdHobbies
             // 
@@ -559,22 +608,24 @@
             this.stdHobbies.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdHobbies.ForeColor = System.Drawing.Color.Black;
             this.stdHobbies.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdHobbies.Location = new System.Drawing.Point(13, 1187);
+            this.stdHobbies.Location = new System.Drawing.Point(11, 963);
             this.stdHobbies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdHobbies.Multiline = true;
             this.stdHobbies.Name = "stdHobbies";
             this.stdHobbies.PlaceholderText = "";
             this.stdHobbies.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdHobbies.SelectedText = "";
-            this.stdHobbies.Size = new System.Drawing.Size(354, 96);
+            this.stdHobbies.Size = new System.Drawing.Size(354, 40);
             this.stdHobbies.TabIndex = 66;
+            this.stdHobbies.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdHobbies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdHobbies.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdHobbiesLabel
             // 
             this.stdHobbiesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdHobbiesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdHobbiesLabel.Location = new System.Drawing.Point(368, 1194);
+            this.stdHobbiesLabel.Location = new System.Drawing.Point(366, 969);
             this.stdHobbiesLabel.Name = "stdHobbiesLabel";
             this.stdHobbiesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdHobbiesLabel.Size = new System.Drawing.Size(76, 25);
@@ -599,16 +650,18 @@
             this.stdIjazah.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdIjazah.ForeColor = System.Drawing.Color.Black;
             this.stdIjazah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdIjazah.Location = new System.Drawing.Point(481, 1083);
+            this.stdIjazah.Location = new System.Drawing.Point(479, 915);
             this.stdIjazah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdIjazah.Multiline = true;
             this.stdIjazah.Name = "stdIjazah";
             this.stdIjazah.PlaceholderText = "";
             this.stdIjazah.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdIjazah.SelectedText = "";
-            this.stdIjazah.Size = new System.Drawing.Size(354, 96);
+            this.stdIjazah.Size = new System.Drawing.Size(354, 40);
             this.stdIjazah.TabIndex = 64;
+            this.stdIjazah.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdIjazah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdIjazah.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdCourses
             // 
@@ -627,22 +680,24 @@
             this.stdCourses.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdCourses.ForeColor = System.Drawing.Color.Black;
             this.stdCourses.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdCourses.Location = new System.Drawing.Point(13, 1083);
+            this.stdCourses.Location = new System.Drawing.Point(11, 915);
             this.stdCourses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdCourses.Multiline = true;
             this.stdCourses.Name = "stdCourses";
             this.stdCourses.PlaceholderText = "";
             this.stdCourses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCourses.SelectedText = "";
-            this.stdCourses.Size = new System.Drawing.Size(354, 96);
+            this.stdCourses.Size = new System.Drawing.Size(354, 40);
             this.stdCourses.TabIndex = 62;
+            this.stdCourses.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdCourses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdCourses.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdSkillsLabel
             // 
             this.stdSkillsLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSkillsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdSkillsLabel.Location = new System.Drawing.Point(837, 1194);
+            this.stdSkillsLabel.Location = new System.Drawing.Point(835, 968);
             this.stdSkillsLabel.Name = "stdSkillsLabel";
             this.stdSkillsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdSkillsLabel.Size = new System.Drawing.Size(76, 25);
@@ -667,22 +722,24 @@
             this.stdCertificates.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdCertificates.ForeColor = System.Drawing.Color.Black;
             this.stdCertificates.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdCertificates.Location = new System.Drawing.Point(13, 979);
+            this.stdCertificates.Location = new System.Drawing.Point(8, 867);
             this.stdCertificates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdCertificates.Multiline = true;
             this.stdCertificates.Name = "stdCertificates";
             this.stdCertificates.PlaceholderText = "";
             this.stdCertificates.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificates.SelectedText = "";
-            this.stdCertificates.Size = new System.Drawing.Size(722, 96);
+            this.stdCertificates.Size = new System.Drawing.Size(722, 40);
             this.stdCertificates.TabIndex = 60;
+            this.stdCertificates.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdCertificates.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdCertificates.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdCertificatesLabel
             // 
             this.stdCertificatesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCertificatesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCertificatesLabel.Location = new System.Drawing.Point(730, 985);
+            this.stdCertificatesLabel.Location = new System.Drawing.Point(725, 871);
             this.stdCertificatesLabel.Name = "stdCertificatesLabel";
             this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificatesLabel.Size = new System.Drawing.Size(183, 25);
@@ -754,16 +811,18 @@
             this.stdMemoPlaces.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMemoPlaces.ForeColor = System.Drawing.Color.Black;
             this.stdMemoPlaces.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMemoPlaces.Location = new System.Drawing.Point(13, 875);
+            this.stdMemoPlaces.Location = new System.Drawing.Point(8, 819);
             this.stdMemoPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdMemoPlaces.Multiline = true;
             this.stdMemoPlaces.Name = "stdMemoPlaces";
             this.stdMemoPlaces.PlaceholderText = "";
             this.stdMemoPlaces.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMemoPlaces.SelectedText = "";
-            this.stdMemoPlaces.Size = new System.Drawing.Size(722, 96);
+            this.stdMemoPlaces.Size = new System.Drawing.Size(722, 40);
             this.stdMemoPlaces.TabIndex = 54;
+            this.stdMemoPlaces.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdMemoPlaces.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMemoPlaces.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdMashaykh
             // 
@@ -782,22 +841,24 @@
             this.stdMashaykh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMashaykh.ForeColor = System.Drawing.Color.Black;
             this.stdMashaykh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMashaykh.Location = new System.Drawing.Point(13, 771);
+            this.stdMashaykh.Location = new System.Drawing.Point(8, 771);
             this.stdMashaykh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdMashaykh.Multiline = true;
             this.stdMashaykh.Name = "stdMashaykh";
             this.stdMashaykh.PlaceholderText = "";
             this.stdMashaykh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMashaykh.SelectedText = "";
-            this.stdMashaykh.Size = new System.Drawing.Size(722, 96);
+            this.stdMashaykh.Size = new System.Drawing.Size(722, 40);
             this.stdMashaykh.TabIndex = 53;
+            this.stdMashaykh.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdMashaykh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMashaykh.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdMemoPlacesLabel
             // 
             this.stdMemoPlacesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMemoPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(733, 881);
+            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(728, 823);
             this.stdMemoPlacesLabel.Name = "stdMemoPlacesLabel";
             this.stdMemoPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMemoPlacesLabel.Size = new System.Drawing.Size(180, 25);
@@ -809,7 +870,7 @@
             // 
             this.stdMashaykhLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMashaykhLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMashaykhLabel.Location = new System.Drawing.Point(735, 778);
+            this.stdMashaykhLabel.Location = new System.Drawing.Point(730, 776);
             this.stdMashaykhLabel.Name = "stdMashaykhLabel";
             this.stdMashaykhLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMashaykhLabel.Size = new System.Drawing.Size(175, 25);
@@ -1392,7 +1453,7 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(565, 1401);
+            this.cancelBtn.Location = new System.Drawing.Point(565, 1119);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(92, 45);
             this.cancelBtn.TabIndex = 11;
@@ -1412,7 +1473,7 @@
             this.addStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addStudentBtn.ForeColor = System.Drawing.Color.White;
             this.addStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.addStudentBtn.Location = new System.Drawing.Point(401, 1401);
+            this.addStudentBtn.Location = new System.Drawing.Point(401, 1119);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.addStudentBtn.TabIndex = 10;
@@ -1765,7 +1826,7 @@
             // 
             this.stdIjazahLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdIjazahLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdIjazahLabel.Location = new System.Drawing.Point(835, 1090);
+            this.stdIjazahLabel.Location = new System.Drawing.Point(833, 920);
             this.stdIjazahLabel.Name = "stdIjazahLabel";
             this.stdIjazahLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdIjazahLabel.Size = new System.Drawing.Size(78, 25);
@@ -1777,7 +1838,7 @@
             // 
             this.stdCoursesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCoursesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCoursesLabel.Location = new System.Drawing.Point(371, 1090);
+            this.stdCoursesLabel.Location = new System.Drawing.Point(369, 920);
             this.stdCoursesLabel.Name = "stdCoursesLabel";
             this.stdCoursesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCoursesLabel.Size = new System.Drawing.Size(73, 25);
@@ -3526,6 +3587,8 @@
         private Guna.UI2.WinForms.Guna2GradientButton deleteStudentBtn;
         private Guna.UI2.WinForms.Guna2ComboBox officeRank;
         private Guna.UI2.WinForms.Guna2GradientButton checkUpdateBtn;
+        private Guna.UI2.WinForms.Guna2TextBox stdComps;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -673,6 +673,7 @@ namespace Little_Hafiz
                 Courses = stdCourses.Text,
                 Skills = stdSkills.Text,
                 Hobbies = stdHobbies.Text,
+                StdComps = stdComps.Text,
                 Notes = stdNotes.Text,
                 Image = stdImagePath.Text
             };
@@ -730,6 +731,7 @@ namespace Little_Hafiz
             stdCourses.Text = "";
             stdSkills.Text = "";
             stdHobbies.Text = "";
+            stdComps.Text = "";
             stdNotes.Text = "";
             stdImagePath.Text = "";
             deleteStudentBtn.Visible = false;
@@ -771,6 +773,7 @@ namespace Little_Hafiz
             stdCourses.Text = stdData.Courses;
             stdSkills.Text = stdData.Skills;
             stdHobbies.Text = stdData.Hobbies;
+            stdComps.Text = stdData.StdComps;
             stdNotes.Text = stdData.Notes;
             stdImagePath.Text = stdData.Image;
         }
@@ -791,6 +794,38 @@ namespace Little_Hafiz
             Add = 0,
             Update = 1,
             Read = 2,
+        }
+
+        readonly int originalHeight = 32, expandedHeight = 96, animationStep = 64;
+        private void BigTextBox_Enter(object sender, EventArgs e)
+        {
+            AnimateTextBox((Guna2TextBox)sender, true);
+        }
+
+        private void BigTextBox_Leave(object sender, EventArgs e)
+        {
+            AnimateTextBox((Guna2TextBox)sender, false);
+        }
+
+        private void AnimateTextBox(Guna2TextBox baseControl, bool enter)
+        {
+            if (enter && baseControl.Height < expandedHeight)
+            {
+                MoveControlsBelow(baseControl, animationStep);
+                baseControl.Height += animationStep;
+            }
+            else if (!enter && baseControl.Height > originalHeight)
+            {
+                MoveControlsBelow(baseControl, -animationStep);
+                baseControl.Height -= animationStep;
+            }
+        }
+
+        private void MoveControlsBelow(Guna2TextBox baseControl, int offset)
+        {
+            foreach (Control ctrl in studentDataPanel.Controls)
+                if (ctrl.Top > baseControl.Bottom)
+                    ctrl.Top += offset;
         }
         #endregion
 
