@@ -1316,6 +1316,7 @@ namespace Little_Hafiz
             officeTextBox.Visible = false;
             officeEnterBtn.Visible = false;
             (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
+            officeHelperBtn.Text = "إضافة مكتب";
             checkUpdateBtn.Visible = true;
             releasesLatestBtn.Visible = true;
             extractExcelBtn.Visible = true;
@@ -1342,6 +1343,7 @@ namespace Little_Hafiz
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
             (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
+            officeHelperBtn.Text = "إلغاء";
             officeTextBox.Visible = true;
             officeEnterBtn.Visible = true;
         }

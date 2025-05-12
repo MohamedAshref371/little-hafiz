@@ -2295,7 +2295,7 @@
             this.checkUpdateBtn.Name = "checkUpdateBtn";
             this.checkUpdateBtn.Size = new System.Drawing.Size(79, 39);
             this.checkUpdateBtn.TabIndex = 91;
-            this.checkUpdateBtn.Text = "فحص";
+            this.checkUpdateBtn.Text = "تحديث";
             this.checkUpdateBtn.Click += new System.EventHandler(this.CheckUpdateBtn_Click);
             // 
             // officeHelperBtn
@@ -2316,7 +2316,7 @@
             this.officeHelperBtn.Name = "officeHelperBtn";
             this.officeHelperBtn.Size = new System.Drawing.Size(145, 39);
             this.officeHelperBtn.TabIndex = 88;
-            this.officeHelperBtn.Text = "مساعد المكاتب";
+            this.officeHelperBtn.Text = "إضافة مكتب";
             this.officeHelperBtn.Click += new System.EventHandler(this.OfficeHelperBtn_Click);
             // 
             // rankCalcBtn
