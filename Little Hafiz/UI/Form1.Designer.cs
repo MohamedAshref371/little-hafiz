@@ -383,7 +383,6 @@
             // 
             // scrollHelperLabel
             // 
-            this.scrollHelperLabel.AutoSize = true;
             this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1440);
             this.scrollHelperLabel.Name = "scrollHelperLabel";
             this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
@@ -459,15 +458,15 @@
             // 
             // stdNotesLabel
             // 
-            this.stdNotesLabel.AutoSize = true;
             this.stdNotesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNotesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdNotesLabel.Location = new System.Drawing.Point(832, 1297);
             this.stdNotesLabel.Name = "stdNotesLabel";
             this.stdNotesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNotesLabel.Size = new System.Drawing.Size(85, 19);
+            this.stdNotesLabel.Size = new System.Drawing.Size(85, 25);
             this.stdNotesLabel.TabIndex = 73;
             this.stdNotesLabel.Text = "الملاحظات:";
+            this.stdNotesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // studentImage
             // 
@@ -573,15 +572,15 @@
             // 
             // stdHobbiesLabel
             // 
-            this.stdHobbiesLabel.AutoSize = true;
             this.stdHobbiesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdHobbiesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdHobbiesLabel.Location = new System.Drawing.Point(368, 1194);
             this.stdHobbiesLabel.Name = "stdHobbiesLabel";
             this.stdHobbiesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdHobbiesLabel.Size = new System.Drawing.Size(76, 19);
+            this.stdHobbiesLabel.Size = new System.Drawing.Size(76, 25);
             this.stdHobbiesLabel.TabIndex = 67;
             this.stdHobbiesLabel.Text = "الهوايات : ";
+            this.stdHobbiesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdIjazah
             // 
@@ -641,15 +640,15 @@
             // 
             // stdSkillsLabel
             // 
-            this.stdSkillsLabel.AutoSize = true;
             this.stdSkillsLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSkillsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdSkillsLabel.Location = new System.Drawing.Point(837, 1194);
             this.stdSkillsLabel.Name = "stdSkillsLabel";
             this.stdSkillsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdSkillsLabel.Size = new System.Drawing.Size(76, 19);
+            this.stdSkillsLabel.Size = new System.Drawing.Size(76, 25);
             this.stdSkillsLabel.TabIndex = 65;
             this.stdSkillsLabel.Text = "المهارات :";
+            this.stdSkillsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdCertificates
             // 
@@ -675,21 +674,21 @@
             this.stdCertificates.PlaceholderText = "";
             this.stdCertificates.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificates.SelectedText = "";
-            this.stdCertificates.Size = new System.Drawing.Size(723, 96);
+            this.stdCertificates.Size = new System.Drawing.Size(722, 96);
             this.stdCertificates.TabIndex = 60;
             this.stdCertificates.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdCertificatesLabel
             // 
-            this.stdCertificatesLabel.AutoSize = true;
             this.stdCertificatesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCertificatesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCertificatesLabel.Location = new System.Drawing.Point(733, 985);
+            this.stdCertificatesLabel.Location = new System.Drawing.Point(730, 985);
             this.stdCertificatesLabel.Name = "stdCertificatesLabel";
             this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdCertificatesLabel.Size = new System.Drawing.Size(179, 19);
+            this.stdCertificatesLabel.Size = new System.Drawing.Size(183, 25);
             this.stdCertificatesLabel.TabIndex = 59;
             this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها :";
+            this.stdCertificatesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdFirstConclusion
             // 
@@ -728,15 +727,15 @@
             // 
             // stdJoiningDateLabel
             // 
-            this.stdJoiningDateLabel.AutoSize = true;
             this.stdJoiningDateLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdJoiningDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdJoiningDateLabel.Location = new System.Drawing.Point(735, 707);
+            this.stdJoiningDateLabel.Location = new System.Drawing.Point(739, 704);
             this.stdJoiningDateLabel.Name = "stdJoiningDateLabel";
             this.stdJoiningDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdJoiningDateLabel.Size = new System.Drawing.Size(169, 19);
+            this.stdJoiningDateLabel.Size = new System.Drawing.Size(170, 25);
             this.stdJoiningDateLabel.TabIndex = 56;
             this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب :";
+            this.stdJoiningDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMemoPlaces
             // 
@@ -796,27 +795,27 @@
             // 
             // stdMemoPlacesLabel
             // 
-            this.stdMemoPlacesLabel.AutoSize = true;
             this.stdMemoPlacesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMemoPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(730, 881);
+            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(733, 881);
             this.stdMemoPlacesLabel.Name = "stdMemoPlacesLabel";
             this.stdMemoPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMemoPlacesLabel.Size = new System.Drawing.Size(175, 19);
+            this.stdMemoPlacesLabel.Size = new System.Drawing.Size(180, 25);
             this.stdMemoPlacesLabel.TabIndex = 52;
             this.stdMemoPlacesLabel.Text = "الأماكن التي حفظ فيها : ";
+            this.stdMemoPlacesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMashaykhLabel
             // 
-            this.stdMashaykhLabel.AutoSize = true;
             this.stdMashaykhLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMashaykhLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdMashaykhLabel.Location = new System.Drawing.Point(735, 778);
             this.stdMashaykhLabel.Name = "stdMashaykhLabel";
             this.stdMashaykhLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMashaykhLabel.Size = new System.Drawing.Size(170, 19);
+            this.stdMashaykhLabel.Size = new System.Drawing.Size(175, 25);
             this.stdMashaykhLabel.TabIndex = 51;
             this.stdMashaykhLabel.Text = "المشايخ الذين حفظوه : ";
+            this.stdMashaykhLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMemo
             // 
@@ -845,15 +844,15 @@
             // 
             // stdMemoLabel
             // 
-            this.stdMemoLabel.AutoSize = true;
             this.stdMemoLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMemoLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdMemoLabel.Location = new System.Drawing.Point(316, 659);
             this.stdMemoLabel.Name = "stdMemoLabel";
             this.stdMemoLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMemoLabel.Size = new System.Drawing.Size(104, 19);
+            this.stdMemoLabel.Size = new System.Drawing.Size(104, 25);
             this.stdMemoLabel.TabIndex = 49;
             this.stdMemoLabel.Text = "مقدار الحفظ : ";
+            this.stdMemoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMaritalStatus
             // 
@@ -882,27 +881,27 @@
             // 
             // stdMaritalStatusLabel
             // 
-            this.stdMaritalStatusLabel.AutoSize = true;
             this.stdMaritalStatusLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMaritalStatusLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMaritalStatusLabel.Location = new System.Drawing.Point(783, 659);
+            this.stdMaritalStatusLabel.Location = new System.Drawing.Point(783, 658);
             this.stdMaritalStatusLabel.Name = "stdMaritalStatusLabel";
             this.stdMaritalStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMaritalStatusLabel.Size = new System.Drawing.Size(134, 19);
+            this.stdMaritalStatusLabel.Size = new System.Drawing.Size(134, 25);
             this.stdMaritalStatusLabel.TabIndex = 47;
             this.stdMaritalStatusLabel.Text = "الحالة الاجتماعية: ";
+            this.stdMaritalStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdArrangementLabel
             // 
-            this.stdArrangementLabel.AutoSize = true;
             this.stdArrangementLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdArrangementLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdArrangementLabel.Location = new System.Drawing.Point(276, 614);
+            this.stdArrangementLabel.Location = new System.Drawing.Point(276, 611);
             this.stdArrangementLabel.Name = "stdArrangementLabel";
             this.stdArrangementLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdArrangementLabel.Size = new System.Drawing.Size(144, 19);
+            this.stdArrangementLabel.Size = new System.Drawing.Size(144, 25);
             this.stdArrangementLabel.TabIndex = 46;
             this.stdArrangementLabel.Text = "الترتيب بين الإخوة : ";
+            this.stdArrangementLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdArrangement
             // 
@@ -934,15 +933,15 @@
             // 
             // stdBrothersLabel
             // 
-            this.stdBrothersLabel.AutoSize = true;
             this.stdBrothersLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdBrothersLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBrothersLabel.Location = new System.Drawing.Point(811, 614);
+            this.stdBrothersLabel.Location = new System.Drawing.Point(811, 611);
             this.stdBrothersLabel.Name = "stdBrothersLabel";
             this.stdBrothersLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdBrothersLabel.Size = new System.Drawing.Size(95, 19);
+            this.stdBrothersLabel.Size = new System.Drawing.Size(95, 25);
             this.stdBrothersLabel.TabIndex = 44;
             this.stdBrothersLabel.Text = "عدد الإخوة : ";
+            this.stdBrothersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdBrothers
             // 
@@ -1015,15 +1014,15 @@
             // 
             // stdClassLabel
             // 
-            this.stdClassLabel.AutoSize = true;
             this.stdClassLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdClassLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdClassLabel.Location = new System.Drawing.Point(294, 575);
+            this.stdClassLabel.Location = new System.Drawing.Point(294, 572);
             this.stdClassLabel.Name = "stdClassLabel";
             this.stdClassLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdClassLabel.Size = new System.Drawing.Size(126, 19);
+            this.stdClassLabel.Size = new System.Drawing.Size(126, 25);
             this.stdClassLabel.TabIndex = 41;
             this.stdClassLabel.Text = "الصف الدراسي : ";
+            this.stdClassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdEmail
             // 
@@ -1077,27 +1076,27 @@
             // 
             // stdFacebookLabel
             // 
-            this.stdFacebookLabel.AutoSize = true;
             this.stdFacebookLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdFacebookLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdFacebookLabel.Location = new System.Drawing.Point(306, 535);
+            this.stdFacebookLabel.Location = new System.Drawing.Point(306, 532);
             this.stdFacebookLabel.Name = "stdFacebookLabel";
             this.stdFacebookLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdFacebookLabel.Size = new System.Drawing.Size(114, 19);
+            this.stdFacebookLabel.Size = new System.Drawing.Size(114, 25);
             this.stdFacebookLabel.TabIndex = 37;
             this.stdFacebookLabel.Text = "صفحة الفيس : ";
+            this.stdFacebookLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdEmailLabel
             // 
-            this.stdEmailLabel.AutoSize = true;
             this.stdEmailLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdEmailLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdEmailLabel.Location = new System.Drawing.Point(834, 535);
+            this.stdEmailLabel.Location = new System.Drawing.Point(834, 532);
             this.stdEmailLabel.Name = "stdEmailLabel";
             this.stdEmailLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdEmailLabel.Size = new System.Drawing.Size(71, 19);
+            this.stdEmailLabel.Size = new System.Drawing.Size(71, 25);
             this.stdEmailLabel.TabIndex = 35;
             this.stdEmailLabel.Text = "الإيميل : ";
+            this.stdEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdAddress
             // 
@@ -1126,15 +1125,15 @@
             // 
             // stdAddressLabel
             // 
-            this.stdAddressLabel.AutoSize = true;
             this.stdAddressLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdAddressLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdAddressLabel.Location = new System.Drawing.Point(350, 495);
+            this.stdAddressLabel.Location = new System.Drawing.Point(350, 492);
             this.stdAddressLabel.Name = "stdAddressLabel";
             this.stdAddressLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdAddressLabel.Size = new System.Drawing.Size(70, 19);
+            this.stdAddressLabel.Size = new System.Drawing.Size(70, 25);
             this.stdAddressLabel.TabIndex = 33;
             this.stdAddressLabel.Text = "العنوان : ";
+            this.stdAddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdPhone
             // 
@@ -1479,7 +1478,7 @@
             this.stdBirthDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.stdBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDate.Location = new System.Drawing.Point(536, 248);
+            this.stdBirthDate.Location = new System.Drawing.Point(536, 250);
             this.stdBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDate.Name = "stdBirthDate";
@@ -1552,188 +1551,186 @@
             // 
             // guardianLinkLabel
             // 
-            this.guardianLinkLabel.AutoSize = true;
             this.guardianLinkLabel.BackColor = System.Drawing.Color.Transparent;
             this.guardianLinkLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guardianLinkLabel.Location = new System.Drawing.Point(412, 440);
+            this.guardianLinkLabel.Location = new System.Drawing.Point(412, 435);
             this.guardianLinkLabel.Name = "guardianLinkLabel";
             this.guardianLinkLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guardianLinkLabel.Size = new System.Drawing.Size(113, 19);
+            this.guardianLinkLabel.Size = new System.Drawing.Size(113, 25);
             this.guardianLinkLabel.TabIndex = 29;
             this.guardianLinkLabel.Text = "صلته بالطالب : ";
+            this.guardianLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guardianBirthLabel
             // 
-            this.guardianBirthLabel.AutoSize = true;
             this.guardianBirthLabel.BackColor = System.Drawing.Color.Transparent;
             this.guardianBirthLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guardianBirthLabel.Location = new System.Drawing.Point(195, 440);
+            this.guardianBirthLabel.Location = new System.Drawing.Point(195, 435);
             this.guardianBirthLabel.Name = "guardianBirthLabel";
             this.guardianBirthLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guardianBirthLabel.Size = new System.Drawing.Size(100, 19);
+            this.guardianBirthLabel.Size = new System.Drawing.Size(100, 25);
             this.guardianBirthLabel.TabIndex = 27;
             this.guardianBirthLabel.Text = "تاريخ ميلاده : ";
-            this.guardianBirthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guardianBirthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guardianNameLabel
             // 
-            this.guardianNameLabel.AutoSize = true;
             this.guardianNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.guardianNameLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.guardianNameLabel.Location = new System.Drawing.Point(818, 440);
+            this.guardianNameLabel.Location = new System.Drawing.Point(818, 435);
             this.guardianNameLabel.Name = "guardianNameLabel";
             this.guardianNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guardianNameLabel.Size = new System.Drawing.Size(87, 19);
+            this.guardianNameLabel.Size = new System.Drawing.Size(87, 25);
             this.guardianNameLabel.TabIndex = 25;
             this.guardianNameLabel.Text = "ولي الأمر : ";
+            this.guardianNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // motherPhoneLabel
             // 
-            this.motherPhoneLabel.AutoSize = true;
             this.motherPhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.motherPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherPhoneLabel.Location = new System.Drawing.Point(325, 397);
+            this.motherPhoneLabel.Location = new System.Drawing.Point(325, 394);
             this.motherPhoneLabel.Name = "motherPhoneLabel";
             this.motherPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherPhoneLabel.Size = new System.Drawing.Size(95, 19);
+            this.motherPhoneLabel.Size = new System.Drawing.Size(95, 25);
             this.motherPhoneLabel.TabIndex = 23;
             this.motherPhoneLabel.Text = "تليفون الأم : ";
+            this.motherPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fatherPhoneLabel
             // 
-            this.fatherPhoneLabel.AutoSize = true;
             this.fatherPhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.fatherPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherPhoneLabel.Location = new System.Drawing.Point(806, 397);
+            this.fatherPhoneLabel.Location = new System.Drawing.Point(806, 394);
             this.fatherPhoneLabel.Name = "fatherPhoneLabel";
             this.fatherPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherPhoneLabel.Size = new System.Drawing.Size(99, 19);
+            this.fatherPhoneLabel.Size = new System.Drawing.Size(99, 25);
             this.fatherPhoneLabel.TabIndex = 21;
             this.fatherPhoneLabel.Text = "تليفون الأب : ";
+            this.fatherPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // motherJobLabel
             // 
-            this.motherJobLabel.AutoSize = true;
             this.motherJobLabel.BackColor = System.Drawing.Color.Transparent;
             this.motherJobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherJobLabel.Location = new System.Drawing.Point(326, 357);
+            this.motherJobLabel.Location = new System.Drawing.Point(326, 354);
             this.motherJobLabel.Name = "motherJobLabel";
             this.motherJobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherJobLabel.Size = new System.Drawing.Size(94, 19);
+            this.motherJobLabel.Size = new System.Drawing.Size(94, 25);
             this.motherJobLabel.TabIndex = 19;
             this.motherJobLabel.Text = "وظيفة الأم : ";
+            this.motherJobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // motherQualiLabel
             // 
-            this.motherQualiLabel.AutoSize = true;
             this.motherQualiLabel.BackColor = System.Drawing.Color.Transparent;
             this.motherQualiLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.motherQualiLabel.Location = new System.Drawing.Point(814, 357);
+            this.motherQualiLabel.Location = new System.Drawing.Point(814, 354);
             this.motherQualiLabel.Name = "motherQualiLabel";
             this.motherQualiLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherQualiLabel.Size = new System.Drawing.Size(91, 19);
+            this.motherQualiLabel.Size = new System.Drawing.Size(91, 25);
             this.motherQualiLabel.TabIndex = 17;
             this.motherQualiLabel.Text = "مؤهل الأم : ";
+            this.motherQualiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fatherJobLabel
             // 
-            this.fatherJobLabel.AutoSize = true;
             this.fatherJobLabel.BackColor = System.Drawing.Color.Transparent;
             this.fatherJobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherJobLabel.Location = new System.Drawing.Point(322, 317);
+            this.fatherJobLabel.Location = new System.Drawing.Point(322, 314);
             this.fatherJobLabel.Name = "fatherJobLabel";
             this.fatherJobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherJobLabel.Size = new System.Drawing.Size(98, 19);
+            this.fatherJobLabel.Size = new System.Drawing.Size(98, 25);
             this.fatherJobLabel.TabIndex = 15;
             this.fatherJobLabel.Text = "وظيفة الأب : ";
+            this.fatherJobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fatherQualiLabel
             // 
-            this.fatherQualiLabel.AutoSize = true;
             this.fatherQualiLabel.BackColor = System.Drawing.Color.Transparent;
             this.fatherQualiLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.fatherQualiLabel.Location = new System.Drawing.Point(810, 317);
+            this.fatherQualiLabel.Location = new System.Drawing.Point(810, 314);
             this.fatherQualiLabel.Name = "fatherQualiLabel";
             this.fatherQualiLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherQualiLabel.Size = new System.Drawing.Size(95, 19);
+            this.fatherQualiLabel.Size = new System.Drawing.Size(95, 25);
             this.fatherQualiLabel.TabIndex = 13;
             this.fatherQualiLabel.Text = "مؤهل الأب : ";
+            this.fatherQualiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // jobLabel
             // 
-            this.jobLabel.AutoSize = true;
             this.jobLabel.BackColor = System.Drawing.Color.Transparent;
             this.jobLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.jobLabel.Location = new System.Drawing.Point(345, 265);
+            this.jobLabel.Location = new System.Drawing.Point(345, 260);
             this.jobLabel.Name = "jobLabel";
             this.jobLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.jobLabel.Size = new System.Drawing.Size(75, 19);
+            this.jobLabel.Size = new System.Drawing.Size(75, 25);
             this.jobLabel.TabIndex = 9;
             this.jobLabel.Text = "الوظيفة : ";
+            this.jobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // birthLabel
             // 
-            this.birthLabel.AutoSize = true;
             this.birthLabel.BackColor = System.Drawing.Color.Transparent;
             this.birthLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.birthLabel.Location = new System.Drawing.Point(802, 255);
             this.birthLabel.Name = "birthLabel";
             this.birthLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.birthLabel.Size = new System.Drawing.Size(103, 19);
+            this.birthLabel.Size = new System.Drawing.Size(103, 25);
             this.birthLabel.TabIndex = 6;
             this.birthLabel.Text = "تاريخ الميلاد : ";
+            this.birthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdNationalLabel
             // 
-            this.stdNationalLabel.AutoSize = true;
             this.stdNationalLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNationalLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalLabel.Location = new System.Drawing.Point(308, 201);
+            this.stdNationalLabel.Location = new System.Drawing.Point(308, 198);
             this.stdNationalLabel.Name = "stdNationalLabel";
             this.stdNationalLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNationalLabel.Size = new System.Drawing.Size(112, 19);
+            this.stdNationalLabel.Size = new System.Drawing.Size(112, 25);
             this.stdNationalLabel.TabIndex = 4;
             this.stdNationalLabel.Text = "الرقم القومي : ";
+            this.stdNationalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdNameLabel
             // 
-            this.stdNameLabel.AutoSize = true;
             this.stdNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNameLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameLabel.Location = new System.Drawing.Point(839, 201);
+            this.stdNameLabel.Location = new System.Drawing.Point(839, 198);
             this.stdNameLabel.Name = "stdNameLabel";
             this.stdNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameLabel.Size = new System.Drawing.Size(66, 19);
+            this.stdNameLabel.Size = new System.Drawing.Size(66, 25);
             this.stdNameLabel.TabIndex = 1;
             this.stdNameLabel.Text = "الاسم : ";
+            this.stdNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdPhoneLabel
             // 
-            this.stdPhoneLabel.AutoSize = true;
             this.stdPhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdPhoneLabel.Location = new System.Drawing.Point(799, 498);
+            this.stdPhoneLabel.Location = new System.Drawing.Point(797, 492);
             this.stdPhoneLabel.Name = "stdPhoneLabel";
             this.stdPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdPhoneLabel.Size = new System.Drawing.Size(112, 19);
+            this.stdPhoneLabel.Size = new System.Drawing.Size(115, 25);
             this.stdPhoneLabel.TabIndex = 31;
             this.stdPhoneLabel.Text = "تليفون الطالب :";
+            this.stdPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdSchoolLabel
             // 
-            this.stdSchoolLabel.AutoSize = true;
             this.stdSchoolLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSchoolLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdSchoolLabel.Location = new System.Drawing.Point(798, 575);
+            this.stdSchoolLabel.Location = new System.Drawing.Point(798, 572);
             this.stdSchoolLabel.Name = "stdSchoolLabel";
             this.stdSchoolLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdSchoolLabel.Size = new System.Drawing.Size(119, 19);
+            this.stdSchoolLabel.Size = new System.Drawing.Size(119, 25);
             this.stdSchoolLabel.TabIndex = 39;
             this.stdSchoolLabel.Text = "المدرسة/الكلية:";
+            this.stdSchoolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdImagePath
             // 
-            this.stdImagePath.AutoSize = true;
             this.stdImagePath.BackColor = System.Drawing.Color.Transparent;
             this.stdImagePath.Location = new System.Drawing.Point(211, 154);
             this.stdImagePath.Name = "stdImagePath";
@@ -1750,7 +1747,7 @@
             this.stdFirstConclusionCheckBox.CheckedState.BorderThickness = 1;
             this.stdFirstConclusionCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdFirstConclusionCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(234, 704);
+            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(234, 703);
             this.stdFirstConclusionCheckBox.Name = "stdFirstConclusionCheckBox";
             this.stdFirstConclusionCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(203, 29);
@@ -1765,39 +1762,39 @@
             // 
             // stdIjazahLabel
             // 
-            this.stdIjazahLabel.AutoSize = true;
             this.stdIjazahLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdIjazahLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdIjazahLabel.Location = new System.Drawing.Point(832, 1090);
+            this.stdIjazahLabel.Location = new System.Drawing.Point(835, 1090);
             this.stdIjazahLabel.Name = "stdIjazahLabel";
             this.stdIjazahLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdIjazahLabel.Size = new System.Drawing.Size(78, 19);
+            this.stdIjazahLabel.Size = new System.Drawing.Size(78, 25);
             this.stdIjazahLabel.TabIndex = 61;
             this.stdIjazahLabel.Text = "الإجازات : ";
+            this.stdIjazahLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdCoursesLabel
             // 
-            this.stdCoursesLabel.AutoSize = true;
             this.stdCoursesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCoursesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.stdCoursesLabel.Location = new System.Drawing.Point(371, 1090);
             this.stdCoursesLabel.Name = "stdCoursesLabel";
             this.stdCoursesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdCoursesLabel.Size = new System.Drawing.Size(73, 19);
+            this.stdCoursesLabel.Size = new System.Drawing.Size(73, 25);
             this.stdCoursesLabel.TabIndex = 63;
             this.stdCoursesLabel.Text = "الدورات : ";
+            this.stdCoursesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdOfficeLabel
             // 
-            this.stdOfficeLabel.AutoSize = true;
             this.stdOfficeLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdOfficeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdOfficeLabel.Location = new System.Drawing.Point(829, 149);
+            this.stdOfficeLabel.Location = new System.Drawing.Point(829, 147);
             this.stdOfficeLabel.Name = "stdOfficeLabel";
             this.stdOfficeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdOfficeLabel.Size = new System.Drawing.Size(74, 19);
+            this.stdOfficeLabel.Size = new System.Drawing.Size(74, 25);
             this.stdOfficeLabel.TabIndex = 76;
             this.stdOfficeLabel.Text = "المكتب : ";
+            this.stdOfficeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // selectImageDialog
             // 
@@ -1814,6 +1811,7 @@
             this.formTitle.Size = new System.Drawing.Size(461, 33);
             this.formTitle.TabIndex = 72;
             this.formTitle.Text = "برنامج مسابقات القرآن الكريم";
+            this.formTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // maximizeBtn
             // 
@@ -2111,7 +2109,7 @@
             this.searchPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.searchPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
             this.searchPanelTitle.ForeColor = System.Drawing.Color.Maroon;
-            this.searchPanelTitle.Location = new System.Drawing.Point(790, 6);
+            this.searchPanelTitle.Location = new System.Drawing.Point(788, 6);
             this.searchPanelTitle.Name = "searchPanelTitle";
             this.searchPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.searchPanelTitle.Size = new System.Drawing.Size(133, 29);
