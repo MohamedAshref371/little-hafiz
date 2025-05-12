@@ -642,8 +642,7 @@ namespace Little_Hafiz
 
         private StudentData GetStudentData()
         {
-            string frstConcDate = stdFirstConclusionCheckBox.Checked ?
-                stdFirstConclusion.Value.ToStandardString() : "1900/01/01";
+            string frstConcDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : new DateTime(1900, 1, 1)).ToStandardString();
 
             return new StudentData
             {
