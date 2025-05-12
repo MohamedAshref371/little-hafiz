@@ -642,8 +642,6 @@ namespace Little_Hafiz
 
         private StudentData GetStudentData()
         {
-            string frstConcDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : stdBirthDate.Value.AddYears(-20)).ToStandardString();
-
             return new StudentData
             {
                 OfficeId = stdOffice.SelectedIndex,
@@ -673,7 +671,7 @@ namespace Little_Hafiz
                 StudentMashaykh = stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlaces.Text,
                 JoiningDate = stdJoiningDate.Value.ToStandardString(),
-                FirstConclusionDate = frstConcDate,
+                FirstConclusionDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : stdBirthDate.Value.AddYears(-20)).ToStandardString(),
                 Certificates = stdCertificates.Text,
                 Ijazah = stdIjazah.Text,
                 Courses = stdCourses.Text,
