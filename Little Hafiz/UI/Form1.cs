@@ -1315,6 +1315,7 @@ namespace Little_Hafiz
         {
             officeTextBox.Visible = false;
             officeEnterBtn.Visible = false;
+            (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
             checkUpdateBtn.Visible = true;
             releasesLatestBtn.Visible = true;
             extractExcelBtn.Visible = true;
@@ -1340,6 +1341,7 @@ namespace Little_Hafiz
             checkUpdateBtn.Visible = false;
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
+            (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
             officeTextBox.Visible = true;
             officeEnterBtn.Visible = true;
         }
