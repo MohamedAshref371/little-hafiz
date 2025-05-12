@@ -35,7 +35,7 @@
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.stdComps = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.stdCompsLabel = new System.Windows.Forms.Label();
             this.deleteStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.scrollHelperLabel = new System.Windows.Forms.Label();
             this.printStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -276,7 +276,7 @@
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
             this.studentDataPanel.Controls.Add(this.stdComps);
-            this.studentDataPanel.Controls.Add(this.label1);
+            this.studentDataPanel.Controls.Add(this.stdCompsLabel);
             this.studentDataPanel.Controls.Add(this.deleteStudentBtn);
             this.studentDataPanel.Controls.Add(this.scrollHelperLabel);
             this.studentDataPanel.Controls.Add(this.printStudentBtn);
@@ -394,17 +394,17 @@
             this.stdComps.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdComps.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
-            // label1
+            // stdCompsLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(830, 1015);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "مسابقات:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stdCompsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdCompsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdCompsLabel.Location = new System.Drawing.Point(830, 1015);
+            this.stdCompsLabel.Name = "stdCompsLabel";
+            this.stdCompsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdCompsLabel.Size = new System.Drawing.Size(85, 25);
+            this.stdCompsLabel.TabIndex = 80;
+            this.stdCompsLabel.Text = "مسابقات:";
+            this.stdCompsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // deleteStudentBtn
             // 
@@ -3588,7 +3588,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox officeRank;
         private Guna.UI2.WinForms.Guna2GradientButton checkUpdateBtn;
         private Guna.UI2.WinForms.Guna2TextBox stdComps;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label stdCompsLabel;
     }
 }
 

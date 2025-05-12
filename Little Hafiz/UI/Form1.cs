@@ -624,6 +624,7 @@ namespace Little_Hafiz
                 Courses = stdCoursesLabel.Text + stdCourses.Text,
                 Skills = stdSkillsLabel.Text + stdSkills.Text,
                 Hobbies = stdHobbiesLabel.Text + stdHobbies.Text,
+                StdComps = stdCompsLabel.Text + stdComps.Text,
                 Notes = stdNotesLabel.Text + stdNotes.Text,
 
                 StudentImage = studentImage.Image ?? new Bitmap(studentImage.Size.Width, studentImage.Size.Height)

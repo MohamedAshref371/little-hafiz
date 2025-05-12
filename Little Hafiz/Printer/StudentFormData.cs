@@ -25,7 +25,7 @@
         public string OfficeName, JoiningDate, FirstConclusionDate;
 
         public string StudentMashaykh, MemorizePlaces;
-        public string Certificates, Ijazah, Courses, Skills, Hobbies, Notes;
+        public string Certificates, Ijazah, Courses, Skills, Hobbies, StdComps, Notes;
 
         public System.Drawing.Image StudentImage;
     }
