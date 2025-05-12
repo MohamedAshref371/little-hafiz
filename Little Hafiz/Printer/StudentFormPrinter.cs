@@ -14,6 +14,11 @@ namespace Little_Hafiz
         {
             this.data = data;
             printDocument = new PrintDocument();
+
+            PaperSize a4Size = new PaperSize("A4", 827, 1169) { RawKind = (int)PaperKind.A4 };
+            printDocument.DefaultPageSettings.PaperSize = a4Size;
+            printDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+
             printDocument.PrintPage += PrintDocument_PrintPage;
         }
 
@@ -35,6 +40,8 @@ namespace Little_Hafiz
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
 
             Font font = new Font("Arial", 16, FontStyle.Regular);
             Brush brush = Brushes.Black;
@@ -46,9 +53,8 @@ namespace Little_Hafiz
                 FormatFlags = StringFormatFlags.DirectionRightToLeft
             };
 
-            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(10, 1140, 180, 30), format);
+            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30), format);
             g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
-
 
             Rectangle imgRect = new Rectangle(10, 10, data.StudentImage.Width, data.StudentImage.Height);
             int radius = 10;
