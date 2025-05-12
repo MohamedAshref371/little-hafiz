@@ -1058,6 +1058,12 @@ namespace Little_Hafiz
             footerPanel.Visible = true;
         }
 
+        private void DateFromLabel_DoubleClick(object sender, EventArgs e)
+            => compDateFrom.Value = DateTime.Now;
+        
+        private void DateToLabel_DoubleClick(object sender, EventArgs e)
+            => compDateTo.Value = compDateFrom.Value;
+        
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
             setRanksBtn.Enabled = officeRank.SelectedIndex == 0;
