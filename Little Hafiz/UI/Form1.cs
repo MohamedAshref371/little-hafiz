@@ -614,7 +614,7 @@ namespace Little_Hafiz
                 MaritalStatus = stdMaritalStatusLabel.Text + stdMaritalStatus.Text,
 
                 MemorizationAmount = stdMemoLabel.Text + stdMemo.Text,
-                OfficeName = stdOfficeLabel.Text + stdOffice.Text,
+                OfficeName = stdOfficeLabel.Text + (stdOffice.SelectedIndex == 0 ? "لا يوجد" : stdOffice.Text),
                 JoiningDate = stdJoiningDateLabel.Text + stdJoiningDate.Value.ToStandardString(),
                 FirstConclusionDate = stdFirstConclusionCheckBox.Text + (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value.ToStandardString() : "لا توجد"),
 
