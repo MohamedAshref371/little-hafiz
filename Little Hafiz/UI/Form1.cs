@@ -98,6 +98,9 @@ namespace Little_Hafiz
                 offices = new string[] { Application.ProductName };
                 AfterGetOffice(0);
             }
+
+            compDateFrom.Value = DateTime.Now;
+            compDateTo.Value = DateTime.Now;
         }
 
         string[] offices;
@@ -1290,8 +1293,6 @@ namespace Little_Hafiz
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
             fs?.SetControls(ranksListPanel.Controls);
 
-            compDateFrom.Value = DateTime.Now;
-            compDateTo.Value = DateTime.Now;
             wrongThingLabel.Visible = false;
             wrongThing2Label.Visible = false;
             levelCompCount.Text = "0";
