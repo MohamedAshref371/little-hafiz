@@ -1731,6 +1731,7 @@
             // 
             // stdImagePath
             // 
+            this.stdImagePath.AutoSize = true;
             this.stdImagePath.BackColor = System.Drawing.Color.Transparent;
             this.stdImagePath.Location = new System.Drawing.Point(211, 154);
             this.stdImagePath.Name = "stdImagePath";
@@ -2442,8 +2443,8 @@
             this.headerPanel.Controls.Add(this.closeBtn);
             this.headerPanel.Controls.Add(this.maximizeBtn);
             this.headerPanel.Controls.Add(this.footerPanel);
-            this.headerPanel.Controls.Add(this.studentsListPanel);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
+            this.headerPanel.Controls.Add(this.studentsListPanel);
             this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
