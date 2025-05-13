@@ -642,7 +642,6 @@ namespace Little_Hafiz
 
             StudentFormPrinter printer = new StudentFormPrinter(data);
             printer.ShowPreview();
-            printer.ShowPreview2();
         }
 
         private StudentData GetStudentData()

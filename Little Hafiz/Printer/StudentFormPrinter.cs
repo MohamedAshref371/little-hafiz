@@ -26,27 +26,35 @@ namespace Little_Hafiz
                 Document = printDocument,
                 WindowState = FormWindowState.Maximized
             };
-
-            printDocument.PrintPage += PrintDocument_PrintPage;
         }
 
         public void ShowPreview()
         {
-            printDocument.PrintPage += PrintDocument_PrintPage;
+            currentPage = 1;
+            printDocument.PrintPage += MultiPage_PrintPage;
             previewDialog.ShowDialog();
-            printDocument.PrintPage -= PrintDocument_PrintPage;
+            printDocument.PrintPage -= MultiPage_PrintPage;
         }
 
-        public void ShowPreview2()
+        private int currentPage = 1;
+        private void MultiPage_PrintPage(object sender, PrintPageEventArgs e)
         {
-            printDocument.PrintPage += PrintDocument2_PrintPage;
-            previewDialog.ShowDialog();
-            printDocument.PrintPage -= PrintDocument2_PrintPage;
+            if (currentPage == 1)
+            {
+                PrintPage1(e.Graphics);
+                e.HasMorePages = true;
+                currentPage++;
+            }
+            else if (currentPage == 2)
+            {
+                PrintPage2(e.Graphics);
+                e.HasMorePages = false;
+                currentPage = 1;
+            }
         }
 
-        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        private void PrintPage1(Graphics g)
         {
-            Graphics g = e.Graphics;
             Brush brush = Brushes.Black;
             Font font = new Font("Arial", 16, FontStyle.Regular);
             StringFormat format = new StringFormat
@@ -90,23 +98,8 @@ namespace Little_Hafiz
             g.DrawString(data.Certificates, font, brush, new RectangleF(10, 960, 790, 120), format);
         }
 
-        public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        private void PrintPage2(Graphics g)
         {
-            GraphicsPath path = new GraphicsPath();
-            int diameter = radius * 2;
-
-            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
-            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
-            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
-
-            path.CloseFigure();
-            return path;
-        }
-
-        private void PrintDocument2_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            Graphics g = e.Graphics;
             Brush brush = Brushes.Black;
             Font font = new Font("Arial", 16, FontStyle.Regular);
             StringFormat format = new StringFormat
@@ -152,6 +145,20 @@ namespace Little_Hafiz
             g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
             g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
             g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
+        }
+
+        public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
+
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
+            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
+            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
+
+            path.CloseFigure();
+            return path;
         }
     }
 }
