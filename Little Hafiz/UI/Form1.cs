@@ -1444,6 +1444,8 @@ namespace Little_Hafiz
                 ranksCalculatorPanel.FillColor2 = Color.FromArgb(128, 128, 255);
                 footerPanel.FillColor = Color.FromArgb(255, 255, 220);
                 footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
+                colorBtn.FillColor = Color.Red;
+                colorBtn.FillColor = Color.Blue;
                 return;
             }
 
@@ -1472,6 +1474,8 @@ namespace Little_Hafiz
             ranksCalculatorPanel.FillColor2 = fc2;
             footerPanel.FillColor = fc;
             footerPanel.FillColor2 = fc2;
+            colorBtn.FillColor = fc;
+            colorBtn.FillColor = fc2;
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
