@@ -2461,7 +2461,7 @@
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.extractExcelBtn.Size = new System.Drawing.Size(79, 39);
             this.extractExcelBtn.TabIndex = 84;
-            this.extractExcelBtn.Text = "إيكسل";
+            this.extractExcelBtn.Text = "excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
             // 
             // officeTextBox

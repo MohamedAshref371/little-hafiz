@@ -126,7 +126,7 @@ namespace Little_Hafiz
             while (currentParagraphIndex < paragraphs.Length)
             {
                 text = paragraphs[currentParagraphIndex];
-                if (text.Trim().Last() == ':') { currentParagraphIndex++; continue; }
+                if (text.TrimEnd().Last() == ':') { currentParagraphIndex++; continue; }
                 SizeF size = e.Graphics.MeasureString(text, font, 790, format);
 
                 if (y + size.Height > e.MarginBounds.Bottom - 30)
