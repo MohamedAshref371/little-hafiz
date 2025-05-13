@@ -1459,7 +1459,7 @@ namespace Little_Hafiz
                 SetColor(fc_3, fc2_3, fc_3, fc2_3);
         }
 
-        private void SetColor(Color fca1, Color fca2, Color fcb1, Color fcb2)
+        private void SetColor(Color fcb1, Color fcb2, Color fca1, Color fca2)
         {
             //headerPanel.FillColor = fca1;
             //headerPanel.FillColor2 = fca2;
