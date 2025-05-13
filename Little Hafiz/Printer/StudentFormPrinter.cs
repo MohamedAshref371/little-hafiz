@@ -129,7 +129,7 @@ namespace Little_Hafiz
                 if (text.TrimEnd().Last() == ':') { currentParagraphIndex++; continue; }
                 SizeF size = e.Graphics.MeasureString(text, font, 790, format);
 
-                if (y + size.Height > e.MarginBounds.Bottom - 30)
+                if (y > 31 && y + size.Height > e.MarginBounds.Bottom - 30)
                 {
                     e.HasMorePages = true;
                     return;
@@ -137,8 +137,8 @@ namespace Little_Hafiz
                 e.Graphics.DrawString(text, font, brush, new RectangleF(10, y, 790, size.Height), format);
                 y += size.Height + margin;
                 currentParagraphIndex++;
+                e.HasMorePages = false;
             }
-
             e.HasMorePages = false;
         }
 
