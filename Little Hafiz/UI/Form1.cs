@@ -1445,7 +1445,7 @@ namespace Little_Hafiz
                 footerPanel.FillColor = Color.FromArgb(255, 255, 220);
                 footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
                 colorBtn.FillColor = Color.Red;
-                colorBtn.FillColor = Color.Blue;
+                colorBtn.FillColor2 = Color.Blue;
                 return;
             }
 
@@ -1475,7 +1475,7 @@ namespace Little_Hafiz
             footerPanel.FillColor = fc;
             footerPanel.FillColor2 = fc2;
             colorBtn.FillColor = fc;
-            colorBtn.FillColor = fc2;
+            colorBtn.FillColor2 = fc2;
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
