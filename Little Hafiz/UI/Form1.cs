@@ -637,11 +637,12 @@ namespace Little_Hafiz
                 StdComps = stdCompsLabel.Text + stdComps.Text,
                 Notes = stdNotesLabel.Text + stdNotes.Text,
 
-                StudentImage = studentImage.Image ?? new Bitmap(studentImage.Size.Width, studentImage.Size.Height)
+                StudentImage = studentImage.Image ?? new Bitmap(140, 180)
             };
 
             StudentFormPrinter printer = new StudentFormPrinter(data);
             printer.ShowPreview();
+            printer.ShowPreview2();
         }
 
         private StudentData GetStudentData()

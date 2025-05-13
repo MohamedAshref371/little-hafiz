@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace Little_Hafiz
     {
         private readonly StudentFormData data;
         private readonly PrintDocument printDocument;
+        PrintPreviewDialog previewDialog;
 
         public StudentFormPrinter(StudentFormData data)
         {
@@ -19,33 +21,34 @@ namespace Little_Hafiz
             printDocument.DefaultPageSettings.PaperSize = a4Size;
             printDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
 
+            previewDialog = new PrintPreviewDialog
+            {
+                Document = printDocument,
+                WindowState = FormWindowState.Maximized
+            };
+
             printDocument.PrintPage += PrintDocument_PrintPage;
         }
 
         public void ShowPreview()
         {
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog
-            {
-                Document = printDocument,
-                WindowState = FormWindowState.Maximized
-            };
+            printDocument.PrintPage += PrintDocument_PrintPage;
             previewDialog.ShowDialog();
+            printDocument.PrintPage -= PrintDocument_PrintPage;
         }
 
-        public void Print()
+        public void ShowPreview2()
         {
-            printDocument.Print();
+            printDocument.PrintPage += PrintDocument2_PrintPage;
+            previewDialog.ShowDialog();
+            printDocument.PrintPage -= PrintDocument2_PrintPage;
         }
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.Clear(Color.White);
-
-            Font font = new Font("Arial", 16, FontStyle.Regular);
             Brush brush = Brushes.Black;
-
+            Font font = new Font("Arial", 16, FontStyle.Regular);
             StringFormat format = new StringFormat
             {
                 Alignment = StringAlignment.Near,
@@ -53,27 +56,7 @@ namespace Little_Hafiz
                 FormatFlags = StringFormatFlags.DirectionRightToLeft
             };
 
-            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30), format);
-            g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
-
-            Rectangle imgRect = new Rectangle(10, 10, data.StudentImage.Width, data.StudentImage.Height);
-            int radius = 10;
-
-            using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
-            {
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                Region oldClip = g.Clip;
-                g.SetClip(path);
-                g.DrawImage(data.StudentImage, imgRect);
-                g.Clip = oldClip;
-
-                using (Pen pen = new Pen(Color.Black, 1))
-                    g.DrawPath(pen, path);
-            }
-
-            g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
-            g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
-            g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
+            SetHeader(g, brush, format, font);
 
             g.DrawString(data.Job, font, brush, new RectangleF(400, 200, 400, 30), format);
             g.DrawString(data.MaritalStatus, font, brush, new RectangleF(10, 200, 380, 30), format);
@@ -119,6 +102,56 @@ namespace Little_Hafiz
 
             path.CloseFigure();
             return path;
+        }
+
+        private void PrintDocument2_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Brush brush = Brushes.Black;
+            Font font = new Font("Arial", 16, FontStyle.Regular);
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Near,
+                LineAlignment = StringAlignment.Near,
+                FormatFlags = StringFormatFlags.DirectionRightToLeft
+            };
+
+            SetHeader(g, brush, format, font);
+
+            g.DrawString(data.Ijazah, font, brush, new RectangleF(10, 220, 790, 120), format);
+            g.DrawString(data.Courses, font, brush, new RectangleF(10, 370, 790, 120), format);
+            g.DrawString(data.Skills, font, brush, new RectangleF(10, 520, 790, 120), format);
+            g.DrawString(data.Hobbies, font, brush, new RectangleF(10, 670, 790, 120), format);
+            g.DrawString(data.StdComps, font, brush, new RectangleF(10, 820, 790, 120), format);
+            g.DrawString(data.Notes, font, brush, new RectangleF(10, 970, 790, 120), format);
+        }
+
+        private void SetHeader(Graphics g, Brush brush, StringFormat format, Font font)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30), format);
+            g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
+
+            Rectangle imgRect = new Rectangle(10, 10, 140, 180);
+            int radius = 10;
+
+            using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                Region oldClip = g.Clip;
+                g.SetClip(path);
+                g.DrawImage(data.StudentImage, imgRect);
+                g.Clip = oldClip;
+
+                using (Pen pen = new Pen(Color.Black, 1))
+                    g.DrawPath(pen, path);
+            }
+
+            g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
+            g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
+            g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
         }
     }
 }
