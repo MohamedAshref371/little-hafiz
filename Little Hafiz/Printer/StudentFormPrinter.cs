@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -25,34 +26,31 @@ namespace Little_Hafiz
                 Document = printDocument,
                 WindowState = FormWindowState.Maximized
             };
+
+            paragraphs = new string[] { data.StudentMashaykh, data.MemorizePlaces, data.Certificates, data.Ijazah, data.Courses, data.Skills, data.Hobbies, data.StdComps, data.Notes };
         }
 
         public void ShowPreview()
         {
-            currentPage = 1;
             printDocument.PrintPage += MultiPage_PrintPage;
             previewDialog.ShowDialog();
             printDocument.PrintPage -= MultiPage_PrintPage;
         }
 
-        private int currentPage = 1;
         private void MultiPage_PrintPage(object sender, PrintPageEventArgs e)
         {
-            if (currentPage == 1)
+            Graphics g = e.Graphics;
+
+            if (currentParagraphIndex == 0)
             {
-                PrintPage1(e.Graphics);
-                e.HasMorePages = true;
-                currentPage++;
+                SetSmallFields(g);
+                PrintBigFields(paragraphs, e, 670);
             }
-            else if (currentPage == 2)
-            {
-                PrintPage2(e.Graphics);
-                e.HasMorePages = false;
-                currentPage = 1;
-            }
+            else
+                PrintBigFields(paragraphs, e, 30);
         }
 
-        private void PrintPage1(Graphics g)
+        private void SetSmallFields(Graphics g)
         {
             Brush brush = Brushes.Black;
             Font font = new Font("Arial", 16, FontStyle.Regular);
@@ -63,7 +61,30 @@ namespace Little_Hafiz
                 FormatFlags = StringFormatFlags.DirectionRightToLeft
             };
 
-            SetHeader(g, brush, format, font);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.Clear(Color.White);
+
+            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30), format);
+            g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
+
+            Rectangle imgRect = new Rectangle(10, 10, 140, 180);
+            int radius = 10;
+
+            using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                Region oldClip = g.Clip;
+                g.SetClip(path);
+                g.DrawImage(data.StudentImage, imgRect);
+                g.Clip = oldClip;
+
+                using (Pen pen = new Pen(Color.Black, 1))
+                    g.DrawPath(pen, path);
+            }
+
+            g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
+            g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
+            g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
 
             g.DrawString(data.Job, font, brush, new RectangleF(400, 200, 400, 30), format);
             g.DrawString(data.MaritalStatus, font, brush, new RectangleF(10, 200, 380, 30), format);
@@ -91,59 +112,34 @@ namespace Little_Hafiz
             g.DrawString(data.MemorizationAmount, font, brush, new RectangleF(10, 580, 380, 30), format);
             g.DrawString(data.JoiningDate, font, brush, new RectangleF(400, 620, 400, 30), format);
             g.DrawString(data.FirstConclusionDate, font, brush, new RectangleF(10, 620, 380, 30), format);
-
-            g.DrawString(data.StudentMashaykh, font, brush, new RectangleF(10, 680, 790, 120), format);
-            g.DrawString(data.MemorizePlaces, font, brush, new RectangleF(10, 820, 790, 120), format);
-            g.DrawString(data.Certificates, font, brush, new RectangleF(10, 960, 790, 120), format);
         }
 
-        private void PrintPage2(Graphics g)
+        readonly string[] paragraphs;
+        int currentParagraphIndex = 0;
+        private void PrintBigFields(string[] paragraphs, PrintPageEventArgs e, float y)
         {
+            float margin = 10;
+            Font font = new Font("Arial", 16);
             Brush brush = Brushes.Black;
-            Font font = new Font("Arial", 16, FontStyle.Regular);
-            StringFormat format = new StringFormat
+            StringFormat format = new StringFormat { FormatFlags = StringFormatFlags.DirectionRightToLeft };
+            string text;
+            while (currentParagraphIndex < paragraphs.Length)
             {
-                Alignment = StringAlignment.Near,
-                LineAlignment = StringAlignment.Near,
-                FormatFlags = StringFormatFlags.DirectionRightToLeft
-            };
+                text = paragraphs[currentParagraphIndex];
+                if (text.Trim().Last() == ':') { currentParagraphIndex++; continue; }
+                SizeF size = e.Graphics.MeasureString(text, font, 790, format);
 
-            SetHeader(g, brush, format, font);
-
-            g.DrawString(data.Ijazah, font, brush, new RectangleF(10, 220, 790, 120), format);
-            g.DrawString(data.Courses, font, brush, new RectangleF(10, 370, 790, 120), format);
-            g.DrawString(data.Skills, font, brush, new RectangleF(10, 520, 790, 120), format);
-            g.DrawString(data.Hobbies, font, brush, new RectangleF(10, 670, 790, 120), format);
-            g.DrawString(data.StdComps, font, brush, new RectangleF(10, 820, 790, 120), format);
-            g.DrawString(data.Notes, font, brush, new RectangleF(10, 970, 790, 120), format);
-        }
-
-        private void SetHeader(Graphics g, Brush brush, StringFormat format, Font font)
-        {
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.Clear(Color.White);
-
-            g.DrawString(System.DateTime.Now.ToString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30), format);
-            g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
-
-            Rectangle imgRect = new Rectangle(10, 10, 140, 180);
-            int radius = 10;
-
-            using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
-            {
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                Region oldClip = g.Clip;
-                g.SetClip(path);
-                g.DrawImage(data.StudentImage, imgRect);
-                g.Clip = oldClip;
-
-                using (Pen pen = new Pen(Color.Black, 1))
-                    g.DrawPath(pen, path);
+                if (y + size.Height > e.MarginBounds.Bottom - 30)
+                {
+                    e.HasMorePages = true;
+                    return;
+                }
+                e.Graphics.DrawString(text, font, brush, new RectangleF(10, y, 790, size.Height), format);
+                y += size.Height + margin;
+                currentParagraphIndex++;
             }
 
-            g.DrawString(data.FullName, font, brush, new RectangleF(300, 80, 500, 30), format);
-            g.DrawString(data.NationalNumber, font, brush, new RectangleF(300, 120, 500, 30), format);
-            g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
+            e.HasMorePages = false;
         }
 
         public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
