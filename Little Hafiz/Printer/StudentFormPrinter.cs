@@ -28,6 +28,7 @@ namespace Little_Hafiz
             };
 
             paragraphs = new string[] { data.StudentMashaykh, data.MemorizePlaces, data.Certificates, data.Ijazah, data.Courses, data.Skills, data.Hobbies, data.StdComps, data.Notes };
+            paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
         }
 
         public void ShowPreview()
@@ -39,11 +40,17 @@ namespace Little_Hafiz
 
         private void MultiPage_PrintPage(object sender, PrintPageEventArgs e)
         {
+            pageCount++;
+            if (pageCount == 25)
+            {
+                e.HasMorePages = false;
+                return;
+            }
             Graphics g = e.Graphics;
-
-            if (currentParagraphIndex == 0)
+            if (currentParagraphIndex == -1)
             {
                 SetSmallFields(g);
+                currentParagraphIndex = 0;
                 PrintBigFields(paragraphs, e, 670);
             }
             else
@@ -115,7 +122,8 @@ namespace Little_Hafiz
         }
 
         readonly string[] paragraphs;
-        int currentParagraphIndex = 0;
+        int currentParagraphIndex = -1;
+        int pageCount = 0;
         private void PrintBigFields(string[] paragraphs, PrintPageEventArgs e, float y)
         {
             e.HasMorePages = false;
