@@ -151,6 +151,25 @@
             this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.officeRank = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.levelCompCount = new System.Windows.Forms.Label();
+            this.compsLabel = new System.Windows.Forms.Label();
+            this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
+            this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.setRanksBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.dateToLabel = new System.Windows.Forms.Label();
+            this.dateFromLabel = new System.Windows.Forms.Label();
+            this.compLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.compLevelLabel = new System.Windows.Forms.Label();
+            this.studentCount = new System.Windows.Forms.Label();
+            this.studentCountLabel = new System.Windows.Forms.Label();
+            this.wrongThingLabel = new System.Windows.Forms.Label();
+            this.wrongThing2Label = new System.Windows.Forms.Label();
+            this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.formImage = new System.Windows.Forms.Label();
             this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -185,25 +204,6 @@
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
-            this.ranksCalculatorPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.officeRank = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.compDateTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.compDateFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.levelCompCount = new System.Windows.Forms.Label();
-            this.compsLabel = new System.Windows.Forms.Label();
-            this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
-            this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.setRanksBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.dateToLabel = new System.Windows.Forms.Label();
-            this.dateFromLabel = new System.Windows.Forms.Label();
-            this.compLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.compLevelLabel = new System.Windows.Forms.Label();
-            this.studentCount = new System.Windows.Forms.Label();
-            this.studentCountLabel = new System.Windows.Forms.Label();
-            this.wrongThingLabel = new System.Windows.Forms.Label();
-            this.wrongThing2Label = new System.Windows.Forms.Label();
-            this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -214,6 +214,8 @@
             this.studentSearchPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
+            this.ranksCalculatorPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).BeginInit();
             this.studentGradesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdScore)).BeginInit();
@@ -221,8 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
-            this.ranksCalculatorPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -267,7 +267,7 @@
             this.minimizeBtn.Location = new System.Drawing.Point(86, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 14);
-            this.minimizeBtn.TabIndex = 1;
+            this.minimizeBtn.TabIndex = 2;
             this.minimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
             // 
             // studentDataPanel
@@ -386,7 +386,7 @@
             this.copyStdDataBtn.Name = "copyStdDataBtn";
             this.copyStdDataBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.copyStdDataBtn.Size = new System.Drawing.Size(76, 39);
-            this.copyStdDataBtn.TabIndex = 82;
+            this.copyStdDataBtn.TabIndex = 31;
             this.copyStdDataBtn.Text = "نسخ";
             this.copyStdDataBtn.Visible = false;
             this.copyStdDataBtn.Click += new System.EventHandler(this.CopyStdDataBtn_Click);
@@ -416,7 +416,7 @@
             this.stdComps.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdComps.SelectedText = "";
             this.stdComps.Size = new System.Drawing.Size(822, 40);
-            this.stdComps.TabIndex = 81;
+            this.stdComps.TabIndex = 67;
             this.stdComps.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdComps.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
@@ -448,7 +448,7 @@
             this.deleteStudentBtn.Location = new System.Drawing.Point(18, 1119);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
-            this.deleteStudentBtn.TabIndex = 79;
+            this.deleteStudentBtn.TabIndex = 72;
             this.deleteStudentBtn.Text = "حذف الطالب";
             this.deleteStudentBtn.Click += new System.EventHandler(this.DeleteStudentBtn_Click);
             // 
@@ -477,7 +477,7 @@
             this.printStudentBtn.Location = new System.Drawing.Point(255, 1119);
             this.printStudentBtn.Name = "printStudentBtn";
             this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
-            this.printStudentBtn.TabIndex = 77;
+            this.printStudentBtn.TabIndex = 71;
             this.printStudentBtn.Text = "طباعة";
             this.printStudentBtn.Click += new System.EventHandler(this.PrintStudentBtn_Click);
             // 
@@ -496,7 +496,7 @@
             this.stdOffice.Location = new System.Drawing.Point(536, 140);
             this.stdOffice.Name = "stdOffice";
             this.stdOffice.Size = new System.Drawing.Size(257, 36);
-            this.stdOffice.TabIndex = 75;
+            this.stdOffice.TabIndex = 33;
             this.stdOffice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // stdNotes
@@ -524,7 +524,7 @@
             this.stdNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNotes.SelectedText = "";
             this.stdNotes.Size = new System.Drawing.Size(822, 40);
-            this.stdNotes.TabIndex = 74;
+            this.stdNotes.TabIndex = 68;
             this.stdNotes.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdNotes.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -569,7 +569,7 @@
             this.stdImageSelectorBtn.Name = "stdImageSelectorBtn";
             this.stdImageSelectorBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdImageSelectorBtn.Size = new System.Drawing.Size(108, 32);
-            this.stdImageSelectorBtn.TabIndex = 71;
+            this.stdImageSelectorBtn.TabIndex = 32;
             this.stdImageSelectorBtn.Text = "اختيار ...";
             this.stdImageSelectorBtn.Click += new System.EventHandler(this.StdImageSelectorBtn_Click);
             // 
@@ -612,7 +612,7 @@
             this.stdSkills.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdSkills.SelectedText = "";
             this.stdSkills.Size = new System.Drawing.Size(354, 40);
-            this.stdSkills.TabIndex = 68;
+            this.stdSkills.TabIndex = 65;
             this.stdSkills.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdSkills.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdSkills.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -684,7 +684,7 @@
             this.stdIjazah.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdIjazah.SelectedText = "";
             this.stdIjazah.Size = new System.Drawing.Size(354, 40);
-            this.stdIjazah.TabIndex = 64;
+            this.stdIjazah.TabIndex = 63;
             this.stdIjazah.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdIjazah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdIjazah.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -714,7 +714,7 @@
             this.stdCourses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCourses.SelectedText = "";
             this.stdCourses.Size = new System.Drawing.Size(354, 40);
-            this.stdCourses.TabIndex = 62;
+            this.stdCourses.TabIndex = 64;
             this.stdCourses.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdCourses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdCourses.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -756,7 +756,7 @@
             this.stdCertificates.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificates.SelectedText = "";
             this.stdCertificates.Size = new System.Drawing.Size(722, 40);
-            this.stdCertificates.TabIndex = 60;
+            this.stdCertificates.TabIndex = 62;
             this.stdCertificates.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdCertificates.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdCertificates.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -788,7 +788,7 @@
             this.stdFirstConclusion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdFirstConclusion.Name = "stdFirstConclusion";
             this.stdFirstConclusion.Size = new System.Drawing.Size(193, 36);
-            this.stdFirstConclusion.TabIndex = 57;
+            this.stdFirstConclusion.TabIndex = 59;
             this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
             // 
             // stdJoiningDate
@@ -805,7 +805,7 @@
             this.stdJoiningDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdJoiningDate.Name = "stdJoiningDate";
             this.stdJoiningDate.Size = new System.Drawing.Size(193, 36);
-            this.stdJoiningDate.TabIndex = 55;
+            this.stdJoiningDate.TabIndex = 57;
             this.stdJoiningDate.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             // 
             // stdJoiningDateLabel
@@ -845,7 +845,7 @@
             this.stdMemoPlaces.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMemoPlaces.SelectedText = "";
             this.stdMemoPlaces.Size = new System.Drawing.Size(722, 40);
-            this.stdMemoPlaces.TabIndex = 54;
+            this.stdMemoPlaces.TabIndex = 61;
             this.stdMemoPlaces.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdMemoPlaces.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdMemoPlaces.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -875,7 +875,7 @@
             this.stdMashaykh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMashaykh.SelectedText = "";
             this.stdMashaykh.Size = new System.Drawing.Size(722, 40);
-            this.stdMashaykh.TabIndex = 53;
+            this.stdMashaykh.TabIndex = 60;
             this.stdMashaykh.Enter += new System.EventHandler(this.BigTextBox_Enter);
             this.stdMashaykh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdMashaykh.Leave += new System.EventHandler(this.BigTextBox_Leave);
@@ -926,7 +926,7 @@
             this.stdMemo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMemo.SelectedText = "";
             this.stdMemo.Size = new System.Drawing.Size(257, 32);
-            this.stdMemo.TabIndex = 50;
+            this.stdMemo.TabIndex = 56;
             this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdMemoLabel
@@ -963,7 +963,7 @@
             this.stdMaritalStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMaritalStatus.SelectedText = "";
             this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
-            this.stdMaritalStatus.TabIndex = 48;
+            this.stdMaritalStatus.TabIndex = 55;
             this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdMaritalStatusLabel
@@ -1010,7 +1010,7 @@
             0});
             this.stdArrangement.Name = "stdArrangement";
             this.stdArrangement.Size = new System.Drawing.Size(100, 32);
-            this.stdArrangement.TabIndex = 45;
+            this.stdArrangement.TabIndex = 54;
             this.stdArrangement.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(180)))));
             this.stdArrangement.Value = new decimal(new int[] {
             1,
@@ -1045,7 +1045,7 @@
             0});
             this.stdBrothers.Name = "stdBrothers";
             this.stdBrothers.Size = new System.Drawing.Size(100, 32);
-            this.stdBrothers.TabIndex = 43;
+            this.stdBrothers.TabIndex = 53;
             this.stdBrothers.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(180)))));
             this.stdBrothers.ValueChanged += new System.EventHandler(this.StdBrothers_ValueChanged);
             // 
@@ -1071,7 +1071,7 @@
             this.stdSchool.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdSchool.SelectedText = "";
             this.stdSchool.Size = new System.Drawing.Size(257, 32);
-            this.stdSchool.TabIndex = 42;
+            this.stdSchool.TabIndex = 51;
             this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdClass
@@ -1096,7 +1096,7 @@
             this.stdClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdClass.SelectedText = "";
             this.stdClass.Size = new System.Drawing.Size(257, 32);
-            this.stdClass.TabIndex = 40;
+            this.stdClass.TabIndex = 52;
             this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdClassLabel
@@ -1133,7 +1133,7 @@
             this.stdEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdEmail.SelectedText = "";
             this.stdEmail.Size = new System.Drawing.Size(257, 32);
-            this.stdEmail.TabIndex = 38;
+            this.stdEmail.TabIndex = 49;
             this.stdEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdFacebook
@@ -1158,7 +1158,7 @@
             this.stdFacebook.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdFacebook.SelectedText = "";
             this.stdFacebook.Size = new System.Drawing.Size(257, 32);
-            this.stdFacebook.TabIndex = 36;
+            this.stdFacebook.TabIndex = 50;
             this.stdFacebook.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdFacebookLabel
@@ -1207,7 +1207,7 @@
             this.stdAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdAddress.SelectedText = "";
             this.stdAddress.Size = new System.Drawing.Size(257, 32);
-            this.stdAddress.TabIndex = 32;
+            this.stdAddress.TabIndex = 48;
             this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdAddressLabel
@@ -1245,7 +1245,7 @@
             this.stdPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdPhone.SelectedText = "";
             this.stdPhone.Size = new System.Drawing.Size(257, 32);
-            this.stdPhone.TabIndex = 30;
+            this.stdPhone.TabIndex = 47;
             this.stdPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
             // guardianLink
@@ -1270,7 +1270,7 @@
             this.guardianLink.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.guardianLink.SelectedText = "";
             this.guardianLink.Size = new System.Drawing.Size(86, 32);
-            this.guardianLink.TabIndex = 28;
+            this.guardianLink.TabIndex = 45;
             this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // guardianBirth
@@ -1287,7 +1287,7 @@
             this.guardianBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guardianBirth.Name = "guardianBirth";
             this.guardianBirth.Size = new System.Drawing.Size(136, 32);
-            this.guardianBirth.TabIndex = 26;
+            this.guardianBirth.TabIndex = 46;
             this.guardianBirth.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             // 
             // guardianName
@@ -1312,7 +1312,7 @@
             this.guardianName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.guardianName.SelectedText = "";
             this.guardianName.Size = new System.Drawing.Size(257, 32);
-            this.guardianName.TabIndex = 24;
+            this.guardianName.TabIndex = 44;
             this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // motherPhone
@@ -1337,7 +1337,7 @@
             this.motherPhone.PlaceholderText = "";
             this.motherPhone.SelectedText = "";
             this.motherPhone.Size = new System.Drawing.Size(257, 32);
-            this.motherPhone.TabIndex = 22;
+            this.motherPhone.TabIndex = 43;
             this.motherPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
             // fatherPhone
@@ -1363,7 +1363,7 @@
             this.fatherPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fatherPhone.SelectedText = "";
             this.fatherPhone.Size = new System.Drawing.Size(257, 32);
-            this.fatherPhone.TabIndex = 20;
+            this.fatherPhone.TabIndex = 42;
             this.fatherPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
             // motherJob
@@ -1388,7 +1388,7 @@
             this.motherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.motherJob.SelectedText = "";
             this.motherJob.Size = new System.Drawing.Size(257, 32);
-            this.motherJob.TabIndex = 18;
+            this.motherJob.TabIndex = 41;
             this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // motherQuali
@@ -1413,7 +1413,7 @@
             this.motherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.motherQuali.SelectedText = "";
             this.motherQuali.Size = new System.Drawing.Size(257, 32);
-            this.motherQuali.TabIndex = 16;
+            this.motherQuali.TabIndex = 40;
             this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // fatherJob
@@ -1438,7 +1438,7 @@
             this.fatherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.fatherJob.SelectedText = "";
             this.fatherJob.Size = new System.Drawing.Size(257, 32);
-            this.fatherJob.TabIndex = 14;
+            this.fatherJob.TabIndex = 39;
             this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // fatherQuali
@@ -1463,7 +1463,7 @@
             this.fatherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.fatherQuali.SelectedText = "";
             this.fatherQuali.Size = new System.Drawing.Size(257, 32);
-            this.fatherQuali.TabIndex = 12;
+            this.fatherQuali.TabIndex = 38;
             this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // cancelBtn
@@ -1482,7 +1482,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(565, 1119);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(92, 45);
-            this.cancelBtn.TabIndex = 11;
+            this.cancelBtn.TabIndex = 69;
             this.cancelBtn.Text = "إلغاء";
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
@@ -1502,7 +1502,7 @@
             this.addStudentBtn.Location = new System.Drawing.Point(401, 1119);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
-            this.addStudentBtn.TabIndex = 10;
+            this.addStudentBtn.TabIndex = 70;
             this.addStudentBtn.Text = "إضافة";
             this.addStudentBtn.Click += new System.EventHandler(this.AddStudentBtn_Click);
             // 
@@ -1528,7 +1528,7 @@
             this.stdJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdJob.SelectedText = "";
             this.stdJob.Size = new System.Drawing.Size(257, 32);
-            this.stdJob.TabIndex = 8;
+            this.stdJob.TabIndex = 37;
             // 
             // wrongValueLabel
             // 
@@ -1570,7 +1570,7 @@
             this.stdBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDate.Name = "stdBirthDate";
             this.stdBirthDate.Size = new System.Drawing.Size(257, 36);
-            this.stdBirthDate.TabIndex = 5;
+            this.stdBirthDate.TabIndex = 36;
             this.stdBirthDate.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // stdNational
@@ -1595,7 +1595,7 @@
             this.stdNational.PlaceholderText = "";
             this.stdNational.SelectedText = "";
             this.stdNational.Size = new System.Drawing.Size(257, 32);
-            this.stdNational.TabIndex = 3;
+            this.stdNational.TabIndex = 35;
             this.stdNational.TextChanged += new System.EventHandler(this.National_TextChanged);
             this.stdNational.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
             // 
@@ -1633,7 +1633,7 @@
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdName.SelectedText = "";
             this.stdName.Size = new System.Drawing.Size(257, 32);
-            this.stdName.TabIndex = 0;
+            this.stdName.TabIndex = 34;
             this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // guardianLinkLabel
@@ -1917,7 +1917,7 @@
             this.maximizeBtn.Location = new System.Drawing.Point(51, 7);
             this.maximizeBtn.Name = "maximizeBtn";
             this.maximizeBtn.Size = new System.Drawing.Size(30, 24);
-            this.maximizeBtn.TabIndex = 73;
+            this.maximizeBtn.TabIndex = 1;
             this.maximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
             // studentSearchPanel
@@ -1966,7 +1966,7 @@
             this.stdBirthDateToSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateToSearch.Name = "stdBirthDateToSearch";
             this.stdBirthDateToSearch.Size = new System.Drawing.Size(120, 36);
-            this.stdBirthDateToSearch.TabIndex = 87;
+            this.stdBirthDateToSearch.TabIndex = 16;
             this.stdBirthDateToSearch.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // stdBirthDateSearch
@@ -1984,7 +1984,7 @@
             this.stdBirthDateSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateSearch.Name = "stdBirthDateSearch";
             this.stdBirthDateSearch.Size = new System.Drawing.Size(120, 36);
-            this.stdBirthDateSearch.TabIndex = 84;
+            this.stdBirthDateSearch.TabIndex = 14;
             this.stdBirthDateSearch.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // stdBirthDateToCheckBox
@@ -2000,7 +2000,7 @@
             this.stdBirthDateToCheckBox.Name = "stdBirthDateToCheckBox";
             this.stdBirthDateToCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateToCheckBox.Size = new System.Drawing.Size(55, 32);
-            this.stdBirthDateToCheckBox.TabIndex = 86;
+            this.stdBirthDateToCheckBox.TabIndex = 15;
             this.stdBirthDateToCheckBox.Text = "إلى";
             this.stdBirthDateToCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdBirthDateToCheckBox.UncheckedState.BorderRadius = 3;
@@ -2022,7 +2022,7 @@
             this.stdBirthDateFromCheckBox.Name = "stdBirthDateFromCheckBox";
             this.stdBirthDateFromCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateFromCheckBox.Size = new System.Drawing.Size(50, 32);
-            this.stdBirthDateFromCheckBox.TabIndex = 88;
+            this.stdBirthDateFromCheckBox.TabIndex = 13;
             this.stdBirthDateFromCheckBox.Text = "من";
             this.stdBirthDateFromCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdBirthDateFromCheckBox.UncheckedState.BorderRadius = 3;
@@ -2043,7 +2043,7 @@
             this.stdOfficeCheckBox.Name = "stdOfficeCheckBox";
             this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
-            this.stdOfficeCheckBox.TabIndex = 90;
+            this.stdOfficeCheckBox.TabIndex = 19;
             this.stdOfficeCheckBox.Text = "المكتب :";
             this.stdOfficeCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdOfficeCheckBox.UncheckedState.BorderRadius = 3;
@@ -2066,7 +2066,7 @@
             this.stdOfficeSearch.Location = new System.Drawing.Point(23, 146);
             this.stdOfficeSearch.Name = "stdOfficeSearch";
             this.stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
-            this.stdOfficeSearch.TabIndex = 89;
+            this.stdOfficeSearch.TabIndex = 20;
             this.stdOfficeSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // searchBtn
@@ -2085,7 +2085,7 @@
             this.searchBtn.Location = new System.Drawing.Point(570, 143);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(158, 45);
-            this.searchBtn.TabIndex = 81;
+            this.searchBtn.TabIndex = 21;
             this.searchBtn.Text = "بحث";
             this.searchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
@@ -2111,7 +2111,7 @@
             this.stdEmailSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdEmailSearch.SelectedText = "";
             this.stdEmailSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdEmailSearch.TabIndex = 80;
+            this.stdEmailSearch.TabIndex = 18;
             this.stdEmailSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
             // stdPhoneSearch
@@ -2137,7 +2137,7 @@
             this.stdPhoneSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdPhoneSearch.SelectedText = "";
             this.stdPhoneSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdPhoneSearch.TabIndex = 78;
+            this.stdPhoneSearch.TabIndex = 9;
             this.stdPhoneSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
             // stdNationalSearch
@@ -2163,7 +2163,7 @@
             this.stdNationalSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdNationalSearch.SelectedText = "";
             this.stdNationalSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdNationalSearch.TabIndex = 76;
+            this.stdNationalSearch.TabIndex = 11;
             this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
             // 
             // stdNameSearch
@@ -2188,7 +2188,7 @@
             this.stdNameSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameSearch.SelectedText = "";
             this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdNameSearch.TabIndex = 74;
+            this.stdNameSearch.TabIndex = 7;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // searchPanelTitle
@@ -2217,7 +2217,7 @@
             this.stdEmailCheckBox.Name = "stdEmailCheckBox";
             this.stdEmailCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 32);
-            this.stdEmailCheckBox.TabIndex = 79;
+            this.stdEmailCheckBox.TabIndex = 17;
             this.stdEmailCheckBox.Text = "الإيميل :";
             this.stdEmailCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdEmailCheckBox.UncheckedState.BorderRadius = 3;
@@ -2237,7 +2237,7 @@
             this.stdPhoneCheckBox.Name = "stdPhoneCheckBox";
             this.stdPhoneCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdPhoneCheckBox.Size = new System.Drawing.Size(124, 32);
-            this.stdPhoneCheckBox.TabIndex = 77;
+            this.stdPhoneCheckBox.TabIndex = 8;
             this.stdPhoneCheckBox.Text = "هاتف الطالب :";
             this.stdPhoneCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdPhoneCheckBox.UncheckedState.BorderRadius = 3;
@@ -2257,7 +2257,7 @@
             this.stdNationalCheckBox.Name = "stdNationalCheckBox";
             this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 32);
-            this.stdNationalCheckBox.TabIndex = 75;
+            this.stdNationalCheckBox.TabIndex = 10;
             this.stdNationalCheckBox.Text = "الرقم القومي :";
             this.stdNationalCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdNationalCheckBox.UncheckedState.BorderRadius = 3;
@@ -2277,7 +2277,7 @@
             this.stdNameCheckBox.Name = "stdNameCheckBox";
             this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameCheckBox.Size = new System.Drawing.Size(85, 32);
-            this.stdNameCheckBox.TabIndex = 0;
+            this.stdNameCheckBox.TabIndex = 6;
             this.stdNameCheckBox.Text = "الاسم :";
             this.stdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdNameCheckBox.UncheckedState.BorderRadius = 3;
@@ -2297,7 +2297,7 @@
             this.stdBirthDateCheckBox.Name = "stdBirthDateCheckBox";
             this.stdBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
-            this.stdBirthDateCheckBox.TabIndex = 82;
+            this.stdBirthDateCheckBox.TabIndex = 12;
             this.stdBirthDateCheckBox.Text = "تاريخ الميلاد :";
             this.stdBirthDateCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdBirthDateCheckBox.UncheckedState.BorderRadius = 3;
@@ -2337,7 +2337,7 @@
             this.openAddStudentBtn.Location = new System.Drawing.Point(751, 5);
             this.openAddStudentBtn.Name = "openAddStudentBtn";
             this.openAddStudentBtn.Size = new System.Drawing.Size(165, 39);
-            this.openAddStudentBtn.TabIndex = 82;
+            this.openAddStudentBtn.TabIndex = 22;
             this.openAddStudentBtn.Text = "إضافة طالب";
             this.openAddStudentBtn.Click += new System.EventHandler(this.OpenAddStudentBtn_Click);
             // 
@@ -2381,7 +2381,7 @@
             this.colorBtn.Location = new System.Drawing.Point(298, 5);
             this.colorBtn.Name = "colorBtn";
             this.colorBtn.Size = new System.Drawing.Size(89, 39);
-            this.colorBtn.TabIndex = 92;
+            this.colorBtn.TabIndex = 25;
             this.colorBtn.Text = "الألوان";
             this.colorBtn.Click += new System.EventHandler(this.ColorBtn_Click);
             // 
@@ -2402,7 +2402,7 @@
             this.checkUpdateBtn.Location = new System.Drawing.Point(213, 5);
             this.checkUpdateBtn.Name = "checkUpdateBtn";
             this.checkUpdateBtn.Size = new System.Drawing.Size(79, 39);
-            this.checkUpdateBtn.TabIndex = 91;
+            this.checkUpdateBtn.TabIndex = 26;
             this.checkUpdateBtn.Text = "تحديث";
             this.checkUpdateBtn.Click += new System.EventHandler(this.CheckUpdateBtn_Click);
             // 
@@ -2423,7 +2423,7 @@
             this.officeHelperBtn.Location = new System.Drawing.Point(449, 5);
             this.officeHelperBtn.Name = "officeHelperBtn";
             this.officeHelperBtn.Size = new System.Drawing.Size(145, 39);
-            this.officeHelperBtn.TabIndex = 88;
+            this.officeHelperBtn.TabIndex = 24;
             this.officeHelperBtn.Text = "إضافة مكتب";
             this.officeHelperBtn.Click += new System.EventHandler(this.OfficeHelperBtn_Click);
             // 
@@ -2444,7 +2444,7 @@
             this.rankCalcBtn.Location = new System.Drawing.Point(600, 5);
             this.rankCalcBtn.Name = "rankCalcBtn";
             this.rankCalcBtn.Size = new System.Drawing.Size(145, 39);
-            this.rankCalcBtn.TabIndex = 87;
+            this.rankCalcBtn.TabIndex = 23;
             this.rankCalcBtn.Text = "حساب المركز";
             this.rankCalcBtn.Click += new System.EventHandler(this.RankCalcBtn_Click);
             // 
@@ -2465,7 +2465,7 @@
             this.releasesLatestBtn.Location = new System.Drawing.Point(130, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
             this.releasesLatestBtn.Size = new System.Drawing.Size(79, 39);
-            this.releasesLatestBtn.TabIndex = 86;
+            this.releasesLatestBtn.TabIndex = 27;
             this.releasesLatestBtn.Text = "البرنامج";
             this.releasesLatestBtn.Click += new System.EventHandler(this.ReleasesLatestBtn_Click);
             // 
@@ -2484,7 +2484,7 @@
             this.extractExcelBtn.Name = "extractExcelBtn";
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.extractExcelBtn.Size = new System.Drawing.Size(79, 39);
-            this.extractExcelBtn.TabIndex = 84;
+            this.extractExcelBtn.TabIndex = 28;
             this.extractExcelBtn.Text = "excel";
             this.extractExcelBtn.Click += new System.EventHandler(this.ExtractExcelBtn_Click);
             // 
@@ -2511,7 +2511,7 @@
             this.officeTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeTextBox.SelectedText = "";
             this.officeTextBox.Size = new System.Drawing.Size(351, 36);
-            this.officeTextBox.TabIndex = 89;
+            this.officeTextBox.TabIndex = 29;
             this.officeTextBox.Visible = false;
             this.officeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
@@ -2531,7 +2531,7 @@
             this.officeEnterBtn.Name = "officeEnterBtn";
             this.officeEnterBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeEnterBtn.Size = new System.Drawing.Size(79, 39);
-            this.officeEnterBtn.TabIndex = 90;
+            this.officeEnterBtn.TabIndex = 30;
             this.officeEnterBtn.Text = "إدخال";
             this.officeEnterBtn.Visible = false;
             this.officeEnterBtn.Click += new System.EventHandler(this.OfficeEnterBtn_Click);
@@ -2568,6 +2568,300 @@
             this.headerPanel.Size = new System.Drawing.Size(951, 701);
             this.headerPanel.TabIndex = 84;
             // 
+            // ranksCalculatorPanel
+            // 
+            this.ranksCalculatorPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ranksCalculatorPanel.BorderColor = System.Drawing.Color.Silver;
+            this.ranksCalculatorPanel.BorderRadius = 5;
+            this.ranksCalculatorPanel.BorderThickness = 1;
+            this.ranksCalculatorPanel.Controls.Add(this.officeRank);
+            this.ranksCalculatorPanel.Controls.Add(this.compDateTo);
+            this.ranksCalculatorPanel.Controls.Add(this.compDateFrom);
+            this.ranksCalculatorPanel.Controls.Add(this.levelCompCount);
+            this.ranksCalculatorPanel.Controls.Add(this.compsLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.closeBtn2);
+            this.ranksCalculatorPanel.Controls.Add(this.ranksListPanel);
+            this.ranksCalculatorPanel.Controls.Add(this.setRanksBtn);
+            this.ranksCalculatorPanel.Controls.Add(this.getGradesDataBtn);
+            this.ranksCalculatorPanel.Controls.Add(this.dateToLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.dateFromLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.compLevel);
+            this.ranksCalculatorPanel.Controls.Add(this.compLevelLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.studentCount);
+            this.ranksCalculatorPanel.Controls.Add(this.studentCountLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.wrongThingLabel);
+            this.ranksCalculatorPanel.Controls.Add(this.wrongThing2Label);
+            this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
+            this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.ranksCalculatorPanel.Location = new System.Drawing.Point(12, 37);
+            this.ranksCalculatorPanel.Name = "ranksCalculatorPanel";
+            this.ranksCalculatorPanel.Size = new System.Drawing.Size(926, 656);
+            this.ranksCalculatorPanel.TabIndex = 85;
+            this.ranksCalculatorPanel.Visible = false;
+            // 
+            // officeRank
+            // 
+            this.officeRank.BackColor = System.Drawing.Color.Transparent;
+            this.officeRank.BorderRadius = 5;
+            this.officeRank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.officeRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.officeRank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.officeRank.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.officeRank.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.officeRank.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.officeRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.officeRank.ItemHeight = 30;
+            this.officeRank.Location = new System.Drawing.Point(681, 5);
+            this.officeRank.Name = "officeRank";
+            this.officeRank.Size = new System.Drawing.Size(237, 36);
+            this.officeRank.TabIndex = 82;
+            this.officeRank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.officeRank.SelectedIndexChanged += new System.EventHandler(this.OfficeRank_SelectedIndexChanged);
+            // 
+            // compDateTo
+            // 
+            this.compDateTo.BorderRadius = 5;
+            this.compDateTo.Checked = true;
+            this.compDateTo.CustomFormat = "yyyy MMM";
+            this.compDateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateTo.Location = new System.Drawing.Point(290, 83);
+            this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateTo.Name = "compDateTo";
+            this.compDateTo.Size = new System.Drawing.Size(131, 36);
+            this.compDateTo.TabIndex = 85;
+            this.compDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateTo.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // compDateFrom
+            // 
+            this.compDateFrom.BorderRadius = 5;
+            this.compDateFrom.Checked = true;
+            this.compDateFrom.CustomFormat = "yyyy MMM";
+            this.compDateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.compDateFrom.Location = new System.Drawing.Point(470, 83);
+            this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.compDateFrom.Name = "compDateFrom";
+            this.compDateFrom.Size = new System.Drawing.Size(131, 36);
+            this.compDateFrom.TabIndex = 84;
+            this.compDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.compDateFrom.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
+            // 
+            // levelCompCount
+            // 
+            this.levelCompCount.AutoSize = true;
+            this.levelCompCount.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.levelCompCount.Location = new System.Drawing.Point(424, 118);
+            this.levelCompCount.Name = "levelCompCount";
+            this.levelCompCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.levelCompCount.Size = new System.Drawing.Size(16, 17);
+            this.levelCompCount.TabIndex = 103;
+            this.levelCompCount.Text = "0";
+            // 
+            // compsLabel
+            // 
+            this.compsLabel.AutoSize = true;
+            this.compsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.compsLabel.Location = new System.Drawing.Point(834, 118);
+            this.compsLabel.Name = "compsLabel";
+            this.compsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compsLabel.Size = new System.Drawing.Size(69, 17);
+            this.compsLabel.TabIndex = 102;
+            this.compsLabel.Text = "المسابقات";
+            // 
+            // closeBtn2
+            // 
+            this.closeBtn2.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn2.BorderRadius = 15;
+            this.closeBtn2.BorderThickness = 1;
+            this.closeBtn2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.closeBtn2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.closeBtn2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.closeBtn2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.closeBtn2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.closeBtn2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.closeBtn2.ForeColor = System.Drawing.Color.Black;
+            this.closeBtn2.Location = new System.Drawing.Point(27, 18);
+            this.closeBtn2.Name = "closeBtn2";
+            this.closeBtn2.Size = new System.Drawing.Size(91, 39);
+            this.closeBtn2.TabIndex = 88;
+            this.closeBtn2.Text = "خروج";
+            this.closeBtn2.Click += new System.EventHandler(this.CloseBtn2_Click);
+            // 
+            // ranksListPanel
+            // 
+            this.ranksListPanel.AutoScroll = true;
+            this.ranksListPanel.BorderColor = System.Drawing.Color.Silver;
+            this.ranksListPanel.BorderRadius = 5;
+            this.ranksListPanel.BorderThickness = 1;
+            this.ranksListPanel.Location = new System.Drawing.Point(10, 129);
+            this.ranksListPanel.Name = "ranksListPanel";
+            this.ranksListPanel.Size = new System.Drawing.Size(908, 521);
+            this.ranksListPanel.TabIndex = 99;
+            // 
+            // setRanksBtn
+            // 
+            this.setRanksBtn.BackColor = System.Drawing.Color.Transparent;
+            this.setRanksBtn.BorderRadius = 15;
+            this.setRanksBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.setRanksBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.setRanksBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.setRanksBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.setRanksBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(120)))), ((int)(((byte)(220)))));
+            this.setRanksBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.setRanksBtn.ForeColor = System.Drawing.Color.White;
+            this.setRanksBtn.Location = new System.Drawing.Point(11, 83);
+            this.setRanksBtn.Name = "setRanksBtn";
+            this.setRanksBtn.Size = new System.Drawing.Size(117, 39);
+            this.setRanksBtn.TabIndex = 87;
+            this.setRanksBtn.Text = "كتابة المركز";
+            this.setRanksBtn.Click += new System.EventHandler(this.SetRanksBtn_Click);
+            // 
+            // getGradesDataBtn
+            // 
+            this.getGradesDataBtn.BackColor = System.Drawing.Color.Transparent;
+            this.getGradesDataBtn.BorderRadius = 15;
+            this.getGradesDataBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.getGradesDataBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.getGradesDataBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.getGradesDataBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.getGradesDataBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.getGradesDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.getGradesDataBtn.ForeColor = System.Drawing.Color.Black;
+            this.getGradesDataBtn.Location = new System.Drawing.Point(132, 83);
+            this.getGradesDataBtn.Name = "getGradesDataBtn";
+            this.getGradesDataBtn.Size = new System.Drawing.Size(117, 39);
+            this.getGradesDataBtn.TabIndex = 86;
+            this.getGradesDataBtn.Text = "جلب البيانات";
+            this.getGradesDataBtn.Click += new System.EventHandler(this.GetGradesDataBtn_Click);
+            // 
+            // dateToLabel
+            // 
+            this.dateToLabel.AutoSize = true;
+            this.dateToLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateToLabel.Location = new System.Drawing.Point(427, 90);
+            this.dateToLabel.Name = "dateToLabel";
+            this.dateToLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateToLabel.Size = new System.Drawing.Size(34, 19);
+            this.dateToLabel.TabIndex = 95;
+            this.dateToLabel.Text = "إلى";
+            this.dateToLabel.DoubleClick += new System.EventHandler(this.DateToLabel_DoubleClick);
+            // 
+            // dateFromLabel
+            // 
+            this.dateFromLabel.AutoSize = true;
+            this.dateFromLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateFromLabel.Location = new System.Drawing.Point(607, 90);
+            this.dateFromLabel.Name = "dateFromLabel";
+            this.dateFromLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateFromLabel.Size = new System.Drawing.Size(29, 19);
+            this.dateFromLabel.TabIndex = 92;
+            this.dateFromLabel.Text = "من";
+            this.dateFromLabel.DoubleClick += new System.EventHandler(this.DateFromLabel_DoubleClick);
+            // 
+            // compLevel
+            // 
+            this.compLevel.BackColor = System.Drawing.Color.Transparent;
+            this.compLevel.BorderRadius = 3;
+            this.compLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.compLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.compLevel.Location = new System.Drawing.Point(691, 83);
+            this.compLevel.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.compLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.compLevel.Name = "compLevel";
+            this.compLevel.Size = new System.Drawing.Size(77, 32);
+            this.compLevel.TabIndex = 83;
+            this.compLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
+            this.compLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // compLevelLabel
+            // 
+            this.compLevelLabel.AutoSize = true;
+            this.compLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.compLevelLabel.Location = new System.Drawing.Point(771, 90);
+            this.compLevelLabel.Name = "compLevelLabel";
+            this.compLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.compLevelLabel.Size = new System.Drawing.Size(144, 19);
+            this.compLevelLabel.TabIndex = 3;
+            this.compLevelLabel.Text = "مستوى المسابقة : ";
+            // 
+            // studentCount
+            // 
+            this.studentCount.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.studentCount.Location = new System.Drawing.Point(677, 53);
+            this.studentCount.Name = "studentCount";
+            this.studentCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.studentCount.Size = new System.Drawing.Size(96, 19);
+            this.studentCount.TabIndex = 2;
+            this.studentCount.Text = "0";
+            this.studentCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // studentCountLabel
+            // 
+            this.studentCountLabel.AutoSize = true;
+            this.studentCountLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.studentCountLabel.Location = new System.Drawing.Point(773, 52);
+            this.studentCountLabel.Name = "studentCountLabel";
+            this.studentCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.studentCountLabel.Size = new System.Drawing.Size(141, 19);
+            this.studentCountLabel.TabIndex = 0;
+            this.studentCountLabel.Text = "عدد الطلبة الكلي : ";
+            // 
+            // wrongThingLabel
+            // 
+            this.wrongThingLabel.AutoSize = true;
+            this.wrongThingLabel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.wrongThingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.wrongThingLabel.Location = new System.Drawing.Point(360, 64);
+            this.wrongThingLabel.Name = "wrongThingLabel";
+            this.wrongThingLabel.Size = new System.Drawing.Size(166, 17);
+            this.wrongThingLabel.TabIndex = 101;
+            this.wrongThingLabel.Text = "هناك طالب مكرر في القائمة";
+            this.wrongThingLabel.Visible = false;
+            // 
+            // wrongThing2Label
+            // 
+            this.wrongThing2Label.AutoSize = true;
+            this.wrongThing2Label.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.wrongThing2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.wrongThing2Label.Location = new System.Drawing.Point(360, 64);
+            this.wrongThing2Label.Name = "wrongThing2Label";
+            this.wrongThing2Label.Size = new System.Drawing.Size(156, 17);
+            this.wrongThing2Label.TabIndex = 101;
+            this.wrongThing2Label.Text = "هناك كود مكرر في القائمة";
+            this.wrongThing2Label.Visible = false;
+            // 
+            // ranksPanelTitle
+            // 
+            this.ranksPanelTitle.AutoSize = true;
+            this.ranksPanelTitle.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.ranksPanelTitle.Location = new System.Drawing.Point(132, 5);
+            this.ranksPanelTitle.Name = "ranksPanelTitle";
+            this.ranksPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
+            this.ranksPanelTitle.TabIndex = 1;
+            this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
+            this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formImage
             // 
             this.formImage.BackColor = System.Drawing.Color.Transparent;
@@ -2593,7 +2887,7 @@
             this.readRecordsBtn.Location = new System.Drawing.Point(138, 4);
             this.readRecordsBtn.Name = "readRecordsBtn";
             this.readRecordsBtn.Size = new System.Drawing.Size(145, 30);
-            this.readRecordsBtn.TabIndex = 86;
+            this.readRecordsBtn.TabIndex = 3;
             this.readRecordsBtn.Text = "قراءة التسجيلات";
             this.readRecordsBtn.Click += new System.EventHandler(this.ReadRecordsBtn_Click);
             // 
@@ -2611,7 +2905,7 @@
             this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
             this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
-            this.dataRecorderCheckBox.TabIndex = 82;
+            this.dataRecorderCheckBox.TabIndex = 4;
             this.dataRecorderCheckBox.Text = "تسجيل حركة البيانات";
             this.dataRecorderCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.dataRecorderCheckBox.UncheckedState.BorderRadius = 3;
@@ -2687,7 +2981,7 @@
             this.compNotes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.compNotes.SelectedText = "";
             this.compNotes.Size = new System.Drawing.Size(405, 32);
-            this.compNotes.TabIndex = 100;
+            this.compNotes.TabIndex = 79;
             this.compNotes.Tag = "";
             this.compNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
@@ -2739,7 +3033,7 @@
             this.addGradeBtn.Location = new System.Drawing.Point(44, 516);
             this.addGradeBtn.Name = "addGradeBtn";
             this.addGradeBtn.Size = new System.Drawing.Size(158, 45);
-            this.addGradeBtn.TabIndex = 94;
+            this.addGradeBtn.TabIndex = 80;
             this.addGradeBtn.Text = "إضافة";
             this.addGradeBtn.Click += new System.EventHandler(this.AddGradeBtn_Click);
             // 
@@ -2756,7 +3050,7 @@
             this.compDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.compDate.Name = "compDate";
             this.compDate.Size = new System.Drawing.Size(131, 36);
-            this.compDate.TabIndex = 93;
+            this.compDate.TabIndex = 76;
             this.compDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.compDate.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
             this.compDate.ValueChanged += new System.EventHandler(this.CompDate_ValueChanged);
@@ -2780,7 +3074,7 @@
             0});
             this.stdRank.Name = "stdRank";
             this.stdRank.Size = new System.Drawing.Size(100, 32);
-            this.stdRank.TabIndex = 92;
+            this.stdRank.TabIndex = 78;
             this.stdRank.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.stdRank.Value = new decimal(new int[] {
             100,
@@ -2798,7 +3092,7 @@
             this.stdScore.Location = new System.Drawing.Point(308, 571);
             this.stdScore.Name = "stdScore";
             this.stdScore.Size = new System.Drawing.Size(100, 32);
-            this.stdScore.TabIndex = 91;
+            this.stdScore.TabIndex = 77;
             this.stdScore.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             // 
             // currentLevel
@@ -2820,7 +3114,7 @@
             0});
             this.currentLevel.Name = "currentLevel";
             this.currentLevel.Size = new System.Drawing.Size(100, 32);
-            this.currentLevel.TabIndex = 90;
+            this.currentLevel.TabIndex = 75;
             this.currentLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
             this.currentLevel.Value = new decimal(new int[] {
             1,
@@ -2843,7 +3137,7 @@
             0});
             this.prevLevel.Name = "prevLevel";
             this.prevLevel.Size = new System.Drawing.Size(100, 32);
-            this.prevLevel.TabIndex = 89;
+            this.prevLevel.TabIndex = 74;
             this.prevLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
             this.prevLevel.ValueChanged += new System.EventHandler(this.PrevLevel_ValueChanged);
             // 
@@ -2861,7 +3155,7 @@
             0});
             this.stdCode.Name = "stdCode";
             this.stdCode.Size = new System.Drawing.Size(100, 32);
-            this.stdCode.TabIndex = 88;
+            this.stdCode.TabIndex = 73;
             this.stdCode.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(180)))));
             // 
             // stdRankLabel
@@ -3095,300 +3389,6 @@
             this.prevLevelExplain.TabIndex = 95;
             this.prevLevelExplain.Text = "لا يوجد";
             // 
-            // ranksCalculatorPanel
-            // 
-            this.ranksCalculatorPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ranksCalculatorPanel.BorderColor = System.Drawing.Color.Silver;
-            this.ranksCalculatorPanel.BorderRadius = 5;
-            this.ranksCalculatorPanel.BorderThickness = 1;
-            this.ranksCalculatorPanel.Controls.Add(this.officeRank);
-            this.ranksCalculatorPanel.Controls.Add(this.compDateTo);
-            this.ranksCalculatorPanel.Controls.Add(this.compDateFrom);
-            this.ranksCalculatorPanel.Controls.Add(this.levelCompCount);
-            this.ranksCalculatorPanel.Controls.Add(this.compsLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.closeBtn2);
-            this.ranksCalculatorPanel.Controls.Add(this.ranksListPanel);
-            this.ranksCalculatorPanel.Controls.Add(this.setRanksBtn);
-            this.ranksCalculatorPanel.Controls.Add(this.getGradesDataBtn);
-            this.ranksCalculatorPanel.Controls.Add(this.dateToLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.dateFromLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.compLevel);
-            this.ranksCalculatorPanel.Controls.Add(this.compLevelLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.studentCount);
-            this.ranksCalculatorPanel.Controls.Add(this.studentCountLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.wrongThingLabel);
-            this.ranksCalculatorPanel.Controls.Add(this.wrongThing2Label);
-            this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
-            this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.ranksCalculatorPanel.Location = new System.Drawing.Point(12, 37);
-            this.ranksCalculatorPanel.Name = "ranksCalculatorPanel";
-            this.ranksCalculatorPanel.Size = new System.Drawing.Size(926, 656);
-            this.ranksCalculatorPanel.TabIndex = 85;
-            this.ranksCalculatorPanel.Visible = false;
-            // 
-            // officeRank
-            // 
-            this.officeRank.BackColor = System.Drawing.Color.Transparent;
-            this.officeRank.BorderRadius = 5;
-            this.officeRank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.officeRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.officeRank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
-            this.officeRank.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.officeRank.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.officeRank.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.officeRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.officeRank.ItemHeight = 30;
-            this.officeRank.Location = new System.Drawing.Point(681, 5);
-            this.officeRank.Name = "officeRank";
-            this.officeRank.Size = new System.Drawing.Size(237, 36);
-            this.officeRank.TabIndex = 104;
-            this.officeRank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.officeRank.SelectedIndexChanged += new System.EventHandler(this.OfficeRank_SelectedIndexChanged);
-            // 
-            // compDateTo
-            // 
-            this.compDateTo.BorderRadius = 5;
-            this.compDateTo.Checked = true;
-            this.compDateTo.CustomFormat = "yyyy MMM";
-            this.compDateTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateTo.Location = new System.Drawing.Point(290, 83);
-            this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.compDateTo.Name = "compDateTo";
-            this.compDateTo.Size = new System.Drawing.Size(131, 36);
-            this.compDateTo.TabIndex = 96;
-            this.compDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.compDateTo.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
-            // 
-            // compDateFrom
-            // 
-            this.compDateFrom.BorderRadius = 5;
-            this.compDateFrom.Checked = true;
-            this.compDateFrom.CustomFormat = "yyyy MMM";
-            this.compDateFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateFrom.Location = new System.Drawing.Point(470, 83);
-            this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.compDateFrom.Name = "compDateFrom";
-            this.compDateFrom.Size = new System.Drawing.Size(131, 36);
-            this.compDateFrom.TabIndex = 94;
-            this.compDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.compDateFrom.Value = new System.DateTime(2025, 3, 18, 14, 1, 16, 183);
-            // 
-            // levelCompCount
-            // 
-            this.levelCompCount.AutoSize = true;
-            this.levelCompCount.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.levelCompCount.Location = new System.Drawing.Point(424, 118);
-            this.levelCompCount.Name = "levelCompCount";
-            this.levelCompCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.levelCompCount.Size = new System.Drawing.Size(16, 17);
-            this.levelCompCount.TabIndex = 103;
-            this.levelCompCount.Text = "0";
-            // 
-            // compsLabel
-            // 
-            this.compsLabel.AutoSize = true;
-            this.compsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.compsLabel.Location = new System.Drawing.Point(834, 118);
-            this.compsLabel.Name = "compsLabel";
-            this.compsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.compsLabel.Size = new System.Drawing.Size(69, 17);
-            this.compsLabel.TabIndex = 102;
-            this.compsLabel.Text = "المسابقات";
-            // 
-            // closeBtn2
-            // 
-            this.closeBtn2.BackColor = System.Drawing.Color.Transparent;
-            this.closeBtn2.BorderRadius = 15;
-            this.closeBtn2.BorderThickness = 1;
-            this.closeBtn2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.closeBtn2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.closeBtn2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.closeBtn2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.closeBtn2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.closeBtn2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.closeBtn2.ForeColor = System.Drawing.Color.Black;
-            this.closeBtn2.Location = new System.Drawing.Point(27, 18);
-            this.closeBtn2.Name = "closeBtn2";
-            this.closeBtn2.Size = new System.Drawing.Size(91, 39);
-            this.closeBtn2.TabIndex = 100;
-            this.closeBtn2.Text = "خروج";
-            this.closeBtn2.Click += new System.EventHandler(this.CloseBtn2_Click);
-            // 
-            // ranksListPanel
-            // 
-            this.ranksListPanel.AutoScroll = true;
-            this.ranksListPanel.BorderColor = System.Drawing.Color.Silver;
-            this.ranksListPanel.BorderRadius = 5;
-            this.ranksListPanel.BorderThickness = 1;
-            this.ranksListPanel.Location = new System.Drawing.Point(10, 129);
-            this.ranksListPanel.Name = "ranksListPanel";
-            this.ranksListPanel.Size = new System.Drawing.Size(908, 521);
-            this.ranksListPanel.TabIndex = 99;
-            // 
-            // setRanksBtn
-            // 
-            this.setRanksBtn.BackColor = System.Drawing.Color.Transparent;
-            this.setRanksBtn.BorderRadius = 15;
-            this.setRanksBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.setRanksBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.setRanksBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.setRanksBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.setRanksBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(120)))), ((int)(((byte)(220)))));
-            this.setRanksBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.setRanksBtn.ForeColor = System.Drawing.Color.White;
-            this.setRanksBtn.Location = new System.Drawing.Point(11, 83);
-            this.setRanksBtn.Name = "setRanksBtn";
-            this.setRanksBtn.Size = new System.Drawing.Size(117, 39);
-            this.setRanksBtn.TabIndex = 98;
-            this.setRanksBtn.Text = "كتابة المركز";
-            this.setRanksBtn.Click += new System.EventHandler(this.SetRanksBtn_Click);
-            // 
-            // getGradesDataBtn
-            // 
-            this.getGradesDataBtn.BackColor = System.Drawing.Color.Transparent;
-            this.getGradesDataBtn.BorderRadius = 15;
-            this.getGradesDataBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.getGradesDataBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.getGradesDataBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.getGradesDataBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.getGradesDataBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.getGradesDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.getGradesDataBtn.ForeColor = System.Drawing.Color.Black;
-            this.getGradesDataBtn.Location = new System.Drawing.Point(132, 83);
-            this.getGradesDataBtn.Name = "getGradesDataBtn";
-            this.getGradesDataBtn.Size = new System.Drawing.Size(117, 39);
-            this.getGradesDataBtn.TabIndex = 97;
-            this.getGradesDataBtn.Text = "جلب البيانات";
-            this.getGradesDataBtn.Click += new System.EventHandler(this.GetGradesDataBtn_Click);
-            // 
-            // dateToLabel
-            // 
-            this.dateToLabel.AutoSize = true;
-            this.dateToLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateToLabel.Location = new System.Drawing.Point(427, 90);
-            this.dateToLabel.Name = "dateToLabel";
-            this.dateToLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateToLabel.Size = new System.Drawing.Size(34, 19);
-            this.dateToLabel.TabIndex = 95;
-            this.dateToLabel.Text = "إلى";
-            this.dateToLabel.DoubleClick += new System.EventHandler(this.DateToLabel_DoubleClick);
-            // 
-            // dateFromLabel
-            // 
-            this.dateFromLabel.AutoSize = true;
-            this.dateFromLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateFromLabel.Location = new System.Drawing.Point(607, 90);
-            this.dateFromLabel.Name = "dateFromLabel";
-            this.dateFromLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateFromLabel.Size = new System.Drawing.Size(29, 19);
-            this.dateFromLabel.TabIndex = 92;
-            this.dateFromLabel.Text = "من";
-            this.dateFromLabel.DoubleClick += new System.EventHandler(this.DateFromLabel_DoubleClick);
-            // 
-            // compLevel
-            // 
-            this.compLevel.BackColor = System.Drawing.Color.Transparent;
-            this.compLevel.BorderRadius = 3;
-            this.compLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.compLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.compLevel.Location = new System.Drawing.Point(691, 83);
-            this.compLevel.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.compLevel.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.compLevel.Name = "compLevel";
-            this.compLevel.Size = new System.Drawing.Size(77, 32);
-            this.compLevel.TabIndex = 91;
-            this.compLevel.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(180)))));
-            this.compLevel.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // compLevelLabel
-            // 
-            this.compLevelLabel.AutoSize = true;
-            this.compLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compLevelLabel.Location = new System.Drawing.Point(771, 90);
-            this.compLevelLabel.Name = "compLevelLabel";
-            this.compLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.compLevelLabel.Size = new System.Drawing.Size(144, 19);
-            this.compLevelLabel.TabIndex = 3;
-            this.compLevelLabel.Text = "مستوى المسابقة : ";
-            // 
-            // studentCount
-            // 
-            this.studentCount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.studentCount.Location = new System.Drawing.Point(677, 53);
-            this.studentCount.Name = "studentCount";
-            this.studentCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.studentCount.Size = new System.Drawing.Size(96, 19);
-            this.studentCount.TabIndex = 2;
-            this.studentCount.Text = "0";
-            this.studentCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // studentCountLabel
-            // 
-            this.studentCountLabel.AutoSize = true;
-            this.studentCountLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.studentCountLabel.Location = new System.Drawing.Point(773, 52);
-            this.studentCountLabel.Name = "studentCountLabel";
-            this.studentCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.studentCountLabel.Size = new System.Drawing.Size(141, 19);
-            this.studentCountLabel.TabIndex = 0;
-            this.studentCountLabel.Text = "عدد الطلبة الكلي : ";
-            // 
-            // wrongThingLabel
-            // 
-            this.wrongThingLabel.AutoSize = true;
-            this.wrongThingLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.wrongThingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.wrongThingLabel.Location = new System.Drawing.Point(360, 64);
-            this.wrongThingLabel.Name = "wrongThingLabel";
-            this.wrongThingLabel.Size = new System.Drawing.Size(166, 17);
-            this.wrongThingLabel.TabIndex = 101;
-            this.wrongThingLabel.Text = "هناك طالب مكرر في القائمة";
-            this.wrongThingLabel.Visible = false;
-            // 
-            // wrongThing2Label
-            // 
-            this.wrongThing2Label.AutoSize = true;
-            this.wrongThing2Label.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.wrongThing2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.wrongThing2Label.Location = new System.Drawing.Point(360, 64);
-            this.wrongThing2Label.Name = "wrongThing2Label";
-            this.wrongThing2Label.Size = new System.Drawing.Size(156, 17);
-            this.wrongThing2Label.TabIndex = 101;
-            this.wrongThing2Label.Text = "هناك كود مكرر في القائمة";
-            this.wrongThing2Label.Visible = false;
-            // 
-            // ranksPanelTitle
-            // 
-            this.ranksPanelTitle.AutoSize = true;
-            this.ranksPanelTitle.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ranksPanelTitle.Location = new System.Drawing.Point(132, 5);
-            this.ranksPanelTitle.Name = "ranksPanelTitle";
-            this.ranksPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
-            this.ranksPanelTitle.TabIndex = 1;
-            this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
-            this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // disableAtAll
             // 
             this.disableAtAll.BackColor = System.Drawing.Color.Transparent;
@@ -3413,7 +3413,7 @@
             this.officeComboBox.Location = new System.Drawing.Point(540, 1);
             this.officeComboBox.Name = "officeComboBox";
             this.officeComboBox.Size = new System.Drawing.Size(356, 36);
-            this.officeComboBox.TabIndex = 88;
+            this.officeComboBox.TabIndex = 5;
             this.officeComboBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.officeComboBox.Visible = false;
             // 
@@ -3445,6 +3445,9 @@
             this.studentSearchPanel.PerformLayout();
             this.footerPanel.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
+            this.ranksCalculatorPanel.ResumeLayout(false);
+            this.ranksCalculatorPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).EndInit();
             this.studentGradesPanel.ResumeLayout(false);
             this.studentGradesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();
@@ -3453,9 +3456,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
-            this.ranksCalculatorPanel.ResumeLayout(false);
-            this.ranksCalculatorPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
