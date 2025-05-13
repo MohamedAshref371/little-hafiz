@@ -1419,7 +1419,7 @@ namespace Little_Hafiz
         int colorState = 0;
         private void ColorBtn_Click(object sender, EventArgs e)
         {
-            colorState = (colorState + 1) % 3;
+            colorState = (colorState + 1) % 4;
             colorBtn.Text = "ألوان " + colorState.ToString();
             SetColor();
             Properties.Settings.Default.ColorState = colorState;
@@ -1449,33 +1449,34 @@ namespace Little_Hafiz
                 return;
             }
 
-            Color fc, fc2;
+            Color fc_2 = Color.FromArgb(47, 149, 180), fc2_2 = Color.FromArgb(29, 119, 144);
+            Color fc_3 = Color.FromArgb(192, 220, 220), fc2_3 = Color.FromArgb(128, 128, 255);
             if (colorState == 1)
-            {
-                fc = Color.FromArgb(47, 149, 180);
-                fc2 = Color.FromArgb(29, 119, 144);
-            }
-            else
-            {
-                fc = Color.FromArgb(192, 220, 220);
-                fc2 = Color.FromArgb(128, 128, 255);
-            }
-            headerPanel.FillColor = fc;
-            headerPanel.FillColor2 = fc2;
-            studentSearchPanel.FillColor = fc;
-            studentSearchPanel.FillColor2 = fc2;
-            studentsListPanel.FillColor = fc;
-            studentsListPanel.FillColor2 = fc2;
-            studentDataPanel.FillColor = fc;
-            studentDataPanel.FillColor2 = fc2;
-            studentGradesPanel.FillColor = fc;
-            studentGradesPanel.FillColor2 = fc2;
-            ranksCalculatorPanel.FillColor = fc;
-            ranksCalculatorPanel.FillColor2 = fc2;
-            footerPanel.FillColor = fc;
-            footerPanel.FillColor2 = fc2;
-            colorBtn.FillColor = fc;
-            colorBtn.FillColor2 = fc2;
+                SetColor(fc_2, fc2_2, fc_3, fc2_3);
+            if (colorState == 2)
+                SetColor(fc_2, fc2_2, fc_2, fc2_2);
+            else if (colorState == 3)
+                SetColor(fc_3, fc2_3, fc_3, fc2_3);
+        }
+
+        private void SetColor(Color fca1, Color fca2, Color fcb1, Color fcb2)
+        {
+            //headerPanel.FillColor = fca1;
+            //headerPanel.FillColor2 = fca2;
+            studentSearchPanel.FillColor = fca1;
+            studentSearchPanel.FillColor2 = fca2;
+            studentsListPanel.FillColor = fca1;
+            studentsListPanel.FillColor2 = fca2;
+            studentDataPanel.FillColor = fcb1;
+            studentDataPanel.FillColor2 = fcb2;
+            studentGradesPanel.FillColor = fcb1;
+            studentGradesPanel.FillColor2 = fcb2;
+            ranksCalculatorPanel.FillColor = fca1;
+            ranksCalculatorPanel.FillColor2 = fca2;
+            footerPanel.FillColor = fca1;
+            footerPanel.FillColor2 = fca2;
+            colorBtn.FillColor = fca1;
+            colorBtn.FillColor2 = fcb2;
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
