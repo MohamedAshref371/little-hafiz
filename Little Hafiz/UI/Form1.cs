@@ -429,6 +429,7 @@ namespace Little_Hafiz
             stdNational.Enabled = false;
             stdBirthDate.Enabled = currentStudent.StudentSearchRowData.CompetitionDate is null;
             deleteStudentBtn.Visible = stdBirthDate.Enabled && DatabaseHelper.CurrentOffice == 0;
+            copyStdDataBtn.Visible = DatabaseHelper.CurrentOffice == 0;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
         }
@@ -450,6 +451,17 @@ namespace Little_Hafiz
         #endregion
 
         #region Student Data Panel
+        private void CopyStdDataBtn_Click(object sender, EventArgs e)
+        {
+            copyStdDataBtn.Visible = false;
+            studentPanelState = StudentPanelState.Add;
+            addStudentBtn.Text = "إضافة";
+            stdNational.Enabled = true;
+            stdNational.Text = stdNational.Text.Substring(0, stdNational.Text.Length - 1);
+            stdBirthDate.Enabled = true;
+            deleteStudentBtn.Visible = false;
+        }
+
         private void National_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -743,6 +755,7 @@ namespace Little_Hafiz
             stdNotes.Text = "";
             stdImagePath.Text = "";
             deleteStudentBtn.Visible = false;
+            copyStdDataBtn.Visible = false;
         }
 
         private void SetStudentDataAtStudentDataIsNotNull(StudentData stdData)
