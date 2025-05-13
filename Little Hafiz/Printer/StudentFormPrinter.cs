@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
@@ -10,7 +9,7 @@ namespace Little_Hafiz
     {
         private readonly StudentFormData data;
         private readonly PrintDocument printDocument;
-        PrintPreviewDialog previewDialog;
+        private readonly PrintPreviewDialog previewDialog;
 
         public StudentFormPrinter(StudentFormData data)
         {
