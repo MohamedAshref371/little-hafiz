@@ -360,6 +360,7 @@
             this.studentDataPanel.Controls.Add(this.stdOfficeLabel);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
+            this.studentDataPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.studentDataPanel.Location = new System.Drawing.Point(12, 37);
             this.studentDataPanel.Name = "studentDataPanel";
             this.studentDataPanel.Size = new System.Drawing.Size(934, 656);
