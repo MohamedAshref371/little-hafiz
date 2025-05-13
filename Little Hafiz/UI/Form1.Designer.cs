@@ -34,6 +34,7 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.copyStdDataBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdComps = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdCompsLabel = new System.Windows.Forms.Label();
             this.deleteStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -206,7 +207,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.copyStdDataBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -368,6 +368,28 @@
             this.studentDataPanel.Size = new System.Drawing.Size(934, 656);
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
+            // 
+            // copyStdDataBtn
+            // 
+            this.copyStdDataBtn.BackColor = System.Drawing.Color.Transparent;
+            this.copyStdDataBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.copyStdDataBtn.BorderRadius = 15;
+            this.copyStdDataBtn.BorderThickness = 2;
+            this.copyStdDataBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.copyStdDataBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.copyStdDataBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.copyStdDataBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.copyStdDataBtn.FillColor = System.Drawing.Color.Transparent;
+            this.copyStdDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.copyStdDataBtn.ForeColor = System.Drawing.Color.Black;
+            this.copyStdDataBtn.Location = new System.Drawing.Point(833, 9);
+            this.copyStdDataBtn.Name = "copyStdDataBtn";
+            this.copyStdDataBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.copyStdDataBtn.Size = new System.Drawing.Size(76, 39);
+            this.copyStdDataBtn.TabIndex = 82;
+            this.copyStdDataBtn.Text = "نسخ";
+            this.copyStdDataBtn.Visible = false;
+            this.copyStdDataBtn.Click += new System.EventHandler(this.CopyStdDataBtn_Click);
             // 
             // stdComps
             // 
@@ -2523,7 +2545,6 @@
             this.headerPanel.BorderColor = System.Drawing.Color.Silver;
             this.headerPanel.BorderRadius = 5;
             this.headerPanel.BorderThickness = 1;
-            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.formImage);
             this.headerPanel.Controls.Add(this.readRecordsBtn);
             this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
@@ -2533,6 +2554,7 @@
             this.headerPanel.Controls.Add(this.footerPanel);
             this.headerPanel.Controls.Add(this.studentSearchPanel);
             this.headerPanel.Controls.Add(this.studentsListPanel);
+            this.headerPanel.Controls.Add(this.studentDataPanel);
             this.headerPanel.Controls.Add(this.studentGradesPanel);
             this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
             this.headerPanel.Controls.Add(this.disableAtAll);
@@ -3400,26 +3422,6 @@
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // copyStdDataBtn
-            // 
-            this.copyStdDataBtn.BackColor = System.Drawing.Color.Transparent;
-            this.copyStdDataBtn.BorderRadius = 15;
-            this.copyStdDataBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.copyStdDataBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.copyStdDataBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.copyStdDataBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.copyStdDataBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.copyStdDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.copyStdDataBtn.ForeColor = System.Drawing.Color.White;
-            this.copyStdDataBtn.Location = new System.Drawing.Point(375, 15);
-            this.copyStdDataBtn.Name = "copyStdDataBtn";
-            this.copyStdDataBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.copyStdDataBtn.Size = new System.Drawing.Size(181, 39);
-            this.copyStdDataBtn.TabIndex = 82;
-            this.copyStdDataBtn.Text = "نسخ بيانات الطالب";
-            this.copyStdDataBtn.Visible = false;
-            this.copyStdDataBtn.Click += new System.EventHandler(this.CopyStdDataBtn_Click);
             // 
             // Form1
             // 
