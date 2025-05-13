@@ -1432,7 +1432,7 @@ namespace Little_Hafiz
         int colorState = 0;
         private void ColorBtn_Click(object sender, EventArgs e)
         {
-            colorState = (colorState + 1) % 4;
+            colorState = (colorState + 1) % 5;
             colorBtn.Text = "ألوان " + colorState.ToString();
             SetColor();
             Properties.Settings.Default.ColorState = colorState;
@@ -1443,6 +1443,7 @@ namespace Little_Hafiz
         {
             if (colorState == 0)
             {
+                ForeColor = Color.Black;
                 headerPanel.FillColor = Color.FromArgb(192, 192, 255);
                 headerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
                 studentSearchPanel.FillColor = Color.FromArgb(255, 192, 255);
@@ -1464,12 +1465,27 @@ namespace Little_Hafiz
 
             Color fc_2 = Color.FromArgb(47, 149, 180), fc2_2 = Color.FromArgb(29, 119, 144);
             Color fc_3 = Color.FromArgb(192, 220, 220), fc2_3 = Color.FromArgb(128, 128, 255);
+            Color fc_4 = Color.FromArgb(79, 82, 104), fc2_4 = Color.FromArgb(90, 110, 130);
             if (colorState == 1)
+            {
                 SetColor(fc_2, fc2_2, fc_3, fc2_3);
+                ForeColor = Color.Black;
+            }
             if (colorState == 2)
+            {
                 SetColor(fc_2, fc2_2, fc_2, fc2_2);
+                ForeColor = Color.White;
+            }
             else if (colorState == 3)
+            {
                 SetColor(fc_3, fc2_3, fc_3, fc2_3);
+                ForeColor = Color.Black;
+            }
+            else if (colorState == 4)
+            {
+                SetColor(fc_4, fc2_4, fc_4, fc2_4);
+                ForeColor = Color.White;
+            }
         }
 
         private void SetColor(Color fcb1, Color fcb2, Color fca1, Color fca2)
