@@ -746,7 +746,7 @@
             this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificatesLabel.Size = new System.Drawing.Size(183, 25);
             this.stdCertificatesLabel.TabIndex = 59;
-            this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها :";
+            this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها : ";
             this.stdCertificatesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdFirstConclusion

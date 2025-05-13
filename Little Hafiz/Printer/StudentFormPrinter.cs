@@ -118,18 +118,30 @@ namespace Little_Hafiz
         int currentParagraphIndex = 0;
         private void PrintBigFields(string[] paragraphs, PrintPageEventArgs e, float y)
         {
-            float margin = 10;
+            e.HasMorePages = false;
+            float margin = 20;
             Font font = new Font("Arial", 16);
             Brush brush = Brushes.Black;
             StringFormat format = new StringFormat { FormatFlags = StringFormatFlags.DirectionRightToLeft };
             string text;
+            SizeF size;
             while (currentParagraphIndex < paragraphs.Length)
             {
                 text = paragraphs[currentParagraphIndex];
                 if (text.TrimEnd().Last() == ':') { currentParagraphIndex++; continue; }
-                SizeF size = e.Graphics.MeasureString(text, font, 790, format);
 
-                if (y > 31 && y + size.Height > e.MarginBounds.Bottom - 30)
+                try { size = e.Graphics.MeasureString(text, font, 790, format); }
+                catch
+                {
+                    try
+                    {
+                        text = text.Substring(0, text.Length > 4000 ? 4000 : text.Length);
+                        size = e.Graphics.MeasureString(text, font, 790, format);
+                    }
+                    catch { currentParagraphIndex++; continue; }
+                }
+                
+                if (y > 30 && y + size.Height > e.MarginBounds.Bottom - 30)
                 {
                     e.HasMorePages = true;
                     return;
@@ -139,7 +151,6 @@ namespace Little_Hafiz
                 currentParagraphIndex++;
                 e.HasMorePages = false;
             }
-            e.HasMorePages = false;
         }
 
         public GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
