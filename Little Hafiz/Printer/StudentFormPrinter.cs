@@ -130,7 +130,13 @@ namespace Little_Hafiz
             float margin = 20;
             Font font = new Font("Arial", 16);
             Brush brush = Brushes.Black;
-            StringFormat format = new StringFormat { FormatFlags = StringFormatFlags.DirectionRightToLeft };
+            StringFormat format = new StringFormat
+            {
+                Alignment = StringAlignment.Near,
+                LineAlignment = StringAlignment.Near,
+                FormatFlags = StringFormatFlags.DirectionRightToLeft
+            };
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             string text;
             SizeF size;
             while (currentParagraphIndex < paragraphs.Length)
@@ -158,6 +164,11 @@ namespace Little_Hafiz
                 y += size.Height + margin;
                 currentParagraphIndex++;
                 e.HasMorePages = false;
+            }
+            if (!e.HasMorePages)
+            {
+                currentParagraphIndex = -1;
+                pageCount = 0;
             }
         }
 
