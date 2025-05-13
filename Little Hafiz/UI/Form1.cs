@@ -84,8 +84,12 @@ namespace Little_Hafiz
 
             bool isExists = Directory.Exists("data");
             if (isExists)
+            {
                 Program.Record = Properties.Settings.Default.RecordEnabled;
-
+                colorState = Properties.Settings.Default.ColorState;
+                if (colorState != 0) SetColor();
+            }
+            
             dataRecorderCheckBox.Checked = Program.Record;
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
@@ -1412,10 +1416,62 @@ namespace Little_Hafiz
             officeTextBox.Text = "";
         }
 
+        int colorState = 0;
         private void ColorBtn_Click(object sender, EventArgs e)
         {
-            (studentDataPanel.FillColor, studentGradesPanel.FillColor) = (studentGradesPanel.FillColor, studentDataPanel.FillColor);
-            (studentDataPanel.FillColor2, studentGradesPanel.FillColor2) = (studentGradesPanel.FillColor2, studentDataPanel.FillColor2);
+            colorState = (colorState + 1) % 3;
+            colorBtn.Text = "ألوان " + colorState.ToString();
+            SetColor();
+            Properties.Settings.Default.ColorState = colorState;
+            Properties.Settings.Default.Save();
+        }
+
+        private void SetColor()
+        {
+            if (colorState == 0)
+            {
+                headerPanel.FillColor = Color.FromArgb(192, 192, 255);
+                headerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
+                studentSearchPanel.FillColor = Color.FromArgb(255, 192, 255);
+                studentSearchPanel.FillColor2 = Color.FromArgb(192, 192, 255);
+                studentsListPanel.FillColor = Color.FromArgb(192, 255, 255);
+                studentsListPanel.FillColor2 = Color.FromArgb(192, 192, 255);
+                studentDataPanel.FillColor = Color.FromArgb(255, 224, 224);
+                studentDataPanel.FillColor2 = Color.LightYellow;
+                studentGradesPanel.FillColor = Color.FromArgb(100, 200, 150);
+                studentGradesPanel.FillColor2 = Color.FromArgb(50, 100, 70);
+                ranksCalculatorPanel.FillColor = Color.FromArgb(192, 220, 220);
+                ranksCalculatorPanel.FillColor2 = Color.FromArgb(128, 128, 255);
+                footerPanel.FillColor = Color.FromArgb(255, 255, 220);
+                footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
+                return;
+            }
+
+            Color fc, fc2;
+            if (colorState == 1)
+            {
+                fc = Color.FromArgb(47, 149, 180);
+                fc2 = Color.FromArgb(29, 119, 144);
+            }
+            else
+            {
+                fc = Color.FromArgb(192, 220, 220);
+                fc2 = Color.FromArgb(128, 128, 255);
+            }
+            headerPanel.FillColor = fc;
+            headerPanel.FillColor2 = fc2;
+            studentSearchPanel.FillColor = fc;
+            studentSearchPanel.FillColor = fc2;
+            studentsListPanel.FillColor = fc;
+            studentsListPanel.FillColor = fc2;
+            studentDataPanel.FillColor = fc;
+            studentDataPanel.FillColor2 = fc2;
+            studentGradesPanel.FillColor = fc;
+            studentGradesPanel.FillColor2 = fc2;
+            ranksCalculatorPanel.FillColor = fc;
+            ranksCalculatorPanel.FillColor2 = fc2;
+            footerPanel.FillColor = fc;
+            footerPanel.FillColor2 = fc2;
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)

@@ -2357,7 +2357,7 @@
             this.colorBtn.Name = "colorBtn";
             this.colorBtn.Size = new System.Drawing.Size(89, 39);
             this.colorBtn.TabIndex = 92;
-            this.colorBtn.Text = "تجريبي";
+            this.colorBtn.Text = "الألوان";
             this.colorBtn.Click += new System.EventHandler(this.ColorBtn_Click);
             // 
             // checkUpdateBtn

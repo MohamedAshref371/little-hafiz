@@ -46,5 +46,17 @@ namespace Little_Hafiz.Properties {
                 this["RecordEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ColorState {
+            get {
+                return ((int)(this["ColorState"]));
+            }
+            set {
+                this["ColorState"] = value;
+            }
+        }
     }
 }
