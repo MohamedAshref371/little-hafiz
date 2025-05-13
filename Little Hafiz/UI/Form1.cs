@@ -1463,9 +1463,9 @@ namespace Little_Hafiz
             headerPanel.FillColor = fc;
             headerPanel.FillColor2 = fc2;
             studentSearchPanel.FillColor = fc;
-            studentSearchPanel.FillColor = fc2;
+            studentSearchPanel.FillColor2 = fc2;
             studentsListPanel.FillColor = fc;
-            studentsListPanel.FillColor = fc2;
+            studentsListPanel.FillColor2 = fc2;
             studentDataPanel.FillColor = fc;
             studentDataPanel.FillColor2 = fc2;
             studentGradesPanel.FillColor = fc;
