@@ -10,6 +10,11 @@ namespace Little_Hafiz
             return date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
         }
 
+        public static string ToCompleteStandardString(this DateTime date)
+        {
+            return date.ToString("yyyy/MM/dd hh:mm:ss tt", CultureInfo.InvariantCulture);
+        }
+
         public static string ToStandardStringWithoutDay(this DateTime date)
         {
             return date.ToString("yyyy/MM", CultureInfo.InvariantCulture);

@@ -71,7 +71,7 @@ namespace Little_Hafiz
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.Clear(Color.White);
 
-            g.DrawString(System.DateTime.Now.ToStandardString(), new Font("Arial", 12), brush, new RectangleF(0, 1140, 200, 30));
+            g.DrawString(System.DateTime.Now.ToCompleteStandardString(), new Font("Arial", 12), brush, new RectangleF(10, 1140, 200, 30));
             g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
 
             Rectangle imgRect = new Rectangle(10, 10, 140, 180);
