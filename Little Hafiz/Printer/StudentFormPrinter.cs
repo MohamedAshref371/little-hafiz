@@ -149,7 +149,7 @@ namespace Little_Hafiz
                 {
                     try
                     {
-                        text = text.Substring(0, text.Length > 4000 ? 4000 : text.Length);
+                        text = text.Substring(0, 4000);
                         size = e.Graphics.MeasureString(text, font, 790, format);
                     }
                     catch { currentParagraphIndex++; continue; }
