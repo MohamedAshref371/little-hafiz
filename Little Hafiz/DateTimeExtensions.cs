@@ -5,14 +5,14 @@ namespace Little_Hafiz
 {
     public static class DateTimeExtensions
     {
-        public static string ToStandardString(this DateTime date)
-        {
-            return date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
-        }
-
         public static string ToCompleteStandardString(this DateTime date)
         {
             return date.ToString("yyyy/MM/dd hh:mm:ss tt", CultureInfo.InvariantCulture);
+        }
+
+        public static string ToStandardString(this DateTime date)
+        {
+            return date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
         }
 
         public static string ToStandardStringWithoutDay(this DateTime date)
