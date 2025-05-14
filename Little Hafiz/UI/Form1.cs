@@ -433,6 +433,7 @@ namespace Little_Hafiz
             copyStdDataBtn.Visible = DatabaseHelper.CurrentOffice == 0;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
+            stdImageSelectorBtn.Focus();
         }
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
@@ -542,6 +543,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            openAddStudentBtn.Focus();
         }
 
         bool isSure;
@@ -926,6 +928,7 @@ namespace Little_Hafiz
             fs?.SetControls(studentGradesListPanel.Controls);
 
             studentGradesPanel.Visible = true;
+            cancelBtn2.Focus();
         }
 
         private void SetPrevLevelMinMax()
@@ -1074,6 +1077,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            openAddStudentBtn.Focus();
         }
 
         private void PrevLevel_ValueChanged(object sender, EventArgs e)
@@ -1130,6 +1134,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            rankCalcBtn.Focus();
         }
 
         private void DateFromLabel_DoubleClick(object sender, EventArgs e)
@@ -1231,6 +1236,7 @@ namespace Little_Hafiz
             stdNational.Enabled = true;
             studentPanelState = StudentPanelState.Add;
             studentDataPanel.Visible = true;
+            stdImageSelectorBtn.Focus();
         }
 
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
@@ -1370,6 +1376,7 @@ namespace Little_Hafiz
 
             ranksCalculatorPanel.Visible = true;
             OfficeRank_SelectedIndexChanged(null, null);
+            closeBtn2.Focus();
         }
 
         private void HideOfficeTools()
