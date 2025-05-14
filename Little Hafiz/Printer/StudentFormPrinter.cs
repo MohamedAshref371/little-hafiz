@@ -3,6 +3,8 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
+using ZXing.Common;
+using ZXing;
 
 namespace Little_Hafiz
 {
@@ -73,10 +75,12 @@ namespace Little_Hafiz
 
             g.DrawString(System.DateTime.Now.ToCompleteStandardString(), new Font("Arial", 12), brush, new RectangleF(10, 1140, 200, 30));
             g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
+            
+            if (data.NationalID.Length == 14)
+                g.DrawImage(GenerateQRCode(data.NationalID, 120), new RectangleF(160, 35, 120, 120));
 
             Rectangle imgRect = new Rectangle(10, 10, 140, 180);
             int radius = 10;
-
             using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -184,6 +188,16 @@ namespace Little_Hafiz
 
             path.CloseFigure();
             return path;
+        }
+
+        public Bitmap GenerateQRCode(string text, int size)
+        {
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.QR_CODE,
+                Options = new EncodingOptions { Width = size, Height = size, Margin = 1 }
+            };
+            return writer.Write(text);
         }
     }
 }

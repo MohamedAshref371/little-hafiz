@@ -636,6 +636,7 @@ namespace Little_Hafiz
             StudentFormData data = new StudentFormData
             {
                 PaperTitle = studentPanelTitle.Text,
+                NationalID = stdNational.Text,
 
                 FullName = stdNameLabel.Text + stdName.Text,
                 NationalNumber = stdNationalLabel.Text + stdNational.Text,

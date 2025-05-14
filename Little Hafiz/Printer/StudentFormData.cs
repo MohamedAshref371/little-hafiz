@@ -3,6 +3,7 @@
     public class StudentFormData
     {
         public string PaperTitle;
+        public string NationalID;
 
         public string FullName;
         public string NationalNumber;
