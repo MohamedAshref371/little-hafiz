@@ -411,7 +411,13 @@ namespace Little_Hafiz
         StudentSearchRow currentStudent;
         private void ShowStudentBtn_Click(object sender, EventArgs e)
         {
-            currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
+            if (sender is StudentSearchRow ssr)
+                currentStudent = ssr;
+            else if (sender is Guna2Button g2b)
+                currentStudent = (StudentSearchRow)g2b.Parent;
+            else
+                return;
+
             string national = currentStudent.StudentSearchRowData.NationalNumber;
             StudentData stdData = DatabaseHelper.SelectStudent(national);
             if (stdData is null)
@@ -468,6 +474,22 @@ namespace Little_Hafiz
 
         private void National_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
+            {
+                e.Handled = true;
+                stdNationalCheckBox.Checked = true;
+                stdNameCheckBox.Checked = false;
+                stdPhoneCheckBox.Checked = false;
+                stdEmailCheckBox.Checked = false;
+                stdBirthDateCheckBox.Checked = false;
+                if (DatabaseHelper.CurrentOffice == 0)
+                    stdOfficeCheckBox.Checked = false;
+                SearchBtn_Click(null, null);
+                stdNationalSearch.Text = "";
+                if (studentsListPanel.Controls.Count == 2)
+                    ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
+                return;
+            }
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
