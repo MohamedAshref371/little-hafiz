@@ -2194,7 +2194,7 @@
             this.stdNationalSearch.SelectedText = "";
             this.stdNationalSearch.Size = new System.Drawing.Size(257, 32);
             this.stdNationalSearch.TabIndex = 11;
-            this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
+            this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NationalSearch_KeyPress);
             // 
             // stdNameSearch
             // 

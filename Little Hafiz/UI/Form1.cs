@@ -473,7 +473,7 @@ namespace Little_Hafiz
         }
 
         bool isQrCode;
-        private void National_KeyPress(object sender, KeyPressEventArgs e)
+        private void NationalSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
             {
@@ -499,6 +499,12 @@ namespace Little_Hafiz
                 }
             }
             else if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void National_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
 
