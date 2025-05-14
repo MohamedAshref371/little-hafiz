@@ -544,6 +544,7 @@ namespace Little_Hafiz
             footerPanel.Visible = true;
         }
 
+        bool isSure;
         private void AddStudentBtn_Click(object sender, EventArgs e)
         {
             if (stdNational.Text.Length != 14 || wrongValueLabel.Visible || alreadyExistsLabel.Visible)
@@ -551,9 +552,10 @@ namespace Little_Hafiz
                 MessageBox.Show("أدخل رقم قومي صحيح");
                 return;
             }
-            if (stdOffice.SelectedIndex == 0 && MessageBox.Show("إذا لم تقم باختيار مكتب للطالب، سيتم وضعه في مكتب مزيف\nهل تريد الاستمرار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
+            if (!isSure && stdOffice.SelectedIndex == 0 && MessageBox.Show("إذا لم تقم باختيار مكتب للطالب، سيتم وضعه في مكتب مزيف\nهل تريد الاستمرار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
                 return;
-            
+
+            isSure = true;
             if (studentPanelState == StudentPanelState.Add && DatabaseHelper.AddStudent(GetStudentData()) != -1)
             {
                 stdNationalCheckBox.Checked = true;
@@ -1380,6 +1382,7 @@ namespace Little_Hafiz
             colorBtn.Visible = true;
         }
 
+        private bool isMasterCopy;
         private void OfficeHelperBtn_Click(object sender, EventArgs e)
         {
             if (officeEnterBtn.Visible)
@@ -1394,9 +1397,10 @@ namespace Little_Hafiz
                 return;
             }
 
-            if (MessageBox.Show("هل انت متأكد أنك على النسخة الرئيسية ؟", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            if (!isMasterCopy && MessageBox.Show("هل انت متأكد أنك على النسخة الرئيسية ؟", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
                 return;
 
+            isMasterCopy = true;
             checkUpdateBtn.Visible = false;
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
