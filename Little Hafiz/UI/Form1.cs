@@ -896,7 +896,9 @@ namespace Little_Hafiz
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
         {
             studentSearchPanel.Visible = false;
+            int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
+            studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             compCount.Text = grades.Length.ToString();
