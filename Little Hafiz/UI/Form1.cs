@@ -104,6 +104,7 @@ namespace Little_Hafiz
 
             compDateFrom.Value = DateTime.Now;
             compDateTo.Value = DateTime.Now;
+            versionLabel.Text = "v" + string.Join(".", Application.ProductVersion.Split('.'), 0, 2);
         }
 
         string[] offices;

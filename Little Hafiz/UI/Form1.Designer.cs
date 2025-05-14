@@ -207,6 +207,7 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.versionLabel = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -429,7 +430,7 @@
             this.stdCompsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCompsLabel.Size = new System.Drawing.Size(85, 25);
             this.stdCompsLabel.TabIndex = 80;
-            this.stdCompsLabel.Text = "مسابقات:";
+            this.stdCompsLabel.Text = "مسابقات : ";
             this.stdCompsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // deleteStudentBtn
@@ -533,12 +534,12 @@
             // 
             this.stdNotesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNotesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNotesLabel.Location = new System.Drawing.Point(830, 1063);
+            this.stdNotesLabel.Location = new System.Drawing.Point(823, 1063);
             this.stdNotesLabel.Name = "stdNotesLabel";
             this.stdNotesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNotesLabel.Size = new System.Drawing.Size(85, 25);
+            this.stdNotesLabel.Size = new System.Drawing.Size(92, 25);
             this.stdNotesLabel.TabIndex = 73;
-            this.stdNotesLabel.Text = "الملاحظات:";
+            this.stdNotesLabel.Text = "الملاحظات: ";
             this.stdNotesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // studentImage
@@ -723,12 +724,12 @@
             // 
             this.stdSkillsLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSkillsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdSkillsLabel.Location = new System.Drawing.Point(835, 968);
+            this.stdSkillsLabel.Location = new System.Drawing.Point(823, 968);
             this.stdSkillsLabel.Name = "stdSkillsLabel";
             this.stdSkillsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdSkillsLabel.Size = new System.Drawing.Size(76, 25);
+            this.stdSkillsLabel.Size = new System.Drawing.Size(88, 25);
             this.stdSkillsLabel.TabIndex = 65;
-            this.stdSkillsLabel.Text = "المهارات :";
+            this.stdSkillsLabel.Text = "المهارات : ";
             this.stdSkillsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdCertificates
@@ -765,10 +766,10 @@
             // 
             this.stdCertificatesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCertificatesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCertificatesLabel.Location = new System.Drawing.Point(725, 871);
+            this.stdCertificatesLabel.Location = new System.Drawing.Point(719, 871);
             this.stdCertificatesLabel.Name = "stdCertificatesLabel";
             this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdCertificatesLabel.Size = new System.Drawing.Size(183, 25);
+            this.stdCertificatesLabel.Size = new System.Drawing.Size(189, 25);
             this.stdCertificatesLabel.TabIndex = 59;
             this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها : ";
             this.stdCertificatesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -814,12 +815,12 @@
             // 
             this.stdJoiningDateLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdJoiningDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdJoiningDateLabel.Location = new System.Drawing.Point(739, 704);
+            this.stdJoiningDateLabel.Location = new System.Drawing.Point(730, 704);
             this.stdJoiningDateLabel.Name = "stdJoiningDateLabel";
             this.stdJoiningDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdJoiningDateLabel.Size = new System.Drawing.Size(170, 25);
+            this.stdJoiningDateLabel.Size = new System.Drawing.Size(179, 25);
             this.stdJoiningDateLabel.TabIndex = 56;
-            this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب :";
+            this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب : ";
             this.stdJoiningDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMemoPlaces
@@ -1800,24 +1801,24 @@
             // 
             this.stdPhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdPhoneLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdPhoneLabel.Location = new System.Drawing.Point(797, 492);
+            this.stdPhoneLabel.Location = new System.Drawing.Point(788, 492);
             this.stdPhoneLabel.Name = "stdPhoneLabel";
             this.stdPhoneLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdPhoneLabel.Size = new System.Drawing.Size(115, 25);
+            this.stdPhoneLabel.Size = new System.Drawing.Size(124, 25);
             this.stdPhoneLabel.TabIndex = 31;
-            this.stdPhoneLabel.Text = "تليفون الطالب :";
+            this.stdPhoneLabel.Text = "تليفون الطالب : ";
             this.stdPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdSchoolLabel
             // 
             this.stdSchoolLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSchoolLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdSchoolLabel.Location = new System.Drawing.Point(798, 572);
+            this.stdSchoolLabel.Location = new System.Drawing.Point(788, 572);
             this.stdSchoolLabel.Name = "stdSchoolLabel";
             this.stdSchoolLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdSchoolLabel.Size = new System.Drawing.Size(119, 25);
+            this.stdSchoolLabel.Size = new System.Drawing.Size(129, 25);
             this.stdSchoolLabel.TabIndex = 39;
-            this.stdSchoolLabel.Text = "المدرسة/الكلية:";
+            this.stdSchoolLabel.Text = "المدرسة/الكلية: ";
             this.stdSchoolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdImagePath
@@ -1839,12 +1840,12 @@
             this.stdFirstConclusionCheckBox.CheckedState.BorderThickness = 1;
             this.stdFirstConclusionCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdFirstConclusionCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(234, 703);
+            this.stdFirstConclusionCheckBox.Location = new System.Drawing.Point(227, 703);
             this.stdFirstConclusionCheckBox.Name = "stdFirstConclusionCheckBox";
             this.stdFirstConclusionCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(203, 29);
+            this.stdFirstConclusionCheckBox.Size = new System.Drawing.Size(210, 29);
             this.stdFirstConclusionCheckBox.TabIndex = 58;
-            this.stdFirstConclusionCheckBox.Text = "تاريخ إتمام الختمة الأولى :";
+            this.stdFirstConclusionCheckBox.Text = "تاريخ إتمام الختمة الأولى : ";
             this.stdFirstConclusionCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
             this.stdFirstConclusionCheckBox.UncheckedState.BorderRadius = 3;
             this.stdFirstConclusionCheckBox.UncheckedState.BorderThickness = 1;
@@ -2362,6 +2363,7 @@
             this.footerPanel.Controls.Add(this.openAddStudentBtn);
             this.footerPanel.Controls.Add(this.officeTextBox);
             this.footerPanel.Controls.Add(this.officeEnterBtn);
+            this.footerPanel.Controls.Add(this.versionLabel);
             this.footerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.footerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.footerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -2384,7 +2386,7 @@
             this.colorBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.colorBtn.ForeColor = System.Drawing.Color.White;
             this.colorBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.colorBtn.Location = new System.Drawing.Point(298, 5);
+            this.colorBtn.Location = new System.Drawing.Point(265, 5);
             this.colorBtn.Name = "colorBtn";
             this.colorBtn.Size = new System.Drawing.Size(89, 39);
             this.colorBtn.TabIndex = 25;
@@ -2405,7 +2407,7 @@
             this.checkUpdateBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.checkUpdateBtn.ForeColor = System.Drawing.Color.Black;
             this.checkUpdateBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.checkUpdateBtn.Location = new System.Drawing.Point(213, 5);
+            this.checkUpdateBtn.Location = new System.Drawing.Point(180, 5);
             this.checkUpdateBtn.Name = "checkUpdateBtn";
             this.checkUpdateBtn.Size = new System.Drawing.Size(79, 39);
             this.checkUpdateBtn.TabIndex = 26;
@@ -2468,7 +2470,7 @@
             this.releasesLatestBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.releasesLatestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.releasesLatestBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.releasesLatestBtn.Location = new System.Drawing.Point(130, 5);
+            this.releasesLatestBtn.Location = new System.Drawing.Point(97, 5);
             this.releasesLatestBtn.Name = "releasesLatestBtn";
             this.releasesLatestBtn.Size = new System.Drawing.Size(79, 39);
             this.releasesLatestBtn.TabIndex = 27;
@@ -3433,6 +3435,16 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // versionLabel
+            // 
+            this.versionLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.versionLabel.Location = new System.Drawing.Point(360, 7);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(80, 37);
+            this.versionLabel.TabIndex = 31;
+            this.versionLabel.Text = "v";
+            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3649,6 +3661,7 @@
         private System.Windows.Forms.Label stdCompsLabel;
         private Guna.UI2.WinForms.Guna2GradientButton colorBtn;
         private Guna.UI2.WinForms.Guna2Button copyStdDataBtn;
+        private System.Windows.Forms.Label versionLabel;
     }
 }
 
