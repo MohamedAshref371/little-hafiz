@@ -423,7 +423,9 @@ namespace Little_Hafiz
             SetStudentData(stdData);
 
             studentSearchPanel.Visible = false;
+            int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
+            studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
