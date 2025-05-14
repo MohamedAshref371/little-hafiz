@@ -472,6 +472,7 @@ namespace Little_Hafiz
             deleteStudentBtn.Visible = false;
         }
 
+        bool isQrCode;
         private void National_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
@@ -485,12 +486,19 @@ namespace Little_Hafiz
                 if (DatabaseHelper.CurrentOffice == 0)
                     stdOfficeCheckBox.Checked = false;
                 SearchBtn_Click(null, null);
-                stdNationalSearch.Text = "";
                 if (studentsListPanel.Controls.Count == 2)
+                {
+                    stdNationalSearch.Text = "";
                     ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
-                return;
+                    isQrCode = true;
+                }
+                else
+                {
+                    stdEmailSearch.Text = stdNationalSearch.Text;
+                    stdNationalSearch.Text = "";
+                }
             }
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            else if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
 
@@ -567,7 +575,11 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
-            openAddStudentBtn.Focus();
+            if (isQrCode)
+                stdNationalSearch.Focus();
+            else
+                openAddStudentBtn.Focus();
+            isQrCode = false;
         }
 
         bool isSure;
