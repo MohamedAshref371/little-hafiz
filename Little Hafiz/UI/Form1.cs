@@ -89,7 +89,7 @@ namespace Little_Hafiz
                 colorState = Properties.Settings.Default.ColorState;
                 if (colorState != 0) SetColor();
             }
-            
+
             dataRecorderCheckBox.Checked = Program.Record;
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
@@ -433,7 +433,7 @@ namespace Little_Hafiz
             copyStdDataBtn.Visible = DatabaseHelper.CurrentOffice == 0;
             studentPanelState = StudentPanelState.Update;
             studentDataPanel.Visible = true;
-            stdImageSelectorBtn.Focus();
+            cancel1Btn.Focus();
         }
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
@@ -1139,10 +1139,10 @@ namespace Little_Hafiz
 
         private void DateFromLabel_DoubleClick(object sender, EventArgs e)
             => compDateFrom.Value = DateTime.Now;
-        
+
         private void DateToLabel_DoubleClick(object sender, EventArgs e)
             => compDateTo.Value = compDateFrom.Value;
-        
+
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
             setRanksBtn.Enabled = officeRank.SelectedIndex == 0;
@@ -1236,7 +1236,7 @@ namespace Little_Hafiz
             stdNational.Enabled = true;
             studentPanelState = StudentPanelState.Add;
             studentDataPanel.Visible = true;
-            stdImageSelectorBtn.Focus();
+            cancel1Btn.Focus();
         }
 
         private void ExtractExcelBtn_Click(object sender, EventArgs e)
@@ -1413,7 +1413,7 @@ namespace Little_Hafiz
             checkUpdateBtn.Visible = false;
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
-            colorBtn.Visible = false; 
+            colorBtn.Visible = false;
             (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
             officeHelperBtn.Text = "إلغاء";
             officeTextBox.Visible = true;
@@ -1430,7 +1430,7 @@ namespace Little_Hafiz
                 MessageBox.Show("لا يمكن للنسخ الفرعية إضافة مكاتب");
                 return;
             }
-            
+
             if (offices.Contains(officeTextBox.Text))
             {
                 MessageBox.Show("تم إدخال هذا المكتب من قبل");
@@ -1451,6 +1451,11 @@ namespace Little_Hafiz
             SetColor();
             Properties.Settings.Default.ColorState = colorState;
             Properties.Settings.Default.Save();
+        }
+
+        private void Cancel1Btn_Click(object sender, EventArgs e)
+        {
+            CancelBtn_Click(null, null);
         }
 
         private void SetColor()

@@ -34,6 +34,7 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.cancel1Btn = new Guna.UI2.WinForms.Guna2Button();
             this.copyStdDataBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdComps = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdCompsLabel = new System.Windows.Forms.Label();
@@ -149,6 +150,7 @@
             this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.officeTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.versionLabel = new System.Windows.Forms.Label();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.formImage = new System.Windows.Forms.Label();
@@ -207,7 +209,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.versionLabel = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -278,6 +279,7 @@
             this.studentDataPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
+            this.studentDataPanel.Controls.Add(this.cancel1Btn);
             this.studentDataPanel.Controls.Add(this.copyStdDataBtn);
             this.studentDataPanel.Controls.Add(this.stdComps);
             this.studentDataPanel.Controls.Add(this.stdCompsLabel);
@@ -370,6 +372,27 @@
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
             // 
+            // cancel1Btn
+            // 
+            this.cancel1Btn.BackColor = System.Drawing.Color.Transparent;
+            this.cancel1Btn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cancel1Btn.BorderRadius = 15;
+            this.cancel1Btn.BorderThickness = 2;
+            this.cancel1Btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancel1Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancel1Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancel1Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancel1Btn.FillColor = System.Drawing.Color.Transparent;
+            this.cancel1Btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cancel1Btn.ForeColor = System.Drawing.Color.Black;
+            this.cancel1Btn.Location = new System.Drawing.Point(832, 9);
+            this.cancel1Btn.Name = "cancel1Btn";
+            this.cancel1Btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cancel1Btn.Size = new System.Drawing.Size(76, 39);
+            this.cancel1Btn.TabIndex = 31;
+            this.cancel1Btn.Text = "إلغاء";
+            this.cancel1Btn.Click += new System.EventHandler(this.Cancel1Btn_Click);
+            // 
             // copyStdDataBtn
             // 
             this.copyStdDataBtn.BackColor = System.Drawing.Color.Transparent;
@@ -383,7 +406,7 @@
             this.copyStdDataBtn.FillColor = System.Drawing.Color.Transparent;
             this.copyStdDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.copyStdDataBtn.ForeColor = System.Drawing.Color.Black;
-            this.copyStdDataBtn.Location = new System.Drawing.Point(833, 9);
+            this.copyStdDataBtn.Location = new System.Drawing.Point(750, 9);
             this.copyStdDataBtn.Name = "copyStdDataBtn";
             this.copyStdDataBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.copyStdDataBtn.Size = new System.Drawing.Size(76, 39);
@@ -1609,7 +1632,7 @@
             this.studentPanelTitle.AutoSize = true;
             this.studentPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.studentPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.studentPanelTitle.Location = new System.Drawing.Point(615, 50);
+            this.studentPanelTitle.Location = new System.Drawing.Point(570, 62);
             this.studentPanelTitle.Name = "studentPanelTitle";
             this.studentPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
@@ -2544,6 +2567,16 @@
             this.officeEnterBtn.Visible = false;
             this.officeEnterBtn.Click += new System.EventHandler(this.OfficeEnterBtn_Click);
             // 
+            // versionLabel
+            // 
+            this.versionLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.versionLabel.Location = new System.Drawing.Point(360, 7);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(80, 37);
+            this.versionLabel.TabIndex = 31;
+            this.versionLabel.Text = "v";
+            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // saveExcelFileDialog
             // 
             this.saveExcelFileDialog.Filter = "Excel files|*.xlsx";
@@ -3435,16 +3468,6 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
-            // versionLabel
-            // 
-            this.versionLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.versionLabel.Location = new System.Drawing.Point(360, 7);
-            this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(80, 37);
-            this.versionLabel.TabIndex = 31;
-            this.versionLabel.Text = "v";
-            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3662,6 +3685,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton colorBtn;
         private Guna.UI2.WinForms.Guna2Button copyStdDataBtn;
         private System.Windows.Forms.Label versionLabel;
+        private Guna.UI2.WinForms.Guna2Button cancel1Btn;
     }
 }
 
