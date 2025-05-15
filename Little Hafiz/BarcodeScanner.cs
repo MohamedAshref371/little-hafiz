@@ -64,8 +64,8 @@ namespace Little_Hafiz
                 ownerForm.Invoke(new Action(() =>
                 {
                     targetTextBox.Text = nat;
-                    if (code != null && int.TryParse(code, out int val)) numUpDown.Value = val;
                     Program.Form.NationalEnter();
+                    if (code != null && int.TryParse(code, out int val)) numUpDown.Value = val;
                 }));
             }
         }
