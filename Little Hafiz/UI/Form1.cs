@@ -206,7 +206,10 @@ namespace Little_Hafiz
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
-            => Close();
+        {
+            if (cameraCheckBox.Checked) cameraCheckBox.Checked = false;
+            Close();
+        }
 
         private void MinimizeBtn_Click(object sender, EventArgs e)
             => WindowState = FormWindowState.Minimized;
