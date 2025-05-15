@@ -28,16 +28,19 @@ namespace Little_Hafiz
             reader = new BarcodeReader();
         }
 
-        public bool Start()
+        public void Start()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            if (videoDevices.Count == 0) return false;
+            if (videoDevices.Count == 0) return;
 
             videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
-            videoSource.NewFrame += new NewFrameEventHandler(Video_NewFrame);
             videoSource.Start();
+        }
+
+        public void Resume()
+        {
+            videoSource.NewFrame += Video_NewFrame;
             isScanning = true;
-            return true;
         }
 
         private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -61,12 +64,15 @@ namespace Little_Hafiz
                 {
                     targetTextBox.Text = nat;
                     if (code != null && int.TryParse(code, out int val)) numUpDown.Value = val;
-                    targetTextBox.Focus();
-                    SendKeys.SendWait("{ENTER}");
+                    targetTextBox.Focus();//
+                    SendKeys.SendWait("{ENTER}");//
                 }));
-
-                Stop();
             }
+        }
+
+        public void Pause()
+        {
+            videoSource.NewFrame -= Video_NewFrame;
         }
 
         public void Stop()

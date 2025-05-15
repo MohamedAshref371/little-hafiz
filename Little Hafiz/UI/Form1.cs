@@ -105,7 +105,12 @@ namespace Little_Hafiz
             compDateFrom.Value = DateTime.Now;
             compDateTo.Value = DateTime.Now;
             versionLabel.Text = "v" + string.Join(".", Application.ProductVersion.Split('.'), 0, 2);
+
+            zxing = File.Exists("zxing.dll");
+            aForge = File.Exists("AForge.dll");
         }
+
+        private bool zxing, aForge;
 
         string[] offices;
         private void GetOffice()
@@ -466,6 +471,76 @@ namespace Little_Hafiz
         }
         #endregion
 
+        #region QrCode
+        bool isQrCode;
+        private void NationalSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
+            {
+                e.Handled = true;
+                NationalEnter();
+            }
+            else if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void NationalEnter()
+        {
+            stdNationalCheckBox.Checked = true;
+            stdNameCheckBox.Checked = false;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = false;
+            if (DatabaseHelper.CurrentOffice == 0)
+                stdOfficeCheckBox.Checked = false;
+            SearchBtn_Click(null, null);
+            if (studentsListPanel.Controls.Count == 2)
+            {
+                stdNationalSearch.Text = "";
+                if (openCompsCheckBox.Checked)
+                    ShowGradesBtn_Click(studentsListPanel.Controls[1], null);
+                else
+                    ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
+                isQrCode = true;
+            }
+            else
+            {
+                stdEmailSearch.Text = stdNationalSearch.Text;
+                stdNationalSearch.Text = "";
+            }
+        }
+
+        BarcodeScanner barcodeScanner;
+        private void StdNationalSearch_Enter(object sender, EventArgs e)
+        {
+            barcodeScanner?.Resume();
+        }
+
+        private void StdNationalSearch_Leave(object sender, EventArgs e)
+        {
+            barcodeScanner?.Pause();
+        }
+
+        private void CameraCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cameraCheckBox.Checked)
+            {
+                if (!aForge) return;
+                if (barcodeScanner is null) barcodeScanner = new BarcodeScanner(this, stdNationalSearch, stdNationalCheckBox, stdCode);
+                barcodeScanner.Start();
+                stdNationalSearch.Enter += StdNationalSearch_Enter;
+                stdNationalSearch.Leave += StdNationalSearch_Leave;
+            }
+            else
+            {
+                stdNationalSearch.Enter -= StdNationalSearch_Enter;
+                stdNationalSearch.Leave -= StdNationalSearch_Leave;
+                barcodeScanner?.Stop();
+                barcodeScanner = null;
+            }
+        }
+        #endregion
+
         #region Student Data Panel
         private void CopyStdDataBtn_Click(object sender, EventArgs e)
         {
@@ -476,39 +551,6 @@ namespace Little_Hafiz
             stdNational.Text = stdNational.Text.Substring(0, stdNational.Text.Length - 1);
             stdBirthDate.Enabled = true;
             deleteStudentBtn.Visible = false;
-        }
-
-        bool isQrCode;
-        private void NationalSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
-            {
-                e.Handled = true;
-                stdNationalCheckBox.Checked = true;
-                stdNameCheckBox.Checked = false;
-                stdPhoneCheckBox.Checked = false;
-                stdEmailCheckBox.Checked = false;
-                stdBirthDateCheckBox.Checked = false;
-                if (DatabaseHelper.CurrentOffice == 0)
-                    stdOfficeCheckBox.Checked = false;
-                SearchBtn_Click(null, null);
-                if (studentsListPanel.Controls.Count == 2)
-                {
-                    stdNationalSearch.Text = "";
-                    if (openCompsCheckBox.Checked)
-                        ShowGradesBtn_Click(studentsListPanel.Controls[1], null);
-                    else
-                        ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
-                    isQrCode = true;
-                }
-                else
-                {
-                    stdEmailSearch.Text = stdNationalSearch.Text;
-                    stdNationalSearch.Text = "";
-                }
-            }
-            else if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                e.Handled = true;
         }
 
         private void National_KeyPress(object sender, KeyPressEventArgs e)
@@ -595,6 +637,11 @@ namespace Little_Hafiz
             else
                 openAddStudentBtn.Focus();
             isQrCode = false;
+        }
+
+        private void Cancel1Btn_Click(object sender, EventArgs e)
+        {
+            CancelBtn_Click(null, null);
         }
 
         bool isSure;
@@ -709,7 +756,6 @@ namespace Little_Hafiz
                 StudentImage = studentImage.Image ?? new Bitmap(140, 180)
             };
 
-            bool zxing = File.Exists("zxing.dll");
             StudentFormPrinter printer = new StudentFormPrinter(data, zxing);
             printer.ShowPreview();
         }
@@ -1497,6 +1543,7 @@ namespace Little_Hafiz
         }
 
         int colorState = 0;
+
         private void ColorBtn_Click(object sender, EventArgs e)
         {
             colorState = (colorState + 1) % 5;
@@ -1504,11 +1551,6 @@ namespace Little_Hafiz
             SetColor();
             Properties.Settings.Default.ColorState = colorState;
             Properties.Settings.Default.Save();
-        }
-
-        private void Cancel1Btn_Click(object sender, EventArgs e)
-        {
-            CancelBtn_Click(null, null);
         }
 
         private void SetColor()
