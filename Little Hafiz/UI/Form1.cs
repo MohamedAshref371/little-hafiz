@@ -539,7 +539,7 @@ namespace Little_Hafiz
                     cameraCheckBox.Checked = false;
                     return;
                 }
-                barcodeScanner = new BarcodeScanner(this, stdNationalSearch, stdNationalCheckBox, stdCode);
+                barcodeScanner = new BarcodeScanner(this, stdNationalSearch, openCompsCheckBox, stdCode);
                 if (!barcodeScanner.Start())
                 {
                     MessageBox.Show("لا توجد كاميرا");
