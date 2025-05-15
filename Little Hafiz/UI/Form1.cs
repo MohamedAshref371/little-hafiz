@@ -446,7 +446,13 @@ namespace Little_Hafiz
 
         private void ShowGradesBtn_Click(object sender, EventArgs e)
         {
-            currentStudent = (StudentSearchRow)((Guna2Button)sender).Parent;
+            if (sender is StudentSearchRow ssr)
+                currentStudent = ssr;
+            else if (sender is Guna2Button g2b)
+                currentStudent = (StudentSearchRow)g2b.Parent;
+            else
+                return;
+
             StudentSearchRowData data = currentStudent.StudentSearchRowData;
 
             CompetitionGradeData[] gradesData = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
@@ -489,7 +495,10 @@ namespace Little_Hafiz
                 if (studentsListPanel.Controls.Count == 2)
                 {
                     stdNationalSearch.Text = "";
-                    ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
+                    if (openCompsCheckBox.Checked)
+                        ShowGradesBtn_Click(studentsListPanel.Controls[1], null);
+                    else
+                        ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
                     isQrCode = true;
                 }
                 else
@@ -1611,8 +1620,11 @@ namespace Little_Hafiz
             minimizeBtn.Size = new System.Drawing.Size(35, 14);
             studentDataPanel.Location = new Point(12, 37);
             studentDataPanel.Size = new System.Drawing.Size(934, 656);
+            cancel1Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cancel1Btn.Location = new Point(832, 9);
+            cancel1Btn.Size = new System.Drawing.Size(76, 39);
             copyStdDataBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            copyStdDataBtn.Location = new Point(833, 9);
+            copyStdDataBtn.Location = new Point(750, 9);
             copyStdDataBtn.Size = new System.Drawing.Size(76, 39);
             stdComps.Font = new Font("Segoe UI", 12F);
             stdComps.Location = new Point(11, 1011);
@@ -1791,7 +1803,7 @@ namespace Little_Hafiz
             stdNational.Location = new Point(43, 194);
             stdNational.Size = new System.Drawing.Size(257, 32);
             studentPanelTitle.Font = new Font("Tahoma", 18F);
-            studentPanelTitle.Location = new Point(615, 50);
+            studentPanelTitle.Location = new Point(570, 62);
             studentPanelTitle.Size = new System.Drawing.Size(230, 29);
             stdName.Font = new Font("Segoe UI", 12F);
             stdName.Location = new Point(536, 194);
@@ -1945,6 +1957,9 @@ namespace Little_Hafiz
             officeEnterBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             officeEnterBtn.Location = new Point(6, 5);
             officeEnterBtn.Size = new System.Drawing.Size(79, 39);
+            versionLabel.Font = new Font("Tahoma", 12F);
+            versionLabel.Location = new Point(360, 7);
+            versionLabel.Size = new System.Drawing.Size(80, 37);
             headerPanel.Location = new Point(-1, -1);
             headerPanel.Size = new System.Drawing.Size(951, 701);
             formImage.Location = new Point(910, 4);
@@ -2104,9 +2119,9 @@ namespace Little_Hafiz
             officeComboBox.Font = new Font("Segoe UI", 10F);
             officeComboBox.Location = new Point(540, 1);
             officeComboBox.Size = new System.Drawing.Size(356, 36);
-            versionLabel.Font = new Font("Tahoma", 12F);
-            versionLabel.Location = new Point(360, 7);
-            versionLabel.Size = new System.Drawing.Size(80, 37);
+            openCompsCheckBox.Font = new Font("Tahoma", 12F);
+            openCompsCheckBox.Location = new Point(472, 9);
+            openCompsCheckBox.Size = new System.Drawing.Size(138, 32);
         }
         #endregion
 

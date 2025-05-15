@@ -209,6 +209,7 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1926,7 +1927,7 @@
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(461, 33);
             this.formTitle.TabIndex = 72;
-            this.formTitle.Text = "برنامج مسابقات القرآن الكريم";
+            this.formTitle.Text = "برنامج تسجيل استمارات طلاب القرآن";
             this.formTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // maximizeBtn
@@ -1954,6 +1955,7 @@
             this.studentSearchPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentSearchPanel.BorderRadius = 5;
             this.studentSearchPanel.BorderThickness = 1;
+            this.studentSearchPanel.Controls.Add(this.openCompsCheckBox);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateToSearch);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateSearch);
             this.studentSearchPanel.Controls.Add(this.stdBirthDateToCheckBox);
@@ -3468,6 +3470,27 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // openCompsCheckBox
+            // 
+            this.openCompsCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.openCompsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.CheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.CheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.openCompsCheckBox.Location = new System.Drawing.Point(472, 9);
+            this.openCompsCheckBox.Name = "openCompsCheckBox";
+            this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.openCompsCheckBox.Size = new System.Drawing.Size(138, 32);
+            this.openCompsCheckBox.TabIndex = 74;
+            this.openCompsCheckBox.Text = "فتح المسابقات";
+            this.openCompsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.openCompsCheckBox.UncheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.UncheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.openCompsCheckBox.UseVisualStyleBackColor = false;
+            this.openCompsCheckBox.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3479,7 +3502,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "برنامج مسابقات القرآن الكريم";
+            this.Text = "برنامج تسجيل استمارات طلاب القرآن";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
@@ -3686,6 +3709,7 @@
         private Guna.UI2.WinForms.Guna2Button copyStdDataBtn;
         private System.Windows.Forms.Label versionLabel;
         private Guna.UI2.WinForms.Guna2Button cancel1Btn;
+        private Guna.UI2.WinForms.Guna2CheckBox openCompsCheckBox;
     }
 }
 
