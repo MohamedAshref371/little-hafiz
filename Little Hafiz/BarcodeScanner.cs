@@ -28,13 +28,14 @@ namespace Little_Hafiz
             reader = new BarcodeReader();
         }
 
-        public void Start()
+        public bool Start()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            if (videoDevices.Count == 0) return;
+            if (videoDevices.Count == 0) return false;
 
             videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
             videoSource.Start();
+            return true;
         }
 
         public void Resume()
