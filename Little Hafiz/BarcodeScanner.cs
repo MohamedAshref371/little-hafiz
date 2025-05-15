@@ -47,8 +47,6 @@ namespace Little_Hafiz
 
             if (result != null)
             {
-                isScanning = false;
-
                 string nat, code = null;
                 if (targetTextBox.Visible && result.Text.Length >= 14)
                 {
@@ -57,6 +55,7 @@ namespace Little_Hafiz
                         code = result.Text.Substring(14);
                 }
                 else return;
+                isScanning = false;
 
                 ownerForm.Invoke(new Action(() =>
                 {
