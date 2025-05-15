@@ -700,7 +700,8 @@ namespace Little_Hafiz
                 StudentImage = studentImage.Image ?? new Bitmap(140, 180)
             };
 
-            StudentFormPrinter printer = new StudentFormPrinter(data);
+            bool zxing = File.Exists("zxing.dll");
+            StudentFormPrinter printer = new StudentFormPrinter(data, zxing);
             printer.ShowPreview();
         }
 

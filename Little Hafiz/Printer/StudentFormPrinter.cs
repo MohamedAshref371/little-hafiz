@@ -13,8 +13,9 @@ namespace Little_Hafiz
         private readonly StudentFormData data;
         private readonly PrintDocument printDocument;
         private readonly PrintPreviewDialog previewDialog;
+        private readonly bool qrcode;
 
-        public StudentFormPrinter(StudentFormData data)
+        public StudentFormPrinter(StudentFormData data, bool qrcode)
         {
             this.data = data;
             printDocument = new PrintDocument();
@@ -31,8 +32,9 @@ namespace Little_Hafiz
 
             paragraphs = new string[] { data.StudentMashaykh, data.MemorizePlaces, data.Certificates, data.Ijazah, data.Courses, data.Skills, data.Hobbies, data.StdComps, data.Notes };
             paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
+            this.qrcode = qrcode;
         }
-
+        
         public void ShowPreview()
         {
             printDocument.PrintPage += MultiPage_PrintPage;
@@ -76,7 +78,7 @@ namespace Little_Hafiz
             g.DrawString(System.DateTime.Now.ToCompleteStandardString(), new Font("Arial", 12), brush, new RectangleF(10, 1140, 200, 30));
             g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
             
-            if (data.NationalID.Length == 14)
+            if (qrcode && data.NationalID.Length == 14)
                 g.DrawImage(GenerateQRCode(data.NationalID, 140), new RectangleF(155, 30, 140, 140));
 
             Rectangle imgRect = new Rectangle(10, 10, 140, 180);
