@@ -50,7 +50,7 @@ namespace Little_Hafiz
                 isScanning = false;
 
                 string nat, code = null;
-                if (result.Text.Length >= 14)
+                if (targetTextBox.Visible && result.Text.Length >= 14)
                 {
                     nat = result.Text.Substring(0, 14);
                     if (checkBox.Checked && result.Text.Length > 14)
