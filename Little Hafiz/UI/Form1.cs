@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Messaging;
 
 namespace Little_Hafiz
 {
@@ -475,7 +476,7 @@ namespace Little_Hafiz
         bool isQrCode;
         private void NationalSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter && stdNationalSearch.Text.Length == 14)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
                 NationalEnter();
@@ -484,8 +485,9 @@ namespace Little_Hafiz
                 e.Handled = true;
         }
 
-        private void NationalEnter()
+        public void NationalEnter()
         {
+            if (stdNationalSearch.Text.Length != 14) return;
             stdNationalCheckBox.Checked = true;
             stdNameCheckBox.Checked = false;
             stdPhoneCheckBox.Checked = false;

@@ -64,8 +64,9 @@ namespace Little_Hafiz
                 {
                     targetTextBox.Text = nat;
                     if (code != null && int.TryParse(code, out int val)) numUpDown.Value = val;
-                    targetTextBox.Focus();//
-                    SendKeys.SendWait("{ENTER}");//
+                    //targetTextBox.Focus();
+                    //SendKeys.SendWait("{ENTER}");
+                    Program.Form.NationalEnter();
                 }));
             }
         }
