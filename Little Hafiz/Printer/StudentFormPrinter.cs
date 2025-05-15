@@ -100,7 +100,7 @@ namespace Little_Hafiz
             g.DrawString(data.BirthDate, font, brush, new RectangleF(300, 160, 500, 30), format);
 
             g.DrawString(data.Job, font, brush, new RectangleF(400, 200, 400, 30), format);
-            g.DrawString(data.MaritalStatus, font, brush, new RectangleF(10, 200, 380, 30), format);
+            g.DrawString(data.PhoneNumber, font, brush, new RectangleF(10, 200, 380, 30), format);
 
             g.DrawString(data.FatherQualification, font, brush, new RectangleF(400, 250, 400, 30), format);
             g.DrawString(data.FatherJob, font, brush, new RectangleF(10, 250, 380, 30), format);
@@ -111,8 +111,7 @@ namespace Little_Hafiz
             g.DrawString(data.GuardianName, font, brush, new RectangleF(400, 370, 400, 30), format);
             g.DrawString(data.GuardianLink, font, brush, new RectangleF(10, 370, 380, 30), format);
 
-            g.DrawString(data.PhoneNumber, font, brush, new RectangleF(400, 420, 400, 30), format);
-            g.DrawString(data.Address, font, brush, new RectangleF(10, 420, 380, 30), format);
+            g.DrawString(data.Address, font, brush, new RectangleF(10, 420, 790, 30), format);
             g.DrawString(data.Email, font, brush, new RectangleF(400, 460, 400, 30), format);
             g.DrawString(data.Facebook, font, brush, new RectangleF(10, 460, 380, 30), format);
             g.DrawString(data.School, font, brush, new RectangleF(400, 500, 400, 30), format);

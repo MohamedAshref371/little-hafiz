@@ -122,6 +122,7 @@
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdBirthDateToSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateToCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -209,7 +210,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1981,6 +1981,27 @@
             this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
             this.studentSearchPanel.TabIndex = 74;
             // 
+            // openCompsCheckBox
+            // 
+            this.openCompsCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.openCompsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.CheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.CheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.openCompsCheckBox.Location = new System.Drawing.Point(601, 18);
+            this.openCompsCheckBox.Name = "openCompsCheckBox";
+            this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.openCompsCheckBox.Size = new System.Drawing.Size(138, 32);
+            this.openCompsCheckBox.TabIndex = 74;
+            this.openCompsCheckBox.Text = "فتح المسابقات";
+            this.openCompsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.openCompsCheckBox.UncheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.UncheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.openCompsCheckBox.UseVisualStyleBackColor = false;
+            this.openCompsCheckBox.Visible = false;
+            // 
             // stdBirthDateToSearch
             // 
             this.stdBirthDateToSearch.BackColor = System.Drawing.Color.Transparent;
@@ -1992,7 +2013,7 @@
             this.stdBirthDateToSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateToSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDateToSearch.Location = new System.Drawing.Point(10, 51);
+            this.stdBirthDateToSearch.Location = new System.Drawing.Point(10, 147);
             this.stdBirthDateToSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDateToSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateToSearch.Name = "stdBirthDateToSearch";
@@ -2011,7 +2032,7 @@
             this.stdBirthDateSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDateSearch.Location = new System.Drawing.Point(186, 51);
+            this.stdBirthDateSearch.Location = new System.Drawing.Point(186, 147);
             this.stdBirthDateSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDateSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateSearch.Name = "stdBirthDateSearch";
@@ -2028,7 +2049,7 @@
             this.stdBirthDateToCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateToCheckBox.Enabled = false;
             this.stdBirthDateToCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateToCheckBox.Location = new System.Drawing.Point(127, 53);
+            this.stdBirthDateToCheckBox.Location = new System.Drawing.Point(127, 149);
             this.stdBirthDateToCheckBox.Name = "stdBirthDateToCheckBox";
             this.stdBirthDateToCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateToCheckBox.Size = new System.Drawing.Size(55, 32);
@@ -2050,7 +2071,7 @@
             this.stdBirthDateFromCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateFromCheckBox.Enabled = false;
             this.stdBirthDateFromCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateFromCheckBox.Location = new System.Drawing.Point(302, 53);
+            this.stdBirthDateFromCheckBox.Location = new System.Drawing.Point(302, 149);
             this.stdBirthDateFromCheckBox.Name = "stdBirthDateFromCheckBox";
             this.stdBirthDateFromCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateFromCheckBox.Size = new System.Drawing.Size(50, 32);
@@ -2071,7 +2092,7 @@
             this.stdOfficeCheckBox.CheckedState.BorderThickness = 1;
             this.stdOfficeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdOfficeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 148);
+            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 11);
             this.stdOfficeCheckBox.Name = "stdOfficeCheckBox";
             this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
@@ -2095,7 +2116,7 @@
             this.stdOfficeSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.stdOfficeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.stdOfficeSearch.ItemHeight = 30;
-            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 146);
+            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 9);
             this.stdOfficeSearch.Name = "stdOfficeSearch";
             this.stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
             this.stdOfficeSearch.TabIndex = 20;
@@ -2187,7 +2208,7 @@
             this.stdNationalSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNationalSearch.ForeColor = System.Drawing.Color.Black;
             this.stdNationalSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalSearch.Location = new System.Drawing.Point(23, 9);
+            this.stdNationalSearch.Location = new System.Drawing.Point(521, 54);
             this.stdNationalSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNationalSearch.MaxLength = 14;
             this.stdNationalSearch.Name = "stdNationalSearch";
@@ -2213,7 +2234,7 @@
             this.stdNameSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNameSearch.ForeColor = System.Drawing.Color.Black;
             this.stdNameSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameSearch.Location = new System.Drawing.Point(521, 52);
+            this.stdNameSearch.Location = new System.Drawing.Point(23, 54);
             this.stdNameSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNameSearch.Name = "stdNameSearch";
             this.stdNameSearch.PlaceholderText = "";
@@ -2285,7 +2306,7 @@
             this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
             this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalCheckBox.Location = new System.Drawing.Point(340, 9);
+            this.stdNationalCheckBox.Location = new System.Drawing.Point(783, 54);
             this.stdNationalCheckBox.Name = "stdNationalCheckBox";
             this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 32);
@@ -2305,7 +2326,7 @@
             this.stdNameCheckBox.CheckedState.BorderThickness = 1;
             this.stdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameCheckBox.Location = new System.Drawing.Point(823, 53);
+            this.stdNameCheckBox.Location = new System.Drawing.Point(381, 54);
             this.stdNameCheckBox.Name = "stdNameCheckBox";
             this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameCheckBox.Size = new System.Drawing.Size(85, 32);
@@ -2325,7 +2346,7 @@
             this.stdBirthDateCheckBox.CheckedState.BorderThickness = 1;
             this.stdBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateCheckBox.Location = new System.Drawing.Point(349, 53);
+            this.stdBirthDateCheckBox.Location = new System.Drawing.Point(349, 149);
             this.stdBirthDateCheckBox.Name = "stdBirthDateCheckBox";
             this.stdBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
@@ -3469,27 +3490,6 @@
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // openCompsCheckBox
-            // 
-            this.openCompsCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.openCompsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.openCompsCheckBox.CheckedState.BorderRadius = 3;
-            this.openCompsCheckBox.CheckedState.BorderThickness = 1;
-            this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.openCompsCheckBox.Location = new System.Drawing.Point(472, 9);
-            this.openCompsCheckBox.Name = "openCompsCheckBox";
-            this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.openCompsCheckBox.Size = new System.Drawing.Size(138, 32);
-            this.openCompsCheckBox.TabIndex = 74;
-            this.openCompsCheckBox.Text = "فتح المسابقات";
-            this.openCompsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.openCompsCheckBox.UncheckedState.BorderRadius = 3;
-            this.openCompsCheckBox.UncheckedState.BorderThickness = 1;
-            this.openCompsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.openCompsCheckBox.UseVisualStyleBackColor = false;
-            this.openCompsCheckBox.Visible = false;
             // 
             // Form1
             // 
