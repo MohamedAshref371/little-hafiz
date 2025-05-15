@@ -11,7 +11,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Runtime.Remoting.Messaging;
 
 namespace Little_Hafiz
 {
@@ -109,6 +108,11 @@ namespace Little_Hafiz
 
             zxing = File.Exists("zxing.dll");
             aForge = File.Exists("AForge.dll");
+            if (!aForge)
+            {
+                cameraCheckBox.Visible = false;
+                openCompsCheckBox.Visible = false;
+            }
         }
 
         private bool zxing, aForge;
@@ -1927,9 +1931,6 @@ namespace Little_Hafiz
             maximizeBtn.Size = new System.Drawing.Size(30, 24);
             studentSearchPanel.Location = new Point(12, 37);
             studentSearchPanel.Size = new System.Drawing.Size(926, 198);
-            openCompsCheckBox.Font = new Font("Tahoma", 12F);
-            openCompsCheckBox.Location = new Point(544, 23);
-            openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
             stdBirthDateToSearch.Font = new Font("Segoe UI", 9F);
             stdBirthDateToSearch.Location = new Point(10, 147);
             stdBirthDateToSearch.Size = new System.Drawing.Size(120, 36);
@@ -1981,6 +1982,12 @@ namespace Little_Hafiz
             stdBirthDateCheckBox.Font = new Font("Tahoma", 12F);
             stdBirthDateCheckBox.Location = new Point(349, 149);
             stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
+            cameraCheckBox.Font = new Font("Tahoma", 12F);
+            cameraCheckBox.Location = new Point(668, 23);
+            cameraCheckBox.Size = new System.Drawing.Size(83, 32);
+            openCompsCheckBox.Font = new Font("Tahoma", 12F);
+            openCompsCheckBox.Location = new Point(544, 23);
+            openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
             studentsListPanel.Location = new Point(12, 238);
             studentsListPanel.Size = new System.Drawing.Size(926, 403);
             openAddStudentBtn.Font = new Font("Segoe UI", 16F);
@@ -2174,9 +2181,6 @@ namespace Little_Hafiz
             officeComboBox.Font = new Font("Segoe UI", 10F);
             officeComboBox.Location = new Point(540, 1);
             officeComboBox.Size = new System.Drawing.Size(356, 36);
-            cameraCheckBox.Font = new Font("Tahoma", 12F);
-            cameraCheckBox.Location = new Point(668, 23);
-            cameraCheckBox.Size = new System.Drawing.Size(83, 32);
         }
         #endregion
 

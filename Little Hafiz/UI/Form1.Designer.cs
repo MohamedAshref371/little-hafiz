@@ -122,7 +122,6 @@
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.studentSearchPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdBirthDateToSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdBirthDateToCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -140,6 +139,8 @@
             this.stdNationalCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdBirthDateCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cameraCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -210,7 +211,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.cameraCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1983,27 +1983,6 @@
             this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
             this.studentSearchPanel.TabIndex = 74;
             // 
-            // openCompsCheckBox
-            // 
-            this.openCompsCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.openCompsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.openCompsCheckBox.CheckedState.BorderRadius = 3;
-            this.openCompsCheckBox.CheckedState.BorderThickness = 1;
-            this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.openCompsCheckBox.Location = new System.Drawing.Point(544, 23);
-            this.openCompsCheckBox.Name = "openCompsCheckBox";
-            this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
-            this.openCompsCheckBox.TabIndex = 74;
-            this.openCompsCheckBox.Text = "المسابقات";
-            this.openCompsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.openCompsCheckBox.UncheckedState.BorderRadius = 3;
-            this.openCompsCheckBox.UncheckedState.BorderThickness = 1;
-            this.openCompsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.openCompsCheckBox.UseVisualStyleBackColor = false;
-            this.openCompsCheckBox.Visible = false;
-            // 
             // stdBirthDateToSearch
             // 
             this.stdBirthDateToSearch.BackColor = System.Drawing.Color.Transparent;
@@ -2360,6 +2339,47 @@
             this.stdBirthDateCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.stdBirthDateCheckBox.UseVisualStyleBackColor = false;
             this.stdBirthDateCheckBox.CheckedChanged += new System.EventHandler(this.StdBirthDateCheckBox_CheckedChanged);
+            // 
+            // cameraCheckBox
+            // 
+            this.cameraCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.cameraCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cameraCheckBox.CheckedState.BorderRadius = 3;
+            this.cameraCheckBox.CheckedState.BorderThickness = 1;
+            this.cameraCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cameraCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cameraCheckBox.Location = new System.Drawing.Point(668, 23);
+            this.cameraCheckBox.Name = "cameraCheckBox";
+            this.cameraCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cameraCheckBox.Size = new System.Drawing.Size(83, 32);
+            this.cameraCheckBox.TabIndex = 75;
+            this.cameraCheckBox.Text = "الكاميرا";
+            this.cameraCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.cameraCheckBox.UncheckedState.BorderRadius = 3;
+            this.cameraCheckBox.UncheckedState.BorderThickness = 1;
+            this.cameraCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cameraCheckBox.UseVisualStyleBackColor = false;
+            this.cameraCheckBox.CheckedChanged += new System.EventHandler(this.CameraCheckBox_CheckedChanged);
+            // 
+            // openCompsCheckBox
+            // 
+            this.openCompsCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.openCompsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.CheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.CheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.openCompsCheckBox.Location = new System.Drawing.Point(544, 23);
+            this.openCompsCheckBox.Name = "openCompsCheckBox";
+            this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
+            this.openCompsCheckBox.TabIndex = 74;
+            this.openCompsCheckBox.Text = "المسابقات";
+            this.openCompsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.openCompsCheckBox.UncheckedState.BorderRadius = 3;
+            this.openCompsCheckBox.UncheckedState.BorderThickness = 1;
+            this.openCompsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.openCompsCheckBox.UseVisualStyleBackColor = false;
             // 
             // studentsListPanel
             // 
@@ -3492,28 +3512,6 @@
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // cameraCheckBox
-            // 
-            this.cameraCheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.cameraCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cameraCheckBox.CheckedState.BorderRadius = 3;
-            this.cameraCheckBox.CheckedState.BorderThickness = 1;
-            this.cameraCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cameraCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cameraCheckBox.Location = new System.Drawing.Point(668, 23);
-            this.cameraCheckBox.Name = "cameraCheckBox";
-            this.cameraCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cameraCheckBox.Size = new System.Drawing.Size(83, 32);
-            this.cameraCheckBox.TabIndex = 75;
-            this.cameraCheckBox.Text = "الكاميرا";
-            this.cameraCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
-            this.cameraCheckBox.UncheckedState.BorderRadius = 3;
-            this.cameraCheckBox.UncheckedState.BorderThickness = 1;
-            this.cameraCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cameraCheckBox.UseVisualStyleBackColor = false;
-            this.cameraCheckBox.Visible = false;
-            this.cameraCheckBox.CheckedChanged += new System.EventHandler(this.CameraCheckBox_CheckedChanged);
             // 
             // Form1
             // 
