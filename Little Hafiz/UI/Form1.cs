@@ -523,23 +523,31 @@ namespace Little_Hafiz
             barcodeScanner?.Pause();
         }
 
+        bool isChangeByCode;
         private void CameraCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (cameraCheckBox.Checked)
             {
-                if (!aForge) return;
+                if (!aForge)
+                {
+                    MessageBox.Show("AForge.dll file is missing.");
+                    isChangeByCode = true;
+                    cameraCheckBox.Checked = false;
+                    return;
+                }
                 if (barcodeScanner is null) barcodeScanner = new BarcodeScanner(this, stdNationalSearch, stdNationalCheckBox, stdCode);
                 barcodeScanner.Start();
                 stdNationalSearch.Enter += StdNationalSearch_Enter;
                 stdNationalSearch.Leave += StdNationalSearch_Leave;
             }
-            else
+            else if (!isChangeByCode)
             {
                 stdNationalSearch.Enter -= StdNationalSearch_Enter;
                 stdNationalSearch.Leave -= StdNationalSearch_Leave;
                 barcodeScanner?.Stop();
                 barcodeScanner = null;
             }
+            isChangeByCode = false;
         }
         #endregion
 
