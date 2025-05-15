@@ -1919,23 +1919,26 @@ namespace Little_Hafiz
             maximizeBtn.Size = new System.Drawing.Size(30, 24);
             studentSearchPanel.Location = new Point(12, 37);
             studentSearchPanel.Size = new System.Drawing.Size(926, 198);
+            openCompsCheckBox.Font = new Font("Tahoma", 12F);
+            openCompsCheckBox.Location = new Point(544, 23);
+            openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
             stdBirthDateToSearch.Font = new Font("Segoe UI", 9F);
-            stdBirthDateToSearch.Location = new Point(10, 51);
+            stdBirthDateToSearch.Location = new Point(10, 147);
             stdBirthDateToSearch.Size = new System.Drawing.Size(120, 36);
             stdBirthDateSearch.Font = new Font("Segoe UI", 9F);
-            stdBirthDateSearch.Location = new Point(186, 51);
+            stdBirthDateSearch.Location = new Point(186, 147);
             stdBirthDateSearch.Size = new System.Drawing.Size(120, 36);
             stdBirthDateToCheckBox.Font = new Font("Tahoma", 12F);
-            stdBirthDateToCheckBox.Location = new Point(127, 53);
+            stdBirthDateToCheckBox.Location = new Point(127, 149);
             stdBirthDateToCheckBox.Size = new System.Drawing.Size(55, 32);
             stdBirthDateFromCheckBox.Font = new Font("Tahoma", 12F);
-            stdBirthDateFromCheckBox.Location = new Point(302, 53);
+            stdBirthDateFromCheckBox.Location = new Point(302, 149);
             stdBirthDateFromCheckBox.Size = new System.Drawing.Size(50, 32);
             stdOfficeCheckBox.Font = new Font("Tahoma", 12F);
-            stdOfficeCheckBox.Location = new Point(375, 148);
+            stdOfficeCheckBox.Location = new Point(375, 11);
             stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
             stdOfficeSearch.Font = new Font("Segoe UI", 10F);
-            stdOfficeSearch.Location = new Point(23, 146);
+            stdOfficeSearch.Location = new Point(23, 9);
             stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
             searchBtn.Font = new Font("Segoe UI", 16F);
             searchBtn.Location = new Point(570, 143);
@@ -1947,10 +1950,10 @@ namespace Little_Hafiz
             stdPhoneSearch.Location = new Point(521, 98);
             stdPhoneSearch.Size = new System.Drawing.Size(257, 32);
             stdNationalSearch.Font = new Font("Segoe UI", 12F);
-            stdNationalSearch.Location = new Point(23, 9);
+            stdNationalSearch.Location = new Point(521, 54);
             stdNationalSearch.Size = new System.Drawing.Size(257, 32);
             stdNameSearch.Font = new Font("Segoe UI", 12F);
-            stdNameSearch.Location = new Point(521, 52);
+            stdNameSearch.Location = new Point(23, 54);
             stdNameSearch.Size = new System.Drawing.Size(257, 32);
             searchPanelTitle.Font = new Font("Tahoma", 18F);
             searchPanelTitle.Location = new Point(788, 6);
@@ -1962,13 +1965,13 @@ namespace Little_Hafiz
             stdPhoneCheckBox.Location = new Point(785, 99);
             stdPhoneCheckBox.Size = new System.Drawing.Size(124, 32);
             stdNationalCheckBox.Font = new Font("Tahoma", 12F);
-            stdNationalCheckBox.Location = new Point(340, 9);
+            stdNationalCheckBox.Location = new Point(783, 54);
             stdNationalCheckBox.Size = new System.Drawing.Size(126, 32);
             stdNameCheckBox.Font = new Font("Tahoma", 12F);
-            stdNameCheckBox.Location = new Point(823, 53);
+            stdNameCheckBox.Location = new Point(381, 54);
             stdNameCheckBox.Size = new System.Drawing.Size(85, 32);
             stdBirthDateCheckBox.Font = new Font("Tahoma", 12F);
-            stdBirthDateCheckBox.Location = new Point(349, 53);
+            stdBirthDateCheckBox.Location = new Point(349, 149);
             stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
             studentsListPanel.Location = new Point(12, 238);
             studentsListPanel.Size = new System.Drawing.Size(926, 403);
@@ -2163,9 +2166,9 @@ namespace Little_Hafiz
             officeComboBox.Font = new Font("Segoe UI", 10F);
             officeComboBox.Location = new Point(540, 1);
             officeComboBox.Size = new System.Drawing.Size(356, 36);
-            openCompsCheckBox.Font = new Font("Tahoma", 12F);
-            openCompsCheckBox.Location = new Point(472, 9);
-            openCompsCheckBox.Size = new System.Drawing.Size(138, 32);
+            cameraCheckBox.Font = new Font("Tahoma", 12F);
+            cameraCheckBox.Location = new Point(668, 23);
+            cameraCheckBox.Size = new System.Drawing.Size(83, 32);
         }
         #endregion
 
