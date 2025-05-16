@@ -1466,29 +1466,43 @@ namespace Little_Hafiz
             sheet.Cell(2, 5).Value = "رقم التليفون";
 
             sheet.Column(6).Width = 15;
-            sheet.Cell(2, 6).Value = "الصف";
-
-            sheet.Column(7).Width = 15;
-            sheet.Cell(2, 7).Value = "العنوان";
-
-            sheet.Column(8).Width = 15;
-            sheet.Cell(2, 8).Value = "المكتب";
+            sheet.Cell(2, 6).Value = "العنوان";
 
 
-            sheet.Column(9).Width = 7;
-            sheet.Cell(2, 9).Value = "الكود";
+            sheet.Column(7).Width = 10;
+            sheet.Cell(2, 7).Value = "الوظيفة";
 
-            sheet.Column(10).Width = 7;
-            sheet.Cell(2, 10).Value = "السابق";
+            sheet.Column(8).Width = 10;
+            sheet.Cell(2, 8).Value = "وظيفة الأب";
 
-            sheet.Column(11).Width = 7;
-            sheet.Cell(2, 11).Value = "الحالي";
+            sheet.Column(9).Width = 10;
+            sheet.Cell(2, 9).Value = "المدرسة/الكلية";
 
-            sheet.Column(12).Width = 14;
-            sheet.Cell(2, 12).Value = "تاريخ المسابقة";
+            sheet.Column(10).Width = 10;
+            sheet.Cell(2, 10).Value = "الصف";
+
+            sheet.Column(11).Width = 15;
+            sheet.Cell(2, 11).Value = "مقدار الحفظ";
+
+
+            sheet.Column(12).Width = 15;
+            sheet.Cell(2, 12).Value = "المكتب";
+
 
             sheet.Column(13).Width = 7;
-            sheet.Cell(2, 13).Value = "المركز";
+            sheet.Cell(2, 13).Value = "الكود";
+
+            sheet.Column(14).Width = 7;
+            sheet.Cell(2, 14).Value = "السابق";
+
+            sheet.Column(15).Width = 7;
+            sheet.Cell(2, 15).Value = "الحالي";
+
+            sheet.Column(16).Width = 14;
+            sheet.Cell(2, 16).Value = "تاريخ المسابقة";
+
+            sheet.Column(17).Width = 7;
+            sheet.Cell(2, 17).Value = "المركز";
         }
 
         private void SetDataOnExcelFile(IXLWorksheet sheet, ref int row, ExcelRowData data)
@@ -1499,15 +1513,21 @@ namespace Little_Hafiz
             sheet.Cell(row, 3).Value = data.NationalNumber;
             sheet.Cell(row, 4).Value = data.BirthDate;
             sheet.Cell(row, 5).Value = data.PhoneNumber;
-            sheet.Cell(row, 6).Value = data.Class;
-            sheet.Cell(row, 7).Value = data.Address;
-            sheet.Cell(row, 8).Value = data.Office == 0 ? "غير معروف" : offices[data.Office];
+            sheet.Cell(row, 6).Value = data.Address;
 
-            sheet.Cell(row, 9).Value = data.StudentCode;
-            sheet.Cell(row, 10).Value = Ranks.ConvertNumberToRank(data.PreviousLevel);
-            sheet.Cell(row, 11).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
-            sheet.Cell(row, 12).Value = data.CompetitionDate;
-            sheet.Cell(row, 13).Value = data.Rank;
+            sheet.Cell(row, 7).Value = data.Job;
+            sheet.Cell(row, 8).Value = data.FatherJob;
+            sheet.Cell(row, 9).Value = data.School;
+            sheet.Cell(row, 10).Value = data.Class;
+            sheet.Cell(row, 11).Value = data.MemoAmount;
+
+            sheet.Cell(row, 12).Value = data.Office == 0 ? "غير معروف" : offices[data.Office];
+
+            sheet.Cell(row, 13).Value = data.StudentCode;
+            sheet.Cell(row, 14).Value = Ranks.ConvertNumberToRank(data.PreviousLevel);
+            sheet.Cell(row, 15).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
+            sheet.Cell(row, 16).Value = data.CompetitionDate;
+            sheet.Cell(row, 17).Value = data.Rank;
             row++;
         }
 

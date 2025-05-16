@@ -6,8 +6,14 @@
         public string NationalNumber;
         public string BirthDate;
         public string PhoneNumber;
-        public string Class;
         public string Address;
+
+        public string Job;
+        public string FatherJob;
+        public string School;
+        public string Class;
+        public string MemoAmount;
+
         public int Office;
 
         public int StudentCode;
