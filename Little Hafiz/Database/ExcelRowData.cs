@@ -2,17 +2,18 @@
 {
     internal class ExcelRowData
     {
-        public int StudentCode;
         public string FullName;
         public string NationalNumber;
         public string BirthDate;
         public string PhoneNumber;
-        public int CompetitionLevel;
-        public int PreviousLevel;
         public string Class;
         public string Address;
         public int Office;
+
+        public int StudentCode;
+        public int PreviousLevel;
+        public int CompetitionLevel;
+        public string CompetitionDate;
         public int Rank;
-        public string CompetitionAddedDate;
     }
 }

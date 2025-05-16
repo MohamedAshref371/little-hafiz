@@ -336,7 +336,7 @@ namespace Little_Hafiz
             string dateFilter = year == 0 ? "1=1" : month == 0 ? $"competition_date LIKE '{year}/%'" : $"competition_date = '{year}/{month:D2}'";
             string officeFilter = office == 0 ? "" : $"WHERE s.office = {office}";
 
-            string sql = $@"SELECT g.std_code, s.full_name, s.national, s.birth_date, s.phone_number, g.competition_level, g.prev_level, s.class, s.address, s.office, g.std_rank, g.competition_date FROM students s JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date {officeFilter}";
+            string sql = $@"SELECT s.full_name, s.national, s.birth_date, s.phone_number, s.class, s.address, s.office,  COALESCE(g.std_code, 0) AS std_code, COALESCE(g.prev_level, 0) AS prev_level, COALESCE(g.competition_level, 0) AS competition_level, COALESCE(g.competition_date, '') AS competition_date, COALESCE(g.std_rank, 0) AS std_rank  FROM students s LEFT JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national LEFT JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date {officeFilter}";
 
             return SelectMultiRows(sql, GetExcelRowData);
         }
@@ -345,18 +345,19 @@ namespace Little_Hafiz
         {
             return new ExcelRowData
             {
-                StudentCode = reader.GetInt32(0),
                 FullName = (string)reader["full_name"],
                 NationalNumber = (string)reader["national"],
                 BirthDate = (string)reader["birth_date"],
                 PhoneNumber = (string)reader["phone_number"],
-                CompetitionLevel = reader.GetInt32(5),
-                PreviousLevel = reader.GetInt32(6),
                 Class = (string)reader["class"],
                 Address = (string)reader["address"],
-                Office = reader.GetInt32(9),
-                Rank = reader.GetInt32(10),
-                CompetitionAddedDate = (string)reader["competition_date"]
+                Office = reader.GetInt32(6),
+
+                StudentCode = reader.GetInt32(7),
+                PreviousLevel = reader.GetInt32(8),
+                CompetitionLevel = reader.GetInt32(9),
+                CompetitionDate = (string)reader["competition_date"],
+                Rank = reader.GetInt32(11),
             };
         }
 
