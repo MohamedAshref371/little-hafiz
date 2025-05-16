@@ -1601,8 +1601,8 @@ namespace Little_Hafiz
                 studentSearchPanel.FillColor2 = Color.FromArgb(192, 192, 255);
                 studentsListPanel.FillColor = Color.FromArgb(192, 255, 255);
                 studentsListPanel.FillColor2 = Color.FromArgb(192, 192, 255);
-                studentDataPanel.FillColor = Color.FromArgb(70, 170, 70); //Color.FromArgb(255, 224, 224);
-                studentDataPanel.FillColor2 = Color.FromArgb(70, 220, 70); //Color.LightYellow;
+                studentDataPanel.FillColor = Color.FromArgb(255, 224, 224); // Color.FromArgb(70, 170, 70);
+                studentDataPanel.FillColor2 = Color.LightYellow; // Color.FromArgb(70, 220, 70);
                 studentGradesPanel.FillColor = Color.FromArgb(100, 200, 150);
                 studentGradesPanel.FillColor2 = Color.FromArgb(50, 100, 70);
                 ranksCalculatorPanel.FillColor = Color.FromArgb(192, 220, 220);
