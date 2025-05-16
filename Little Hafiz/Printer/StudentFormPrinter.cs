@@ -15,7 +15,7 @@ namespace Little_Hafiz
         private readonly PrintPreviewDialog previewDialog;
         private readonly bool qrcode;
 
-        public StudentFormPrinter(StudentFormData data, bool qrcode)
+        public StudentFormPrinter(StudentFormData data, bool qrcode, bool arrange)
         {
             this.data = data;
             printDocument = new PrintDocument();
@@ -31,7 +31,7 @@ namespace Little_Hafiz
             };
 
             paragraphs = new string[] { data.StudentMashaykh, data.MemorizePlaces, data.Certificates, data.Ijazah, data.Courses, data.Skills, data.Hobbies, data.StdComps, data.Notes };
-            //paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
+            if (arrange) paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
             this.qrcode = qrcode;
         }
         

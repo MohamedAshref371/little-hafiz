@@ -804,7 +804,7 @@ namespace Little_Hafiz
                     Clipboard.SetText(stdName.Text);
                 } catch { }
 
-            StudentFormPrinter printer = new StudentFormPrinter(data, zxing && qrcodeCheckBox.Checked);
+            StudentFormPrinter printer = new StudentFormPrinter(data, zxing && qrcodeCheckBox.Checked, arrangeBigFieldsCheckBox.Checked);
             printer.ShowPreview();
         }
 
@@ -1985,8 +1985,11 @@ namespace Little_Hafiz
             copyStdNameCheckBox.Location = new Point(244, 1108);
             copyStdNameCheckBox.Size = new System.Drawing.Size(159, 29);
             qrcodeCheckBox.Font = new Font("Tahoma", 12F);
-            qrcodeCheckBox.Location = new Point(242, 1178);
+            qrcodeCheckBox.Location = new Point(63, 1179);
             qrcodeCheckBox.Size = new System.Drawing.Size(161, 29);
+            arrangeBigFieldsCheckBox.Font = new Font("Tahoma", 12F);
+            arrangeBigFieldsCheckBox.Location = new Point(230, 1179);
+            arrangeBigFieldsCheckBox.Size = new System.Drawing.Size(173, 29);
             formTitle.Font = new Font("Tahoma", 20F);
             formTitle.Location = new Point(457, 1);
             formTitle.Size = new System.Drawing.Size(461, 33);

@@ -120,6 +120,7 @@
             this.stdOfficeLabel = new System.Windows.Forms.Label();
             this.copyStdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.qrcodeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.arrangeBigFieldsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -369,6 +370,7 @@
             this.studentDataPanel.Controls.Add(this.stdOfficeLabel);
             this.studentDataPanel.Controls.Add(this.copyStdNameCheckBox);
             this.studentDataPanel.Controls.Add(this.qrcodeCheckBox);
+            this.studentDataPanel.Controls.Add(this.arrangeBigFieldsCheckBox);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -1950,7 +1952,7 @@
             this.qrcodeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.qrcodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qrcodeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.qrcodeCheckBox.Location = new System.Drawing.Point(242, 1178);
+            this.qrcodeCheckBox.Location = new System.Drawing.Point(63, 1179);
             this.qrcodeCheckBox.Name = "qrcodeCheckBox";
             this.qrcodeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.qrcodeCheckBox.Size = new System.Drawing.Size(161, 29);
@@ -1961,6 +1963,26 @@
             this.qrcodeCheckBox.UncheckedState.BorderThickness = 1;
             this.qrcodeCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.qrcodeCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // arrangeBigFieldsCheckBox
+            // 
+            this.arrangeBigFieldsCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.arrangeBigFieldsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.arrangeBigFieldsCheckBox.CheckedState.BorderRadius = 3;
+            this.arrangeBigFieldsCheckBox.CheckedState.BorderThickness = 1;
+            this.arrangeBigFieldsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.arrangeBigFieldsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.arrangeBigFieldsCheckBox.Location = new System.Drawing.Point(230, 1179);
+            this.arrangeBigFieldsCheckBox.Name = "arrangeBigFieldsCheckBox";
+            this.arrangeBigFieldsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.arrangeBigFieldsCheckBox.Size = new System.Drawing.Size(173, 29);
+            this.arrangeBigFieldsCheckBox.TabIndex = 83;
+            this.arrangeBigFieldsCheckBox.Text = "ترتيب الحقول الكبيرة";
+            this.arrangeBigFieldsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.arrangeBigFieldsCheckBox.UncheckedState.BorderRadius = 3;
+            this.arrangeBigFieldsCheckBox.UncheckedState.BorderThickness = 1;
+            this.arrangeBigFieldsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.arrangeBigFieldsCheckBox.UseVisualStyleBackColor = false;
             // 
             // selectImageDialog
             // 
@@ -3783,6 +3805,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox cameraCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox qrcodeCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox copyStdNameCheckBox;
+        private Guna.UI2.WinForms.Guna2CheckBox arrangeBigFieldsCheckBox;
     }
 }
 
