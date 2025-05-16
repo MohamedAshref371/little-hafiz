@@ -1976,7 +1976,7 @@
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.formTitle.Size = new System.Drawing.Size(461, 33);
             this.formTitle.TabIndex = 72;
-            this.formTitle.Text = "برنامج تسجيل استمارات طلاب القرآن";
+            this.formTitle.Text = "طلاب مكاتب القرآن الكريم";
             this.formTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // maximizeBtn
@@ -3572,7 +3572,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "برنامج تسجيل استمارات طلاب القرآن";
+            this.Text = "طلاب مكاتب القرآن الكريم";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
