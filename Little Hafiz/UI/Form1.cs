@@ -533,7 +533,7 @@ namespace Little_Hafiz
             barcodeScanner?.Pause();
         }
 
-        bool isChangeByCode;
+        bool checkBoxIsChangedByCode;
         private void CameraCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (cameraCheckBox.Checked)
@@ -541,30 +541,45 @@ namespace Little_Hafiz
                 if (!aForge)
                 {
                     MessageBox.Show("AForge.dll file is missing.");
-                    isChangeByCode = true;
+                    checkBoxIsChangedByCode = true;
                     cameraCheckBox.Checked = false;
                     return;
                 }
                 barcodeScanner = new BarcodeScanner(this, stdNationalSearch, openCompsCheckBox, stdCode);
-                if (!barcodeScanner.Start())
+                string[] names = barcodeScanner.Init();
+                if (names.Length == 0)
                 {
                     MessageBox.Show("لا توجد كاميرا");
                     barcodeScanner = null;
-                    isChangeByCode = true;
+                    checkBoxIsChangedByCode = true;
                     cameraCheckBox.Checked = false;
                     return;
+                }
+                else if (names.Length == 1) barcodeScanner.Start();
+                else
+                {
+                    DialogResult res = MessageBox.Show($"1. {names[0]}\n2. {names[1]}\n3. {(names.Length > 2 ? names[2] : "")}", "الكاميرات", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (res == DialogResult.Yes) barcodeScanner.Start(0);
+                    else if (res == DialogResult.No) barcodeScanner.Start(1);
+                    else if (res == DialogResult.Cancel && names.Length > 2) barcodeScanner.Start(2);
+                    else
+                    {
+                        barcodeScanner = null;
+                        checkBoxIsChangedByCode = true;
+                        cameraCheckBox.Checked = false;
+                    }
                 }
                 stdNationalSearch.Enter += StdNationalSearch_Enter;
                 stdNationalSearch.Leave += StdNationalSearch_Leave;
             }
-            else if (!isChangeByCode)
+            else if (!checkBoxIsChangedByCode)
             {
                 stdNationalSearch.Enter -= StdNationalSearch_Enter;
                 stdNationalSearch.Leave -= StdNationalSearch_Leave;
                 barcodeScanner?.Stop();
                 barcodeScanner = null;
             }
-            isChangeByCode = false;
+            checkBoxIsChangedByCode = false;
         }
         #endregion
 

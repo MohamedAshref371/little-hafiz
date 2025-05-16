@@ -4,6 +4,7 @@ using ZXing;
 using System;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using System.Linq;
 
 namespace Little_Hafiz
 {
@@ -28,14 +29,17 @@ namespace Little_Hafiz
             reader = new BarcodeReader();
         }
 
-        public bool Start()
+        public string[] Init()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            if (videoDevices.Count == 0) return false;
 
-            videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+            return videoDevices.Cast<FilterInfo>().Select(f => f.Name).ToArray();
+        }
+
+        public void Start(int i = 0)
+        {
+            videoSource = new VideoCaptureDevice(videoDevices[i].MonikerString);
             videoSource.Start();
-            return true;
         }
 
         public void Resume()
