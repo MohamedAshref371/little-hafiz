@@ -107,6 +107,7 @@ namespace Little_Hafiz
             versionLabel.Text = "v" + string.Join(".", Application.ProductVersion.Split('.'), 0, 2);
 
             zxing = File.Exists("zxing.dll");
+            if (!zxing) qrcodeCheckBox.Visible = false;
             aForge = File.Exists("AForge.dll");
             if (!aForge)
             {
@@ -324,19 +325,21 @@ namespace Little_Hafiz
             studentsListPanel.Controls.Add(new StudentSearchRow { Location = new Point(9, 9) });
         }
 
-        private void SearchPanelTitle_DoubleClick(object sender, EventArgs e)
+        private void VersionLabel_DoubleClick(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.BackupEnabled)
             {
-                Properties.Settings.Default.BackupEnabled = false;
-                MessageBox.Show("تم تعطيل النسخ الاحتياطي");
+                if (MessageBox.Show("سيتم تعطيل النسخ الاحتياطي", ">_<", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                {
+                    Properties.Settings.Default.BackupEnabled = false;
+                    Properties.Settings.Default.Save();
+                }
             }
-            else
+            else if (MessageBox.Show("سيتم تفعيل النسخ الاحتياطي", ":D", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
             {
                 Properties.Settings.Default.BackupEnabled = true;
-                MessageBox.Show("تم تفعيل النسخ الاحتياطي");
+                Properties.Settings.Default.Save();
             }
-            Properties.Settings.Default.Save();
         }
 
         private void StdBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -780,7 +783,13 @@ namespace Little_Hafiz
                 StudentImage = studentImage.Image ?? new Bitmap(140, 180)
             };
 
-            StudentFormPrinter printer = new StudentFormPrinter(data, zxing);
+            if (copyStdNameCheckBox.Checked)
+                try {
+                    Clipboard.Clear();
+                    Clipboard.SetText(stdName.Text);
+                } catch { }
+
+            StudentFormPrinter printer = new StudentFormPrinter(data, zxing && qrcodeCheckBox.Checked);
             printer.ShowPreview();
         }
 
@@ -1675,7 +1684,7 @@ namespace Little_Hafiz
             => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
         #endregion
 
-        #region Reset Component
+        #region Reset Component - It will be deleted at any time.
         private void ResetComponent()
         {
             closeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -1699,12 +1708,12 @@ namespace Little_Hafiz
             stdCompsLabel.Location = new Point(830, 1015);
             stdCompsLabel.Size = new System.Drawing.Size(85, 25);
             deleteStudentBtn.Font = new Font("Segoe UI", 16F);
-            deleteStudentBtn.Location = new Point(18, 1119);
+            deleteStudentBtn.Location = new Point(11, 1135);
             deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
-            scrollHelperLabel.Location = new Point(718, 1165);
+            scrollHelperLabel.Location = new Point(680, 1198);
             scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
             printStudentBtn.Font = new Font("Segoe UI", 16F);
-            printStudentBtn.Location = new Point(255, 1119);
+            printStudentBtn.Location = new Point(265, 1135);
             printStudentBtn.Size = new System.Drawing.Size(140, 45);
             stdOffice.Font = new Font("Segoe UI", 10F);
             stdOffice.Location = new Point(536, 140);
@@ -1850,10 +1859,10 @@ namespace Little_Hafiz
             fatherQuali.Location = new Point(536, 307);
             fatherQuali.Size = new System.Drawing.Size(257, 32);
             cancelBtn.Font = new Font("Segoe UI", 12F);
-            cancelBtn.Location = new Point(565, 1119);
+            cancelBtn.Location = new Point(575, 1135);
             cancelBtn.Size = new System.Drawing.Size(92, 45);
             addStudentBtn.Font = new Font("Segoe UI", 16F);
-            addStudentBtn.Location = new Point(401, 1119);
+            addStudentBtn.Location = new Point(411, 1135);
             addStudentBtn.Size = new System.Drawing.Size(158, 45);
             stdJob.Font = new Font("Segoe UI", 12F);
             stdJob.Location = new Point(43, 255);
@@ -1933,6 +1942,12 @@ namespace Little_Hafiz
             stdOfficeLabel.Font = new Font("Tahoma", 12F);
             stdOfficeLabel.Location = new Point(829, 147);
             stdOfficeLabel.Size = new System.Drawing.Size(74, 25);
+            copyStdNameCheckBox.Font = new Font("Tahoma", 12F);
+            copyStdNameCheckBox.Location = new Point(244, 1108);
+            copyStdNameCheckBox.Size = new System.Drawing.Size(159, 29);
+            qrcodeCheckBox.Font = new Font("Tahoma", 12F);
+            qrcodeCheckBox.Location = new Point(242, 1178);
+            qrcodeCheckBox.Size = new System.Drawing.Size(161, 29);
             formTitle.Font = new Font("Tahoma", 20F);
             formTitle.Location = new Point(457, 1);
             formTitle.Size = new System.Drawing.Size(461, 33);

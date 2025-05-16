@@ -118,6 +118,8 @@
             this.stdIjazahLabel = new System.Windows.Forms.Label();
             this.stdCoursesLabel = new System.Windows.Forms.Label();
             this.stdOfficeLabel = new System.Windows.Forms.Label();
+            this.copyStdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.qrcodeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -365,6 +367,8 @@
             this.studentDataPanel.Controls.Add(this.stdIjazahLabel);
             this.studentDataPanel.Controls.Add(this.stdCoursesLabel);
             this.studentDataPanel.Controls.Add(this.stdOfficeLabel);
+            this.studentDataPanel.Controls.Add(this.copyStdNameCheckBox);
+            this.studentDataPanel.Controls.Add(this.qrcodeCheckBox);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -471,7 +475,7 @@
             this.deleteStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.deleteStudentBtn.ForeColor = System.Drawing.Color.White;
             this.deleteStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.deleteStudentBtn.Location = new System.Drawing.Point(18, 1119);
+            this.deleteStudentBtn.Location = new System.Drawing.Point(11, 1135);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.deleteStudentBtn.TabIndex = 72;
@@ -480,7 +484,7 @@
             // 
             // scrollHelperLabel
             // 
-            this.scrollHelperLabel.Location = new System.Drawing.Point(718, 1165);
+            this.scrollHelperLabel.Location = new System.Drawing.Point(680, 1198);
             this.scrollHelperLabel.Name = "scrollHelperLabel";
             this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
             this.scrollHelperLabel.TabIndex = 78;
@@ -500,7 +504,7 @@
             this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
             this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.printStudentBtn.Location = new System.Drawing.Point(255, 1119);
+            this.printStudentBtn.Location = new System.Drawing.Point(265, 1135);
             this.printStudentBtn.Name = "printStudentBtn";
             this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
             this.printStudentBtn.TabIndex = 71;
@@ -1508,7 +1512,7 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(565, 1119);
+            this.cancelBtn.Location = new System.Drawing.Point(575, 1135);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(92, 45);
             this.cancelBtn.TabIndex = 69;
@@ -1528,7 +1532,7 @@
             this.addStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addStudentBtn.ForeColor = System.Drawing.Color.White;
             this.addStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.addStudentBtn.Location = new System.Drawing.Point(401, 1119);
+            this.addStudentBtn.Location = new System.Drawing.Point(411, 1135);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.addStudentBtn.TabIndex = 70;
@@ -1914,6 +1918,50 @@
             this.stdOfficeLabel.Text = "المكتب : ";
             this.stdOfficeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // copyStdNameCheckBox
+            // 
+            this.copyStdNameCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.copyStdNameCheckBox.Checked = true;
+            this.copyStdNameCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.copyStdNameCheckBox.CheckedState.BorderRadius = 3;
+            this.copyStdNameCheckBox.CheckedState.BorderThickness = 1;
+            this.copyStdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.copyStdNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.copyStdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.copyStdNameCheckBox.Location = new System.Drawing.Point(244, 1108);
+            this.copyStdNameCheckBox.Name = "copyStdNameCheckBox";
+            this.copyStdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.copyStdNameCheckBox.Size = new System.Drawing.Size(159, 29);
+            this.copyStdNameCheckBox.TabIndex = 81;
+            this.copyStdNameCheckBox.Text = "نسخ اسم الطالب";
+            this.copyStdNameCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.copyStdNameCheckBox.UncheckedState.BorderRadius = 3;
+            this.copyStdNameCheckBox.UncheckedState.BorderThickness = 1;
+            this.copyStdNameCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.copyStdNameCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // qrcodeCheckBox
+            // 
+            this.qrcodeCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.qrcodeCheckBox.Checked = true;
+            this.qrcodeCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.qrcodeCheckBox.CheckedState.BorderRadius = 3;
+            this.qrcodeCheckBox.CheckedState.BorderThickness = 1;
+            this.qrcodeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.qrcodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.qrcodeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.qrcodeCheckBox.Location = new System.Drawing.Point(242, 1178);
+            this.qrcodeCheckBox.Name = "qrcodeCheckBox";
+            this.qrcodeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.qrcodeCheckBox.Size = new System.Drawing.Size(161, 29);
+            this.qrcodeCheckBox.TabIndex = 82;
+            this.qrcodeCheckBox.Text = "طباعة مربع الكود";
+            this.qrcodeCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.qrcodeCheckBox.UncheckedState.BorderRadius = 3;
+            this.qrcodeCheckBox.UncheckedState.BorderThickness = 1;
+            this.qrcodeCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.qrcodeCheckBox.UseVisualStyleBackColor = false;
+            // 
             // selectImageDialog
             // 
             this.selectImageDialog.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
@@ -2237,7 +2285,6 @@
             this.searchPanelTitle.Size = new System.Drawing.Size(133, 29);
             this.searchPanelTitle.TabIndex = 73;
             this.searchPanelTitle.Text = "قائمة البحث";
-            this.searchPanelTitle.DoubleClick += new System.EventHandler(this.SearchPanelTitle_DoubleClick);
             // 
             // stdEmailCheckBox
             // 
@@ -2621,6 +2668,7 @@
             this.versionLabel.TabIndex = 31;
             this.versionLabel.Text = "v";
             this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.versionLabel.DoubleClick += new System.EventHandler(this.VersionLabel_DoubleClick);
             // 
             // saveExcelFileDialog
             // 
@@ -3733,6 +3781,8 @@
         private Guna.UI2.WinForms.Guna2Button cancel1Btn;
         private Guna.UI2.WinForms.Guna2CheckBox openCompsCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox cameraCheckBox;
+        private Guna.UI2.WinForms.Guna2CheckBox qrcodeCheckBox;
+        private Guna.UI2.WinForms.Guna2CheckBox copyStdNameCheckBox;
     }
 }
 

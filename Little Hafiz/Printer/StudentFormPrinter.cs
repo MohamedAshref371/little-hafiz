@@ -31,7 +31,7 @@ namespace Little_Hafiz
             };
 
             paragraphs = new string[] { data.StudentMashaykh, data.MemorizePlaces, data.Certificates, data.Ijazah, data.Courses, data.Skills, data.Hobbies, data.StdComps, data.Notes };
-            paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
+            //paragraphs = paragraphs.OrderBy(p => p.Length).ToArray();
             this.qrcode = qrcode;
         }
         
