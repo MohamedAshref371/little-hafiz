@@ -329,16 +329,17 @@ namespace Little_Hafiz
         {
             if (Properties.Settings.Default.BackupEnabled)
             {
-                if (MessageBox.Show("سيتم تعطيل النسخ الاحتياطي", ">_<", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                if (MessageBox.Show("سيتم تعطيل النسخ الاحتياطي", ">_<", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.OK)
                 {
                     Properties.Settings.Default.BackupEnabled = false;
                     Properties.Settings.Default.Save();
                 }
             }
-            else if (MessageBox.Show("سيتم تفعيل النسخ الاحتياطي", ":D", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            else
             {
                 Properties.Settings.Default.BackupEnabled = true;
                 Properties.Settings.Default.Save();
+                MessageBox.Show("تم تفعيل النسخ الاحتياطي", ":D");
             }
         }
 
