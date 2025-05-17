@@ -22,5 +22,5 @@ My special gifts:
 
 ![Ranks Helper](Screenshots/05-RanksHelper.png)
 
-[![QRCode](Screenshots/00-ProgramScreen.png)](Screenshots/06-QRCode.mp4)
+[Download QRCode Video](https://github.com/MohamedAshref371/little-hafiz/raw/refs/heads/master/Screenshots/06-QRCode.mp4)
 
