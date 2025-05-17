@@ -11,6 +11,7 @@ A program for managing data on Quran memorizers and the competitions they partic
         - National ID number
         - Competition level number from 0 to 9, where 0 means 10
         - Competition code from 1 to 65,000
+
 <br>
 
 ![Program Screen](Screenshots/00-ProgramScreen.png)
@@ -23,7 +24,9 @@ A program for managing data on Quran memorizers and the competitions they partic
 
 ![Competitions](Screenshots/04-Competitions.png)
 
+<br>
 
 My another special gifts:
+
 ![Ranks Helper](Screenshots/05-RanksHelper.png)
 
