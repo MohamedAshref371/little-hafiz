@@ -114,6 +114,7 @@ namespace Little_Hafiz
                 cameraCheckBox.Visible = false;
                 openCompsCheckBox.Visible = false;
             }
+            SetLogoImage();
         }
 
         private bool zxing, aForge;
