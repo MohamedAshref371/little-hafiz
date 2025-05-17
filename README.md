@@ -6,4 +6,4 @@ A program for managing data on Quran memorizers and the competitions they partic
 - [Download libraries](https://github.com/MohamedAshref371/little-hafiz/raw/refs/heads/master/libs.zip).
 - [Download the executable file](https://github.com/MohamedAshref371/little-hafiz/releases/latest/download/update.zip).
 
-![Program Screen](Screenshots/ProgramScreen.png)
+![Program Screen](Screenshots/00-ProgramScreen.png)
