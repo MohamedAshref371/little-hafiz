@@ -546,7 +546,7 @@ namespace Little_Hafiz
                     cameraCheckBox.Checked = false;
                     return;
                 }
-                barcodeScanner = new BarcodeScanner(this, stdNationalSearch, openCompsCheckBox, stdCode);
+                barcodeScanner = new BarcodeScanner();
                 string[] names = barcodeScanner.Init();
                 if (names.Length == 0)
                 {
@@ -581,6 +581,36 @@ namespace Little_Hafiz
                 barcodeScanner = null;
             }
             checkBoxIsChangedByCode = false;
+        }
+
+        public void AfterQRCodeScanner(string s)
+        {
+            string nat, level = null, code = null;
+            if (stdNationalSearch.Visible && s.Length >= 14)
+            {
+                nat = s.Substring(0, 14);
+                if (openCompsCheckBox.Checked)
+                {
+                    if (s.Length > 14)
+                        level = s.Substring(14, 1);
+                    if (s.Length > 15)
+                        code = s.Substring(15);
+                }
+            }
+            else return;
+
+            Invoke(new Action(() =>
+            {
+                stdNationalSearch.Text = nat;
+                NationalEnter();
+                if (level != null && byte.TryParse(level, out byte val1))
+                {
+                    if (val1 == 0) val1 = 10;
+                    if (val1 >= currentLevel.Minimum && val1 <= currentLevel.Maximum)
+                        currentLevel.Value = val1; 
+                }
+                if (code != null && short.TryParse(code, out short val2)) stdCode.Value = val2;
+            }));
         }
         #endregion
 
