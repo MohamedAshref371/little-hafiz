@@ -259,6 +259,7 @@ namespace Little_Hafiz
                 officeRank.ItemHeight = height;
                 if (studentDataPanel.Visible) SetStudentImage();
                 if (studentGradesPanel.Visible) SetStudentImage2();
+                SetLogoImage();
             }
         }
 
@@ -690,6 +691,14 @@ namespace Little_Hafiz
                 studentImage.Image = new Bitmap(new Bitmap(stdImagePath.Text), studentImage.Size.Width, studentImage.Size.Height);
             else
                 studentImage.Image = null;
+        }
+
+        private void SetLogoImage()
+        {
+            string[] exts = { ".jpg", ".jpeg", ".png", ".bmp" };
+            string path = exts.Select(ext => Path.Combine("logo" + ext)).FirstOrDefault(File.Exists);
+
+            logo.Image = path != null ? new Bitmap(new Bitmap(path), logo.Size.Width, logo.Size.Height) : null;
         }
 
         private void StdImageLabel_DoubleClick(object sender, EventArgs e)

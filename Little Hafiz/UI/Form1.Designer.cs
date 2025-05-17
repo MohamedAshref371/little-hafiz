@@ -214,6 +214,7 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.logo = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -371,6 +372,7 @@
             this.studentDataPanel.Controls.Add(this.copyStdNameCheckBox);
             this.studentDataPanel.Controls.Add(this.qrcodeCheckBox);
             this.studentDataPanel.Controls.Add(this.arrangeBigFieldsCheckBox);
+            this.studentDataPanel.Controls.Add(this.logo);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -3583,6 +3585,13 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
+            // logo
+            // 
+            this.logo.Location = new System.Drawing.Point(380, 5);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(130, 130);
+            this.logo.TabIndex = 84;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3806,6 +3815,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox qrcodeCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox copyStdNameCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox arrangeBigFieldsCheckBox;
+        private System.Windows.Forms.Label logo;
     }
 }
 
