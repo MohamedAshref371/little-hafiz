@@ -6,7 +6,7 @@ A program for managing data on Quran memorizers and the competitions they partic
 - [Download libraries](https://github.com/MohamedAshref371/little-hafiz/raw/refs/heads/master/libs.zip).
 - [Download the executable file](https://github.com/MohamedAshref371/little-hafiz/releases/latest/download/update.zip).
 
-- My special gifts: [Download QRCode Video](https://github.com/MohamedAshref371/little-hafiz/raw/refs/heads/master/Screenshots/06-QRCode.mp4)
+- My special gift: [Download QRCode Video](https://github.com/MohamedAshref371/little-hafiz/raw/refs/heads/master/Screenshots/06-QRCode.mp4)
     - QRCode: (14)(1)(1:5)
         - National ID number
         - Competition level number from 0 to 9, where 0 means 10
@@ -26,7 +26,7 @@ A program for managing data on Quran memorizers and the competitions they partic
 
 <br>
 
-My another special gifts:
+My another special gift:
 
 ![Ranks Helper](Screenshots/05-RanksHelper.png)
 
