@@ -1761,7 +1761,7 @@ namespace Little_Hafiz
         }
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
-            => Process.Start("https://github.com/MohamedAshref371/little-hafiz/releases/latest");
+            => Process.Start("https://github.com/MohamedAshref371/little-hafiz");
         #endregion
 
         #region Reset Component - It will be deleted at any time.
