@@ -2289,6 +2289,8 @@ namespace Little_Hafiz
             officeComboBox.Font = new Font("Segoe UI", 10F);
             officeComboBox.Location = new Point(540, 1);
             officeComboBox.Size = new System.Drawing.Size(356, 36);
+            logo.Location = new Point(380, 5);
+            logo.Size = new System.Drawing.Size(130, 130);
         }
         #endregion
 
