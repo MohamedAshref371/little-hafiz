@@ -1044,6 +1044,18 @@ namespace Little_Hafiz
         #endregion
 
         #region Fields Helper
+        private void StdName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
+                FieldHelp((Guna2TextBox)sender, TargertField.StudentName);
+        }
+
+        private void GuardianName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
+                FieldHelp((Guna2TextBox)sender, TargertField.GuardianName);
+        }
+
         private void StdJob_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -1060,6 +1072,24 @@ namespace Little_Hafiz
         {
             if (e.KeyCode == Keys.F1)
                 FieldHelp((Guna2TextBox)sender, TargertField.FatherJob);
+        }
+
+        private void MotherQuali_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.MotherQualification);
+        }
+
+        private void MotherJob_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.MotherJob);
+        }
+
+        private void GuardianLink_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.GuardianLink);
         }
 
         private void FieldHelp(Guna2TextBox textbox, TargertField target)

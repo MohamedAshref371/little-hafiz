@@ -1308,6 +1308,7 @@
             this.guardianLink.Size = new System.Drawing.Size(86, 32);
             this.guardianLink.TabIndex = 45;
             this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GuardianLink_KeyUp);
             // 
             // guardianBirth
             // 
@@ -1351,6 +1352,7 @@
             this.guardianName.Size = new System.Drawing.Size(257, 32);
             this.guardianName.TabIndex = 44;
             this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GuardianName_KeyUp);
             // 
             // motherPhone
             // 
@@ -1427,6 +1429,7 @@
             this.motherJob.Size = new System.Drawing.Size(257, 32);
             this.motherJob.TabIndex = 41;
             this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MotherJob_KeyUp);
             // 
             // motherQuali
             // 
@@ -1452,6 +1455,7 @@
             this.motherQuali.Size = new System.Drawing.Size(257, 32);
             this.motherQuali.TabIndex = 40;
             this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MotherQuali_KeyUp);
             // 
             // fatherJob
             // 
@@ -1676,6 +1680,7 @@
             this.stdName.Size = new System.Drawing.Size(257, 32);
             this.stdName.TabIndex = 34;
             this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdName_KeyUp);
             // 
             // guardianLinkLabel
             // 
@@ -2306,6 +2311,7 @@
             this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
             this.stdNameSearch.TabIndex = 7;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdName_KeyUp);
             // 
             // searchPanelTitle
             // 
