@@ -1043,6 +1043,52 @@ namespace Little_Hafiz
         }
         #endregion
 
+        #region Fields Helper
+        private void StdJob_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.StudentJob);
+        }
+
+        private void FatherQuali_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.FatherQualification);
+        }
+
+        private void FatherJob_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.FatherJob);
+        }
+
+        private void FieldHelp(Guna2TextBox textbox, TargertField target)
+        {
+            FieldData[] data = DatabaseHelper.FieldSearch(target);
+            if (data is null) return;
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target), data);
+            if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
+
+            textbox.Text = data[lvd.SelectedIndex].Text;
+        }
+
+        private static string GetColumnTitle(TargertField target)
+        {
+            switch (target)
+            {
+                case TargertField.StudentName: return "اسم الطالب";
+                case TargertField.StudentJob: return "وظيفة الطالب";
+                case TargertField.FatherQualification: return "مؤهل الأب";
+                case TargertField.MotherQualification: return "مؤهل الأم";
+                case TargertField.FatherJob: return "وظيفة الأب";
+                case TargertField.MotherJob: return "وظيفة الأم";
+                case TargertField.GuardianName: return "اسم ولي الأمر";
+                case TargertField.GuardianLink: return "صلة ولي الأمر بالطالب";
+                default: return null;
+            }
+        }
+        #endregion
+
         #region Student Grades Panel
         public void DeleteStudentGradeRow(StudentGradeRow row)
         {
@@ -1656,7 +1702,6 @@ namespace Little_Hafiz
         }
 
         int colorState = 0;
-
         private void ColorBtn_Click(object sender, EventArgs e)
         {
             colorState = (colorState + 1) % 5;

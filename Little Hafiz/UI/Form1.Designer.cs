@@ -121,6 +121,7 @@
             this.copyStdNameCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.qrcodeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.arrangeBigFieldsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.logo = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -214,7 +215,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.logo = new System.Windows.Forms.Label();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -1477,6 +1477,7 @@
             this.fatherJob.Size = new System.Drawing.Size(257, 32);
             this.fatherJob.TabIndex = 39;
             this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FatherJob_KeyUp);
             // 
             // fatherQuali
             // 
@@ -1502,6 +1503,7 @@
             this.fatherQuali.Size = new System.Drawing.Size(257, 32);
             this.fatherQuali.TabIndex = 38;
             this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FatherQuali_KeyUp);
             // 
             // cancelBtn
             // 
@@ -1566,6 +1568,7 @@
             this.stdJob.SelectedText = "";
             this.stdJob.Size = new System.Drawing.Size(257, 32);
             this.stdJob.TabIndex = 37;
+            this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdJob_KeyUp);
             // 
             // wrongValueLabel
             // 
@@ -1985,6 +1988,13 @@
             this.arrangeBigFieldsCheckBox.UncheckedState.BorderThickness = 1;
             this.arrangeBigFieldsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.arrangeBigFieldsCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // logo
+            // 
+            this.logo.Location = new System.Drawing.Point(380, 5);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(130, 130);
+            this.logo.TabIndex = 84;
             // 
             // selectImageDialog
             // 
@@ -3584,13 +3594,6 @@
             this.selectDataFolderDialog.Description = "خذ نسخة اختياطية من البيانات ثم اختر المجلد الجامع لكل التسجيلات\nقم بإضافة صور ال" +
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
-            // 
-            // logo
-            // 
-            this.logo.Location = new System.Drawing.Point(380, 5);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(130, 130);
-            this.logo.TabIndex = 84;
             // 
             // Form1
             // 

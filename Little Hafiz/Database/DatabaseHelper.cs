@@ -367,6 +367,41 @@ namespace Little_Hafiz
             };
         }
 
+        public static FieldData[] FieldSearch(TargertField target)
+        {
+            string column = GetColumnTitle(target);
+            if (column is null) return null;
+
+            string sql = $"SELECT {column} AS text, COUNT({column}) AS count FROM students GROUP BY {column} ORDER BY {column}";
+
+            return SelectMultiRows(sql, GetFieldData);
+        }
+
+        private static FieldData GetFieldData()
+        {
+            return new FieldData
+            {
+                Text = (string)reader["text"],
+                Count = reader.GetInt32(1),
+            };
+        }
+
+        private static string GetColumnTitle(TargertField target)
+        {
+            switch (target)
+            {
+                case TargertField.StudentName: return "full_name";
+                case TargertField.StudentJob: return "job";
+                case TargertField.FatherQualification: return "father_quali";
+                case TargertField.MotherQualification: return "mother_quali";
+                case TargertField.FatherJob: return "father_job";
+                case TargertField.MotherJob: return "mother_job";
+                case TargertField.GuardianName: return "guardian_name";
+                case TargertField.GuardianLink: return "guardian_link";
+                default: return null;
+            }
+        }
+
         private static T[] SelectMultiRows<T>(string sql, Func<T> method)
         {
             if (!success) return null;

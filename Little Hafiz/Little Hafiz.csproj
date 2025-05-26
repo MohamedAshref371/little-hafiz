@@ -141,8 +141,16 @@
     <Compile Include="Database\CompetitionGradeData.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\ExcelRowData.cs" />
+    <Compile Include="Database\FieldData.cs" />
+    <Compile Include="Database\TargertField.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="GetAppUpdate.cs" />
+    <Compile Include="UI\ListViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ListViewDialog.Designer.cs">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Secret.cs" />
     <Compile Include="Printer\StudentFormData.cs" />
     <Compile Include="Printer\StudentFormPrinter.cs" />
@@ -177,6 +185,9 @@
     </Compile>
     <Compile Include="Database\StudentSearchRowData.cs" />
     <Compile Include="Database\StudentState.cs" />
+    <EmbeddedResource Include="UI\ListViewDialog.resx">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\StudentRankRow.resx">
       <DependentUpon>StudentRankRow.cs</DependentUpon>
     </EmbeddedResource>
