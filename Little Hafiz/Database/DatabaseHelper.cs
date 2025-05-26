@@ -398,6 +398,9 @@ namespace Little_Hafiz
                 case TargertField.MotherJob: return "mother_job";
                 case TargertField.GuardianName: return "guardian_name";
                 case TargertField.GuardianLink: return "guardian_link";
+                case TargertField.School: return "school";
+                case TargertField.Class: return "class";
+                case TargertField.MaritalStatus: return "marital_status";
                 default: return null;
             }
         }

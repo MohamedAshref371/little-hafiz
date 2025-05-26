@@ -6,5 +6,7 @@
         FatherQualification, MotherQualification,
         FatherJob, MotherJob,
         GuardianName, GuardianLink,
+        School, Class,
+        MaritalStatus
     }
 }

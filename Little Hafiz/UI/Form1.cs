@@ -1092,6 +1092,24 @@ namespace Little_Hafiz
                 FieldHelp((Guna2TextBox)sender, TargertField.GuardianLink);
         }
 
+        private void StdSchool_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.School);
+        }
+
+        private void StdClass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.Class);
+        }
+
+        private void StdMaritalStatus_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                FieldHelp((Guna2TextBox)sender, TargertField.MaritalStatus);
+        }
+
         private void FieldHelp(Guna2TextBox textbox, TargertField target)
         {
             FieldData[] data = DatabaseHelper.FieldSearch(target);
@@ -1114,6 +1132,9 @@ namespace Little_Hafiz
                 case TargertField.MotherJob: return "وظيفة الأم";
                 case TargertField.GuardianName: return "اسم ولي الأمر";
                 case TargertField.GuardianLink: return "صلة ولي الأمر بالطالب";
+                case TargertField.School: return "المدرسة / الكلية";
+                case TargertField.Class: return "الفصل الدراسي";
+                case TargertField.MaritalStatus: return "الحالة الاجتماعية";
                 default: return null;
             }
         }

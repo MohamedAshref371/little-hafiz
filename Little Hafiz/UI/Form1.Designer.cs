@@ -1001,6 +1001,7 @@
             this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
             this.stdMaritalStatus.TabIndex = 55;
             this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdMaritalStatus_KeyUp);
             // 
             // stdMaritalStatusLabel
             // 
@@ -1109,6 +1110,7 @@
             this.stdSchool.Size = new System.Drawing.Size(257, 32);
             this.stdSchool.TabIndex = 51;
             this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdSchool_KeyUp);
             // 
             // stdClass
             // 
@@ -1134,6 +1136,7 @@
             this.stdClass.Size = new System.Drawing.Size(257, 32);
             this.stdClass.TabIndex = 52;
             this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdClass_KeyUp);
             // 
             // stdClassLabel
             // 
