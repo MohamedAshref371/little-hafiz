@@ -1032,7 +1032,6 @@
             this.stdArrangement.BackColor = System.Drawing.Color.Transparent;
             this.stdArrangement.BorderRadius = 3;
             this.stdArrangement.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdArrangement.FillColor = System.Drawing.Color.Azure;
             this.stdArrangement.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdArrangement.Location = new System.Drawing.Point(117, 607);
             this.stdArrangement.Maximum = new decimal(new int[] {
@@ -1072,7 +1071,6 @@
             this.stdBrothers.BackColor = System.Drawing.Color.Transparent;
             this.stdBrothers.BorderRadius = 3;
             this.stdBrothers.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdBrothers.FillColor = System.Drawing.Color.Azure;
             this.stdBrothers.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdBrothers.Location = new System.Drawing.Point(615, 607);
             this.stdBrothers.Maximum = new decimal(new int[] {

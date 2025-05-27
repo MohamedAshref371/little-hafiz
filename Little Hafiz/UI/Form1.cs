@@ -1819,12 +1819,14 @@ namespace Little_Hafiz
             switch (colorState)
             {
                 case 1:
-                    SetTextBoxColor(Color.Ivory);
-                    SetColor(Color.FromArgb(70, 130, 70), Color.FromArgb(70, 180, 70));
+                    SetTextBoxColor(Color.FromArgb(255, 255, 60));
+                    SetComponentColor(Color.FromArgb(255, 255, 180));
+                    SetColor(Color.FromArgb(79, 163, 55), Color.FromArgb(64, 140, 43));
                     return;
                 case 2:
                     ForeColor = Color.White;
                     SetTextBoxColor(Color.FromArgb(220, 255, 255));
+                    SetComponentColor(Color.FromArgb(192, 255, 192));
                     SetColor(Color.FromArgb(47, 149, 180), Color.FromArgb(29, 119, 144));
                     return;
                 case 3:
@@ -1869,6 +1871,33 @@ namespace Little_Hafiz
             stdPhoneSearch.FillColor = clr;
             stdEmailSearch.FillColor = clr;
             compNotes.FillColor = clr;
+
+            stdBirthDate.FillColor = clr;
+            guardianBirth.FillColor = clr;
+            stdJoiningDate.FillColor = clr;
+            stdFirstConclusion.FillColor = clr;
+            compDate.FillColor = clr;
+            compDateFrom.FillColor = clr;
+            compDateTo.FillColor = clr;
+            stdBirthDateSearch.FillColor = clr;
+            stdBirthDateToSearch.FillColor = clr;
+        }
+
+        private void SetComponentColor(Color clr)
+        {
+            stdOffice.FillColor = clr;
+            officeComboBox.FillColor = clr;
+            stdOfficeSearch.FillColor = clr;
+            officeRank.FillColor = clr;
+
+            //stdBrothers.FillColor = clr;
+            //stdArrangement.FillColor = clr;
+            //stdCode.FillColor = clr;
+            //prevLevel.FillColor = clr;
+            //currentLevel.FillColor = clr;
+            //compLevel.FillColor = clr;
+            //stdScore.FillColor = clr;
+            //stdRank.FillColor = clr;
         }
         #endregion
 
