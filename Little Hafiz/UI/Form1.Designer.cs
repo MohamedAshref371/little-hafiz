@@ -2012,7 +2012,6 @@
             // 
             this.formTitle.BackColor = System.Drawing.Color.Transparent;
             this.formTitle.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.formTitle.ForeColor = System.Drawing.Color.Black;
             this.formTitle.Location = new System.Drawing.Point(457, 1);
             this.formTitle.Name = "formTitle";
             this.formTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2784,7 +2783,6 @@
             this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dataRecorderCheckBox.ForeColor = System.Drawing.Color.Black;
             this.dataRecorderCheckBox.Location = new System.Drawing.Point(289, 5);
             this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
             this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
