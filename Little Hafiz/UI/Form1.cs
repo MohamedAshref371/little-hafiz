@@ -1752,85 +1752,6 @@ namespace Little_Hafiz
             officeTextBox.Text = "";
         }
 
-        int colorState = 0;
-        private void ColorBtn_Click(object sender, EventArgs e)
-        {
-            colorState = (colorState + 1) % 5;
-            colorBtn.Text = "ألوان " + colorState.ToString();
-            SetColor();
-            Properties.Settings.Default.ColorState = colorState;
-            Properties.Settings.Default.Save();
-        }
-
-        private void SetColor()
-        {
-            if (colorState == 0)
-            {
-                ForeColor = Color.Black;
-                headerPanel.FillColor = Color.FromArgb(192, 192, 255);
-                headerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
-                studentSearchPanel.FillColor = Color.FromArgb(255, 192, 255);
-                studentSearchPanel.FillColor2 = Color.FromArgb(192, 192, 255);
-                studentsListPanel.FillColor = Color.FromArgb(192, 255, 255);
-                studentsListPanel.FillColor2 = Color.FromArgb(192, 192, 255);
-                studentDataPanel.FillColor = Color.FromArgb(255, 224, 224); // Color.FromArgb(70, 170, 70);
-                studentDataPanel.FillColor2 = Color.LightYellow; // Color.FromArgb(70, 220, 70);
-                studentGradesPanel.FillColor = Color.FromArgb(100, 200, 150);
-                studentGradesPanel.FillColor2 = Color.FromArgb(50, 100, 70);
-                ranksCalculatorPanel.FillColor = Color.FromArgb(192, 220, 220);
-                ranksCalculatorPanel.FillColor2 = Color.FromArgb(128, 128, 255);
-                footerPanel.FillColor = Color.FromArgb(255, 255, 220);
-                footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
-                colorBtn.FillColor = Color.Red;
-                colorBtn.FillColor2 = Color.Blue;
-                return;
-            }
-
-            Color fc_2 = Color.FromArgb(47, 149, 180), fc2_2 = Color.FromArgb(29, 119, 144);
-            Color fc_3 = Color.FromArgb(192, 220, 220), fc2_3 = Color.FromArgb(128, 128, 255);
-            Color fc_4 = Color.FromArgb(79, 82, 104), fc2_4 = Color.FromArgb(90, 110, 130);
-            if (colorState == 1)
-            {
-                SetColor(fc_2, fc2_2, fc_3, fc2_3);
-                ForeColor = Color.Black;
-            }
-            if (colorState == 2)
-            {
-                SetColor(fc_2, fc2_2, fc_2, fc2_2);
-                ForeColor = Color.White;
-            }
-            else if (colorState == 3)
-            {
-                SetColor(fc_3, fc2_3, fc_3, fc2_3);
-                ForeColor = Color.Black;
-            }
-            else if (colorState == 4)
-            {
-                SetColor(fc_4, fc2_4, fc_4, fc2_4);
-                ForeColor = Color.White;
-            }
-        }
-
-        private void SetColor(Color fcb1, Color fcb2, Color fca1, Color fca2)
-        {
-            //headerPanel.FillColor = fca1;
-            //headerPanel.FillColor2 = fca2;
-            studentSearchPanel.FillColor = fca1;
-            studentSearchPanel.FillColor2 = fca2;
-            studentsListPanel.FillColor = fca1;
-            studentsListPanel.FillColor2 = fca2;
-            studentDataPanel.FillColor = fcb1;
-            studentDataPanel.FillColor2 = fcb2;
-            studentGradesPanel.FillColor = fcb1;
-            studentGradesPanel.FillColor2 = fcb2;
-            ranksCalculatorPanel.FillColor = fca1;
-            ranksCalculatorPanel.FillColor2 = fca2;
-            footerPanel.FillColor = fca1;
-            footerPanel.FillColor2 = fca2;
-            colorBtn.FillColor = fca1;
-            colorBtn.FillColor2 = fcb2;
-        }
-
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
         {
             GetAppUpdate update = new GetAppUpdate();
@@ -1858,6 +1779,97 @@ namespace Little_Hafiz
 
         private void ReleasesLatestBtn_Click(object sender, EventArgs e)
             => Process.Start("https://github.com/MohamedAshref371/little-hafiz");
+        #endregion
+
+        #region Colors
+        int colorState = 0;
+        private void ColorBtn_Click(object sender, EventArgs e)
+        {
+            colorState = (colorState + 1) % 5;
+            colorBtn.Text = "ألوان " + colorState.ToString();
+            SetColor();
+            Properties.Settings.Default.ColorState = colorState;
+            Properties.Settings.Default.Save();
+        }
+
+        private void SetColor()
+        {
+            if (colorState == 0)
+            {
+                ForeColor = Color.Black;
+                headerPanel.FillColor = Color.FromArgb(192, 192, 255);
+                headerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
+                studentSearchPanel.FillColor = Color.FromArgb(255, 192, 255);
+                studentSearchPanel.FillColor2 = Color.FromArgb(192, 192, 255);
+                studentsListPanel.FillColor = Color.FromArgb(192, 255, 255);
+                studentsListPanel.FillColor2 = Color.FromArgb(192, 192, 255);
+                studentDataPanel.FillColor = Color.FromArgb(255, 224, 224);
+                studentDataPanel.FillColor2 = Color.LightYellow;
+                studentGradesPanel.FillColor = Color.FromArgb(100, 200, 150);
+                studentGradesPanel.FillColor2 = Color.FromArgb(50, 100, 70);
+                ranksCalculatorPanel.FillColor = Color.FromArgb(192, 220, 220);
+                ranksCalculatorPanel.FillColor2 = Color.FromArgb(128, 128, 255);
+                footerPanel.FillColor = Color.FromArgb(255, 255, 220);
+                footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
+                colorBtn.FillColor = Color.Red;
+                colorBtn.FillColor2 = Color.Blue;
+                return;
+            }
+
+            switch (colorState)
+            {
+                case 1:
+                    SetTextBoxColor(Color.Ivory);
+                    SetColor(Color.FromArgb(70, 130, 70), Color.FromArgb(70, 180, 70));
+                    return;
+                case 2:
+                    ForeColor = Color.White;
+                    SetTextBoxColor(Color.FromArgb(220, 255, 255));
+                    SetColor(Color.FromArgb(47, 149, 180), Color.FromArgb(29, 119, 144));
+                    return;
+                case 3:
+                    ForeColor = Color.Black;
+                    SetColor(Color.FromArgb(192, 220, 220), Color.FromArgb(128, 128, 255));
+                    return;
+                case 4:
+                    ForeColor = Color.White;
+                    SetColor(Color.FromArgb(79, 82, 104), Color.FromArgb(90, 110, 130));
+                    return;
+            }
+        }
+
+        private void SetColor(Color clr1, Color clr2)
+        {
+            headerPanel.FillColor = clr1;
+            headerPanel.FillColor2 = clr2;
+            studentSearchPanel.FillColor = clr1;
+            studentSearchPanel.FillColor2 = clr2;
+            studentsListPanel.FillColor = clr1;
+            studentsListPanel.FillColor2 = clr2;
+            studentDataPanel.FillColor = clr1;
+            studentDataPanel.FillColor2 = clr2;
+            studentGradesPanel.FillColor = clr1;
+            studentGradesPanel.FillColor2 = clr2;
+            ranksCalculatorPanel.FillColor = clr1;
+            ranksCalculatorPanel.FillColor2 = clr2;
+            footerPanel.FillColor = clr1;
+            footerPanel.FillColor2 = clr2;
+            colorBtn.FillColor = clr1;
+            colorBtn.FillColor2 = clr2;
+        }
+
+        private void SetTextBoxColor(Color clr)
+        {
+            foreach (Control ctrl in studentDataPanel.Controls)
+                if (ctrl is Guna2TextBox gCtrl)
+                    gCtrl.FillColor = clr;
+
+            stdNationalSearch.FillColor = clr;
+            stdNameSearch.FillColor = clr;
+            stdPhoneSearch.FillColor = clr;
+            stdEmailSearch.FillColor = clr;
+            compNotes.FillColor = clr;
+        }
         #endregion
 
         #region Reset Component - It will be deleted at any time.
