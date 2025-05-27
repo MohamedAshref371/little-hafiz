@@ -343,8 +343,6 @@
             this.studentDataPanel.Controls.Add(this.cancelBtn);
             this.studentDataPanel.Controls.Add(this.addStudentBtn);
             this.studentDataPanel.Controls.Add(this.stdJob);
-            this.studentDataPanel.Controls.Add(this.wrongValueLabel);
-            this.studentDataPanel.Controls.Add(this.alreadyExistsLabel);
             this.studentDataPanel.Controls.Add(this.stdBirthDate);
             this.studentDataPanel.Controls.Add(this.stdNational);
             this.studentDataPanel.Controls.Add(this.studentPanelTitle);
@@ -373,6 +371,8 @@
             this.studentDataPanel.Controls.Add(this.qrcodeCheckBox);
             this.studentDataPanel.Controls.Add(this.arrangeBigFieldsCheckBox);
             this.studentDataPanel.Controls.Add(this.logo);
+            this.studentDataPanel.Controls.Add(this.wrongValueLabel);
+            this.studentDataPanel.Controls.Add(this.alreadyExistsLabel);
             this.studentDataPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.studentDataPanel.FillColor2 = System.Drawing.Color.LightYellow;
             this.studentDataPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -1579,11 +1579,12 @@
             // 
             this.wrongValueLabel.AutoSize = true;
             this.wrongValueLabel.BackColor = System.Drawing.Color.Transparent;
+            this.wrongValueLabel.Font = new System.Drawing.Font("Tahoma", 10F);
             this.wrongValueLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.wrongValueLabel.Location = new System.Drawing.Point(117, 230);
+            this.wrongValueLabel.Location = new System.Drawing.Point(102, 227);
             this.wrongValueLabel.Name = "wrongValueLabel";
             this.wrongValueLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.wrongValueLabel.Size = new System.Drawing.Size(113, 13);
+            this.wrongValueLabel.Size = new System.Drawing.Size(138, 17);
             this.wrongValueLabel.TabIndex = 7;
             this.wrongValueLabel.Text = "الرقم القومي غير صالح";
             this.wrongValueLabel.Visible = false;
@@ -1592,11 +1593,12 @@
             // 
             this.alreadyExistsLabel.AutoSize = true;
             this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.alreadyExistsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
             this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.alreadyExistsLabel.Location = new System.Drawing.Point(108, 230);
+            this.alreadyExistsLabel.Location = new System.Drawing.Point(93, 227);
             this.alreadyExistsLabel.Name = "alreadyExistsLabel";
             this.alreadyExistsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.alreadyExistsLabel.Size = new System.Drawing.Size(131, 13);
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(161, 17);
             this.alreadyExistsLabel.TabIndex = 7;
             this.alreadyExistsLabel.Text = "الرقم القومي موجود بالفعل";
             this.alreadyExistsLabel.Visible = false;
@@ -2318,7 +2320,7 @@
             this.searchPanelTitle.AutoSize = true;
             this.searchPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.searchPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.searchPanelTitle.ForeColor = System.Drawing.Color.Red;
+            this.searchPanelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.searchPanelTitle.Location = new System.Drawing.Point(788, 6);
             this.searchPanelTitle.Name = "searchPanelTitle";
             this.searchPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

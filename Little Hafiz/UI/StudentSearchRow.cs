@@ -7,6 +7,8 @@ namespace Little_Hafiz
 {
     public partial class StudentSearchRow : UserControl
     {
+        public static Color StudentButtonColor = Color.Empty;
+        public static Color GradesButtonColor = Color.Empty;
 
         public event EventHandler StudentButtonClick
         {
@@ -32,6 +34,9 @@ namespace Little_Hafiz
         public StudentSearchRow(StudentSearchRowData data)
         {
             InitializeComponent();
+
+            if (StudentButtonColor != Color.Empty) studentBtn.FillColor = StudentButtonColor;
+            if (GradesButtonColor != Color.Empty) gradesBtn.FillColor = GradesButtonColor;
 
             SetData(data);
         }

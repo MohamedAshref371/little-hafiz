@@ -1821,12 +1821,16 @@ namespace Little_Hafiz
                 case 1:
                     SetTextBoxColor(Color.FromArgb(255, 255, 60));
                     SetComponentColor(Color.FromArgb(255, 255, 180));
+                    StudentSearchRow.StudentButtonColor = Color.LightYellow;
+                    StudentSearchRow.GradesButtonColor = Color.Green;
                     SetColor(Color.FromArgb(79, 163, 55), Color.FromArgb(64, 140, 43));
                     return;
                 case 2:
                     ForeColor = Color.White;
                     SetTextBoxColor(Color.FromArgb(220, 255, 255));
                     SetComponentColor(Color.FromArgb(192, 255, 192));
+                    StudentSearchRow.StudentButtonColor = Color.Empty;
+                    StudentSearchRow.GradesButtonColor = Color.Empty;
                     SetColor(Color.FromArgb(47, 149, 180), Color.FromArgb(29, 119, 144));
                     return;
                 case 3:
