@@ -92,8 +92,6 @@
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.wrongValueLabel = new System.Windows.Forms.Label();
-            this.alreadyExistsLabel = new System.Windows.Forms.Label();
             this.stdBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdNational = new Guna.UI2.WinForms.Guna2TextBox();
             this.studentPanelTitle = new System.Windows.Forms.Label();
@@ -122,6 +120,8 @@
             this.qrcodeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.arrangeBigFieldsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.logo = new System.Windows.Forms.Label();
+            this.wrongValueLabel = new System.Windows.Forms.Label();
+            this.alreadyExistsLabel = new System.Windows.Forms.Label();
             this.selectImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.formTitle = new System.Windows.Forms.Label();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -1575,34 +1575,6 @@
             this.stdJob.TabIndex = 37;
             this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdJob_KeyUp);
             // 
-            // wrongValueLabel
-            // 
-            this.wrongValueLabel.AutoSize = true;
-            this.wrongValueLabel.BackColor = System.Drawing.Color.Transparent;
-            this.wrongValueLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.wrongValueLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.wrongValueLabel.Location = new System.Drawing.Point(102, 227);
-            this.wrongValueLabel.Name = "wrongValueLabel";
-            this.wrongValueLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.wrongValueLabel.Size = new System.Drawing.Size(138, 17);
-            this.wrongValueLabel.TabIndex = 7;
-            this.wrongValueLabel.Text = "الرقم القومي غير صالح";
-            this.wrongValueLabel.Visible = false;
-            // 
-            // alreadyExistsLabel
-            // 
-            this.alreadyExistsLabel.AutoSize = true;
-            this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.alreadyExistsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.alreadyExistsLabel.Location = new System.Drawing.Point(93, 227);
-            this.alreadyExistsLabel.Name = "alreadyExistsLabel";
-            this.alreadyExistsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.alreadyExistsLabel.Size = new System.Drawing.Size(161, 17);
-            this.alreadyExistsLabel.TabIndex = 7;
-            this.alreadyExistsLabel.Text = "الرقم القومي موجود بالفعل";
-            this.alreadyExistsLabel.Visible = false;
-            // 
             // stdBirthDate
             // 
             this.stdBirthDate.BackColor = System.Drawing.Color.Transparent;
@@ -2004,6 +1976,34 @@
             this.logo.Size = new System.Drawing.Size(130, 130);
             this.logo.TabIndex = 84;
             // 
+            // wrongValueLabel
+            // 
+            this.wrongValueLabel.AutoSize = true;
+            this.wrongValueLabel.BackColor = System.Drawing.Color.Transparent;
+            this.wrongValueLabel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.wrongValueLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.wrongValueLabel.Location = new System.Drawing.Point(102, 227);
+            this.wrongValueLabel.Name = "wrongValueLabel";
+            this.wrongValueLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.wrongValueLabel.Size = new System.Drawing.Size(138, 17);
+            this.wrongValueLabel.TabIndex = 7;
+            this.wrongValueLabel.Text = "الرقم القومي غير صالح";
+            this.wrongValueLabel.Visible = false;
+            // 
+            // alreadyExistsLabel
+            // 
+            this.alreadyExistsLabel.AutoSize = true;
+            this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.alreadyExistsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.alreadyExistsLabel.Location = new System.Drawing.Point(93, 227);
+            this.alreadyExistsLabel.Name = "alreadyExistsLabel";
+            this.alreadyExistsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(161, 17);
+            this.alreadyExistsLabel.TabIndex = 7;
+            this.alreadyExistsLabel.Text = "الرقم القومي موجود بالفعل";
+            this.alreadyExistsLabel.Visible = false;
+            // 
             // selectImageDialog
             // 
             this.selectImageDialog.Filter = "Image files|*.jpg;*.jpeg;*.png;*.bmp";
@@ -2320,7 +2320,7 @@
             this.searchPanelTitle.AutoSize = true;
             this.searchPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.searchPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.searchPanelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.searchPanelTitle.ForeColor = System.Drawing.Color.Maroon;
             this.searchPanelTitle.Location = new System.Drawing.Point(788, 6);
             this.searchPanelTitle.Name = "searchPanelTitle";
             this.searchPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
