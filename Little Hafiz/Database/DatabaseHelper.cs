@@ -372,7 +372,7 @@ namespace Little_Hafiz
             string column = GetColumnTitle(target);
             if (column is null) return null;
 
-            string sql = $"SELECT {column} AS text, COUNT({column}) AS count FROM students GROUP BY {column} ORDER BY {column}";
+            string sql = $"SELECT {column} AS text, COUNT({column}) AS count FROM students GROUP BY {column} ORDER BY text";
 
             return SelectMultiRows(sql, GetFieldData);
         }
