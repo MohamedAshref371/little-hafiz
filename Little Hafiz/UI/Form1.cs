@@ -1785,6 +1785,14 @@ namespace Little_Hafiz
         int colorState = 0;
         private void ColorBtn_Click(object sender, EventArgs e)
         {
+            if (colorState == 1)
+            {
+                SetTextBoxColor(Color.FromArgb(220, 255, 255));
+                SetTextBoxSearchColor(Color.FromArgb(220, 255, 220));
+                SetComponentColor(Color.FromArgb(192, 255, 192));
+                StudentSearchRow.StudentButtonColor = Color.Empty;
+                StudentSearchRow.GradesButtonColor = Color.Empty;
+            }
             colorState = (colorState + 1) % 5;
             colorBtn.Text = "ألوان " + colorState.ToString();
             SetColor();
@@ -1820,7 +1828,7 @@ namespace Little_Hafiz
             {
                 case 1:
                     SetTextBoxColor(Color.FromArgb(255, 255, 60));
-                    SetTextBoxSearchColor(Color.FromArgb(225, 255, 60));
+                    SetTextBoxSearchColor(Color.FromArgb(235, 255, 60));
                     SetComponentColor(Color.FromArgb(255, 255, 180));
                     StudentSearchRow.StudentButtonColor = Color.LightYellow;
                     StudentSearchRow.GradesButtonColor = Color.Green;
@@ -1828,11 +1836,6 @@ namespace Little_Hafiz
                     return;
                 case 2:
                     ForeColor = Color.White;
-                    SetTextBoxColor(Color.FromArgb(220, 255, 255));
-                    SetTextBoxSearchColor(Color.FromArgb(220, 255, 220));
-                    SetComponentColor(Color.FromArgb(192, 255, 192));
-                    StudentSearchRow.StudentButtonColor = Color.Empty;
-                    StudentSearchRow.GradesButtonColor = Color.Empty;
                     SetColor(Color.FromArgb(47, 149, 180), Color.FromArgb(29, 119, 144));
                     return;
                 case 3:
