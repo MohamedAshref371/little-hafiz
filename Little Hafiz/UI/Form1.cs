@@ -1828,7 +1828,7 @@ namespace Little_Hafiz
             {
                 case 1:
                     SetTextBoxColor(Color.FromArgb(255, 255, 60));
-                    SetTextBoxSearchColor(Color.FromArgb(235, 255, 60));
+                    SetTextBoxSearchColor(Color.FromArgb(240, 255, 60));
                     SetComponentColor(Color.FromArgb(255, 255, 180));
                     StudentSearchRow.StudentButtonColor = Color.LightYellow;
                     StudentSearchRow.GradesButtonColor = Color.Green;
