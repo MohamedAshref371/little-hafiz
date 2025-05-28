@@ -1969,8 +1969,7 @@ namespace Little_Hafiz
             }
 
             Color known = Color.FromName(input);
-            if (known.IsKnownColor || known.IsNamedColor)
-                return known;
+            if (known.IsKnownColor) return known;
 
             return Color.Black;
         }
