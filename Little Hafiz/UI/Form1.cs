@@ -1848,7 +1848,7 @@ namespace Little_Hafiz
         {
             if (File.Exists("Color01.txt"))
             {
-                string[] arr = string.Join("", File.ReadAllText("Color01.txt").ToUpper().Where(c => c == '|' || c == ',' || c == '#' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F'))).Split('|');
+                string[] arr = string.Join("", File.ReadAllText("Color01.txt").Where(c => c == '|' || c == ',' || c == '#' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))).Split('|');
                 if (arr.Length == 8)
                 {
                     SetColor(ParseColor(arr[0]), ParseColor(arr[1]));
