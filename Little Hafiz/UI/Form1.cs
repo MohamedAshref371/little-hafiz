@@ -1792,6 +1792,7 @@ namespace Little_Hafiz
                 SetCompoBoxColor(Color.FromArgb(192, 255, 192));
                 StudentSearchRow.StudentButtonColor = Color.Empty;
                 StudentSearchRow.GradesButtonColor = Color.Empty;
+                SetRedTextColor(Color.Maroon);
             }
             colorState = (colorState + 1) % 5;
             colorBtn.Text = "ألوان " + colorState.ToString();
@@ -1849,7 +1850,7 @@ namespace Little_Hafiz
             if (File.Exists("Color01.txt"))
             {
                 string[] arr = string.Join("", File.ReadAllText("Color01.txt").Where(c => c == '|' || c == ',' || c == '#' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))).Split('|');
-                if (arr.Length == 8)
+                if (arr.Length == 9)
                 {
                     SetColor(ParseColor(arr[0]), ParseColor(arr[1]));
                     ForeColor = ParseColor(arr[2]);
@@ -1858,6 +1859,7 @@ namespace Little_Hafiz
                     SetCompoBoxColor(ParseColor(arr[5]));
                     StudentSearchRow.StudentButtonColor = ParseColor(arr[6]);
                     StudentSearchRow.GradesButtonColor = ParseColor(arr[7]);
+                    SetRedTextColor(ParseColor(arr[8]));
                     return;
                 }
             }
@@ -1869,6 +1871,7 @@ namespace Little_Hafiz
             SetCompoBoxColor(Color.FromArgb(255, 255, 180));
             StudentSearchRow.StudentButtonColor = Color.LightYellow;
             StudentSearchRow.GradesButtonColor = Color.Green;
+            SetRedTextColor(Color.Maroon);
         }
 
         private void ColorBtn_KeyUp(object sender, KeyEventArgs e)
@@ -1947,6 +1950,15 @@ namespace Little_Hafiz
             //compLevel.FillColor = clr;
             //stdScore.FillColor = clr;
             //stdRank.FillColor = clr;
+        }
+
+        private void SetRedTextColor(Color clr)
+        {
+            searchPanelTitle.ForeColor = clr;
+            wrongThingLabel.ForeColor = clr;
+            wrongThing2Label.ForeColor = clr;
+            wrongValueLabel.ForeColor = clr;
+            alreadyExistsLabel.ForeColor = clr;
         }
 
         public static Color ParseColor(string input)
