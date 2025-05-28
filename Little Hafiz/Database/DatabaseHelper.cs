@@ -65,7 +65,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 return false;
             }
             finally { conn.Close(); }
@@ -99,7 +99,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 success = false;
             }
             finally
@@ -122,7 +122,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 return -1;
             }
             finally
@@ -148,7 +148,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 return null;
             }
             finally
@@ -420,7 +420,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 return null;
             }
             finally
@@ -449,7 +449,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
             }
 
             data.Image = "";
@@ -540,7 +540,7 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                Program.LogError(ex.Message, ex.StackTrace, true);
+                Program.LogError(ex, true);
                 return -1;
             }
             finally

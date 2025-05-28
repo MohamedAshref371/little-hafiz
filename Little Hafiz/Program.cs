@@ -24,12 +24,12 @@ namespace Little_Hafiz
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.ThreadException += (sender, e) =>
-                LogError(e.Exception.Message, e.Exception.StackTrace);
+                LogError(e.Exception);
 
             AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
             {
                 Exception ex = (Exception)e.ExceptionObject;
-                LogError(ex.Message, ex.StackTrace);
+                LogError(ex);
             };
 
             try
@@ -45,13 +45,13 @@ namespace Little_Hafiz
             }
             catch (Exception ex)
             {
-                LogError(ex.Message, ex.StackTrace);
+                LogError(ex);
                 MessageBox.Show("حدث خطأ غير متوقع، سيتم إغلاق البرنامج");
             }
         }
 
-        public static void LogError(string msg, string stack, bool inTryCatch = false)
-            => File.AppendAllText("Errors.txt", $"{DateTime.Now}{(inTryCatch ? "  -  Inside Custom Try-Catch Block" : "")}\n{msg}\n{stack}\n------------------\n\n");
+        public static void LogError(Exception ex, bool inTryCatch = false)
+            => File.AppendAllText("Errors.txt", $"{DateTime.Now}{(inTryCatch ? "  -  Inside Custom Try-Catch Block" : "")}\n{ex.Message}\n{ex.StackTrace}\n------------------\n\n");
         
     }
 }

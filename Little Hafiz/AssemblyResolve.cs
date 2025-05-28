@@ -22,7 +22,7 @@ class AssemblyResolver
         }
         catch (Exception ex)
         {
-            Program.LogError(ex.Message, ex.StackTrace, true);
+            Program.LogError(ex, true);
         }
 
         return null;
