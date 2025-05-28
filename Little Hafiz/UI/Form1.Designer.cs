@@ -2549,6 +2549,7 @@
             this.colorBtn.TabIndex = 25;
             this.colorBtn.Text = "الألوان";
             this.colorBtn.Click += new System.EventHandler(this.ColorBtn_Click);
+            this.colorBtn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ColorBtn_KeyUp);
             // 
             // checkUpdateBtn
             // 

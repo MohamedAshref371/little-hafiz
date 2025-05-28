@@ -1870,7 +1870,13 @@ namespace Little_Hafiz
             StudentSearchRow.StudentButtonColor = Color.LightYellow;
             StudentSearchRow.GradesButtonColor = Color.Green;
         }
-        
+
+        private void ColorBtn_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1 && colorState == 1)
+                Color01Execute();
+        }
+
         private void SetColor(Color clr1, Color clr2)
         {
             headerPanel.FillColor = clr1;
