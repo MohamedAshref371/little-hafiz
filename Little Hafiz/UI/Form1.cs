@@ -1792,7 +1792,7 @@ namespace Little_Hafiz
                 SetCompoBoxColor(Color.FromArgb(192, 255, 192));
                 StudentSearchRow.StudentButtonColor = Color.Empty;
                 StudentSearchRow.GradesButtonColor = Color.Empty;
-                SetRedTextColor(Color.Maroon);
+                SetRedTextColor(Color.FromArgb(192, 0, 0));
             }
             colorState = (colorState + 1) % 5;
             colorBtn.Text = "ألوان " + colorState.ToString();

@@ -1981,7 +1981,7 @@
             this.wrongValueLabel.AutoSize = true;
             this.wrongValueLabel.BackColor = System.Drawing.Color.Transparent;
             this.wrongValueLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.wrongValueLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.wrongValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.wrongValueLabel.Location = new System.Drawing.Point(102, 227);
             this.wrongValueLabel.Name = "wrongValueLabel";
             this.wrongValueLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1995,7 +1995,7 @@
             this.alreadyExistsLabel.AutoSize = true;
             this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
             this.alreadyExistsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.alreadyExistsLabel.Location = new System.Drawing.Point(93, 227);
             this.alreadyExistsLabel.Name = "alreadyExistsLabel";
             this.alreadyExistsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2320,7 +2320,7 @@
             this.searchPanelTitle.AutoSize = true;
             this.searchPanelTitle.BackColor = System.Drawing.Color.Transparent;
             this.searchPanelTitle.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.searchPanelTitle.ForeColor = System.Drawing.Color.Maroon;
+            this.searchPanelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.searchPanelTitle.Location = new System.Drawing.Point(788, 6);
             this.searchPanelTitle.Name = "searchPanelTitle";
             this.searchPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
