@@ -1789,7 +1789,7 @@ namespace Little_Hafiz
             {
                 SetTextBoxColor(Color.FromArgb(220, 255, 255));
                 SetTextBoxSearchColor(Color.FromArgb(220, 255, 220));
-                SetComponentColor(Color.FromArgb(192, 255, 192));
+                SetCompoBoxColor(Color.FromArgb(192, 255, 192));
                 StudentSearchRow.StudentButtonColor = Color.Empty;
                 StudentSearchRow.GradesButtonColor = Color.Empty;
             }
@@ -1827,12 +1827,7 @@ namespace Little_Hafiz
             switch (colorState)
             {
                 case 1:
-                    SetTextBoxColor(Color.FromArgb(255, 255, 60));
-                    SetTextBoxSearchColor(Color.FromArgb(240, 255, 60));
-                    SetComponentColor(Color.FromArgb(255, 255, 180));
-                    StudentSearchRow.StudentButtonColor = Color.LightYellow;
-                    StudentSearchRow.GradesButtonColor = Color.Green;
-                    SetColor(Color.FromArgb(79, 163, 55), Color.FromArgb(64, 140, 43));
+                    Color01Execute();
                     return;
                 case 2:
                     ForeColor = Color.White;
@@ -1849,6 +1844,33 @@ namespace Little_Hafiz
             }
         }
 
+        private void Color01Execute()
+        {
+            if (File.Exists("Color01.txt"))
+            {
+                string[] arr = string.Join("", File.ReadAllText("Color01.txt").ToUpper().Where(c => c == '|' || c == ',' || c == '#' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F'))).Split('|');
+                if (arr.Length == 8)
+                {
+                    SetColor(ParseColor(arr[0]), ParseColor(arr[1]));
+                    ForeColor = ParseColor(arr[2]);
+                    SetTextBoxColor(ParseColor(arr[3]));
+                    SetTextBoxSearchColor(ParseColor(arr[4]));
+                    SetCompoBoxColor(ParseColor(arr[5]));
+                    StudentSearchRow.StudentButtonColor = ParseColor(arr[6]);
+                    StudentSearchRow.GradesButtonColor = ParseColor(arr[7]);
+                    return;
+                }
+            }
+
+            SetColor(Color.FromArgb(79, 163, 55), Color.FromArgb(64, 140, 43));
+            ForeColor = Color.Black;
+            SetTextBoxColor(Color.FromArgb(255, 255, 60));
+            SetTextBoxSearchColor(Color.FromArgb(240, 255, 60));
+            SetCompoBoxColor(Color.FromArgb(255, 255, 180));
+            StudentSearchRow.StudentButtonColor = Color.LightYellow;
+            StudentSearchRow.GradesButtonColor = Color.Green;
+        }
+        
         private void SetColor(Color clr1, Color clr2)
         {
             headerPanel.FillColor = clr1;
@@ -1896,7 +1918,7 @@ namespace Little_Hafiz
             stdEmailSearch.FillColor = clr;
         }
 
-        private void SetComponentColor(Color clr)
+        private void SetCompoBoxColor(Color clr)
         {
             stdOffice.FillColor = clr;
             officeComboBox.FillColor = clr;
@@ -1911,6 +1933,40 @@ namespace Little_Hafiz
             //compLevel.FillColor = clr;
             //stdScore.FillColor = clr;
             //stdRank.FillColor = clr;
+        }
+
+        public static Color ParseColor(string input)
+        {
+            if (input == "") return Color.Black;
+            
+            if (input.Contains(","))
+            {
+                string[] parts = input.Split(',');
+
+                byte r = 0, g = 0, b = 0;
+                bool isValidRgb = parts.Length == 3 &&
+                byte.TryParse(parts[0], out r) &&
+                byte.TryParse(parts[1], out g) &&
+                byte.TryParse(parts[2], out b);
+
+                return isValidRgb ? Color.FromArgb(r, g, b) : Color.Black;
+            }
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(input, @"^#?[A-Fa-f0-9]{6}$"))
+            {
+                input = input.TrimStart('#');
+                return Color.FromArgb(
+                    int.Parse(input.Substring(0, 2), System.Globalization.NumberStyles.HexNumber),
+                    int.Parse(input.Substring(2, 2), System.Globalization.NumberStyles.HexNumber),
+                    int.Parse(input.Substring(4, 2), System.Globalization.NumberStyles.HexNumber)
+                    );
+            }
+
+            Color known = Color.FromName(input);
+            if (known.IsKnownColor || known.IsNamedColor)
+                return known;
+
+            return Color.Black;
         }
         #endregion
 
