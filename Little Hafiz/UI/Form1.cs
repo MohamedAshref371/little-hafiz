@@ -735,7 +735,7 @@ namespace Little_Hafiz
                 MessageBox.Show("أدخل رقم قومي صحيح");
                 return;
             }
-            if (!isSure && stdOffice.SelectedIndex == 0 && MessageBox.Show("إذا لم تقم باختيار مكتب للطالب، سيتم وضعه في مكتب مزيف\nهل تريد الاستمرار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
+            if (!isSure && stdOffice.SelectedIndex == 0 && stdOffice.Enabled && MessageBox.Show("إذا لم تقم باختيار مكتب للطالب، سيتم وضعه في مكتب مزيف\nهل تريد الاستمرار ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
                 return;
 
             isSure = true;
