@@ -1877,6 +1877,14 @@ namespace Little_Hafiz
                 Color01Execute();
         }
 
+        private void Form1_ForeColorChanged(object sender, EventArgs e)
+        {
+            copyStdDataBtn.ForeColor = ForeColor;
+            cancelBtn.ForeColor = ForeColor;
+            cancel1Btn.ForeColor = ForeColor;
+            cancelBtn2.ForeColor = ForeColor;
+        }
+
         private void SetColor(Color clr1, Color clr2)
         {
             headerPanel.FillColor = clr1;

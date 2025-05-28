@@ -3616,6 +3616,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "طلاب مكاتب القرآن الكريم";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.ForeColorChanged += new System.EventHandler(this.Form1_ForeColorChanged);
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
