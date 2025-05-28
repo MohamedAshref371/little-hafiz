@@ -1820,6 +1820,7 @@ namespace Little_Hafiz
             {
                 case 1:
                     SetTextBoxColor(Color.FromArgb(255, 255, 60));
+                    SetTextBoxSearchColor(Color.FromArgb(225, 255, 60));
                     SetComponentColor(Color.FromArgb(255, 255, 180));
                     StudentSearchRow.StudentButtonColor = Color.LightYellow;
                     StudentSearchRow.GradesButtonColor = Color.Green;
@@ -1828,6 +1829,7 @@ namespace Little_Hafiz
                 case 2:
                     ForeColor = Color.White;
                     SetTextBoxColor(Color.FromArgb(220, 255, 255));
+                    SetTextBoxSearchColor(Color.FromArgb(220, 255, 220));
                     SetComponentColor(Color.FromArgb(192, 255, 192));
                     StudentSearchRow.StudentButtonColor = Color.Empty;
                     StudentSearchRow.GradesButtonColor = Color.Empty;
@@ -1870,10 +1872,6 @@ namespace Little_Hafiz
                 if (ctrl is Guna2TextBox gCtrl)
                     gCtrl.FillColor = clr;
 
-            stdNationalSearch.FillColor = clr;
-            stdNameSearch.FillColor = clr;
-            stdPhoneSearch.FillColor = clr;
-            stdEmailSearch.FillColor = clr;
             compNotes.FillColor = clr;
 
             stdBirthDate.FillColor = clr;
@@ -1885,6 +1883,14 @@ namespace Little_Hafiz
             compDateTo.FillColor = clr;
             stdBirthDateSearch.FillColor = clr;
             stdBirthDateToSearch.FillColor = clr;
+        }
+
+        private void SetTextBoxSearchColor(Color clr)
+        {
+            stdNationalSearch.FillColor = clr;
+            stdNameSearch.FillColor = clr;
+            stdPhoneSearch.FillColor = clr;
+            stdEmailSearch.FillColor = clr;
         }
 
         private void SetComponentColor(Color clr)
