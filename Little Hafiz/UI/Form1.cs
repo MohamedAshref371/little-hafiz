@@ -1922,9 +1922,7 @@ namespace Little_Hafiz
             stdFirstConclusion.FillColor = clr;
             compDate.FillColor = clr;
             compDateFrom.FillColor = clr;
-            compDateTo.FillColor = clr;
-            stdBirthDateSearch.FillColor = clr;
-            stdBirthDateToSearch.FillColor = clr;
+            compDateTo.FillColor = clr;س
         }
 
         private void SetTextBoxSearchColor(Color clr)
@@ -1933,6 +1931,8 @@ namespace Little_Hafiz
             stdNameSearch.FillColor = clr;
             stdPhoneSearch.FillColor = clr;
             stdEmailSearch.FillColor = clr;
+            stdBirthDateSearch.FillColor = clr;
+            stdBirthDateToSearch.FillColor = clr;
         }
 
         private void SetCompoBoxColor(Color clr)
