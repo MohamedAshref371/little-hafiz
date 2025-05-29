@@ -1922,7 +1922,7 @@ namespace Little_Hafiz
             stdFirstConclusion.FillColor = clr;
             compDate.FillColor = clr;
             compDateFrom.FillColor = clr;
-            compDateTo.FillColor = clr;س
+            compDateTo.FillColor = clr;
         }
 
         private void SetTextBoxSearchColor(Color clr)
