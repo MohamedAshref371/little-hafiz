@@ -2079,7 +2079,7 @@
             this.stdBirthDateToSearch.Checked = true;
             this.stdBirthDateToSearch.CustomFormat = "yyyy/MM/dd";
             this.stdBirthDateToSearch.Enabled = false;
-            this.stdBirthDateToSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdBirthDateToSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.stdBirthDateToSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateToSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -2098,7 +2098,7 @@
             this.stdBirthDateSearch.Checked = true;
             this.stdBirthDateSearch.CustomFormat = "yyyy/MM/dd";
             this.stdBirthDateSearch.Enabled = false;
-            this.stdBirthDateSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdBirthDateSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
             this.stdBirthDateSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
