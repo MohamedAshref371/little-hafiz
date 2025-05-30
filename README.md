@@ -32,6 +32,6 @@ My another special gift:
 
 <br>
 
-I got some ideas, such as the following 'Fields Helper', from the [Al-Shafi](https://www.afi-soft.com/) program.
+I got some ideas, such as the following 'Fields Helper (F1)', from the [Al-Shafi](https://www.afi-soft.com/) program.
 
 ![Fields Helper](Screenshots/07-FieldsHelper.png)
