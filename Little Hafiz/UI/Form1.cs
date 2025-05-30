@@ -2125,10 +2125,6 @@ namespace Little_Hafiz
             stdJob.Font = new Font("Segoe UI", 12F);
             stdJob.Location = new Point(43, 255);
             stdJob.Size = new System.Drawing.Size(257, 32);
-            wrongValueLabel.Location = new Point(117, 230);
-            wrongValueLabel.Size = new System.Drawing.Size(113, 13);
-            alreadyExistsLabel.Location = new Point(108, 230);
-            alreadyExistsLabel.Size = new System.Drawing.Size(131, 13);
             stdBirthDate.Font = new Font("Segoe UI", 9F);
             stdBirthDate.Location = new Point(536, 250);
             stdBirthDate.Size = new System.Drawing.Size(257, 36);
@@ -2209,6 +2205,14 @@ namespace Little_Hafiz
             arrangeBigFieldsCheckBox.Font = new Font("Tahoma", 12F);
             arrangeBigFieldsCheckBox.Location = new Point(230, 1179);
             arrangeBigFieldsCheckBox.Size = new System.Drawing.Size(173, 29);
+            logo.Location = new Point(380, 5);
+            logo.Size = new System.Drawing.Size(130, 130);
+            wrongValueLabel.Font = new Font("Tahoma", 10F);
+            wrongValueLabel.Location = new Point(102, 227);
+            wrongValueLabel.Size = new System.Drawing.Size(138, 17);
+            alreadyExistsLabel.Font = new Font("Tahoma", 10F);
+            alreadyExistsLabel.Location = new Point(93, 227);
+            alreadyExistsLabel.Size = new System.Drawing.Size(161, 17);
             formTitle.Font = new Font("Tahoma", 20F);
             formTitle.Location = new Point(457, 1);
             formTitle.Size = new System.Drawing.Size(461, 33);
@@ -2467,8 +2471,6 @@ namespace Little_Hafiz
             officeComboBox.Font = new Font("Segoe UI", 10F);
             officeComboBox.Location = new Point(540, 1);
             officeComboBox.Size = new System.Drawing.Size(356, 36);
-            logo.Location = new Point(380, 5);
-            logo.Size = new System.Drawing.Size(130, 130);
         }
         #endregion
 
