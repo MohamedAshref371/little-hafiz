@@ -1001,7 +1001,8 @@
             this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
             this.stdMaritalStatus.TabIndex = 55;
             this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdMaritalStatus_KeyUp);
+            this.stdMaritalStatus.Tag = TargetField.MaritalStatus;
+            this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdMaritalStatusLabel
             // 
@@ -1108,7 +1109,8 @@
             this.stdSchool.Size = new System.Drawing.Size(257, 32);
             this.stdSchool.TabIndex = 51;
             this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdSchool_KeyUp);
+            this.stdSchool.Tag = TargetField.School;
+            this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdClass
             // 
@@ -1134,7 +1136,8 @@
             this.stdClass.Size = new System.Drawing.Size(257, 32);
             this.stdClass.TabIndex = 52;
             this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdClass_KeyUp);
+            this.stdClass.Tag = TargetField.Class;
+            this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdClassLabel
             // 
@@ -1309,7 +1312,8 @@
             this.guardianLink.Size = new System.Drawing.Size(86, 32);
             this.guardianLink.TabIndex = 45;
             this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GuardianLink_KeyUp);
+            this.guardianLink.Tag = TargetField.GuardianLink;
+            this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // guardianBirth
             // 
@@ -1353,7 +1357,8 @@
             this.guardianName.Size = new System.Drawing.Size(257, 32);
             this.guardianName.TabIndex = 44;
             this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GuardianName_KeyUp);
+            this.guardianName.Tag = TargetField.GuardianName;
+            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // motherPhone
             // 
@@ -1430,7 +1435,8 @@
             this.motherJob.Size = new System.Drawing.Size(257, 32);
             this.motherJob.TabIndex = 41;
             this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MotherJob_KeyUp);
+            this.motherJob.Tag = TargetField.MotherJob;
+            this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // motherQuali
             // 
@@ -1456,7 +1462,8 @@
             this.motherQuali.Size = new System.Drawing.Size(257, 32);
             this.motherQuali.TabIndex = 40;
             this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MotherQuali_KeyUp);
+            this.motherQuali.Tag = TargetField.MotherQualification;
+            this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // fatherJob
             // 
@@ -1482,7 +1489,8 @@
             this.fatherJob.Size = new System.Drawing.Size(257, 32);
             this.fatherJob.TabIndex = 39;
             this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FatherJob_KeyUp);
+            this.fatherJob.Tag = TargetField.FatherJob;
+            this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // fatherQuali
             // 
@@ -1508,7 +1516,8 @@
             this.fatherQuali.Size = new System.Drawing.Size(257, 32);
             this.fatherQuali.TabIndex = 38;
             this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FatherQuali_KeyUp);
+            this.fatherQuali.Tag = TargetField.FatherQualification;
+            this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // cancelBtn
             // 
@@ -1573,7 +1582,8 @@
             this.stdJob.SelectedText = "";
             this.stdJob.Size = new System.Drawing.Size(257, 32);
             this.stdJob.TabIndex = 37;
-            this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdJob_KeyUp);
+            this.stdJob.Tag = TargetField.StudentJob;
+            this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdBirthDate
             // 
@@ -1655,7 +1665,8 @@
             this.stdName.Size = new System.Drawing.Size(257, 32);
             this.stdName.TabIndex = 34;
             this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdName_KeyUp);
+            this.stdName.Tag = TargetField.StudentName;
+            this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // guardianLinkLabel
             // 
@@ -2313,7 +2324,8 @@
             this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
             this.stdNameSearch.TabIndex = 7;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdName_KeyUp);
+            this.stdNameSearch.Tag = TargetField.StudentName;
+            this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // searchPanelTitle
             // 

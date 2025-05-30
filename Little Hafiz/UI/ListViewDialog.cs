@@ -10,16 +10,23 @@ namespace Little_Hafiz
 
         public ListViewDialog(string title, FieldData[] data)
         {
+            if (data is null) Close();
             InitializeComponent();
 
             listView1.Columns.Add(title, 320, HorizontalAlignment.Center);
             listView1.Columns.Add("التكرار", listView1.ClientSize.Width - 321, HorizontalAlignment.Center);
 
-            for (int i = 0; i < data?.Length; i++)
+            for (int i = 0; i < data.Length; i++)
             {
                 var item = new ListViewItem(data[i].Text);
                 item.SubItems.Add(data[i].Count.ToString());
                 listView1.Items.Add(item);
+            }
+
+            if (data.Length > 18)
+            {
+                ClientSize = new System.Drawing.Size(ClientSize.Width + 20, ClientSize.Height);
+                listView1.ClientSize = new System.Drawing.Size (listView1.ClientSize.Width + 20, listView1.ClientSize.Height);
             }
 
             listView1.DoubleClick += (s, e) => ConfirmSelection();

@@ -1044,73 +1044,20 @@ namespace Little_Hafiz
         #endregion
 
         #region Fields Helper
-        private void StdName_KeyUp(object sender, KeyEventArgs e)
+        private void StudentDataNameField_KeyUp(object sender, KeyEventArgs e)
         {
+            Guna2TextBox box = (Guna2TextBox)sender;
             if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
-                FieldHelp((Guna2TextBox)sender, TargertField.StudentName);
+                FieldHelp(box, (TargetField)box.Tag);
         }
 
-        private void GuardianName_KeyUp(object sender, KeyEventArgs e)
+        private void StudentDataField_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
-                FieldHelp((Guna2TextBox)sender, TargertField.GuardianName);
+            Guna2TextBox box = (Guna2TextBox)sender;
+            if (e.KeyCode == Keys.F1) FieldHelp(box, (TargetField)box.Tag);
         }
 
-        private void StdJob_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.StudentJob);
-        }
-
-        private void FatherQuali_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.FatherQualification);
-        }
-
-        private void FatherJob_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.FatherJob);
-        }
-
-        private void MotherQuali_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.MotherQualification);
-        }
-
-        private void MotherJob_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.MotherJob);
-        }
-
-        private void GuardianLink_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.GuardianLink);
-        }
-
-        private void StdSchool_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.School);
-        }
-
-        private void StdClass_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.Class);
-        }
-
-        private void StdMaritalStatus_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-                FieldHelp((Guna2TextBox)sender, TargertField.MaritalStatus);
-        }
-
-        private void FieldHelp(Guna2TextBox textbox, TargertField target)
+        private void FieldHelp(Guna2TextBox textbox, TargetField target)
         {
             FieldData[] data = DatabaseHelper.FieldSearch(target);
             if (data is null) return;
@@ -1120,21 +1067,21 @@ namespace Little_Hafiz
             textbox.Text = data[lvd.SelectedIndex].Text;
         }
 
-        private static string GetColumnTitle(TargertField target)
+        private static string GetColumnTitle(TargetField target)
         {
             switch (target)
             {
-                case TargertField.StudentName: return "اسم الطالب";
-                case TargertField.StudentJob: return "وظيفة الطالب";
-                case TargertField.FatherQualification: return "مؤهل الأب";
-                case TargertField.MotherQualification: return "مؤهل الأم";
-                case TargertField.FatherJob: return "وظيفة الأب";
-                case TargertField.MotherJob: return "وظيفة الأم";
-                case TargertField.GuardianName: return "اسم ولي الأمر";
-                case TargertField.GuardianLink: return "صلة ولي الأمر بالطالب";
-                case TargertField.School: return "المدرسة / الكلية";
-                case TargertField.Class: return "الفصل الدراسي";
-                case TargertField.MaritalStatus: return "الحالة الاجتماعية";
+                case TargetField.StudentName: return "اسم الطالب";
+                case TargetField.StudentJob: return "وظيفة الطالب";
+                case TargetField.FatherQualification: return "مؤهل الأب";
+                case TargetField.MotherQualification: return "مؤهل الأم";
+                case TargetField.FatherJob: return "وظيفة الأب";
+                case TargetField.MotherJob: return "وظيفة الأم";
+                case TargetField.GuardianName: return "اسم ولي الأمر";
+                case TargetField.GuardianLink: return "صلة ولي الأمر بالطالب";
+                case TargetField.School: return "المدرسة / الكلية";
+                case TargetField.Class: return "الفصل الدراسي";
+                case TargetField.MaritalStatus: return "الحالة الاجتماعية";
                 default: return null;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Little_Hafiz
 {
-    internal enum TargertField
+    internal enum TargetField
     {
         StudentName, StudentJob,
         FatherQualification, MotherQualification,

@@ -142,7 +142,7 @@
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\ExcelRowData.cs" />
     <Compile Include="Database\FieldData.cs" />
-    <Compile Include="Database\TargertField.cs" />
+    <Compile Include="Database\TargetField.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="GetAppUpdate.cs" />
     <Compile Include="UI\ListViewDialog.cs">

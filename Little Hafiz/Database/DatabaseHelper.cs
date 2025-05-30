@@ -367,7 +367,7 @@ namespace Little_Hafiz
             };
         }
 
-        public static FieldData[] FieldSearch(TargertField target)
+        public static FieldData[] FieldSearch(TargetField target)
         {
             string column = GetColumnTitle(target);
             if (column is null) return null;
@@ -386,21 +386,21 @@ namespace Little_Hafiz
             };
         }
 
-        private static string GetColumnTitle(TargertField target)
+        private static string GetColumnTitle(TargetField target)
         {
             switch (target)
             {
-                case TargertField.StudentName: return "full_name";
-                case TargertField.StudentJob: return "job";
-                case TargertField.FatherQualification: return "father_quali";
-                case TargertField.MotherQualification: return "mother_quali";
-                case TargertField.FatherJob: return "father_job";
-                case TargertField.MotherJob: return "mother_job";
-                case TargertField.GuardianName: return "guardian_name";
-                case TargertField.GuardianLink: return "guardian_link";
-                case TargertField.School: return "school";
-                case TargertField.Class: return "class";
-                case TargertField.MaritalStatus: return "marital_status";
+                case TargetField.StudentName: return "full_name";
+                case TargetField.StudentJob: return "job";
+                case TargetField.FatherQualification: return "father_quali";
+                case TargetField.MotherQualification: return "mother_quali";
+                case TargetField.FatherJob: return "father_job";
+                case TargetField.MotherJob: return "mother_job";
+                case TargetField.GuardianName: return "guardian_name";
+                case TargetField.GuardianLink: return "guardian_link";
+                case TargetField.School: return "school";
+                case TargetField.Class: return "class";
+                case TargetField.MaritalStatus: return "marital_status";
                 default: return null;
             }
         }
