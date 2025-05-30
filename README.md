@@ -30,3 +30,8 @@ My another special gift:
 
 ![Ranks Helper](Screenshots/05-RanksHelper.png)
 
+<br>
+
+I got some ideas, such as the following 'Fields Helper', from the [Al-Shafi](https://www.afi-soft.com/) program.
+
+![Fields Helper](Screenshots/07-FieldsHelper.png)
