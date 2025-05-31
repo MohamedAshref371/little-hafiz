@@ -1102,7 +1102,7 @@ namespace Little_Hafiz
             if (data is null || data.Length == 0) return;
 
             stdNationalCheckBox.Checked = false;
-            stdNameCheckBox.Checked = true;
+            stdNameCheckBox.Checked = false;
             stdPhoneCheckBox.Checked = false;
             stdEmailCheckBox.Checked = false;
             stdBirthDateCheckBox.Checked = false;
