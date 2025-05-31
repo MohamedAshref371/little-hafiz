@@ -30,6 +30,6 @@ namespace Little_Hafiz
         public string ImageName => Image.Split('\\').Last();
 
         public override string ToString()
-            => $"{OfficeId}, '{FullName}', '{NationalNumber}', '{BirthDate}', '{Job}', '{FatherQualification}', '{MotherQualification}', '{FatherJob}', '{MotherJob}', '{FatherPhone}', '{MotherPhone}', '{GuardianName}', '{GuardianLink}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School}', '{Class}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{StdComps}', '{Notes}', '{ImageName}'";
+            => $"{OfficeId}, '{FullName.Trim()}', '{NationalNumber}', '{BirthDate}', '{Job.Trim()}', '{FatherQualification.Trim()}', '{MotherQualification.Trim()}', '{FatherJob.Trim()}', '{MotherJob.Trim()}', '{FatherPhone}', '{MotherPhone}', '{GuardianName.Trim()}', '{GuardianLink.Trim()}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School.Trim()}', '{Class.Trim()}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus.Trim()}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{StdComps}', '{Notes}', '{ImageName}'";
     }
 }

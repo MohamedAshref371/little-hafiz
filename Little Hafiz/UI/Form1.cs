@@ -395,6 +395,11 @@ namespace Little_Hafiz
                 return;
             }
 
+            AddStudentRowsInSearchPanel(students);
+        }
+
+        private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
+        {
             AddTitleInStudentsListPanel();
 
             StudentSearchRow stdRow;
@@ -1054,7 +1059,12 @@ namespace Little_Hafiz
         private void StudentDataField_KeyUp(object sender, KeyEventArgs e)
         {
             Guna2TextBox box = (Guna2TextBox)sender;
-            if (e.KeyCode == Keys.F1) FieldHelp(box, (TargetField)box.Tag);
+            if (e.KeyCode == Keys.F1)
+                FieldHelp(box, (TargetField)box.Tag);
+            else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
+                GetStudentNameFromFieldData(box, (TargetField)box.Tag);
+            else if (e.KeyCode == Keys.F3)
+                SearchWithFieldData(box, (TargetField)box.Tag);
         }
 
         private void FieldHelp(Guna2TextBox textbox, TargetField target)
@@ -1065,6 +1075,40 @@ namespace Little_Hafiz
             if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
 
             textbox.Text = data[lvd.SelectedIndex].Text;
+        }
+
+        private void GetStudentNameFromFieldData(Guna2TextBox textbox, TargetField target)
+        {
+            FieldData[] data = DatabaseHelper.FieldSearch(target, textbox.Text);
+            if (data is null) return;
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target), data);
+            if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
+
+            stdNameSearch.Text = data[lvd.SelectedIndex].Text;
+
+            stdNationalCheckBox.Checked = false;
+            stdNameCheckBox.Checked = true;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = false;
+            if (DatabaseHelper.CurrentOffice == 0) stdOfficeCheckBox.Checked = false;
+            CancelBtn_Click(null, null);
+            SearchBtn_Click(null, null);
+        }
+
+        private void SearchWithFieldData(Guna2TextBox textbox, TargetField target)
+        {
+            StudentSearchRowData[] data = DatabaseHelper.SelectStudents(target, textbox.Text);
+            if (data is null || data.Length == 0) return;
+
+            stdNationalCheckBox.Checked = false;
+            stdNameCheckBox.Checked = true;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = false;
+            if (DatabaseHelper.CurrentOffice == 0) stdOfficeCheckBox.Checked = false;
+            CancelBtn_Click(null, null);
+            AddStudentRowsInSearchPanel(data);
         }
 
         private static string GetColumnTitle(TargetField target)

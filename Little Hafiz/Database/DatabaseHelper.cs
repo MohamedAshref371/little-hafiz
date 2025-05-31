@@ -217,6 +217,16 @@ namespace Little_Hafiz
             return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
 
+        public static StudentSearchRowData[] SelectStudents(TargetField target, string text)
+        {
+            string column = GetColumnTitle(target);
+            if (column is null) return null;
+
+            string sql = $"SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national WHERE {column} = '{text}' {(CurrentOffice == 0 ? "" : $"AND office = {CurrentOffice}")} GROUP BY students.national ORDER BY full_name";
+
+            return SelectMultiRows(sql, GetStudentSearchRowData);
+        }
+
         public static CompetitionGradeData[] SelectStudentGrades(string nationalNumber)
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
@@ -377,12 +387,31 @@ namespace Little_Hafiz
             return SelectMultiRows(sql, GetFieldData);
         }
 
+        public static FieldData[] FieldSearch(TargetField target, string text)
+        {
+            string column = GetColumnTitle(target);
+            if (column is null) return null;
+
+            string sql = $"SELECT full_name FROM students WHERE {column} = '{text}' ORDER BY full_name";
+
+            return SelectMultiRows(sql, GetStudentNameFromFieldData);
+        }
+
         private static FieldData GetFieldData()
         {
             return new FieldData
             {
                 Text = (string)reader["text"],
                 Count = reader.GetInt32(1),
+            };
+        }
+
+        private static FieldData GetStudentNameFromFieldData()
+        {
+            return new FieldData
+            {
+                Text = (string)reader["full_name"],
+                Count = 1,
             };
         }
 
