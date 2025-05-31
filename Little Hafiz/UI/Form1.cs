@@ -1098,7 +1098,7 @@ namespace Little_Hafiz
 
         private void SearchWithFieldData(Guna2TextBox textbox, TargetField target)
         {
-            StudentSearchRowData[] data = DatabaseHelper.SelectStudents(target, textbox.Text);
+            StudentSearchRowData[] data = DatabaseHelper.SelectStudents(target, textbox.Text, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
             if (data is null || data.Length == 0) return;
 
             stdNationalCheckBox.Checked = false;
@@ -1106,7 +1106,7 @@ namespace Little_Hafiz
             stdPhoneCheckBox.Checked = false;
             stdEmailCheckBox.Checked = false;
             stdBirthDateCheckBox.Checked = false;
-            if (DatabaseHelper.CurrentOffice == 0) stdOfficeCheckBox.Checked = false;
+            if (DatabaseHelper.CurrentOffice == 0 && stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
             CancelBtn_Click(null, null);
             AddStudentRowsInSearchPanel(data);
         }
