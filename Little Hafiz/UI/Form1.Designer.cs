@@ -153,9 +153,9 @@
             this.officeHelperBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.rankCalcBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.releasesLatestBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.extractExcelBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.extractExcelBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.officeTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.officeEnterBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.officeEnterBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.versionLabel = new System.Windows.Forms.Label();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -1000,8 +1000,8 @@
             this.stdMaritalStatus.SelectedText = "";
             this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
             this.stdMaritalStatus.TabIndex = 55;
+            this.stdMaritalStatus.Tag = Little_Hafiz.TargetField.MaritalStatus;
             this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdMaritalStatus.Tag = TargetField.MaritalStatus;
             this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdMaritalStatusLabel
@@ -1108,8 +1108,8 @@
             this.stdSchool.SelectedText = "";
             this.stdSchool.Size = new System.Drawing.Size(257, 32);
             this.stdSchool.TabIndex = 51;
+            this.stdSchool.Tag = Little_Hafiz.TargetField.School;
             this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdSchool.Tag = TargetField.School;
             this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdClass
@@ -1135,8 +1135,8 @@
             this.stdClass.SelectedText = "";
             this.stdClass.Size = new System.Drawing.Size(257, 32);
             this.stdClass.TabIndex = 52;
+            this.stdClass.Tag = Little_Hafiz.TargetField.Class;
             this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdClass.Tag = TargetField.Class;
             this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdClassLabel
@@ -1311,8 +1311,8 @@
             this.guardianLink.SelectedText = "";
             this.guardianLink.Size = new System.Drawing.Size(86, 32);
             this.guardianLink.TabIndex = 45;
+            this.guardianLink.Tag = Little_Hafiz.TargetField.GuardianLink;
             this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.guardianLink.Tag = TargetField.GuardianLink;
             this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // guardianBirth
@@ -1356,8 +1356,8 @@
             this.guardianName.SelectedText = "";
             this.guardianName.Size = new System.Drawing.Size(257, 32);
             this.guardianName.TabIndex = 44;
+            this.guardianName.Tag = Little_Hafiz.TargetField.GuardianName;
             this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.guardianName.Tag = TargetField.GuardianName;
             this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // motherPhone
@@ -1434,8 +1434,8 @@
             this.motherJob.SelectedText = "";
             this.motherJob.Size = new System.Drawing.Size(257, 32);
             this.motherJob.TabIndex = 41;
+            this.motherJob.Tag = Little_Hafiz.TargetField.MotherJob;
             this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherJob.Tag = TargetField.MotherJob;
             this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // motherQuali
@@ -1461,8 +1461,8 @@
             this.motherQuali.SelectedText = "";
             this.motherQuali.Size = new System.Drawing.Size(257, 32);
             this.motherQuali.TabIndex = 40;
+            this.motherQuali.Tag = Little_Hafiz.TargetField.MotherQualification;
             this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherQuali.Tag = TargetField.MotherQualification;
             this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // fatherJob
@@ -1488,8 +1488,8 @@
             this.fatherJob.SelectedText = "";
             this.fatherJob.Size = new System.Drawing.Size(257, 32);
             this.fatherJob.TabIndex = 39;
+            this.fatherJob.Tag = Little_Hafiz.TargetField.FatherJob;
             this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherJob.Tag = TargetField.FatherJob;
             this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // fatherQuali
@@ -1515,8 +1515,8 @@
             this.fatherQuali.SelectedText = "";
             this.fatherQuali.Size = new System.Drawing.Size(257, 32);
             this.fatherQuali.TabIndex = 38;
+            this.fatherQuali.Tag = Little_Hafiz.TargetField.FatherQualification;
             this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherQuali.Tag = TargetField.FatherQualification;
             this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // cancelBtn
@@ -1582,7 +1582,7 @@
             this.stdJob.SelectedText = "";
             this.stdJob.Size = new System.Drawing.Size(257, 32);
             this.stdJob.TabIndex = 37;
-            this.stdJob.Tag = TargetField.StudentJob;
+            this.stdJob.Tag = Little_Hafiz.TargetField.StudentJob;
             this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdBirthDate
@@ -1664,8 +1664,8 @@
             this.stdName.SelectedText = "";
             this.stdName.Size = new System.Drawing.Size(257, 32);
             this.stdName.TabIndex = 34;
+            this.stdName.Tag = Little_Hafiz.TargetField.StudentName;
             this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdName.Tag = TargetField.StudentName;
             this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // guardianLinkLabel
@@ -2323,8 +2323,8 @@
             this.stdNameSearch.SelectedText = "";
             this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
             this.stdNameSearch.TabIndex = 7;
+            this.stdNameSearch.Tag = Little_Hafiz.TargetField.StudentName;
             this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdNameSearch.Tag = TargetField.StudentName;
             this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // searchPanelTitle
@@ -2656,8 +2656,10 @@
             this.extractExcelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.extractExcelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.extractExcelBtn.FillColor = System.Drawing.Color.DarkGreen;
+            this.extractExcelBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.extractExcelBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.extractExcelBtn.ForeColor = System.Drawing.Color.White;
+            this.extractExcelBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.extractExcelBtn.Location = new System.Drawing.Point(6, 5);
             this.extractExcelBtn.Name = "extractExcelBtn";
             this.extractExcelBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2703,8 +2705,10 @@
             this.officeEnterBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.officeEnterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.officeEnterBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.officeEnterBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(192)))));
             this.officeEnterBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.officeEnterBtn.ForeColor = System.Drawing.Color.Black;
+            this.officeEnterBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.officeEnterBtn.Location = new System.Drawing.Point(6, 5);
             this.officeEnterBtn.Name = "officeEnterBtn";
             this.officeEnterBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -3749,7 +3753,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel studentsListPanel;
         private Guna.UI2.WinForms.Guna2GradientButton openAddStudentBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
-        private Guna.UI2.WinForms.Guna2Button extractExcelBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton extractExcelBtn;
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
         private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel studentGradesPanel;
@@ -3820,7 +3824,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox stdOfficeCheckBox;
         private Guna.UI2.WinForms.Guna2GradientButton officeHelperBtn;
         private Guna.UI2.WinForms.Guna2TextBox compNotes;
-        private Guna.UI2.WinForms.Guna2Button officeEnterBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton officeEnterBtn;
         private Guna.UI2.WinForms.Guna2TextBox officeTextBox;
         private Guna.UI2.WinForms.Guna2ComboBox officeComboBox;
         private System.Windows.Forms.Label scrollHelperLabel;
