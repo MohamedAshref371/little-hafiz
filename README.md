@@ -26,7 +26,7 @@ A program for managing data on Quran memorizers and the competitions they partic
 
 <br>
 
-My another special gift:
+My another special gifts:
 
 ![Ranks Helper](Screenshots/05-RanksHelper.png)
 
