@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -16,18 +15,30 @@ namespace Little_Hafiz
             listView1.Columns.Add(title, 320, HorizontalAlignment.Center);
             listView1.Columns.Add("التكرار", listView1.ClientSize.Width - 321, HorizontalAlignment.Center);
 
+            ListViewItem item; int count = 0;
             for (int i = 0; i < data.Length; i++)
             {
-                var item = new ListViewItem(data[i].Text);
+                item = new ListViewItem(data[i].Text);
+                count += data[i].Count;
                 item.SubItems.Add(data[i].Count.ToString());
                 listView1.Items.Add(item);
             }
+
+            item = new ListViewItem("المجموع") { BackColor = System.Drawing.Color.FromArgb(192, 255, 192) };
+            item.SubItems.Add(count.ToString());
+            listView1.Items.Add(item);
 
             if (data.Length > 18)
             {
                 ClientSize = new System.Drawing.Size(ClientSize.Width + 20, ClientSize.Height);
                 listView1.ClientSize = new System.Drawing.Size (listView1.ClientSize.Width + 20, listView1.ClientSize.Height);
             }
+
+            listView1.ItemSelectionChanged += (s, e) =>
+            {
+                if (e.Item == item && e.IsSelected)
+                    e.Item.Selected = false;
+            };
 
             listView1.DoubleClick += (s, e) => ConfirmSelection();
         }
