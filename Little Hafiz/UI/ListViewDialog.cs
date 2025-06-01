@@ -24,7 +24,7 @@ namespace Little_Hafiz
                 listView1.Items.Add(item);
             }
 
-            item = new ListViewItem("المجموع") { BackColor = System.Drawing.Color.FromArgb(192, 255, 192) };
+            item = new ListViewItem() { BackColor = System.Drawing.Color.FromArgb(192, 255, 192) };
             item.SubItems.Add(count.ToString());
             listView1.Items.Add(item);
 
