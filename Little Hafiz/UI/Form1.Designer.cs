@@ -1358,7 +1358,7 @@
             this.guardianName.TabIndex = 44;
             this.guardianName.Tag = Little_Hafiz.TargetField.GuardianName;
             this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
+            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataGuardianNameField_KeyUp);
             // 
             // motherPhone
             // 

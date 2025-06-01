@@ -1056,6 +1056,17 @@ namespace Little_Hafiz
                 FieldHelp(box, (TargetField)box.Tag);
         }
 
+        private void StudentDataGuardianNameField_KeyUp(object sender, KeyEventArgs e)
+        {
+            Guna2TextBox box = (Guna2TextBox)sender;
+            if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
+                FieldHelp(box, (TargetField)box.Tag);
+            else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
+                GetStudentNameFromFieldData(box, (TargetField)box.Tag);
+            else if (e.KeyCode == Keys.F3)
+                SearchWithFieldData(box, (TargetField)box.Tag);
+        }
+
         private void StudentDataField_KeyUp(object sender, KeyEventArgs e)
         {
             Guna2TextBox box = (Guna2TextBox)sender;
@@ -1081,7 +1092,7 @@ namespace Little_Hafiz
         {
             FieldData[] data = DatabaseHelper.FieldSearch(target, textbox.Text);
             if (data is null) return;
-            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target), data);
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target) + ": " + textbox.Text, data);
             if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
 
             stdNameSearch.Text = data[lvd.SelectedIndex].Text;
@@ -1121,9 +1132,9 @@ namespace Little_Hafiz
                 case TargetField.MotherQualification: return "مؤهل الأم";
                 case TargetField.FatherJob: return "وظيفة الأب";
                 case TargetField.MotherJob: return "وظيفة الأم";
-                case TargetField.GuardianName: return "اسم ولي الأمر";
-                case TargetField.GuardianLink: return "صلة ولي الأمر بالطالب";
-                case TargetField.School: return "المدرسة / الكلية";
+                case TargetField.GuardianName: return "ولي الأمر";
+                case TargetField.GuardianLink: return "الصلة بالطالب";
+                case TargetField.School: return "المدرسة/الكلية";
                 case TargetField.Class: return "الفصل الدراسي";
                 case TargetField.MaritalStatus: return "الحالة الاجتماعية";
                 default: return null;
