@@ -11,7 +11,13 @@ namespace Little_Hafiz
         {
             if (data is null) Close();
             InitializeComponent();
-            
+
+            if (data.Length >= 18)
+            {
+                ClientSize = new System.Drawing.Size(ClientSize.Width + 20, ClientSize.Height);
+                listView1.ClientSize = new System.Drawing.Size(listView1.ClientSize.Width + 20, listView1.ClientSize.Height);
+            }
+
             listView1.Columns.Add(title, 320, HorizontalAlignment.Center);
             listView1.Columns.Add("التكرار", listView1.ClientSize.Width - 321, HorizontalAlignment.Center);
 
@@ -24,23 +30,17 @@ namespace Little_Hafiz
                 listView1.Items.Add(item);
             }
 
+            listView1.DoubleClick += (s, e) => ConfirmSelection();
+
+            if (data.Length <= 1) return;
             item = new ListViewItem() { BackColor = System.Drawing.Color.FromArgb(220, 255, 220) };
             item.SubItems.Add(total.ToString());
             listView1.Items.Add(item);
-
-            if (data.Length > 18)
-            {
-                ClientSize = new System.Drawing.Size(ClientSize.Width + 20, ClientSize.Height);
-                listView1.ClientSize = new System.Drawing.Size (listView1.ClientSize.Width + 20, listView1.ClientSize.Height);
-            }
-
             listView1.ItemSelectionChanged += (s, e) =>
             {
                 if (e.Item == item && e.IsSelected)
                     e.Item.Selected = false;
             };
-
-            listView1.DoubleClick += (s, e) => ConfirmSelection();
         }
 
         private void ConfirmSelection()
