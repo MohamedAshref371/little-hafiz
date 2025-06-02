@@ -1364,7 +1364,11 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
-            openAddStudentBtn.Focus();
+            if (isQrCode)
+                stdNationalSearch.Focus();
+            else
+                openAddStudentBtn.Focus();
+            isQrCode = false;
         }
 
         private void PrevLevel_ValueChanged(object sender, EventArgs e)
