@@ -11,21 +11,21 @@ namespace Little_Hafiz
         {
             if (data is null) Close();
             InitializeComponent();
-
+            
             listView1.Columns.Add(title, 320, HorizontalAlignment.Center);
             listView1.Columns.Add("التكرار", listView1.ClientSize.Width - 321, HorizontalAlignment.Center);
 
-            ListViewItem item; int count = 0;
+            ListViewItem item; int total = 0;
             for (int i = 0; i < data.Length; i++)
             {
                 item = new ListViewItem(data[i].Text);
-                count += data[i].Count;
+                total += data[i].Count;
                 item.SubItems.Add(data[i].Count.ToString());
                 listView1.Items.Add(item);
             }
 
             item = new ListViewItem() { BackColor = System.Drawing.Color.FromArgb(220, 255, 220) };
-            item.SubItems.Add(count.ToString());
+            item.SubItems.Add(total.ToString());
             listView1.Items.Add(item);
 
             if (data.Length > 18)

@@ -40,6 +40,7 @@
             this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 38);
             this.listView1.MultiSelect = false;
