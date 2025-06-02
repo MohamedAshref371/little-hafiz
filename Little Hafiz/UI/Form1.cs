@@ -401,9 +401,10 @@ namespace Little_Hafiz
         private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
         {
             AddTitleInStudentsListPanel(students.Length);
+            if (students is null) return;
 
             StudentSearchRow stdRow;
-            for (int i = 0; i < students?.Length; i++)
+            for (int i = 0; i < students.Length; i++)
             {
                 stdRow = new StudentSearchRow(students[i]);
                 stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * (i + 1) + 9);
