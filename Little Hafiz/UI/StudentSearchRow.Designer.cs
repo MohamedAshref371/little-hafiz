@@ -34,6 +34,7 @@
             this.stdRank = new System.Windows.Forms.Label();
             this.studentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.gradesBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.totalRows = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stdName
@@ -120,6 +121,19 @@
             this.gradesBtn.TabIndex = 5;
             this.gradesBtn.Text = "المسابقات";
             // 
+            // totalRows
+            // 
+            this.totalRows.BackColor = System.Drawing.Color.Transparent;
+            this.totalRows.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.totalRows.Location = new System.Drawing.Point(3, 0);
+            this.totalRows.Name = "totalRows";
+            this.totalRows.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.totalRows.Size = new System.Drawing.Size(148, 72);
+            this.totalRows.TabIndex = 6;
+            this.totalRows.Text = "النتيجة:\r\n";
+            this.totalRows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalRows.Visible = false;
+            // 
             // StudentSearchRow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -130,6 +144,7 @@
             this.Controls.Add(this.compDate);
             this.Controls.Add(this.compLevel);
             this.Controls.Add(this.stdName);
+            this.Controls.Add(this.totalRows);
             this.Name = "StudentSearchRow";
             this.Size = new System.Drawing.Size(900, 72);
             this.ResumeLayout(false);
@@ -144,5 +159,6 @@
         private System.Windows.Forms.Label stdRank;
         private Guna.UI2.WinForms.Guna2Button studentBtn;
         private Guna.UI2.WinForms.Guna2Button gradesBtn;
+        private System.Windows.Forms.Label totalRows;
     }
 }

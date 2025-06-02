@@ -33,7 +33,7 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AddTitleInStudentsListPanel();
+            AddTitleInStudentsListPanel(0);
 
             Timer timer = new Timer { Interval = 10 };
             timer.Tick += (s, e1) =>
@@ -321,10 +321,10 @@ namespace Little_Hafiz
         #endregion
 
         #region Two Serach Panels
-        private void AddTitleInStudentsListPanel()
+        private void AddTitleInStudentsListPanel(int total)
         {
             studentsListPanel.Controls.Clear();
-            studentsListPanel.Controls.Add(new StudentSearchRow { Location = new Point(9, 9) });
+            studentsListPanel.Controls.Add(new StudentSearchRow(total) { Location = new Point(9, 9) });
         }
 
         private void VersionLabel_DoubleClick(object sender, EventArgs e)
@@ -400,7 +400,7 @@ namespace Little_Hafiz
 
         private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
         {
-            AddTitleInStudentsListPanel();
+            AddTitleInStudentsListPanel(students.Length);
 
             StudentSearchRow stdRow;
             for (int i = 0; i < students?.Length; i++)

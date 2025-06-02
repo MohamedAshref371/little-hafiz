@@ -22,12 +22,18 @@ namespace Little_Hafiz
             remove => gradesBtn.Click -= value;
         }
 
-        public StudentSearchRow()
+        public StudentSearchRow(int total)
         {
             InitializeComponent();
 
             studentBtn.Visible = false;
             gradesBtn.Visible = false;
+
+            if (total >= 3)
+            {
+                totalRows.Visible = true;
+                totalRows.Text += total.ToString() + (total <= 10 ? " طلاب" : " طالب");
+            }
         }
 
         public StudentSearchRowData StudentSearchRowData;
