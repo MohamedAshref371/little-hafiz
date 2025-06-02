@@ -405,8 +405,8 @@ namespace Little_Hafiz
                 AddTitleInStudentsListPanel(0);
                 return;
             }
-            else
-                AddTitleInStudentsListPanel(students.Length);
+
+            AddTitleInStudentsListPanel(students.Length);
 
             StudentSearchRow stdRow;
             for (int i = 0; i < students.Length; i++)
