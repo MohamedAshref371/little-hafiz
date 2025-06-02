@@ -400,12 +400,6 @@ namespace Little_Hafiz
 
         private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
         {
-            if (students is null)
-            {
-                AddTitleInStudentsListPanel(0);
-                return;
-            }
-
             AddTitleInStudentsListPanel(students.Length);
 
             StudentSearchRow stdRow;
