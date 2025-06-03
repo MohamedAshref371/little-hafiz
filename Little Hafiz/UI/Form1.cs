@@ -1630,7 +1630,7 @@ namespace Little_Hafiz
             }
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
-            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(0, 0, stdOfficeSearch.SelectedIndex);
+            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(0, 0, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
             if (rows is null)
             {
                 ErrorMessage();
