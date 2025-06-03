@@ -1069,9 +1069,9 @@ namespace Little_Hafiz
             if (e.KeyCode == Keys.F1 && DatabaseHelper.CurrentOffice == 0)
                 FieldHelp(box, (TargetField)box.Tag);
             else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
-                GetStudentNameFromFieldData(box, (TargetField)box.Tag);
+                GetStudentNameFromFieldData(box.Text, (TargetField)box.Tag);
             else if (e.KeyCode == Keys.F3)
-                SearchWithFieldData(box, (TargetField)box.Tag);
+                SearchWithFieldData(box.Text, (TargetField)box.Tag);
         }
 
         private void StudentDataField_KeyUp(object sender, KeyEventArgs e)
@@ -1080,9 +1080,20 @@ namespace Little_Hafiz
             if (e.KeyCode == Keys.F1)
                 FieldHelp(box, (TargetField)box.Tag);
             else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
-                GetStudentNameFromFieldData(box, (TargetField)box.Tag);
+                GetStudentNameFromFieldData(box.Text, (TargetField)box.Tag);
             else if (e.KeyCode == Keys.F3)
-                SearchWithFieldData(box, (TargetField)box.Tag);
+                SearchWithFieldData(box.Text, (TargetField)box.Tag);
+        }
+
+        private void StudentDateField_KeyUp(object sender, KeyEventArgs e)
+        {
+            Guna2DateTimePicker picker = (Guna2DateTimePicker)sender;
+            if (e.KeyCode == Keys.F1)
+                FieldHelp(picker, (TargetField)picker.Tag);
+            else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
+                GetStudentNameFromFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
+            else if (e.KeyCode == Keys.F3)
+                SearchWithFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
         }
 
         private void FieldHelp(Guna2TextBox textbox, TargetField target)
@@ -1095,11 +1106,21 @@ namespace Little_Hafiz
             textbox.Text = data[lvd.SelectedIndex].Text;
         }
 
-        private void GetStudentNameFromFieldData(Guna2TextBox textbox, TargetField target)
+        private void FieldHelp(Guna2DateTimePicker picker, TargetField target)
         {
-            FieldData[] data = DatabaseHelper.FieldSearch(target, textbox.Text);
+            FieldData[] data = DatabaseHelper.FieldSearch(target);
             if (data is null) return;
-            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target) + ": " + textbox.Text, data);
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target), data);
+            if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
+
+            picker.Value = data[lvd.SelectedIndex].Text.ToStandardDateTime();
+        }
+
+        private void GetStudentNameFromFieldData(string text, TargetField target)
+        {
+            FieldData[] data = DatabaseHelper.FieldSearch(target, text);
+            if (data is null) return;
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target) + ": " + text, data);
             if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
 
             stdNameSearch.Text = data[lvd.SelectedIndex].Text;
@@ -1114,9 +1135,9 @@ namespace Little_Hafiz
             SearchBtn_Click(null, null);
         }
 
-        private void SearchWithFieldData(Guna2TextBox textbox, TargetField target)
+        private void SearchWithFieldData(string text, TargetField target)
         {
-            StudentSearchRowData[] data = DatabaseHelper.SelectStudents(target, textbox.Text, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
+            StudentSearchRowData[] data = DatabaseHelper.SelectStudents(target, text, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
             if (data is null || data.Length == 0) return;
 
             stdNationalCheckBox.Checked = false;

@@ -825,6 +825,8 @@
             this.stdFirstConclusion.Size = new System.Drawing.Size(193, 36);
             this.stdFirstConclusion.TabIndex = 59;
             this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
+            this.stdFirstConclusion.Tag = Little_Hafiz.TargetField.FirstConclusionDate;
+            this.stdFirstConclusion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
             // 
             // stdJoiningDate
             // 
@@ -843,6 +845,8 @@
             this.stdJoiningDate.Size = new System.Drawing.Size(193, 36);
             this.stdJoiningDate.TabIndex = 57;
             this.stdJoiningDate.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.stdJoiningDate.Tag = Little_Hafiz.TargetField.JoiningDate;
+            this.stdJoiningDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
             // 
             // stdJoiningDateLabel
             // 
@@ -1332,6 +1336,8 @@
             this.guardianBirth.Size = new System.Drawing.Size(136, 32);
             this.guardianBirth.TabIndex = 46;
             this.guardianBirth.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            this.guardianBirth.Tag = Little_Hafiz.TargetField.GuardianBirthDate;
+            this.guardianBirth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
             // 
             // guardianName
             // 
@@ -1602,6 +1608,7 @@
             this.stdBirthDate.Size = new System.Drawing.Size(257, 36);
             this.stdBirthDate.TabIndex = 36;
             this.stdBirthDate.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            this.stdBirthDate.Tag = Little_Hafiz.TargetField.StudentBirthDate;
             // 
             // stdNational
             // 
