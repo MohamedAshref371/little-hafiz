@@ -224,7 +224,7 @@ namespace Little_Hafiz
 
             if (isPartial) text = $"LIKE '{text}%'";
             else text = $"= '{text}'";
-            if (office == 0) text += $" AND office = {office}";
+            if (office != 0) text += $" AND office = {office}";
 
             string sql = $"SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national WHERE {column} {text} GROUP BY students.national ORDER BY full_name";
 
