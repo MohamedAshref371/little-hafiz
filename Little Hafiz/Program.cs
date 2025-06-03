@@ -16,7 +16,7 @@ namespace Little_Hafiz
 
             if (!File.Exists("Guna.UI2.dll"))
             {
-                MessageBox.Show("Guna.UI2.dll file is missing.");
+                MessageBox.Show("Guna.UI2.dll file is missing.\ngithub.com/MohamedAshref371/little-hafiz");
                 return;
             }
 
