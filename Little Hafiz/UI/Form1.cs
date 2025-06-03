@@ -1085,34 +1085,21 @@ namespace Little_Hafiz
                 SearchWithFieldData(box.Text, (TargetField)box.Tag);
         }
 
-        private void StudentBirthField_KeyUp(object sender, KeyEventArgs e)
-        {
-            Guna2DateTimePicker picker = (Guna2DateTimePicker)sender;
-            if (e.KeyCode == Keys.F1)
-                FieldHelp(picker, (TargetField)picker.Tag);
-            else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
-                GetStudentNameFromFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
-            else if (e.KeyCode == Keys.F3)
-                SearchWithDateField(picker.Value);
-            else if (e.KeyCode == Keys.F7)
-                /*DataCounting((TargetField)picker.Tag, false)*/;
-            else if (e.KeyCode == Keys.F8)
-                /*DataCounting((TargetField)picker.Tag, true)*/;
-        }
-
         private void StudentDateField_KeyUp(object sender, KeyEventArgs e)
         {
             Guna2DateTimePicker picker = (Guna2DateTimePicker)sender;
+            TargetField target = (TargetField)picker.Tag;
+
             if (e.KeyCode == Keys.F1)
-                FieldHelp(picker, (TargetField)picker.Tag);
+                FieldHelp(picker, target);
             else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
-                GetStudentNameFromFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
+                GetStudentNameFromFieldData(picker.Value.ToStandardString(), target);
             else if (e.KeyCode == Keys.F3)
-                SearchWithFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
+                SearchWithFieldData(picker.Value.ToStandardString(), target);
             else if (e.KeyCode == Keys.F7)
-                DataCounting((TargetField)picker.Tag, false);
+                DateCounting(target, false);
             else if (e.KeyCode == Keys.F8)
-                DataCounting((TargetField)picker.Tag, true);
+                DateCounting(target, true);
         }
 
         private void FieldHelp(Guna2TextBox textbox, TargetField target)
@@ -1166,25 +1153,14 @@ namespace Little_Hafiz
             stdBirthDateCheckBox.Checked = false;
             if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
             CancelBtn_Click(null, null);
+
+            if (target == TargetField.StudentBirthDate)
+                SetSelectedSearch(text.ToStandardDateTime(), 0);
+
             AddStudentRowsInSearchPanel(data);
         }
 
-        private void SearchWithDateField(DateTime date)
-        {
-            stdNationalCheckBox.Checked = false;
-            stdNameCheckBox.Checked = false;
-            stdPhoneCheckBox.Checked = false;
-            stdEmailCheckBox.Checked = false;
-            stdBirthDateCheckBox.Checked = true;
-            stdBirthDateFromCheckBox.Checked = false;
-            stdBirthDateSearch.Value = date;
-            stdBirthDateToCheckBox.Checked = false;
-            if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
-            CancelBtn_Click(null, null);
-            SearchBtn_Click(null, null);
-        }
-
-        private void DataCounting(TargetField target, bool perYear)
+        private void DateCounting(TargetField target, bool perYear)
         {
             FieldData[] data = DatabaseHelper.DateFieldSearch(target, perYear);
             if (data is null) return;
@@ -1201,7 +1177,36 @@ namespace Little_Hafiz
             stdBirthDateCheckBox.Checked = false;
             if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
             CancelBtn_Click(null, null);
+
+            if (target == TargetField.StudentBirthDate)
+                SetSelectedSearch((data[lvd.SelectedIndex].Text + (perYear ? "-01-01" : "-01")).ToStandardDateTime(), perYear ? 2 : 1);
+            
             AddStudentRowsInSearchPanel(rowData);
+        }
+
+        private void SetSelectedSearch(DateTime date, int state)
+        {
+            stdBirthDateCheckBox.Checked = true;
+            if (state == 0)
+            {
+                stdBirthDateFromCheckBox.Checked = false;
+                stdBirthDateToCheckBox.Checked = false;
+                stdBirthDateSearch.Value = date;
+            }
+            else if (state == 1)
+            {
+                stdBirthDateFromCheckBox.Checked = true;
+                stdBirthDateToCheckBox.Checked = true;
+                stdBirthDateSearch.Value = new DateTime(date.Year, date.Month, 1);
+                stdBirthDateToSearch.Value = new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
+            }
+            else if (state == 2)
+            {
+                stdBirthDateFromCheckBox.Checked = true;
+                stdBirthDateToCheckBox.Checked = true;
+                stdBirthDateSearch.Value = new DateTime(date.Year, 1, 1);
+                stdBirthDateToSearch.Value = new DateTime(date.Year, 12, 31);
+            }
         }
 
         private static string GetColumnTitle(TargetField target)

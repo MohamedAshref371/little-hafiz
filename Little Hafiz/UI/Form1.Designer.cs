@@ -1609,7 +1609,7 @@
             this.stdBirthDate.TabIndex = 36;
             this.stdBirthDate.Tag = Little_Hafiz.TargetField.StudentBirthDate;
             this.stdBirthDate.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            this.stdBirthDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentBirthField_KeyUp);
+            this.stdBirthDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
             // 
             // stdNational
             // 
