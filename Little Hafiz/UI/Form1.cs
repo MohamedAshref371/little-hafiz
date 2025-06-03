@@ -1085,6 +1085,21 @@ namespace Little_Hafiz
                 SearchWithFieldData(box.Text, (TargetField)box.Tag);
         }
 
+        private void StudentBirthField_KeyUp(object sender, KeyEventArgs e)
+        {
+            Guna2DateTimePicker picker = (Guna2DateTimePicker)sender;
+            if (e.KeyCode == Keys.F1)
+                FieldHelp(picker, (TargetField)picker.Tag);
+            else if (e.KeyCode == Keys.F2 && DatabaseHelper.CurrentOffice == 0)
+                GetStudentNameFromFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
+            else if (e.KeyCode == Keys.F3)
+                SearchWithDateField(picker.Value);
+            else if (e.KeyCode == Keys.F7)
+                /*DataCounting((TargetField)picker.Tag, false)*/;
+            else if (e.KeyCode == Keys.F8)
+                /*DataCounting((TargetField)picker.Tag, true)*/;
+        }
+
         private void StudentDateField_KeyUp(object sender, KeyEventArgs e)
         {
             Guna2DateTimePicker picker = (Guna2DateTimePicker)sender;
@@ -1152,6 +1167,21 @@ namespace Little_Hafiz
             if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
             CancelBtn_Click(null, null);
             AddStudentRowsInSearchPanel(data);
+        }
+
+        private void SearchWithDateField(DateTime date)
+        {
+            stdNationalCheckBox.Checked = false;
+            stdNameCheckBox.Checked = false;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = true;
+            stdBirthDateFromCheckBox.Checked = false;
+            stdBirthDateSearch.Value = date;
+            stdBirthDateToCheckBox.Checked = false;
+            if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
+            CancelBtn_Click(null, null);
+            SearchBtn_Click(null, null);
         }
 
         private void DataCounting(TargetField target, bool perYear)
