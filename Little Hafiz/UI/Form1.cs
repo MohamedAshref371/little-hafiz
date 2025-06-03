@@ -920,9 +920,11 @@ namespace Little_Hafiz
             if (DatabaseHelper.CurrentOffice != 0)
                 stdOffice.SelectedIndex = DatabaseHelper.CurrentOffice;
 
+            DateTime now = DateTime.Now;
+
             stdName.Text = "";
             stdNational.Text = "";
-            stdBirthDate.Value = DateTime.Now.AddYears(-10);
+            stdBirthDate.Value = now.AddYears(-10);
             stdBirthDate.Enabled = true;
             stdJob.Text = "";
             fatherQuali.Text = "";
@@ -933,7 +935,7 @@ namespace Little_Hafiz
             motherPhone.Text = "";
             guardianName.Text = "";
             guardianLink.Text = "";
-            guardianBirth.Value = DateTime.Now.AddYears(-20);
+            guardianBirth.Value = now.AddYears(-20);
             stdPhone.Text = "";
             stdAddress.Text = "";
             stdEmail.Text = "";
@@ -946,9 +948,9 @@ namespace Little_Hafiz
             stdMemo.Text = "";
             stdMashaykh.Text = "";
             stdMemoPlaces.Text = "";
-            stdJoiningDate.Value = DateTime.Now.AddYears(-5);
+            stdJoiningDate.Value = now;
             stdFirstConclusionCheckBox.Checked = false;
-            stdFirstConclusion.Value = DateTime.Now.AddYears(-2);
+            stdFirstConclusion.Value = now;
             stdCertificates.Text = "";
             stdIjazah.Text = "";
             stdCourses.Text = "";
