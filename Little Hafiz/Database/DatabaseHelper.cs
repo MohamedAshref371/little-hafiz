@@ -420,6 +420,7 @@ namespace Little_Hafiz
             switch (target)
             {
                 case TargetField.StudentName: return "full_name";
+                case TargetField.StudentBirthDate: return "birth_date";
                 case TargetField.StudentJob: return "job";
                 case TargetField.FatherQualification: return "father_quali";
                 case TargetField.MotherQualification: return "mother_quali";
@@ -427,9 +428,12 @@ namespace Little_Hafiz
                 case TargetField.MotherJob: return "mother_job";
                 case TargetField.GuardianName: return "guardian_name";
                 case TargetField.GuardianLink: return "guardian_link";
+                case TargetField.GuardianBirthDate: return "guardian_birth";
                 case TargetField.School: return "school";
                 case TargetField.Class: return "class";
                 case TargetField.MaritalStatus: return "marital_status";
+                case TargetField.JoiningDate: return "joining_date";
+                case TargetField.FirstConclusionDate: return "conclusion_date";
                 default: return null;
             }
         }

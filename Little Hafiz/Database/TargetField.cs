@@ -2,11 +2,12 @@
 {
     internal enum TargetField
     {
-        StudentName, StudentJob,
+        StudentName, StudentBirthDate, StudentJob,
         FatherQualification, MotherQualification,
         FatherJob, MotherJob,
-        GuardianName, GuardianLink,
+        GuardianName, GuardianLink, GuardianBirthDate,
         School, Class,
-        MaritalStatus
+        MaritalStatus,
+        JoiningDate, FirstConclusionDate
     }
 }

@@ -115,6 +115,11 @@ namespace Little_Hafiz
                 openCompsCheckBox.Visible = false;
             }
             SetLogoImage();
+
+            stdBirthDateLabel.Click += (s, e1) => stdBirthDate.Focus();
+            guardianBirthLabel.Click += (s, e1) => guardianBirth.Focus();
+            stdJoiningDateLabel.Click += (s, e1) => stdJoiningDate.Focus();
+            stdFirstConclusionCheckBox.Click += (s, e1) => { if (stdFirstConclusionCheckBox.Checked) stdFirstConclusion.Focus(); };
         }
 
         private bool zxing, aForge;
@@ -802,7 +807,7 @@ namespace Little_Hafiz
 
                 FullName = stdNameLabel.Text + stdName.Text,
                 NationalNumber = stdNationalLabel.Text + stdNational.Text,
-                BirthDate = birthLabel.Text + stdBirthDate.Value.ToStandardString(),
+                BirthDate = stdBirthDateLabel.Text + stdBirthDate.Value.ToStandardString(),
                 Job = jobLabel.Text + stdJob.Text,
 
                 FatherQualification = fatherQualiLabel.Text + fatherQuali.Text,
@@ -1127,6 +1132,7 @@ namespace Little_Hafiz
             switch (target)
             {
                 case TargetField.StudentName: return "اسم الطالب";
+                case TargetField.StudentBirthDate: return "تاريخ الميلاد";
                 case TargetField.StudentJob: return "وظيفة الطالب";
                 case TargetField.FatherQualification: return "مؤهل الأب";
                 case TargetField.MotherQualification: return "مؤهل الأم";
@@ -1134,9 +1140,12 @@ namespace Little_Hafiz
                 case TargetField.MotherJob: return "وظيفة الأم";
                 case TargetField.GuardianName: return "ولي الأمر";
                 case TargetField.GuardianLink: return "الصلة بالطالب";
+                case TargetField.GuardianBirthDate: return "ميلاد ولي الأمر";
                 case TargetField.School: return "المدرسة/الكلية";
                 case TargetField.Class: return "الفصل الدراسي";
                 case TargetField.MaritalStatus: return "الحالة الاجتماعية";
+                case TargetField.JoiningDate: return "تاريخ الانضمام للمكتب";
+                case TargetField.FirstConclusionDate: return "الختمة الأولى";
                 default: return null;
             }
         }
@@ -1855,7 +1864,7 @@ namespace Little_Hafiz
         {
             if (File.Exists("Color01.txt"))
             {
-                string[] arr = string.Join("", File.ReadAllText("Color01.txt").Where(c => c == '|' || c == ',' || c == '#' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))).Split('|');
+                string[] arr = string.Join("", File.ReadAllText("Color01.txt").Where(c => c == '|' || c == ',' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))).Split('|');
                 if (arr.Length == 9)
                 {
                     SetColor(ParseColor(arr[0]), ParseColor(arr[1]));
@@ -1984,16 +1993,13 @@ namespace Little_Hafiz
                 return isValidRgb ? Color.FromArgb(r, g, b) : Color.Black;
             }
 
-            if (System.Text.RegularExpressions.Regex.IsMatch(input, @"^#?[A-Fa-f0-9]{6}$"))
-            {
-                input = input.TrimStart('#');
+            if (System.Text.RegularExpressions.Regex.IsMatch(input, @"^[A-Fa-f0-9]{6}$"))
                 return Color.FromArgb(
                     int.Parse(input.Substring(0, 2), System.Globalization.NumberStyles.HexNumber),
                     int.Parse(input.Substring(2, 2), System.Globalization.NumberStyles.HexNumber),
                     int.Parse(input.Substring(4, 2), System.Globalization.NumberStyles.HexNumber)
                     );
-            }
-
+            
             Color known = Color.FromName(input);
             if (known.IsKnownColor) return known;
 
@@ -2226,9 +2232,9 @@ namespace Little_Hafiz
             jobLabel.Font = new Font("Tahoma", 12F);
             jobLabel.Location = new Point(345, 260);
             jobLabel.Size = new System.Drawing.Size(75, 25);
-            birthLabel.Font = new Font("Tahoma", 12F);
-            birthLabel.Location = new Point(802, 255);
-            birthLabel.Size = new System.Drawing.Size(103, 25);
+            stdBirthDateLabel.Font = new Font("Tahoma", 12F);
+            stdBirthDateLabel.Location = new Point(802, 255);
+            stdBirthDateLabel.Size = new System.Drawing.Size(103, 25);
             stdNationalLabel.Font = new Font("Tahoma", 12F);
             stdNationalLabel.Location = new Point(308, 198);
             stdNationalLabel.Size = new System.Drawing.Size(112, 25);

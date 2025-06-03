@@ -106,7 +106,7 @@
             this.fatherJobLabel = new System.Windows.Forms.Label();
             this.fatherQualiLabel = new System.Windows.Forms.Label();
             this.jobLabel = new System.Windows.Forms.Label();
-            this.birthLabel = new System.Windows.Forms.Label();
+            this.stdBirthDateLabel = new System.Windows.Forms.Label();
             this.stdNationalLabel = new System.Windows.Forms.Label();
             this.stdNameLabel = new System.Windows.Forms.Label();
             this.stdPhoneLabel = new System.Windows.Forms.Label();
@@ -357,7 +357,7 @@
             this.studentDataPanel.Controls.Add(this.fatherJobLabel);
             this.studentDataPanel.Controls.Add(this.fatherQualiLabel);
             this.studentDataPanel.Controls.Add(this.jobLabel);
-            this.studentDataPanel.Controls.Add(this.birthLabel);
+            this.studentDataPanel.Controls.Add(this.stdBirthDateLabel);
             this.studentDataPanel.Controls.Add(this.stdNationalLabel);
             this.studentDataPanel.Controls.Add(this.stdNameLabel);
             this.studentDataPanel.Controls.Add(this.stdPhoneLabel);
@@ -853,7 +853,7 @@
             this.stdJoiningDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdJoiningDateLabel.Size = new System.Drawing.Size(179, 25);
             this.stdJoiningDateLabel.TabIndex = 56;
-            this.stdJoiningDateLabel.Text = "تاريخ الإلتحاق بالمكتب : ";
+            this.stdJoiningDateLabel.Text = "تاريخ الالتحاق بالمكتب : ";
             this.stdJoiningDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdMemoPlaces
@@ -1788,17 +1788,17 @@
             this.jobLabel.Text = "الوظيفة : ";
             this.jobLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // birthLabel
+            // stdBirthDateLabel
             // 
-            this.birthLabel.BackColor = System.Drawing.Color.Transparent;
-            this.birthLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.birthLabel.Location = new System.Drawing.Point(802, 255);
-            this.birthLabel.Name = "birthLabel";
-            this.birthLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.birthLabel.Size = new System.Drawing.Size(103, 25);
-            this.birthLabel.TabIndex = 6;
-            this.birthLabel.Text = "تاريخ الميلاد : ";
-            this.birthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stdBirthDateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDateLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdBirthDateLabel.Location = new System.Drawing.Point(802, 255);
+            this.stdBirthDateLabel.Name = "stdBirthDateLabel";
+            this.stdBirthDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdBirthDateLabel.Size = new System.Drawing.Size(103, 25);
+            this.stdBirthDateLabel.TabIndex = 6;
+            this.stdBirthDateLabel.Text = "تاريخ الميلاد : ";
+            this.stdBirthDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // stdNationalLabel
             // 
@@ -3668,7 +3668,7 @@
         private System.Windows.Forms.Label studentPanelTitle;
         private System.Windows.Forms.Label stdNationalLabel;
         private Guna.UI2.WinForms.Guna2TextBox stdNational;
-        private System.Windows.Forms.Label birthLabel;
+        private System.Windows.Forms.Label stdBirthDateLabel;
         private Guna.UI2.WinForms.Guna2DateTimePicker stdBirthDate;
         private System.Windows.Forms.Label wrongValueLabel;
         private System.Windows.Forms.Label alreadyExistsLabel;

@@ -7,7 +7,7 @@ namespace Little_Hafiz
     {
         public int SelectedIndex { get; private set; } = -1;
 
-        public ListViewDialog(string title, FieldData[] data)
+        public ListViewDialog(string title, FieldData[] data, bool clickable = true)
         {
             if (data is null) Close();
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Little_Hafiz
                 listView1.Items.Add(item);
             }
 
-            listView1.DoubleClick += (s, e) => ConfirmSelection();
+            if (clickable) listView1.DoubleClick += (s, e) => ConfirmSelection();
 
             if (data.Length <= 1) return;
             item = new ListViewItem() { BackColor = System.Drawing.Color.FromArgb(220, 255, 220) };
