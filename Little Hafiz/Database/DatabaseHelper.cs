@@ -10,7 +10,7 @@ namespace Little_Hafiz
     internal static class DatabaseHelper
     {
         private static bool success = false;
-        private static readonly int classVersion = 6;
+        private static readonly int classVersion = 7;
         private static readonly string dataFolder = "data", recordsFolder = $"{dataFolder}\\records", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{recordsFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
@@ -217,12 +217,16 @@ namespace Little_Hafiz
             return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
 
-        public static StudentSearchRowData[] SelectStudents(TargetField target, string text, int office)
+        public static StudentSearchRowData[] SelectStudents(TargetField target, string text, int office, bool isPartial = false)
         {
             string column = GetColumnTitle(target);
             if (column is null) return null;
 
-            string sql = $"SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national WHERE {column} = '{text}' {(office == 0 ? "" : $"AND office = {office}")} GROUP BY students.national ORDER BY full_name";
+            if (isPartial) text = $"LIKE '{text}%'";
+            else text = $"= '{text}'";
+            if (office == 0) text += $" AND office = {office}";
+
+            string sql = $"SELECT students.national, full_name, birth_date TEXT, competition_level, MAX(competition_date) competition_date, std_rank, image FROM students LEFT OUTER JOIN grades ON students.national = grades.national WHERE {column} {text} GROUP BY students.national ORDER BY full_name";
 
             return SelectMultiRows(sql, GetStudentSearchRowData);
         }
@@ -383,6 +387,16 @@ namespace Little_Hafiz
             if (column is null) return null;
 
             string sql = $"SELECT {column} AS text, COUNT({column}) AS count FROM students GROUP BY {column} ORDER BY text";
+
+            return SelectMultiRows(sql, GetFieldData);
+        }
+
+        public static FieldData[] DateFieldSearch(TargetField target, bool perYear)
+        {
+            string column = GetColumnTitle(target);
+            if (column is null) return null;
+
+            string sql = $"SELECT strftime('{(perYear ? "%Y" : "%Y-%m")}', {column}) AS text, COUNT({column}) AS count FROM students GROUP BY text ORDER BY text";
 
             return SelectMultiRows(sql, GetFieldData);
         }

@@ -1094,6 +1094,10 @@ namespace Little_Hafiz
                 GetStudentNameFromFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
             else if (e.KeyCode == Keys.F3)
                 SearchWithFieldData(picker.Value.ToStandardString(), (TargetField)picker.Tag);
+            else if (e.KeyCode == Keys.F7)
+                DataCounting((TargetField)picker.Tag, false);
+            else if (e.KeyCode == Keys.F8)
+                DataCounting((TargetField)picker.Tag, true);
         }
 
         private void FieldHelp(Guna2TextBox textbox, TargetField target)
@@ -1148,6 +1152,26 @@ namespace Little_Hafiz
             if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
             CancelBtn_Click(null, null);
             AddStudentRowsInSearchPanel(data);
+        }
+
+        private void DataCounting(TargetField target, bool perYear)
+        {
+            FieldData[] data = DatabaseHelper.DateFieldSearch(target, perYear);
+            if (data is null) return;
+            ListViewDialog lvd = new ListViewDialog(GetColumnTitle(target), data);
+            if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
+
+            StudentSearchRowData[] rowData = DatabaseHelper.SelectStudents(target, data[lvd.SelectedIndex].Text, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0, true);
+            if (rowData is null || rowData.Length == 0) return;
+
+            stdNationalCheckBox.Checked = false;
+            stdNameCheckBox.Checked = false;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = false;
+            if (stdOfficeSearch.SelectedIndex == 0) stdOfficeCheckBox.Checked = false;
+            CancelBtn_Click(null, null);
+            AddStudentRowsInSearchPanel(rowData);
         }
 
         private static string GetColumnTitle(TargetField target)
