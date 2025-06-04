@@ -509,11 +509,11 @@ namespace Little_Hafiz
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks});", Program.Record);
+            return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})", Program.Record);
         }
 
         public static int AddGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"INSERT INTO grades VALUES ({data});", Program.Record);
+            => ExecuteNonQuery($"INSERT INTO grades VALUES ({data})", Program.Record);
 
         public static int AddOffice(string name, string notes)
             => ExecuteNonQuery($"INSERT INTO offices (name, notes) VALUES ('{name}', '{notes}')");
@@ -523,11 +523,11 @@ namespace Little_Hafiz
             if (data.Image != "" && !IsInsideImagesFolder(data))
                 CopyImageToImagesFolder(data);
 
-            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}';", Program.Record);
+            return ExecuteNonQuery($"UPDATE students SET ({studentsTableColumnsNames}) = ({data}, 0, {DateTime.Now.Ticks}) WHERE national = '{data.NationalNumber}'", Program.Record);
         }
 
         public static int UpdateStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
+            => ExecuteNonQuery($"UPDATE grades SET score = {data.Score}, std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'", Program.Record);
 
         public static int UpdateStudentRank(CompetitionRankData data)
             => ExecuteNonQuery($"UPDATE grades SET std_rank = {data.Rank} WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'");
@@ -540,10 +540,10 @@ namespace Little_Hafiz
         }
 
         public static int DeleteStudentGrade(CompetitionGradeData data)
-            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}';", Program.Record);
+            => ExecuteNonQuery($"DELETE FROM grades WHERE national = '{data.NationalNumber}' AND competition_date = '{data.CompetitionDate}'", Program.Record);
 
         public static int DeleteStudentPermanently(string nationalNumber)
-            => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}';", Program.Record);
+            => ExecuteNonQuery($"DELETE FROM students WHERE national = '{nationalNumber}'", Program.Record);
 
         public static int RemoveDeletedStudent30Days()
             => ExecuteNonQuery($"DELETE FROM students WHERE state = 2 AND state_date >= {DateTime.Now.AddDays(-30).Ticks}");
@@ -582,8 +582,8 @@ namespace Little_Hafiz
                 if (recording)
                 {
                     if (!File.Exists(recordFile))
-                        File.AppendAllText(recordFile, CreateDate.Ticks.ToString().PadLeft(19, '0'));
-                    File.AppendAllText(recordFile, sql);
+                        File.AppendAllText(recordFile, Base64Converter.StringToBase64(CreateDate.Ticks.ToString()));
+                    File.AppendAllText(recordFile, ";" + Base64Converter.StringToBase64(sql));
                 }
                 return rtrn;
             }
@@ -649,23 +649,32 @@ namespace Little_Hafiz
             string[] dataFiles = Directory.GetFiles(folder, $"*{fileFormat}", SearchOption.TopDirectoryOnly).OrderBy(f => f).ToArray();
 
             List<string> err = new List<string>();
-            string sql; bool isTrue;
+            string[] sqls; bool isTrue;
             for (int i = 0; i < dataFiles.Length; i++)
             {
-                sql = File.ReadAllText(dataFiles[i]);
-                isTrue = long.TryParse(sql.Substring(0, 19), out long num);
+                sqls = File.ReadAllText(dataFiles[i]).Split(';').Select(sql => Base64Converter.Base64ToString(sql)).Where(sql => sql != string.Empty).ToArray();
+                isTrue = long.TryParse(sqls[0], out long num);
                 if (!isTrue || num != CreateDate.Ticks)
                 {
                     err.Add(Path.GetFileName(dataFiles[i]));
                     continue; 
                 }
-                if (ExecuteNonQuery(sql.Substring(19)) == -1)
+                if (!ExecuteNonQuery(sqls))
                     err.Add(Path.GetFileName(dataFiles[i]));
             }
 
             RemoveOldImages();
             RemoveAllRecords();
             return err.ToArray();
+        }
+
+        private static bool ExecuteNonQuery(string[] sqls)
+        {
+            bool noErrors = true;
+            for (int i = 1; i < sqls.Length; i++)
+                if (ExecuteNonQuery(sqls[i]) == -1)
+                    noErrors = false;
+            return noErrors;
         }
 
         private static void DatabaseBackup()

@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
+    <Compile Include="Base64Converter.cs" />
     <Compile Include="Printer\BarcodeScanner.cs" />
     <Compile Include="Database\CompetitionRankData.cs" />
     <Compile Include="Database\CompetitionGradeData.cs" />
