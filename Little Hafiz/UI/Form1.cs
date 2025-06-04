@@ -169,8 +169,14 @@ namespace Little_Hafiz
             StudentGradeRow.ReadOnly = !equalZero;
             StudentRankRow.ReadOnly = !equalZero;
 
+            dataRecorderCheckBox.Checked = equalZero;
+            dataRecorderCheckBox.Enabled = !equalZero;
+            readRecordsBtn.Enabled = !equalZero;
+
             if (!equalZero)
             {
+                disableAtAll.Visible = false;
+
                 if (ranksCalculatorPanel.Visible)
                     CloseBtn2_Click(null, null);
 
