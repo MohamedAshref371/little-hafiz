@@ -169,12 +169,9 @@ namespace Little_Hafiz
             StudentGradeRow.ReadOnly = !equalZero;
             StudentRankRow.ReadOnly = !equalZero;
 
-            dataRecorderCheckBox.Checked = equalZero;
-            dataRecorderCheckBox.Enabled = !equalZero;
-            readRecordsBtn.Enabled = !equalZero;
-
             if (!equalZero)
             {
+                dataRecorderCheckBox.Checked = true;
                 disableAtAll.Visible = false;
 
                 if (ranksCalculatorPanel.Visible)
@@ -183,6 +180,9 @@ namespace Little_Hafiz
                 if (officeEnterBtn.Visible)
                     HideOfficeTools();
             }
+
+            dataRecorderCheckBox.Enabled = !equalZero;
+            readRecordsBtn.Enabled = !equalZero;
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
