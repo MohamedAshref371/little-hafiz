@@ -6,6 +6,7 @@
         FatherQualification, MotherQualification,
         FatherJob, MotherJob,
         GuardianName, GuardianLink, GuardianBirthDate,
+        Address,
         School, Class,
         MaritalStatus,
         MemoAmount,

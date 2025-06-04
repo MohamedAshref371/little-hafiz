@@ -1223,6 +1223,7 @@ namespace Little_Hafiz
                 case TargetField.GuardianName: return "ولي الأمر";
                 case TargetField.GuardianLink: return "الصلة بالطالب";
                 case TargetField.GuardianBirthDate: return "ميلاد ولي الأمر";
+                case TargetField.Address: return "عنوان الطالب";
                 case TargetField.School: return "المدرسة/الكلية";
                 case TargetField.Class: return "الفصل الدراسي";
                 case TargetField.MaritalStatus: return "الحالة الاجتماعية";

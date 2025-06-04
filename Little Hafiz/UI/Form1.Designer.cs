@@ -1254,7 +1254,9 @@
             this.stdAddress.SelectedText = "";
             this.stdAddress.Size = new System.Drawing.Size(257, 32);
             this.stdAddress.TabIndex = 48;
+            this.stdAddress.Tag = TargetField.Address;
             this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdAddressLabel
             // 
