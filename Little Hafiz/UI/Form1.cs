@@ -1594,16 +1594,21 @@ namespace Little_Hafiz
                 return;
             }
 
-            float scr = 99999; int rnk = 0; StudentRankRow row;
+            float scr = 99999; int rnk = 0, rankShift = 0;
+            StudentRankRow row;
             for (int i = 1; i < ranksListPanel.Controls.Count; i++)
             {
                 row = (StudentRankRow)ranksListPanel.Controls[i];
 
                 if (row.CompetitionRankData.Score < scr)
                 {
-                    ++rnk;
+                    rnk += rankShift + 1;
+                    rankShift = 0;
                     scr = row.CompetitionRankData.Score;
                 }
+                else if (standardRankingCheckBox.Checked)
+                    rankShift += 1;
+                
                 if (row.CompetitionRankData.Score == scr)
                     row.StudentRank.Value = rnk;
             }
@@ -2627,6 +2632,9 @@ namespace Little_Hafiz
             ranksPanelTitle.Font = new Font("Tahoma", 12F);
             ranksPanelTitle.Location = new Point(132, 5);
             ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
+            standardRankingCheckBox.Font = new Font("Tahoma", 10F);
+            standardRankingCheckBox.Location = new Point(6, 61);
+            standardRankingCheckBox.Size = new System.Drawing.Size(120, 24);
             disableAtAll.Location = new Point(455, 11);
             disableAtAll.Size = new System.Drawing.Size(8, 15);
             officeComboBox.Font = new Font("Segoe UI", 10F);

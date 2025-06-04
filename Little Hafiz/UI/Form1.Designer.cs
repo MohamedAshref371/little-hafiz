@@ -212,6 +212,7 @@
             this.wrongThingLabel = new System.Windows.Forms.Label();
             this.wrongThing2Label = new System.Windows.Forms.Label();
             this.ranksPanelTitle = new System.Windows.Forms.Label();
+            this.standardRankingCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -967,7 +968,7 @@
             this.stdMemo.SelectedText = "";
             this.stdMemo.Size = new System.Drawing.Size(257, 32);
             this.stdMemo.TabIndex = 56;
-            this.stdMemo.Tag = TargetField.MemoAmount;
+            this.stdMemo.Tag = Little_Hafiz.TargetField.MemoAmount;
             this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdMemo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
@@ -1254,7 +1255,7 @@
             this.stdAddress.SelectedText = "";
             this.stdAddress.Size = new System.Drawing.Size(257, 32);
             this.stdAddress.TabIndex = 48;
-            this.stdAddress.Tag = TargetField.Address;
+            this.stdAddress.Tag = Little_Hafiz.TargetField.Address;
             this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
@@ -3325,6 +3326,7 @@
             this.ranksCalculatorPanel.Controls.Add(this.wrongThingLabel);
             this.ranksCalculatorPanel.Controls.Add(this.wrongThing2Label);
             this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
+            this.ranksCalculatorPanel.Controls.Add(this.standardRankingCheckBox);
             this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -3597,6 +3599,26 @@
             this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
             this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // standardRankingCheckBox
+            // 
+            this.standardRankingCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.standardRankingCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.standardRankingCheckBox.CheckedState.BorderRadius = 3;
+            this.standardRankingCheckBox.CheckedState.BorderThickness = 1;
+            this.standardRankingCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.standardRankingCheckBox.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.standardRankingCheckBox.Location = new System.Drawing.Point(6, 61);
+            this.standardRankingCheckBox.Name = "standardRankingCheckBox";
+            this.standardRankingCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.standardRankingCheckBox.Size = new System.Drawing.Size(120, 24);
+            this.standardRankingCheckBox.TabIndex = 104;
+            this.standardRankingCheckBox.Text = "ترتيب تنافسي";
+            this.standardRankingCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.standardRankingCheckBox.UncheckedState.BorderRadius = 3;
+            this.standardRankingCheckBox.UncheckedState.BorderThickness = 1;
+            this.standardRankingCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.standardRankingCheckBox.UseVisualStyleBackColor = false;
+            // 
             // disableAtAll
             // 
             this.disableAtAll.BackColor = System.Drawing.Color.Transparent;
@@ -3856,6 +3878,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox copyStdNameCheckBox;
         private Guna.UI2.WinForms.Guna2CheckBox arrangeBigFieldsCheckBox;
         private System.Windows.Forms.Label logo;
+        private Guna.UI2.WinForms.Guna2CheckBox standardRankingCheckBox;
     }
 }
 
