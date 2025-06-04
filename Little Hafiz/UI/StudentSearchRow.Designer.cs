@@ -41,10 +41,10 @@
             // 
             this.stdName.BackColor = System.Drawing.Color.Transparent;
             this.stdName.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdName.Location = new System.Drawing.Point(532, 0);
+            this.stdName.Location = new System.Drawing.Point(512, 0);
             this.stdName.Name = "stdName";
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdName.Size = new System.Drawing.Size(365, 40);
+            this.stdName.Size = new System.Drawing.Size(385, 40);
             this.stdName.TabIndex = 0;
             this.stdName.Text = "اسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,7 +53,7 @@
             // 
             this.compLevel.BackColor = System.Drawing.Color.Transparent;
             this.compLevel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compLevel.Location = new System.Drawing.Point(407, 0);
+            this.compLevel.Location = new System.Drawing.Point(387, 0);
             this.compLevel.Name = "compLevel";
             this.compLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.compLevel.Size = new System.Drawing.Size(119, 40);
@@ -65,7 +65,7 @@
             // 
             this.compDate.BackColor = System.Drawing.Color.Transparent;
             this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compDate.Location = new System.Drawing.Point(282, 0);
+            this.compDate.Location = new System.Drawing.Point(262, 0);
             this.compDate.Name = "compDate";
             this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.compDate.Size = new System.Drawing.Size(119, 40);
@@ -77,7 +77,7 @@
             // 
             this.stdRank.BackColor = System.Drawing.Color.Transparent;
             this.stdRank.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdRank.Location = new System.Drawing.Point(157, 0);
+            this.stdRank.Location = new System.Drawing.Point(137, 0);
             this.stdRank.Name = "stdRank";
             this.stdRank.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdRank.Size = new System.Drawing.Size(119, 40);
@@ -98,7 +98,7 @@
             this.studentBtn.ForeColor = System.Drawing.Color.Black;
             this.studentBtn.Image = global::Little_Hafiz.Properties.Resources.board;
             this.studentBtn.ImageSize = new System.Drawing.Size(42, 40);
-            this.studentBtn.Location = new System.Drawing.Point(85, 0);
+            this.studentBtn.Location = new System.Drawing.Point(73, 0);
             this.studentBtn.Name = "studentBtn";
             this.studentBtn.Size = new System.Drawing.Size(40, 40);
             this.studentBtn.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.totalRows.Location = new System.Drawing.Point(3, 0);
             this.totalRows.Name = "totalRows";
             this.totalRows.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.totalRows.Size = new System.Drawing.Size(148, 40);
+            this.totalRows.Size = new System.Drawing.Size(128, 40);
             this.totalRows.TabIndex = 6;
             this.totalRows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.totalRows.Visible = false;
@@ -128,7 +128,7 @@
             this.gradesBtn.ForeColor = System.Drawing.Color.White;
             this.gradesBtn.Image = global::Little_Hafiz.Properties.Resources.emoji100;
             this.gradesBtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.gradesBtn.Location = new System.Drawing.Point(33, 0);
+            this.gradesBtn.Location = new System.Drawing.Point(21, 0);
             this.gradesBtn.Name = "gradesBtn";
             this.gradesBtn.Size = new System.Drawing.Size(40, 40);
             this.gradesBtn.TabIndex = 5;
