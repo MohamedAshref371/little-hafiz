@@ -180,9 +180,7 @@ namespace Little_Hafiz
                 if (officeEnterBtn.Visible)
                     HideOfficeTools();
             }
-
             dataRecorderCheckBox.Enabled = equalZero;
-            readRecordsBtn.Enabled = equalZero;
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
@@ -313,6 +311,11 @@ namespace Little_Hafiz
 
         private void ReadRecordsBtn_Click(object sender, EventArgs e)
         {
+            if (DatabaseHelper.CurrentOffice != 0)
+            {
+                MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
+                return;
+            }
             if (MessageBox.Show("هل انت متأكد أنك الجهاز الرئيسي الذي ستؤول إليه كل التسجيلات ؟", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.No)
                 return;
             if (selectDataFolderDialog.ShowDialog() != DialogResult.OK) return;
