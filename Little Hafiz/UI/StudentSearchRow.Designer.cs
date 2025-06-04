@@ -97,10 +97,10 @@
             this.studentBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.studentBtn.ForeColor = System.Drawing.Color.Black;
             this.studentBtn.Image = global::Little_Hafiz.Properties.Resources.board;
-            this.studentBtn.ImageSize = new System.Drawing.Size(36, 36);
+            this.studentBtn.ImageSize = new System.Drawing.Size(42, 40);
             this.studentBtn.Location = new System.Drawing.Point(85, 0);
             this.studentBtn.Name = "studentBtn";
-            this.studentBtn.Size = new System.Drawing.Size(42, 40);
+            this.studentBtn.Size = new System.Drawing.Size(40, 40);
             this.studentBtn.TabIndex = 4;
             // 
             // totalRows
@@ -127,7 +127,7 @@
             this.gradesBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gradesBtn.ForeColor = System.Drawing.Color.White;
             this.gradesBtn.Image = global::Little_Hafiz.Properties.Resources.emoji100;
-            this.gradesBtn.ImageSize = new System.Drawing.Size(36, 36);
+            this.gradesBtn.ImageSize = new System.Drawing.Size(40, 40);
             this.gradesBtn.Location = new System.Drawing.Point(33, 0);
             this.gradesBtn.Name = "gradesBtn";
             this.gradesBtn.Size = new System.Drawing.Size(40, 40);
