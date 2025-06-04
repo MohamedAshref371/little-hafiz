@@ -8,6 +8,7 @@
         GuardianName, GuardianLink, GuardianBirthDate,
         School, Class,
         MaritalStatus,
+        MemoAmount,
         JoiningDate, FirstConclusionDate
     }
 }

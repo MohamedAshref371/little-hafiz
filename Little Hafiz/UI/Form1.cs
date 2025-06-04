@@ -1226,6 +1226,7 @@ namespace Little_Hafiz
                 case TargetField.School: return "المدرسة/الكلية";
                 case TargetField.Class: return "الفصل الدراسي";
                 case TargetField.MaritalStatus: return "الحالة الاجتماعية";
+                case TargetField.MemoAmount: return "مقدار الحفظ";
                 case TargetField.JoiningDate: return "تاريخ الانضمام للمكتب";
                 case TargetField.FirstConclusionDate: return "الختمة الأولى";
                 default: return null;

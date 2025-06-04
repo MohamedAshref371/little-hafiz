@@ -967,7 +967,9 @@
             this.stdMemo.SelectedText = "";
             this.stdMemo.Size = new System.Drawing.Size(257, 32);
             this.stdMemo.TabIndex = 56;
+            this.stdMemo.Tag = TargetField.MemoAmount;
             this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMemo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdMemoLabel
             // 
