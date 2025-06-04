@@ -181,8 +181,8 @@ namespace Little_Hafiz
                     HideOfficeTools();
             }
 
-            dataRecorderCheckBox.Enabled = !equalZero;
-            readRecordsBtn.Enabled = !equalZero;
+            dataRecorderCheckBox.Enabled = equalZero;
+            readRecordsBtn.Enabled = equalZero;
         }
 
         private void FormImage_DoubleClick(object sender, EventArgs e)
