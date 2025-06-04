@@ -38,7 +38,7 @@ namespace Little_Hafiz
                 scoreLabel.Visible = true;
                 rankLabel.Visible = true;
                 scoreLabel.Text = data.Score.ToString("F2");
-                rankLabel.Text = data.Rank.ToString();
+                rankLabel.Text = Ranks.ConvertNumberToRank(data.Rank);
             }
             else
             {
