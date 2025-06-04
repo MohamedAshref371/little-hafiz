@@ -1906,8 +1906,6 @@ namespace Little_Hafiz
                 SetTextBoxColor(Color.FromArgb(220, 255, 255));
                 SetTextBoxSearchColor(Color.FromArgb(220, 255, 220));
                 SetCompoBoxColor(Color.FromArgb(192, 255, 192));
-                StudentSearchRow.StudentButtonColor = Color.Empty;
-                StudentSearchRow.GradesButtonColor = Color.Empty;
                 SetRedTextColor(Color.FromArgb(192, 0, 0));
             }
             colorState = (colorState + 1) % 5;
@@ -1944,7 +1942,7 @@ namespace Little_Hafiz
             switch (colorState)
             {
                 case 1:
-                    Color01Execute();
+                    if (!Color01Execute()) ColorBtn_Click(null, null);
                     return;
                 case 2:
                     ForeColor = Color.White;
@@ -1961,33 +1959,24 @@ namespace Little_Hafiz
             }
         }
 
-        private void Color01Execute()
+        private bool Color01Execute()
         {
             if (File.Exists("Color01.txt"))
             {
                 string[] arr = string.Join("", File.ReadAllText("Color01.txt").Where(c => c == '|' || c == ',' || (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))).Split('|');
-                if (arr.Length == 9)
+                if (arr.Length == 7)
                 {
                     SetColor(ParseColor(arr[0]), ParseColor(arr[1]));
                     ForeColor = ParseColor(arr[2]);
                     SetTextBoxColor(ParseColor(arr[3]));
                     SetTextBoxSearchColor(ParseColor(arr[4]));
                     SetCompoBoxColor(ParseColor(arr[5]));
-                    StudentSearchRow.StudentButtonColor = ParseColor(arr[6]);
-                    StudentSearchRow.GradesButtonColor = ParseColor(arr[7]);
-                    SetRedTextColor(ParseColor(arr[8]));
-                    return;
+                    SetRedTextColor(ParseColor(arr[6]));
+                    return true;
                 }
             }
 
-            SetColor(Color.FromArgb(79, 163, 55), Color.FromArgb(64, 140, 43));
-            ForeColor = Color.Black;
-            SetTextBoxColor(Color.FromArgb(255, 255, 60));
-            SetTextBoxSearchColor(Color.FromArgb(240, 255, 60));
-            SetCompoBoxColor(Color.FromArgb(255, 255, 180));
-            StudentSearchRow.StudentButtonColor = Color.LightYellow;
-            StudentSearchRow.GradesButtonColor = Color.Green;
-            SetRedTextColor(Color.Maroon);
+            return false;
         }
 
         private void ColorBtn_KeyUp(object sender, KeyEventArgs e)

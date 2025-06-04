@@ -33,8 +33,8 @@
             this.compDate = new System.Windows.Forms.Label();
             this.stdRank = new System.Windows.Forms.Label();
             this.studentBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.gradesBtn = new Guna.UI2.WinForms.Guna2Button();
             this.totalRows = new System.Windows.Forms.Label();
+            this.gradesBtn = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // stdName
@@ -44,7 +44,7 @@
             this.stdName.Location = new System.Drawing.Point(532, 0);
             this.stdName.Name = "stdName";
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdName.Size = new System.Drawing.Size(365, 72);
+            this.stdName.Size = new System.Drawing.Size(365, 40);
             this.stdName.TabIndex = 0;
             this.stdName.Text = "اسم الطالب";
             this.stdName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,7 +56,7 @@
             this.compLevel.Location = new System.Drawing.Point(407, 0);
             this.compLevel.Name = "compLevel";
             this.compLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.compLevel.Size = new System.Drawing.Size(119, 72);
+            this.compLevel.Size = new System.Drawing.Size(119, 40);
             this.compLevel.TabIndex = 1;
             this.compLevel.Text = "المستوى";
             this.compLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +68,7 @@
             this.compDate.Location = new System.Drawing.Point(282, 0);
             this.compDate.Name = "compDate";
             this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.compDate.Size = new System.Drawing.Size(119, 72);
+            this.compDate.Size = new System.Drawing.Size(119, 40);
             this.compDate.TabIndex = 2;
             this.compDate.Text = "تاريخ المسابقة";
             this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +80,7 @@
             this.stdRank.Location = new System.Drawing.Point(157, 0);
             this.stdRank.Name = "stdRank";
             this.stdRank.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdRank.Size = new System.Drawing.Size(119, 72);
+            this.stdRank.Size = new System.Drawing.Size(119, 40);
             this.stdRank.TabIndex = 3;
             this.stdRank.Text = "مركزه";
             this.stdRank.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,37 +89,19 @@
             // 
             this.studentBtn.BackColor = System.Drawing.Color.Transparent;
             this.studentBtn.BorderRadius = 15;
-            this.studentBtn.BorderThickness = 1;
             this.studentBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.studentBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.studentBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.studentBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.studentBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.studentBtn.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.studentBtn.FillColor = System.Drawing.Color.Transparent;
+            this.studentBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.studentBtn.ForeColor = System.Drawing.Color.Black;
-            this.studentBtn.Location = new System.Drawing.Point(3, 1);
+            this.studentBtn.Image = global::Little_Hafiz.Properties.Resources.board;
+            this.studentBtn.ImageSize = new System.Drawing.Size(36, 36);
+            this.studentBtn.Location = new System.Drawing.Point(85, 0);
             this.studentBtn.Name = "studentBtn";
-            this.studentBtn.Size = new System.Drawing.Size(148, 34);
+            this.studentBtn.Size = new System.Drawing.Size(42, 40);
             this.studentBtn.TabIndex = 4;
-            this.studentBtn.Text = "بيانات الطالب";
-            // 
-            // gradesBtn
-            // 
-            this.gradesBtn.BackColor = System.Drawing.Color.Transparent;
-            this.gradesBtn.BorderRadius = 15;
-            this.gradesBtn.BorderThickness = 1;
-            this.gradesBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.gradesBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.gradesBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.gradesBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.gradesBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
-            this.gradesBtn.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.gradesBtn.ForeColor = System.Drawing.Color.White;
-            this.gradesBtn.Location = new System.Drawing.Point(3, 36);
-            this.gradesBtn.Name = "gradesBtn";
-            this.gradesBtn.Size = new System.Drawing.Size(148, 34);
-            this.gradesBtn.TabIndex = 5;
-            this.gradesBtn.Text = "المسابقات";
             // 
             // totalRows
             // 
@@ -128,11 +110,28 @@
             this.totalRows.Location = new System.Drawing.Point(3, 0);
             this.totalRows.Name = "totalRows";
             this.totalRows.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.totalRows.Size = new System.Drawing.Size(148, 72);
+            this.totalRows.Size = new System.Drawing.Size(148, 40);
             this.totalRows.TabIndex = 6;
-            this.totalRows.Text = "النتيجة:\r\n";
             this.totalRows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.totalRows.Visible = false;
+            // 
+            // gradesBtn
+            // 
+            this.gradesBtn.BackColor = System.Drawing.Color.Transparent;
+            this.gradesBtn.BorderRadius = 15;
+            this.gradesBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.gradesBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.gradesBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.gradesBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.gradesBtn.FillColor = System.Drawing.Color.Transparent;
+            this.gradesBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gradesBtn.ForeColor = System.Drawing.Color.White;
+            this.gradesBtn.Image = global::Little_Hafiz.Properties.Resources.emoji100;
+            this.gradesBtn.ImageSize = new System.Drawing.Size(36, 36);
+            this.gradesBtn.Location = new System.Drawing.Point(33, 0);
+            this.gradesBtn.Name = "gradesBtn";
+            this.gradesBtn.Size = new System.Drawing.Size(40, 40);
+            this.gradesBtn.TabIndex = 5;
             // 
             // StudentSearchRow
             // 
@@ -146,7 +145,7 @@
             this.Controls.Add(this.stdName);
             this.Controls.Add(this.totalRows);
             this.Name = "StudentSearchRow";
-            this.Size = new System.Drawing.Size(900, 72);
+            this.Size = new System.Drawing.Size(900, 40);
             this.ResumeLayout(false);
 
         }
