@@ -165,6 +165,10 @@ namespace Little_Hafiz
             stdOfficeCheckBox.Enabled = equalZero;
             stdOfficeSearch.Enabled = equalZero;
             officeRank.Enabled = equalZero;
+
+            StudentGradeRow.ReadOnly = !equalZero;
+            StudentRankRow.ReadOnly = !equalZero;
+
             if (!equalZero)
             {
                 if (ranksCalculatorPanel.Visible)
@@ -1560,7 +1564,6 @@ namespace Little_Hafiz
                 }
             }
 
-            StudentRankRow.ReadOnly = DatabaseHelper.CurrentOffice != 0;
             ranksListPanel.Controls.Clear();
             ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
 

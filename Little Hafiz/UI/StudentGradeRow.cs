@@ -7,6 +7,7 @@ namespace Little_Hafiz
 {
     public partial class StudentGradeRow : UserControl
     {
+        public static bool ReadOnly;
         public StudentGradeRow()
         {
             InitializeComponent();
@@ -28,14 +29,24 @@ namespace Little_Hafiz
             prevLevel.Text = Ranks.ConvertNumberToRank(data.PreviousLevel);
             currentLevel.Text = Ranks.ConvertNumberToRank(data.CompetitionLevel);
             compDate.Text = data.CompetitionDate;
-            stdScore.Value = (decimal)data.Score;
-            stdRank.Value = data.Rank;
 
-            if (DatabaseHelper.CurrentOffice != 0)
+            if (ReadOnly)
+            {
                 deleteBtn.Visible = false;
-
-            stdScore.ValueChanged += StdScore_ValueChanged;
-            stdRank.ValueChanged += StdRank_ValueChanged;
+                stdScore.Visible = false;
+                stdRank.Visible = false;
+                scoreLabel.Visible = true;
+                rankLabel.Visible = true;
+                scoreLabel.Text = data.Score.ToString("F2");
+                rankLabel.Text = data.Rank.ToString();
+            }
+            else
+            {
+                stdScore.Value = (decimal)data.Score;
+                stdRank.Value = data.Rank;
+                stdScore.ValueChanged += StdScore_ValueChanged;
+                stdRank.ValueChanged += StdRank_ValueChanged;
+            }
         }
 
         private void CompDate_DoubleClick(object sender, EventArgs e)
@@ -43,22 +54,16 @@ namespace Little_Hafiz
             if (CompetitionGradeData != null && CompetitionGradeData.Notes.Trim() != "")
                 MessageBox.Show(CompetitionGradeData.Notes);
         }
-        
+
         private void StdScore_ValueChanged(object sender, EventArgs e)
-        {
-            if (DatabaseHelper.CurrentOffice == 0)
-                saveBtn.Visible = true;
-        }
+            => saveBtn.Visible = true;
         
         private void StdRank_ValueChanged(object sender, EventArgs e)
-        {
-            if (DatabaseHelper.CurrentOffice == 0)
-                saveBtn.Visible = true;
-        }
-
+            => saveBtn.Visible = true;
+        
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseHelper.CurrentOffice != 0)
+            if (ReadOnly)
             {
                 MessageBox.Show("لا يمكن للنسخ الفرعية تعديل المسابقات");
                 return;
@@ -78,7 +83,7 @@ namespace Little_Hafiz
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (DatabaseHelper.CurrentOffice != 0)
+            if (ReadOnly)
             {
                 MessageBox.Show("لا يمكن للنسخ الفرعية حذف المسابقات");
                 return;
