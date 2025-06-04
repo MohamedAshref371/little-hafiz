@@ -92,10 +92,10 @@
             // 
             this.stdScore.BackColor = System.Drawing.Color.Transparent;
             this.stdScore.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdScore.Location = new System.Drawing.Point(122, 3);
+            this.stdScore.Location = new System.Drawing.Point(122, 0);
             this.stdScore.Name = "stdScore";
             this.stdScore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdScore.Size = new System.Drawing.Size(85, 34);
+            this.stdScore.Size = new System.Drawing.Size(85, 40);
             this.stdScore.TabIndex = 56;
             this.stdScore.Text = "الدرجة";
             this.stdScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,10 +104,10 @@
             // 
             this.stdRankLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdRankLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdRankLabel.Location = new System.Drawing.Point(3, 3);
+            this.stdRankLabel.Location = new System.Drawing.Point(3, 0);
             this.stdRankLabel.Name = "stdRankLabel";
             this.stdRankLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdRankLabel.Size = new System.Drawing.Size(113, 34);
+            this.stdRankLabel.Size = new System.Drawing.Size(113, 40);
             this.stdRankLabel.TabIndex = 57;
             this.stdRankLabel.Text = "المركز";
             this.stdRankLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,10 +117,10 @@
             // 
             this.compDate.BackColor = System.Drawing.Color.Transparent;
             this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compDate.Location = new System.Drawing.Point(213, 3);
+            this.compDate.Location = new System.Drawing.Point(213, 0);
             this.compDate.Name = "compDate";
             this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.compDate.Size = new System.Drawing.Size(100, 34);
+            this.compDate.Size = new System.Drawing.Size(100, 40);
             this.compDate.TabIndex = 58;
             this.compDate.Text = "التاريخ";
             this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
