@@ -2622,8 +2622,8 @@ namespace Little_Hafiz
             ranksPanelTitle.Location = new Point(132, 5);
             ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
             standardRankingCheckBox.Font = new Font("Tahoma", 10F);
-            standardRankingCheckBox.Location = new Point(6, 61);
-            standardRankingCheckBox.Size = new System.Drawing.Size(120, 24);
+            standardRankingCheckBox.Location = new Point(4, 61);
+            standardRankingCheckBox.Size = new System.Drawing.Size(115, 24);
             disableAtAll.Location = new Point(455, 11);
             disableAtAll.Size = new System.Drawing.Size(8, 15);
             officeComboBox.Font = new Font("Segoe UI", 10F);
