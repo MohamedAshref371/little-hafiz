@@ -56,6 +56,18 @@ namespace Little_Hafiz
             stdRank.Text = Ranks.ConvertNumberToRank(rank);
         }
 
+        private void StudentBtn_SizeChanged(object sender, EventArgs e)
+        {
+            int minSize = Math.Min(studentBtn.Width, studentBtn.Height);
+            studentBtn.ImageSize = new Size(minSize, minSize);
+        }
+
+        private void GradesBtn_SizeChanged(object sender, EventArgs e)
+        {
+            int minSize = Math.Min(gradesBtn.Width, gradesBtn.Height);
+            gradesBtn.ImageSize = new Size(minSize, minSize);
+        }
+
         #region Border Radius
         private readonly int borderRadius = 20;
 
