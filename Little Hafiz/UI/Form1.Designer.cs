@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.closeBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.minimizeBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.closeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.minimizeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.cancel1Btn = new Guna.UI2.WinForms.Guna2Button();
             this.copyStdDataBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -167,7 +167,7 @@
             this.compCount = new System.Windows.Forms.Label();
             this.stdAge = new System.Windows.Forms.Label();
             this.stdAgeLabel = new System.Windows.Forms.Label();
-            this.addGradeBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.addGradeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.compDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdRank = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdScore = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -201,8 +201,8 @@
             this.compsLabel = new System.Windows.Forms.Label();
             this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
             this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.setRanksBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.setRanksBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dateToLabel = new System.Windows.Forms.Label();
             this.dateFromLabel = new System.Windows.Forms.Label();
             this.compLevel = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -252,8 +252,10 @@
             this.closeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.closeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.closeBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.closeBtn.Location = new System.Drawing.Point(15, 4);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(32, 30);
@@ -271,8 +273,10 @@
             this.minimizeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.minimizeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.minimizeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.minimizeBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.minimizeBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.minimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.minimizeBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.minimizeBtn.Location = new System.Drawing.Point(86, 12);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(35, 14);
@@ -2047,7 +2051,7 @@
             // maximizeBtn
             // 
             this.maximizeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.maximizeBtn.BorderColor = System.Drawing.Color.Blue;
+            this.maximizeBtn.BorderColor = System.Drawing.Color.Navy;
             this.maximizeBtn.BorderRadius = 3;
             this.maximizeBtn.BorderThickness = 3;
             this.maximizeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -2940,8 +2944,10 @@
             this.addGradeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.addGradeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.addGradeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.addGradeBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.addGradeBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addGradeBtn.ForeColor = System.Drawing.Color.Black;
+            this.addGradeBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.addGradeBtn.Location = new System.Drawing.Point(44, 516);
             this.addGradeBtn.Name = "addGradeBtn";
             this.addGradeBtn.Size = new System.Drawing.Size(158, 45);
@@ -3452,8 +3458,10 @@
             this.setRanksBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.setRanksBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.setRanksBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(120)))), ((int)(((byte)(220)))));
+            this.setRanksBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(190)))));
             this.setRanksBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.setRanksBtn.ForeColor = System.Drawing.Color.White;
+            this.setRanksBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.setRanksBtn.Location = new System.Drawing.Point(11, 83);
             this.setRanksBtn.Name = "setRanksBtn";
             this.setRanksBtn.Size = new System.Drawing.Size(117, 39);
@@ -3470,8 +3478,10 @@
             this.getGradesDataBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.getGradesDataBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.getGradesDataBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.getGradesDataBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(140)))), ((int)(((byte)(100)))));
             this.getGradesDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.getGradesDataBtn.ForeColor = System.Drawing.Color.Black;
+            this.getGradesDataBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.getGradesDataBtn.Location = new System.Drawing.Point(132, 83);
             this.getGradesDataBtn.Name = "getGradesDataBtn";
             this.getGradesDataBtn.Size = new System.Drawing.Size(117, 39);
@@ -3607,10 +3617,10 @@
             this.standardRankingCheckBox.CheckedState.BorderThickness = 1;
             this.standardRankingCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.standardRankingCheckBox.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.standardRankingCheckBox.Location = new System.Drawing.Point(6, 61);
+            this.standardRankingCheckBox.Location = new System.Drawing.Point(4, 61);
             this.standardRankingCheckBox.Name = "standardRankingCheckBox";
             this.standardRankingCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.standardRankingCheckBox.Size = new System.Drawing.Size(120, 24);
+            this.standardRankingCheckBox.Size = new System.Drawing.Size(115, 24);
             this.standardRankingCheckBox.TabIndex = 104;
             this.standardRankingCheckBox.Text = "ترتيب تنافسي";
             this.standardRankingCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -3694,8 +3704,8 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Button closeBtn;
-        private Guna.UI2.WinForms.Guna2Button minimizeBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton closeBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton minimizeBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel studentDataPanel;
         private Guna.UI2.WinForms.Guna2TextBox stdName;
         private System.Windows.Forms.Label stdNameLabel;
@@ -3816,7 +3826,7 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown stdScore;
         private Guna.UI2.WinForms.Guna2DateTimePicker compDate;
         private Guna.UI2.WinForms.Guna2NumericUpDown stdRank;
-        private Guna.UI2.WinForms.Guna2Button addGradeBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton addGradeBtn;
         private System.Windows.Forms.Label currentLevelExplain;
         private System.Windows.Forms.Label prevLevelExplain;
         private Guna.UI2.WinForms.Guna2GradientButton releasesLatestBtn;
@@ -3836,8 +3846,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker compDateFrom;
         private Guna.UI2.WinForms.Guna2DateTimePicker compDateTo;
         private System.Windows.Forms.Label dateToLabel;
-        private Guna.UI2.WinForms.Guna2Button setRanksBtn;
-        private Guna.UI2.WinForms.Guna2Button getGradesDataBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton setRanksBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton getGradesDataBtn;
         private Guna.UI2.WinForms.Guna2Button closeBtn2;
         private Guna.UI2.WinForms.Guna2GradientPanel ranksListPanel;
         private System.Windows.Forms.Label wrongThingLabel;
