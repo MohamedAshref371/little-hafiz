@@ -187,12 +187,14 @@ namespace Little_Hafiz
         {
             if (officeComboBox.Visible)
             {
+                if (stdOffice.Visible) return;
                 DatabaseHelper.UpdateMetadataOffice(officeComboBox.SelectedIndex);
                 GetOffice();
                 officeComboBox.Visible = false;
                 formTitle.Visible = true;
                 return;
             }
+
             if (DatabaseHelper.CurrentOffice != 0)
                 MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
 
