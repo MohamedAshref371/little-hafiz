@@ -3412,7 +3412,7 @@
             // 
             this.compsLabel.AutoSize = true;
             this.compsLabel.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.compsLabel.Location = new System.Drawing.Point(834, 118);
+            this.compsLabel.Location = new System.Drawing.Point(830, 118);
             this.compsLabel.Name = "compsLabel";
             this.compsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.compsLabel.Size = new System.Drawing.Size(69, 17);

@@ -134,9 +134,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgeCalculator.cs" />
+    <Compile Include="UI\AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
-    <Compile Include="Base64Converter.cs" />
+    <Compile Include="Database\Base64Converter.cs" />
     <Compile Include="Printer\BarcodeScanner.cs" />
     <Compile Include="Database\CompetitionRankData.cs" />
     <Compile Include="Database\CompetitionGradeData.cs" />
@@ -144,7 +144,7 @@
     <Compile Include="Database\ExcelRowData.cs" />
     <Compile Include="Database\FieldData.cs" />
     <Compile Include="Database\TargetField.cs" />
-    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="Database\DateTimeExtensions.cs" />
     <Compile Include="GetAppUpdate.cs" />
     <Compile Include="UI\ListViewDialog.cs">
       <SubType>Form</SubType>
