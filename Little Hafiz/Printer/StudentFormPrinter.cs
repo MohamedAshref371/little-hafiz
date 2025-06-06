@@ -55,7 +55,7 @@ namespace Little_Hafiz
             {
                 SetSmallFields(g);
                 currentParagraphIndex = 0;
-                PrintBigFields(paragraphs, e, 670);
+                PrintBigFields(paragraphs, e, 710);
             }
             else
                 PrintBigFields(paragraphs, e, 30);
@@ -124,6 +124,9 @@ namespace Little_Hafiz
             g.DrawString(data.MemorizationAmount, font, brush, new RectangleF(10, 580, 380, 30), format);
             g.DrawString(data.JoiningDate, font, brush, new RectangleF(400, 620, 400, 30), format);
             g.DrawString(data.FirstConclusionDate, font, brush, new RectangleF(10, 620, 380, 30), format);
+
+            g.DrawString(data.StudentTeacher, font, brush, new RectangleF(400, 660, 400, 30), format);
+            g.DrawString(data.StudentGroup, font, brush, new RectangleF(10, 660, 380, 30), format);
         }
 
         readonly string[] paragraphs;

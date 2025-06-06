@@ -66,7 +66,7 @@ namespace Little_Hafiz
                     timer.Start();
                 }
             };
-            headerPanel.MouseDown += meh;
+            containerPanel.MouseDown += meh;
             formTitle.MouseDown += meh;
             //formImage.MouseDown += meh;
 
@@ -850,6 +850,9 @@ namespace Little_Hafiz
                 JoiningDate = stdJoiningDateLabel.Text + stdJoiningDate.Value.ToStandardString(),
                 FirstConclusionDate = stdFirstConclusionCheckBox.Text + (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value.ToStandardString() : "لا توجد"),
 
+                StudentTeacher = stdTeacherLabel.Text + stdTeacher.Text,
+                StudentGroup = stdGroupLabel.Text + stdGroup.Text,
+
                 StudentMashaykh = stdMashaykhLabel.Text + stdMashaykh.Text,
                 MemorizePlaces = stdMemoPlacesLabel.Text + stdMemoPlaces.Text,
                 Certificates = stdCertificatesLabel.Text + stdCertificates.Text,
@@ -901,10 +904,12 @@ namespace Little_Hafiz
                 ArrangementBetweenBrothers = (int)stdArrangement.Value,
                 MaritalStatus = stdMaritalStatus.Text,
                 MemorizationAmount = stdMemo.Text,
-                StudentMashaykh = stdMashaykh.Text,
-                MemorizePlaces = stdMemoPlaces.Text,
                 JoiningDate = stdJoiningDate.Value.ToStandardString(),
                 FirstConclusionDate = (stdFirstConclusionCheckBox.Checked ? stdFirstConclusion.Value : stdBirthDate.Value.AddYears(-20)).ToStandardString(),
+                StudentTeacher = stdTeacher.Text,
+                StudentGroup = stdGroup.Text,
+                StudentMashaykh = stdMashaykh.Text,
+                MemorizePlaces = stdMemoPlaces.Text,
                 Certificates = stdCertificates.Text,
                 Ijazah = stdIjazah.Text,
                 Courses = stdCourses.Text,
@@ -960,11 +965,13 @@ namespace Little_Hafiz
             //stdArrangement.Value = 1;
             stdMaritalStatus.Text = "";
             stdMemo.Text = "";
-            stdMashaykh.Text = "";
-            stdMemoPlaces.Text = "";
             stdJoiningDate.Value = now;
             stdFirstConclusionCheckBox.Checked = false;
             stdFirstConclusion.Value = now;
+            stdTeacher.Text = "";
+            stdGroup.Text = "";
+            stdMashaykh.Text = "";
+            stdMemoPlaces.Text = "";
             stdCertificates.Text = "";
             stdIjazah.Text = "";
             stdCourses.Text = "";
@@ -1003,11 +1010,13 @@ namespace Little_Hafiz
             stdArrangement.Value = stdData.ArrangementBetweenBrothers;
             stdMaritalStatus.Text = stdData.MaritalStatus;
             stdMemo.Text = stdData.MemorizationAmount;
-            stdMashaykh.Text = stdData.StudentMashaykh;
-            stdMemoPlaces.Text = stdData.MemorizePlaces;
             stdJoiningDate.Value = stdData.JoiningDate.ToStandardDateTime();
             stdFirstConclusion.Value = stdData.FirstConclusionDate.ToStandardDateTime();
             stdFirstConclusionCheckBox.Checked = stdFirstConclusion.Value > stdBirthDate.Value;
+            stdTeacher.Text = stdData.StudentTeacher;
+            stdGroup.Text = stdData.StudentGroup;
+            stdMashaykh.Text = stdData.StudentMashaykh;
+            stdMemoPlaces.Text = stdData.MemorizePlaces;
             stdCertificates.Text = stdData.Certificates;
             stdIjazah.Text = stdData.Ijazah;
             stdCourses.Text = stdData.Courses;
@@ -1244,6 +1253,8 @@ namespace Little_Hafiz
                 case TargetField.MemoAmount: return "مقدار الحفظ";
                 case TargetField.JoiningDate: return "تاريخ الانضمام للمكتب";
                 case TargetField.FirstConclusionDate: return "الختمة الأولى";
+                case TargetField.StudentTeacher: return "مدرس الطالب";
+                case TargetField.StudentGroup: return "مجموعة الطالب";
                 default: return null;
             }
         }
@@ -1921,8 +1932,8 @@ namespace Little_Hafiz
             if (colorState == 0)
             {
                 ForeColor = Color.Black;
-                headerPanel.FillColor = Color.FromArgb(192, 192, 255);
-                headerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
+                containerPanel.FillColor = Color.FromArgb(192, 192, 255);
+                containerPanel.FillColor2 = Color.FromArgb(128, 128, 255);
                 studentSearchPanel.FillColor = Color.FromArgb(255, 192, 255);
                 studentSearchPanel.FillColor2 = Color.FromArgb(192, 192, 255);
                 studentsListPanel.FillColor = Color.FromArgb(192, 255, 255);
@@ -1996,8 +2007,8 @@ namespace Little_Hafiz
 
         private void SetColor(Color clr1, Color clr2)
         {
-            headerPanel.FillColor = clr1;
-            headerPanel.FillColor2 = clr2;
+            containerPanel.FillColor = clr1;
+            containerPanel.FillColor2 = clr2;
             studentSearchPanel.FillColor = clr1;
             studentSearchPanel.FillColor2 = clr2;
             studentsListPanel.FillColor = clr1;

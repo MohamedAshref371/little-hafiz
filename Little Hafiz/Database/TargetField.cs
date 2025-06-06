@@ -10,6 +10,7 @@
         School, Class,
         MaritalStatus,
         MemoAmount,
-        JoiningDate, FirstConclusionDate
+        JoiningDate, FirstConclusionDate,
+        StudentTeacher, StudentGroup
     }
 }

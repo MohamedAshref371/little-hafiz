@@ -24,6 +24,7 @@
 
         public string MemorizationAmount;
         public string OfficeName, JoiningDate, FirstConclusionDate;
+        public string StudentTeacher, StudentGroup;
 
         public string StudentMashaykh, MemorizePlaces;
         public string Certificates, Ijazah, Courses, Skills, Hobbies, StdComps, Notes;

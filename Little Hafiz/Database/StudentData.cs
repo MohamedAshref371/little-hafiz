@@ -22,6 +22,8 @@ namespace Little_Hafiz
         public int BrothersCount, ArrangementBetweenBrothers;
 
         public string MaritalStatus; public string MemorizationAmount;
+        public string StudentTeacher, StudentGroup;
+
         public string StudentMashaykh, MemorizePlaces;
         public string JoiningDate, FirstConclusionDate;
         public string Certificates, Ijazah, Courses, Skills, Hobbies, StdComps, Notes;
@@ -30,6 +32,6 @@ namespace Little_Hafiz
         public string ImageName => Image.Split('\\').Last();
 
         public override string ToString()
-            => $"{OfficeId}, '{FullName.Trim()}', '{NationalNumber}', '{BirthDate}', '{Job.Trim()}', '{FatherQualification.Trim()}', '{MotherQualification.Trim()}', '{FatherJob.Trim()}', '{MotherJob.Trim()}', '{FatherPhone}', '{MotherPhone}', '{GuardianName.Trim()}', '{GuardianLink.Trim()}', '{GuardianBirth}', '{PhoneNumber}', '{Address}', '{Email}', '{Facebook}', '{School.Trim()}', '{Class.Trim()}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus.Trim()}', '{MemorizationAmount}', '{StudentMashaykh}', '{MemorizePlaces}', '{JoiningDate}', '{FirstConclusionDate}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{StdComps}', '{Notes}', '{ImageName}'";
+            => $"{OfficeId}, '{FullName.Trim()}', '{NationalNumber}', '{BirthDate}', '{Job.Trim()}', '{FatherQualification.Trim()}', '{MotherQualification.Trim()}', '{FatherJob.Trim()}', '{MotherJob.Trim()}', '{FatherPhone}', '{MotherPhone}', '{GuardianName.Trim()}', '{GuardianLink.Trim()}', '{GuardianBirth}', '{PhoneNumber}', '{Address.Trim()}', '{Email}', '{Facebook}', '{School.Trim()}', '{Class.Trim()}', {BrothersCount}, {ArrangementBetweenBrothers}, '{MaritalStatus.Trim()}', '{MemorizationAmount.Trim()}', '{JoiningDate}', '{FirstConclusionDate}', '{StudentTeacher.Trim()}', '{StudentGroup.Trim()}', '{StudentMashaykh}', '{MemorizePlaces}', '{Certificates}', '{Ijazah}', '{Courses}', '{Skills}', '{Hobbies}', '{StdComps}', '{Notes}', '{ImageName}'";
     }
 }

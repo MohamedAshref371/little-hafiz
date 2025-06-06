@@ -10,7 +10,7 @@ namespace Little_Hafiz
     internal static class DatabaseHelper
     {
         private static bool success = false;
-        private static readonly int classVersion = 7;
+        private static readonly int classVersion = 8;
         private static readonly string dataFolder = "data", recordsFolder = $"{dataFolder}\\records", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{recordsFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
         private static readonly SQLiteConnection conn = new SQLiteConnection();
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
@@ -57,7 +57,7 @@ namespace Little_Hafiz
                 conn.Open();
                 command.CommandText = "CREATE TABLE offices (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, notes TEXT);" +
                                       "CREATE TABLE metadata (version INTEGER PRIMARY KEY, create_date INTEGER, office INTEGER REFERENCES offices (id), comment TEXT);" +
-                                      "CREATE TABLE students (office INTEGER REFERENCES offices (id), full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, mashaykh TEXT, memo_places TEXT, joining_date TEXT, conclusion_date TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, std_comps TEXT, notes TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
+                                      "CREATE TABLE students (office INTEGER REFERENCES offices (id), full_name TEXT, national TEXT PRIMARY KEY, birth_date TEXT, job TEXT, father_quali TEXT, mother_quali TEXT, father_job TEXT, mother_job TEXT, father_phone TEXT, mother_phone TEXT, guardian_name TEXT, guardian_link TEXT, guardian_birth TEXT, phone_number TEXT, address TEXT, email TEXT, facebook TEXT, school TEXT, class TEXT, brothers_count INTEGER, arrangement INTEGER, marital_status TEXT, memo_amount TEXT, joining_date TEXT, conclusion_date TEXT, teacher TEXT, std_group TEXT, mashaykh TEXT, memo_places TEXT, certificates TEXT, ijazah TEXT, courses TEXT, skills TEXT, hobbies TEXT, std_comps TEXT, notes TEXT, image TEXT, state INTEGER, state_date INTEGER);" +
                                       "CREATE TABLE grades (national TEXT REFERENCES students (national), std_code INTEGER, prev_level INTEGER, competition_level INTEGER, competition_date TEXT, score NUMERIC, std_rank INTEGER, notes TEXT, PRIMARY KEY (national, competition_date) );" +
                                       $"INSERT INTO offices VALUES (0, '{System.Windows.Forms.Application.ProductName}', '');" +
                                       $"INSERT INTO metadata VALUES ({classVersion}, '{DateTime.Now.Ticks}', 0, 'https://github.com/MohamedAshref371');";
@@ -302,10 +302,12 @@ namespace Little_Hafiz
                 ArrangementBetweenBrothers = reader.GetInt32(21),
                 MaritalStatus = (string)reader["marital_status"],
                 MemorizationAmount = (string)reader["memo_amount"],
-                StudentMashaykh = (string)reader["mashaykh"],
-                MemorizePlaces = (string)reader["memo_places"],
                 JoiningDate = (string)reader["joining_date"],
                 FirstConclusionDate = (string)reader["conclusion_date"],
+                StudentTeacher = (string)reader["teacher"],
+                StudentGroup = (string)reader["std_group"],
+                StudentMashaykh = (string)reader["mashaykh"],
+                MemorizePlaces = (string)reader["memo_places"],
                 Certificates = (string)reader["certificates"],
                 Ijazah = (string)reader["ijazah"],
                 Courses = (string)reader["courses"],
@@ -450,6 +452,8 @@ namespace Little_Hafiz
                 case TargetField.MemoAmount: return "memo_amount";
                 case TargetField.JoiningDate: return "joining_date";
                 case TargetField.FirstConclusionDate: return "conclusion_date";
+                case TargetField.StudentTeacher: return "teacher";
+                case TargetField.StudentGroup: return "std_group";
                 default: return null;
             }
         }

@@ -34,6 +34,10 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdTeacher = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdGroup = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdGroupLabel = new System.Windows.Forms.Label();
+            this.stdTeacherLabel = new System.Windows.Forms.Label();
             this.cancel1Btn = new Guna.UI2.WinForms.Guna2Button();
             this.copyStdDataBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdComps = new Guna.UI2.WinForms.Guna2TextBox();
@@ -158,7 +162,7 @@
             this.officeEnterBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.versionLabel = new System.Windows.Forms.Label();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.headerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.containerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.formImage = new System.Windows.Forms.Label();
             this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -222,7 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
-            this.headerPanel.SuspendLayout();
+            this.containerPanel.SuspendLayout();
             this.studentGradesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdScore)).BeginInit();
@@ -290,6 +294,10 @@
             this.studentDataPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentDataPanel.BorderRadius = 5;
             this.studentDataPanel.BorderThickness = 1;
+            this.studentDataPanel.Controls.Add(this.stdTeacher);
+            this.studentDataPanel.Controls.Add(this.stdGroup);
+            this.studentDataPanel.Controls.Add(this.stdGroupLabel);
+            this.studentDataPanel.Controls.Add(this.stdTeacherLabel);
             this.studentDataPanel.Controls.Add(this.cancel1Btn);
             this.studentDataPanel.Controls.Add(this.copyStdDataBtn);
             this.studentDataPanel.Controls.Add(this.stdComps);
@@ -387,6 +395,84 @@
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
             // 
+            // stdTeacher
+            // 
+            this.stdTeacher.BackColor = System.Drawing.Color.Transparent;
+            this.stdTeacher.BorderRadius = 5;
+            this.stdTeacher.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdTeacher.DefaultText = "";
+            this.stdTeacher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdTeacher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdTeacher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdTeacher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdTeacher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdTeacher.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdTeacher.ForeColor = System.Drawing.Color.Black;
+            this.stdTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdTeacher.Location = new System.Drawing.Point(536, 749);
+            this.stdTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdTeacher.Name = "stdTeacher";
+            this.stdTeacher.PlaceholderText = "";
+            this.stdTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdTeacher.SelectedText = "";
+            this.stdTeacher.Size = new System.Drawing.Size(257, 32);
+            this.stdTeacher.TabIndex = 87;
+            this.stdTeacher.Tag = Little_Hafiz.TargetField.StudentTeacher;
+            this.stdTeacher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdTeacher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // stdGroup
+            // 
+            this.stdGroup.BackColor = System.Drawing.Color.Transparent;
+            this.stdGroup.BorderRadius = 5;
+            this.stdGroup.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdGroup.DefaultText = "";
+            this.stdGroup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdGroup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdGroup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdGroup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdGroup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdGroup.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdGroup.ForeColor = System.Drawing.Color.Black;
+            this.stdGroup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdGroup.Location = new System.Drawing.Point(43, 749);
+            this.stdGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdGroup.Name = "stdGroup";
+            this.stdGroup.PlaceholderText = "";
+            this.stdGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdGroup.SelectedText = "";
+            this.stdGroup.Size = new System.Drawing.Size(257, 32);
+            this.stdGroup.TabIndex = 88;
+            this.stdGroup.Tag = Little_Hafiz.TargetField.StudentGroup;
+            this.stdGroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdGroup.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // stdGroupLabel
+            // 
+            this.stdGroupLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdGroupLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdGroupLabel.Location = new System.Drawing.Point(294, 753);
+            this.stdGroupLabel.Name = "stdGroupLabel";
+            this.stdGroupLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdGroupLabel.Size = new System.Drawing.Size(131, 25);
+            this.stdGroupLabel.TabIndex = 86;
+            this.stdGroupLabel.Text = "مجموعة الطالب : ";
+            this.stdGroupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // stdTeacherLabel
+            // 
+            this.stdTeacherLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stdTeacherLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stdTeacherLabel.Location = new System.Drawing.Point(789, 753);
+            this.stdTeacherLabel.Name = "stdTeacherLabel";
+            this.stdTeacherLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdTeacherLabel.Size = new System.Drawing.Size(117, 25);
+            this.stdTeacherLabel.TabIndex = 85;
+            this.stdTeacherLabel.Text = "مدرس الطالب : ";
+            this.stdTeacherLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cancel1Btn
             // 
             this.cancel1Btn.BackColor = System.Drawing.Color.Transparent;
@@ -447,7 +533,7 @@
             this.stdComps.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdComps.ForeColor = System.Drawing.Color.Black;
             this.stdComps.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdComps.Location = new System.Drawing.Point(11, 1011);
+            this.stdComps.Location = new System.Drawing.Point(11, 1041);
             this.stdComps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdComps.Multiline = true;
             this.stdComps.Name = "stdComps";
@@ -457,13 +543,14 @@
             this.stdComps.Size = new System.Drawing.Size(822, 40);
             this.stdComps.TabIndex = 67;
             this.stdComps.Enter += new System.EventHandler(this.BigTextBox_Enter);
+            this.stdComps.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.stdComps.Leave += new System.EventHandler(this.BigTextBox_Leave);
             // 
             // stdCompsLabel
             // 
             this.stdCompsLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCompsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCompsLabel.Location = new System.Drawing.Point(830, 1015);
+            this.stdCompsLabel.Location = new System.Drawing.Point(830, 1045);
             this.stdCompsLabel.Name = "stdCompsLabel";
             this.stdCompsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCompsLabel.Size = new System.Drawing.Size(85, 25);
@@ -484,7 +571,7 @@
             this.deleteStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.deleteStudentBtn.ForeColor = System.Drawing.Color.White;
             this.deleteStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.deleteStudentBtn.Location = new System.Drawing.Point(11, 1135);
+            this.deleteStudentBtn.Location = new System.Drawing.Point(11, 1165);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.deleteStudentBtn.TabIndex = 72;
@@ -493,7 +580,7 @@
             // 
             // scrollHelperLabel
             // 
-            this.scrollHelperLabel.Location = new System.Drawing.Point(680, 1198);
+            this.scrollHelperLabel.Location = new System.Drawing.Point(680, 1228);
             this.scrollHelperLabel.Name = "scrollHelperLabel";
             this.scrollHelperLabel.Size = new System.Drawing.Size(0, 13);
             this.scrollHelperLabel.TabIndex = 78;
@@ -513,7 +600,7 @@
             this.printStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.printStudentBtn.ForeColor = System.Drawing.Color.Black;
             this.printStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.printStudentBtn.Location = new System.Drawing.Point(265, 1135);
+            this.printStudentBtn.Location = new System.Drawing.Point(265, 1165);
             this.printStudentBtn.Name = "printStudentBtn";
             this.printStudentBtn.Size = new System.Drawing.Size(140, 45);
             this.printStudentBtn.TabIndex = 71;
@@ -555,7 +642,7 @@
             this.stdNotes.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNotes.ForeColor = System.Drawing.Color.Black;
             this.stdNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNotes.Location = new System.Drawing.Point(11, 1059);
+            this.stdNotes.Location = new System.Drawing.Point(11, 1089);
             this.stdNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNotes.Multiline = true;
             this.stdNotes.Name = "stdNotes";
@@ -572,7 +659,7 @@
             // 
             this.stdNotesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdNotesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNotesLabel.Location = new System.Drawing.Point(823, 1063);
+            this.stdNotesLabel.Location = new System.Drawing.Point(823, 1093);
             this.stdNotesLabel.Name = "stdNotesLabel";
             this.stdNotesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNotesLabel.Size = new System.Drawing.Size(92, 25);
@@ -643,7 +730,7 @@
             this.stdSkills.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdSkills.ForeColor = System.Drawing.Color.Black;
             this.stdSkills.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdSkills.Location = new System.Drawing.Point(479, 963);
+            this.stdSkills.Location = new System.Drawing.Point(479, 993);
             this.stdSkills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdSkills.Multiline = true;
             this.stdSkills.Name = "stdSkills";
@@ -673,7 +760,7 @@
             this.stdHobbies.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdHobbies.ForeColor = System.Drawing.Color.Black;
             this.stdHobbies.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdHobbies.Location = new System.Drawing.Point(11, 963);
+            this.stdHobbies.Location = new System.Drawing.Point(11, 993);
             this.stdHobbies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdHobbies.Multiline = true;
             this.stdHobbies.Name = "stdHobbies";
@@ -690,7 +777,7 @@
             // 
             this.stdHobbiesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdHobbiesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdHobbiesLabel.Location = new System.Drawing.Point(366, 969);
+            this.stdHobbiesLabel.Location = new System.Drawing.Point(366, 999);
             this.stdHobbiesLabel.Name = "stdHobbiesLabel";
             this.stdHobbiesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdHobbiesLabel.Size = new System.Drawing.Size(76, 25);
@@ -715,7 +802,7 @@
             this.stdIjazah.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdIjazah.ForeColor = System.Drawing.Color.Black;
             this.stdIjazah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdIjazah.Location = new System.Drawing.Point(479, 915);
+            this.stdIjazah.Location = new System.Drawing.Point(479, 945);
             this.stdIjazah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdIjazah.Multiline = true;
             this.stdIjazah.Name = "stdIjazah";
@@ -745,7 +832,7 @@
             this.stdCourses.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdCourses.ForeColor = System.Drawing.Color.Black;
             this.stdCourses.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdCourses.Location = new System.Drawing.Point(11, 915);
+            this.stdCourses.Location = new System.Drawing.Point(11, 945);
             this.stdCourses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdCourses.Multiline = true;
             this.stdCourses.Name = "stdCourses";
@@ -762,7 +849,7 @@
             // 
             this.stdSkillsLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdSkillsLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdSkillsLabel.Location = new System.Drawing.Point(823, 968);
+            this.stdSkillsLabel.Location = new System.Drawing.Point(823, 998);
             this.stdSkillsLabel.Name = "stdSkillsLabel";
             this.stdSkillsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdSkillsLabel.Size = new System.Drawing.Size(88, 25);
@@ -787,7 +874,7 @@
             this.stdCertificates.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdCertificates.ForeColor = System.Drawing.Color.Black;
             this.stdCertificates.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdCertificates.Location = new System.Drawing.Point(8, 867);
+            this.stdCertificates.Location = new System.Drawing.Point(8, 897);
             this.stdCertificates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdCertificates.Multiline = true;
             this.stdCertificates.Name = "stdCertificates";
@@ -804,7 +891,7 @@
             // 
             this.stdCertificatesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCertificatesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCertificatesLabel.Location = new System.Drawing.Point(719, 871);
+            this.stdCertificatesLabel.Location = new System.Drawing.Point(719, 901);
             this.stdCertificatesLabel.Name = "stdCertificatesLabel";
             this.stdCertificatesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCertificatesLabel.Size = new System.Drawing.Size(189, 25);
@@ -882,7 +969,7 @@
             this.stdMemoPlaces.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMemoPlaces.ForeColor = System.Drawing.Color.Black;
             this.stdMemoPlaces.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMemoPlaces.Location = new System.Drawing.Point(8, 819);
+            this.stdMemoPlaces.Location = new System.Drawing.Point(8, 849);
             this.stdMemoPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdMemoPlaces.Multiline = true;
             this.stdMemoPlaces.Name = "stdMemoPlaces";
@@ -912,7 +999,7 @@
             this.stdMashaykh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdMashaykh.ForeColor = System.Drawing.Color.Black;
             this.stdMashaykh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMashaykh.Location = new System.Drawing.Point(8, 771);
+            this.stdMashaykh.Location = new System.Drawing.Point(8, 801);
             this.stdMashaykh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdMashaykh.Multiline = true;
             this.stdMashaykh.Name = "stdMashaykh";
@@ -929,7 +1016,7 @@
             // 
             this.stdMemoPlacesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMemoPlacesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(728, 823);
+            this.stdMemoPlacesLabel.Location = new System.Drawing.Point(728, 853);
             this.stdMemoPlacesLabel.Name = "stdMemoPlacesLabel";
             this.stdMemoPlacesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMemoPlacesLabel.Size = new System.Drawing.Size(180, 25);
@@ -941,7 +1028,7 @@
             // 
             this.stdMashaykhLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdMashaykhLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdMashaykhLabel.Location = new System.Drawing.Point(730, 776);
+            this.stdMashaykhLabel.Location = new System.Drawing.Point(730, 806);
             this.stdMashaykhLabel.Name = "stdMashaykhLabel";
             this.stdMashaykhLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdMashaykhLabel.Size = new System.Drawing.Size(175, 25);
@@ -1547,7 +1634,7 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cancelBtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelBtn.Location = new System.Drawing.Point(575, 1135);
+            this.cancelBtn.Location = new System.Drawing.Point(575, 1165);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(92, 45);
             this.cancelBtn.TabIndex = 69;
@@ -1567,7 +1654,7 @@
             this.addStudentBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.addStudentBtn.ForeColor = System.Drawing.Color.White;
             this.addStudentBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.addStudentBtn.Location = new System.Drawing.Point(411, 1135);
+            this.addStudentBtn.Location = new System.Drawing.Point(411, 1165);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(158, 45);
             this.addStudentBtn.TabIndex = 70;
@@ -1901,7 +1988,7 @@
             // 
             this.stdIjazahLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdIjazahLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdIjazahLabel.Location = new System.Drawing.Point(833, 920);
+            this.stdIjazahLabel.Location = new System.Drawing.Point(833, 950);
             this.stdIjazahLabel.Name = "stdIjazahLabel";
             this.stdIjazahLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdIjazahLabel.Size = new System.Drawing.Size(78, 25);
@@ -1913,7 +2000,7 @@
             // 
             this.stdCoursesLabel.BackColor = System.Drawing.Color.Transparent;
             this.stdCoursesLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCoursesLabel.Location = new System.Drawing.Point(369, 920);
+            this.stdCoursesLabel.Location = new System.Drawing.Point(369, 950);
             this.stdCoursesLabel.Name = "stdCoursesLabel";
             this.stdCoursesLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdCoursesLabel.Size = new System.Drawing.Size(73, 25);
@@ -1943,7 +2030,7 @@
             this.copyStdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.copyStdNameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.copyStdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.copyStdNameCheckBox.Location = new System.Drawing.Point(244, 1108);
+            this.copyStdNameCheckBox.Location = new System.Drawing.Point(244, 1138);
             this.copyStdNameCheckBox.Name = "copyStdNameCheckBox";
             this.copyStdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.copyStdNameCheckBox.Size = new System.Drawing.Size(159, 29);
@@ -1965,7 +2052,7 @@
             this.qrcodeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.qrcodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qrcodeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.qrcodeCheckBox.Location = new System.Drawing.Point(63, 1179);
+            this.qrcodeCheckBox.Location = new System.Drawing.Point(63, 1209);
             this.qrcodeCheckBox.Name = "qrcodeCheckBox";
             this.qrcodeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.qrcodeCheckBox.Size = new System.Drawing.Size(161, 29);
@@ -1985,7 +2072,7 @@
             this.arrangeBigFieldsCheckBox.CheckedState.BorderThickness = 1;
             this.arrangeBigFieldsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.arrangeBigFieldsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.arrangeBigFieldsCheckBox.Location = new System.Drawing.Point(230, 1179);
+            this.arrangeBigFieldsCheckBox.Location = new System.Drawing.Point(230, 1209);
             this.arrangeBigFieldsCheckBox.Name = "arrangeBigFieldsCheckBox";
             this.arrangeBigFieldsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.arrangeBigFieldsCheckBox.Size = new System.Drawing.Size(173, 29);
@@ -2750,33 +2837,33 @@
             // 
             this.saveExcelFileDialog.Filter = "Excel files|*.xlsx";
             // 
-            // headerPanel
+            // containerPanel
             // 
-            this.headerPanel.BorderColor = System.Drawing.Color.Silver;
-            this.headerPanel.BorderRadius = 5;
-            this.headerPanel.BorderThickness = 1;
-            this.headerPanel.Controls.Add(this.formImage);
-            this.headerPanel.Controls.Add(this.readRecordsBtn);
-            this.headerPanel.Controls.Add(this.dataRecorderCheckBox);
-            this.headerPanel.Controls.Add(this.minimizeBtn);
-            this.headerPanel.Controls.Add(this.closeBtn);
-            this.headerPanel.Controls.Add(this.maximizeBtn);
-            this.headerPanel.Controls.Add(this.footerPanel);
-            this.headerPanel.Controls.Add(this.studentSearchPanel);
-            this.headerPanel.Controls.Add(this.studentsListPanel);
-            this.headerPanel.Controls.Add(this.studentDataPanel);
-            this.headerPanel.Controls.Add(this.studentGradesPanel);
-            this.headerPanel.Controls.Add(this.ranksCalculatorPanel);
-            this.headerPanel.Controls.Add(this.disableAtAll);
-            this.headerPanel.Controls.Add(this.formTitle);
-            this.headerPanel.Controls.Add(this.officeComboBox);
-            this.headerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.headerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.headerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.headerPanel.Location = new System.Drawing.Point(-1, -1);
-            this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(951, 701);
-            this.headerPanel.TabIndex = 84;
+            this.containerPanel.BorderColor = System.Drawing.Color.Silver;
+            this.containerPanel.BorderRadius = 5;
+            this.containerPanel.BorderThickness = 1;
+            this.containerPanel.Controls.Add(this.formImage);
+            this.containerPanel.Controls.Add(this.readRecordsBtn);
+            this.containerPanel.Controls.Add(this.dataRecorderCheckBox);
+            this.containerPanel.Controls.Add(this.minimizeBtn);
+            this.containerPanel.Controls.Add(this.closeBtn);
+            this.containerPanel.Controls.Add(this.maximizeBtn);
+            this.containerPanel.Controls.Add(this.footerPanel);
+            this.containerPanel.Controls.Add(this.studentSearchPanel);
+            this.containerPanel.Controls.Add(this.studentsListPanel);
+            this.containerPanel.Controls.Add(this.studentDataPanel);
+            this.containerPanel.Controls.Add(this.studentGradesPanel);
+            this.containerPanel.Controls.Add(this.ranksCalculatorPanel);
+            this.containerPanel.Controls.Add(this.disableAtAll);
+            this.containerPanel.Controls.Add(this.formTitle);
+            this.containerPanel.Controls.Add(this.officeComboBox);
+            this.containerPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.containerPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.containerPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.containerPanel.Location = new System.Drawing.Point(-1, -1);
+            this.containerPanel.Name = "containerPanel";
+            this.containerPanel.Size = new System.Drawing.Size(951, 701);
+            this.containerPanel.TabIndex = 84;
             // 
             // formImage
             // 
@@ -3669,7 +3756,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(950, 700);
-            this.Controls.Add(this.headerPanel);
+            this.Controls.Add(this.containerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -3685,7 +3772,7 @@
             this.studentSearchPanel.ResumeLayout(false);
             this.studentSearchPanel.PerformLayout();
             this.footerPanel.ResumeLayout(false);
-            this.headerPanel.ResumeLayout(false);
+            this.containerPanel.ResumeLayout(false);
             this.studentGradesPanel.ResumeLayout(false);
             this.studentGradesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdRank)).EndInit();
@@ -3799,7 +3886,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel footerPanel;
         private Guna.UI2.WinForms.Guna2GradientButton extractExcelBtn;
         private System.Windows.Forms.SaveFileDialog saveExcelFileDialog;
-        private Guna.UI2.WinForms.Guna2GradientPanel headerPanel;
+        private Guna.UI2.WinForms.Guna2GradientPanel containerPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel studentGradesPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel ranksCalculatorPanel;
         private System.Windows.Forms.Label gradesPanelTitle;
@@ -3889,6 +3976,10 @@
         private Guna.UI2.WinForms.Guna2CheckBox arrangeBigFieldsCheckBox;
         private System.Windows.Forms.Label logo;
         private Guna.UI2.WinForms.Guna2CheckBox standardRankingCheckBox;
+        private Guna.UI2.WinForms.Guna2TextBox stdTeacher;
+        private Guna.UI2.WinForms.Guna2TextBox stdGroup;
+        private System.Windows.Forms.Label stdGroupLabel;
+        private System.Windows.Forms.Label stdTeacherLabel;
     }
 }
 
