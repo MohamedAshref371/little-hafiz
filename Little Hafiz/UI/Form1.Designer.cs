@@ -2097,7 +2097,7 @@
             this.studentSearchPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.studentSearchPanel.Location = new System.Drawing.Point(12, 37);
             this.studentSearchPanel.Name = "studentSearchPanel";
-            this.studentSearchPanel.Size = new System.Drawing.Size(926, 198);
+            this.studentSearchPanel.Size = new System.Drawing.Size(926, 187);
             this.studentSearchPanel.TabIndex = 74;
             // 
             // stdBirthDateToSearch
@@ -2111,7 +2111,7 @@
             this.stdBirthDateToSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateToSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateToSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDateToSearch.Location = new System.Drawing.Point(10, 147);
+            this.stdBirthDateToSearch.Location = new System.Drawing.Point(10, 136);
             this.stdBirthDateToSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDateToSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateToSearch.Name = "stdBirthDateToSearch";
@@ -2130,7 +2130,7 @@
             this.stdBirthDateSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stdBirthDateSearch.ForeColor = System.Drawing.Color.Black;
             this.stdBirthDateSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDateSearch.Location = new System.Drawing.Point(186, 147);
+            this.stdBirthDateSearch.Location = new System.Drawing.Point(186, 136);
             this.stdBirthDateSearch.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.stdBirthDateSearch.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.stdBirthDateSearch.Name = "stdBirthDateSearch";
@@ -2147,7 +2147,7 @@
             this.stdBirthDateToCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateToCheckBox.Enabled = false;
             this.stdBirthDateToCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateToCheckBox.Location = new System.Drawing.Point(127, 149);
+            this.stdBirthDateToCheckBox.Location = new System.Drawing.Point(127, 138);
             this.stdBirthDateToCheckBox.Name = "stdBirthDateToCheckBox";
             this.stdBirthDateToCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateToCheckBox.Size = new System.Drawing.Size(55, 32);
@@ -2169,7 +2169,7 @@
             this.stdBirthDateFromCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateFromCheckBox.Enabled = false;
             this.stdBirthDateFromCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateFromCheckBox.Location = new System.Drawing.Point(302, 149);
+            this.stdBirthDateFromCheckBox.Location = new System.Drawing.Point(302, 138);
             this.stdBirthDateFromCheckBox.Name = "stdBirthDateFromCheckBox";
             this.stdBirthDateFromCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateFromCheckBox.Size = new System.Drawing.Size(50, 32);
@@ -2190,7 +2190,7 @@
             this.stdOfficeCheckBox.CheckedState.BorderThickness = 1;
             this.stdOfficeCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdOfficeCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 11);
+            this.stdOfficeCheckBox.Location = new System.Drawing.Point(375, 10);
             this.stdOfficeCheckBox.Name = "stdOfficeCheckBox";
             this.stdOfficeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdOfficeCheckBox.Size = new System.Drawing.Size(91, 32);
@@ -2214,7 +2214,7 @@
             this.stdOfficeSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.stdOfficeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.stdOfficeSearch.ItemHeight = 30;
-            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 9);
+            this.stdOfficeSearch.Location = new System.Drawing.Point(23, 8);
             this.stdOfficeSearch.Name = "stdOfficeSearch";
             this.stdOfficeSearch.Size = new System.Drawing.Size(257, 36);
             this.stdOfficeSearch.TabIndex = 20;
@@ -2233,7 +2233,7 @@
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.searchBtn.ForeColor = System.Drawing.Color.Black;
             this.searchBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.searchBtn.Location = new System.Drawing.Point(570, 143);
+            this.searchBtn.Location = new System.Drawing.Point(570, 132);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(158, 45);
             this.searchBtn.TabIndex = 21;
@@ -2255,7 +2255,7 @@
             this.stdEmailSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdEmailSearch.ForeColor = System.Drawing.Color.Black;
             this.stdEmailSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdEmailSearch.Location = new System.Drawing.Point(23, 98);
+            this.stdEmailSearch.Location = new System.Drawing.Point(23, 93);
             this.stdEmailSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdEmailSearch.Name = "stdEmailSearch";
             this.stdEmailSearch.PlaceholderText = "";
@@ -2280,7 +2280,7 @@
             this.stdPhoneSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdPhoneSearch.ForeColor = System.Drawing.Color.Black;
             this.stdPhoneSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdPhoneSearch.Location = new System.Drawing.Point(521, 98);
+            this.stdPhoneSearch.Location = new System.Drawing.Point(521, 93);
             this.stdPhoneSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdPhoneSearch.MaxLength = 14;
             this.stdPhoneSearch.Name = "stdPhoneSearch";
@@ -2306,7 +2306,7 @@
             this.stdNationalSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNationalSearch.ForeColor = System.Drawing.Color.Black;
             this.stdNationalSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNationalSearch.Location = new System.Drawing.Point(521, 54);
+            this.stdNationalSearch.Location = new System.Drawing.Point(521, 52);
             this.stdNationalSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNationalSearch.MaxLength = 14;
             this.stdNationalSearch.Name = "stdNationalSearch";
@@ -2332,7 +2332,7 @@
             this.stdNameSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.stdNameSearch.ForeColor = System.Drawing.Color.Black;
             this.stdNameSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameSearch.Location = new System.Drawing.Point(23, 54);
+            this.stdNameSearch.Location = new System.Drawing.Point(23, 52);
             this.stdNameSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stdNameSearch.Name = "stdNameSearch";
             this.stdNameSearch.PlaceholderText = "";
@@ -2365,7 +2365,7 @@
             this.stdEmailCheckBox.CheckedState.BorderThickness = 1;
             this.stdEmailCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdEmailCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdEmailCheckBox.Location = new System.Drawing.Point(381, 99);
+            this.stdEmailCheckBox.Location = new System.Drawing.Point(381, 94);
             this.stdEmailCheckBox.Name = "stdEmailCheckBox";
             this.stdEmailCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdEmailCheckBox.Size = new System.Drawing.Size(85, 32);
@@ -2385,7 +2385,7 @@
             this.stdPhoneCheckBox.CheckedState.BorderThickness = 1;
             this.stdPhoneCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdPhoneCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdPhoneCheckBox.Location = new System.Drawing.Point(785, 99);
+            this.stdPhoneCheckBox.Location = new System.Drawing.Point(785, 94);
             this.stdPhoneCheckBox.Name = "stdPhoneCheckBox";
             this.stdPhoneCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdPhoneCheckBox.Size = new System.Drawing.Size(124, 32);
@@ -2405,7 +2405,7 @@
             this.stdNationalCheckBox.CheckedState.BorderThickness = 1;
             this.stdNationalCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNationalCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNationalCheckBox.Location = new System.Drawing.Point(783, 54);
+            this.stdNationalCheckBox.Location = new System.Drawing.Point(783, 52);
             this.stdNationalCheckBox.Name = "stdNationalCheckBox";
             this.stdNationalCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNationalCheckBox.Size = new System.Drawing.Size(126, 32);
@@ -2425,7 +2425,7 @@
             this.stdNameCheckBox.CheckedState.BorderThickness = 1;
             this.stdNameCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdNameCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdNameCheckBox.Location = new System.Drawing.Point(381, 54);
+            this.stdNameCheckBox.Location = new System.Drawing.Point(381, 52);
             this.stdNameCheckBox.Name = "stdNameCheckBox";
             this.stdNameCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdNameCheckBox.Size = new System.Drawing.Size(85, 32);
@@ -2445,7 +2445,7 @@
             this.stdBirthDateCheckBox.CheckedState.BorderThickness = 1;
             this.stdBirthDateCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stdBirthDateCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdBirthDateCheckBox.Location = new System.Drawing.Point(349, 149);
+            this.stdBirthDateCheckBox.Location = new System.Drawing.Point(349, 138);
             this.stdBirthDateCheckBox.Name = "stdBirthDateCheckBox";
             this.stdBirthDateCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.stdBirthDateCheckBox.Size = new System.Drawing.Size(117, 32);
@@ -2466,7 +2466,7 @@
             this.cameraCheckBox.CheckedState.BorderThickness = 1;
             this.cameraCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cameraCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cameraCheckBox.Location = new System.Drawing.Point(668, 23);
+            this.cameraCheckBox.Location = new System.Drawing.Point(668, 21);
             this.cameraCheckBox.Name = "cameraCheckBox";
             this.cameraCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cameraCheckBox.Size = new System.Drawing.Size(83, 32);
@@ -2487,7 +2487,7 @@
             this.openCompsCheckBox.CheckedState.BorderThickness = 1;
             this.openCompsCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.openCompsCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.openCompsCheckBox.Location = new System.Drawing.Point(544, 23);
+            this.openCompsCheckBox.Location = new System.Drawing.Point(544, 21);
             this.openCompsCheckBox.Name = "openCompsCheckBox";
             this.openCompsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.openCompsCheckBox.Size = new System.Drawing.Size(104, 32);
@@ -2509,9 +2509,9 @@
             this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.studentsListPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentsListPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.studentsListPanel.Location = new System.Drawing.Point(12, 238);
+            this.studentsListPanel.Location = new System.Drawing.Point(12, 228);
             this.studentsListPanel.Name = "studentsListPanel";
-            this.studentsListPanel.Size = new System.Drawing.Size(926, 403);
+            this.studentsListPanel.Size = new System.Drawing.Size(926, 413);
             this.studentsListPanel.TabIndex = 75;
             // 
             // openAddStudentBtn
