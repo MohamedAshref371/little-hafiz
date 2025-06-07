@@ -11,8 +11,8 @@ namespace Little_Hafiz
     {
         private static bool success = false;
         private static readonly int classVersion = 8;
-        private static readonly string dataFolder = "data", recordsFolder = $"{dataFolder}\\records", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{recordsFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\Students.db";
-        private static readonly SQLiteConnection conn = new SQLiteConnection();
+        private static readonly string dataFolder = "data", recordsFolder = $"{dataFolder}\\records", imagesFolder = $"{dataFolder}\\images\\", fileFormat = ".reco", recordFile = $"{recordsFolder}\\{DateTime.Now.Ticks}{fileFormat}", databaseFile = $"{dataFolder}\\ProgData.ds";
+        private static readonly SQLiteConnection conn = new SQLiteConnection($"Data Source={databaseFile};Version=3;");
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
         private static bool copyData;
@@ -30,8 +30,6 @@ namespace Little_Hafiz
 
         private static void SafetyExamination()
         {
-            conn.ConnectionString = $"Data Source={databaseFile};Version=3;";
-
             if (!Directory.Exists(dataFolder))
                 Directory.CreateDirectory(dataFolder);
 
@@ -689,7 +687,7 @@ namespace Little_Hafiz
                 Directory.CreateDirectory($"{dataFolder}\\backup");
 
             if (File.Exists(databaseFile))
-                File.Copy(databaseFile, $"{dataFolder}\\backup\\{DateTime.Now.Ticks}.db");
+                File.Copy(databaseFile, $"{dataFolder}\\backup\\{DateTime.Now.Ticks}.ds");
         }
         #endregion
     }
