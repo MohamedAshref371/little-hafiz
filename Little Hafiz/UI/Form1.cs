@@ -401,6 +401,10 @@ namespace Little_Hafiz
             AddStudentRowsInSearchPanel(students);
         }
 
+        private void SearchBtn_SizeChanged(object sender, EventArgs e)
+            => searchBtn.ImageSize = new System.Drawing.Size(searchBtn.Height - 4, searchBtn.Height - 4);
+        
+
         private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
         {
             AddTitleInStudentsListPanel(students.Length);

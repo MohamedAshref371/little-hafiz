@@ -231,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="quran256.ico" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\board.png" />
     <None Include="Resources\emoji100.png" />
     <None Include="Resources\no-entry.png" />
