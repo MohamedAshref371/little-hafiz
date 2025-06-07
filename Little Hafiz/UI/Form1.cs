@@ -3,8 +3,6 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
-using System.Text;
-using System.Security.Cryptography;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -198,7 +196,7 @@ namespace Little_Hafiz
             if (DatabaseHelper.CurrentOffice != 0)
                 MessageBox.Show("لا يمكن للنسخ الفرعية استعمال هذه الخاصية");
 
-            if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || ComputeSha256Hash(File.ReadAllText("password.log")) != Secrets.HashPassword))
+            if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || !Secrets.ComputeSubCopyPassword(File.ReadAllText("password.log"))))
                 return;
 
             if (MessageBox.Show("هل انت متأكد أنك تريد تحويل هذه النسخة إلى نسخة فرعية ؟\nلن تستطيع تحويلها الى نسخة رئيسية مجددا", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
@@ -206,20 +204,6 @@ namespace Little_Hafiz
 
             formTitle.Visible = false;
             officeComboBox.Visible = true;
-        }
-
-        static string ComputeSha256Hash(string rawData)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                    builder.Append(b.ToString("x2"));
-
-                return builder.ToString();
-            }
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

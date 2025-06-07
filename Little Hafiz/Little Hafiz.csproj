@@ -152,7 +152,7 @@
     <Compile Include="UI\ListViewDialog.Designer.cs">
       <DependentUpon>ListViewDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Secrets.cs" />
+    <Compile Include="Database\Secrets.cs" />
     <Compile Include="Printer\StudentFormData.cs" />
     <Compile Include="Printer\StudentFormPrinter.cs" />
     <Compile Include="UI\StudentRankRow.cs">
@@ -170,7 +170,7 @@
     <Compile Include="UI\FormSize.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ranks.cs" />
+    <Compile Include="UI\Ranks.cs" />
     <Compile Include="Database\StudentData.cs" />
     <Compile Include="UI\StudentGradeRow.cs">
       <SubType>UserControl</SubType>
