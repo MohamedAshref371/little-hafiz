@@ -2596,9 +2596,9 @@
             this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.studentsListPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentsListPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.studentsListPanel.Location = new System.Drawing.Point(12, 228);
+            this.studentsListPanel.Location = new System.Drawing.Point(12, 227);
             this.studentsListPanel.Name = "studentsListPanel";
-            this.studentsListPanel.Size = new System.Drawing.Size(926, 413);
+            this.studentsListPanel.Size = new System.Drawing.Size(926, 414);
             this.studentsListPanel.TabIndex = 75;
             // 
             // openAddStudentBtn
@@ -3441,7 +3441,7 @@
             this.officeRank.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.officeRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.officeRank.ItemHeight = 30;
-            this.officeRank.Location = new System.Drawing.Point(598, 5);
+            this.officeRank.Location = new System.Drawing.Point(587, 5);
             this.officeRank.Name = "officeRank";
             this.officeRank.Size = new System.Drawing.Size(237, 36);
             this.officeRank.TabIndex = 82;
@@ -3457,7 +3457,7 @@
             this.compDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.compDateTo.ForeColor = System.Drawing.Color.Black;
             this.compDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateTo.Location = new System.Drawing.Point(290, 83);
+            this.compDateTo.Location = new System.Drawing.Point(290, 76);
             this.compDateTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.compDateTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.compDateTo.Name = "compDateTo";
@@ -3475,7 +3475,7 @@
             this.compDateFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.compDateFrom.ForeColor = System.Drawing.Color.Black;
             this.compDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.compDateFrom.Location = new System.Drawing.Point(470, 83);
+            this.compDateFrom.Location = new System.Drawing.Point(470, 76);
             this.compDateFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.compDateFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.compDateFrom.Name = "compDateFrom";
@@ -3518,7 +3518,7 @@
             this.closeBtn2.FillColor = System.Drawing.Color.Transparent;
             this.closeBtn2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.closeBtn2.ForeColor = System.Drawing.Color.Black;
-            this.closeBtn2.Location = new System.Drawing.Point(23, 10);
+            this.closeBtn2.Location = new System.Drawing.Point(168, 6);
             this.closeBtn2.Name = "closeBtn2";
             this.closeBtn2.Size = new System.Drawing.Size(91, 39);
             this.closeBtn2.TabIndex = 88;
@@ -3549,7 +3549,7 @@
             this.setRanksBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.setRanksBtn.ForeColor = System.Drawing.Color.White;
             this.setRanksBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.setRanksBtn.Location = new System.Drawing.Point(11, 83);
+            this.setRanksBtn.Location = new System.Drawing.Point(29, 73);
             this.setRanksBtn.Name = "setRanksBtn";
             this.setRanksBtn.Size = new System.Drawing.Size(117, 39);
             this.setRanksBtn.TabIndex = 87;
@@ -3569,7 +3569,7 @@
             this.getGradesDataBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.getGradesDataBtn.ForeColor = System.Drawing.Color.Black;
             this.getGradesDataBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.getGradesDataBtn.Location = new System.Drawing.Point(132, 83);
+            this.getGradesDataBtn.Location = new System.Drawing.Point(150, 73);
             this.getGradesDataBtn.Name = "getGradesDataBtn";
             this.getGradesDataBtn.Size = new System.Drawing.Size(117, 39);
             this.getGradesDataBtn.TabIndex = 86;
@@ -3580,7 +3580,7 @@
             // 
             this.dateToLabel.AutoSize = true;
             this.dateToLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateToLabel.Location = new System.Drawing.Point(427, 90);
+            this.dateToLabel.Location = new System.Drawing.Point(427, 83);
             this.dateToLabel.Name = "dateToLabel";
             this.dateToLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateToLabel.Size = new System.Drawing.Size(34, 19);
@@ -3592,7 +3592,7 @@
             // 
             this.dateFromLabel.AutoSize = true;
             this.dateFromLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateFromLabel.Location = new System.Drawing.Point(607, 90);
+            this.dateFromLabel.Location = new System.Drawing.Point(607, 83);
             this.dateFromLabel.Name = "dateFromLabel";
             this.dateFromLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateFromLabel.Size = new System.Drawing.Size(29, 19);
@@ -3606,7 +3606,7 @@
             this.compLevel.BorderRadius = 3;
             this.compLevel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.compLevel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.compLevel.Location = new System.Drawing.Point(691, 83);
+            this.compLevel.Location = new System.Drawing.Point(687, 79);
             this.compLevel.Maximum = new decimal(new int[] {
             10,
             0,
@@ -3631,7 +3631,7 @@
             // 
             this.compLevelLabel.AutoSize = true;
             this.compLevelLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compLevelLabel.Location = new System.Drawing.Point(771, 90);
+            this.compLevelLabel.Location = new System.Drawing.Point(767, 86);
             this.compLevelLabel.Name = "compLevelLabel";
             this.compLevelLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.compLevelLabel.Size = new System.Drawing.Size(144, 19);
@@ -3641,7 +3641,7 @@
             // studentCount
             // 
             this.studentCount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.studentCount.Location = new System.Drawing.Point(677, 53);
+            this.studentCount.Location = new System.Drawing.Point(319, 17);
             this.studentCount.Name = "studentCount";
             this.studentCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.studentCount.Size = new System.Drawing.Size(96, 19);
@@ -3653,7 +3653,7 @@
             // 
             this.studentCountLabel.AutoSize = true;
             this.studentCountLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.studentCountLabel.Location = new System.Drawing.Point(773, 52);
+            this.studentCountLabel.Location = new System.Drawing.Point(415, 16);
             this.studentCountLabel.Name = "studentCountLabel";
             this.studentCountLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.studentCountLabel.Size = new System.Drawing.Size(141, 19);
@@ -3665,7 +3665,7 @@
             this.wrongThingLabel.AutoSize = true;
             this.wrongThingLabel.Font = new System.Drawing.Font("Tahoma", 10F);
             this.wrongThingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.wrongThingLabel.Location = new System.Drawing.Point(360, 64);
+            this.wrongThingLabel.Location = new System.Drawing.Point(360, 54);
             this.wrongThingLabel.Name = "wrongThingLabel";
             this.wrongThingLabel.Size = new System.Drawing.Size(166, 17);
             this.wrongThingLabel.TabIndex = 101;
@@ -3677,7 +3677,7 @@
             this.wrongThing2Label.AutoSize = true;
             this.wrongThing2Label.Font = new System.Drawing.Font("Tahoma", 10F);
             this.wrongThing2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.wrongThing2Label.Location = new System.Drawing.Point(360, 64);
+            this.wrongThing2Label.Location = new System.Drawing.Point(364, 54);
             this.wrongThing2Label.Name = "wrongThing2Label";
             this.wrongThing2Label.Size = new System.Drawing.Size(156, 17);
             this.wrongThing2Label.TabIndex = 101;
@@ -3692,7 +3692,7 @@
             this.standardRankingCheckBox.CheckedState.BorderThickness = 1;
             this.standardRankingCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.standardRankingCheckBox.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.standardRankingCheckBox.Location = new System.Drawing.Point(4, 61);
+            this.standardRankingCheckBox.Location = new System.Drawing.Point(22, 51);
             this.standardRankingCheckBox.Name = "standardRankingCheckBox";
             this.standardRankingCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.standardRankingCheckBox.Size = new System.Drawing.Size(115, 24);
@@ -3708,7 +3708,7 @@
             // 
             this.officeLabel.AutoSize = true;
             this.officeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.officeLabel.Location = new System.Drawing.Point(840, 15);
+            this.officeLabel.Location = new System.Drawing.Point(829, 15);
             this.officeLabel.Name = "officeLabel";
             this.officeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.officeLabel.Size = new System.Drawing.Size(74, 19);
