@@ -79,9 +79,9 @@ namespace Little_Hafiz
             g.DrawString(data.PaperTitle, new Font("Arial", 20, FontStyle.Bold), brush, new RectangleF(250, 30, 300, 30), format);
             
             if (qrcode && data.NationalID.Length == 14)
-                g.DrawImage(GenerateQRCode(data.NationalID, 140), new RectangleF(155, 30, 140, 140));
+                g.DrawImage(GenerateQRCode(data.NationalID, 140), new RectangleF(165, 30, 140, 140));
 
-            Rectangle imgRect = new Rectangle(10, 10, 140, 180);
+            Rectangle imgRect = new Rectangle(20, 10, 140, 180);
             int radius = 10;
             using (GraphicsPath path = GetRoundedRectPath(imgRect, radius))
             {
