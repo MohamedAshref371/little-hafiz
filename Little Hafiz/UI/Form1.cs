@@ -1987,6 +1987,7 @@ namespace Little_Hafiz
             cancelBtn.ForeColor = ForeColor;
             cancel1Btn.ForeColor = ForeColor;
             cancelBtn2.ForeColor = ForeColor;
+            closeBtn2.ForeColor = ForeColor;
         }
 
         private void SetColor(Color clr1, Color clr2)

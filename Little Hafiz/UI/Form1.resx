@@ -121,13 +121,8 @@
     <value>20, 27</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>71</value>
+    <value>44</value>
   </metadata>
-  <data name="ranksPanelTitle.Text" xml:space="preserve">
-    <value>لا تستعمل هذه الشاشة إلا إذا كنت متأكدا أنك تمتلك نسخة البيانات الكاملة
-لن يتم تسجيل أي حركة بيانات بافتراض أن هذه الشاشة لن يستعملها إلا المدير
-تأكد من أن تحديد التاريخ من إلى يجلب طلبة المسابقة الواحدة</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

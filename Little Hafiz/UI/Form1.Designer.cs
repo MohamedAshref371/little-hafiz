@@ -215,8 +215,8 @@
             this.studentCountLabel = new System.Windows.Forms.Label();
             this.wrongThingLabel = new System.Windows.Forms.Label();
             this.wrongThing2Label = new System.Windows.Forms.Label();
-            this.ranksPanelTitle = new System.Windows.Forms.Label();
             this.standardRankingCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.officeLabel = new System.Windows.Forms.Label();
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -2699,7 +2699,7 @@
             this.officeHelperBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.officeHelperBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.officeHelperBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.officeHelperBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.officeHelperBtn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
             this.officeHelperBtn.ForeColor = System.Drawing.Color.Black;
             this.officeHelperBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.officeHelperBtn.Location = new System.Drawing.Point(449, 5);
@@ -2720,7 +2720,7 @@
             this.rankCalcBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.rankCalcBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.rankCalcBtn.FillColor2 = System.Drawing.Color.Gray;
-            this.rankCalcBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.rankCalcBtn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
             this.rankCalcBtn.ForeColor = System.Drawing.Color.Black;
             this.rankCalcBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.rankCalcBtn.Location = new System.Drawing.Point(600, 5);
@@ -2904,10 +2904,10 @@
             this.dataRecorderCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dataRecorderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dataRecorderCheckBox.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dataRecorderCheckBox.Location = new System.Drawing.Point(289, 5);
+            this.dataRecorderCheckBox.Location = new System.Drawing.Point(277, 5);
             this.dataRecorderCheckBox.Name = "dataRecorderCheckBox";
             this.dataRecorderCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataRecorderCheckBox.Size = new System.Drawing.Size(171, 29);
+            this.dataRecorderCheckBox.Size = new System.Drawing.Size(183, 29);
             this.dataRecorderCheckBox.TabIndex = 4;
             this.dataRecorderCheckBox.Text = "تسجيل حركة البيانات";
             this.dataRecorderCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
@@ -3418,8 +3418,8 @@
             this.ranksCalculatorPanel.Controls.Add(this.studentCountLabel);
             this.ranksCalculatorPanel.Controls.Add(this.wrongThingLabel);
             this.ranksCalculatorPanel.Controls.Add(this.wrongThing2Label);
-            this.ranksCalculatorPanel.Controls.Add(this.ranksPanelTitle);
             this.ranksCalculatorPanel.Controls.Add(this.standardRankingCheckBox);
+            this.ranksCalculatorPanel.Controls.Add(this.officeLabel);
             this.ranksCalculatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ranksCalculatorPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ranksCalculatorPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -3441,7 +3441,7 @@
             this.officeRank.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.officeRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.officeRank.ItemHeight = 30;
-            this.officeRank.Location = new System.Drawing.Point(681, 5);
+            this.officeRank.Location = new System.Drawing.Point(598, 5);
             this.officeRank.Name = "officeRank";
             this.officeRank.Size = new System.Drawing.Size(237, 36);
             this.officeRank.TabIndex = 82;
@@ -3515,10 +3515,10 @@
             this.closeBtn2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.closeBtn2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.closeBtn2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.closeBtn2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.closeBtn2.FillColor = System.Drawing.Color.Transparent;
             this.closeBtn2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.closeBtn2.ForeColor = System.Drawing.Color.Black;
-            this.closeBtn2.Location = new System.Drawing.Point(27, 18);
+            this.closeBtn2.Location = new System.Drawing.Point(23, 10);
             this.closeBtn2.Name = "closeBtn2";
             this.closeBtn2.Size = new System.Drawing.Size(91, 39);
             this.closeBtn2.TabIndex = 88;
@@ -3684,18 +3684,6 @@
             this.wrongThing2Label.Text = "هناك كود مكرر في القائمة";
             this.wrongThing2Label.Visible = false;
             // 
-            // ranksPanelTitle
-            // 
-            this.ranksPanelTitle.AutoSize = true;
-            this.ranksPanelTitle.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.ranksPanelTitle.Location = new System.Drawing.Point(132, 5);
-            this.ranksPanelTitle.Name = "ranksPanelTitle";
-            this.ranksPanelTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ranksPanelTitle.Size = new System.Drawing.Size(537, 57);
-            this.ranksPanelTitle.TabIndex = 1;
-            this.ranksPanelTitle.Text = resources.GetString("ranksPanelTitle.Text");
-            this.ranksPanelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // standardRankingCheckBox
             // 
             this.standardRankingCheckBox.BackColor = System.Drawing.Color.Transparent;
@@ -3715,6 +3703,17 @@
             this.standardRankingCheckBox.UncheckedState.BorderThickness = 1;
             this.standardRankingCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.standardRankingCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // officeLabel
+            // 
+            this.officeLabel.AutoSize = true;
+            this.officeLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.officeLabel.Location = new System.Drawing.Point(840, 15);
+            this.officeLabel.Name = "officeLabel";
+            this.officeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.officeLabel.Size = new System.Drawing.Size(74, 19);
+            this.officeLabel.TabIndex = 105;
+            this.officeLabel.Text = "المكتب : ";
             // 
             // disableAtAll
             // 
@@ -3924,7 +3923,6 @@
         private System.Windows.Forms.FolderBrowserDialog selectDataFolderDialog;
         private System.Windows.Forms.Label compCount;
         private Guna.UI2.WinForms.Guna2GradientButton rankCalcBtn;
-        private System.Windows.Forms.Label ranksPanelTitle;
         private System.Windows.Forms.Label studentCountLabel;
         private System.Windows.Forms.Label studentCount;
         private System.Windows.Forms.Label compLevelLabel;
@@ -3980,6 +3978,7 @@
         private Guna.UI2.WinForms.Guna2TextBox stdGroup;
         private System.Windows.Forms.Label stdGroupLabel;
         private System.Windows.Forms.Label stdTeacherLabel;
+        private System.Windows.Forms.Label officeLabel;
     }
 }
 
