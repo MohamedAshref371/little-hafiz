@@ -210,7 +210,7 @@ namespace Little_Hafiz
                     sb.Append(" AND ").Append(conds[i]);
             }
 
-            sb.Append(" GROUP BY students.national");
+            sb.Append(" GROUP BY students.national ORDER BY full_name");
 
             return SelectMultiRows(sb.ToString(), GetStudentSearchRowData);
         }
