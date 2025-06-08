@@ -134,10 +134,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Documents\ExcelHelper.cs" />
     <Compile Include="UI\AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
     <Compile Include="Database\Base64Converter.cs" />
-    <Compile Include="Printer\BarcodeScanner.cs" />
+    <Compile Include="Documents\BarcodeScanner.cs" />
     <Compile Include="Database\CompetitionRankData.cs" />
     <Compile Include="Database\CompetitionGradeData.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
@@ -153,8 +154,8 @@
       <DependentUpon>ListViewDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Secrets.cs" />
-    <Compile Include="Printer\StudentFormData.cs" />
-    <Compile Include="Printer\StudentFormPrinter.cs" />
+    <Compile Include="Documents\StudentFormData.cs" />
+    <Compile Include="Documents\StudentFormPrinter.cs" />
     <Compile Include="UI\StudentRankRow.cs">
       <SubType>UserControl</SubType>
     </Compile>

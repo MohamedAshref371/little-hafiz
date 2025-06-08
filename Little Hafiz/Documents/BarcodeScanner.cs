@@ -1,9 +1,6 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
-using System;
-using System.Windows.Forms;
-using Guna.UI2.WinForms;
 using System.Linq;
 
 namespace Little_Hafiz
