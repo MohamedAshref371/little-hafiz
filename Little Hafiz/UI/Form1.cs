@@ -257,6 +257,7 @@ namespace Little_Hafiz
                 stdOffice.ItemHeight = height;
                 stdOfficeSearch.ItemHeight = height;
                 officeRank.ItemHeight = height;
+                compLevel.ItemHeight = height;
                 if (studentDataPanel.Visible) SetStudentImage();
                 if (studentGradesPanel.Visible) SetStudentImage2();
                 SetLogoImage();
