@@ -233,7 +233,7 @@ namespace Little_Hafiz
             => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
 
         public static CompetitionRankData[] SelectCompetitionRanks(int level, string dateFrom, string dateTo, int office)
-            => SelectMultiRows($"SELECT students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE {(level == 0 ? "" : $"competition_level = {level} AND")} competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' {(office == 0 ? "" : $"AND office = {office}")} ORDER BY score DESC", GetCompetitionRanks);
+            => SelectMultiRows($"SELECT competition_level, students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE {(level == 0 ? "" : $"competition_level = {level} AND")} competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' {(office == 0 ? "" : $"AND office = {office}")} ORDER BY score DESC", GetCompetitionRanks);
         
         public static string[] GetOffices()
             => SelectMultiRows("SELECT name FROM offices", () => reader.GetString(0));
@@ -321,12 +321,13 @@ namespace Little_Hafiz
         {
             return new CompetitionRankData
             {
+                Level = reader.GetInt32(0),
                 NationalNumber = (string)reader["national"],
                 CompetitionDate = (string)reader["competition_date"],
-                StudentCode = reader.GetInt32(2),
+                StudentCode = reader.GetInt32(3),
                 StudentName = (string)reader["full_name"],
-                Score = reader.GetFloat(4),
-                Rank = reader.GetInt32(5),
+                Score = reader.GetFloat(5),
+                Rank = reader.GetInt32(6),
             };
         }
 

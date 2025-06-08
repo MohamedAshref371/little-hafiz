@@ -115,6 +115,10 @@ namespace Little_Hafiz
             guardianBirthLabel.Click += (s, e1) => guardianBirth.Focus();
             stdJoiningDateLabel.Click += (s, e1) => stdJoiningDate.Focus();
             stdFirstConclusionCheckBox.Click += (s, e1) => { if (stdFirstConclusionCheckBox.Checked) stdFirstConclusion.Focus(); };
+
+            compLevel.Items.AddRange(Ranks.RanksText);
+            compLevel.Items[0] = "الكل";
+            compLevel.SelectedIndex = 1;
         }
 
         private bool zxing, aForge;
@@ -1539,14 +1543,15 @@ namespace Little_Hafiz
 
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
-            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToStandardStringWithoutDay(), compDateTo.Value.ToStandardStringWithoutDay(), officeRank.SelectedIndex);
+            CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks(compLevel.SelectedIndex, compDateFrom.Value.ToStandardStringWithoutDay(), compDateTo.Value.ToStandardStringWithoutDay(), officeRank.SelectedIndex);
             if (ranks is null)
             {
                 ErrorMessage();
                 return;
             }
 
-            setRanksBtn.Enabled = officeRank.SelectedIndex == 0 && compLevel.Value != 0;
+            bool isLevelZero = compLevel.SelectedIndex == 0;
+            setRanksBtn.Enabled = officeRank.SelectedIndex == 0 && !isLevelZero;
             levelCompCount.Text = ranks.Length.ToString();
 
             wrongThingLabel.Visible = false;
@@ -1570,13 +1575,13 @@ namespace Little_Hafiz
             }
 
             ranksListPanel.Controls.Clear();
-            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
+            ranksListPanel.Controls.Add(new StudentRankRow(isLevelZero) { Location = new Point(20, 9) });
 
             StudentRankRow stdRow;
             for (int i = 0; i < ranks.Length; i++)
             {
-                stdRow = new StudentRankRow(ranks[i]);
-                stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
+                stdRow = new StudentRankRow(ranks[i], isLevelZero ? 0 : i + 1);
+                stdRow.Location = new Point(20, (stdRow.Size.Height + 3) * (i + 1) + 9);
                 ranksListPanel.Controls.Add(stdRow);
             }
             fs?.SetControls(ranksListPanel.Controls);

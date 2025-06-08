@@ -2,6 +2,7 @@
 {
     public class CompetitionRankData
     {
+        public int Level;
         public string NationalNumber;
         public string CompetitionDate;
         public int StudentCode;

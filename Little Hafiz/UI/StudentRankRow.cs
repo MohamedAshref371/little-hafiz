@@ -8,20 +8,22 @@ namespace Little_Hafiz
     public partial class StudentRankRow : UserControl
     {
         public static bool ReadOnly;
-        public StudentRankRow()
+        public StudentRankRow(bool isCompLevel = false)
         {
             InitializeComponent();
 
             StudentRank.Visible = false;
             stdRankLabel.Visible = true;
+            if (isCompLevel) countLabel.Text = "س";
         }
 
         public readonly CompetitionRankData CompetitionRankData;
-        public StudentRankRow(CompetitionRankData data)
+        public StudentRankRow(CompetitionRankData data, int count = 0)
         {
             InitializeComponent();
             this.CompetitionRankData = data;
 
+            countLabel.Text = (count == 0 ? data.Level : count).ToString();
             stdCode.Text = data.StudentCode.ToString();
             stdName.Text = data.StudentName;
             compDate.Text = data.CompetitionDate;

@@ -34,6 +34,7 @@
             this.stdScore = new System.Windows.Forms.Label();
             this.stdRankLabel = new System.Windows.Forms.Label();
             this.compDate = new System.Windows.Forms.Label();
+            this.countLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRank)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             this.stdCode.BackColor = System.Drawing.Color.Transparent;
             this.stdCode.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdCode.Location = new System.Drawing.Point(723, 0);
+            this.stdCode.Location = new System.Drawing.Point(713, 0);
             this.stdCode.Name = "stdCode";
             this.stdCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdCode.Size = new System.Drawing.Size(94, 40);
@@ -53,7 +54,7 @@
             // 
             this.stdName.BackColor = System.Drawing.Color.Transparent;
             this.stdName.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdName.Location = new System.Drawing.Point(319, 0);
+            this.stdName.Location = new System.Drawing.Point(309, 0);
             this.stdName.Name = "stdName";
             this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdName.Size = new System.Drawing.Size(398, 40);
@@ -79,7 +80,7 @@
             0,
             0});
             this.StudentRank.Name = "StudentRank";
-            this.StudentRank.Size = new System.Drawing.Size(113, 34);
+            this.StudentRank.Size = new System.Drawing.Size(103, 34);
             this.StudentRank.TabIndex = 55;
             this.StudentRank.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.StudentRank.Value = new decimal(new int[] {
@@ -92,7 +93,7 @@
             // 
             this.stdScore.BackColor = System.Drawing.Color.Transparent;
             this.stdScore.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.stdScore.Location = new System.Drawing.Point(122, 0);
+            this.stdScore.Location = new System.Drawing.Point(112, 0);
             this.stdScore.Name = "stdScore";
             this.stdScore.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.stdScore.Size = new System.Drawing.Size(85, 40);
@@ -107,7 +108,7 @@
             this.stdRankLabel.Location = new System.Drawing.Point(3, 0);
             this.stdRankLabel.Name = "stdRankLabel";
             this.stdRankLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.stdRankLabel.Size = new System.Drawing.Size(113, 40);
+            this.stdRankLabel.Size = new System.Drawing.Size(103, 40);
             this.stdRankLabel.TabIndex = 57;
             this.stdRankLabel.Text = "المركز";
             this.stdRankLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +118,7 @@
             // 
             this.compDate.BackColor = System.Drawing.Color.Transparent;
             this.compDate.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.compDate.Location = new System.Drawing.Point(213, 0);
+            this.compDate.Location = new System.Drawing.Point(203, 0);
             this.compDate.Name = "compDate";
             this.compDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.compDate.Size = new System.Drawing.Size(100, 40);
@@ -125,10 +126,23 @@
             this.compDate.Text = "التاريخ";
             this.compDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // countLabel
+            // 
+            this.countLabel.BackColor = System.Drawing.Color.Transparent;
+            this.countLabel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.countLabel.Location = new System.Drawing.Point(813, 0);
+            this.countLabel.Name = "countLabel";
+            this.countLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.countLabel.Size = new System.Drawing.Size(39, 40);
+            this.countLabel.TabIndex = 59;
+            this.countLabel.Text = "م";
+            this.countLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // StudentRankRow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.countLabel);
             this.Controls.Add(this.compDate);
             this.Controls.Add(this.stdScore);
             this.Controls.Add(this.StudentRank);
@@ -136,7 +150,7 @@
             this.Controls.Add(this.stdCode);
             this.Controls.Add(this.stdRankLabel);
             this.Name = "StudentRankRow";
-            this.Size = new System.Drawing.Size(820, 40);
+            this.Size = new System.Drawing.Size(855, 40);
             ((System.ComponentModel.ISupportInitialize)(this.StudentRank)).EndInit();
             this.ResumeLayout(false);
 
@@ -150,5 +164,6 @@
         private System.Windows.Forms.Label stdRankLabel;
         public Guna.UI2.WinForms.Guna2NumericUpDown StudentRank;
         private System.Windows.Forms.Label compDate;
+        private System.Windows.Forms.Label countLabel;
     }
 }
