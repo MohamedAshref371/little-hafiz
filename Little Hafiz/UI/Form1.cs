@@ -1539,8 +1539,6 @@ namespace Little_Hafiz
 
         private void GetGradesDataBtn_Click(object sender, EventArgs e)
         {
-            setRanksBtn.Enabled = officeRank.SelectedIndex == 0;
-
             CompetitionRankData[] ranks = DatabaseHelper.SelectCompetitionRanks((int)compLevel.Value, compDateFrom.Value.ToStandardStringWithoutDay(), compDateTo.Value.ToStandardStringWithoutDay(), officeRank.SelectedIndex);
             if (ranks is null)
             {
@@ -1548,6 +1546,7 @@ namespace Little_Hafiz
                 return;
             }
 
+            setRanksBtn.Enabled = officeRank.SelectedIndex == 0 && compLevel.Value != 0;
             levelCompCount.Text = ranks.Length.ToString();
 
             wrongThingLabel.Visible = false;

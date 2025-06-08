@@ -48,6 +48,7 @@
             this.stdOffice = new Guna.UI2.WinForms.Guna2ComboBox();
             this.stdNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNotesLabel = new System.Windows.Forms.Label();
+            this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.stdImageSelectorBtn = new Guna.UI2.WinForms.Guna2Button();
             this.stdImageLabel = new System.Windows.Forms.Label();
             this.stdSkills = new Guna.UI2.WinForms.Guna2TextBox();
@@ -135,6 +136,7 @@
             this.stdBirthDateFromCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdOfficeCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdOfficeSearch = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.searchBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNationalSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -161,6 +163,7 @@
             this.versionLabel = new System.Windows.Forms.Label();
             this.saveExcelFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.containerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.formImage = new System.Windows.Forms.Label();
             this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -190,6 +193,7 @@
             this.stdName2 = new System.Windows.Forms.Label();
             this.stdNationalLabel2 = new System.Windows.Forms.Label();
             this.stdNameLabel2 = new System.Windows.Forms.Label();
+            this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gradesPanelTitle = new System.Windows.Forms.Label();
             this.currentLevelExplain = new System.Windows.Forms.Label();
             this.prevLevelExplain = new System.Windows.Forms.Label();
@@ -216,11 +220,8 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.formImage = new System.Windows.Forms.Label();
-            this.searchBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.studentImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.studentImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.studentDataPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
@@ -232,10 +233,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.currentLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
             this.ranksCalculatorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -666,6 +666,19 @@
             this.stdNotesLabel.TabIndex = 73;
             this.stdNotesLabel.Text = "الملاحظات: ";
             this.stdNotesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // studentImage
+            // 
+            this.studentImage.BackColor = System.Drawing.Color.Transparent;
+            this.studentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.studentImage.BorderRadius = 5;
+            this.studentImage.FillColor = System.Drawing.Color.Gainsboro;
+            this.studentImage.ImageRotate = 0F;
+            this.studentImage.Location = new System.Drawing.Point(43, 6);
+            this.studentImage.Name = "studentImage";
+            this.studentImage.Size = new System.Drawing.Size(140, 180);
+            this.studentImage.TabIndex = 72;
+            this.studentImage.TabStop = false;
             // 
             // stdImageSelectorBtn
             // 
@@ -2294,6 +2307,29 @@
             this.stdOfficeSearch.TabIndex = 20;
             this.stdOfficeSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.searchBtn.BorderRadius = 15;
+            this.searchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.searchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.searchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.searchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.searchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.searchBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(140)))), ((int)(((byte)(100)))));
+            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.searchBtn.ForeColor = System.Drawing.Color.Black;
+            this.searchBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.searchBtn.Image = global::Little_Hafiz.Properties.Resources.search;
+            this.searchBtn.ImageSize = new System.Drawing.Size(42, 42);
+            this.searchBtn.Location = new System.Drawing.Point(570, 132);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(158, 46);
+            this.searchBtn.TabIndex = 21;
+            this.searchBtn.Text = "  بحث";
+            this.searchBtn.SizeChanged += new System.EventHandler(this.SearchBtn_SizeChanged);
+            this.searchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
             // stdEmailSearch
             // 
             this.stdEmailSearch.BackColor = System.Drawing.Color.Transparent;
@@ -2832,6 +2868,17 @@
             this.containerPanel.Size = new System.Drawing.Size(951, 701);
             this.containerPanel.TabIndex = 84;
             // 
+            // formImage
+            // 
+            this.formImage.BackColor = System.Drawing.Color.Transparent;
+            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
+            this.formImage.Location = new System.Drawing.Point(910, 4);
+            this.formImage.Name = "formImage";
+            this.formImage.Size = new System.Drawing.Size(30, 30);
+            this.formImage.TabIndex = 74;
+            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.formImage.DoubleClick += new System.EventHandler(this.FormImage_DoubleClick);
+            // 
             // readRecordsBtn
             // 
             this.readRecordsBtn.BackColor = System.Drawing.Color.Transparent;
@@ -3304,6 +3351,19 @@
             this.stdNameLabel2.TabIndex = 73;
             this.stdNameLabel2.Text = "اسم الطالب :";
             // 
+            // studentImage2
+            // 
+            this.studentImage2.BackColor = System.Drawing.Color.Transparent;
+            this.studentImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.studentImage2.BorderRadius = 5;
+            this.studentImage2.FillColor = System.Drawing.Color.Transparent;
+            this.studentImage2.ImageRotate = 0F;
+            this.studentImage2.Location = new System.Drawing.Point(23, 5);
+            this.studentImage2.Name = "studentImage2";
+            this.studentImage2.Size = new System.Drawing.Size(140, 180);
+            this.studentImage2.TabIndex = 73;
+            this.studentImage2.TabStop = false;
+            // 
             // gradesPanelTitle
             // 
             this.gradesPanelTitle.AutoSize = true;
@@ -3555,11 +3615,6 @@
             0,
             0,
             0});
-            this.compLevel.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.compLevel.Name = "compLevel";
             this.compLevel.Size = new System.Drawing.Size(77, 32);
             this.compLevel.TabIndex = 83;
@@ -3692,66 +3747,6 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
-            // formImage
-            // 
-            this.formImage.BackColor = System.Drawing.Color.Transparent;
-            this.formImage.Image = global::Little_Hafiz.Properties.Resources.moshaf;
-            this.formImage.Location = new System.Drawing.Point(910, 4);
-            this.formImage.Name = "formImage";
-            this.formImage.Size = new System.Drawing.Size(30, 30);
-            this.formImage.TabIndex = 74;
-            this.formImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.formImage.DoubleClick += new System.EventHandler(this.FormImage_DoubleClick);
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.searchBtn.BorderRadius = 15;
-            this.searchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.searchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.searchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.searchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.searchBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.searchBtn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(140)))), ((int)(((byte)(100)))));
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.searchBtn.ForeColor = System.Drawing.Color.Black;
-            this.searchBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.searchBtn.Image = global::Little_Hafiz.Properties.Resources.search;
-            this.searchBtn.ImageSize = new System.Drawing.Size(42, 42);
-            this.searchBtn.Location = new System.Drawing.Point(570, 132);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(158, 46);
-            this.searchBtn.TabIndex = 21;
-            this.searchBtn.Text = "  بحث";
-            this.searchBtn.SizeChanged += new System.EventHandler(this.SearchBtn_SizeChanged);
-            this.searchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
-            // studentImage
-            // 
-            this.studentImage.BackColor = System.Drawing.Color.Transparent;
-            this.studentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.studentImage.BorderRadius = 5;
-            this.studentImage.FillColor = System.Drawing.Color.Gainsboro;
-            this.studentImage.ImageRotate = 0F;
-            this.studentImage.Location = new System.Drawing.Point(43, 6);
-            this.studentImage.Name = "studentImage";
-            this.studentImage.Size = new System.Drawing.Size(140, 180);
-            this.studentImage.TabIndex = 72;
-            this.studentImage.TabStop = false;
-            // 
-            // studentImage2
-            // 
-            this.studentImage2.BackColor = System.Drawing.Color.Transparent;
-            this.studentImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.studentImage2.BorderRadius = 5;
-            this.studentImage2.FillColor = System.Drawing.Color.Transparent;
-            this.studentImage2.ImageRotate = 0F;
-            this.studentImage2.Location = new System.Drawing.Point(23, 5);
-            this.studentImage2.Name = "studentImage2";
-            this.studentImage2.Size = new System.Drawing.Size(140, 180);
-            this.studentImage2.TabIndex = 73;
-            this.studentImage2.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3768,6 +3763,7 @@
             this.ForeColorChanged += new System.EventHandler(this.Form1_ForeColorChanged);
             this.studentDataPanel.ResumeLayout(false);
             this.studentDataPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
             this.studentSearchPanel.ResumeLayout(false);
@@ -3781,11 +3777,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.currentLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prevLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
             this.ranksCalculatorPanel.ResumeLayout(false);
             this.ranksCalculatorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
             this.ResumeLayout(false);
 
         }
