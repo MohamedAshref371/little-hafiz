@@ -120,6 +120,11 @@ namespace Little_Hafiz
             compLevel.Items.AddRange(Ranks.RanksText);
             compLevel.Items[0] = "الكل";
             compLevel.SelectedIndex = 1;
+
+            //studentsListPanel.VerticalScroll.Maximum = 0;
+            //studentsListPanel.VerticalScroll.Enabled = false;
+            //studentsListPanel.VerticalScroll.Visible = false;
+            //studentsListPanel.AutoScroll = true;
         }
 
         private bool zxing, aForge;
