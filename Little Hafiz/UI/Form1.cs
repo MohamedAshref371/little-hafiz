@@ -34,11 +34,12 @@ namespace Little_Hafiz
             timer.Tick += (s, e1) =>
             {
                 timer.Stop();
-                if (studentDataPanel.Visible)
-                    studentDataPanel.Invalidate();
 
                 if (studentsListPanel.Visible)
                     studentsListPanel.Invalidate();
+
+                if (studentDataPanel.Visible)
+                    studentDataPanel.Invalidate();
 
                 if (studentGradesListPanel.Visible)
                     studentGradesListPanel.Invalidate();
