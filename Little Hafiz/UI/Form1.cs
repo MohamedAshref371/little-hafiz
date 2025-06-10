@@ -192,6 +192,7 @@ namespace Little_Hafiz
                 GetOffice();
                 officeComboBox.Visible = false;
                 formTitle.Visible = true;
+                DatabaseHelper.RemoveAllRecords();
                 return;
             }
 
@@ -201,7 +202,7 @@ namespace Little_Hafiz
             if (DatabaseHelper.CurrentOffice != 0 && (!File.Exists("password.log") || !Secrets.ComputeSubCopyPassword(File.ReadAllText("password.log"))))
                 return;
 
-            if (MessageBox.Show("هل انت متأكد أنك تريد تحويل هذه النسخة إلى نسخة فرعية ؟\nلن تستطيع تحويلها الى نسخة رئيسية مجددا", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            if (MessageBox.Show("هل انت متأكد أنك تريد تحويل هذه النسخة إلى نسخة فرعية ؟\nلن تستطيع تحويلها الى نسخة رئيسية مجددا\nوسيتم حذف ملفات تسجيل حركة البيانات", "؟!?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
                 return;
 
             formTitle.Visible = false;

@@ -638,7 +638,7 @@ namespace Little_Hafiz
             return true;
         }
 
-        private static void RemoveAllRecords()
+        public static void RemoveAllRecords()
         {
             string[] recs = Directory.GetFiles(recordsFolder, $"*{fileFormat}", SearchOption.TopDirectoryOnly);
 
