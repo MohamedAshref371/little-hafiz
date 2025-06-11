@@ -1670,7 +1670,7 @@ namespace Little_Hafiz
             footerPanel.Visible = false;
 
             ranksListPanel.Controls.Clear();
-            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(30, 9) });
+            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(20, 9) });
             fs?.SetControls(ranksListPanel.Controls);
 
             wrongThingLabel.Visible = false;
