@@ -657,7 +657,7 @@ namespace Little_Hafiz
             {
                 sqls = File.ReadAllText(dataFiles[i]).Split(';').Select(sql => Base64Converter.Base64ToString(sql)).Where(sql => sql != string.Empty).ToArray();
                 isTrue = long.TryParse(sqls[0], out long num);
-                if (!isTrue || num != CreateDate.Ticks)
+                if (!isTrue /*|| num != CreateDate.Ticks*/)
                 {
                     err.Add(Path.GetFileName(dataFiles[i]));
                     continue; 

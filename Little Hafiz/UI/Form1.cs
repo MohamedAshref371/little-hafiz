@@ -1344,7 +1344,7 @@ namespace Little_Hafiz
             else if (prevLevel.Value == 1)
                 currentLevel.Maximum = 1;
             else
-                currentLevel.Maximum = prevLevel.Value - 1;
+                currentLevel.Maximum = prevLevel.Value;
         }
 
         private void CompDateLabel_DoubleClick(object sender, EventArgs e)
@@ -1418,6 +1418,8 @@ namespace Little_Hafiz
             if ((float)stdAge.Tag > 35 && MessageBox.Show("هذا الطالب عمره أكبر من 35 عاما", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
 
             if ((float)stdAge.Tag > 25 && currentLevel.Value != 1 && MessageBox.Show("هذا الطالب عمره أكبر من 25 عاما ومستوى المسابقة أقل من الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+            if (prevLevel.Value != 1 && currentLevel.Value == prevLevel.Value && MessageBox.Show("هل انت متأكد انك تريد اضافة مسابقة كالمستوى السابق ؟\nالمستوى السابق ليس هو المستوى الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
 
             if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
             {
