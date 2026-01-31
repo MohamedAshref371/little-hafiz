@@ -34,6 +34,8 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.studentDataPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stdTeacher = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdGroup = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdGroupLabel = new System.Windows.Forms.Label();
             this.stdTeacherLabel = new System.Windows.Forms.Label();
             this.cancel1Btn = new Guna.UI2.WinForms.Guna2Button();
@@ -57,30 +59,47 @@
             this.stdSkillsLabel = new System.Windows.Forms.Label();
             this.stdCertificates = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdCertificatesLabel = new System.Windows.Forms.Label();
+            this.stdFirstConclusion = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.stdJoiningDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdJoiningDateLabel = new System.Windows.Forms.Label();
             this.stdMemoPlaces = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMashaykh = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMemoPlacesLabel = new System.Windows.Forms.Label();
             this.stdMashaykhLabel = new System.Windows.Forms.Label();
+            this.stdMemo = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMemoLabel = new System.Windows.Forms.Label();
+            this.stdMaritalStatus = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdMaritalStatusLabel = new System.Windows.Forms.Label();
             this.stdArrangementLabel = new System.Windows.Forms.Label();
             this.stdArrangement = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.stdBrothersLabel = new System.Windows.Forms.Label();
             this.stdBrothers = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.stdSchool = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdClass = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdClassLabel = new System.Windows.Forms.Label();
             this.stdEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdFacebook = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdFacebookLabel = new System.Windows.Forms.Label();
             this.stdEmailLabel = new System.Windows.Forms.Label();
+            this.stdAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdAddressLabel = new System.Windows.Forms.Label();
             this.stdPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guardianLink = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guardianBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guardianName = new Guna.UI2.WinForms.Guna2TextBox();
             this.motherPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.fatherPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.motherJob = new Guna.UI2.WinForms.Guna2TextBox();
+            this.motherQuali = new Guna.UI2.WinForms.Guna2TextBox();
+            this.fatherJob = new Guna.UI2.WinForms.Guna2TextBox();
+            this.fatherQuali = new Guna.UI2.WinForms.Guna2TextBox();
             this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.stdJob = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.stdNational = new Guna.UI2.WinForms.Guna2TextBox();
             this.studentPanelTitle = new System.Windows.Forms.Label();
+            this.stdName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guardianLinkLabel = new System.Windows.Forms.Label();
             this.guardianBirthLabel = new System.Windows.Forms.Label();
             this.guardianNameLabel = new System.Windows.Forms.Label();
@@ -121,6 +140,7 @@
             this.stdEmailSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdPhoneSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.stdNationalSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.searchPanelTitle = new System.Windows.Forms.Label();
             this.stdEmailCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.stdPhoneCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -147,6 +167,7 @@
             this.readRecordsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.dataRecorderCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentGradesPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.stopChangeDate = new Guna.UI2.WinForms.Guna2CheckBox();
             this.compNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.compCount = new System.Windows.Forms.Label();
             this.stdAge = new System.Windows.Forms.Label();
@@ -200,26 +221,6 @@
             this.disableAtAll = new System.Windows.Forms.Label();
             this.officeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.selectDataFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.stdNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdTeacher = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdGroup = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdFirstConclusion = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.stdJoiningDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.stdMemo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdMaritalStatus = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdSchool = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdClass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guardianLink = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guardianBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guardianName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.motherJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.motherQuali = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fatherJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fatherQuali = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdJob = new Guna.UI2.WinForms.Guna2TextBox();
-            this.stdBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.stdName = new Guna.UI2.WinForms.Guna2TextBox();
             this.studentDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
@@ -393,6 +394,60 @@
             this.studentDataPanel.Size = new System.Drawing.Size(934, 656);
             this.studentDataPanel.TabIndex = 2;
             this.studentDataPanel.Visible = false;
+            // 
+            // stdTeacher
+            // 
+            this.stdTeacher.BackColor = System.Drawing.Color.Transparent;
+            this.stdTeacher.BorderRadius = 5;
+            this.stdTeacher.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdTeacher.DefaultText = "";
+            this.stdTeacher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdTeacher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdTeacher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdTeacher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdTeacher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdTeacher.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdTeacher.ForeColor = System.Drawing.Color.Black;
+            this.stdTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdTeacher.Location = new System.Drawing.Point(536, 749);
+            this.stdTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdTeacher.Name = "stdTeacher";
+            this.stdTeacher.PlaceholderText = "";
+            this.stdTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdTeacher.SelectedText = "";
+            this.stdTeacher.Size = new System.Drawing.Size(257, 32);
+            this.stdTeacher.TabIndex = 87;
+            this.stdTeacher.Tag = Little_Hafiz.TargetField.StudentTeacher;
+            this.stdTeacher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdTeacher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // stdGroup
+            // 
+            this.stdGroup.BackColor = System.Drawing.Color.Transparent;
+            this.stdGroup.BorderRadius = 5;
+            this.stdGroup.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdGroup.DefaultText = "";
+            this.stdGroup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdGroup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdGroup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdGroup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdGroup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdGroup.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdGroup.ForeColor = System.Drawing.Color.Black;
+            this.stdGroup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdGroup.Location = new System.Drawing.Point(43, 749);
+            this.stdGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdGroup.Name = "stdGroup";
+            this.stdGroup.PlaceholderText = "";
+            this.stdGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdGroup.SelectedText = "";
+            this.stdGroup.Size = new System.Drawing.Size(257, 32);
+            this.stdGroup.TabIndex = 88;
+            this.stdGroup.Tag = Little_Hafiz.TargetField.StudentGroup;
+            this.stdGroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdGroup.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdGroupLabel
             // 
@@ -844,6 +899,47 @@
             this.stdCertificatesLabel.Text = "شهادات التقدير وأماكنها : ";
             this.stdCertificatesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // stdFirstConclusion
+            // 
+            this.stdFirstConclusion.BackColor = System.Drawing.Color.Transparent;
+            this.stdFirstConclusion.BorderRadius = 15;
+            this.stdFirstConclusion.Checked = true;
+            this.stdFirstConclusion.CustomFormat = "yyyy/MM/dd";
+            this.stdFirstConclusion.Enabled = false;
+            this.stdFirstConclusion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdFirstConclusion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stdFirstConclusion.ForeColor = System.Drawing.Color.Black;
+            this.stdFirstConclusion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stdFirstConclusion.Location = new System.Drawing.Point(41, 698);
+            this.stdFirstConclusion.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.stdFirstConclusion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.stdFirstConclusion.Name = "stdFirstConclusion";
+            this.stdFirstConclusion.Size = new System.Drawing.Size(193, 36);
+            this.stdFirstConclusion.TabIndex = 59;
+            this.stdFirstConclusion.Tag = Little_Hafiz.TargetField.FirstConclusionDate;
+            this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
+            this.stdFirstConclusion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
+            // 
+            // stdJoiningDate
+            // 
+            this.stdJoiningDate.BackColor = System.Drawing.Color.Transparent;
+            this.stdJoiningDate.BorderRadius = 15;
+            this.stdJoiningDate.Checked = true;
+            this.stdJoiningDate.CustomFormat = "yyyy/MM/dd";
+            this.stdJoiningDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdJoiningDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stdJoiningDate.ForeColor = System.Drawing.Color.Black;
+            this.stdJoiningDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stdJoiningDate.Location = new System.Drawing.Point(540, 698);
+            this.stdJoiningDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.stdJoiningDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.stdJoiningDate.Name = "stdJoiningDate";
+            this.stdJoiningDate.Size = new System.Drawing.Size(193, 36);
+            this.stdJoiningDate.TabIndex = 57;
+            this.stdJoiningDate.Tag = Little_Hafiz.TargetField.JoiningDate;
+            this.stdJoiningDate.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.stdJoiningDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
+            // 
             // stdJoiningDateLabel
             // 
             this.stdJoiningDateLabel.BackColor = System.Drawing.Color.Transparent;
@@ -940,6 +1036,33 @@
             this.stdMashaykhLabel.Text = "المشايخ الذين حفظوه : ";
             this.stdMashaykhLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // stdMemo
+            // 
+            this.stdMemo.BackColor = System.Drawing.Color.Transparent;
+            this.stdMemo.BorderRadius = 5;
+            this.stdMemo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdMemo.DefaultText = "";
+            this.stdMemo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdMemo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdMemo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMemo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMemo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdMemo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMemo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdMemo.ForeColor = System.Drawing.Color.Black;
+            this.stdMemo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMemo.Location = new System.Drawing.Point(43, 654);
+            this.stdMemo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdMemo.Name = "stdMemo";
+            this.stdMemo.PlaceholderText = "";
+            this.stdMemo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMemo.SelectedText = "";
+            this.stdMemo.Size = new System.Drawing.Size(257, 32);
+            this.stdMemo.TabIndex = 56;
+            this.stdMemo.Tag = Little_Hafiz.TargetField.MemoAmount;
+            this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMemo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
             // stdMemoLabel
             // 
             this.stdMemoLabel.BackColor = System.Drawing.Color.Transparent;
@@ -951,6 +1074,33 @@
             this.stdMemoLabel.TabIndex = 49;
             this.stdMemoLabel.Text = "مقدار الحفظ : ";
             this.stdMemoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // stdMaritalStatus
+            // 
+            this.stdMaritalStatus.BackColor = System.Drawing.Color.Transparent;
+            this.stdMaritalStatus.BorderRadius = 5;
+            this.stdMaritalStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdMaritalStatus.DefaultText = "";
+            this.stdMaritalStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdMaritalStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdMaritalStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMaritalStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdMaritalStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdMaritalStatus.ForeColor = System.Drawing.Color.Black;
+            this.stdMaritalStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdMaritalStatus.Location = new System.Drawing.Point(536, 654);
+            this.stdMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdMaritalStatus.Name = "stdMaritalStatus";
+            this.stdMaritalStatus.PlaceholderText = "";
+            this.stdMaritalStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdMaritalStatus.SelectedText = "";
+            this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
+            this.stdMaritalStatus.TabIndex = 55;
+            this.stdMaritalStatus.Tag = Little_Hafiz.TargetField.MaritalStatus;
+            this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdMaritalStatusLabel
             // 
@@ -1032,6 +1182,60 @@
             this.stdBrothers.TabIndex = 53;
             this.stdBrothers.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(180)))));
             this.stdBrothers.ValueChanged += new System.EventHandler(this.StdBrothers_ValueChanged);
+            // 
+            // stdSchool
+            // 
+            this.stdSchool.BackColor = System.Drawing.Color.Transparent;
+            this.stdSchool.BorderRadius = 5;
+            this.stdSchool.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdSchool.DefaultText = "";
+            this.stdSchool.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdSchool.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdSchool.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdSchool.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdSchool.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdSchool.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdSchool.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdSchool.ForeColor = System.Drawing.Color.Black;
+            this.stdSchool.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdSchool.Location = new System.Drawing.Point(536, 568);
+            this.stdSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdSchool.Name = "stdSchool";
+            this.stdSchool.PlaceholderText = "";
+            this.stdSchool.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdSchool.SelectedText = "";
+            this.stdSchool.Size = new System.Drawing.Size(257, 32);
+            this.stdSchool.TabIndex = 51;
+            this.stdSchool.Tag = Little_Hafiz.TargetField.School;
+            this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // stdClass
+            // 
+            this.stdClass.BackColor = System.Drawing.Color.Transparent;
+            this.stdClass.BorderRadius = 5;
+            this.stdClass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdClass.DefaultText = "";
+            this.stdClass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdClass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdClass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdClass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdClass.ForeColor = System.Drawing.Color.Black;
+            this.stdClass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdClass.Location = new System.Drawing.Point(43, 568);
+            this.stdClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdClass.Name = "stdClass";
+            this.stdClass.PlaceholderText = "";
+            this.stdClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdClass.SelectedText = "";
+            this.stdClass.Size = new System.Drawing.Size(257, 32);
+            this.stdClass.TabIndex = 52;
+            this.stdClass.Tag = Little_Hafiz.TargetField.Class;
+            this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
             // 
             // stdClassLabel
             // 
@@ -1119,6 +1323,33 @@
             this.stdEmailLabel.Text = "الإيميل : ";
             this.stdEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // stdAddress
+            // 
+            this.stdAddress.BackColor = System.Drawing.Color.Transparent;
+            this.stdAddress.BorderRadius = 5;
+            this.stdAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdAddress.DefaultText = "";
+            this.stdAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdAddress.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdAddress.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdAddress.ForeColor = System.Drawing.Color.Black;
+            this.stdAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdAddress.Location = new System.Drawing.Point(43, 488);
+            this.stdAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdAddress.Name = "stdAddress";
+            this.stdAddress.PlaceholderText = "";
+            this.stdAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdAddress.SelectedText = "";
+            this.stdAddress.Size = new System.Drawing.Size(257, 32);
+            this.stdAddress.TabIndex = 48;
+            this.stdAddress.Tag = Little_Hafiz.TargetField.Address;
+            this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.stdAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
             // stdAddressLabel
             // 
             this.stdAddressLabel.BackColor = System.Drawing.Color.Transparent;
@@ -1156,6 +1387,80 @@
             this.stdPhone.Size = new System.Drawing.Size(257, 32);
             this.stdPhone.TabIndex = 47;
             this.stdPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
+            // 
+            // guardianLink
+            // 
+            this.guardianLink.BackColor = System.Drawing.Color.Transparent;
+            this.guardianLink.BorderRadius = 5;
+            this.guardianLink.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guardianLink.DefaultText = "";
+            this.guardianLink.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guardianLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guardianLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianLink.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guardianLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guardianLink.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guardianLink.ForeColor = System.Drawing.Color.Black;
+            this.guardianLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guardianLink.Location = new System.Drawing.Point(330, 431);
+            this.guardianLink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guardianLink.Name = "guardianLink";
+            this.guardianLink.PlaceholderText = "";
+            this.guardianLink.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guardianLink.SelectedText = "";
+            this.guardianLink.Size = new System.Drawing.Size(86, 32);
+            this.guardianLink.TabIndex = 45;
+            this.guardianLink.Tag = Little_Hafiz.TargetField.GuardianLink;
+            this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // guardianBirth
+            // 
+            this.guardianBirth.BackColor = System.Drawing.Color.Transparent;
+            this.guardianBirth.BorderRadius = 15;
+            this.guardianBirth.Checked = true;
+            this.guardianBirth.CustomFormat = "yyyy/MM/dd";
+            this.guardianBirth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guardianBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guardianBirth.ForeColor = System.Drawing.Color.Black;
+            this.guardianBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.guardianBirth.Location = new System.Drawing.Point(43, 431);
+            this.guardianBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guardianBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guardianBirth.Name = "guardianBirth";
+            this.guardianBirth.Size = new System.Drawing.Size(136, 32);
+            this.guardianBirth.TabIndex = 46;
+            this.guardianBirth.Tag = Little_Hafiz.TargetField.GuardianBirthDate;
+            this.guardianBirth.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            this.guardianBirth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
+            // 
+            // guardianName
+            // 
+            this.guardianName.BackColor = System.Drawing.Color.Transparent;
+            this.guardianName.BorderRadius = 5;
+            this.guardianName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guardianName.DefaultText = "";
+            this.guardianName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guardianName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guardianName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guardianName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guardianName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guardianName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guardianName.ForeColor = System.Drawing.Color.Black;
+            this.guardianName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guardianName.Location = new System.Drawing.Point(536, 431);
+            this.guardianName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guardianName.Name = "guardianName";
+            this.guardianName.PlaceholderText = "";
+            this.guardianName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.guardianName.SelectedText = "";
+            this.guardianName.Size = new System.Drawing.Size(257, 32);
+            this.guardianName.TabIndex = 44;
+            this.guardianName.Tag = Little_Hafiz.TargetField.GuardianName;
+            this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataGuardianNameField_KeyUp);
             // 
             // motherPhone
             // 
@@ -1208,6 +1513,114 @@
             this.fatherPhone.TabIndex = 42;
             this.fatherPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
+            // motherJob
+            // 
+            this.motherJob.BackColor = System.Drawing.Color.Transparent;
+            this.motherJob.BorderRadius = 5;
+            this.motherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.motherJob.DefaultText = "";
+            this.motherJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.motherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.motherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.motherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.motherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.motherJob.ForeColor = System.Drawing.Color.Black;
+            this.motherJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.motherJob.Location = new System.Drawing.Point(43, 347);
+            this.motherJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.motherJob.Name = "motherJob";
+            this.motherJob.PlaceholderText = "";
+            this.motherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.motherJob.SelectedText = "";
+            this.motherJob.Size = new System.Drawing.Size(257, 32);
+            this.motherJob.TabIndex = 41;
+            this.motherJob.Tag = Little_Hafiz.TargetField.MotherJob;
+            this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // motherQuali
+            // 
+            this.motherQuali.BackColor = System.Drawing.Color.Transparent;
+            this.motherQuali.BorderRadius = 5;
+            this.motherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.motherQuali.DefaultText = "";
+            this.motherQuali.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.motherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.motherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.motherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.motherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.motherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.motherQuali.ForeColor = System.Drawing.Color.Black;
+            this.motherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.motherQuali.Location = new System.Drawing.Point(536, 347);
+            this.motherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.motherQuali.Name = "motherQuali";
+            this.motherQuali.PlaceholderText = "";
+            this.motherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.motherQuali.SelectedText = "";
+            this.motherQuali.Size = new System.Drawing.Size(257, 32);
+            this.motherQuali.TabIndex = 40;
+            this.motherQuali.Tag = Little_Hafiz.TargetField.MotherQualification;
+            this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // fatherJob
+            // 
+            this.fatherJob.BackColor = System.Drawing.Color.Transparent;
+            this.fatherJob.BorderRadius = 5;
+            this.fatherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fatherJob.DefaultText = "";
+            this.fatherJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.fatherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fatherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fatherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fatherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.fatherJob.ForeColor = System.Drawing.Color.Black;
+            this.fatherJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fatherJob.Location = new System.Drawing.Point(43, 307);
+            this.fatherJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fatherJob.Name = "fatherJob";
+            this.fatherJob.PlaceholderText = "";
+            this.fatherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fatherJob.SelectedText = "";
+            this.fatherJob.Size = new System.Drawing.Size(257, 32);
+            this.fatherJob.TabIndex = 39;
+            this.fatherJob.Tag = Little_Hafiz.TargetField.FatherJob;
+            this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // fatherQuali
+            // 
+            this.fatherQuali.BackColor = System.Drawing.Color.Transparent;
+            this.fatherQuali.BorderRadius = 5;
+            this.fatherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fatherQuali.DefaultText = "";
+            this.fatherQuali.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.fatherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fatherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fatherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fatherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fatherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.fatherQuali.ForeColor = System.Drawing.Color.Black;
+            this.fatherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fatherQuali.Location = new System.Drawing.Point(536, 307);
+            this.fatherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fatherQuali.Name = "fatherQuali";
+            this.fatherQuali.PlaceholderText = "";
+            this.fatherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fatherQuali.SelectedText = "";
+            this.fatherQuali.Size = new System.Drawing.Size(257, 32);
+            this.fatherQuali.TabIndex = 38;
+            this.fatherQuali.Tag = Little_Hafiz.TargetField.FatherQualification;
+            this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
             // cancelBtn
             // 
             this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
@@ -1248,6 +1661,52 @@
             this.addStudentBtn.Text = "إضافة";
             this.addStudentBtn.Click += new System.EventHandler(this.AddStudentBtn_Click);
             // 
+            // stdJob
+            // 
+            this.stdJob.BackColor = System.Drawing.Color.Transparent;
+            this.stdJob.BorderRadius = 5;
+            this.stdJob.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdJob.DefaultText = "";
+            this.stdJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdJob.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdJob.ForeColor = System.Drawing.Color.Black;
+            this.stdJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdJob.Location = new System.Drawing.Point(43, 255);
+            this.stdJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdJob.Name = "stdJob";
+            this.stdJob.PlaceholderText = "";
+            this.stdJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdJob.SelectedText = "";
+            this.stdJob.Size = new System.Drawing.Size(257, 32);
+            this.stdJob.TabIndex = 37;
+            this.stdJob.Tag = Little_Hafiz.TargetField.StudentJob;
+            this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
+            // 
+            // stdBirthDate
+            // 
+            this.stdBirthDate.BackColor = System.Drawing.Color.Transparent;
+            this.stdBirthDate.BorderRadius = 15;
+            this.stdBirthDate.Checked = true;
+            this.stdBirthDate.CustomFormat = "yyyy/MM/dd";
+            this.stdBirthDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stdBirthDate.ForeColor = System.Drawing.Color.Black;
+            this.stdBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stdBirthDate.Location = new System.Drawing.Point(536, 250);
+            this.stdBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.stdBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.stdBirthDate.Name = "stdBirthDate";
+            this.stdBirthDate.Size = new System.Drawing.Size(257, 36);
+            this.stdBirthDate.TabIndex = 36;
+            this.stdBirthDate.Tag = Little_Hafiz.TargetField.StudentBirthDate;
+            this.stdBirthDate.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            this.stdBirthDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
+            // 
             // stdNational
             // 
             this.stdNational.BackColor = System.Drawing.Color.Transparent;
@@ -1285,6 +1744,33 @@
             this.studentPanelTitle.Size = new System.Drawing.Size(230, 29);
             this.studentPanelTitle.TabIndex = 2;
             this.studentPanelTitle.Text = "استمارة بيانات الطالب";
+            // 
+            // stdName
+            // 
+            this.stdName.BackColor = System.Drawing.Color.Transparent;
+            this.stdName.BorderRadius = 5;
+            this.stdName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdName.DefaultText = "";
+            this.stdName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stdName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdName.ForeColor = System.Drawing.Color.Black;
+            this.stdName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdName.Location = new System.Drawing.Point(536, 194);
+            this.stdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdName.Name = "stdName";
+            this.stdName.PlaceholderText = "";
+            this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdName.SelectedText = "";
+            this.stdName.Size = new System.Drawing.Size(257, 32);
+            this.stdName.TabIndex = 34;
+            this.stdName.Tag = Little_Hafiz.TargetField.StudentName;
+            this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // guardianLinkLabel
             // 
@@ -1921,6 +2407,33 @@
             this.stdNationalSearch.TabIndex = 11;
             this.stdNationalSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NationalSearch_KeyPress);
             // 
+            // stdNameSearch
+            // 
+            this.stdNameSearch.BackColor = System.Drawing.Color.Transparent;
+            this.stdNameSearch.BorderRadius = 5;
+            this.stdNameSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.stdNameSearch.DefaultText = "";
+            this.stdNameSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.stdNameSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.stdNameSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdNameSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.stdNameSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.stdNameSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNameSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stdNameSearch.ForeColor = System.Drawing.Color.Black;
+            this.stdNameSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stdNameSearch.Location = new System.Drawing.Point(23, 52);
+            this.stdNameSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stdNameSearch.Name = "stdNameSearch";
+            this.stdNameSearch.PlaceholderText = "";
+            this.stdNameSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stdNameSearch.SelectedText = "";
+            this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
+            this.stdNameSearch.TabIndex = 7;
+            this.stdNameSearch.Tag = Little_Hafiz.TargetField.StudentName;
+            this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
+            // 
             // searchPanelTitle
             // 
             this.searchPanelTitle.AutoSize = true;
@@ -2412,6 +2925,7 @@
             this.studentGradesPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentGradesPanel.BorderRadius = 5;
             this.studentGradesPanel.BorderThickness = 1;
+            this.studentGradesPanel.Controls.Add(this.stopChangeDate);
             this.studentGradesPanel.Controls.Add(this.compNotes);
             this.studentGradesPanel.Controls.Add(this.compCount);
             this.studentGradesPanel.Controls.Add(this.stdAge);
@@ -2450,6 +2964,27 @@
             this.studentGradesPanel.Size = new System.Drawing.Size(926, 656);
             this.studentGradesPanel.TabIndex = 85;
             this.studentGradesPanel.Visible = false;
+            // 
+            // stopChangeDate
+            // 
+            this.stopChangeDate.BackColor = System.Drawing.Color.Transparent;
+            this.stopChangeDate.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stopChangeDate.CheckedState.BorderRadius = 3;
+            this.stopChangeDate.CheckedState.BorderThickness = 1;
+            this.stopChangeDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.stopChangeDate.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.stopChangeDate.Location = new System.Drawing.Point(363, 21);
+            this.stopChangeDate.Name = "stopChangeDate";
+            this.stopChangeDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.stopChangeDate.Size = new System.Drawing.Size(223, 32);
+            this.stopChangeDate.TabIndex = 100;
+            this.stopChangeDate.Text = "إيقاف قواعد المسابقة";
+            this.stopChangeDate.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(157)))), ((int)(((byte)(209)))));
+            this.stopChangeDate.UncheckedState.BorderRadius = 3;
+            this.stopChangeDate.UncheckedState.BorderThickness = 1;
+            this.stopChangeDate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.stopChangeDate.UseVisualStyleBackColor = false;
+            this.stopChangeDate.CheckedChanged += new System.EventHandler(this.StopChangeDate_CheckedChanged);
             // 
             // compNotes
             // 
@@ -3232,518 +3767,6 @@
     "طلاب يدويا لأن قارئ التسجيلات لا يقوم بنسخ الصور";
             this.selectDataFolderDialog.ShowNewFolderButton = false;
             // 
-            // stdNameSearch
-            // 
-            this.stdNameSearch.BackColor = System.Drawing.Color.Transparent;
-            this.stdNameSearch.BorderRadius = 5;
-            this.stdNameSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdNameSearch.DefaultText = "";
-            this.stdNameSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdNameSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdNameSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdNameSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdNameSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.stdNameSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdNameSearch.ForeColor = System.Drawing.Color.Black;
-            this.stdNameSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdNameSearch.Location = new System.Drawing.Point(23, 52);
-            this.stdNameSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdNameSearch.Name = "stdNameSearch";
-            this.stdNameSearch.PlaceholderText = "";
-            this.stdNameSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdNameSearch.SelectedText = "";
-            this.stdNameSearch.Size = new System.Drawing.Size(257, 32);
-            this.stdNameSearch.TabIndex = 7;
-            this.stdNameSearch.Tag = Little_Hafiz.TargetField.StudentName;
-            this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
-            // 
-            // stdTeacher
-            // 
-            this.stdTeacher.BackColor = System.Drawing.Color.Transparent;
-            this.stdTeacher.BorderRadius = 5;
-            this.stdTeacher.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdTeacher.DefaultText = "";
-            this.stdTeacher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdTeacher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdTeacher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdTeacher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdTeacher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdTeacher.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdTeacher.ForeColor = System.Drawing.Color.Black;
-            this.stdTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdTeacher.Location = new System.Drawing.Point(536, 749);
-            this.stdTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdTeacher.Name = "stdTeacher";
-            this.stdTeacher.PlaceholderText = "";
-            this.stdTeacher.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdTeacher.SelectedText = "";
-            this.stdTeacher.Size = new System.Drawing.Size(257, 32);
-            this.stdTeacher.TabIndex = 87;
-            this.stdTeacher.Tag = Little_Hafiz.TargetField.StudentTeacher;
-            this.stdTeacher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdTeacher.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdGroup
-            // 
-            this.stdGroup.BackColor = System.Drawing.Color.Transparent;
-            this.stdGroup.BorderRadius = 5;
-            this.stdGroup.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdGroup.DefaultText = "";
-            this.stdGroup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdGroup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdGroup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdGroup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdGroup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdGroup.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdGroup.ForeColor = System.Drawing.Color.Black;
-            this.stdGroup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdGroup.Location = new System.Drawing.Point(43, 749);
-            this.stdGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdGroup.Name = "stdGroup";
-            this.stdGroup.PlaceholderText = "";
-            this.stdGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdGroup.SelectedText = "";
-            this.stdGroup.Size = new System.Drawing.Size(257, 32);
-            this.stdGroup.TabIndex = 88;
-            this.stdGroup.Tag = Little_Hafiz.TargetField.StudentGroup;
-            this.stdGroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdGroup.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdFirstConclusion
-            // 
-            this.stdFirstConclusion.BackColor = System.Drawing.Color.Transparent;
-            this.stdFirstConclusion.BorderRadius = 15;
-            this.stdFirstConclusion.Checked = true;
-            this.stdFirstConclusion.CustomFormat = "yyyy/MM/dd";
-            this.stdFirstConclusion.Enabled = false;
-            this.stdFirstConclusion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdFirstConclusion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stdFirstConclusion.ForeColor = System.Drawing.Color.Black;
-            this.stdFirstConclusion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdFirstConclusion.Location = new System.Drawing.Point(41, 698);
-            this.stdFirstConclusion.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.stdFirstConclusion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.stdFirstConclusion.Name = "stdFirstConclusion";
-            this.stdFirstConclusion.Size = new System.Drawing.Size(193, 36);
-            this.stdFirstConclusion.TabIndex = 59;
-            this.stdFirstConclusion.Tag = Little_Hafiz.TargetField.FirstConclusionDate;
-            this.stdFirstConclusion.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
-            this.stdFirstConclusion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
-            // 
-            // stdJoiningDate
-            // 
-            this.stdJoiningDate.BackColor = System.Drawing.Color.Transparent;
-            this.stdJoiningDate.BorderRadius = 15;
-            this.stdJoiningDate.Checked = true;
-            this.stdJoiningDate.CustomFormat = "yyyy/MM/dd";
-            this.stdJoiningDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdJoiningDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stdJoiningDate.ForeColor = System.Drawing.Color.Black;
-            this.stdJoiningDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdJoiningDate.Location = new System.Drawing.Point(540, 698);
-            this.stdJoiningDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.stdJoiningDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.stdJoiningDate.Name = "stdJoiningDate";
-            this.stdJoiningDate.Size = new System.Drawing.Size(193, 36);
-            this.stdJoiningDate.TabIndex = 57;
-            this.stdJoiningDate.Tag = Little_Hafiz.TargetField.JoiningDate;
-            this.stdJoiningDate.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.stdJoiningDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
-            // 
-            // stdMemo
-            // 
-            this.stdMemo.BackColor = System.Drawing.Color.Transparent;
-            this.stdMemo.BorderRadius = 5;
-            this.stdMemo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdMemo.DefaultText = "";
-            this.stdMemo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdMemo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdMemo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMemo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMemo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdMemo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMemo.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdMemo.ForeColor = System.Drawing.Color.Black;
-            this.stdMemo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMemo.Location = new System.Drawing.Point(43, 654);
-            this.stdMemo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdMemo.Name = "stdMemo";
-            this.stdMemo.PlaceholderText = "";
-            this.stdMemo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMemo.SelectedText = "";
-            this.stdMemo.Size = new System.Drawing.Size(257, 32);
-            this.stdMemo.TabIndex = 56;
-            this.stdMemo.Tag = Little_Hafiz.TargetField.MemoAmount;
-            this.stdMemo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdMemo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdMaritalStatus
-            // 
-            this.stdMaritalStatus.BackColor = System.Drawing.Color.Transparent;
-            this.stdMaritalStatus.BorderRadius = 5;
-            this.stdMaritalStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdMaritalStatus.DefaultText = "";
-            this.stdMaritalStatus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdMaritalStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdMaritalStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMaritalStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdMaritalStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdMaritalStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdMaritalStatus.ForeColor = System.Drawing.Color.Black;
-            this.stdMaritalStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdMaritalStatus.Location = new System.Drawing.Point(536, 654);
-            this.stdMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdMaritalStatus.Name = "stdMaritalStatus";
-            this.stdMaritalStatus.PlaceholderText = "";
-            this.stdMaritalStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdMaritalStatus.SelectedText = "";
-            this.stdMaritalStatus.Size = new System.Drawing.Size(257, 32);
-            this.stdMaritalStatus.TabIndex = 55;
-            this.stdMaritalStatus.Tag = Little_Hafiz.TargetField.MaritalStatus;
-            this.stdMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdMaritalStatus.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdSchool
-            // 
-            this.stdSchool.BackColor = System.Drawing.Color.Transparent;
-            this.stdSchool.BorderRadius = 5;
-            this.stdSchool.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdSchool.DefaultText = "";
-            this.stdSchool.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdSchool.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdSchool.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdSchool.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdSchool.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdSchool.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdSchool.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdSchool.ForeColor = System.Drawing.Color.Black;
-            this.stdSchool.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdSchool.Location = new System.Drawing.Point(536, 568);
-            this.stdSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdSchool.Name = "stdSchool";
-            this.stdSchool.PlaceholderText = "";
-            this.stdSchool.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdSchool.SelectedText = "";
-            this.stdSchool.Size = new System.Drawing.Size(257, 32);
-            this.stdSchool.TabIndex = 51;
-            this.stdSchool.Tag = Little_Hafiz.TargetField.School;
-            this.stdSchool.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdSchool.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdClass
-            // 
-            this.stdClass.BackColor = System.Drawing.Color.Transparent;
-            this.stdClass.BorderRadius = 5;
-            this.stdClass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdClass.DefaultText = "";
-            this.stdClass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdClass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdClass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdClass.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdClass.ForeColor = System.Drawing.Color.Black;
-            this.stdClass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdClass.Location = new System.Drawing.Point(43, 568);
-            this.stdClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdClass.Name = "stdClass";
-            this.stdClass.PlaceholderText = "";
-            this.stdClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdClass.SelectedText = "";
-            this.stdClass.Size = new System.Drawing.Size(257, 32);
-            this.stdClass.TabIndex = 52;
-            this.stdClass.Tag = Little_Hafiz.TargetField.Class;
-            this.stdClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdAddress
-            // 
-            this.stdAddress.BackColor = System.Drawing.Color.Transparent;
-            this.stdAddress.BorderRadius = 5;
-            this.stdAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdAddress.DefaultText = "";
-            this.stdAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdAddress.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdAddress.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdAddress.ForeColor = System.Drawing.Color.Black;
-            this.stdAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdAddress.Location = new System.Drawing.Point(43, 488);
-            this.stdAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdAddress.Name = "stdAddress";
-            this.stdAddress.PlaceholderText = "";
-            this.stdAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdAddress.SelectedText = "";
-            this.stdAddress.Size = new System.Drawing.Size(257, 32);
-            this.stdAddress.TabIndex = 48;
-            this.stdAddress.Tag = Little_Hafiz.TargetField.Address;
-            this.stdAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.stdAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // guardianLink
-            // 
-            this.guardianLink.BackColor = System.Drawing.Color.Transparent;
-            this.guardianLink.BorderRadius = 5;
-            this.guardianLink.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guardianLink.DefaultText = "";
-            this.guardianLink.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guardianLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guardianLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianLink.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guardianLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guardianLink.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guardianLink.ForeColor = System.Drawing.Color.Black;
-            this.guardianLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guardianLink.Location = new System.Drawing.Point(330, 431);
-            this.guardianLink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guardianLink.Name = "guardianLink";
-            this.guardianLink.PlaceholderText = "";
-            this.guardianLink.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guardianLink.SelectedText = "";
-            this.guardianLink.Size = new System.Drawing.Size(86, 32);
-            this.guardianLink.TabIndex = 45;
-            this.guardianLink.Tag = Little_Hafiz.TargetField.GuardianLink;
-            this.guardianLink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.guardianLink.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // guardianBirth
-            // 
-            this.guardianBirth.BackColor = System.Drawing.Color.Transparent;
-            this.guardianBirth.BorderRadius = 15;
-            this.guardianBirth.Checked = true;
-            this.guardianBirth.CustomFormat = "yyyy/MM/dd";
-            this.guardianBirth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guardianBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guardianBirth.ForeColor = System.Drawing.Color.Black;
-            this.guardianBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guardianBirth.Location = new System.Drawing.Point(43, 431);
-            this.guardianBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guardianBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guardianBirth.Name = "guardianBirth";
-            this.guardianBirth.Size = new System.Drawing.Size(136, 32);
-            this.guardianBirth.TabIndex = 46;
-            this.guardianBirth.Tag = Little_Hafiz.TargetField.GuardianBirthDate;
-            this.guardianBirth.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
-            this.guardianBirth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
-            // 
-            // guardianName
-            // 
-            this.guardianName.BackColor = System.Drawing.Color.Transparent;
-            this.guardianName.BorderRadius = 5;
-            this.guardianName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guardianName.DefaultText = "";
-            this.guardianName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guardianName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guardianName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guardianName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guardianName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guardianName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guardianName.ForeColor = System.Drawing.Color.Black;
-            this.guardianName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guardianName.Location = new System.Drawing.Point(536, 431);
-            this.guardianName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guardianName.Name = "guardianName";
-            this.guardianName.PlaceholderText = "";
-            this.guardianName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guardianName.SelectedText = "";
-            this.guardianName.Size = new System.Drawing.Size(257, 32);
-            this.guardianName.TabIndex = 44;
-            this.guardianName.Tag = Little_Hafiz.TargetField.GuardianName;
-            this.guardianName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.guardianName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataGuardianNameField_KeyUp);
-            // 
-            // motherJob
-            // 
-            this.motherJob.BackColor = System.Drawing.Color.Transparent;
-            this.motherJob.BorderRadius = 5;
-            this.motherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.motherJob.DefaultText = "";
-            this.motherJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.motherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.motherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.motherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.motherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.motherJob.ForeColor = System.Drawing.Color.Black;
-            this.motherJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.motherJob.Location = new System.Drawing.Point(43, 347);
-            this.motherJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.motherJob.Name = "motherJob";
-            this.motherJob.PlaceholderText = "";
-            this.motherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherJob.SelectedText = "";
-            this.motherJob.Size = new System.Drawing.Size(257, 32);
-            this.motherJob.TabIndex = 41;
-            this.motherJob.Tag = Little_Hafiz.TargetField.MotherJob;
-            this.motherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // motherQuali
-            // 
-            this.motherQuali.BackColor = System.Drawing.Color.Transparent;
-            this.motherQuali.BorderRadius = 5;
-            this.motherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.motherQuali.DefaultText = "";
-            this.motherQuali.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.motherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.motherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.motherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.motherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.motherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.motherQuali.ForeColor = System.Drawing.Color.Black;
-            this.motherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.motherQuali.Location = new System.Drawing.Point(536, 347);
-            this.motherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.motherQuali.Name = "motherQuali";
-            this.motherQuali.PlaceholderText = "";
-            this.motherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.motherQuali.SelectedText = "";
-            this.motherQuali.Size = new System.Drawing.Size(257, 32);
-            this.motherQuali.TabIndex = 40;
-            this.motherQuali.Tag = Little_Hafiz.TargetField.MotherQualification;
-            this.motherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.motherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // fatherJob
-            // 
-            this.fatherJob.BackColor = System.Drawing.Color.Transparent;
-            this.fatherJob.BorderRadius = 5;
-            this.fatherJob.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fatherJob.DefaultText = "";
-            this.fatherJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.fatherJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.fatherJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.fatherJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherJob.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.fatherJob.ForeColor = System.Drawing.Color.Black;
-            this.fatherJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherJob.Location = new System.Drawing.Point(43, 307);
-            this.fatherJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.fatherJob.Name = "fatherJob";
-            this.fatherJob.PlaceholderText = "";
-            this.fatherJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherJob.SelectedText = "";
-            this.fatherJob.Size = new System.Drawing.Size(257, 32);
-            this.fatherJob.TabIndex = 39;
-            this.fatherJob.Tag = Little_Hafiz.TargetField.FatherJob;
-            this.fatherJob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // fatherQuali
-            // 
-            this.fatherQuali.BackColor = System.Drawing.Color.Transparent;
-            this.fatherQuali.BorderRadius = 5;
-            this.fatherQuali.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fatherQuali.DefaultText = "";
-            this.fatherQuali.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.fatherQuali.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.fatherQuali.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherQuali.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fatherQuali.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.fatherQuali.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherQuali.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.fatherQuali.ForeColor = System.Drawing.Color.Black;
-            this.fatherQuali.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fatherQuali.Location = new System.Drawing.Point(536, 307);
-            this.fatherQuali.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.fatherQuali.Name = "fatherQuali";
-            this.fatherQuali.PlaceholderText = "";
-            this.fatherQuali.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fatherQuali.SelectedText = "";
-            this.fatherQuali.Size = new System.Drawing.Size(257, 32);
-            this.fatherQuali.TabIndex = 38;
-            this.fatherQuali.Tag = Little_Hafiz.TargetField.FatherQualification;
-            this.fatherQuali.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            this.fatherQuali.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdJob
-            // 
-            this.stdJob.BackColor = System.Drawing.Color.Transparent;
-            this.stdJob.BorderRadius = 5;
-            this.stdJob.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdJob.DefaultText = "";
-            this.stdJob.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdJob.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdJob.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdJob.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdJob.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdJob.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdJob.ForeColor = System.Drawing.Color.Black;
-            this.stdJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdJob.Location = new System.Drawing.Point(43, 255);
-            this.stdJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdJob.Name = "stdJob";
-            this.stdJob.PlaceholderText = "";
-            this.stdJob.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdJob.SelectedText = "";
-            this.stdJob.Size = new System.Drawing.Size(257, 32);
-            this.stdJob.TabIndex = 37;
-            this.stdJob.Tag = Little_Hafiz.TargetField.StudentJob;
-            this.stdJob.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataField_KeyUp);
-            // 
-            // stdBirthDate
-            // 
-            this.stdBirthDate.BackColor = System.Drawing.Color.Transparent;
-            this.stdBirthDate.BorderRadius = 15;
-            this.stdBirthDate.Checked = true;
-            this.stdBirthDate.CustomFormat = "yyyy/MM/dd";
-            this.stdBirthDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stdBirthDate.ForeColor = System.Drawing.Color.Black;
-            this.stdBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stdBirthDate.Location = new System.Drawing.Point(536, 250);
-            this.stdBirthDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.stdBirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.stdBirthDate.Name = "stdBirthDate";
-            this.stdBirthDate.Size = new System.Drawing.Size(257, 36);
-            this.stdBirthDate.TabIndex = 36;
-            this.stdBirthDate.Tag = Little_Hafiz.TargetField.StudentBirthDate;
-            this.stdBirthDate.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            this.stdBirthDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDateField_KeyUp);
-            // 
-            // stdName
-            // 
-            this.stdName.BackColor = System.Drawing.Color.Transparent;
-            this.stdName.BorderRadius = 5;
-            this.stdName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.stdName.DefaultText = "";
-            this.stdName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.stdName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.stdName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.stdName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.stdName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.stdName.ForeColor = System.Drawing.Color.Black;
-            this.stdName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.stdName.Location = new System.Drawing.Point(536, 194);
-            this.stdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.stdName.Name = "stdName";
-            this.stdName.PlaceholderText = "";
-            this.stdName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.stdName.SelectedText = "";
-            this.stdName.Size = new System.Drawing.Size(257, 32);
-            this.stdName.TabIndex = 34;
-            this.stdName.Tag = Little_Hafiz.TargetField.StudentName;
-            this.stdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
-            this.stdName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3973,6 +3996,7 @@
         private System.Windows.Forms.Label stdTeacherLabel;
         private System.Windows.Forms.Label officeLabel;
         private Guna.UI2.WinForms.Guna2ComboBox compLevel;
+        private Guna.UI2.WinForms.Guna2CheckBox stopChangeDate;
     }
 }
 

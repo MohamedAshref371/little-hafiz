@@ -1292,6 +1292,21 @@ namespace Little_Hafiz
                 stdCode.Value = 0;
         }
 
+        private void StopChangeDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stopChangeDate.Checked)
+            {
+                prevLevel.Minimum = 0; prevLevel.Maximum = 10;
+                currentLevel.Minimum = 1; currentLevel.Maximum = 10;
+            }
+            else
+            {
+                UpdateStudentRow();
+                PrevCurrLevel();
+                SetCurrentLevelMaximum();
+            }
+        }
+
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
         {
             studentSearchPanel.Visible = false;
@@ -1301,15 +1316,23 @@ namespace Little_Hafiz
             footerPanel.Visible = false;
 
             compCount.Text = grades.Length.ToString();
-            compDate.Value = DateTime.Now;
+            if (stopChangeDate.Checked)
+            {
+                CompDate_ValueChanged(null, null);
+                prevLevel.Minimum = 0; prevLevel.Maximum = 10;
+                currentLevel.Minimum = 1; currentLevel.Maximum = 10;
+            }
+            else
+            {
+                compDate.Value = DateTime.Now;
+                PrevCurrLevel();
+            }
 
             stdName2.Text = data.FullName;
             stdNational2.Text = data.NationalNumber;
 
             stdImagePath2.Text = data.Image;
             SetStudentImage2();
-
-            PrevCurrLevel();
 
             studentGradesListPanel.Controls.Clear();
             studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
@@ -1370,33 +1393,6 @@ namespace Little_Hafiz
                 return;
             }
 
-            string date = currentStudent.StudentSearchRowData.CompetitionDate;
-            string newDate = compDate.Value.ToStandardStringWithoutDay();
-            bool? allowedDate;
-            if (date is null)
-                allowedDate = true;
-            else if (date.CompareTo(newDate) > 0)
-                allowedDate = (bool?)null;
-            else
-                allowedDate = date != newDate;
-
-            CompetitionGradeData gData; int topRank = 0;
-            for (int i = 1; i < studentGradesListPanel.Controls.Count; i++)
-            {
-                gData = ((StudentGradeRow)studentGradesListPanel.Controls[i]).CompetitionGradeData;
-                if (gData.Rank >= 1 && gData.Rank <= 3 && gData.CompetitionLevel == 1) topRank += 1;
-            }
-
-            if (allowedDate is null)
-            {
-                MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من هذا التاريخ", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (!(bool)allowedDate)
-            {
-                MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
-                return;
-            }
             if ((float)stdAge.Tag == -371)
             {
                 MessageBox.Show("تاريخ الميلاد غير صالح");
@@ -1413,31 +1409,56 @@ namespace Little_Hafiz
                 return;
             }
 
-            if (topRank >= 2 && MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+            string date = currentStudent.StudentSearchRowData.CompetitionDate;
+            string newDate = compDate.Value.ToStandardStringWithoutDay();
 
-            if ((float)stdAge.Tag > 35 && MessageBox.Show("هذا الطالب عمره أكبر من 35 عاما", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
-
-            if ((float)stdAge.Tag > 25 && currentLevel.Value != 1 && MessageBox.Show("هذا الطالب عمره أكبر من 25 عاما ومستوى المسابقة أقل من الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
-
-            if (prevLevel.Value != 1 && currentLevel.Value == prevLevel.Value && MessageBox.Show("هل انت متأكد انك تريد اضافة مسابقة كالمستوى السابق ؟\nالمستوى السابق ليس هو المستوى الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
-
-            if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
+            if (date == newDate)
             {
-                if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                MessageBox.Show("لقد أضفت بالفعل مسابقة لهذا الطالب في هذا الشهر");
+                return;
+            }
+
+            if (!stopChangeDate.Checked)
+            {
+                CompetitionGradeData gData; int topRank = 0;
+                for (int i = 1; i < studentGradesListPanel.Controls.Count; i++)
                 {
-                    if (showSureMessage)
-                    {
-                        DialogResult res = MessageBox.Show("هل تريد تذكر هذا الاختيار ؟", "تنبيه !!!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
-                        if (res == DialogResult.Yes)
-                            showMessageAtStdCodeIsZero = false;
-                        else if (res == DialogResult.No)
-                            showSureMessage = false;
-                        else if (res == DialogResult.Cancel)
-                            return;
-                    }
+                    gData = ((StudentGradeRow)studentGradesListPanel.Controls[i]).CompetitionGradeData;
+                    if (gData.Rank >= 1 && gData.Rank <= 3 && gData.CompetitionLevel == 1) topRank += 1;
                 }
-                else
+
+                if (date != null && date.CompareTo(newDate) > 0)
+                {
+                    MessageBox.Show("هذا الطالب أضيفت له مسابقة تاريخها أكبر من هذا التاريخ", "تحذير !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }
+                
+                if (topRank >= 2 && MessageBox.Show("حصل هذا الطالب في المستوى الأول على أحد المراكز الثلاثة الأولى أكثر من مرة", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+                if ((float)stdAge.Tag > 35 && MessageBox.Show("هذا الطالب عمره أكبر من 35 عاما", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+                if ((float)stdAge.Tag > 25 && currentLevel.Value != 1 && MessageBox.Show("هذا الطالب عمره أكبر من 25 عاما ومستوى المسابقة أقل من الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+                if (prevLevel.Value != 1 && currentLevel.Value == prevLevel.Value && MessageBox.Show("هل انت متأكد انك تريد اضافة مسابقة كالمستوى السابق ؟\nالمستوى السابق ليس هو المستوى الأول", "؟!?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel) return;
+
+                if (stdCode.Value == 0 && showMessageAtStdCodeIsZero)
+                {
+                    if (MessageBox.Show("هل أنت متأكد أن كود المسابقة صفر", "تنبيه !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) == DialogResult.Yes)
+                    {
+                        if (showSureMessage)
+                        {
+                            DialogResult res = MessageBox.Show("هل تريد تذكر هذا الاختيار ؟", "تنبيه !!!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+                            if (res == DialogResult.Yes)
+                                showMessageAtStdCodeIsZero = false;
+                            else if (res == DialogResult.No)
+                                showSureMessage = false;
+                            else if (res == DialogResult.Cancel)
+                                return;
+                        }
+                    }
+                    else
+                        return;
+                }
             }
 
             CompetitionGradeData data = new CompetitionGradeData
@@ -1458,11 +1479,32 @@ namespace Little_Hafiz
                 return;
             }
 
-            Control lastControl = studentGradesListPanel.Controls[studentGradesListPanel.Controls.Count - 1];
-            StudentGradeRow stdRow = new StudentGradeRow(data) { Location = new Point((fs?.GetNewX(30) ?? 30), lastControl.Bottom + (fs?.GetNewY(3) ?? 3)) };
-            fs?.SetControl(stdRow, loc: false);
-            fs?.SetControls(stdRow.Controls);
-            studentGradesListPanel.Controls.Add(stdRow);
+            if (stopChangeDate.Checked)
+            {
+                CompetitionGradeData[] gradesData = DatabaseHelper.SelectStudentGrades(data.NationalNumber);
+
+                studentGradesListPanel.Controls.Clear();
+                studentGradesListPanel.Controls.Add(new StudentGradeRow { Location = new Point(30, 9) });
+
+                StudentGradeRow stdRow;
+                for (int i = 0; i < gradesData.Length; i++)
+                {
+                    stdRow = new StudentGradeRow(gradesData[i]);
+                    stdRow.Location = new Point(30, (stdRow.Size.Height + 3) * (i + 1) + 9);
+                    studentGradesListPanel.Controls.Add(stdRow);
+                }
+
+                fs?.SetControls(studentGradesListPanel.Controls);
+            }
+            else
+            {
+                Control lastControl = studentGradesListPanel.Controls[studentGradesListPanel.Controls.Count - 1];
+                StudentGradeRow stdRow = new StudentGradeRow(data) { Location = new Point((fs?.GetNewX(30) ?? 30), lastControl.Bottom + (fs?.GetNewY(3) ?? 3)) };
+                fs?.SetControl(stdRow, loc: false);
+                fs?.SetControls(stdRow.Controls);
+                studentGradesListPanel.Controls.Add(stdRow);
+            }
+            
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
             UpdateStudentRow();
             PrevCurrLevel();
@@ -1485,7 +1527,7 @@ namespace Little_Hafiz
 
         private void PrevLevel_ValueChanged(object sender, EventArgs e)
         {
-            SetCurrentLevelMaximum();
+            if (!stopChangeDate.Checked) SetCurrentLevelMaximum();
             prevLevelExplain.Text = Ranks.RanksText[(int)prevLevel.Value];
         }
 

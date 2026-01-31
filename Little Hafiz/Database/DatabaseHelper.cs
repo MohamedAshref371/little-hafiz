@@ -230,7 +230,7 @@ namespace Little_Hafiz
         }
 
         public static CompetitionGradeData[] SelectStudentGrades(string nationalNumber)
-            => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}'", GetStudentGrade);
+            => SelectMultiRows($"SELECT * FROM grades WHERE national = '{nationalNumber}' ORDER BY competition_date", GetStudentGrade);
 
         public static CompetitionRankData[] SelectCompetitionRanks(int level, string dateFrom, string dateTo, int office)
             => SelectMultiRows($"SELECT competition_level, students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE {(level == 0 ? "" : $"competition_level = {level} AND")} competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' {(office == 0 ? "" : $"AND office = {office}")} ORDER BY score DESC", GetCompetitionRanks);
