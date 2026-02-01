@@ -1507,7 +1507,7 @@ namespace Little_Hafiz
             
             compCount.Text = (int.Parse(compCount.Text) + 1).ToString();
             UpdateStudentRow();
-            PrevCurrLevel();
+            if (!stopChangeDate.Checked) PrevCurrLevel();
             if (stdCodeState == 2)
                 stdCode.Value += 1;
         }
