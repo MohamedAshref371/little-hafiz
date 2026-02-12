@@ -18,6 +18,7 @@ namespace Little_Hafiz
             StudentRank.Visible = false;
             stdRankLabel.Visible = true;
             if (isCompLevel) countLabel.Text = "س";
+            else countLabel.Text = "م";
         }
 
         public static bool ReadOnly;
@@ -35,8 +36,6 @@ namespace Little_Hafiz
                 stdRankLabel.Text = data.Rank.ToString();
                 StudentRank.Visible = false;
                 stdRankLabel.Visible = true;
-
-                StudentRank.ValueChanged -= StdRank_ValueChanged;
             }
             else
             {
@@ -49,7 +48,7 @@ namespace Little_Hafiz
         public static bool IsAutoUpdate; 
         private void StdRank_ValueChanged(object sender, EventArgs e)
         {
-            if (IsAutoUpdate) return;
+            if (IsAutoUpdate || ReadOnly) return;
             CompetitionRankData.Rank = (int)StudentRank.Value;
             DatabaseHelper.UpdateStudentRank(CompetitionRankData);
         }
