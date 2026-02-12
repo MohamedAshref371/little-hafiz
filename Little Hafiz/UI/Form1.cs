@@ -35,9 +35,6 @@ namespace Little_Hafiz
             {
                 timer.Stop();
 
-                //if (studentsListPanel.Visible)
-                //    studentsListPanel.Invalidate();
-
                 if (studentDataPanel.Visible)
                     studentDataPanel.Invalidate();
 
@@ -221,12 +218,10 @@ namespace Little_Hafiz
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.VerticalScroll.Value = 0;
-            //studentsListPanel.VerticalScroll.Value = 0;
             studentGradesListPanel.VerticalScroll.Value = 0;
             ranksListPanel.VerticalScroll.Value = 0;
 
             studentDataPanel.PerformLayout();
-            //studentsListPanel.PerformLayout();
             studentGradesListPanel.PerformLayout();
             ranksListPanel.PerformLayout();
 
@@ -584,9 +579,7 @@ namespace Little_Hafiz
             SetStudentData(stdData);
 
             studentSearchPanel.Visible = false;
-            //int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
-            //studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
@@ -645,13 +638,13 @@ namespace Little_Hafiz
             if (DatabaseHelper.CurrentOffice == 0)
                 stdOfficeCheckBox.Checked = false;
             SearchBtn_Click(null, null);
-            if (studentsListPanel.Controls.Count == 2)
+            if (students.Length >= 1)
             {
                 stdNationalSearch.Text = "";
                 if (openCompsCheckBox.Checked)
-                    ShowGradesBtn_Click(studentsListPanel.Controls[1], null);
+                    ShowGradesBtn_Click(studentsListPanel.Controls[2], null);
                 else
-                    ShowStudentBtn_Click(studentsListPanel.Controls[1], null);
+                    ShowStudentBtn_Click(studentsListPanel.Controls[2], null);
                 isQrCode = true;
             }
             else
@@ -1433,9 +1426,7 @@ namespace Little_Hafiz
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
         {
             studentSearchPanel.Visible = false;
-            //int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
-            //studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             compCount.Text = grades.Length.ToString();
