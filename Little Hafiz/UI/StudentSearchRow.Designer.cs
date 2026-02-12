@@ -35,6 +35,7 @@
             this.studentBtn = new Guna.UI2.WinForms.Guna2Button();
             this.totalRows = new System.Windows.Forms.Label();
             this.gradesBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.num = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // stdName
@@ -135,11 +136,23 @@
             this.gradesBtn.TabIndex = 5;
             this.gradesBtn.SizeChanged += new System.EventHandler(this.GradesBtn_SizeChanged);
             // 
+            // num
+            // 
+            this.num.BackColor = System.Drawing.Color.Transparent;
+            this.num.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.num.Location = new System.Drawing.Point(874, 0);
+            this.num.Name = "num";
+            this.num.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.num.Size = new System.Drawing.Size(28, 40);
+            this.num.TabIndex = 7;
+            this.num.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // StudentSearchRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.num);
             this.Controls.Add(this.gradesBtn);
             this.Controls.Add(this.studentBtn);
             this.Controls.Add(this.stdRank);
@@ -162,5 +175,6 @@
         private Guna.UI2.WinForms.Guna2Button studentBtn;
         private Guna.UI2.WinForms.Guna2Button gradesBtn;
         private System.Windows.Forms.Label totalRows;
+        private System.Windows.Forms.Label num;
     }
 }

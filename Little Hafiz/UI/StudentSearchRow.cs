@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using static ClosedXML.Excel.XLPredefinedFormat;
 
 namespace Little_Hafiz
 {
@@ -19,29 +20,35 @@ namespace Little_Hafiz
             remove => gradesBtn.Click -= value;
         }
 
-        public StudentSearchRow(int total)
+        public StudentSearchRowData StudentSearchRowData;
+        public StudentSearchRow()
         {
             InitializeComponent();
+        }
 
+        public void SetData(int total)
+        {
             studentBtn.Visible = false;
             gradesBtn.Visible = false;
 
             if (total >= 3)
             {
                 totalRows.Visible = true;
-                totalRows.Text += total.ToString() + (total <= 10 ? " طلاب" : " طالب");
+                totalRows.Text = total.ToString() + (total <= 10 ? " طلاب" : " طالب");
             }
         }
 
-        public StudentSearchRowData StudentSearchRowData;
-        public StudentSearchRow(StudentSearchRowData data)
+        public int Idx = -1;
+        public void SetData(StudentSearchRowData data, int idx = -1)
         {
-            InitializeComponent();
-            SetData(data);
-        }
+            studentBtn.Visible = true;
+            gradesBtn.Visible = true;
 
-        public void SetData(StudentSearchRowData data)
-        {
+            if (idx >= 0)
+            {
+                Idx = idx;
+                num.Text = (idx + 1).ToString();
+            }
             StudentSearchRowData = data;
 
             stdName.Text = data.FullName;

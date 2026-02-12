@@ -150,6 +150,7 @@
             this.cameraCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.openCompsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.studentsListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.studentsListScroll = new Guna.UI2.WinForms.Guna2Button();
             this.openAddStudentBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.footerPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.colorBtn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -226,6 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdArrangement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).BeginInit();
             this.studentSearchPanel.SuspendLayout();
+            this.studentsListPanel.SuspendLayout();
             this.footerPanel.SuspendLayout();
             this.containerPanel.SuspendLayout();
             this.studentGradesPanel.SuspendLayout();
@@ -2591,11 +2593,11 @@
             // 
             // studentsListPanel
             // 
-            this.studentsListPanel.AutoScroll = true;
             this.studentsListPanel.BackColor = System.Drawing.Color.Transparent;
             this.studentsListPanel.BorderColor = System.Drawing.Color.Silver;
             this.studentsListPanel.BorderRadius = 5;
             this.studentsListPanel.BorderThickness = 1;
+            this.studentsListPanel.Controls.Add(this.studentsListScroll);
             this.studentsListPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.studentsListPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.studentsListPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -2603,6 +2605,20 @@
             this.studentsListPanel.Name = "studentsListPanel";
             this.studentsListPanel.Size = new System.Drawing.Size(926, 414);
             this.studentsListPanel.TabIndex = 75;
+            // 
+            // studentsListScroll
+            // 
+            this.studentsListScroll.BorderRadius = 15;
+            this.studentsListScroll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.studentsListScroll.ForeColor = System.Drawing.Color.White;
+            this.studentsListScroll.Location = new System.Drawing.Point(913, 3);
+            this.studentsListScroll.Name = "studentsListScroll";
+            this.studentsListScroll.Size = new System.Drawing.Size(10, 90);
+            this.studentsListScroll.TabIndex = 0;
+            this.studentsListScroll.Visible = false;
+            this.studentsListScroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StudentsListScroll_MouseDown);
+            this.studentsListScroll.MouseMove += new System.Windows.Forms.MouseEventHandler(this.StudentsListScroll_MouseMove);
+            this.studentsListScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.StudentsListScroll_MouseUp);
             // 
             // openAddStudentBtn
             // 
@@ -3788,6 +3804,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdBrothers)).EndInit();
             this.studentSearchPanel.ResumeLayout(false);
             this.studentSearchPanel.PerformLayout();
+            this.studentsListPanel.ResumeLayout(false);
             this.footerPanel.ResumeLayout(false);
             this.containerPanel.ResumeLayout(false);
             this.studentGradesPanel.ResumeLayout(false);
@@ -3997,6 +4014,7 @@
         private System.Windows.Forms.Label officeLabel;
         private Guna.UI2.WinForms.Guna2ComboBox compLevel;
         private Guna.UI2.WinForms.Guna2CheckBox stopChangeDate;
+        private Guna.UI2.WinForms.Guna2Button studentsListScroll;
     }
 }
 

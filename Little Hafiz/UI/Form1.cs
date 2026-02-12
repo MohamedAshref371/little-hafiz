@@ -28,15 +28,15 @@ namespace Little_Hafiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AddTitleInStudentsListPanel(0);
+            AddRowsInStudentsListPanel();
 
             Timer timer = new Timer { Interval = 10 };
             timer.Tick += (s, e1) =>
             {
                 timer.Stop();
 
-                if (studentsListPanel.Visible)
-                    studentsListPanel.Invalidate();
+                //if (studentsListPanel.Visible)
+                //    studentsListPanel.Invalidate();
 
                 if (studentDataPanel.Visible)
                     studentDataPanel.Invalidate();
@@ -66,11 +66,10 @@ namespace Little_Hafiz
             formTitle.MouseDown += meh;
             //formImage.MouseDown += meh;
 
+            studentsListPanel.MouseWheel += StudentsListPanel_MouseWheel;
+
             studentDataPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentDataPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
-
-            studentsListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
-            studentsListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
 
             studentGradesListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentGradesListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
@@ -222,12 +221,12 @@ namespace Little_Hafiz
         private void MaximizeBtn_Click(object sender, EventArgs e)
         {
             studentDataPanel.VerticalScroll.Value = 0;
-            studentsListPanel.VerticalScroll.Value = 0;
+            //studentsListPanel.VerticalScroll.Value = 0;
             studentGradesListPanel.VerticalScroll.Value = 0;
             ranksListPanel.VerticalScroll.Value = 0;
 
             studentDataPanel.PerformLayout();
-            studentsListPanel.PerformLayout();
+            //studentsListPanel.PerformLayout();
             studentGradesListPanel.PerformLayout();
             ranksListPanel.PerformLayout();
 
@@ -328,10 +327,23 @@ namespace Little_Hafiz
         #endregion
 
         #region Two Serach Panels
-        private void AddTitleInStudentsListPanel(int total)
+
+        StudentSearchRow[] studentRows = new StudentSearchRow[10];
+        private void AddRowsInStudentsListPanel()
         {
-            studentsListPanel.Controls.Clear();
-            studentsListPanel.Controls.Add(new StudentSearchRow(total) { Location = new Point(9, 9) });
+            StudentSearchRow stdRow;
+            for (int i = 0; i < 10; i++)
+            {
+                stdRow = new StudentSearchRow();
+                stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * i + 9);
+                stdRow.StudentButtonClick += ShowStudentBtn_Click;
+                stdRow.GradesButtonClick += ShowGradesBtn_Click;
+                studentsListPanel.Controls.Add(stdRow);
+                studentRows[i] = stdRow;
+                stdRow.Visible = false;
+            }
+            studentRows[0].SetData(0);
+            studentRows[0].Visible = true;
         }
 
         private void VersionLabel_DoubleClick(object sender, EventArgs e)
@@ -402,27 +414,132 @@ namespace Little_Hafiz
                 return;
             }
 
-            AddStudentRowsInSearchPanel(students);
+            this.students = students;
+            AddStudentRowsInSearchPanel();
         }
 
         private void SearchBtn_SizeChanged(object sender, EventArgs e)
             => searchBtn.ImageSize = new Size(searchBtn.Height - 4, searchBtn.Height - 4);
-        
 
-        private void AddStudentRowsInSearchPanel(StudentSearchRowData[] students)
+
+        StudentSearchRowData[] students;
+        private void AddStudentRowsInSearchPanel()
         {
-            AddTitleInStudentsListPanel(students.Length);
+            studentRows[0].SetData(students.Length);
 
-            StudentSearchRow stdRow;
-            for (int i = 0; i < students.Length; i++)
+            for (int i = 0; i < students.Length && i < 9; i++)
             {
-                stdRow = new StudentSearchRow(students[i]);
-                stdRow.Location = new Point(9, (stdRow.Size.Height + 3) * (i + 1) + 9);
-                stdRow.StudentButtonClick += ShowStudentBtn_Click;
-                stdRow.GradesButtonClick += ShowGradesBtn_Click;
-                studentsListPanel.Controls.Add(stdRow);
+                studentRows[i+1].SetData(students[i], i);
+                studentRows[i+1].Visible = true;
             }
-            fs?.SetControls(studentsListPanel.Controls);
+
+            for (int i = students.Length; i < 9; i++)
+                studentRows[i+1].Visible = false;
+
+            if (students.Length > 8)
+            {
+                float ratio = 8 / (float)students.Length;
+                int newScrollHeight = (int)(studentsListPanel.Height * ratio);
+                if (newScrollHeight < 30) newScrollHeight = 30;
+
+                studentsListScroll.Top = 0;
+                studentsListScroll.Height = newScrollHeight;
+                studentsListScroll.Visible = true;
+            }
+            else
+            {
+                studentsListScroll.Visible = false;
+            }
+        }
+
+        private void UpdateVisibleRows(int startIndex = 0)
+        {
+            studentRows[0].SetData(students.Length);
+
+            for (int i = 0; i < 9; i++)
+            {
+                int dataIndex = startIndex + i;
+
+                if (dataIndex < students.Length)
+                {
+                    studentRows[i + 1].SetData(students[dataIndex], dataIndex);
+                    studentRows[i + 1].Enabled = students[dataIndex].NationalNumber != "";
+                    studentRows[i + 1].Visible = true;
+                }
+                else
+                {
+                    studentRows[i + 1].Visible = false;
+                }
+            }
+        }
+
+        private bool isDragging = false;
+        private int offsetY = 0;
+        private void StudentsListScroll_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            offsetY = e.Y;
+        }
+
+        private void StudentsListScroll_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void StudentsListScroll_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!isDragging) return;
+
+            int newY = studentsListScroll.Top + (e.Y - offsetY);
+
+            int minY = 0;
+            int maxY = studentsListPanel.Height - studentsListScroll.Height;
+
+            if (newY < minY) newY = minY;
+            if (newY > maxY) newY = maxY;
+
+            studentsListScroll.Top = newY;
+
+            float scrollRatio = (float)studentsListScroll.Top / maxY;
+
+            int maxStartIndex = students.Length - 8;
+            if (maxStartIndex < 0) maxStartIndex = 0;
+
+            int startIndex = (int)(scrollRatio * maxStartIndex);
+
+            UpdateVisibleRows(startIndex);
+        }
+
+        private void StudentsListPanel_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (!studentsListScroll.Visible) return;
+
+            int maxY = studentsListPanel.Height - studentsListScroll.Height;
+
+            int maxStartIndex = students.Length - 8;
+            if (maxStartIndex < 0) maxStartIndex = 0;
+
+            if (maxStartIndex <= 0 || maxY <= 0) return;
+
+            int slsTop = studentsListScroll.Top;
+
+            int scrollStep = maxY / maxStartIndex;
+
+            if (scrollStep < 1) scrollStep = 1;
+
+            if (e.Delta > 0)
+                slsTop -= scrollStep;
+            else
+                slsTop += scrollStep;
+
+            if (slsTop < 0) slsTop = 0;
+            if (slsTop > maxY) slsTop = maxY;
+            studentsListScroll.Top = slsTop;
+
+            float scrollRatio = (float)slsTop / maxY;
+            int startIndex = (int)(scrollRatio * maxStartIndex);
+
+            UpdateVisibleRows(startIndex);
         }
 
         private void UpdateStudentRow()
@@ -432,7 +549,10 @@ namespace Little_Hafiz
                 StudentSearchRowData[] student = DatabaseHelper.SelectStudents(nationalNumber: currentStudent.StudentSearchRowData.NationalNumber);
 
                 if (student.Length > 0)
+                {
+                    students[currentStudent.Idx] = student[0];
                     currentStudent.SetData(student[0]);
+                }
             }
         }
 
@@ -464,9 +584,9 @@ namespace Little_Hafiz
             SetStudentData(stdData);
 
             studentSearchPanel.Visible = false;
-            int verticalScroll = studentsListPanel.VerticalScroll.Value;
+            //int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
-            studentsListPanel.VerticalScroll.Value = verticalScroll;
+            //studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
@@ -799,6 +919,7 @@ namespace Little_Hafiz
                 MessageBox.Show("تم حذف الطالب بنجاح");
                 CancelBtn_Click(null, null);
                 currentStudent.Enabled = false;
+                currentStudent.StudentSearchRowData.NationalNumber = "";
             }
             else
                 ErrorMessage();
@@ -1172,7 +1293,8 @@ namespace Little_Hafiz
             if (target == TargetField.StudentBirthDate)
                 SetSelectedSearch(text.ToStandardDateTime(), 0);
 
-            AddStudentRowsInSearchPanel(data);
+            this.students = data;
+            AddStudentRowsInSearchPanel();
         }
 
         private void DateCounting(TargetField target, bool perYear)
@@ -1195,8 +1317,9 @@ namespace Little_Hafiz
 
             if (target == TargetField.StudentBirthDate)
                 SetSelectedSearch((data[lvd.SelectedIndex].Text + (perYear ? "-01-01" : "-01")).ToStandardDateTime(), perYear ? 2 : 1);
-            
-            AddStudentRowsInSearchPanel(rowData);
+
+            this.students = rowData;
+            AddStudentRowsInSearchPanel();
         }
 
         private void SetSelectedSearch(DateTime date, int state)
@@ -1310,9 +1433,9 @@ namespace Little_Hafiz
         private void OpenStudentGradesPanel(StudentSearchRowData data, CompetitionGradeData[] grades)
         {
             studentSearchPanel.Visible = false;
-            int verticalScroll = studentsListPanel.VerticalScroll.Value;
+            //int verticalScroll = studentsListPanel.VerticalScroll.Value;
             studentsListPanel.Visible = false;
-            studentsListPanel.VerticalScroll.Value = verticalScroll;
+            //studentsListPanel.VerticalScroll.Value = verticalScroll;
             footerPanel.Visible = false;
 
             compCount.Text = grades.Length.ToString();
