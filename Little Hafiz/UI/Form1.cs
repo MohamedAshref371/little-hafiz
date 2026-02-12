@@ -29,6 +29,7 @@ namespace Little_Hafiz
         private void Form1_Load(object sender, EventArgs e)
         {
             AddRowsInStudentsListPanel();
+            AddRowsInRanksListPanel();
 
             Timer timer = new Timer { Interval = 10 };
             timer.Tick += (s, e1) =>
@@ -40,9 +41,6 @@ namespace Little_Hafiz
 
                 if (studentGradesListPanel.Visible)
                     studentGradesListPanel.Invalidate();
-
-                if (ranksListPanel.Visible)
-                    ranksListPanel.Invalidate();
 
                 if (Control.MouseButtons == MouseButtons.None)
                     this.Opacity = 1.0;
@@ -71,8 +69,7 @@ namespace Little_Hafiz
             studentGradesListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
             studentGradesListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
 
-            ranksListPanel.Scroll += (s, e1) => { timer.Stop(); timer.Start(); };
-            ranksListPanel.MouseWheel += (s, e1) => { timer.Stop(); timer.Start(); };
+            ranksListPanel.MouseWheel += RanksListPanel_MouseWheel;
 
             bool isExists = Directory.Exists("data");
             if (isExists)
@@ -219,11 +216,9 @@ namespace Little_Hafiz
         {
             studentDataPanel.VerticalScroll.Value = 0;
             studentGradesListPanel.VerticalScroll.Value = 0;
-            ranksListPanel.VerticalScroll.Value = 0;
 
             studentDataPanel.PerformLayout();
             studentGradesListPanel.PerformLayout();
-            ranksListPanel.PerformLayout();
 
             int height = 30;
             if (WindowState == FormWindowState.Maximized)
@@ -1735,17 +1730,9 @@ namespace Little_Hafiz
                 }
             }
 
-            ranksListPanel.Controls.Clear();
-            ranksListPanel.Controls.Add(new StudentRankRow(isLevelZero) { Location = new Point(20, 9) });
-
-            StudentRankRow stdRow;
-            for (int i = 0; i < ranks.Length; i++)
-            {
-                stdRow = new StudentRankRow(ranks[i], isLevelZero ? 0 : i + 1);
-                stdRow.Location = new Point(20, (stdRow.Size.Height + 3) * (i + 1) + 9);
-                ranksListPanel.Controls.Add(stdRow);
-            }
-            fs?.SetControls(ranksListPanel.Controls);
+            this.ranks = ranks;
+            IsLevelZero = isLevelZero;
+            AddRanksRowsInPanel();
         }
 
         private void SetRanksBtn_Click(object sender, EventArgs e)
@@ -1757,23 +1744,31 @@ namespace Little_Hafiz
             }
 
             float scr = 99999; int rnk = 0, rankShift = 0;
-            StudentRankRow row;
-            for (int i = 1; i < ranksListPanel.Controls.Count; i++)
+            for (int i = 0; i < ranks.Length; i++)
             {
-                row = (StudentRankRow)ranksListPanel.Controls[i];
-
-                if (row.CompetitionRankData.Score < scr)
+                if (ranks[i].Score < scr)
                 {
                     rnk += rankShift + 1;
                     rankShift = 0;
-                    scr = row.CompetitionRankData.Score;
+                    scr = ranks[i].Score;
                 }
                 else if (standardRankingCheckBox.Checked)
                     rankShift += 1;
-                
-                if (row.CompetitionRankData.Score == scr)
-                    row.StudentRank.Value = rnk;
+
+                if (ranks[i].Score == scr)
+                    ranks[i].Rank = rnk;
+                DatabaseHelper.UpdateStudentRank(ranks[i]);
             }
+
+            StudentRankRow.IsAutoUpdate = true;
+            StudentRankRow row;
+            for (int i = 2; i < ranksListPanel.Controls.Count; i++)
+            {
+                row = (StudentRankRow)ranksListPanel.Controls[i];
+                if (!row.Visible) break;
+                row.StudentRank.Value = row.CompetitionRankData.Rank;
+            }
+            StudentRankRow.IsAutoUpdate = false;
         }
 
         private void OfficeRank_SelectedIndexChanged(object sender, EventArgs e)
@@ -1783,6 +1778,141 @@ namespace Little_Hafiz
             int count = DatabaseHelper.GetStudentCount(idx);
             studentCountLabel.Text = idx == 0 ? "عدد الطلبة الكلي : " : "عدد طلاب المكتب : ";
             studentCount.Text = count.ToString();
+        }
+
+
+        StudentRankRow[] ranksRows = new StudentRankRow[12];
+        private void AddRowsInRanksListPanel()
+        {
+            StudentRankRow row;
+            for (int i = 0; i < 12; i++)
+            {
+                row = new StudentRankRow();
+                row.Location = new Point(20, (row.Size.Height + 3) * i + 9);
+                ranksListPanel.Controls.Add(row);
+                ranksRows[i] = row;
+                row.Visible = false;
+            }
+            ranksRows[0].SetData(false);
+            ranksRows[0].Visible = true;
+        }
+
+        CompetitionRankData[] ranks;
+        bool IsLevelZero;
+        private void AddRanksRowsInPanel()
+        {
+            ranksRows[0].SetData(IsLevelZero);
+
+            for (int i = 0; i < ranks.Length && i < 11; i++)
+            {
+                ranksRows[i + 1].SetData(ranks[i], IsLevelZero ? 0 : i + 1);
+                ranksRows[i + 1].Visible = true;
+            }
+
+            for (int i = ranks.Length; i < 11; i++)
+                ranksRows[i + 1].Visible = false;
+
+            if (ranks.Length > 10)
+            {
+                float ratio = 10 / (float)ranks.Length;
+                int newScrollHeight = (int)(ranksListPanel.Height * ratio);
+                if (newScrollHeight < 30) newScrollHeight = 30;
+
+                ranksListScroll.Top = 0;
+                ranksListScroll.Height = newScrollHeight;
+                ranksListScroll.Visible = true;
+            }
+            else
+            {
+                ranksListScroll.Visible = false;
+            }
+        }
+
+        private void UpdateVisibleRanksRows(int startIndex = 0)
+        {
+            ranksRows[0].SetData(IsLevelZero);
+
+            for (int i = 0; i < 11; i++)
+            {
+                int dataIndex = startIndex + i;
+
+                if (dataIndex < ranks.Length)
+                {
+                    ranksRows[i + 1].SetData(ranks[dataIndex], dataIndex + 1);
+                    ranksRows[i + 1].Visible = true;
+                }
+                else
+                {
+                    ranksRows[i + 1].Visible = false;
+                }
+            }
+        }
+
+        private void RanksListScroll_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            offsetY = e.Y;
+        }
+
+        private void RanksListScroll_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void RanksListScroll_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!isDragging) return;
+
+            int newY = ranksListScroll.Top + (e.Y - offsetY);
+
+            int minY = 0;
+            int maxY = ranksListPanel.Height - ranksListScroll.Height;
+
+            if (newY < minY) newY = minY;
+            if (newY > maxY) newY = maxY;
+
+            ranksListScroll.Top = newY;
+
+            float scrollRatio = (float)ranksListScroll.Top / maxY;
+
+            int maxStartIndex = ranks.Length - 10;
+            if (maxStartIndex < 0) maxStartIndex = 0;
+
+            int startIndex = (int)(scrollRatio * maxStartIndex);
+
+            UpdateVisibleRanksRows(startIndex);
+        }
+
+        private void RanksListPanel_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (!ranksListScroll.Visible) return;
+
+            int maxY = ranksListPanel.Height - ranksListScroll.Height;
+
+            int maxStartIndex = ranks.Length - 10;
+            if (maxStartIndex < 0) maxStartIndex = 0;
+
+            if (maxStartIndex <= 0 || maxY <= 0) return;
+
+            int slsTop = ranksListScroll.Top;
+
+            int scrollStep = maxY / maxStartIndex;
+
+            if (scrollStep < 1) scrollStep = 1;
+
+            if (e.Delta > 0)
+                slsTop -= scrollStep;
+            else
+                slsTop += scrollStep;
+
+            if (slsTop < 0) slsTop = 0;
+            if (slsTop > maxY) slsTop = maxY;
+            ranksListScroll.Top = slsTop;
+
+            float scrollRatio = (float)slsTop / maxY;
+            int startIndex = (int)(scrollRatio * maxStartIndex);
+
+            UpdateVisibleRanksRows(startIndex);
         }
         #endregion
 
@@ -1827,9 +1957,9 @@ namespace Little_Hafiz
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
 
-            ranksListPanel.Controls.Clear();
-            ranksListPanel.Controls.Add(new StudentRankRow { Location = new Point(20, 9) });
-            fs?.SetControls(ranksListPanel.Controls);
+            ranks = new CompetitionRankData[0] { };
+            IsLevelZero = false;
+            AddRanksRowsInPanel();
 
             wrongThingLabel.Visible = false;
             wrongThing2Label.Visible = false;

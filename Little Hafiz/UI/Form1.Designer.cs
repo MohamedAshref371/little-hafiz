@@ -208,6 +208,7 @@
             this.compsLabel = new System.Windows.Forms.Label();
             this.closeBtn2 = new Guna.UI2.WinForms.Guna2Button();
             this.ranksListPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ranksListScroll = new Guna.UI2.WinForms.Guna2Button();
             this.setRanksBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.getGradesDataBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dateToLabel = new System.Windows.Forms.Label();
@@ -238,6 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stdCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).BeginInit();
             this.ranksCalculatorPanel.SuspendLayout();
+            this.ranksListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -3588,14 +3590,29 @@
             // 
             // ranksListPanel
             // 
-            this.ranksListPanel.AutoScroll = true;
             this.ranksListPanel.BorderColor = System.Drawing.Color.Silver;
             this.ranksListPanel.BorderRadius = 5;
             this.ranksListPanel.BorderThickness = 1;
+            this.ranksListPanel.Controls.Add(this.ranksListScroll);
             this.ranksListPanel.Location = new System.Drawing.Point(10, 129);
             this.ranksListPanel.Name = "ranksListPanel";
             this.ranksListPanel.Size = new System.Drawing.Size(908, 521);
             this.ranksListPanel.TabIndex = 99;
+            // 
+            // ranksListScroll
+            // 
+            this.ranksListScroll.BorderRadius = 15;
+            this.ranksListScroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.ranksListScroll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ranksListScroll.ForeColor = System.Drawing.Color.White;
+            this.ranksListScroll.Location = new System.Drawing.Point(895, 4);
+            this.ranksListScroll.Name = "ranksListScroll";
+            this.ranksListScroll.Size = new System.Drawing.Size(10, 90);
+            this.ranksListScroll.TabIndex = 1;
+            this.ranksListScroll.Visible = false;
+            this.ranksListScroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RanksListScroll_MouseDown);
+            this.ranksListScroll.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RanksListScroll_MouseMove);
+            this.ranksListScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RanksListScroll_MouseUp);
             // 
             // setRanksBtn
             // 
@@ -3817,6 +3834,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentImage2)).EndInit();
             this.ranksCalculatorPanel.ResumeLayout(false);
             this.ranksCalculatorPanel.PerformLayout();
+            this.ranksListPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4015,6 +4033,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox compLevel;
         private Guna.UI2.WinForms.Guna2CheckBox stopChangeDate;
         private Guna.UI2.WinForms.Guna2Button studentsListScroll;
+        private Guna.UI2.WinForms.Guna2Button ranksListScroll;
     }
 }
 

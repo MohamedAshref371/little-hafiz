@@ -7,20 +7,22 @@ namespace Little_Hafiz
 {
     public partial class StudentRankRow : UserControl
     {
-        public static bool ReadOnly;
-        public StudentRankRow(bool isCompLevel = false)
+        public CompetitionRankData CompetitionRankData;
+        public StudentRankRow()
         {
             InitializeComponent();
+        }
 
+        public void SetData(bool isCompLevel)
+        {
             StudentRank.Visible = false;
             stdRankLabel.Visible = true;
             if (isCompLevel) countLabel.Text = "س";
         }
 
-        public readonly CompetitionRankData CompetitionRankData;
-        public StudentRankRow(CompetitionRankData data, int count = 0)
+        public static bool ReadOnly;
+        public void SetData(CompetitionRankData data, int count = 0)
         {
-            InitializeComponent();
             this.CompetitionRankData = data;
 
             countLabel.Text = (count == 0 ? data.Level : count).ToString();
@@ -33,16 +35,21 @@ namespace Little_Hafiz
                 stdRankLabel.Text = data.Rank.ToString();
                 StudentRank.Visible = false;
                 stdRankLabel.Visible = true;
+
+                StudentRank.ValueChanged -= StdRank_ValueChanged;
             }
             else
             {
+                StudentRank.ValueChanged -= StdRank_ValueChanged;
                 StudentRank.Value = data.Rank;
                 StudentRank.ValueChanged += StdRank_ValueChanged;
             }
         }
 
+        public static bool IsAutoUpdate; 
         private void StdRank_ValueChanged(object sender, EventArgs e)
         {
+            if (IsAutoUpdate) return;
             CompetitionRankData.Rank = (int)StudentRank.Value;
             DatabaseHelper.UpdateStudentRank(CompetitionRankData);
         }
