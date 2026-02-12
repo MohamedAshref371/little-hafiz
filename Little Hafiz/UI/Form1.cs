@@ -447,7 +447,7 @@ namespace Little_Hafiz
             }
         }
 
-        private void UpdateVisibleRows(int startIndex = 0)
+        private void UpdateVisibleStudentsRows(int startIndex = 0)
         {
             studentRows[0].SetData(students.Length);
 
@@ -502,7 +502,7 @@ namespace Little_Hafiz
 
             int startIndex = (int)(scrollRatio * maxStartIndex);
 
-            UpdateVisibleRows(startIndex);
+            UpdateVisibleStudentsRows(startIndex);
         }
 
         private void StudentsListPanel_MouseWheel(object sender, MouseEventArgs e)
@@ -534,7 +534,7 @@ namespace Little_Hafiz
             float scrollRatio = (float)slsTop / maxY;
             int startIndex = (int)(scrollRatio * maxStartIndex);
 
-            UpdateVisibleRows(startIndex);
+            UpdateVisibleStudentsRows(startIndex);
         }
 
         private void UpdateStudentRow()
