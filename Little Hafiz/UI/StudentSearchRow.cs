@@ -37,7 +37,7 @@ namespace Little_Hafiz
                 totalRows.Text = total.ToString() + (total <= 10 ? " طلاب" : " طالب");
             }
             else
-                totalRows.Visible = true;
+                totalRows.Visible = false;
         }
 
         public int Idx = -1;
