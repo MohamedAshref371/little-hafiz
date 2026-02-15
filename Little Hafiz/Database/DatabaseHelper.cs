@@ -234,7 +234,7 @@ namespace Little_Hafiz
 
         public static CompetitionRankData[] SelectCompetitionRanks(int level, string dateFrom, string dateTo, int office)
             => SelectMultiRows($"SELECT competition_level, students.national, competition_date, std_code, full_name, score, std_rank FROM students JOIN grades ON students.national = grades.national WHERE {(level == 0 ? "" : $"competition_level = {level} AND")} competition_date >= '{dateFrom}' AND competition_date <= '{dateTo}' {(office == 0 ? "" : $"AND office = {office}")} ORDER BY score DESC", GetCompetitionRanks);
-        
+
         public static string[] GetOffices()
             => SelectMultiRows("SELECT name FROM offices", () => reader.GetString(0));
 
@@ -571,11 +571,7 @@ namespace Little_Hafiz
         private static int ExecuteNonQuery(string sql, bool recording = false)
         {
             if (!success || sql is null || sql.Trim() == "") return -1;
-            if (copyData)
-            {
-                copyData = false;
-                DatabaseBackup();
-            }
+            if (copyData) DatabaseBackup();
 
             try
             {
@@ -660,7 +656,7 @@ namespace Little_Hafiz
                 if (!isTrue /*|| num != CreateDate.Ticks*/)
                 {
                     err.Add(Path.GetFileName(dataFiles[i]));
-                    continue; 
+                    continue;
                 }
                 if (!ExecuteNonQuery(sqls))
                     err.Add(Path.GetFileName(dataFiles[i]));
@@ -680,9 +676,13 @@ namespace Little_Hafiz
             return noErrors;
         }
 
-        private static void DatabaseBackup()
+        public static void VacuumDatabase()
+            => ExecuteNonQuery("VACUUM");
+
+        public static void DatabaseBackup()
         {
             if (!success) return;
+            copyData = false;
 
             if (!Directory.Exists($"{dataFolder}\\backup"))
                 Directory.CreateDirectory($"{dataFolder}\\backup");
