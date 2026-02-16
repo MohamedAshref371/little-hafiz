@@ -83,6 +83,10 @@ namespace Little_Hafiz
             disableAtAll.Visible = Program.Record;
             dataRecorderCheckBox.CheckedChanged += DataRecorderCheckBox_CheckedChanged;
 
+            Program.IsAutoCopy = Properties.Settings.Default.BackupEnabled;
+            isAutoChanged = true;
+            autoCopyData.Checked = Program.IsAutoCopy;
+
             if (isExists)
                 GetOffice();
             else
@@ -91,9 +95,11 @@ namespace Little_Hafiz
                 AfterGetOffice(0);
             }
 
-            compDateFrom.Value = DateTime.Now;
-            compDateTo.Value = DateTime.Now;
-            versionLabel.Text = "v" + string.Join(".", Application.ProductVersion.Split('.'), 0, 2);
+            DateTime dt = DateTime.Now;
+            compDateFrom.Value = dt;
+            compDateTo.Value = dt;
+            dataBtn.Text = "v" + string.Join(".", Application.ProductVersion.Split('.'), 0, 2);
+            SetDataBtnImage();
 
             zxing = File.Exists("zxing.dll");
             if (!zxing) qrcodeCheckBox.Visible = false;
@@ -336,24 +342,6 @@ namespace Little_Hafiz
             studentRows[0].Visible = true;
         }
 
-        private void VersionLabel_DoubleClick(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.BackupEnabled)
-            {
-                if (MessageBox.Show("سيتم تعطيل النسخ الاحتياطي", ">_<", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.OK)
-                {
-                    Properties.Settings.Default.BackupEnabled = false;
-                    Properties.Settings.Default.Save();
-                }
-            }
-            else
-            {
-                Properties.Settings.Default.BackupEnabled = true;
-                Properties.Settings.Default.Save();
-                MessageBox.Show("تم تفعيل النسخ الاحتياطي", ":D");
-            }
-        }
-
         private void StdBirthDateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             stdBirthDateFromCheckBox.Enabled = stdBirthDateCheckBox.Checked;
@@ -576,6 +564,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
+            settingsPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
             stdNational.Enabled = false;
@@ -839,6 +828,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            SetDataBtnImage();
             if (isQrCode)
                 stdNationalSearch.Focus();
             else
@@ -1423,6 +1413,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
+            settingsPanel.Visible = false;
 
             compCount.Text = grades.Length.ToString();
             if (stopChangeDate.Checked)
@@ -1627,6 +1618,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            SetDataBtnImage();
             if (isQrCode)
                 stdNationalSearch.Focus();
             else
@@ -1688,6 +1680,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = true;
             studentsListPanel.Visible = true;
             footerPanel.Visible = true;
+            SetDataBtnImage();
             rankCalcBtn.Focus();
         }
 
@@ -1924,6 +1917,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
+            settingsPanel.Visible = false;
 
             addStudentBtn.Text = "إضافة";
             stdNational.Enabled = true;
@@ -1956,6 +1950,7 @@ namespace Little_Hafiz
             studentSearchPanel.Visible = false;
             studentsListPanel.Visible = false;
             footerPanel.Visible = false;
+            settingsPanel.Visible = false;
 
             ranks = new CompetitionRankData[0] { };
             IsLevelZero = false;
@@ -1980,6 +1975,7 @@ namespace Little_Hafiz
             releasesLatestBtn.Visible = true;
             extractExcelBtn.Visible = true;
             colorBtn.Visible = true;
+            dataBtn.Visible = true;
         }
 
         private bool isMasterCopy;
@@ -2005,6 +2001,7 @@ namespace Little_Hafiz
             releasesLatestBtn.Visible = false;
             extractExcelBtn.Visible = false;
             colorBtn.Visible = false;
+            dataBtn.Visible = false;
             (officeHelperBtn.FillColor, officeHelperBtn.FillColor2) = (officeHelperBtn.FillColor2, officeHelperBtn.FillColor);
             officeHelperBtn.Text = "إلغاء";
             officeTextBox.Visible = true;
@@ -2032,6 +2029,27 @@ namespace Little_Hafiz
 
             GetOffice();
             officeTextBox.Text = "";
+        }
+
+        private void DataBtn_SizeChanged(object sender, EventArgs e)
+            => dataBtn.ImageSize = new Size(dataBtn.Height, dataBtn.Height);
+
+        private void DataBtn_Click(object sender, EventArgs e)
+            => settingsPanel.Visible = !settingsPanel.Visible;
+
+        private void SetDataBtnImage()
+        {
+            int hour = DateTime.Now.Hour;
+            if (hour >= 6 && hour < 18)
+            {
+                dataBtn.Image = Properties.Resources.sun;
+                dataBtn.ForeColor = Color.Black;
+            }
+            else
+            {
+                dataBtn.Image = Properties.Resources.moon;
+                dataBtn.ForeColor = Color.Blue;
+            }
         }
 
         private void CheckUpdateBtn_Click(object sender, EventArgs e)
@@ -2100,6 +2118,7 @@ namespace Little_Hafiz
                 ranksCalculatorPanel.FillColor2 = Color.FromArgb(128, 128, 255);
                 footerPanel.FillColor = Color.FromArgb(255, 255, 220);
                 footerPanel.FillColor2 = Color.FromArgb(220, 220, 255);
+                settingsPanel.FillColor = Color.FromArgb(255, 220, 220);
                 colorBtn.FillColor = Color.Red;
                 colorBtn.FillColor2 = Color.Blue;
                 return;
@@ -2158,6 +2177,7 @@ namespace Little_Hafiz
             cancel1Btn.ForeColor = ForeColor;
             cancelBtn2.ForeColor = ForeColor;
             closeBtn2.ForeColor = ForeColor;
+            closeBtn3.ForeColor = ForeColor;
         }
 
         private void SetColor(Color clr1, Color clr2)
@@ -2176,6 +2196,7 @@ namespace Little_Hafiz
             ranksCalculatorPanel.FillColor2 = clr2;
             footerPanel.FillColor = clr1;
             footerPanel.FillColor2 = clr2;
+            settingsPanel.FillColor = clr1;
             colorBtn.FillColor = clr1;
             colorBtn.FillColor2 = clr2;
         }
@@ -2262,6 +2283,48 @@ namespace Little_Hafiz
 
             return Color.Black;
         }
+        #endregion
+
+        #region Settings Panel
+        bool isAutoChanged = false;
+        private void AutoCopyData_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isAutoChanged)
+            {
+                isAutoChanged = false;
+                return;
+            }
+
+            if (!autoCopyData.Checked && MessageBox.Show("سيتم تعطيل النسخ الاحتياطي، هل أنت متأكد؟", ">_<", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Cancel)
+            {
+                isAutoChanged = true;
+                autoCopyData.Checked = true;
+                return;
+            }
+            Program.IsAutoCopy = autoCopyData.Checked;
+            Properties.Settings.Default.BackupEnabled = Program.IsAutoCopy;
+            Properties.Settings.Default.Save();
+        }
+
+        private void CleanDataBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseHelper.VacuumDatabase();
+            MessageBox.Show("تم تنظيف قاعدة البيانات");
+        }
+
+        private void BackupBtn_Click(object sender, EventArgs e)
+        {
+            DatabaseHelper.DatabaseBackup();
+            MessageBox.Show("تم أخذ نسخة احتياطية من قاعدة البيانات");
+        }
+
+        private void RestoreBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseBtn3_Click(object sender, EventArgs e)
+            => settingsPanel.Visible = false;
         #endregion
 
     }

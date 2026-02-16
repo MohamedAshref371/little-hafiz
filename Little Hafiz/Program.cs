@@ -8,6 +8,7 @@ namespace Little_Hafiz
     {
         public static Form1 Form;
         public static bool Record = true;
+        public static bool IsAutoCopy = true;
 
         [STAThread]
         static void Main()

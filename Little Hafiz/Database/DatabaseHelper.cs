@@ -16,6 +16,7 @@ namespace Little_Hafiz
         private static readonly SQLiteCommand command = new SQLiteCommand(conn);
         private static SQLiteDataReader reader;
         private static bool copyData;
+        public static string DataBackupFolder = $"{dataFolder}\\backup";
 
         #region Metadata
         public static int Version { get; private set; }
@@ -41,7 +42,7 @@ namespace Little_Hafiz
 
             bool created = true;
             if (File.Exists(databaseFile))
-                copyData = Properties.Settings.Default.BackupEnabled;
+                copyData = Program.IsAutoCopy;
             else
                 created = CreateDatabase();
 
@@ -677,18 +678,43 @@ namespace Little_Hafiz
         }
 
         public static void VacuumDatabase()
-            => ExecuteNonQuery("VACUUM");
-
-        public static void DatabaseBackup()
         {
-            if (!success) return;
+            bool cData = copyData;
             copyData = false;
+            ExecuteNonQuery("VACUUM");
+            copyData = cData;
+        }
 
-            if (!Directory.Exists($"{dataFolder}\\backup"))
-                Directory.CreateDirectory($"{dataFolder}\\backup");
+        public static bool DatabaseBackup()
+        {
+            if (!success) return false;
+
+            copyData = false;
+            if (!Directory.Exists(DataBackupFolder))
+                Directory.CreateDirectory(DataBackupFolder);
 
             if (File.Exists(databaseFile))
-                File.Copy(databaseFile, $"{dataFolder}\\backup\\{DateTime.Now.Ticks}.ds");
+                File.Copy(databaseFile, $"{DataBackupFolder}\\{DateTime.Now.Ticks}.ds");
+
+            return true;
+        }
+
+        public static bool DatabaseRestore(string name)
+        {
+            if (!success) return false;
+
+            if (!File.Exists($"{DataBackupFolder}\\{name}.ds"))
+                return false;
+
+            if (!Directory.Exists($"{dataFolder}\\deleted"))
+                Directory.CreateDirectory($"{dataFolder}\\deleted");
+
+            command.Dispose(); conn.Dispose();
+            File.Move(databaseFile, $"{dataFolder}\\deleted\\{DateTime.Now.Ticks}.ds");
+
+            File.Copy($"{DataBackupFolder}\\{name}.ds", databaseFile);
+
+            return true;
         }
         #endregion
     }
