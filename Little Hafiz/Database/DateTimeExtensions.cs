@@ -27,5 +27,13 @@ namespace Little_Hafiz
             
             return DateTime.MinValue;
         }
+
+        public static string ToExtraCompleteStandard(this string dateStr)
+        {
+            if (!long.TryParse(dateStr, out long ticks)) return dateStr;
+
+            DateTime dt = new DateTime(ticks);
+            return dt.ToString("yyyy - MM MMM - dd ddd     HH:mm:ss.fff", CultureInfo.InvariantCulture);
+        }
     }
 }

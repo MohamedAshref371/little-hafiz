@@ -2320,7 +2320,34 @@ namespace Little_Hafiz
 
         private void RestoreBtn_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(DatabaseHelper.DataBackupFolder))
+            {
+                MessageBox.Show("لا يوجد نسخ احتياطية", "404", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            string[] files = Directory.GetFiles(DatabaseHelper.DataBackupFolder).Select(f => Path.GetFileNameWithoutExtension(f)).OrderByDescending(s => s).ToArray();
+            if (files.Length == 0)
+            {
+                MessageBox.Show("لا يوجد نسخ احتياطية", "404", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            ListViewDialog lvd = new ListViewDialog("التاريخ ( مرتب تنازلياً )", files.Select(n => "      \u200E" + n.ToExtraCompleteStandard()).ToArray());
+
+            if (lvd.ShowDialog() != DialogResult.OK || lvd.SelectedIndex == -1) return;
+
+            if (MessageBox.Show("هل انت متأكد من استرجاع هذه النسخة الإحتياطية ؟", "سؤال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            if (!DatabaseHelper.DatabaseRestore(files[lvd.SelectedIndex]))
+            {
+                MessageBox.Show("فشل استرجاع النسخة الاحتياطية", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("سيتم الخروج من البرنامج", "معلومة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Exit();
         }
 
         private void CloseBtn3_Click(object sender, EventArgs e)

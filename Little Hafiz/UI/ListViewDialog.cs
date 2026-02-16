@@ -8,6 +8,35 @@ namespace Little_Hafiz
     {
         public int SelectedIndex { get; private set; } = -1;
 
+        public ListViewDialog(string title, string[] data, bool clickable = true)
+        {
+            if (data is null) Close();
+            InitializeComponent();
+
+            if (data.Length >= 18)
+            {
+                ClientSize = new Size(ClientSize.Width + 20, ClientSize.Height);
+                listView1.ClientSize = new Size(listView1.ClientSize.Width + 20, listView1.ClientSize.Height);
+            }
+
+            listView1.Columns.Add(title, listView1.ClientSize.Width - 1, HorizontalAlignment.Center);
+
+            ListViewItem item;
+            for (int i = 0; i < data.Length; i++)
+                listView1.Items.Add(new ListViewItem(data[i]));
+
+            if (clickable) listView1.DoubleClick += (s, e) => ConfirmSelection();
+
+            if (data.Length <= 1) return;
+            item = new ListViewItem("عدد الأسطر :   " + data.Length.ToString()) { BackColor = Color.FromArgb(220, 255, 220) };
+            listView1.Items.Add(item);
+            listView1.ItemSelectionChanged += (s, e) =>
+            {
+                if (e.Item == item && e.IsSelected)
+                    e.Item.Selected = false;
+            };
+        }
+
         public ListViewDialog(string title, FieldData[] data, bool clickable = true)
         {
             if (data is null) Close();
