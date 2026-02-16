@@ -86,6 +86,7 @@ namespace Little_Hafiz
             Program.IsAutoCopy = Properties.Settings.Default.BackupEnabled;
             isAutoChanged = true;
             autoCopyData.Checked = Program.IsAutoCopy;
+            isAutoChanged = false;
 
             if (isExists)
                 GetOffice();
