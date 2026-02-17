@@ -337,7 +337,7 @@ namespace Little_Hafiz
 
         #region Two Serach Panels
 
-        StudentSearchRow[] studentRows = new StudentSearchRow[10];
+        readonly StudentSearchRow[] studentRows = new StudentSearchRow[10];
         private void AddRowsInStudentsListPanel()
         {
             StudentSearchRow stdRow;
@@ -466,7 +466,7 @@ namespace Little_Hafiz
 
         private bool isDragging = false;
         private int offsetY = 0, startDraggingIndex;
-        Timer scrollTimer = new Timer() { Interval = 10 };
+        readonly Timer scrollTimer = new Timer() { Interval = 10 };
         private void StudentsListScroll_MouseDown(object sender, MouseEventArgs e)
         {
             startDraggingIndex = -1;
@@ -620,10 +620,26 @@ namespace Little_Hafiz
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-                NationalEnter();
+                if (aForge)
+                    NationalEnter();
+                else
+                    PartialNationalEnter();
             }
             else if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        public void PartialNationalEnter()
+        {
+            if (stdNationalSearch.Text.Length == 0) return;
+            stdNationalCheckBox.Checked = true;
+            stdNameCheckBox.Checked = false;
+            stdPhoneCheckBox.Checked = false;
+            stdEmailCheckBox.Checked = false;
+            stdBirthDateCheckBox.Checked = false;
+            if (DatabaseHelper.CurrentOffice == 0)
+                stdOfficeCheckBox.Checked = false;
+            SearchBtn_Click(null, null);
         }
 
         public void NationalEnter()
@@ -1137,6 +1153,25 @@ namespace Little_Hafiz
         {
             if ("\\/:*?\"<>|'".Contains(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void EnterNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ("\\/:*?\"<>|'".Contains(e.KeyChar))
+                e.Handled = true;
+            else if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                if (stdNameSearch.Text.Length == 0) return;
+                stdNationalCheckBox.Checked = false;
+                stdNameCheckBox.Checked = true;
+                stdPhoneCheckBox.Checked = false;
+                stdEmailCheckBox.Checked = false;
+                stdBirthDateCheckBox.Checked = false;
+                if (DatabaseHelper.CurrentOffice == 0)
+                    stdOfficeCheckBox.Checked = false;
+                SearchBtn_Click(null, null);
+            }
         }
 
         private void StdFirstConclusionCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -1789,7 +1824,7 @@ namespace Little_Hafiz
         }
 
 
-        StudentRankRow[] ranksRows = new StudentRankRow[12];
+        readonly StudentRankRow[] ranksRows = new StudentRankRow[12];
         private void AddRowsInRanksListPanel()
         {
             StudentRankRow row;

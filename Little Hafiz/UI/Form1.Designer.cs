@@ -3466,7 +3466,7 @@
             this.stdNameSearch.Size = new System.Drawing.Size(283, 32);
             this.stdNameSearch.TabIndex = 7;
             this.stdNameSearch.Tag = Little_Hafiz.TargetField.StudentName;
-            this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
+            this.stdNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterNameTextBox_KeyPress);
             this.stdNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StudentDataNameField_KeyUp);
             // 
             // stdTeacher
