@@ -102,6 +102,9 @@ namespace Little_Hafiz
 
             sheet.Column(17).Width = 7;
             sheet.Cell(2, 17).Value = "المركز";
+
+            sheet.Column(18).Width = 7;
+            sheet.Cell(2, 18).Value = "الدرجة";
         }
 
         private static void SetDataOnExcelFile(IXLWorksheet sheet, ref int row, ExcelRowData data)
@@ -127,6 +130,7 @@ namespace Little_Hafiz
             sheet.Cell(row, 15).Value = Ranks.ConvertNumberToRank(data.CompetitionLevel);
             sheet.Cell(row, 16).Value = data.CompetitionDate;
             sheet.Cell(row, 17).Value = data.Rank;
+            sheet.Cell(row, 18).Value = data.Score;
             row++;
         }
     }
