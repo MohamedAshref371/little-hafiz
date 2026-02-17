@@ -31,6 +31,18 @@ namespace Little_Hafiz
             AddRowsInStudentsListPanel();
             AddRowsInRanksListPanel();
 
+            scrollTimer.Tick += (s, e1) =>
+            {
+                if (startDraggingIndex < 0) return;
+
+                if (studentsListPanel.Visible)
+                    UpdateVisibleStudentsRows(startDraggingIndex);
+                else if (ranksListPanel.Visible)
+                    UpdateVisibleRanksRows(startDraggingIndex);
+
+                startDraggingIndex = -1;
+            };
+
             Timer timer = new Timer { Interval = 10 };
             timer.Tick += (s, e1) =>
             {
@@ -453,9 +465,12 @@ namespace Little_Hafiz
         }
 
         private bool isDragging = false;
-        private int offsetY = 0;
+        private int offsetY = 0, startDraggingIndex;
+        Timer scrollTimer = new Timer() { Interval = 10 };
         private void StudentsListScroll_MouseDown(object sender, MouseEventArgs e)
         {
+            startDraggingIndex = -1;
+            scrollTimer.Start();
             isDragging = true;
             offsetY = e.Y;
         }
@@ -463,6 +478,7 @@ namespace Little_Hafiz
         private void StudentsListScroll_MouseUp(object sender, MouseEventArgs e)
         {
             isDragging = false;
+            scrollTimer.Stop();
         }
 
         private void StudentsListScroll_MouseMove(object sender, MouseEventArgs e)
@@ -484,9 +500,7 @@ namespace Little_Hafiz
             int maxStartIndex = students.Length - 8;
             if (maxStartIndex < 0) maxStartIndex = 0;
 
-            int startIndex = (int)(scrollRatio * maxStartIndex);
-
-            UpdateVisibleStudentsRows(startIndex);
+            startDraggingIndex = (int)(scrollRatio * maxStartIndex);
         }
 
         private void StudentsListPanel_MouseWheel(object sender, MouseEventArgs e)
@@ -1844,6 +1858,8 @@ namespace Little_Hafiz
 
         private void RanksListScroll_MouseDown(object sender, MouseEventArgs e)
         {
+            startDraggingIndex = -1;
+            scrollTimer.Start();
             isDragging = true;
             offsetY = e.Y;
         }
@@ -1851,6 +1867,7 @@ namespace Little_Hafiz
         private void RanksListScroll_MouseUp(object sender, MouseEventArgs e)
         {
             isDragging = false;
+            scrollTimer.Stop();
         }
 
         private void RanksListScroll_MouseMove(object sender, MouseEventArgs e)
@@ -1872,9 +1889,7 @@ namespace Little_Hafiz
             int maxStartIndex = ranks.Length - 10;
             if (maxStartIndex < 0) maxStartIndex = 0;
 
-            int startIndex = (int)(scrollRatio * maxStartIndex);
-
-            UpdateVisibleRanksRows(startIndex);
+            startDraggingIndex = (int)(scrollRatio * maxStartIndex);
         }
 
         private void RanksListPanel_MouseWheel(object sender, MouseEventArgs e)
