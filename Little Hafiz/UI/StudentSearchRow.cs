@@ -43,6 +43,7 @@ namespace Little_Hafiz
         public int Idx = -1;
         public void SetData(StudentSearchRowData data, int idx = -1)
         {
+            totalRows.Visible = false;
             studentBtn.Visible = true;
             gradesBtn.Visible = true;
 

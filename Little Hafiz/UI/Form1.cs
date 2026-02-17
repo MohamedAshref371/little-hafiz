@@ -1832,7 +1832,7 @@ namespace Little_Hafiz
 
                 if (dataIndex < ranks.Length)
                 {
-                    ranksRows[i + 1].SetData(ranks[dataIndex], dataIndex + 1);
+                    ranksRows[i + 1].SetData(ranks[dataIndex], IsLevelZero ? 0 : dataIndex + 1);
                     ranksRows[i + 1].Visible = true;
                 }
                 else
