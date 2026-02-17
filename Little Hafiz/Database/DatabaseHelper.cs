@@ -517,6 +517,18 @@ namespace Little_Hafiz
             return ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})", Program.Record);
         }
 
+        public static bool CopyStudent(StudentData data, string oldNat)
+        {
+            int res = ExecuteNonQuery($"INSERT INTO students VALUES ({data}, 0, {DateTime.Now.Ticks})", Program.Record);
+            if (res >= 0)
+            {
+                res = ExecuteNonQuery($"UPDATE grades SET national = '{data.NationalNumber}' WHERE national = '{oldNat}'", Program.Record);
+                if (res >= 0)
+                    res = ExecuteNonQuery($"DELETE FROM students WHERE national = '{oldNat}'", Program.Record);
+            }
+            return res >= 0;
+        }
+
         public static int AddGrade(CompetitionGradeData data)
             => ExecuteNonQuery($"INSERT INTO grades VALUES ({data})", Program.Record);
 

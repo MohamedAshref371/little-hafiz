@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 
 namespace Little_Hafiz
@@ -582,11 +583,12 @@ namespace Little_Hafiz
             settingsPanel.Visible = false;
 
             addStudentBtn.Text = "تعديل";
-            stdNational.Enabled = false;
+            stdNational.ReadOnly = true; stdNational.BorderThickness = 2;
+            stdNational.BorderColor = Color.FromArgb(50, 100, 255); stdNational.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             stdBirthDate.Enabled = currentStudent.StudentSearchRowData.CompetitionDate is null;
             deleteStudentBtn.Visible = stdBirthDate.Enabled && DatabaseHelper.CurrentOffice == 0;
             copyStdDataBtn.Visible = DatabaseHelper.CurrentOffice == 0;
-            studentPanelState = StudentPanelState.Update;
+            studentPanelState = StudentPanelState.Update; addStudentBtn.Enabled = true;
             studentDataPanel.Visible = true;
             cancel1Btn.Focus();
         }
@@ -764,12 +766,49 @@ namespace Little_Hafiz
         private void CopyStdDataBtn_Click(object sender, EventArgs e)
         {
             copyStdDataBtn.Visible = false;
-            studentPanelState = StudentPanelState.Add;
+            studentPanelState = StudentPanelState.Add; addStudentBtn.Enabled = true;
             addStudentBtn.Text = "إضافة";
-            stdNational.Enabled = true;
+            stdNational.ReadOnly = false; stdNational.BorderThickness = 1;
+            stdNational.BorderColor = Color.FromArgb(213, 218, 223); stdNational.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             stdNational.Text = stdNational.Text.Substring(0, stdNational.Text.Length - 1);
             stdBirthDate.Enabled = true;
             deleteStudentBtn.Visible = false;
+        }
+
+        private void StdNational_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.F12) return;
+
+            if (addStudentBtn.Enabled)
+            {
+                stdNational.Tag = stdNational.Text;
+                stdNational.ReadOnly = false;
+                //stdBirthDate.Enabled = true;
+                stdNational.BorderThickness = 2;
+                stdNational.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+                addStudentBtn.Enabled = false;
+            }
+            else
+            {
+                if (stdNational.Text.Length != 14 || wrongValueLabel.Visible || alreadyExistsLabel.Visible)
+                {
+                    MessageBox.Show("أدخل رقم قومي صحيح");
+                    return;
+                }
+                stdData.NationalNumber = stdNational.Text;
+                bool res = DatabaseHelper.CopyStudent(stdData, (string)stdNational.Tag);
+                if (!res) ErrorMessage();
+                stdNationalCheckBox.Checked = true;
+                stdNationalSearch.Text = stdNational.Text;
+                stdNameCheckBox.Checked = false;
+                stdPhoneCheckBox.Checked = false;
+                stdEmailCheckBox.Checked = false;
+                stdBirthDateCheckBox.Checked = false;
+                if (DatabaseHelper.CurrentOffice == 0)
+                    stdOfficeCheckBox.Checked = false;
+                CancelBtn_Click(null, null);
+                SearchBtn_Click(null, null);
+            }
         }
 
         private void National_KeyPress(object sender, KeyPressEventArgs e)
@@ -913,7 +952,7 @@ namespace Little_Hafiz
                 MessageBox.Show("حذف الطلاب مسموح فقط للنسخة الرئيسية");
                 return;
             }
-            if (stdNational.Enabled)
+            if (!stdNational.ReadOnly)
                 return;
             if (!stdBirthDate.Enabled)
             {
@@ -1043,8 +1082,10 @@ namespace Little_Hafiz
             };
         }
 
+        StudentData stdData;
         private void SetStudentData(StudentData stdData)
         {
+            this.stdData = stdData;
             if (stdData is null)
                 SetStudentDataAtStudentDataIsNull();
             else
@@ -1971,8 +2012,9 @@ namespace Little_Hafiz
             settingsPanel.Visible = false;
 
             addStudentBtn.Text = "إضافة";
-            stdNational.Enabled = true;
-            studentPanelState = StudentPanelState.Add;
+            stdNational.ReadOnly = false; stdNational.BorderThickness = 1;
+            stdNational.BorderColor = Color.FromArgb(213, 218, 223); stdNational.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            studentPanelState = StudentPanelState.Add; addStudentBtn.Enabled = true;
             studentDataPanel.Visible = true;
             cancel1Btn.Focus();
         }

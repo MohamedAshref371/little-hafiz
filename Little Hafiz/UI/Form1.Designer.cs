@@ -1285,6 +1285,7 @@
             this.stdNational.TabIndex = 35;
             this.stdNational.TextChanged += new System.EventHandler(this.National_TextChanged);
             this.stdNational.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.National_KeyPress);
+            this.stdNational.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StdNational_KeyUp);
             // 
             // studentPanelTitle
             // 
