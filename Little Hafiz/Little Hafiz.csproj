@@ -134,7 +134,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\ExcelRowDataV2.cs" />
     <Compile Include="Documents\ExcelHelper.cs" />
+    <Compile Include="Documents\ExcelHelperV2.cs" />
     <Compile Include="UI\AgeCalculator.cs" />
     <Compile Include="AssemblyResolve.cs" />
     <Compile Include="Database\Base64Converter.cs" />

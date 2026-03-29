@@ -2028,14 +2028,14 @@ namespace Little_Hafiz
             }
             if (saveExcelFileDialog.ShowDialog() != DialogResult.OK) return;
 
-            ExcelRowData[] rows = DatabaseHelper.SelectExcelRowData(0, 0, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
+            ExcelRowDataV2[] rows = DatabaseHelper.SelectExcelRowDataV2(0, 0, stdOfficeCheckBox.Checked ? stdOfficeSearch.SelectedIndex : 0);
             if (rows is null)
             {
                 ErrorMessage();
                 return;
             }
 
-            ExcelHelper.ExtractExcel(rows, saveExcelFileDialog.FileName);
+            ExcelHelperV2.ExtractExcel(rows, saveExcelFileDialog.FileName);
         }
 
         private void RankCalcBtn_Click(object sender, EventArgs e)

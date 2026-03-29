@@ -357,6 +357,16 @@ namespace Little_Hafiz
             return SelectMultiRows(sql, GetExcelRowData);
         }
 
+        public static ExcelRowDataV2[] SelectExcelRowDataV2(int year = 0, int month = 0, int office = 0)
+        {
+            string dateFilter = year == 0 ? "1=1" : month == 0 ? $"competition_date LIKE '{year}/%'" : $"competition_date = '{year}/{month:D2}'";
+            string officeFilter = office == 0 ? "" : $"WHERE s.office = {office}";
+
+            string sql = $@"SELECT s.*, COALESCE(g.std_code, 0) AS std_code, COALESCE(g.prev_level, 0) AS prev_level, COALESCE(g.competition_level, 0) AS competition_level, COALESCE(g.competition_date, '') AS competition_date, COALESCE(g.std_rank, 0) AS std_rank, COALESCE(g.score, 0) AS score FROM students s LEFT JOIN ( SELECT national, MAX(competition_date) AS max_date FROM grades WHERE {dateFilter} GROUP BY national ) latest ON s.national = latest.national LEFT JOIN grades g ON s.national = g.national AND g.competition_date = latest.max_date {officeFilter}";
+
+            return SelectMultiRows(sql, GetExcelRowDataV2);
+        }
+
         private static ExcelRowData GetExcelRowData()
         {
             return new ExcelRowData
@@ -381,6 +391,66 @@ namespace Little_Hafiz
                 CompetitionDate = (string)reader["competition_date"],
                 Rank = reader.GetInt32(15),
                 Score = reader.GetFloat(16),
+            };
+        }
+
+        private static ExcelRowDataV2 GetExcelRowDataV2()
+        {
+            return new ExcelRowDataV2
+            {
+                FullName = reader["full_name"].ToString(),
+                NationalNumber = reader["national"].ToString(),
+                BirthDate = reader["birth_date"].ToString(),
+                PhoneNumber = reader["phone_number"].ToString(),
+                Address = reader["address"].ToString(),
+                Email = reader["email"].ToString(),
+                Facebook = reader["facebook"].ToString(),
+
+                Job = reader["job"].ToString(),
+                School = reader["school"].ToString(),
+                Class = reader["class"].ToString(),
+
+                FatherQuali = reader["father_quali"].ToString(),
+                MotherQuali = reader["mother_quali"].ToString(),
+                FatherJob = reader["father_job"].ToString(),
+                MotherJob = reader["mother_job"].ToString(),
+                FatherPhone = reader["father_phone"].ToString(),
+                MotherPhone = reader["mother_phone"].ToString(),
+
+                GuardianName = reader["guardian_name"].ToString(),
+                GuardianLink = reader["guardian_link"].ToString(),
+                GuardianBirth = reader["guardian_birth"].ToString(),
+
+                BrothersCount = Convert.ToInt32(reader["brothers_count"]),
+                Arrangement = Convert.ToInt32(reader["arrangement"]),
+                MaritalStatus = reader["marital_status"].ToString(),
+
+                MemoAmount = reader["memo_amount"].ToString(),
+                JoiningDate = reader["joining_date"].ToString(),
+                ConclusionDate = reader["conclusion_date"].ToString(),
+
+                Teacher = reader["teacher"].ToString(),
+                StdGroup = reader["std_group"].ToString(),
+                Mashaykh = reader["mashaykh"].ToString(),
+
+                MemoPlaces = reader["memo_places"].ToString(),
+                Certificates = reader["certificates"].ToString(),
+                Ijazah = reader["ijazah"].ToString(),
+                Courses = reader["courses"].ToString(),
+                Skills = reader["skills"].ToString(),
+                Hobbies = reader["hobbies"].ToString(),
+
+                StdComps = reader["std_comps"].ToString(),
+                Notes = reader["notes"].ToString(),
+
+                Office = Convert.ToInt32(reader["office"]),
+
+                StudentCode = Convert.ToInt32(reader["std_code"]),
+                PreviousLevel = Convert.ToInt32(reader["prev_level"]),
+                CompetitionLevel = Convert.ToInt32(reader["competition_level"]),
+                CompetitionDate = reader["competition_date"].ToString(),
+                Rank = Convert.ToInt32(reader["std_rank"]),
+                Score = Convert.ToSingle(reader["score"]),
             };
         }
 
